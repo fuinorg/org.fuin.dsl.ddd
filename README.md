@@ -11,7 +11,7 @@ Xtext based DSL supporting Domain-driven design (DDD)
 
 Snapshots can be found on the [OSS Sonatype Snapshots Repository](http://oss.sonatype.org/content/repositories/snapshots/org/fuin "Snapshot Repository"). 
 
-Add the following to your .m2/settings.xml to enable snapshots in your Maven build:
+Add the following to your [.m2/settings.xml](http://maven.apache.org/ref/3.2.1/maven-settings/settings.html "Reference configuration") to enable snapshots in your Maven build:
 
 ```xml
 <repository>
