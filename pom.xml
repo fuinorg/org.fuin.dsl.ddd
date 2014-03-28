@@ -83,7 +83,9 @@
     <module>org.fuin.dsl.ddd.sdk</module>
     <module>org.fuin.dsl.ddd.ui</module>
     <module>org.fuin.dsl.ddd.tests</module>
+    <!-- Check why this does not work in Jenkins...  
     <module>org.fuin.dsl.ddd.repository</module>
+     -->
   </modules>
   
 </project>
