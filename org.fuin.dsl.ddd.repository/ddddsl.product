@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.5"?>
+
+<product name="DDD DSL" 
+         uid="org.fuin.dsl.ddd.product.uid" 
+         id="org.fuin.dsl.ddd.product" 
+         application="org.fuin.dsl.ddd.application"
+         version="0.1.0.qualifier" 
+         useFeatures="true" 
+         includeLaunchers="false">
+
+   <configIni use="default" />
+
+   <launcherArgs />
+
+   <windowImages />
+
+   <launcher>
+      <solaris/>
+      <win useIco="false">
+         <bmp/>
+      </win>
+   </launcher>
+
+   <vm />
+
+   <plugins />
+
+   <features>
+      <feature id="org.fuin.dsl.ddd.sdk" version="0.1.0.qualifier"/>
+   </features>
+
+
+</product>

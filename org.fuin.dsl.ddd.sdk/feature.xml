@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature id="org.fuin.dsl.ddd.sdk"
+         label="DDD DSL Feature"
+         version="0.1.0.qualifier"
+         provider-name="Future Invent Informationsmanagement GmbH">
+    
+   <description>
+      DDD DSL
+   </description>
+
+   <copyright url="http://www.fuin.org">
+      Copyright (C) 2013 Future Invent Informationsmanagement GmbH. All rights reserved.
+   </copyright>
+
+   <license url="license.html">
+      %license
+   </license>
+    
+    <plugin
+            id="org.fuin.dsl.ddd.dsl"
+            download-size="0"
+            install-size="0"
+            version="0.1.0.qualifier"
+            unpack="false"/>
+    
+    <plugin
+            id="org.fuin.dsl.ddd.ui"
+            download-size="0"
+            install-size="0"
+            version="0.1.0.qualifier"
+            unpack="false"/>
+            
+</feature>

@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.fuin</groupId>
+        <artifactId>pom</artifactId>
+        <version>1.1.0</version>
+    </parent>
+    
+    <groupId>org.fuin.dsl.ddd</groupId>
+    <artifactId>org.fuin.dsl.ddd</artifactId>
+    <version>0.1.0-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>DDD DSL / Parent</name>
+    <description>Xtext based DSL supporting Domain-driven design (DDD)</description>
+
+    <scm>
+        <url>https://github.com/fuinorg/ddd-dsl/</url>
+        <connection>scm:git:git://github.com/fuinorg/ddd-dsl.git</connection>
+        <developerConnection>scm:git:git@github.com:fuinorg/ddd-dsl.git</developerConnection>
+    </scm>
+
+    <issueManagement>
+        <system>GitHub Issues</system>
+        <url>https://github.com/fuinorg/ddd-dsl/issues</url>
+    </issueManagement>
+    
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <tycho-version>0.18.1</tycho-version>
+        <manifest-location>META-INF</manifest-location>       
+    </properties>
+
+    <build>
+
+        <plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <source>1.6</source>
+                    <target>1.6</target>
+                </configuration>
+            </plugin>
+
+            <plugin>
+                <groupId>org.eclipse.tycho</groupId>
+                <artifactId>tycho-maven-plugin</artifactId>
+                <version>${tycho-version}</version>
+                <extensions>true</extensions>
+            </plugin>
+
+            <plugin>
+                <groupId>org.eclipse.tycho</groupId>
+                <artifactId>target-platform-configuration</artifactId>
+                <version>${tycho-version}</version>
+            </plugin>
+
+            <plugin>
+                <groupId>org.eclipse.tycho</groupId>
+                <artifactId>tycho-source-plugin</artifactId>
+                <version>${tycho-version}</version>
+                <executions>
+                    <execution>
+                        <id>plugin-source</id>
+                        <goals>
+                            <goal>plugin-source</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+        </plugins>
+
+    </build>
+
+  <modules>
+    <module>org.fuin.dsl.ddd.dsl</module>
+    <module>org.fuin.dsl.ddd.sdk</module>
+    <module>org.fuin.dsl.ddd.ui</module>
+    <module>org.fuin.dsl.ddd.tests</module>
+    <module>org.fuin.dsl.ddd.repository</module>
+  </modules>
+  
+</project>

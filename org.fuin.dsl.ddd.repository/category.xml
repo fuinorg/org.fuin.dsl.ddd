@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature id="org.fuin.dsl.ddd.sdk" version="0.1.0.qualifier">
+      <category name="org.fuin.dsl.ddd.category"/>
+   </feature>
+   <category-def name="org.fuin.dsl.ddd.category" label="DDD DSL">
+      <description>
+         DDD DSL
+      </description>
+   </category-def>
+</site>

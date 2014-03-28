@@ -1,0 +1,191 @@
+grammar org.fuin.dsl.ddd.DomainDrivenDesignDsl hidden(WS, ML_COMMENT, SL_COMMENT)
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+generate domainDrivenDesignDsl "http://www.fuin.org/dsl/ddd/DomainDrivenDesignDsl"
+
+DomainModel:
+	namespace=Namespace;
+
+Namespace:
+	'namespace' name=FQN '{'
+		imports+=Import*
+		elements+=AbstractElement*
+	'}';
+
+Import:
+	'import' importedNamespace=(FQN | FQNWithWildcard) ';';
+
+AbstractElement:
+	Constraint | Type;
+
+Type:
+	ExternalType | AbstractVO | AbstractEntity;
+
+AbstractVO:
+	ValueObject | EnumObject;
+
+AbstractEntity:
+	Entity | Aggregate;
+
+ConstraintTarget:
+	ExternalType | ValueObject;
+
+ExternalType:
+	'type' name=ID ';';
+
+Constraint:
+	doc=DOC 
+	'constraint' name=ID 'on' target=[ConstraintTarget] ('exception' exception=ID)? '{'
+		variables+=Variable* 
+		message=Message
+	'}';
+	
+ValueObject:
+	doc=DOC 
+	'value object' name=ID '{'
+		metaInfo=TypeMetaInfo
+		variables+=Variable*
+		constructors+=Constructor*
+		methods+=Method*
+	'}';
+
+EnumObject:
+	doc=DOC 
+	'enum' name=ID '{'
+		metaInfo=TypeMetaInfo
+		variables+=Variable*
+		constructors+=Constructor*
+		methods+=Method*
+		'instances' '{' instances+=EnumInstance+ '}'
+	'}';
+	
+EnumInstance:
+	doc=DOC
+	name=ID ('(' params+=Literal (',' params+=Literal)* ')')? ';';	
+	
+Entity:
+	doc=DOC 
+	'entity' name=ID '{'
+		metaInfo=TypeMetaInfo
+		variables+=Variable*
+		constructors+=Constructor*
+		methods+=Method*
+	'}';
+
+Aggregate:
+	doc=DOC 
+	'aggregate' name=ID '{'
+		metaInfo=TypeMetaInfo
+		variables+=Variable*
+		constructors+=Constructor*
+		methods+=Method*
+	'}';
+	
+Constructor:
+	doc=DOC? 
+	'constructor' name=ID '{'
+		variables+=Variable*
+		constraints=Constraints?
+		events+=Event*
+	'}';
+
+Method:
+	doc=DOC? 
+	'method' name=ID ('ref' refMethod=[Method|FQN])? '{'
+		variables+=Variable*
+		constraints=Constraints?
+		events+=Event*
+	'}';
+
+Event:
+	doc=DOC? 
+	'event' name=ID '{'
+		variables+=Variable*
+	'}';
+	
+TypeMetaInfo:
+	{TypeMetaInfo}
+    	('slabel' (slabel=STRING))?
+    	('label' (label=STRING))?
+    	('tooltipp' (tooltipp=STRING))?
+    	('prompt' (prompt=STRING))?
+    	('examples' (examples+=STRING*))?;
+
+Variable:
+	doc=DOC? 
+	(technicalId='technicalId')? (businessKey='businessKey')? (businessName='businessName')? 
+	(nullable='nullable')? 
+	type=[Type] (multiplicity='*')? name=ID (invariants=Invariants)? ((overridden=OverriddenTypeMetaInfo)? | ';');
+
+Constraints:
+	'constraints' '{' calls+=ConstraintCall (',' calls+=ConstraintCall)* '}';
+	
+Invariants:
+	'invariants' calls+=ConstraintCall (',' calls+=ConstraintCall)*;
+
+OverriddenTypeMetaInfo:
+	'{' metaInfo=TypeMetaInfo '}';
+
+Message:
+	'message' text=STRING ('{' variables+=Variable* '}')?;
+
+ConstraintCall:
+	constraint=[Constraint] ('(' params+=Literal (',' params+=Literal)* ')')?;
+
+Literal:
+	NullLiteral | BooleanLiteral | NumberLiteral | StringLiteral;
+
+FQN:
+  ID ('.' ID)*;
+
+FQNWithWildcard :
+	FQN  '.' '*';
+
+BooleanLiteral:
+	{BooleanLiteral} value=('false' | 'true');
+
+NullLiteral:
+	{NullLiteral} value='null';
+
+NumberLiteral:
+	{NumberLiteral} value=Number;
+
+StringLiteral:
+	{StringLiteral} value=STRING;
+
+terminal ID:
+	('A'..'Z'|'a'..'z') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+	
+terminal STRING: 
+			'"' ( '\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|'"') )* '"' |
+			"'" ( '\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|"'") )* "'";
+
+Number hidden():
+	HEX | (INT | DECIMAL) ('.' (INT | DECIMAL))?;
+
+terminal HEX:
+	('0x'|'0X') ('0'..'9'|'a'..'f'|'A'..'F'|'_')+ 
+	('#' (('b'|'B')('i'|'I') | ('l'|'L')))?;
+	
+terminal INT returns ecore::EInt:
+	'0'..'9' ('0'..'9'|'_')*; 
+
+terminal DECIMAL:
+	INT 
+	(('e'|'E') ('+'|'-')? INT)? 
+	(('b'|'B')('i'|'I'|'d'|'D') | ('l'|'L'|'d'|'D'|'f'|'F'))?;
+
+// Documentation
+terminal DOC: '/**' -> '*/';
+
+// Multi line comment		 
+terminal ML_COMMENT: '/*' (!'*') -> '*/' ;
+
+// Single line comment
+terminal SL_COMMENT: '//' !('\n'|'\r')* ('\r'? '\n')?;
+
+// Whitespace - Anything that is ignored.
+terminal WS: (' '|'\t'|'\r'|'\n')+;
+
+
