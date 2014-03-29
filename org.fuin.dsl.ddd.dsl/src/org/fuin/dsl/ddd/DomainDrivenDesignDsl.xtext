@@ -29,7 +29,7 @@ AbstractEntity:
 	Entity | Aggregate;
 
 ConstraintTarget:
-	Type; // ExternalType | ValueObject;
+	ExternalType | ValueObject;
 
 ExternalType:
 	'type' name=ID ';';
