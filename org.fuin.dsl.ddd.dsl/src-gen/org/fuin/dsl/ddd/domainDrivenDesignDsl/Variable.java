@@ -13,9 +13,6 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable#getDoc <em>Doc</em>}</li>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable#getTechnicalId <em>Technical Id</em>}</li>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable#getBusinessKey <em>Business Key</em>}</li>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable#getBusinessName <em>Business Name</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable#getNullable <em>Nullable</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable#getType <em>Type</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable#getMultiplicity <em>Multiplicity</em>}</li>
@@ -56,84 +53,6 @@ public interface Variable extends EObject
    * @generated
    */
   void setDoc(String value);
-
-  /**
-   * Returns the value of the '<em><b>Technical Id</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Technical Id</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Technical Id</em>' attribute.
-   * @see #setTechnicalId(String)
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getVariable_TechnicalId()
-   * @model
-   * @generated
-   */
-  String getTechnicalId();
-
-  /**
-   * Sets the value of the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable#getTechnicalId <em>Technical Id</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Technical Id</em>' attribute.
-   * @see #getTechnicalId()
-   * @generated
-   */
-  void setTechnicalId(String value);
-
-  /**
-   * Returns the value of the '<em><b>Business Key</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Business Key</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Business Key</em>' attribute.
-   * @see #setBusinessKey(String)
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getVariable_BusinessKey()
-   * @model
-   * @generated
-   */
-  String getBusinessKey();
-
-  /**
-   * Sets the value of the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable#getBusinessKey <em>Business Key</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Business Key</em>' attribute.
-   * @see #getBusinessKey()
-   * @generated
-   */
-  void setBusinessKey(String value);
-
-  /**
-   * Returns the value of the '<em><b>Business Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Business Name</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Business Name</em>' attribute.
-   * @see #setBusinessName(String)
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getVariable_BusinessName()
-   * @model
-   * @generated
-   */
-  String getBusinessName();
-
-  /**
-   * Sets the value of the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable#getBusinessName <em>Business Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Business Name</em>' attribute.
-   * @see #getBusinessName()
-   * @generated
-   */
-  void setBusinessName(String value);
 
   /**
    * Returns the value of the '<em><b>Nullable</b></em>' attribute.

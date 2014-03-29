@@ -25,9 +25,6 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.VariableImpl#getDoc <em>Doc</em>}</li>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.VariableImpl#getTechnicalId <em>Technical Id</em>}</li>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.VariableImpl#getBusinessKey <em>Business Key</em>}</li>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.VariableImpl#getBusinessName <em>Business Name</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.VariableImpl#getNullable <em>Nullable</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.VariableImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.VariableImpl#getMultiplicity <em>Multiplicity</em>}</li>
@@ -60,66 +57,6 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
    * @ordered
    */
   protected String doc = DOC_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getTechnicalId() <em>Technical Id</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTechnicalId()
-   * @generated
-   * @ordered
-   */
-  protected static final String TECHNICAL_ID_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getTechnicalId() <em>Technical Id</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getTechnicalId()
-   * @generated
-   * @ordered
-   */
-  protected String technicalId = TECHNICAL_ID_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getBusinessKey() <em>Business Key</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getBusinessKey()
-   * @generated
-   * @ordered
-   */
-  protected static final String BUSINESS_KEY_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getBusinessKey() <em>Business Key</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getBusinessKey()
-   * @generated
-   * @ordered
-   */
-  protected String businessKey = BUSINESS_KEY_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getBusinessName() <em>Business Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getBusinessName()
-   * @generated
-   * @ordered
-   */
-  protected static final String BUSINESS_NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getBusinessName() <em>Business Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getBusinessName()
-   * @generated
-   * @ordered
-   */
-  protected String businessName = BUSINESS_NAME_EDEFAULT;
 
   /**
    * The default value of the '{@link #getNullable() <em>Nullable</em>}' attribute.
@@ -253,75 +190,6 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
     doc = newDoc;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.VARIABLE__DOC, oldDoc, doc));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getTechnicalId()
-  {
-    return technicalId;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setTechnicalId(String newTechnicalId)
-  {
-    String oldTechnicalId = technicalId;
-    technicalId = newTechnicalId;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.VARIABLE__TECHNICAL_ID, oldTechnicalId, technicalId));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getBusinessKey()
-  {
-    return businessKey;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setBusinessKey(String newBusinessKey)
-  {
-    String oldBusinessKey = businessKey;
-    businessKey = newBusinessKey;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.VARIABLE__BUSINESS_KEY, oldBusinessKey, businessKey));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getBusinessName()
-  {
-    return businessName;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setBusinessName(String newBusinessName)
-  {
-    String oldBusinessName = businessName;
-    businessName = newBusinessName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.VARIABLE__BUSINESS_NAME, oldBusinessName, businessName));
   }
 
   /**
@@ -562,12 +430,6 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
     {
       case DomainDrivenDesignDslPackage.VARIABLE__DOC:
         return getDoc();
-      case DomainDrivenDesignDslPackage.VARIABLE__TECHNICAL_ID:
-        return getTechnicalId();
-      case DomainDrivenDesignDslPackage.VARIABLE__BUSINESS_KEY:
-        return getBusinessKey();
-      case DomainDrivenDesignDslPackage.VARIABLE__BUSINESS_NAME:
-        return getBusinessName();
       case DomainDrivenDesignDslPackage.VARIABLE__NULLABLE:
         return getNullable();
       case DomainDrivenDesignDslPackage.VARIABLE__TYPE:
@@ -597,15 +459,6 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
     {
       case DomainDrivenDesignDslPackage.VARIABLE__DOC:
         setDoc((String)newValue);
-        return;
-      case DomainDrivenDesignDslPackage.VARIABLE__TECHNICAL_ID:
-        setTechnicalId((String)newValue);
-        return;
-      case DomainDrivenDesignDslPackage.VARIABLE__BUSINESS_KEY:
-        setBusinessKey((String)newValue);
-        return;
-      case DomainDrivenDesignDslPackage.VARIABLE__BUSINESS_NAME:
-        setBusinessName((String)newValue);
         return;
       case DomainDrivenDesignDslPackage.VARIABLE__NULLABLE:
         setNullable((String)newValue);
@@ -642,15 +495,6 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
       case DomainDrivenDesignDslPackage.VARIABLE__DOC:
         setDoc(DOC_EDEFAULT);
         return;
-      case DomainDrivenDesignDslPackage.VARIABLE__TECHNICAL_ID:
-        setTechnicalId(TECHNICAL_ID_EDEFAULT);
-        return;
-      case DomainDrivenDesignDslPackage.VARIABLE__BUSINESS_KEY:
-        setBusinessKey(BUSINESS_KEY_EDEFAULT);
-        return;
-      case DomainDrivenDesignDslPackage.VARIABLE__BUSINESS_NAME:
-        setBusinessName(BUSINESS_NAME_EDEFAULT);
-        return;
       case DomainDrivenDesignDslPackage.VARIABLE__NULLABLE:
         setNullable(NULLABLE_EDEFAULT);
         return;
@@ -685,12 +529,6 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
     {
       case DomainDrivenDesignDslPackage.VARIABLE__DOC:
         return DOC_EDEFAULT == null ? doc != null : !DOC_EDEFAULT.equals(doc);
-      case DomainDrivenDesignDslPackage.VARIABLE__TECHNICAL_ID:
-        return TECHNICAL_ID_EDEFAULT == null ? technicalId != null : !TECHNICAL_ID_EDEFAULT.equals(technicalId);
-      case DomainDrivenDesignDslPackage.VARIABLE__BUSINESS_KEY:
-        return BUSINESS_KEY_EDEFAULT == null ? businessKey != null : !BUSINESS_KEY_EDEFAULT.equals(businessKey);
-      case DomainDrivenDesignDslPackage.VARIABLE__BUSINESS_NAME:
-        return BUSINESS_NAME_EDEFAULT == null ? businessName != null : !BUSINESS_NAME_EDEFAULT.equals(businessName);
       case DomainDrivenDesignDslPackage.VARIABLE__NULLABLE:
         return NULLABLE_EDEFAULT == null ? nullable != null : !NULLABLE_EDEFAULT.equals(nullable);
       case DomainDrivenDesignDslPackage.VARIABLE__TYPE:
@@ -720,12 +558,6 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (doc: ");
     result.append(doc);
-    result.append(", technicalId: ");
-    result.append(technicalId);
-    result.append(", businessKey: ");
-    result.append(businessKey);
-    result.append(", businessName: ");
-    result.append(businessName);
     result.append(", nullable: ");
     result.append(nullable);
     result.append(", multiplicity: ");

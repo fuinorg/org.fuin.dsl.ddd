@@ -20,14 +20,14 @@ public class DomainDrivenDesignDslSyntacticSequencer extends AbstractSyntacticSe
 	protected DomainDrivenDesignDslGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_Message___LeftCurlyBracketKeyword_2_0_RightCurlyBracketKeyword_2_2__q;
 	protected AbstractElementAlias match_TypeMetaInfo_ExamplesKeyword_5_0_q;
-	protected AbstractElementAlias match_Variable_SemicolonKeyword_9_1_q;
+	protected AbstractElementAlias match_Variable_SemicolonKeyword_6_1_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (DomainDrivenDesignDslGrammarAccess) access;
 		match_Message___LeftCurlyBracketKeyword_2_0_RightCurlyBracketKeyword_2_2__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getMessageAccess().getLeftCurlyBracketKeyword_2_0()), new TokenAlias(false, false, grammarAccess.getMessageAccess().getRightCurlyBracketKeyword_2_2()));
 		match_TypeMetaInfo_ExamplesKeyword_5_0_q = new TokenAlias(false, true, grammarAccess.getTypeMetaInfoAccess().getExamplesKeyword_5_0());
-		match_Variable_SemicolonKeyword_9_1_q = new TokenAlias(false, true, grammarAccess.getVariableAccess().getSemicolonKeyword_9_1());
+		match_Variable_SemicolonKeyword_6_1_q = new TokenAlias(false, true, grammarAccess.getVariableAccess().getSemicolonKeyword_6_1());
 	}
 	
 	@Override
@@ -46,8 +46,8 @@ public class DomainDrivenDesignDslSyntacticSequencer extends AbstractSyntacticSe
 				emit_Message___LeftCurlyBracketKeyword_2_0_RightCurlyBracketKeyword_2_2__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_TypeMetaInfo_ExamplesKeyword_5_0_q.equals(syntax))
 				emit_TypeMetaInfo_ExamplesKeyword_5_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Variable_SemicolonKeyword_9_1_q.equals(syntax))
-				emit_Variable_SemicolonKeyword_9_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_Variable_SemicolonKeyword_6_1_q.equals(syntax))
+				emit_Variable_SemicolonKeyword_6_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -72,7 +72,7 @@ public class DomainDrivenDesignDslSyntacticSequencer extends AbstractSyntacticSe
 	 * Syntax:
 	 *     ';'?
 	 */
-	protected void emit_Variable_SemicolonKeyword_9_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+	protected void emit_Variable_SemicolonKeyword_6_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

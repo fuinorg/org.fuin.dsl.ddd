@@ -77,6 +77,15 @@ public interface DomainDrivenDesignDslFactory extends EFactory
   AbstractVO createAbstractVO();
 
   /**
+   * Returns a new object of class '<em>Abstract Entity Id</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Abstract Entity Id</em>'.
+   * @generated
+   */
+  AbstractEntityId createAbstractEntityId();
+
+  /**
    * Returns a new object of class '<em>Abstract Entity</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -120,6 +129,24 @@ public interface DomainDrivenDesignDslFactory extends EFactory
    * @generated
    */
   ValueObject createValueObject();
+
+  /**
+   * Returns a new object of class '<em>Entity Id</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Entity Id</em>'.
+   * @generated
+   */
+  EntityId createEntityId();
+
+  /**
+   * Returns a new object of class '<em>Aggregate Id</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Aggregate Id</em>'.
+   * @generated
+   */
+  AggregateId createAggregateId();
 
   /**
    * Returns a new object of class '<em>Enum Object</em>'.

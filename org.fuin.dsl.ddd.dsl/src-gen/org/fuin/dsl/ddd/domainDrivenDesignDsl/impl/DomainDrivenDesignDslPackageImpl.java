@@ -11,8 +11,10 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractElement;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntity;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntityId;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractVO;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.BooleanLiteral;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintCall;
@@ -23,6 +25,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslFactory;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainModel;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.EntityId;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumInstance;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumObject;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event;
@@ -97,6 +100,13 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass abstractEntityIdEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass abstractEntityEClass = null;
 
   /**
@@ -126,6 +136,20 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * @generated
    */
   private EClass valueObjectEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass entityIdEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass aggregateIdEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -498,6 +522,16 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getAbstractEntityId()
+  {
+    return abstractEntityIdEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getAbstractEntity()
   {
     return abstractEntityEClass;
@@ -648,6 +682,26 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getEntityId()
+  {
+    return entityIdEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getAggregateId()
+  {
+    return aggregateIdEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getEnumObject()
   {
     return enumObjectEClass;
@@ -718,9 +772,29 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getEntity_IdType()
+  {
+    return (EReference)entityEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getAggregate()
   {
     return aggregateEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAggregate_IdType()
+  {
+    return (EReference)aggregateEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -978,7 +1052,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getVariable_TechnicalId()
+  public EAttribute getVariable_Nullable()
   {
     return (EAttribute)variableEClass.getEStructuralFeatures().get(1);
   }
@@ -988,39 +1062,9 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getVariable_BusinessKey()
-  {
-    return (EAttribute)variableEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getVariable_BusinessName()
-  {
-    return (EAttribute)variableEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getVariable_Nullable()
-  {
-    return (EAttribute)variableEClass.getEStructuralFeatures().get(4);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EReference getVariable_Type()
   {
-    return (EReference)variableEClass.getEStructuralFeatures().get(5);
+    return (EReference)variableEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1030,7 +1074,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    */
   public EAttribute getVariable_Multiplicity()
   {
-    return (EAttribute)variableEClass.getEStructuralFeatures().get(6);
+    return (EAttribute)variableEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1040,7 +1084,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    */
   public EAttribute getVariable_Name()
   {
-    return (EAttribute)variableEClass.getEStructuralFeatures().get(7);
+    return (EAttribute)variableEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -1050,7 +1094,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    */
   public EReference getVariable_Invariants()
   {
-    return (EReference)variableEClass.getEStructuralFeatures().get(8);
+    return (EReference)variableEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -1060,7 +1104,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    */
   public EReference getVariable_Overridden()
   {
-    return (EReference)variableEClass.getEStructuralFeatures().get(9);
+    return (EReference)variableEClass.getEStructuralFeatures().get(6);
   }
 
   /**
@@ -1296,6 +1340,8 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     createEReference(abstractVOEClass, ABSTRACT_VO__CONSTRUCTORS);
     createEReference(abstractVOEClass, ABSTRACT_VO__METHODS);
 
+    abstractEntityIdEClass = createEClass(ABSTRACT_ENTITY_ID);
+
     abstractEntityEClass = createEClass(ABSTRACT_ENTITY);
     createEAttribute(abstractEntityEClass, ABSTRACT_ENTITY__DOC);
     createEReference(abstractEntityEClass, ABSTRACT_ENTITY__META_INFO);
@@ -1316,6 +1362,10 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
 
     valueObjectEClass = createEClass(VALUE_OBJECT);
 
+    entityIdEClass = createEClass(ENTITY_ID);
+
+    aggregateIdEClass = createEClass(AGGREGATE_ID);
+
     enumObjectEClass = createEClass(ENUM_OBJECT);
     createEReference(enumObjectEClass, ENUM_OBJECT__INSTANCES);
 
@@ -1325,8 +1375,10 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     createEReference(enumInstanceEClass, ENUM_INSTANCE__PARAMS);
 
     entityEClass = createEClass(ENTITY);
+    createEReference(entityEClass, ENTITY__ID_TYPE);
 
     aggregateEClass = createEClass(AGGREGATE);
+    createEReference(aggregateEClass, AGGREGATE__ID_TYPE);
 
     constructorEClass = createEClass(CONSTRUCTOR);
     createEAttribute(constructorEClass, CONSTRUCTOR__DOC);
@@ -1357,9 +1409,6 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
 
     variableEClass = createEClass(VARIABLE);
     createEAttribute(variableEClass, VARIABLE__DOC);
-    createEAttribute(variableEClass, VARIABLE__TECHNICAL_ID);
-    createEAttribute(variableEClass, VARIABLE__BUSINESS_KEY);
-    createEAttribute(variableEClass, VARIABLE__BUSINESS_NAME);
     createEAttribute(variableEClass, VARIABLE__NULLABLE);
     createEReference(variableEClass, VARIABLE__TYPE);
     createEAttribute(variableEClass, VARIABLE__MULTIPLICITY);
@@ -1427,12 +1476,15 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     // Add supertypes to classes
     typeEClass.getESuperTypes().add(this.getAbstractElement());
     abstractVOEClass.getESuperTypes().add(this.getType());
+    abstractEntityIdEClass.getESuperTypes().add(this.getAbstractVO());
     abstractEntityEClass.getESuperTypes().add(this.getType());
     externalTypeEClass.getESuperTypes().add(this.getType());
     externalTypeEClass.getESuperTypes().add(this.getConstraintTarget());
     constraintEClass.getESuperTypes().add(this.getAbstractElement());
     valueObjectEClass.getESuperTypes().add(this.getAbstractVO());
     valueObjectEClass.getESuperTypes().add(this.getConstraintTarget());
+    entityIdEClass.getESuperTypes().add(this.getAbstractEntityId());
+    aggregateIdEClass.getESuperTypes().add(this.getAbstractEntityId());
     enumObjectEClass.getESuperTypes().add(this.getAbstractVO());
     entityEClass.getESuperTypes().add(this.getAbstractEntity());
     aggregateEClass.getESuperTypes().add(this.getAbstractEntity());
@@ -1465,6 +1517,8 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     initEReference(getAbstractVO_Constructors(), this.getConstructor(), null, "constructors", null, 0, -1, AbstractVO.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAbstractVO_Methods(), this.getMethod(), null, "methods", null, 0, -1, AbstractVO.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(abstractEntityIdEClass, AbstractEntityId.class, "AbstractEntityId", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
     initEClass(abstractEntityEClass, AbstractEntity.class, "AbstractEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAbstractEntity_Doc(), ecorePackage.getEString(), "doc", null, 0, 1, AbstractEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAbstractEntity_MetaInfo(), this.getTypeMetaInfo(), null, "metaInfo", null, 0, 1, AbstractEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1485,6 +1539,10 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
 
     initEClass(valueObjectEClass, ValueObject.class, "ValueObject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+    initEClass(entityIdEClass, EntityId.class, "EntityId", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    initEClass(aggregateIdEClass, AggregateId.class, "AggregateId", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
     initEClass(enumObjectEClass, EnumObject.class, "EnumObject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getEnumObject_Instances(), this.getEnumInstance(), null, "instances", null, 0, -1, EnumObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1494,8 +1552,10 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     initEReference(getEnumInstance_Params(), this.getLiteral(), null, "params", null, 0, -1, EnumInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(entityEClass, Entity.class, "Entity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getEntity_IdType(), this.getEntityId(), null, "idType", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(aggregateEClass, Aggregate.class, "Aggregate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getAggregate_IdType(), this.getAggregateId(), null, "idType", null, 0, 1, Aggregate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(constructorEClass, Constructor.class, "Constructor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getConstructor_Doc(), ecorePackage.getEString(), "doc", null, 0, 1, Constructor.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1526,9 +1586,6 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
 
     initEClass(variableEClass, Variable.class, "Variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getVariable_Doc(), ecorePackage.getEString(), "doc", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getVariable_TechnicalId(), ecorePackage.getEString(), "technicalId", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getVariable_BusinessKey(), ecorePackage.getEString(), "businessKey", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getVariable_BusinessName(), ecorePackage.getEString(), "businessName", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getVariable_Nullable(), ecorePackage.getEString(), "nullable", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getVariable_Type(), this.getType(), null, "type", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getVariable_Multiplicity(), ecorePackage.getEString(), "multiplicity", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

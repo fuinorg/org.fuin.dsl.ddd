@@ -23,7 +23,10 @@ Type:
 	ExternalType | AbstractVO | AbstractEntity;
 
 AbstractVO:
-	ValueObject | EnumObject;
+	ValueObject | EnumObject | AbstractEntityId;
+
+AbstractEntityId:
+	EntityId | AggregateId;
 
 AbstractEntity:
 	Entity | Aggregate;
@@ -43,7 +46,25 @@ Constraint:
 	
 ValueObject:
 	doc=DOC 
-	'value object' name=ID '{'
+	'value-object' name=ID '{'
+		metaInfo=TypeMetaInfo
+		variables+=Variable*
+		constructors+=Constructor*
+		methods+=Method*
+	'}';
+
+EntityId:
+	doc=DOC 
+	'entity-id' name=ID '{'
+		metaInfo=TypeMetaInfo
+		variables+=Variable*
+		constructors+=Constructor*
+		methods+=Method*
+	'}';
+
+AggregateId:
+	doc=DOC 
+	'aggregate-id' name=ID '{'
 		metaInfo=TypeMetaInfo
 		variables+=Variable*
 		constructors+=Constructor*
@@ -66,7 +87,7 @@ EnumInstance:
 	
 Entity:
 	doc=DOC 
-	'entity' name=ID '{'
+	'entity' name=ID 'identifier' idType=[EntityId] '{'
 		metaInfo=TypeMetaInfo
 		variables+=Variable*
 		constructors+=Constructor*
@@ -75,7 +96,7 @@ Entity:
 
 Aggregate:
 	doc=DOC 
-	'aggregate' name=ID '{'
+	'aggregate' name=ID 'identifier' idType=[AggregateId] '{'
 		metaInfo=TypeMetaInfo
 		variables+=Variable*
 		constructors+=Constructor*
@@ -114,7 +135,6 @@ TypeMetaInfo:
 
 Variable:
 	doc=DOC? 
-	(technicalId='technicalId')? (businessKey='businessKey')? (businessName='businessName')? 
 	(nullable='nullable')? 
 	type=[Type] (multiplicity='*')? name=ID (invariants=Invariants)? ((overridden=OverriddenTypeMetaInfo)? | ';');
 

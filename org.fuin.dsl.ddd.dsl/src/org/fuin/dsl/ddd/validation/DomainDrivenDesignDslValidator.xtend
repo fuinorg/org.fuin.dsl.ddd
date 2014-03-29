@@ -18,19 +18,9 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 
 	public static val INVALID_VAR_NAME = 'invalidVarName'
 
-	public static val INVALID_TECHNICAL_ID = 'invalidTechnicalId'
-	public static val INVALID_BUSINESS_KEY = 'invalidBusinessKey'
-	public static val INVALID_BUSINESS_NAME = 'invalidBusinessName'
-
-	public static val DUPLICATE_TECHNICAL_ID = 'duplicateTechnicalId'
-	public static val DUPLICATE_BUSINESS_KEY = 'duplicateBusinessKey'
-	public static val DUPLICATE_BUSINESS_NAME = 'duplicateBusinessName'
-
 	public static val EVENT_NOT_ALLOWED_FOR_VO = 'eventNotAllowedForVO'
 
 	public static val CONSTRAINT_MSG_UNKNOWN_VAR = 'constraintMsgUnknownVar'
-
-	private static val ERROR_MULTIPLE_ID_KEY_NAME = "Only one of 'techicalId', 'businessKey' or 'businessName' at a time is allowed for an attribute";
 
 	@Check
 	def checkNameStartsWithCapital(Variable variable) {
@@ -38,72 +28,6 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 			warning("Variable names should start with a lower case", variable,
 				DomainDrivenDesignDslPackage$Literals::VARIABLE__NAME, INVALID_VAR_NAME)
 		}
-	}
-
-	@Check
-	def checkIdBusinessKeyAndNameOnlyForEntity(Variable variable) {
-		if (!(variable.eContainer instanceof AbstractEntity)) {
-			if (variable.technicalId != null) {
-				error("A technical id is only allowed for entities", variable,
-					DomainDrivenDesignDslPackage$Literals::VARIABLE__TECHNICAL_ID, INVALID_TECHNICAL_ID)
-			} else if (variable.businessKey != null) {
-				error("A business key is only allowed for entities", variable,
-					DomainDrivenDesignDslPackage$Literals::VARIABLE__BUSINESS_KEY, INVALID_BUSINESS_KEY)
-			} else if (variable.businessName != null) {
-				error("A business name is only allowed for entities", variable,
-					DomainDrivenDesignDslPackage$Literals::VARIABLE__BUSINESS_NAME, INVALID_BUSINESS_NAME)
-			}
-		}
-	}
-
-	@Check
-	def checkIdBusinessKeyAndName(AbstractEntity entity) {
-
-		var String technicalId;
-		var String businessKey;
-		var String businessName;
-		for (v : entity.variables) {
-			if (v.technicalId == null) {
-				if (v.businessKey == null) {
-					if (v.businessName != null) {
-						if (businessName == null) {
-							businessName = v.name;
-						} else {
-							error("You can only define one business name within an entity (" + businessName + ")", v,
-								DomainDrivenDesignDslPackage$Literals::VARIABLE__BUSINESS_NAME, DUPLICATE_BUSINESS_NAME)
-						}
-					}
-				} else {
-					if (businessKey == null) {
-						businessKey = v.name;
-						if (v.businessName != null) {
-							error(ERROR_MULTIPLE_ID_KEY_NAME, v,
-								DomainDrivenDesignDslPackage$Literals::VARIABLE__BUSINESS_NAME, DUPLICATE_BUSINESS_NAME)
-						}
-					} else {
-						error("You can only define one business key within an entity (" + businessKey + ")", v,
-							DomainDrivenDesignDslPackage$Literals::VARIABLE__BUSINESS_NAME, DUPLICATE_BUSINESS_KEY)
-					}
-
-				}
-			} else {
-				if (technicalId == null) {
-					technicalId = v.name;
-					if (v.businessKey != null) {
-						error(ERROR_MULTIPLE_ID_KEY_NAME, v,
-							DomainDrivenDesignDslPackage$Literals::VARIABLE__BUSINESS_KEY, DUPLICATE_BUSINESS_KEY)
-					}
-					if (v.businessName != null) {
-						error(ERROR_MULTIPLE_ID_KEY_NAME, v,
-							DomainDrivenDesignDslPackage$Literals::VARIABLE__BUSINESS_NAME, DUPLICATE_BUSINESS_NAME)
-					}
-				} else {
-					error("You can only define one technical id within an entity (" + technicalId + ")", v,
-						DomainDrivenDesignDslPackage$Literals::VARIABLE__TECHNICAL_ID, DUPLICATE_TECHNICAL_ID)
-				}
-			}
-		}
-
 	}
 
 	@Check

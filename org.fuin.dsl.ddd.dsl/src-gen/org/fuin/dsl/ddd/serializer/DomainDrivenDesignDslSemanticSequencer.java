@@ -14,6 +14,7 @@ import org.eclipse.xtext.serializer.sequencer.ISemanticSequencer;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.BooleanLiteral;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintCall;
@@ -22,6 +23,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constructor;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainModel;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.EntityId;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumInstance;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumObject;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event;
@@ -54,6 +56,16 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 				   context == grammarAccess.getAggregateRule() ||
 				   context == grammarAccess.getTypeRule()) {
 					sequence_Aggregate(context, (Aggregate) semanticObject); 
+					return; 
+				}
+				else break;
+			case DomainDrivenDesignDslPackage.AGGREGATE_ID:
+				if(context == grammarAccess.getAbstractElementRule() ||
+				   context == grammarAccess.getAbstractEntityIdRule() ||
+				   context == grammarAccess.getAbstractVORule() ||
+				   context == grammarAccess.getAggregateIdRule() ||
+				   context == grammarAccess.getTypeRule()) {
+					sequence_AggregateId(context, (AggregateId) semanticObject); 
 					return; 
 				}
 				else break;
@@ -101,6 +113,16 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 				   context == grammarAccess.getEntityRule() ||
 				   context == grammarAccess.getTypeRule()) {
 					sequence_Entity(context, (Entity) semanticObject); 
+					return; 
+				}
+				else break;
+			case DomainDrivenDesignDslPackage.ENTITY_ID:
+				if(context == grammarAccess.getAbstractElementRule() ||
+				   context == grammarAccess.getAbstractEntityIdRule() ||
+				   context == grammarAccess.getAbstractVORule() ||
+				   context == grammarAccess.getEntityIdRule() ||
+				   context == grammarAccess.getTypeRule()) {
+					sequence_EntityId(context, (EntityId) semanticObject); 
 					return; 
 				}
 				else break;
@@ -228,6 +250,23 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *         methods+=Method*
 	 *     )
 	 */
+	protected void sequence_AggregateId(EObject context, AggregateId semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (
+	 *         doc=DOC 
+	 *         name=ID 
+	 *         idType=[AggregateId|ID] 
+	 *         metaInfo=TypeMetaInfo 
+	 *         variables+=Variable* 
+	 *         constructors+=Constructor* 
+	 *         methods+=Method*
+	 *     )
+	 */
 	protected void sequence_Aggregate(EObject context, Aggregate semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
@@ -306,6 +345,23 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *     (
 	 *         doc=DOC 
 	 *         name=ID 
+	 *         metaInfo=TypeMetaInfo 
+	 *         variables+=Variable* 
+	 *         constructors+=Constructor* 
+	 *         methods+=Method*
+	 *     )
+	 */
+	protected void sequence_EntityId(EObject context, EntityId semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (
+	 *         doc=DOC 
+	 *         name=ID 
+	 *         idType=[EntityId|ID] 
 	 *         metaInfo=TypeMetaInfo 
 	 *         variables+=Variable* 
 	 *         constructors+=Constructor* 
@@ -513,9 +569,6 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 * Constraint:
 	 *     (
 	 *         doc=DOC? 
-	 *         technicalId='technicalId'? 
-	 *         businessKey='businessKey'? 
-	 *         businessName='businessName'? 
 	 *         nullable='nullable'? 
 	 *         type=[Type|ID] 
 	 *         multiplicity='*'? 

@@ -70,11 +70,14 @@ public class DomainDrivenDesignDslFactoryImpl extends EFactoryImpl implements Do
       case DomainDrivenDesignDslPackage.ABSTRACT_ELEMENT: return createAbstractElement();
       case DomainDrivenDesignDslPackage.TYPE: return createType();
       case DomainDrivenDesignDslPackage.ABSTRACT_VO: return createAbstractVO();
+      case DomainDrivenDesignDslPackage.ABSTRACT_ENTITY_ID: return createAbstractEntityId();
       case DomainDrivenDesignDslPackage.ABSTRACT_ENTITY: return createAbstractEntity();
       case DomainDrivenDesignDslPackage.CONSTRAINT_TARGET: return createConstraintTarget();
       case DomainDrivenDesignDslPackage.EXTERNAL_TYPE: return createExternalType();
       case DomainDrivenDesignDslPackage.CONSTRAINT: return createConstraint();
       case DomainDrivenDesignDslPackage.VALUE_OBJECT: return createValueObject();
+      case DomainDrivenDesignDslPackage.ENTITY_ID: return createEntityId();
+      case DomainDrivenDesignDslPackage.AGGREGATE_ID: return createAggregateId();
       case DomainDrivenDesignDslPackage.ENUM_OBJECT: return createEnumObject();
       case DomainDrivenDesignDslPackage.ENUM_INSTANCE: return createEnumInstance();
       case DomainDrivenDesignDslPackage.ENTITY: return createEntity();
@@ -170,6 +173,17 @@ public class DomainDrivenDesignDslFactoryImpl extends EFactoryImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
+  public AbstractEntityId createAbstractEntityId()
+  {
+    AbstractEntityIdImpl abstractEntityId = new AbstractEntityIdImpl();
+    return abstractEntityId;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public AbstractEntity createAbstractEntity()
   {
     AbstractEntityImpl abstractEntity = new AbstractEntityImpl();
@@ -218,6 +232,28 @@ public class DomainDrivenDesignDslFactoryImpl extends EFactoryImpl implements Do
   {
     ValueObjectImpl valueObject = new ValueObjectImpl();
     return valueObject;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EntityId createEntityId()
+  {
+    EntityIdImpl entityId = new EntityIdImpl();
+    return entityId;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AggregateId createAggregateId()
+  {
+    AggregateIdImpl aggregateId = new AggregateIdImpl();
+    return aggregateId;
   }
 
   /**

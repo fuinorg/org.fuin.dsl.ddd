@@ -105,6 +105,11 @@ public class DomainDrivenDesignDslAdapterFactory extends AdapterFactoryImpl
         return createAbstractVOAdapter();
       }
       @Override
+      public Adapter caseAbstractEntityId(AbstractEntityId object)
+      {
+        return createAbstractEntityIdAdapter();
+      }
+      @Override
       public Adapter caseAbstractEntity(AbstractEntity object)
       {
         return createAbstractEntityAdapter();
@@ -128,6 +133,16 @@ public class DomainDrivenDesignDslAdapterFactory extends AdapterFactoryImpl
       public Adapter caseValueObject(ValueObject object)
       {
         return createValueObjectAdapter();
+      }
+      @Override
+      public Adapter caseEntityId(EntityId object)
+      {
+        return createEntityIdAdapter();
+      }
+      @Override
+      public Adapter caseAggregateId(AggregateId object)
+      {
+        return createAggregateIdAdapter();
       }
       @Override
       public Adapter caseEnumObject(EnumObject object)
@@ -337,6 +352,21 @@ public class DomainDrivenDesignDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntityId <em>Abstract Entity Id</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntityId
+   * @generated
+   */
+  public Adapter createAbstractEntityIdAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntity <em>Abstract Entity</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -407,6 +437,36 @@ public class DomainDrivenDesignDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createValueObjectAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.EntityId <em>Entity Id</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.EntityId
+   * @generated
+   */
+  public Adapter createEntityIdAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId <em>Aggregate Id</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId
+   * @generated
+   */
+  public Adapter createAggregateIdAdapter()
   {
     return null;
   }

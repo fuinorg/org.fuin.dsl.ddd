@@ -117,6 +117,16 @@ public class DomainDrivenDesignDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case DomainDrivenDesignDslPackage.ABSTRACT_ENTITY_ID:
+      {
+        AbstractEntityId abstractEntityId = (AbstractEntityId)theEObject;
+        T result = caseAbstractEntityId(abstractEntityId);
+        if (result == null) result = caseAbstractVO(abstractEntityId);
+        if (result == null) result = caseType(abstractEntityId);
+        if (result == null) result = caseAbstractElement(abstractEntityId);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case DomainDrivenDesignDslPackage.ABSTRACT_ENTITY:
       {
         AbstractEntity abstractEntity = (AbstractEntity)theEObject;
@@ -159,6 +169,28 @@ public class DomainDrivenDesignDslSwitch<T> extends Switch<T>
         if (result == null) result = caseConstraintTarget(valueObject);
         if (result == null) result = caseType(valueObject);
         if (result == null) result = caseAbstractElement(valueObject);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DomainDrivenDesignDslPackage.ENTITY_ID:
+      {
+        EntityId entityId = (EntityId)theEObject;
+        T result = caseEntityId(entityId);
+        if (result == null) result = caseAbstractEntityId(entityId);
+        if (result == null) result = caseAbstractVO(entityId);
+        if (result == null) result = caseType(entityId);
+        if (result == null) result = caseAbstractElement(entityId);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DomainDrivenDesignDslPackage.AGGREGATE_ID:
+      {
+        AggregateId aggregateId = (AggregateId)theEObject;
+        T result = caseAggregateId(aggregateId);
+        if (result == null) result = caseAbstractEntityId(aggregateId);
+        if (result == null) result = caseAbstractVO(aggregateId);
+        if (result == null) result = caseType(aggregateId);
+        if (result == null) result = caseAbstractElement(aggregateId);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -409,6 +441,22 @@ public class DomainDrivenDesignDslSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Abstract Entity Id</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Abstract Entity Id</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAbstractEntityId(AbstractEntityId object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Abstract Entity</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -484,6 +532,38 @@ public class DomainDrivenDesignDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseValueObject(ValueObject object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Entity Id</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Entity Id</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseEntityId(EntityId object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Aggregate Id</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Aggregate Id</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAggregateId(AggregateId object)
   {
     return null;
   }
