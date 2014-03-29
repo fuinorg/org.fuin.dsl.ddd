@@ -13,6 +13,6 @@ package org.fuin.dsl.ddd.domainDrivenDesignDsl;
  * @model
  * @generated
  */
-public interface Type extends AbstractElement
+public interface Type extends AbstractElement, ConstraintTarget
 {
 } // Type

@@ -203,22 +203,15 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 
 	public class ConstraintTargetElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ConstraintTarget");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cExternalTypeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cValueObjectParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cTypeParserRuleCall = (RuleCall)rule.eContents().get(1);
 		
+		//// ExternalType | ValueObject;
 		//ConstraintTarget:
-		//	ExternalType | ValueObject;
+		//	Type;
 		public ParserRule getRule() { return rule; }
 
-		//ExternalType | ValueObject
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//ExternalType
-		public RuleCall getExternalTypeParserRuleCall_0() { return cExternalTypeParserRuleCall_0; }
-
-		//ValueObject
-		public RuleCall getValueObjectParserRuleCall_1() { return cValueObjectParserRuleCall_1; }
+		//Type
+		public RuleCall getTypeParserRuleCall() { return cTypeParserRuleCall; }
 	}
 
 	public class ExternalTypeElements extends AbstractParserRuleElementFinder {
@@ -1724,8 +1717,9 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		return getAbstractEntityAccess().getRule();
 	}
 
+	//// ExternalType | ValueObject;
 	//ConstraintTarget:
-	//	ExternalType | ValueObject;
+	//	Type;
 	public ConstraintTargetElements getConstraintTargetAccess() {
 		return (pConstraintTarget != null) ? pConstraintTarget : (pConstraintTarget = new ConstraintTargetElements());
 	}

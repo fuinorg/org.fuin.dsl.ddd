@@ -1426,13 +1426,12 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
 
     // Add supertypes to classes
     typeEClass.getESuperTypes().add(this.getAbstractElement());
+    typeEClass.getESuperTypes().add(this.getConstraintTarget());
     abstractVOEClass.getESuperTypes().add(this.getType());
     abstractEntityEClass.getESuperTypes().add(this.getType());
     externalTypeEClass.getESuperTypes().add(this.getType());
-    externalTypeEClass.getESuperTypes().add(this.getConstraintTarget());
     constraintEClass.getESuperTypes().add(this.getAbstractElement());
     valueObjectEClass.getESuperTypes().add(this.getAbstractVO());
-    valueObjectEClass.getESuperTypes().add(this.getConstraintTarget());
     enumObjectEClass.getESuperTypes().add(this.getAbstractVO());
     entityEClass.getESuperTypes().add(this.getAbstractEntity());
     aggregateEClass.getESuperTypes().add(this.getAbstractEntity());

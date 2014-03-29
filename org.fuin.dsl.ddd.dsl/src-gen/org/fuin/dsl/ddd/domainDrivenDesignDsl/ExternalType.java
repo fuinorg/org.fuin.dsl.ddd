@@ -13,6 +13,6 @@ package org.fuin.dsl.ddd.domainDrivenDesignDsl;
  * @model
  * @generated
  */
-public interface ExternalType extends Type, ConstraintTarget
+public interface ExternalType extends Type
 {
 } // ExternalType
