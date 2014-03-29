@@ -1079,6 +1079,7 @@ finally {
 	restoreStackSize(stackSize);
 }
 
+
 rule__Variable__Alternatives_9
     @init {
 		int stackSize = keepStackSize();

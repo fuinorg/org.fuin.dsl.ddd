@@ -52,7 +52,6 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 				if(context == grammarAccess.getAbstractElementRule() ||
 				   context == grammarAccess.getAbstractEntityRule() ||
 				   context == grammarAccess.getAggregateRule() ||
-				   context == grammarAccess.getConstraintTargetRule() ||
 				   context == grammarAccess.getTypeRule()) {
 					sequence_Aggregate(context, (Aggregate) semanticObject); 
 					return; 
@@ -99,7 +98,6 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 			case DomainDrivenDesignDslPackage.ENTITY:
 				if(context == grammarAccess.getAbstractElementRule() ||
 				   context == grammarAccess.getAbstractEntityRule() ||
-				   context == grammarAccess.getConstraintTargetRule() ||
 				   context == grammarAccess.getEntityRule() ||
 				   context == grammarAccess.getTypeRule()) {
 					sequence_Entity(context, (Entity) semanticObject); 
@@ -115,7 +113,6 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 			case DomainDrivenDesignDslPackage.ENUM_OBJECT:
 				if(context == grammarAccess.getAbstractElementRule() ||
 				   context == grammarAccess.getAbstractVORule() ||
-				   context == grammarAccess.getConstraintTargetRule() ||
 				   context == grammarAccess.getEnumObjectRule() ||
 				   context == grammarAccess.getTypeRule()) {
 					sequence_EnumObject(context, (EnumObject) semanticObject); 

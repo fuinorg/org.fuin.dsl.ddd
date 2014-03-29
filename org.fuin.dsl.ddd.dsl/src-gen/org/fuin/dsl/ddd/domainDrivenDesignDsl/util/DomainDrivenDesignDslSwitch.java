@@ -105,7 +105,6 @@ public class DomainDrivenDesignDslSwitch<T> extends Switch<T>
         Type type = (Type)theEObject;
         T result = caseType(type);
         if (result == null) result = caseAbstractElement(type);
-        if (result == null) result = caseConstraintTarget(type);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -115,7 +114,6 @@ public class DomainDrivenDesignDslSwitch<T> extends Switch<T>
         T result = caseAbstractVO(abstractVO);
         if (result == null) result = caseType(abstractVO);
         if (result == null) result = caseAbstractElement(abstractVO);
-        if (result == null) result = caseConstraintTarget(abstractVO);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -125,7 +123,6 @@ public class DomainDrivenDesignDslSwitch<T> extends Switch<T>
         T result = caseAbstractEntity(abstractEntity);
         if (result == null) result = caseType(abstractEntity);
         if (result == null) result = caseAbstractElement(abstractEntity);
-        if (result == null) result = caseConstraintTarget(abstractEntity);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -141,8 +138,8 @@ public class DomainDrivenDesignDslSwitch<T> extends Switch<T>
         ExternalType externalType = (ExternalType)theEObject;
         T result = caseExternalType(externalType);
         if (result == null) result = caseType(externalType);
-        if (result == null) result = caseAbstractElement(externalType);
         if (result == null) result = caseConstraintTarget(externalType);
+        if (result == null) result = caseAbstractElement(externalType);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -159,9 +156,9 @@ public class DomainDrivenDesignDslSwitch<T> extends Switch<T>
         ValueObject valueObject = (ValueObject)theEObject;
         T result = caseValueObject(valueObject);
         if (result == null) result = caseAbstractVO(valueObject);
+        if (result == null) result = caseConstraintTarget(valueObject);
         if (result == null) result = caseType(valueObject);
         if (result == null) result = caseAbstractElement(valueObject);
-        if (result == null) result = caseConstraintTarget(valueObject);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -172,7 +169,6 @@ public class DomainDrivenDesignDslSwitch<T> extends Switch<T>
         if (result == null) result = caseAbstractVO(enumObject);
         if (result == null) result = caseType(enumObject);
         if (result == null) result = caseAbstractElement(enumObject);
-        if (result == null) result = caseConstraintTarget(enumObject);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -190,7 +186,6 @@ public class DomainDrivenDesignDslSwitch<T> extends Switch<T>
         if (result == null) result = caseAbstractEntity(entity);
         if (result == null) result = caseType(entity);
         if (result == null) result = caseAbstractElement(entity);
-        if (result == null) result = caseConstraintTarget(entity);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -201,7 +196,6 @@ public class DomainDrivenDesignDslSwitch<T> extends Switch<T>
         if (result == null) result = caseAbstractEntity(aggregate);
         if (result == null) result = caseType(aggregate);
         if (result == null) result = caseAbstractElement(aggregate);
-        if (result == null) result = caseConstraintTarget(aggregate);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }

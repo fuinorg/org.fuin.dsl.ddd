@@ -42,6 +42,7 @@ public class DomainDrivenDesignDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTypeAccess().getAlternatives(), "rule__Type__Alternatives");
 					put(grammarAccess.getAbstractVOAccess().getAlternatives(), "rule__AbstractVO__Alternatives");
 					put(grammarAccess.getAbstractEntityAccess().getAlternatives(), "rule__AbstractEntity__Alternatives");
+					put(grammarAccess.getConstraintTargetAccess().getAlternatives(), "rule__ConstraintTarget__Alternatives");
 					put(grammarAccess.getVariableAccess().getAlternatives_9(), "rule__Variable__Alternatives_9");
 					put(grammarAccess.getLiteralAccess().getAlternatives(), "rule__Literal__Alternatives");
 					put(grammarAccess.getBooleanLiteralAccess().getValueAlternatives_1_0(), "rule__BooleanLiteral__ValueAlternatives_1_0");
