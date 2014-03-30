@@ -120,15 +120,17 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
     if ((target instanceof ExternalType)) {
       vars.add("vv");
     } else {
-      ValueObject vo = ((ValueObject) target);
-      EList<Variable> _variables_2 = vo.getVariables();
-      boolean _notEquals_1 = (!Objects.equal(_variables_2, null));
-      if (_notEquals_1) {
-        EList<Variable> _variables_3 = vo.getVariables();
-        for (final Variable v_1 : _variables_3) {
-          String _name_1 = v_1.getName();
-          String _plus = ("vv." + _name_1);
-          vars.add(_plus);
+      if ((target instanceof ValueObject)) {
+        ValueObject vo = ((ValueObject) target);
+        EList<Variable> _variables_2 = vo.getVariables();
+        boolean _notEquals_1 = (!Objects.equal(_variables_2, null));
+        if (_notEquals_1) {
+          EList<Variable> _variables_3 = vo.getVariables();
+          for (final Variable v_1 : _variables_3) {
+            String _name_1 = v_1.getName();
+            String _plus = ("vv." + _name_1);
+            vars.add(_plus);
+          }
         }
       }
     }

@@ -88,7 +88,7 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 		var ConstraintTarget target = constraint.target;
 		if (target instanceof ExternalType) {
 			vars.add("vv");
-		} else {
+		} else if (target instanceof ValueObject) {
 			var ValueObject vo = (target as ValueObject);
 			if (vo.variables != null) {
 				for (v : vo.variables) {
