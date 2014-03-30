@@ -128,7 +128,7 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
           EList<Variable> _variables_3 = vo.getVariables();
           for (final Variable v_1 : _variables_3) {
             String _name_1 = v_1.getName();
-            String _plus = ("vv." + _name_1);
+            String _plus = ("vv_" + _name_1);
             vars.add(_plus);
           }
         }

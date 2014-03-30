@@ -92,7 +92,7 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 			var ValueObject vo = (target as ValueObject);
 			if (vo.variables != null) {
 				for (v : vo.variables) {
-					vars.add("vv." + v.name);
+					vars.add("vv_" + v.name);
 				}
 			}
 		}
