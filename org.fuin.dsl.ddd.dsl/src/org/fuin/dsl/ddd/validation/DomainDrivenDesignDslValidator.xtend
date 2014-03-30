@@ -63,8 +63,12 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 			} else {
 				var String name = str.substring(start + 2, end);
 				if (!vars.contains(name)) {
-					error("A variable with the name '" + name + "' is unknown", constraint,
-						DomainDrivenDesignDslPackage$Literals::CONSTRAINT__MESSAGE, CONSTRAINT_MSG_UNKNOWN_VAR)
+					error(
+						"A variable with the name '" + name + "' is unknown", 
+						constraint,
+						DomainDrivenDesignDslPackage$Literals::CONSTRAINT__MESSAGE, 
+						CONSTRAINT_MSG_UNKNOWN_VAR
+						)
 					// Break
 					return
 				}

@@ -638,11 +638,15 @@ ruleConstraint returns [EObject current=null]
 	    }
 
 )
-)*(
+)*	otherlv_9='message' 
+    {
+    	newLeafNode(otherlv_9, grammarAccess.getConstraintAccess().getMessageKeyword_8());
+    }
 (
-		lv_message_9_0=RULE_STRING
+(
+		lv_message_10_0=RULE_STRING
 		{
-			newLeafNode(lv_message_9_0, grammarAccess.getConstraintAccess().getMessageSTRINGTerminalRuleCall_8_0()); 
+			newLeafNode(lv_message_10_0, grammarAccess.getConstraintAccess().getMessageSTRINGTerminalRuleCall_9_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -651,14 +655,18 @@ ruleConstraint returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"message",
-        		lv_message_9_0, 
+        		lv_message_10_0, 
         		"STRING");
 	    }
 
 )
-)	otherlv_10='}' 
+)	otherlv_11=';' 
     {
-    	newLeafNode(otherlv_10, grammarAccess.getConstraintAccess().getRightCurlyBracketKeyword_9());
+    	newLeafNode(otherlv_11, grammarAccess.getConstraintAccess().getSemicolonKeyword_10());
+    }
+	otherlv_12='}' 
+    {
+    	newLeafNode(otherlv_12, grammarAccess.getConstraintAccess().getRightCurlyBracketKeyword_11());
     }
 )
 ;

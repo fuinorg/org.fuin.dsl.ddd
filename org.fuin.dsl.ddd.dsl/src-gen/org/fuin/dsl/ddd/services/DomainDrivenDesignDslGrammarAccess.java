@@ -292,17 +292,19 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final Keyword cLeftCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		private final Assignment cVariablesAssignment_7 = (Assignment)cGroup.eContents().get(7);
 		private final RuleCall cVariablesVariableParserRuleCall_7_0 = (RuleCall)cVariablesAssignment_7.eContents().get(0);
-		private final Assignment cMessageAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final RuleCall cMessageSTRINGTerminalRuleCall_8_0 = (RuleCall)cMessageAssignment_8.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Keyword cMessageKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Assignment cMessageAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cMessageSTRINGTerminalRuleCall_9_0 = (RuleCall)cMessageAssignment_9.eContents().get(0);
+		private final Keyword cSemicolonKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		
 		//Constraint:
 		//	doc=DOC "constraint" name=ID "on" target=[ConstraintTarget] ("exception" exception=ID)? "{" variables+=Variable*
-		//	message=STRING "}";
+		//	"message" message=STRING ";" "}";
 		public ParserRule getRule() { return rule; }
 
 		//doc=DOC "constraint" name=ID "on" target=[ConstraintTarget] ("exception" exception=ID)? "{" variables+=Variable*
-		//message=STRING "}"
+		//"message" message=STRING ";" "}"
 		public Group getGroup() { return cGroup; }
 
 		//doc=DOC
@@ -353,14 +355,20 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		//Variable
 		public RuleCall getVariablesVariableParserRuleCall_7_0() { return cVariablesVariableParserRuleCall_7_0; }
 
+		//"message"
+		public Keyword getMessageKeyword_8() { return cMessageKeyword_8; }
+
 		//message=STRING
-		public Assignment getMessageAssignment_8() { return cMessageAssignment_8; }
+		public Assignment getMessageAssignment_9() { return cMessageAssignment_9; }
 
 		//STRING
-		public RuleCall getMessageSTRINGTerminalRuleCall_8_0() { return cMessageSTRINGTerminalRuleCall_8_0; }
+		public RuleCall getMessageSTRINGTerminalRuleCall_9_0() { return cMessageSTRINGTerminalRuleCall_9_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_10() { return cSemicolonKeyword_10; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
+		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
 	}
 
 	public class ValueObjectElements extends AbstractParserRuleElementFinder {
@@ -1895,7 +1903,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 
 	//Constraint:
 	//	doc=DOC "constraint" name=ID "on" target=[ConstraintTarget] ("exception" exception=ID)? "{" variables+=Variable*
-	//	message=STRING "}";
+	//	"message" message=STRING ";" "}";
 	public ConstraintElements getConstraintAccess() {
 		return (pConstraint != null) ? pConstraint : (pConstraint = new ConstraintElements());
 	}

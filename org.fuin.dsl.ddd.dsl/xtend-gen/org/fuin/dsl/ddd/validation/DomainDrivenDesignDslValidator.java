@@ -88,7 +88,8 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
             String _plus_2 = ("A variable with the name \'" + name);
             String _plus_3 = (_plus_2 + "\' is unknown");
             this.error(_plus_3, constraint, 
-              Literals.CONSTRAINT__MESSAGE, DomainDrivenDesignDslValidator.CONSTRAINT_MSG_UNKNOWN_VAR);
+              Literals.CONSTRAINT__MESSAGE, 
+              DomainDrivenDesignDslValidator.CONSTRAINT_MSG_UNKNOWN_VAR);
             return;
           }
           int _plus_4 = (end + 1);

@@ -41,7 +41,7 @@ Constraint:
 	doc=DOC 
 	'constraint' name=ID 'on' target=[ConstraintTarget] ('exception' exception=ID)? '{'
 		variables+=Variable* 
-		message=STRING
+		'message' message=STRING ';'
 	'}';
 	
 ValueObject:
