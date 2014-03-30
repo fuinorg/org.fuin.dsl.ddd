@@ -20,7 +20,6 @@ import org.eclipse.emf.ecore.util.InternalEList;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Message;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
 
 /**
@@ -103,14 +102,24 @@ public class ConstraintImpl extends AbstractElementImpl implements Constraint
   protected EList<Variable> variables;
 
   /**
-   * The cached value of the '{@link #getMessage() <em>Message</em>}' containment reference.
+   * The default value of the '{@link #getMessage() <em>Message</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getMessage()
    * @generated
    * @ordered
    */
-  protected Message message;
+  protected static final String MESSAGE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getMessage() <em>Message</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMessage()
+   * @generated
+   * @ordered
+   */
+  protected String message = MESSAGE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -241,7 +250,7 @@ public class ConstraintImpl extends AbstractElementImpl implements Constraint
    * <!-- end-user-doc -->
    * @generated
    */
-  public Message getMessage()
+  public String getMessage()
   {
     return message;
   }
@@ -251,37 +260,12 @@ public class ConstraintImpl extends AbstractElementImpl implements Constraint
    * <!-- end-user-doc -->
    * @generated
    */
-  public NotificationChain basicSetMessage(Message newMessage, NotificationChain msgs)
+  public void setMessage(String newMessage)
   {
-    Message oldMessage = message;
+    String oldMessage = message;
     message = newMessage;
     if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.CONSTRAINT__MESSAGE, oldMessage, newMessage);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setMessage(Message newMessage)
-  {
-    if (newMessage != message)
-    {
-      NotificationChain msgs = null;
-      if (message != null)
-        msgs = ((InternalEObject)message).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DomainDrivenDesignDslPackage.CONSTRAINT__MESSAGE, null, msgs);
-      if (newMessage != null)
-        msgs = ((InternalEObject)newMessage).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DomainDrivenDesignDslPackage.CONSTRAINT__MESSAGE, null, msgs);
-      msgs = basicSetMessage(newMessage, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.CONSTRAINT__MESSAGE, newMessage, newMessage));
+      eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.CONSTRAINT__MESSAGE, oldMessage, message));
   }
 
   /**
@@ -296,8 +280,6 @@ public class ConstraintImpl extends AbstractElementImpl implements Constraint
     {
       case DomainDrivenDesignDslPackage.CONSTRAINT__VARIABLES:
         return ((InternalEList<?>)getVariables()).basicRemove(otherEnd, msgs);
-      case DomainDrivenDesignDslPackage.CONSTRAINT__MESSAGE:
-        return basicSetMessage(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -352,7 +334,7 @@ public class ConstraintImpl extends AbstractElementImpl implements Constraint
         getVariables().addAll((Collection<? extends Variable>)newValue);
         return;
       case DomainDrivenDesignDslPackage.CONSTRAINT__MESSAGE:
-        setMessage((Message)newValue);
+        setMessage((String)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -381,7 +363,7 @@ public class ConstraintImpl extends AbstractElementImpl implements Constraint
         getVariables().clear();
         return;
       case DomainDrivenDesignDslPackage.CONSTRAINT__MESSAGE:
-        setMessage((Message)null);
+        setMessage(MESSAGE_EDEFAULT);
         return;
     }
     super.eUnset(featureID);
@@ -406,7 +388,7 @@ public class ConstraintImpl extends AbstractElementImpl implements Constraint
       case DomainDrivenDesignDslPackage.CONSTRAINT__VARIABLES:
         return variables != null && !variables.isEmpty();
       case DomainDrivenDesignDslPackage.CONSTRAINT__MESSAGE:
-        return message != null;
+        return MESSAGE_EDEFAULT == null ? message != null : !MESSAGE_EDEFAULT.equals(message);
     }
     return super.eIsSet(featureID);
   }
@@ -426,6 +408,8 @@ public class ConstraintImpl extends AbstractElementImpl implements Constraint
     result.append(doc);
     result.append(", exception: ");
     result.append(exception);
+    result.append(", message: ");
+    result.append(message);
     result.append(')');
     return result.toString();
   }

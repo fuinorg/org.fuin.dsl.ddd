@@ -205,11 +205,6 @@ public class DomainDrivenDesignDslAdapterFactory extends AdapterFactoryImpl
         return createOverriddenTypeMetaInfoAdapter();
       }
       @Override
-      public Adapter caseMessage(Message object)
-      {
-        return createMessageAdapter();
-      }
-      @Override
       public Adapter caseConstraintCall(ConstraintCall object)
       {
         return createConstraintCallAdapter();
@@ -647,21 +642,6 @@ public class DomainDrivenDesignDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createOverriddenTypeMetaInfoAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Message <em>Message</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Message
-   * @generated
-   */
-  public Adapter createMessageAdapter()
   {
     return null;
   }

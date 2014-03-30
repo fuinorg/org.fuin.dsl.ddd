@@ -121,29 +121,29 @@ public interface Constraint extends AbstractElement
   EList<Variable> getVariables();
 
   /**
-   * Returns the value of the '<em><b>Message</b></em>' containment reference.
+   * Returns the value of the '<em><b>Message</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Message</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Message</em>' attribute isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Message</em>' containment reference.
-   * @see #setMessage(Message)
+   * @return the value of the '<em>Message</em>' attribute.
+   * @see #setMessage(String)
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getConstraint_Message()
-   * @model containment="true"
+   * @model
    * @generated
    */
-  Message getMessage();
+  String getMessage();
 
   /**
-   * Sets the value of the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint#getMessage <em>Message</em>}' containment reference.
+   * Sets the value of the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint#getMessage <em>Message</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Message</em>' containment reference.
+   * @param value the new value of the '<em>Message</em>' attribute.
    * @see #getMessage()
    * @generated
    */
-  void setMessage(Message value);
+  void setMessage(String value);
 
 } // Constraint

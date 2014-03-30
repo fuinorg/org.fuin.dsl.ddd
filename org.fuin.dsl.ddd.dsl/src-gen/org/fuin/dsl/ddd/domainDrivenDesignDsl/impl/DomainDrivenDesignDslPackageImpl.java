@@ -33,7 +33,6 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Import;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Invariants;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Literal;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Message;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Method;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Namespace;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.NullLiteral;
@@ -234,13 +233,6 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * @generated
    */
   private EClass overriddenTypeMetaInfoEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass messageEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -662,9 +654,9 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getConstraint_Message()
+  public EAttribute getConstraint_Message()
   {
-    return (EReference)constraintEClass.getEStructuralFeatures().get(4);
+    return (EAttribute)constraintEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -1172,36 +1164,6 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getMessage()
-  {
-    return messageEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getMessage_Text()
-  {
-    return (EAttribute)messageEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getMessage_Variables()
-  {
-    return (EReference)messageEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getConstraintCall()
   {
     return constraintCallEClass;
@@ -1358,7 +1320,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     createEReference(constraintEClass, CONSTRAINT__TARGET);
     createEAttribute(constraintEClass, CONSTRAINT__EXCEPTION);
     createEReference(constraintEClass, CONSTRAINT__VARIABLES);
-    createEReference(constraintEClass, CONSTRAINT__MESSAGE);
+    createEAttribute(constraintEClass, CONSTRAINT__MESSAGE);
 
     valueObjectEClass = createEClass(VALUE_OBJECT);
 
@@ -1424,10 +1386,6 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
 
     overriddenTypeMetaInfoEClass = createEClass(OVERRIDDEN_TYPE_META_INFO);
     createEReference(overriddenTypeMetaInfoEClass, OVERRIDDEN_TYPE_META_INFO__META_INFO);
-
-    messageEClass = createEClass(MESSAGE);
-    createEAttribute(messageEClass, MESSAGE__TEXT);
-    createEReference(messageEClass, MESSAGE__VARIABLES);
 
     constraintCallEClass = createEClass(CONSTRAINT_CALL);
     createEReference(constraintCallEClass, CONSTRAINT_CALL__CONSTRAINT);
@@ -1535,7 +1493,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     initEReference(getConstraint_Target(), this.getConstraintTarget(), null, "target", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getConstraint_Exception(), ecorePackage.getEString(), "exception", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getConstraint_Variables(), this.getVariable(), null, "variables", null, 0, -1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getConstraint_Message(), this.getMessage(), null, "message", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getConstraint_Message(), ecorePackage.getEString(), "message", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(valueObjectEClass, ValueObject.class, "ValueObject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1601,10 +1559,6 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
 
     initEClass(overriddenTypeMetaInfoEClass, OverriddenTypeMetaInfo.class, "OverriddenTypeMetaInfo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getOverriddenTypeMetaInfo_MetaInfo(), this.getTypeMetaInfo(), null, "metaInfo", null, 0, 1, OverriddenTypeMetaInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(messageEClass, Message.class, "Message", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getMessage_Text(), ecorePackage.getEString(), "text", null, 0, 1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getMessage_Variables(), this.getVariable(), null, "variables", null, 0, -1, Message.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(constraintCallEClass, ConstraintCall.class, "ConstraintCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getConstraintCall_Constraint(), this.getConstraint(), null, "constraint", null, 0, 1, ConstraintCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

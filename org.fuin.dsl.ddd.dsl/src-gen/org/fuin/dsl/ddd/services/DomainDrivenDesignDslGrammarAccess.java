@@ -293,16 +293,16 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final Assignment cVariablesAssignment_7 = (Assignment)cGroup.eContents().get(7);
 		private final RuleCall cVariablesVariableParserRuleCall_7_0 = (RuleCall)cVariablesAssignment_7.eContents().get(0);
 		private final Assignment cMessageAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final RuleCall cMessageMessageParserRuleCall_8_0 = (RuleCall)cMessageAssignment_8.eContents().get(0);
+		private final RuleCall cMessageSTRINGTerminalRuleCall_8_0 = (RuleCall)cMessageAssignment_8.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		//Constraint:
 		//	doc=DOC "constraint" name=ID "on" target=[ConstraintTarget] ("exception" exception=ID)? "{" variables+=Variable*
-		//	message=Message "}";
+		//	message=STRING "}";
 		public ParserRule getRule() { return rule; }
 
 		//doc=DOC "constraint" name=ID "on" target=[ConstraintTarget] ("exception" exception=ID)? "{" variables+=Variable*
-		//message=Message "}"
+		//message=STRING "}"
 		public Group getGroup() { return cGroup; }
 
 		//doc=DOC
@@ -353,11 +353,11 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		//Variable
 		public RuleCall getVariablesVariableParserRuleCall_7_0() { return cVariablesVariableParserRuleCall_7_0; }
 
-		//message=Message
+		//message=STRING
 		public Assignment getMessageAssignment_8() { return cMessageAssignment_8; }
 
-		//Message
-		public RuleCall getMessageMessageParserRuleCall_8_0() { return cMessageMessageParserRuleCall_8_0; }
+		//STRING
+		public RuleCall getMessageSTRINGTerminalRuleCall_8_0() { return cMessageSTRINGTerminalRuleCall_8_0; }
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
@@ -1421,50 +1421,6 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		public Keyword getRightCurlyBracketKeyword_2() { return cRightCurlyBracketKeyword_2; }
 	}
 
-	public class MessageElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Message");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cMessageKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cTextAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cTextSTRINGTerminalRuleCall_1_0 = (RuleCall)cTextAssignment_1.eContents().get(0);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cLeftCurlyBracketKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cVariablesAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cVariablesVariableParserRuleCall_2_1_0 = (RuleCall)cVariablesAssignment_2_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_2_2 = (Keyword)cGroup_2.eContents().get(2);
-		
-		//Message:
-		//	"message" text=STRING ("{" variables+=Variable* "}")?;
-		public ParserRule getRule() { return rule; }
-
-		//"message" text=STRING ("{" variables+=Variable* "}")?
-		public Group getGroup() { return cGroup; }
-
-		//"message"
-		public Keyword getMessageKeyword_0() { return cMessageKeyword_0; }
-
-		//text=STRING
-		public Assignment getTextAssignment_1() { return cTextAssignment_1; }
-
-		//STRING
-		public RuleCall getTextSTRINGTerminalRuleCall_1_0() { return cTextSTRINGTerminalRuleCall_1_0; }
-
-		//("{" variables+=Variable* "}")?
-		public Group getGroup_2() { return cGroup_2; }
-
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_2_0() { return cLeftCurlyBracketKeyword_2_0; }
-
-		//variables+=Variable*
-		public Assignment getVariablesAssignment_2_1() { return cVariablesAssignment_2_1; }
-
-		//Variable
-		public RuleCall getVariablesVariableParserRuleCall_2_1_0() { return cVariablesVariableParserRuleCall_2_1_0; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_2_2() { return cRightCurlyBracketKeyword_2_2; }
-	}
-
 	public class ConstraintCallElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ConstraintCall");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -1788,7 +1744,6 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	private ConstraintsElements pConstraints;
 	private InvariantsElements pInvariants;
 	private OverriddenTypeMetaInfoElements pOverriddenTypeMetaInfo;
-	private MessageElements pMessage;
 	private ConstraintCallElements pConstraintCall;
 	private LiteralElements pLiteral;
 	private FQNElements pFQN;
@@ -1940,7 +1895,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 
 	//Constraint:
 	//	doc=DOC "constraint" name=ID "on" target=[ConstraintTarget] ("exception" exception=ID)? "{" variables+=Variable*
-	//	message=Message "}";
+	//	message=STRING "}";
 	public ConstraintElements getConstraintAccess() {
 		return (pConstraint != null) ? pConstraint : (pConstraint = new ConstraintElements());
 	}
@@ -2106,16 +2061,6 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	
 	public ParserRule getOverriddenTypeMetaInfoRule() {
 		return getOverriddenTypeMetaInfoAccess().getRule();
-	}
-
-	//Message:
-	//	"message" text=STRING ("{" variables+=Variable* "}")?;
-	public MessageElements getMessageAccess() {
-		return (pMessage != null) ? pMessage : (pMessage = new MessageElements());
-	}
-	
-	public ParserRule getMessageRule() {
-		return getMessageAccess().getRule();
 	}
 
 	//ConstraintCall:

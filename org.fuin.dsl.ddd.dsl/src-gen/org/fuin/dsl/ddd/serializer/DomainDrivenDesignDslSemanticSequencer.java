@@ -30,7 +30,6 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Import;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Invariants;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Message;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Method;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Namespace;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.NullLiteral;
@@ -168,12 +167,6 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 					return; 
 				}
 				else break;
-			case DomainDrivenDesignDslPackage.MESSAGE:
-				if(context == grammarAccess.getMessageRule()) {
-					sequence_Message(context, (Message) semanticObject); 
-					return; 
-				}
-				else break;
 			case DomainDrivenDesignDslPackage.METHOD:
 				if(context == grammarAccess.getMethodRule()) {
 					sequence_Method(context, (Method) semanticObject); 
@@ -298,7 +291,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *         target=[ConstraintTarget|ID] 
 	 *         exception=ID? 
 	 *         variables+=Variable* 
-	 *         message=Message
+	 *         message=STRING
 	 *     )
 	 */
 	protected void sequence_Constraint(EObject context, Constraint semanticObject) {
@@ -438,15 +431,6 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *     (calls+=ConstraintCall calls+=ConstraintCall*)
 	 */
 	protected void sequence_Invariants(EObject context, Invariants semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (text=STRING variables+=Variable*)
-	 */
-	protected void sequence_Message(EObject context, Message semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

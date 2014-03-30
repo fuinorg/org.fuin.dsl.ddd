@@ -41,7 +41,7 @@ Constraint:
 	doc=DOC 
 	'constraint' name=ID 'on' target=[ConstraintTarget] ('exception' exception=ID)? '{'
 		variables+=Variable* 
-		message=Message
+		message=STRING
 	'}';
 	
 ValueObject:
@@ -146,9 +146,6 @@ Invariants:
 
 OverriddenTypeMetaInfo:
 	'{' metaInfo=TypeMetaInfo '}';
-
-Message:
-	'message' text=STRING ('{' variables+=Variable* '}')?;
 
 ConstraintCall:
 	constraint=[Constraint] ('(' params+=Literal (',' params+=Literal)* ')')?;

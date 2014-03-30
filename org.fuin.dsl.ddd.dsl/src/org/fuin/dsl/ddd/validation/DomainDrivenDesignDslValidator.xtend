@@ -7,7 +7,9 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntity
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractVO
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variableimport org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ValueObject
 
 /**
  * Custom validation rules. 
@@ -49,7 +51,7 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 	@Check
 	def checkVariablesInConstraintMessage(Constraint constraint) {
 		var Set<String> vars = constraint.allVariables;
-		var String str = constraint.message.text;
+		var String str = constraint.message;
 		var int end = -1;
 		var int from = 0;
 		var int start = -1;
@@ -61,8 +63,8 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 			} else {
 				var String name = str.substring(start + 2, end);
 				if (!vars.contains(name)) {
-					error("A variable with the name '" + name + "' is unknown", constraint.message,
-						DomainDrivenDesignDslPackage$Literals::MESSAGE__TEXT, CONSTRAINT_MSG_UNKNOWN_VAR)
+					error("A variable with the name '" + name + "' is unknown", constraint,
+						DomainDrivenDesignDslPackage$Literals::CONSTRAINT__MESSAGE, CONSTRAINT_MSG_UNKNOWN_VAR)
 					// Break
 					return
 				}
@@ -79,9 +81,15 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 				vars.add(v.name);
 			}
 		}
-		if (constraint.message.variables != null) {
-			for (v : constraint.message.variables) {
-				vars.add(v.name);
+		var ConstraintTarget target = constraint.target;
+		if (target instanceof ExternalType) {
+			vars.add("vv");
+		} else {
+			var ValueObject vo = (target as ValueObject);
+			if (vo.variables != null) {
+				for (v : vo.variables) {
+					vars.add("vv." + v.name);
+				}
 			}
 		}
 		return vars;

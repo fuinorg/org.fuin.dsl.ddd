@@ -536,7 +536,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int CONSTRAINT__VARIABLES = ABSTRACT_ELEMENT_FEATURE_COUNT + 3;
 
   /**
-   * The feature id for the '<em><b>Message</b></em>' containment reference.
+   * The feature id for the '<em><b>Message</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -1478,43 +1478,6 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int OVERRIDDEN_TYPE_META_INFO_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.MessageImpl <em>Message</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.MessageImpl
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getMessage()
-   * @generated
-   */
-  int MESSAGE = 26;
-
-  /**
-   * The feature id for the '<em><b>Text</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MESSAGE__TEXT = 0;
-
-  /**
-   * The feature id for the '<em><b>Variables</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MESSAGE__VARIABLES = 1;
-
-  /**
-   * The number of structural features of the '<em>Message</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int MESSAGE_FEATURE_COUNT = 2;
-
-  /**
    * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConstraintCallImpl <em>Constraint Call</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1522,7 +1485,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getConstraintCall()
    * @generated
    */
-  int CONSTRAINT_CALL = 27;
+  int CONSTRAINT_CALL = 26;
 
   /**
    * The feature id for the '<em><b>Constraint</b></em>' reference.
@@ -1559,7 +1522,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getLiteral()
    * @generated
    */
-  int LITERAL = 28;
+  int LITERAL = 27;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1587,7 +1550,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getBooleanLiteral()
    * @generated
    */
-  int BOOLEAN_LITERAL = 29;
+  int BOOLEAN_LITERAL = 28;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1615,7 +1578,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getNullLiteral()
    * @generated
    */
-  int NULL_LITERAL = 30;
+  int NULL_LITERAL = 29;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1643,7 +1606,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getNumberLiteral()
    * @generated
    */
-  int NUMBER_LITERAL = 31;
+  int NUMBER_LITERAL = 30;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1671,7 +1634,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getStringLiteral()
    * @generated
    */
-  int STRING_LITERAL = 32;
+  int STRING_LITERAL = 31;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2023,15 +1986,15 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   EReference getConstraint_Variables();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint#getMessage <em>Message</em>}'.
+   * Returns the meta object for the attribute '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint#getMessage <em>Message</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Message</em>'.
+   * @return the meta object for the attribute '<em>Message</em>'.
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint#getMessage()
    * @see #getConstraint()
    * @generated
    */
-  EReference getConstraint_Message();
+  EAttribute getConstraint_Message();
 
   /**
    * Returns the meta object for class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.ValueObject <em>Value Object</em>}'.
@@ -2569,38 +2532,6 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   EReference getOverriddenTypeMetaInfo_MetaInfo();
 
   /**
-   * Returns the meta object for class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Message <em>Message</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Message</em>'.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Message
-   * @generated
-   */
-  EClass getMessage();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Message#getText <em>Text</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Text</em>'.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Message#getText()
-   * @see #getMessage()
-   * @generated
-   */
-  EAttribute getMessage_Text();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Message#getVariables <em>Variables</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Variables</em>'.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Message#getVariables()
-   * @see #getMessage()
-   * @generated
-   */
-  EReference getMessage_Variables();
-
-  /**
    * Returns the meta object for class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintCall <em>Constraint Call</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2987,12 +2918,12 @@ public interface DomainDrivenDesignDslPackage extends EPackage
     EReference CONSTRAINT__VARIABLES = eINSTANCE.getConstraint_Variables();
 
     /**
-     * The meta object literal for the '<em><b>Message</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Message</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CONSTRAINT__MESSAGE = eINSTANCE.getConstraint_Message();
+    EAttribute CONSTRAINT__MESSAGE = eINSTANCE.getConstraint_Message();
 
     /**
      * The meta object literal for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ValueObjectImpl <em>Value Object</em>}' class.
@@ -3423,32 +3354,6 @@ public interface DomainDrivenDesignDslPackage extends EPackage
      * @generated
      */
     EReference OVERRIDDEN_TYPE_META_INFO__META_INFO = eINSTANCE.getOverriddenTypeMetaInfo_MetaInfo();
-
-    /**
-     * The meta object literal for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.MessageImpl <em>Message</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.MessageImpl
-     * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getMessage()
-     * @generated
-     */
-    EClass MESSAGE = eINSTANCE.getMessage();
-
-    /**
-     * The meta object literal for the '<em><b>Text</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute MESSAGE__TEXT = eINSTANCE.getMessage_Text();
-
-    /**
-     * The meta object literal for the '<em><b>Variables</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference MESSAGE__VARIABLES = eINSTANCE.getMessage_Variables();
 
     /**
      * The meta object literal for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConstraintCallImpl <em>Constraint Call</em>}' class.

@@ -7,10 +7,12 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.validation.Check;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractVO;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage.Literals;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Message;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Method;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ValueObject;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
 import org.fuin.dsl.ddd.validation.AbstractDomainDrivenDesignDslValidator;
 
@@ -58,8 +60,7 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
   @Check
   public void checkVariablesInConstraintMessage(final Constraint constraint) {
     Set<String> vars = this.allVariables(constraint);
-    Message _message = constraint.getMessage();
-    String str = _message.getText();
+    String str = constraint.getMessage();
     int end = (-1);
     int from = 0;
     int start = (-1);
@@ -86,9 +87,8 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
           if (_not) {
             String _plus_2 = ("A variable with the name \'" + name);
             String _plus_3 = (_plus_2 + "\' is unknown");
-            Message _message_1 = constraint.getMessage();
-            this.error(_plus_3, _message_1, 
-              Literals.MESSAGE__TEXT, DomainDrivenDesignDslValidator.CONSTRAINT_MSG_UNKNOWN_VAR);
+            this.error(_plus_3, constraint, 
+              Literals.CONSTRAINT__MESSAGE, DomainDrivenDesignDslValidator.CONSTRAINT_MSG_UNKNOWN_VAR);
             return;
           }
           int _plus_4 = (end + 1);
@@ -115,15 +115,20 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
         vars.add(_name);
       }
     }
-    Message _message = constraint.getMessage();
-    EList<Variable> _variables_2 = _message.getVariables();
-    boolean _notEquals_1 = (!Objects.equal(_variables_2, null));
-    if (_notEquals_1) {
-      Message _message_1 = constraint.getMessage();
-      EList<Variable> _variables_3 = _message_1.getVariables();
-      for (final Variable v_1 : _variables_3) {
-        String _name_1 = v_1.getName();
-        vars.add(_name_1);
+    ConstraintTarget target = constraint.getTarget();
+    if ((target instanceof ExternalType)) {
+      vars.add("vv");
+    } else {
+      ValueObject vo = ((ValueObject) target);
+      EList<Variable> _variables_2 = vo.getVariables();
+      boolean _notEquals_1 = (!Objects.equal(_variables_2, null));
+      if (_notEquals_1) {
+        EList<Variable> _variables_3 = vo.getVariables();
+        for (final Variable v_1 : _variables_3) {
+          String _name_1 = v_1.getName();
+          String _plus = ("vv." + _name_1);
+          vars.add(_plus);
+        }
       }
     }
     return vars;

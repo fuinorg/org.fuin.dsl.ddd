@@ -80,8 +80,6 @@ public class DomainDrivenDesignDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getInvariantsAccess().getGroup(), "rule__Invariants__Group__0");
 					put(grammarAccess.getInvariantsAccess().getGroup_2(), "rule__Invariants__Group_2__0");
 					put(grammarAccess.getOverriddenTypeMetaInfoAccess().getGroup(), "rule__OverriddenTypeMetaInfo__Group__0");
-					put(grammarAccess.getMessageAccess().getGroup(), "rule__Message__Group__0");
-					put(grammarAccess.getMessageAccess().getGroup_2(), "rule__Message__Group_2__0");
 					put(grammarAccess.getConstraintCallAccess().getGroup(), "rule__ConstraintCall__Group__0");
 					put(grammarAccess.getConstraintCallAccess().getGroup_1(), "rule__ConstraintCall__Group_1__0");
 					put(grammarAccess.getConstraintCallAccess().getGroup_1_2(), "rule__ConstraintCall__Group_1_2__0");
@@ -180,8 +178,6 @@ public class DomainDrivenDesignDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getInvariantsAccess().getCallsAssignment_1(), "rule__Invariants__CallsAssignment_1");
 					put(grammarAccess.getInvariantsAccess().getCallsAssignment_2_1(), "rule__Invariants__CallsAssignment_2_1");
 					put(grammarAccess.getOverriddenTypeMetaInfoAccess().getMetaInfoAssignment_1(), "rule__OverriddenTypeMetaInfo__MetaInfoAssignment_1");
-					put(grammarAccess.getMessageAccess().getTextAssignment_1(), "rule__Message__TextAssignment_1");
-					put(grammarAccess.getMessageAccess().getVariablesAssignment_2_1(), "rule__Message__VariablesAssignment_2_1");
 					put(grammarAccess.getConstraintCallAccess().getConstraintAssignment_0(), "rule__ConstraintCall__ConstraintAssignment_0");
 					put(grammarAccess.getConstraintCallAccess().getParamsAssignment_1_1(), "rule__ConstraintCall__ParamsAssignment_1_1");
 					put(grammarAccess.getConstraintCallAccess().getParamsAssignment_1_2_1(), "rule__ConstraintCall__ParamsAssignment_1_2_1");

@@ -90,7 +90,6 @@ public class DomainDrivenDesignDslFactoryImpl extends EFactoryImpl implements Do
       case DomainDrivenDesignDslPackage.CONSTRAINTS: return createConstraints();
       case DomainDrivenDesignDslPackage.INVARIANTS: return createInvariants();
       case DomainDrivenDesignDslPackage.OVERRIDDEN_TYPE_META_INFO: return createOverriddenTypeMetaInfo();
-      case DomainDrivenDesignDslPackage.MESSAGE: return createMessage();
       case DomainDrivenDesignDslPackage.CONSTRAINT_CALL: return createConstraintCall();
       case DomainDrivenDesignDslPackage.LITERAL: return createLiteral();
       case DomainDrivenDesignDslPackage.BOOLEAN_LITERAL: return createBooleanLiteral();
@@ -386,17 +385,6 @@ public class DomainDrivenDesignDslFactoryImpl extends EFactoryImpl implements Do
   {
     OverriddenTypeMetaInfoImpl overriddenTypeMetaInfo = new OverriddenTypeMetaInfoImpl();
     return overriddenTypeMetaInfo;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Message createMessage()
-  {
-    MessageImpl message = new MessageImpl();
-    return message;
   }
 
   /**
