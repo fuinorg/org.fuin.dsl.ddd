@@ -46,7 +46,7 @@ Constraint:
 	
 ValueObject:
 	doc=DOC 
-	'value-object' name=ID '{'
+	'value-object' name=ID ('base' base=[ExternalType])? '{'
 		metaInfo=TypeMetaInfo
 		variables+=Variable*
 		constructors+=Constructor*
@@ -55,7 +55,7 @@ ValueObject:
 
 EntityId:
 	doc=DOC 
-	'entity-id' name=ID '{'
+	'entity-id' name=ID ('base' base=[ExternalType])? '{'
 		metaInfo=TypeMetaInfo
 		variables+=Variable*
 		constructors+=Constructor*
@@ -64,7 +64,7 @@ EntityId:
 
 AggregateId:
 	doc=DOC 
-	'aggregate-id' name=ID '{'
+	'aggregate-id' name=ID ('base' base=[ExternalType])? '{'
 		metaInfo=TypeMetaInfo
 		variables+=Variable*
 		constructors+=Constructor*

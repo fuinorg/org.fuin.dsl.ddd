@@ -352,13 +352,22 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int ABSTRACT_ENTITY_ID__METHODS = ABSTRACT_VO__METHODS;
 
   /**
+   * The feature id for the '<em><b>Base</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ABSTRACT_ENTITY_ID__BASE = ABSTRACT_VO_FEATURE_COUNT + 0;
+
+  /**
    * The number of structural features of the '<em>Abstract Entity Id</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ABSTRACT_ENTITY_ID_FEATURE_COUNT = ABSTRACT_VO_FEATURE_COUNT + 0;
+  int ABSTRACT_ENTITY_ID_FEATURE_COUNT = ABSTRACT_VO_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AbstractEntityImpl <em>Abstract Entity</em>}' class.
@@ -618,13 +627,22 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int VALUE_OBJECT__METHODS = ABSTRACT_VO__METHODS;
 
   /**
+   * The feature id for the '<em><b>Base</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VALUE_OBJECT__BASE = ABSTRACT_VO_FEATURE_COUNT + 0;
+
+  /**
    * The number of structural features of the '<em>Value Object</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VALUE_OBJECT_FEATURE_COUNT = ABSTRACT_VO_FEATURE_COUNT + 0;
+  int VALUE_OBJECT_FEATURE_COUNT = ABSTRACT_VO_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.EntityIdImpl <em>Entity Id</em>}' class.
@@ -689,6 +707,15 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @ordered
    */
   int ENTITY_ID__METHODS = ABSTRACT_ENTITY_ID__METHODS;
+
+  /**
+   * The feature id for the '<em><b>Base</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENTITY_ID__BASE = ABSTRACT_ENTITY_ID__BASE;
 
   /**
    * The number of structural features of the '<em>Entity Id</em>' class.
@@ -762,6 +789,15 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @ordered
    */
   int AGGREGATE_ID__METHODS = ABSTRACT_ENTITY_ID__METHODS;
+
+  /**
+   * The feature id for the '<em><b>Base</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AGGREGATE_ID__BASE = ABSTRACT_ENTITY_ID__BASE;
 
   /**
    * The number of structural features of the '<em>Aggregate Id</em>' class.
@@ -1856,6 +1892,17 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   EClass getAbstractEntityId();
 
   /**
+   * Returns the meta object for the reference '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntityId#getBase <em>Base</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Base</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntityId#getBase()
+   * @see #getAbstractEntityId()
+   * @generated
+   */
+  EReference getAbstractEntityId_Base();
+
+  /**
    * Returns the meta object for class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntity <em>Abstract Entity</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2014,6 +2061,17 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @generated
    */
   EClass getValueObject();
+
+  /**
+   * Returns the meta object for the reference '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.ValueObject#getBase <em>Base</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Base</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.ValueObject#getBase()
+   * @see #getValueObject()
+   * @generated
+   */
+  EReference getValueObject_Base();
 
   /**
    * Returns the meta object for class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.EntityId <em>Entity Id</em>}'.
@@ -2826,6 +2884,14 @@ public interface DomainDrivenDesignDslPackage extends EPackage
     EClass ABSTRACT_ENTITY_ID = eINSTANCE.getAbstractEntityId();
 
     /**
+     * The meta object literal for the '<em><b>Base</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ABSTRACT_ENTITY_ID__BASE = eINSTANCE.getAbstractEntityId_Base();
+
+    /**
      * The meta object literal for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AbstractEntityImpl <em>Abstract Entity</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -2954,6 +3020,14 @@ public interface DomainDrivenDesignDslPackage extends EPackage
      * @generated
      */
     EClass VALUE_OBJECT = eINSTANCE.getValueObject();
+
+    /**
+     * The meta object literal for the '<em><b>Base</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference VALUE_OBJECT__BASE = eINSTANCE.getValueObject_Base();
 
     /**
      * The meta object literal for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.EntityIdImpl <em>Entity Id</em>}' class.
