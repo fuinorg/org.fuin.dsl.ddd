@@ -37,5 +37,18 @@ class DomainDrivenDesignDslQuickfixProvider extends org.eclipse.xtext.ui.editor.
 		]
 				
 	}	
+
+	@Fix(DomainDrivenDesignDslValidator::VO_CANNOT_REF_ENTITY)
+	def changeAbstractEntityToId(Issue issue, IssueResolutionAcceptor acceptor) {
+		
+		val String idType = issue.data.get(0);
+		
+		acceptor.accept(issue, 'Change to entity ID', null, null) [
+			context |
+			val xtextDocument = context.xtextDocument
+			xtextDocument.replace(issue.offset, issue.length, idType)
+		]
+				
+	}	
 	
 }

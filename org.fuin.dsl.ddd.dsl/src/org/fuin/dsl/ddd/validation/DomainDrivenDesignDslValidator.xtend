@@ -11,6 +11,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variableimport org.fuin.dsl.ddd.d
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ValueObject
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity
 
 /**
  * Custom validation rules. 
@@ -26,6 +27,8 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 	public static val CONSTRAINT_MSG_UNKNOWN_VAR = 'constraintMsgUnknownVar'
 
 	public static val REF_TO_AGGREGATE_NOT_ALLOWED = 'refToAggregateNotAllowed'
+
+	public static val VO_CANNOT_REF_ENTITY = 'voCannotRefEntity'
 
 	@Check
 	def checkNameStartsWithCapital(Variable variable) {
@@ -116,6 +119,28 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 				  )
 		}
 		
+	}
+
+		@Check
+	def checkNoRefToEntity(ValueObject vo) {
+
+		for (v : vo.variables) {
+			if (v.type instanceof AbstractEntity) {
+				var String idTypeName;
+				if (v.type instanceof Entity) {
+					idTypeName = (v.type as Entity).idType.name
+				}  else {
+					// Aggregate
+					idTypeName = (v.type as Aggregate).idType.name
+				}
+				error("A reference from a value object to an entity is not allowed", 
+						v,
+						DomainDrivenDesignDslPackage$Literals::VARIABLE__TYPE, 
+						VO_CANNOT_REF_ENTITY,
+						idTypeName 
+					  )
+			}
+		}		
 	}
 	
 }

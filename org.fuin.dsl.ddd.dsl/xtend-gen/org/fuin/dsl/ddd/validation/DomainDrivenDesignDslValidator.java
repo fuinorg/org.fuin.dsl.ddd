@@ -5,12 +5,15 @@ import java.util.HashSet;
 import java.util.Set;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.validation.Check;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntity;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractVO;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage.Literals;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.EntityId;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Method;
@@ -33,6 +36,8 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
   public final static String CONSTRAINT_MSG_UNKNOWN_VAR = "constraintMsgUnknownVar";
   
   public final static String REF_TO_AGGREGATE_NOT_ALLOWED = "refToAggregateNotAllowed";
+  
+  public final static String VO_CANNOT_REF_ENTITY = "voCannotRefEntity";
   
   @Check
   public void checkNameStartsWithCapital(final Variable variable) {
@@ -153,6 +158,32 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
       this.error("A direct reference to an aggregates is not allowed", variable, 
         Literals.VARIABLE__TYPE, 
         DomainDrivenDesignDslValidator.REF_TO_AGGREGATE_NOT_ALLOWED, _name);
+    }
+  }
+  
+  @Check
+  public void checkNoRefToEntity(final ValueObject vo) {
+    EList<Variable> _variables = vo.getVariables();
+    for (final Variable v : _variables) {
+      Type _type = v.getType();
+      if ((_type instanceof AbstractEntity)) {
+        String idTypeName = null;
+        Type _type_1 = v.getType();
+        if ((_type_1 instanceof Entity)) {
+          Type _type_2 = v.getType();
+          EntityId _idType = ((Entity) _type_2).getIdType();
+          String _name = _idType.getName();
+          idTypeName = _name;
+        } else {
+          Type _type_3 = v.getType();
+          AggregateId _idType_1 = ((Aggregate) _type_3).getIdType();
+          String _name_1 = _idType_1.getName();
+          idTypeName = _name_1;
+        }
+        this.error("A reference from a value object to an entity is not allowed", v, 
+          Literals.VARIABLE__TYPE, 
+          DomainDrivenDesignDslValidator.VO_CANNOT_REF_ENTITY, idTypeName);
+      }
     }
   }
 }
