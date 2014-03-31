@@ -974,13 +974,22 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int ENTITY__ID_TYPE = ABSTRACT_ENTITY_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Root</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENTITY__ROOT = ABSTRACT_ENTITY_FEATURE_COUNT + 1;
+
+  /**
    * The number of structural features of the '<em>Entity</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ENTITY_FEATURE_COUNT = ABSTRACT_ENTITY_FEATURE_COUNT + 1;
+  int ENTITY_FEATURE_COUNT = ABSTRACT_ENTITY_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AggregateImpl <em>Aggregate</em>}' class.
@@ -2112,6 +2121,17 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   EReference getEntity_IdType();
 
   /**
+   * Returns the meta object for the reference '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity#getRoot <em>Root</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Root</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity#getRoot()
+   * @see #getEntity()
+   * @generated
+   */
+  EReference getEntity_Root();
+
+  /**
    * Returns the meta object for class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate <em>Aggregate</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3024,6 +3044,14 @@ public interface DomainDrivenDesignDslPackage extends EPackage
      * @generated
      */
     EReference ENTITY__ID_TYPE = eINSTANCE.getEntity_IdType();
+
+    /**
+     * The meta object literal for the '<em><b>Root</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ENTITY__ROOT = eINSTANCE.getEntity_Root();
 
     /**
      * The meta object literal for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AggregateImpl <em>Aggregate</em>}' class.

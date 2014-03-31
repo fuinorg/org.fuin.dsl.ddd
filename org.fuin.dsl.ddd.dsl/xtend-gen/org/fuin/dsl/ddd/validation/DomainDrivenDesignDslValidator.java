@@ -6,12 +6,15 @@ import java.util.Set;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.xtext.validation.Check;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractVO;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage.Literals;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Method;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Type;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ValueObject;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
 import org.fuin.dsl.ddd.validation.AbstractDomainDrivenDesignDslValidator;
@@ -28,6 +31,8 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
   public final static String EVENT_NOT_ALLOWED_FOR_VO = "eventNotAllowedForVO";
   
   public final static String CONSTRAINT_MSG_UNKNOWN_VAR = "constraintMsgUnknownVar";
+  
+  public final static String REF_TO_AGGREGATE_NOT_ALLOWED = "refToAggregateNotAllowed";
   
   @Check
   public void checkNameStartsWithCapital(final Variable variable) {
@@ -135,5 +140,19 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
       }
     }
     return vars;
+  }
+  
+  @Check
+  public void checkNoRefToAggregate(final Variable variable) {
+    Type _type = variable.getType();
+    if ((_type instanceof Aggregate)) {
+      Type _type_1 = variable.getType();
+      Aggregate aggregate = ((Aggregate) _type_1);
+      AggregateId _idType = aggregate.getIdType();
+      String _name = _idType.getName();
+      this.error("A direct reference to an aggregates is not allowed", variable, 
+        Literals.VARIABLE__TYPE, 
+        DomainDrivenDesignDslValidator.REF_TO_AGGREGATE_NOT_ALLOWED, _name);
+    }
   }
 }

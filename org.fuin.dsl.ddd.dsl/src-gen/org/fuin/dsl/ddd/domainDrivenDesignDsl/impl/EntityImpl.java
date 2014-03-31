@@ -9,6 +9,7 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.EntityId;
@@ -21,6 +22,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.EntityId;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.EntityImpl#getIdType <em>Id Type</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.EntityImpl#getRoot <em>Root</em>}</li>
  * </ul>
  * </p>
  *
@@ -37,6 +39,16 @@ public class EntityImpl extends AbstractEntityImpl implements Entity
    * @ordered
    */
   protected EntityId idType;
+
+  /**
+   * The cached value of the '{@link #getRoot() <em>Root</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getRoot()
+   * @generated
+   * @ordered
+   */
+  protected Aggregate root;
 
   /**
    * <!-- begin-user-doc -->
@@ -107,6 +119,49 @@ public class EntityImpl extends AbstractEntityImpl implements Entity
    * <!-- end-user-doc -->
    * @generated
    */
+  public Aggregate getRoot()
+  {
+    if (root != null && root.eIsProxy())
+    {
+      InternalEObject oldRoot = (InternalEObject)root;
+      root = (Aggregate)eResolveProxy(oldRoot);
+      if (root != oldRoot)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, DomainDrivenDesignDslPackage.ENTITY__ROOT, oldRoot, root));
+      }
+    }
+    return root;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Aggregate basicGetRoot()
+  {
+    return root;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setRoot(Aggregate newRoot)
+  {
+    Aggregate oldRoot = root;
+    root = newRoot;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.ENTITY__ROOT, oldRoot, root));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -115,6 +170,9 @@ public class EntityImpl extends AbstractEntityImpl implements Entity
       case DomainDrivenDesignDslPackage.ENTITY__ID_TYPE:
         if (resolve) return getIdType();
         return basicGetIdType();
+      case DomainDrivenDesignDslPackage.ENTITY__ROOT:
+        if (resolve) return getRoot();
+        return basicGetRoot();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -131,6 +189,9 @@ public class EntityImpl extends AbstractEntityImpl implements Entity
     {
       case DomainDrivenDesignDslPackage.ENTITY__ID_TYPE:
         setIdType((EntityId)newValue);
+        return;
+      case DomainDrivenDesignDslPackage.ENTITY__ROOT:
+        setRoot((Aggregate)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -149,6 +210,9 @@ public class EntityImpl extends AbstractEntityImpl implements Entity
       case DomainDrivenDesignDslPackage.ENTITY__ID_TYPE:
         setIdType((EntityId)null);
         return;
+      case DomainDrivenDesignDslPackage.ENTITY__ROOT:
+        setRoot((Aggregate)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -165,6 +229,8 @@ public class EntityImpl extends AbstractEntityImpl implements Entity
     {
       case DomainDrivenDesignDslPackage.ENTITY__ID_TYPE:
         return idType != null;
+      case DomainDrivenDesignDslPackage.ENTITY__ROOT:
+        return root != null;
     }
     return super.eIsSet(featureID);
   }

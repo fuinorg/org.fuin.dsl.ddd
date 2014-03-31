@@ -25,4 +25,17 @@ class DomainDrivenDesignDslQuickfixProvider extends org.eclipse.xtext.ui.editor.
 		]
 	}
 	
+	@Fix(DomainDrivenDesignDslValidator::REF_TO_AGGREGATE_NOT_ALLOWED)
+	def changeAggregateToId(Issue issue, IssueResolutionAcceptor acceptor) {
+		
+		val String idType = issue.data.get(0);
+		
+		acceptor.accept(issue, 'Change to aggregate ID', null, null) [
+			context |
+			val xtextDocument = context.xtextDocument
+			xtextDocument.replace(issue.offset, issue.length, idType)
+		]
+				
+	}	
+	
 }

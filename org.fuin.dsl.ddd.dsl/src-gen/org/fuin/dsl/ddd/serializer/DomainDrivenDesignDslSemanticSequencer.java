@@ -355,6 +355,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *         doc=DOC 
 	 *         name=ID 
 	 *         idType=[EntityId|ID] 
+	 *         root=[Aggregate|ID] 
 	 *         metaInfo=TypeMetaInfo 
 	 *         variables+=Variable* 
 	 *         constructors+=Constructor* 

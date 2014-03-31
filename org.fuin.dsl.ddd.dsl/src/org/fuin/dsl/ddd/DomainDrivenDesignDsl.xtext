@@ -87,7 +87,7 @@ EnumInstance:
 	
 Entity:
 	doc=DOC 
-	'entity' name=ID 'identifier' idType=[EntityId] '{'
+	'entity' name=ID 'identifier' idType=[EntityId] 'root' root=[Aggregate] '{'
 		metaInfo=TypeMetaInfo
 		variables+=Variable*
 		constructors+=Constructor*

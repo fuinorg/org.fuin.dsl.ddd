@@ -10,6 +10,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variableimport org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ValueObject
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate
 
 /**
  * Custom validation rules. 
@@ -23,6 +24,8 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 	public static val EVENT_NOT_ALLOWED_FOR_VO = 'eventNotAllowedForVO'
 
 	public static val CONSTRAINT_MSG_UNKNOWN_VAR = 'constraintMsgUnknownVar'
+
+	public static val REF_TO_AGGREGATE_NOT_ALLOWED = 'refToAggregateNotAllowed'
 
 	@Check
 	def checkNameStartsWithCapital(Variable variable) {
@@ -99,5 +102,20 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 		return vars;
 	}
 
-
+	@Check
+	def checkNoRefToAggregate(Variable variable) {
+		
+		if (variable.type instanceof Aggregate) {
+			var Aggregate aggregate = (variable.type as Aggregate);
+			
+			error("A direct reference to an aggregates is not allowed", 
+					variable,
+					DomainDrivenDesignDslPackage$Literals::VARIABLE__TYPE, 
+					REF_TO_AGGREGATE_NOT_ALLOWED,
+					aggregate.idType.name 
+				  )
+		}
+		
+	}
+	
 }
