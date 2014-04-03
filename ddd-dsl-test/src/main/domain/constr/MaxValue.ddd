@@ -1,0 +1,17 @@
+namespace constr {
+
+    import types.*;
+
+	/**
+	 * Makes sure a numeric is not greater than a given value.
+ 	 */
+	constraint MaxValue on Long {
+
+		/** Expected maximum value (inclusive). */
+		Long expected;
+
+		message "Expected a maximum value of ${expected}, but actual was: ${vv}";
+		
+	}
+
+}

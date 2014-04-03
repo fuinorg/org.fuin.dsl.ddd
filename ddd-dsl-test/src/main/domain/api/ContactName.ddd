@@ -1,0 +1,17 @@
+namespace api {
+	
+	import types.*;
+	import constr.*;
+	
+	/**
+	 * Name of a contact.
+	 */
+	value-object ContactName base String {
+		
+		/** Internal value. */
+		String value invariants Length(1, 100);
+		
+	}
+	
+	
+}

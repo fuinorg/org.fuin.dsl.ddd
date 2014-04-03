@@ -1,0 +1,16 @@
+namespace api {
+	
+	import types.*;
+	import constr.*;
+	
+	/**
+	 * Represents a postal ZIP code.
+	 */
+	value-object ZipCode base String {
+		
+		/** Internal value. */
+		String value invariants Length(4, 6);
+		
+	}
+		
+}

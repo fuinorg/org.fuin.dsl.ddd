@@ -1,0 +1,16 @@
+namespace api {
+
+	import types.*;
+	import constr.*;
+
+	/**
+	 * Identifies a contact uniquely in the whole context.
+	 */
+	aggregate-id ContactId base String {
+		
+		/** Persistent value. */
+		UUID val;
+		
+	}
+
+}

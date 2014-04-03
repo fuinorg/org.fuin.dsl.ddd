@@ -1,0 +1,17 @@
+namespace api {
+	
+	import types.*;
+	import constr.*;
+	
+	/**
+	 * Represents a city name.
+	 */
+	value-object City base String {
+		
+		/** Internal value. */
+		String value invariants Length(1, 100);
+		
+	}
+	
+	
+}

@@ -1,0 +1,18 @@
+namespace types {
+
+	type Byte;
+	type Short;
+	type Integer;
+	type Long;
+	type Float;
+	type Double;
+	type Boolean;
+	type Character;
+	type String;
+	type Date;
+	type Time;
+	type Timestamp;
+	type UUID;
+	type BigDecimal;
+	
+}

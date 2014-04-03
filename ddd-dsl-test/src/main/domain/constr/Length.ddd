@@ -1,0 +1,20 @@
+namespace constr {
+
+    import types.*;
+
+	/**
+	 * Makes sure a string has a defined length (min/max).
+	 */
+	constraint Length on String {
+		
+		/** Expected minimum length (inclusive). */
+		Integer min;
+
+		/** Expected maximum length (inclusive). */
+		Integer max;
+
+        message "Expected a length between ${min} and ${max} characters, but value was: '${vv}'";
+
+	}
+	
+}

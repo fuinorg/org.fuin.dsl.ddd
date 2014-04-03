@@ -1,0 +1,32 @@
+namespace api {
+
+	import types.*;
+	import constr.*;
+
+	/**
+	 * Presents the different types of an address that are possible to register for a contact.
+	 */
+	enum AddressType {
+		
+		/** Persistent representation of the value object. */
+		Long val invariants ValueRange(1, 100);
+
+		/** Human readable description. */
+		String display invariants Length(1, 20);
+		
+		instances {
+			
+			/** Office. */
+			WORK(1, "Office");
+			
+			/** Private. */
+	    	PRIVATE(2, "Private");
+	    	
+			/** Vacation. */
+	    	VACATION(3, "Vacation");
+			
+		}
+		
+	}
+	
+}

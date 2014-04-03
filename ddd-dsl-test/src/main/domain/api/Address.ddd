@@ -1,0 +1,21 @@
+namespace api {
+	
+	import types.*;
+	import api.*;
+	import constr.*;
+	
+	/**
+	 * Value object representing an address..
+	 */
+	value-object Address {
+		
+	    StreetAndNumber streetAndNumber;
+	    
+	    ZipCode zipCode;
+	    
+	    City city;
+		
+	}
+	
+	
+}

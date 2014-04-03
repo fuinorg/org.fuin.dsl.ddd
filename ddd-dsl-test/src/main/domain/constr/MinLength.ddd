@@ -1,0 +1,17 @@
+namespace constr {
+
+    import types.*;
+
+	/**
+	 * Makes sure a string has at least a given length.
+	 */
+	constraint MinLength on String {
+	
+		/** Expected minimum length (inclusive). */
+		Integer expected;
+		
+		message "Expected a minimum length of ${expected} characters, but value was: ${vv}";
+		
+	}
+	
+}

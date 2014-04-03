@@ -1,0 +1,17 @@
+namespace constr {
+
+    import types.*;
+
+	/**
+	 * Makes sure a numeric is not less than a given value.
+	 */
+	constraint MinValue on Long {
+
+		/** Expected minimum value (inclusive). */
+		Long expected;
+		
+		message "Expected a minimum value of ${expected}, but actual was: ${vv}";
+		
+	}
+	
+}

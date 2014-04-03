@@ -1,0 +1,17 @@
+namespace api {
+	
+	import types.*;
+	import constr.*;
+	
+	/**
+	 * Represents a street and house number.
+	 */
+	value-object StreetAndNumber base String {
+		
+		/** Internal value. */
+		String value invariants Length(1, 100);
+		
+	}
+	
+	
+}
