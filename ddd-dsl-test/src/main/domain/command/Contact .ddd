@@ -9,10 +9,11 @@ namespace command {
 	 */
 	aggregate Contact identifier ContactId {
 		
+		/** List of addresses. */
+		Address* addresses;		
+		
 		/** Creates a new classification tree. */
 		constructor create {
-
-			Address* addresses;
 
 			/** Identifier to use for the new contact. */			
 			ContactId id;
