@@ -53,6 +53,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 				if(context == grammarAccess.getAbstractElementRule() ||
 				   context == grammarAccess.getAbstractEntityRule() ||
 				   context == grammarAccess.getAggregateRule() ||
+				   context == grammarAccess.getInternalTypeRule() ||
 				   context == grammarAccess.getTypeRule()) {
 					sequence_Aggregate(context, (Aggregate) semanticObject); 
 					return; 
@@ -63,6 +64,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 				   context == grammarAccess.getAbstractEntityIdRule() ||
 				   context == grammarAccess.getAbstractVORule() ||
 				   context == grammarAccess.getAggregateIdRule() ||
+				   context == grammarAccess.getInternalTypeRule() ||
 				   context == grammarAccess.getTypeRule()) {
 					sequence_AggregateId(context, (AggregateId) semanticObject); 
 					return; 
@@ -111,6 +113,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 				if(context == grammarAccess.getAbstractElementRule() ||
 				   context == grammarAccess.getAbstractEntityRule() ||
 				   context == grammarAccess.getEntityRule() ||
+				   context == grammarAccess.getInternalTypeRule() ||
 				   context == grammarAccess.getTypeRule()) {
 					sequence_Entity(context, (Entity) semanticObject); 
 					return; 
@@ -121,6 +124,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 				   context == grammarAccess.getAbstractEntityIdRule() ||
 				   context == grammarAccess.getAbstractVORule() ||
 				   context == grammarAccess.getEntityIdRule() ||
+				   context == grammarAccess.getInternalTypeRule() ||
 				   context == grammarAccess.getTypeRule()) {
 					sequence_EntityId(context, (EntityId) semanticObject); 
 					return; 
@@ -136,6 +140,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 				if(context == grammarAccess.getAbstractElementRule() ||
 				   context == grammarAccess.getAbstractVORule() ||
 				   context == grammarAccess.getEnumObjectRule() ||
+				   context == grammarAccess.getInternalTypeRule() ||
 				   context == grammarAccess.getTypeRule()) {
 					sequence_EnumObject(context, (EnumObject) semanticObject); 
 					return; 
@@ -218,6 +223,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 				if(context == grammarAccess.getAbstractElementRule() ||
 				   context == grammarAccess.getAbstractVORule() ||
 				   context == grammarAccess.getConstraintTargetRule() ||
+				   context == grammarAccess.getInternalTypeRule() ||
 				   context == grammarAccess.getTypeRule() ||
 				   context == grammarAccess.getValueObjectRule()) {
 					sequence_ValueObject(context, (ValueObject) semanticObject); 

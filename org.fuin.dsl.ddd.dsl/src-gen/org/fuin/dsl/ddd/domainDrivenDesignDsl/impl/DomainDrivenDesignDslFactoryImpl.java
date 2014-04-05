@@ -69,6 +69,7 @@ public class DomainDrivenDesignDslFactoryImpl extends EFactoryImpl implements Do
       case DomainDrivenDesignDslPackage.IMPORT: return createImport();
       case DomainDrivenDesignDslPackage.ABSTRACT_ELEMENT: return createAbstractElement();
       case DomainDrivenDesignDslPackage.TYPE: return createType();
+      case DomainDrivenDesignDslPackage.INTERNAL_TYPE: return createInternalType();
       case DomainDrivenDesignDslPackage.ABSTRACT_VO: return createAbstractVO();
       case DomainDrivenDesignDslPackage.ABSTRACT_ENTITY_ID: return createAbstractEntityId();
       case DomainDrivenDesignDslPackage.ABSTRACT_ENTITY: return createAbstractEntity();
@@ -155,6 +156,17 @@ public class DomainDrivenDesignDslFactoryImpl extends EFactoryImpl implements Do
   {
     TypeImpl type = new TypeImpl();
     return type;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InternalType createInternalType()
+  {
+    InternalTypeImpl internalType = new InternalTypeImpl();
+    return internalType;
   }
 
   /**

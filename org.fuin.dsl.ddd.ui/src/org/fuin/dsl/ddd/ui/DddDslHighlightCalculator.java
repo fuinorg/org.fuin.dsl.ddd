@@ -20,6 +20,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumInstance;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.InternalType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.util.DomainDrivenDesignDslSwitch;
 
@@ -58,11 +59,11 @@ public class DddDslHighlightCalculator implements
 					DomainDrivenDesignDslPackage.eINSTANCE.getConstraint_Doc(),
 					DddDslHighlightConfig.COMMENT_ID);
 		}
-
+		
 		@Override
-		public Void caseAbstractVO(AbstractVO abstractVO) {
-			return highlightFirst(abstractVO,
-					DomainDrivenDesignDslPackage.eINSTANCE.getAbstractVO_Doc(),
+		public Void caseInternalType(InternalType internalType) {
+			return highlightFirst(internalType,
+					DomainDrivenDesignDslPackage.eINSTANCE.getInternalType_Doc(),
 					DddDslHighlightConfig.COMMENT_ID);
 		}
 
@@ -71,13 +72,6 @@ public class DddDslHighlightCalculator implements
 			return highlightFirst(enumInstance,
 					DomainDrivenDesignDslPackage.eINSTANCE.getEnumInstance_Name(),
 					DddDslHighlightConfig.ENUM_INSTANCE_ID);
-		}
-		
-		@Override
-		public Void caseAbstractEntity(AbstractEntity entity) {
-			return highlightFirst(entity,
-					DomainDrivenDesignDslPackage.eINSTANCE.getAbstractEntity_Doc(),
-					DddDslHighlightConfig.COMMENT_ID);
 		}
 		
 		@Override

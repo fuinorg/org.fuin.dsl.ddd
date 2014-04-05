@@ -196,6 +196,34 @@ finally {
 
 
 
+// Entry rule entryRuleInternalType
+entryRuleInternalType 
+:
+{ before(grammarAccess.getInternalTypeRule()); }
+	 ruleInternalType
+{ after(grammarAccess.getInternalTypeRule()); } 
+	 EOF 
+;
+
+// Rule InternalType
+ruleInternalType
+    @init {
+		int stackSize = keepStackSize();
+    }
+	:
+(
+{ before(grammarAccess.getInternalTypeAccess().getAlternatives()); }
+(rule__InternalType__Alternatives)
+{ after(grammarAccess.getInternalTypeAccess().getAlternatives()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+
 // Entry rule entryRuleAbstractVO
 entryRuleAbstractVO 
 :
@@ -1077,15 +1105,31 @@ rule__Type__Alternatives
 )
 
     |(
-{ before(grammarAccess.getTypeAccess().getAbstractVOParserRuleCall_1()); }
+{ before(grammarAccess.getTypeAccess().getInternalTypeParserRuleCall_1()); }
+	ruleInternalType
+{ after(grammarAccess.getTypeAccess().getInternalTypeParserRuleCall_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__InternalType__Alternatives
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getInternalTypeAccess().getAbstractVOParserRuleCall_0()); }
 	ruleAbstractVO
-{ after(grammarAccess.getTypeAccess().getAbstractVOParserRuleCall_1()); }
+{ after(grammarAccess.getInternalTypeAccess().getAbstractVOParserRuleCall_0()); }
 )
 
     |(
-{ before(grammarAccess.getTypeAccess().getAbstractEntityParserRuleCall_2()); }
+{ before(grammarAccess.getInternalTypeAccess().getAbstractEntityParserRuleCall_1()); }
 	ruleAbstractEntity
-{ after(grammarAccess.getTypeAccess().getAbstractEntityParserRuleCall_2()); }
+{ after(grammarAccess.getInternalTypeAccess().getAbstractEntityParserRuleCall_1()); }
 )
 
 ;

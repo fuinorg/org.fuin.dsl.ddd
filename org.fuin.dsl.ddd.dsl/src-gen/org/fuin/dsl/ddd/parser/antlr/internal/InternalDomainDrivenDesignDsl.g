@@ -320,21 +320,51 @@ ruleType returns [EObject current=null]
 
     |
     { 
-        newCompositeNode(grammarAccess.getTypeAccess().getAbstractVOParserRuleCall_1()); 
+        newCompositeNode(grammarAccess.getTypeAccess().getInternalTypeParserRuleCall_1()); 
     }
-    this_AbstractVO_1=ruleAbstractVO
+    this_InternalType_1=ruleInternalType
     { 
-        $current = $this_AbstractVO_1.current; 
+        $current = $this_InternalType_1.current; 
+        afterParserOrEnumRuleCall();
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleInternalType
+entryRuleInternalType returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getInternalTypeRule()); }
+	 iv_ruleInternalType=ruleInternalType 
+	 { $current=$iv_ruleInternalType.current; } 
+	 EOF 
+;
+
+// Rule InternalType
+ruleInternalType returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+(
+    { 
+        newCompositeNode(grammarAccess.getInternalTypeAccess().getAbstractVOParserRuleCall_0()); 
+    }
+    this_AbstractVO_0=ruleAbstractVO
+    { 
+        $current = $this_AbstractVO_0.current; 
         afterParserOrEnumRuleCall();
     }
 
     |
     { 
-        newCompositeNode(grammarAccess.getTypeAccess().getAbstractEntityParserRuleCall_2()); 
+        newCompositeNode(grammarAccess.getInternalTypeAccess().getAbstractEntityParserRuleCall_1()); 
     }
-    this_AbstractEntity_2=ruleAbstractEntity
+    this_AbstractEntity_1=ruleAbstractEntity
     { 
-        $current = $this_AbstractEntity_2.current; 
+        $current = $this_AbstractEntity_1.current; 
         afterParserOrEnumRuleCall();
     }
 )

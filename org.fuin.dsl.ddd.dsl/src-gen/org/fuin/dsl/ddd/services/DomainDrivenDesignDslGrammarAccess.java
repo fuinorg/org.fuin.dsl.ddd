@@ -141,24 +141,40 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Type");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cExternalTypeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cAbstractVOParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cAbstractEntityParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cInternalTypeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//Type:
-		//	ExternalType | AbstractVO | AbstractEntity;
+		//	ExternalType | InternalType;
 		public ParserRule getRule() { return rule; }
 
-		//ExternalType | AbstractVO | AbstractEntity
+		//ExternalType | InternalType
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//ExternalType
 		public RuleCall getExternalTypeParserRuleCall_0() { return cExternalTypeParserRuleCall_0; }
 
+		//InternalType
+		public RuleCall getInternalTypeParserRuleCall_1() { return cInternalTypeParserRuleCall_1; }
+	}
+
+	public class InternalTypeElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "InternalType");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cAbstractVOParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cAbstractEntityParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//InternalType:
+		//	AbstractVO | AbstractEntity;
+		public ParserRule getRule() { return rule; }
+
+		//AbstractVO | AbstractEntity
+		public Alternatives getAlternatives() { return cAlternatives; }
+
 		//AbstractVO
-		public RuleCall getAbstractVOParserRuleCall_1() { return cAbstractVOParserRuleCall_1; }
+		public RuleCall getAbstractVOParserRuleCall_0() { return cAbstractVOParserRuleCall_0; }
 
 		//AbstractEntity
-		public RuleCall getAbstractEntityParserRuleCall_2() { return cAbstractEntityParserRuleCall_2; }
+		public RuleCall getAbstractEntityParserRuleCall_1() { return cAbstractEntityParserRuleCall_1; }
 	}
 
 	public class AbstractVOElements extends AbstractParserRuleElementFinder {
@@ -1827,6 +1843,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	private ImportElements pImport;
 	private AbstractElementElements pAbstractElement;
 	private TypeElements pType;
+	private InternalTypeElements pInternalType;
 	private AbstractVOElements pAbstractVO;
 	private AbstractEntityIdElements pAbstractEntityId;
 	private AbstractEntityElements pAbstractEntity;
@@ -1939,13 +1956,23 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//Type:
-	//	ExternalType | AbstractVO | AbstractEntity;
+	//	ExternalType | InternalType;
 	public TypeElements getTypeAccess() {
 		return (pType != null) ? pType : (pType = new TypeElements());
 	}
 	
 	public ParserRule getTypeRule() {
 		return getTypeAccess().getRule();
+	}
+
+	//InternalType:
+	//	AbstractVO | AbstractEntity;
+	public InternalTypeElements getInternalTypeAccess() {
+		return (pInternalType != null) ? pInternalType : (pInternalType = new InternalTypeElements());
+	}
+	
+	public ParserRule getInternalTypeRule() {
+		return getInternalTypeAccess().getRule();
 	}
 
 	//AbstractVO:

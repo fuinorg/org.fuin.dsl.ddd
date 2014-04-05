@@ -68,6 +68,15 @@ public interface DomainDrivenDesignDslFactory extends EFactory
   Type createType();
 
   /**
+   * Returns a new object of class '<em>Internal Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Internal Type</em>'.
+   * @generated
+   */
+  InternalType createInternalType();
+
+  /**
    * Returns a new object of class '<em>Abstract VO</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

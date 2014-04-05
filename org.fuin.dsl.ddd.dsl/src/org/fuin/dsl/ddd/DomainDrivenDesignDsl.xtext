@@ -20,7 +20,10 @@ AbstractElement:
 	Constraint | Type;
 
 Type:
-	ExternalType | AbstractVO | AbstractEntity;
+	ExternalType | InternalType;
+
+InternalType:
+	AbstractVO | AbstractEntity;
 
 AbstractVO:
 	ValueObject | EnumObject | AbstractEntityId;
