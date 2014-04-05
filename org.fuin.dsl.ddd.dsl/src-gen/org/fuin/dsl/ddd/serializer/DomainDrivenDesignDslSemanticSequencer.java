@@ -95,7 +95,8 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 				}
 				else break;
 			case DomainDrivenDesignDslPackage.CONSTRUCTOR:
-				if(context == grammarAccess.getConstructorRule()) {
+				if(context == grammarAccess.getAbstractMethodRule() ||
+				   context == grammarAccess.getConstructorRule()) {
 					sequence_Constructor(context, (Constructor) semanticObject); 
 					return; 
 				}
@@ -168,7 +169,8 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 				}
 				else break;
 			case DomainDrivenDesignDslPackage.METHOD:
-				if(context == grammarAccess.getMethodRule()) {
+				if(context == grammarAccess.getAbstractMethodRule() ||
+				   context == grammarAccess.getMethodRule()) {
 					sequence_Method(context, (Method) semanticObject); 
 					return; 
 				}

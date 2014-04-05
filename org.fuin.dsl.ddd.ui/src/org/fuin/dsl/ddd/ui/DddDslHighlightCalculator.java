@@ -14,13 +14,12 @@ import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightedPositionAcceptor;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.ISemanticHighlightingCalculator;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntity;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractVO;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constructor;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumInstance;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Method;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.util.DomainDrivenDesignDslSwitch;
 
@@ -89,16 +88,9 @@ public class DddDslHighlightCalculator implements
 		}
 
 		@Override
-		public Void caseConstructor(Constructor constr) {
+		public Void caseAbstractMethod(AbstractMethod constr) {
 			return highlightFirst(constr,
-					DomainDrivenDesignDslPackage.eINSTANCE.getConstructor_Doc(),
-					DddDslHighlightConfig.COMMENT_ID);
-		}
-		
-		@Override
-		public Void caseMethod(Method method) {
-			return highlightFirst(method,
-					DomainDrivenDesignDslPackage.eINSTANCE.getMethod_Doc(),
+					DomainDrivenDesignDslPackage.eINSTANCE.getAbstractMethod_Doc(),
 					DddDslHighlightConfig.COMMENT_ID);
 		}
 		

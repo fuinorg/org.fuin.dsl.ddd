@@ -231,10 +231,18 @@ public class DomainDrivenDesignDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case DomainDrivenDesignDslPackage.ABSTRACT_METHOD:
+      {
+        AbstractMethod abstractMethod = (AbstractMethod)theEObject;
+        T result = caseAbstractMethod(abstractMethod);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case DomainDrivenDesignDslPackage.CONSTRUCTOR:
       {
         Constructor constructor = (Constructor)theEObject;
         T result = caseConstructor(constructor);
+        if (result == null) result = caseAbstractMethod(constructor);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -242,6 +250,7 @@ public class DomainDrivenDesignDslSwitch<T> extends Switch<T>
       {
         Method method = (Method)theEObject;
         T result = caseMethod(method);
+        if (result == null) result = caseAbstractMethod(method);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -621,6 +630,22 @@ public class DomainDrivenDesignDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseAggregate(Aggregate object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Abstract Method</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Abstract Method</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAbstractMethod(AbstractMethod object)
   {
     return null;
   }

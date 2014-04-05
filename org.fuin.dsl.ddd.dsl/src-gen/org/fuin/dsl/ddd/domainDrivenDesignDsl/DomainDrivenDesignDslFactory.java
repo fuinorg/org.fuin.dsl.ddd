@@ -185,6 +185,15 @@ public interface DomainDrivenDesignDslFactory extends EFactory
   Aggregate createAggregate();
 
   /**
+   * Returns a new object of class '<em>Abstract Method</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Abstract Method</em>'.
+   * @generated
+   */
+  AbstractMethod createAbstractMethod();
+
+  /**
    * Returns a new object of class '<em>Constructor</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

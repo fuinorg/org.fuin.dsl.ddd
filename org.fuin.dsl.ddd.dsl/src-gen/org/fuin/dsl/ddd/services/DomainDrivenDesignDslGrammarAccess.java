@@ -1011,6 +1011,26 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
 	}
 
+	public class AbstractMethodElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AbstractMethod");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final RuleCall cConstructorParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
+		private final RuleCall cMethodParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		
+		//AbstractMethod:
+		//	Constructor | Method;
+		public ParserRule getRule() { return rule; }
+
+		//Constructor | Method
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//Constructor
+		public RuleCall getConstructorParserRuleCall_0() { return cConstructorParserRuleCall_0; }
+
+		//Method
+		public RuleCall getMethodParserRuleCall_1() { return cMethodParserRuleCall_1; }
+	}
+
 	public class ConstructorElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Constructor");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -1820,6 +1840,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	private EnumInstanceElements pEnumInstance;
 	private EntityElements pEntity;
 	private AggregateElements pAggregate;
+	private AbstractMethodElements pAbstractMethod;
 	private ConstructorElements pConstructor;
 	private MethodElements pMethod;
 	private EventElements pEvent;
@@ -2062,6 +2083,16 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	
 	public ParserRule getAggregateRule() {
 		return getAggregateAccess().getRule();
+	}
+
+	//AbstractMethod:
+	//	Constructor | Method;
+	public AbstractMethodElements getAbstractMethodAccess() {
+		return (pAbstractMethod != null) ? pAbstractMethod : (pAbstractMethod = new AbstractMethodElements());
+	}
+	
+	public ParserRule getAbstractMethodRule() {
+		return getAbstractMethodAccess().getRule();
 	}
 
 	//Constructor:

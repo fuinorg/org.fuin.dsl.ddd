@@ -534,6 +534,8 @@ finally {
 
 
 
+
+
 // Entry rule entryRuleConstructor
 entryRuleConstructor 
 :
@@ -1162,6 +1164,7 @@ rule__AbstractEntity__Alternatives
 finally {
 	restoreStackSize(stackSize);
 }
+
 
 
 rule__Variable__Alternatives_6

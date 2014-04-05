@@ -165,6 +165,11 @@ public class DomainDrivenDesignDslAdapterFactory extends AdapterFactoryImpl
         return createAggregateAdapter();
       }
       @Override
+      public Adapter caseAbstractMethod(AbstractMethod object)
+      {
+        return createAbstractMethodAdapter();
+      }
+      @Override
       public Adapter caseConstructor(Constructor object)
       {
         return createConstructorAdapter();
@@ -522,6 +527,21 @@ public class DomainDrivenDesignDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAggregateAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod <em>Abstract Method</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod
+   * @generated
+   */
+  public Adapter createAbstractMethodAdapter()
   {
     return null;
   }

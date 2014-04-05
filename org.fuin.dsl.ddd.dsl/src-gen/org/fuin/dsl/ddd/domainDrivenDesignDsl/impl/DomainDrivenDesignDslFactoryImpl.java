@@ -82,6 +82,7 @@ public class DomainDrivenDesignDslFactoryImpl extends EFactoryImpl implements Do
       case DomainDrivenDesignDslPackage.ENUM_INSTANCE: return createEnumInstance();
       case DomainDrivenDesignDslPackage.ENTITY: return createEntity();
       case DomainDrivenDesignDslPackage.AGGREGATE: return createAggregate();
+      case DomainDrivenDesignDslPackage.ABSTRACT_METHOD: return createAbstractMethod();
       case DomainDrivenDesignDslPackage.CONSTRUCTOR: return createConstructor();
       case DomainDrivenDesignDslPackage.METHOD: return createMethod();
       case DomainDrivenDesignDslPackage.EVENT: return createEvent();
@@ -297,6 +298,17 @@ public class DomainDrivenDesignDslFactoryImpl extends EFactoryImpl implements Do
   {
     AggregateImpl aggregate = new AggregateImpl();
     return aggregate;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public AbstractMethod createAbstractMethod()
+  {
+    AbstractMethodImpl abstractMethod = new AbstractMethodImpl();
+    return abstractMethod;
   }
 
   /**

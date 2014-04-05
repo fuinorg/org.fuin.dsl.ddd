@@ -103,6 +103,9 @@ Aggregate:
 		methods+=Method*
 	'}';
 	
+AbstractMethod:
+	Constructor | Method;
+	
 Constructor:
 	doc=DOC? 
 	'constructor' name=ID '{'
