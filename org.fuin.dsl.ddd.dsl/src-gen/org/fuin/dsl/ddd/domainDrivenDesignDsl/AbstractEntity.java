@@ -126,4 +126,12 @@ public interface AbstractEntity extends Type
    */
   EList<Method> getMethods();
 
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @model kind="operation"
+   * @generated
+   */
+  AbstractEntityId getIdType();
+
 } // AbstractEntity
