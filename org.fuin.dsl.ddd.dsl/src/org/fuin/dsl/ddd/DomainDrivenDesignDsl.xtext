@@ -142,7 +142,7 @@ TypeMetaInfo:
 	{TypeMetaInfo}
     	('slabel' (slabel=STRING))?
     	('label' (label=STRING))?
-    	('tooltipp' (tooltipp=STRING))?
+    	('tooltip' (tooltip=STRING))?
     	('prompt' (prompt=STRING))?
     	('examples' (examples+=STRING*))?;
 
