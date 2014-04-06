@@ -556,7 +556,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	
 	/**
 	 * Constraint:
-	 *     (slabel=STRING? label=STRING? tooltipp=STRING? prompt=STRING? examples+=STRING*)
+	 *     (slabel=STRING? label=STRING? tooltip=STRING? prompt=STRING? examples+=STRING*)
 	 */
 	protected void sequence_TypeMetaInfo(EObject context, TypeMetaInfo semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

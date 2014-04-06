@@ -1027,7 +1027,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTypeMetaInfo_Tooltipp()
+  public EAttribute getTypeMetaInfo_Tooltip()
   {
     return (EAttribute)typeMetaInfoEClass.getEStructuralFeatures().get(2);
   }
@@ -1402,7 +1402,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     typeMetaInfoEClass = createEClass(TYPE_META_INFO);
     createEAttribute(typeMetaInfoEClass, TYPE_META_INFO__SLABEL);
     createEAttribute(typeMetaInfoEClass, TYPE_META_INFO__LABEL);
-    createEAttribute(typeMetaInfoEClass, TYPE_META_INFO__TOOLTIPP);
+    createEAttribute(typeMetaInfoEClass, TYPE_META_INFO__TOOLTIP);
     createEAttribute(typeMetaInfoEClass, TYPE_META_INFO__PROMPT);
     createEAttribute(typeMetaInfoEClass, TYPE_META_INFO__EXAMPLES);
 
@@ -1585,7 +1585,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     initEClass(typeMetaInfoEClass, TypeMetaInfo.class, "TypeMetaInfo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getTypeMetaInfo_Slabel(), ecorePackage.getEString(), "slabel", null, 0, 1, TypeMetaInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTypeMetaInfo_Label(), ecorePackage.getEString(), "label", null, 0, 1, TypeMetaInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getTypeMetaInfo_Tooltipp(), ecorePackage.getEString(), "tooltipp", null, 0, 1, TypeMetaInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getTypeMetaInfo_Tooltip(), ecorePackage.getEString(), "tooltip", null, 0, 1, TypeMetaInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTypeMetaInfo_Prompt(), ecorePackage.getEString(), "prompt", null, 0, 1, TypeMetaInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTypeMetaInfo_Examples(), ecorePackage.getEString(), "examples", null, 0, -1, TypeMetaInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

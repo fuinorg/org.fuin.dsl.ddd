@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalDomainDrivenDesignDslParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_HEX", "RULE_INT", "RULE_DECIMAL", "RULE_ID", "RULE_DOC", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "';'", "'false'", "'true'", "'namespace'", "'{'", "'}'", "'import'", "'type'", "'constraint'", "'on'", "'exception'", "'message'", "'value-object'", "'base'", "'entity-id'", "'identifies'", "'aggregate-id'", "'enum'", "'instances'", "'('", "')'", "','", "'entity'", "'identifier'", "'root'", "'aggregate'", "'constructor'", "'method'", "'ref'", "'event'", "'slabel'", "'label'", "'tooltipp'", "'prompt'", "'examples'", "'constraints'", "'invariants'", "'.'", "'*'", "'nullable'", "'null'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_HEX", "RULE_INT", "RULE_DECIMAL", "RULE_ID", "RULE_DOC", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "';'", "'false'", "'true'", "'namespace'", "'{'", "'}'", "'import'", "'type'", "'constraint'", "'on'", "'exception'", "'message'", "'value-object'", "'base'", "'entity-id'", "'identifies'", "'aggregate-id'", "'enum'", "'instances'", "'('", "')'", "','", "'entity'", "'identifier'", "'root'", "'aggregate'", "'constructor'", "'method'", "'ref'", "'event'", "'slabel'", "'label'", "'tooltip'", "'prompt'", "'examples'", "'constraints'", "'invariants'", "'.'", "'*'", "'nullable'", "'null'"
     };
     public static final int RULE_ID=7;
     public static final int T__29=29;
@@ -17707,21 +17707,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__TypeMetaInfo__Group_3__0__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6451:1: rule__TypeMetaInfo__Group_3__0__Impl : ( 'tooltipp' ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6451:1: rule__TypeMetaInfo__Group_3__0__Impl : ( 'tooltip' ) ;
     public final void rule__TypeMetaInfo__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6455:1: ( ( 'tooltipp' ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6456:1: ( 'tooltipp' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6455:1: ( ( 'tooltip' ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6456:1: ( 'tooltip' )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6456:1: ( 'tooltipp' )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6457:1: 'tooltipp'
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6456:1: ( 'tooltip' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6457:1: 'tooltip'
             {
-             before(grammarAccess.getTypeMetaInfoAccess().getTooltippKeyword_3_0()); 
+             before(grammarAccess.getTypeMetaInfoAccess().getTooltipKeyword_3_0()); 
             match(input,45,FOLLOW_45_in_rule__TypeMetaInfo__Group_3__0__Impl12960); 
-             after(grammarAccess.getTypeMetaInfoAccess().getTooltippKeyword_3_0()); 
+             after(grammarAccess.getTypeMetaInfoAccess().getTooltipKeyword_3_0()); 
 
             }
 
@@ -17777,31 +17777,31 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__TypeMetaInfo__Group_3__1__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6481:1: rule__TypeMetaInfo__Group_3__1__Impl : ( ( rule__TypeMetaInfo__TooltippAssignment_3_1 ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6481:1: rule__TypeMetaInfo__Group_3__1__Impl : ( ( rule__TypeMetaInfo__TooltipAssignment_3_1 ) ) ;
     public final void rule__TypeMetaInfo__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6485:1: ( ( ( rule__TypeMetaInfo__TooltippAssignment_3_1 ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6486:1: ( ( rule__TypeMetaInfo__TooltippAssignment_3_1 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6485:1: ( ( ( rule__TypeMetaInfo__TooltipAssignment_3_1 ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6486:1: ( ( rule__TypeMetaInfo__TooltipAssignment_3_1 ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6486:1: ( ( rule__TypeMetaInfo__TooltippAssignment_3_1 ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6487:1: ( rule__TypeMetaInfo__TooltippAssignment_3_1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6486:1: ( ( rule__TypeMetaInfo__TooltipAssignment_3_1 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6487:1: ( rule__TypeMetaInfo__TooltipAssignment_3_1 )
             {
-             before(grammarAccess.getTypeMetaInfoAccess().getTooltippAssignment_3_1()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6488:1: ( rule__TypeMetaInfo__TooltippAssignment_3_1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6488:2: rule__TypeMetaInfo__TooltippAssignment_3_1
+             before(grammarAccess.getTypeMetaInfoAccess().getTooltipAssignment_3_1()); 
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6488:1: ( rule__TypeMetaInfo__TooltipAssignment_3_1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6488:2: rule__TypeMetaInfo__TooltipAssignment_3_1
             {
-            pushFollow(FOLLOW_rule__TypeMetaInfo__TooltippAssignment_3_1_in_rule__TypeMetaInfo__Group_3__1__Impl13018);
-            rule__TypeMetaInfo__TooltippAssignment_3_1();
+            pushFollow(FOLLOW_rule__TypeMetaInfo__TooltipAssignment_3_1_in_rule__TypeMetaInfo__Group_3__1__Impl13018);
+            rule__TypeMetaInfo__TooltipAssignment_3_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getTypeMetaInfoAccess().getTooltippAssignment_3_1()); 
+             after(grammarAccess.getTypeMetaInfoAccess().getTooltipAssignment_3_1()); 
 
             }
 
@@ -25413,9 +25413,9 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
     // $ANTLR end "rule__TypeMetaInfo__LabelAssignment_2_1"
 
 
-    // $ANTLR start "rule__TypeMetaInfo__TooltippAssignment_3_1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9428:1: rule__TypeMetaInfo__TooltippAssignment_3_1 : ( RULE_STRING ) ;
-    public final void rule__TypeMetaInfo__TooltippAssignment_3_1() throws RecognitionException {
+    // $ANTLR start "rule__TypeMetaInfo__TooltipAssignment_3_1"
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9428:1: rule__TypeMetaInfo__TooltipAssignment_3_1 : ( RULE_STRING ) ;
+    public final void rule__TypeMetaInfo__TooltipAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -25426,9 +25426,9 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
             // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9433:1: ( RULE_STRING )
             // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9434:1: RULE_STRING
             {
-             before(grammarAccess.getTypeMetaInfoAccess().getTooltippSTRINGTerminalRuleCall_3_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__TypeMetaInfo__TooltippAssignment_3_118930); 
-             after(grammarAccess.getTypeMetaInfoAccess().getTooltippSTRINGTerminalRuleCall_3_1_0()); 
+             before(grammarAccess.getTypeMetaInfoAccess().getTooltipSTRINGTerminalRuleCall_3_1_0()); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__TypeMetaInfo__TooltipAssignment_3_118930); 
+             after(grammarAccess.getTypeMetaInfoAccess().getTooltipSTRINGTerminalRuleCall_3_1_0()); 
 
             }
 
@@ -25447,7 +25447,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
         }
         return ;
     }
-    // $ANTLR end "rule__TypeMetaInfo__TooltippAssignment_3_1"
+    // $ANTLR end "rule__TypeMetaInfo__TooltipAssignment_3_1"
 
 
     // $ANTLR start "rule__TypeMetaInfo__PromptAssignment_4_1"
@@ -26968,7 +26968,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
     public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_3__1_in_rule__TypeMetaInfo__Group_3__012932 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_45_in_rule__TypeMetaInfo__Group_3__0__Impl12960 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_3__1__Impl_in_rule__TypeMetaInfo__Group_3__112991 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TypeMetaInfo__TooltippAssignment_3_1_in_rule__TypeMetaInfo__Group_3__1__Impl13018 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TypeMetaInfo__TooltipAssignment_3_1_in_rule__TypeMetaInfo__Group_3__1__Impl13018 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_4__0__Impl_in_rule__TypeMetaInfo__Group_4__013052 = new BitSet(new long[]{0x0000000000000200L});
     public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_4__1_in_rule__TypeMetaInfo__Group_4__013055 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_46_in_rule__TypeMetaInfo__Group_4__0__Impl13083 = new BitSet(new long[]{0x0000000000000002L});
@@ -27185,7 +27185,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
     public static final BitSet FOLLOW_ruleVariable_in_rule__Event__VariablesAssignment_418837 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_STRING_in_rule__TypeMetaInfo__SlabelAssignment_1_118868 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_STRING_in_rule__TypeMetaInfo__LabelAssignment_2_118899 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__TypeMetaInfo__TooltippAssignment_3_118930 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__TypeMetaInfo__TooltipAssignment_3_118930 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_STRING_in_rule__TypeMetaInfo__PromptAssignment_4_118961 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_STRING_in_rule__TypeMetaInfo__ExamplesAssignment_5_118992 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_DOC_in_rule__Variable__DocAssignment_019023 = new BitSet(new long[]{0x0000000000000002L});

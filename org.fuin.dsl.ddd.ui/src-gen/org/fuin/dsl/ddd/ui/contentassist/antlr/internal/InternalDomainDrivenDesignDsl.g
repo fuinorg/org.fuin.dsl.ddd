@@ -6454,11 +6454,11 @@ rule__TypeMetaInfo__Group_3__0__Impl
     }
 :
 (
-{ before(grammarAccess.getTypeMetaInfoAccess().getTooltippKeyword_3_0()); }
+{ before(grammarAccess.getTypeMetaInfoAccess().getTooltipKeyword_3_0()); }
 
-	'tooltipp' 
+	'tooltip' 
 
-{ after(grammarAccess.getTypeMetaInfoAccess().getTooltippKeyword_3_0()); }
+{ after(grammarAccess.getTypeMetaInfoAccess().getTooltipKeyword_3_0()); }
 )
 
 ;
@@ -6484,9 +6484,9 @@ rule__TypeMetaInfo__Group_3__1__Impl
     }
 :
 (
-{ before(grammarAccess.getTypeMetaInfoAccess().getTooltippAssignment_3_1()); }
-(rule__TypeMetaInfo__TooltippAssignment_3_1)
-{ after(grammarAccess.getTypeMetaInfoAccess().getTooltippAssignment_3_1()); }
+{ before(grammarAccess.getTypeMetaInfoAccess().getTooltipAssignment_3_1()); }
+(rule__TypeMetaInfo__TooltipAssignment_3_1)
+{ after(grammarAccess.getTypeMetaInfoAccess().getTooltipAssignment_3_1()); }
 )
 
 ;
@@ -9425,14 +9425,14 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__TypeMetaInfo__TooltippAssignment_3_1
+rule__TypeMetaInfo__TooltipAssignment_3_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getTypeMetaInfoAccess().getTooltippSTRINGTerminalRuleCall_3_1_0()); }
-	RULE_STRING{ after(grammarAccess.getTypeMetaInfoAccess().getTooltippSTRINGTerminalRuleCall_3_1_0()); }
+{ before(grammarAccess.getTypeMetaInfoAccess().getTooltipSTRINGTerminalRuleCall_3_1_0()); }
+	RULE_STRING{ after(grammarAccess.getTypeMetaInfoAccess().getTooltipSTRINGTerminalRuleCall_3_1_0()); }
 )
 
 ;

@@ -2362,15 +2362,15 @@ ruleTypeMetaInfo returns [EObject current=null]
 	    }
 
 )
-))?(	otherlv_5='tooltipp' 
+))?(	otherlv_5='tooltip' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getTypeMetaInfoAccess().getTooltippKeyword_3_0());
+    	newLeafNode(otherlv_5, grammarAccess.getTypeMetaInfoAccess().getTooltipKeyword_3_0());
     }
 (
 (
-		lv_tooltipp_6_0=RULE_STRING
+		lv_tooltip_6_0=RULE_STRING
 		{
-			newLeafNode(lv_tooltipp_6_0, grammarAccess.getTypeMetaInfoAccess().getTooltippSTRINGTerminalRuleCall_3_1_0()); 
+			newLeafNode(lv_tooltip_6_0, grammarAccess.getTypeMetaInfoAccess().getTooltipSTRINGTerminalRuleCall_3_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -2378,8 +2378,8 @@ ruleTypeMetaInfo returns [EObject current=null]
 	        }
        		setWithLastConsumed(
        			$current, 
-       			"tooltipp",
-        		lv_tooltipp_6_0, 
+       			"tooltip",
+        		lv_tooltip_6_0, 
         		"STRING");
 	    }
 

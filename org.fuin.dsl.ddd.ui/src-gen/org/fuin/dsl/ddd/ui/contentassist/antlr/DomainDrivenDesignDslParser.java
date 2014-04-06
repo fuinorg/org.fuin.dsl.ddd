@@ -181,7 +181,7 @@ public class DomainDrivenDesignDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEventAccess().getVariablesAssignment_4(), "rule__Event__VariablesAssignment_4");
 					put(grammarAccess.getTypeMetaInfoAccess().getSlabelAssignment_1_1(), "rule__TypeMetaInfo__SlabelAssignment_1_1");
 					put(grammarAccess.getTypeMetaInfoAccess().getLabelAssignment_2_1(), "rule__TypeMetaInfo__LabelAssignment_2_1");
-					put(grammarAccess.getTypeMetaInfoAccess().getTooltippAssignment_3_1(), "rule__TypeMetaInfo__TooltippAssignment_3_1");
+					put(grammarAccess.getTypeMetaInfoAccess().getTooltipAssignment_3_1(), "rule__TypeMetaInfo__TooltipAssignment_3_1");
 					put(grammarAccess.getTypeMetaInfoAccess().getPromptAssignment_4_1(), "rule__TypeMetaInfo__PromptAssignment_4_1");
 					put(grammarAccess.getTypeMetaInfoAccess().getExamplesAssignment_5_1(), "rule__TypeMetaInfo__ExamplesAssignment_5_1");
 					put(grammarAccess.getVariableAccess().getDocAssignment_0(), "rule__Variable__DocAssignment_0");

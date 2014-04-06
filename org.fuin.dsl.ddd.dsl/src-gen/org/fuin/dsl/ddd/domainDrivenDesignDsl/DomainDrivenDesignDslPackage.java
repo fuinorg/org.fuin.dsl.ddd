@@ -1531,13 +1531,13 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int TYPE_META_INFO__LABEL = 1;
 
   /**
-   * The feature id for the '<em><b>Tooltipp</b></em>' attribute.
+   * The feature id for the '<em><b>Tooltip</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int TYPE_META_INFO__TOOLTIPP = 2;
+  int TYPE_META_INFO__TOOLTIP = 2;
 
   /**
    * The feature id for the '<em><b>Prompt</b></em>' attribute.
@@ -2612,15 +2612,15 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   EAttribute getTypeMetaInfo_Label();
 
   /**
-   * Returns the meta object for the attribute '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.TypeMetaInfo#getTooltipp <em>Tooltipp</em>}'.
+   * Returns the meta object for the attribute '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.TypeMetaInfo#getTooltip <em>Tooltip</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Tooltipp</em>'.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.TypeMetaInfo#getTooltipp()
+   * @return the meta object for the attribute '<em>Tooltip</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.TypeMetaInfo#getTooltip()
    * @see #getTypeMetaInfo()
    * @generated
    */
-  EAttribute getTypeMetaInfo_Tooltipp();
+  EAttribute getTypeMetaInfo_Tooltip();
 
   /**
    * Returns the meta object for the attribute '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.TypeMetaInfo#getPrompt <em>Prompt</em>}'.
@@ -3489,12 +3489,12 @@ public interface DomainDrivenDesignDslPackage extends EPackage
     EAttribute TYPE_META_INFO__LABEL = eINSTANCE.getTypeMetaInfo_Label();
 
     /**
-     * The meta object literal for the '<em><b>Tooltipp</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Tooltip</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TYPE_META_INFO__TOOLTIPP = eINSTANCE.getTypeMetaInfo_Tooltipp();
+    EAttribute TYPE_META_INFO__TOOLTIP = eINSTANCE.getTypeMetaInfo_Tooltip();
 
     /**
      * The meta object literal for the '<em><b>Prompt</b></em>' attribute feature.

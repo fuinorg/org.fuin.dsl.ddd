@@ -27,7 +27,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.TypeMetaInfo;
  * <ul>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.TypeMetaInfoImpl#getSlabel <em>Slabel</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.TypeMetaInfoImpl#getLabel <em>Label</em>}</li>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.TypeMetaInfoImpl#getTooltipp <em>Tooltipp</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.TypeMetaInfoImpl#getTooltip <em>Tooltip</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.TypeMetaInfoImpl#getPrompt <em>Prompt</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.TypeMetaInfoImpl#getExamples <em>Examples</em>}</li>
  * </ul>
@@ -78,24 +78,24 @@ public class TypeMetaInfoImpl extends MinimalEObjectImpl.Container implements Ty
   protected String label = LABEL_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getTooltipp() <em>Tooltipp</em>}' attribute.
+   * The default value of the '{@link #getTooltip() <em>Tooltip</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTooltipp()
+   * @see #getTooltip()
    * @generated
    * @ordered
    */
-  protected static final String TOOLTIPP_EDEFAULT = null;
+  protected static final String TOOLTIP_EDEFAULT = null;
 
   /**
-   * The cached value of the '{@link #getTooltipp() <em>Tooltipp</em>}' attribute.
+   * The cached value of the '{@link #getTooltip() <em>Tooltip</em>}' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getTooltipp()
+   * @see #getTooltip()
    * @generated
    * @ordered
    */
-  protected String tooltipp = TOOLTIPP_EDEFAULT;
+  protected String tooltip = TOOLTIP_EDEFAULT;
 
   /**
    * The default value of the '{@link #getPrompt() <em>Prompt</em>}' attribute.
@@ -199,9 +199,9 @@ public class TypeMetaInfoImpl extends MinimalEObjectImpl.Container implements Ty
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getTooltipp()
+  public String getTooltip()
   {
-    return tooltipp;
+    return tooltip;
   }
 
   /**
@@ -209,12 +209,12 @@ public class TypeMetaInfoImpl extends MinimalEObjectImpl.Container implements Ty
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTooltipp(String newTooltipp)
+  public void setTooltip(String newTooltip)
   {
-    String oldTooltipp = tooltipp;
-    tooltipp = newTooltipp;
+    String oldTooltip = tooltip;
+    tooltip = newTooltip;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.TYPE_META_INFO__TOOLTIPP, oldTooltipp, tooltipp));
+      eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.TYPE_META_INFO__TOOLTIP, oldTooltip, tooltip));
   }
 
   /**
@@ -268,8 +268,8 @@ public class TypeMetaInfoImpl extends MinimalEObjectImpl.Container implements Ty
         return getSlabel();
       case DomainDrivenDesignDslPackage.TYPE_META_INFO__LABEL:
         return getLabel();
-      case DomainDrivenDesignDslPackage.TYPE_META_INFO__TOOLTIPP:
-        return getTooltipp();
+      case DomainDrivenDesignDslPackage.TYPE_META_INFO__TOOLTIP:
+        return getTooltip();
       case DomainDrivenDesignDslPackage.TYPE_META_INFO__PROMPT:
         return getPrompt();
       case DomainDrivenDesignDslPackage.TYPE_META_INFO__EXAMPLES:
@@ -295,8 +295,8 @@ public class TypeMetaInfoImpl extends MinimalEObjectImpl.Container implements Ty
       case DomainDrivenDesignDslPackage.TYPE_META_INFO__LABEL:
         setLabel((String)newValue);
         return;
-      case DomainDrivenDesignDslPackage.TYPE_META_INFO__TOOLTIPP:
-        setTooltipp((String)newValue);
+      case DomainDrivenDesignDslPackage.TYPE_META_INFO__TOOLTIP:
+        setTooltip((String)newValue);
         return;
       case DomainDrivenDesignDslPackage.TYPE_META_INFO__PROMPT:
         setPrompt((String)newValue);
@@ -325,8 +325,8 @@ public class TypeMetaInfoImpl extends MinimalEObjectImpl.Container implements Ty
       case DomainDrivenDesignDslPackage.TYPE_META_INFO__LABEL:
         setLabel(LABEL_EDEFAULT);
         return;
-      case DomainDrivenDesignDslPackage.TYPE_META_INFO__TOOLTIPP:
-        setTooltipp(TOOLTIPP_EDEFAULT);
+      case DomainDrivenDesignDslPackage.TYPE_META_INFO__TOOLTIP:
+        setTooltip(TOOLTIP_EDEFAULT);
         return;
       case DomainDrivenDesignDslPackage.TYPE_META_INFO__PROMPT:
         setPrompt(PROMPT_EDEFAULT);
@@ -352,8 +352,8 @@ public class TypeMetaInfoImpl extends MinimalEObjectImpl.Container implements Ty
         return SLABEL_EDEFAULT == null ? slabel != null : !SLABEL_EDEFAULT.equals(slabel);
       case DomainDrivenDesignDslPackage.TYPE_META_INFO__LABEL:
         return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT.equals(label);
-      case DomainDrivenDesignDslPackage.TYPE_META_INFO__TOOLTIPP:
-        return TOOLTIPP_EDEFAULT == null ? tooltipp != null : !TOOLTIPP_EDEFAULT.equals(tooltipp);
+      case DomainDrivenDesignDslPackage.TYPE_META_INFO__TOOLTIP:
+        return TOOLTIP_EDEFAULT == null ? tooltip != null : !TOOLTIP_EDEFAULT.equals(tooltip);
       case DomainDrivenDesignDslPackage.TYPE_META_INFO__PROMPT:
         return PROMPT_EDEFAULT == null ? prompt != null : !PROMPT_EDEFAULT.equals(prompt);
       case DomainDrivenDesignDslPackage.TYPE_META_INFO__EXAMPLES:
@@ -377,8 +377,8 @@ public class TypeMetaInfoImpl extends MinimalEObjectImpl.Container implements Ty
     result.append(slabel);
     result.append(", label: ");
     result.append(label);
-    result.append(", tooltipp: ");
-    result.append(tooltipp);
+    result.append(", tooltip: ");
+    result.append(tooltip);
     result.append(", prompt: ");
     result.append(prompt);
     result.append(", examples: ");

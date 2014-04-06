@@ -748,10 +748,10 @@ public class InternalDomainDrivenDesignDslLexer extends Lexer {
         try {
             int _type = T__45;
             int _channel = DEFAULT_TOKEN_CHANNEL;
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:43:7: ( 'tooltipp' )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:43:9: 'tooltipp'
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:43:7: ( 'tooltip' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:43:9: 'tooltip'
             {
-            match("tooltipp"); 
+            match("tooltip"); 
 
 
             }
@@ -2154,13 +2154,13 @@ public class InternalDomainDrivenDesignDslLexer extends Lexer {
         "\1\30\1\u0088\1\uffff\3\30\1\u008c\2\uffff\3\30\1\uffff\10\30\1"+
         "\uffff\1\u0098\3\30\1\uffff\1\30\1\uffff\1\30\1\u009e\1\30\1\uffff"+
         "\3\30\1\u00a3\6\30\1\u00ac\1\uffff\1\30\1\u00ae\1\uffff\1\30\1\u00b0"+
-        "\1\uffff\1\u00b1\3\30\1\uffff\7\30\2\uffff\1\u00bc\1\uffff\1\30"+
-        "\2\uffff\1\u00be\1\30\1\u00c0\6\30\1\u00c7\1\uffff\1\30\1\uffff"+
-        "\1\u00c9\1\uffff\1\30\1\u00cc\3\30\1\u00d0\1\uffff\1\u00d2\1\uffff"+
-        "\1\u00d3\1\u00d4\1\uffff\1\u00d5\1\u00d7\1\30\6\uffff\1\u00d9\1"+
-        "\uffff\1\u00da\2\uffff";
+        "\1\uffff\1\u00b1\1\u00b2\2\30\1\uffff\7\30\2\uffff\1\u00bc\1\uffff"+
+        "\1\30\3\uffff\1\30\1\u00bf\6\30\1\u00c6\1\uffff\1\30\1\u00c8\1\uffff"+
+        "\1\30\1\u00cb\3\30\1\u00cf\1\uffff\1\u00d1\1\uffff\1\u00d2\1\u00d3"+
+        "\1\uffff\1\u00d4\1\u00d6\1\30\6\uffff\1\u00d8\1\uffff\1\u00d9\2"+
+        "\uffff";
     static final String DFA19_eofS =
-        "\u00db\uffff";
+        "\u00da\uffff";
     static final String DFA19_minS =
         "\1\11\1\uffff\1\141\1\157\1\141\2\uffff\1\144\1\157\2\156\1\145"+
         "\2\141\1\147\3\uffff\1\145\1\154\1\141\1\162\4\uffff\2\60\1\52\1"+
@@ -2175,12 +2175,12 @@ public class InternalDomainDrivenDesignDslLexer extends Lexer {
         "\uffff\1\164\1\151\1\156\1\151\1\162\1\164\1\154\1\171\1\uffff\1"+
         "\60\1\147\1\144\1\55\1\uffff\1\147\1\uffff\1\154\1\60\1\164\1\uffff"+
         "\1\160\1\141\1\154\1\60\1\146\1\143\2\141\1\151\1\145\1\55\1\uffff"+
-        "\1\145\1\60\1\uffff\1\141\1\60\1\uffff\1\60\1\160\1\143\1\145\1"+
-        "\uffff\1\151\1\145\1\156\1\151\1\143\1\157\1\163\2\uffff\1\60\1"+
-        "\uffff\1\164\2\uffff\1\60\1\145\1\60\1\145\1\163\1\164\1\156\1\164"+
-        "\1\156\1\60\1\uffff\1\145\1\uffff\1\60\1\uffff\1\162\1\60\1\163"+
-        "\1\164\1\157\1\60\1\uffff\1\55\1\uffff\2\60\1\uffff\2\60\1\162\6"+
-        "\uffff\1\60\1\uffff\1\60\2\uffff";
+        "\1\145\1\60\1\uffff\1\141\1\60\1\uffff\2\60\1\143\1\145\1\uffff"+
+        "\1\151\1\145\1\156\1\151\1\143\1\157\1\163\2\uffff\1\60\1\uffff"+
+        "\1\164\3\uffff\1\145\1\60\1\145\1\163\1\164\1\156\1\164\1\156\1"+
+        "\60\1\uffff\1\145\1\60\1\uffff\1\162\1\60\1\163\1\164\1\157\1\60"+
+        "\1\uffff\1\55\1\uffff\2\60\1\uffff\2\60\1\162\6\uffff\1\60\1\uffff"+
+        "\1\60\2\uffff";
     static final String DFA19_maxS =
         "\1\175\1\uffff\1\141\1\171\1\165\2\uffff\1\156\1\157\1\156\1\170"+
         "\1\145\2\141\1\147\3\uffff\1\157\1\154\1\141\1\162\4\uffff\1\170"+
@@ -2196,24 +2196,22 @@ public class InternalDomainDrivenDesignDslLexer extends Lexer {
         "\154\1\171\1\uffff\1\172\1\147\1\144\1\55\1\uffff\1\147\1\uffff"+
         "\1\154\1\172\1\164\1\uffff\1\160\1\141\1\154\1\172\1\146\1\143\1"+
         "\141\1\165\1\151\1\145\1\172\1\uffff\1\145\1\172\1\uffff\1\141\1"+
-        "\172\1\uffff\1\172\1\160\1\143\1\145\1\uffff\1\151\1\145\1\156\1"+
-        "\151\1\143\1\157\1\163\2\uffff\1\172\1\uffff\1\164\2\uffff\1\172"+
-        "\1\145\1\172\1\145\1\163\1\164\1\156\1\164\1\156\1\172\1\uffff\1"+
-        "\145\1\uffff\1\172\1\uffff\1\163\1\172\1\163\1\164\1\157\1\172\1"+
-        "\uffff\1\172\1\uffff\2\172\1\uffff\2\172\1\162\6\uffff\1\172\1\uffff"+
-        "\1\172\2\uffff";
+        "\172\1\uffff\2\172\1\143\1\145\1\uffff\1\151\1\145\1\156\1\151\1"+
+        "\143\1\157\1\163\2\uffff\1\172\1\uffff\1\164\3\uffff\1\145\1\172"+
+        "\1\145\1\163\1\164\1\156\1\164\1\156\1\172\1\uffff\1\145\1\172\1"+
+        "\uffff\1\163\1\172\1\163\1\164\1\157\1\172\1\uffff\1\172\1\uffff"+
+        "\2\172\1\uffff\2\172\1\162\6\uffff\1\172\1\uffff\1\172\2\uffff";
     static final String DFA19_acceptS =
         "\1\uffff\1\1\3\uffff\1\5\1\6\10\uffff\1\24\1\25\1\26\4\uffff\1"+
         "\46\1\47\1\52\1\53\3\uffff\1\62\27\uffff\1\54\1\uffff\1\55\1\56"+
         "\1\uffff\1\61\13\uffff\1\12\17\uffff\1\57\1\60\26\uffff\1\35\4\uffff"+
         "\1\3\1\10\3\uffff\1\51\10\uffff\1\22\4\uffff\1\16\1\uffff\1\31\3"+
         "\uffff\1\2\13\uffff\1\36\2\uffff\1\15\2\uffff\1\40\4\uffff\1\7\7"+
-        "\uffff\1\17\1\27\1\uffff\1\34\1\uffff\1\37\1\42\12\uffff\1\14\1"+
-        "\uffff\1\41\1\uffff\1\50\6\uffff\1\43\1\uffff\1\4\2\uffff\1\23\3"+
-        "\uffff\1\13\1\21\1\32\1\20\1\30\1\45\1\uffff\1\11\1\uffff\1\44\1"+
-        "\33";
+        "\uffff\1\17\1\27\1\uffff\1\34\1\uffff\1\37\1\42\1\41\11\uffff\1"+
+        "\14\2\uffff\1\50\6\uffff\1\43\1\uffff\1\4\2\uffff\1\23\3\uffff\1"+
+        "\13\1\21\1\32\1\20\1\30\1\45\1\uffff\1\11\1\uffff\1\44\1\33";
     static final String DFA19_specialS =
-        "\71\uffff\1\0\u00a1\uffff}>";
+        "\71\uffff\1\0\u00a0\uffff}>";
     static final String[] DFA19_transitionS = {
             "\2\35\2\uffff\1\35\22\uffff\1\35\1\uffff\1\31\4\uffff\1\31"+
             "\1\17\1\20\1\27\1\uffff\1\21\1\uffff\1\26\1\34\1\32\11\33\1"+
@@ -2384,7 +2382,7 @@ public class InternalDomainDrivenDesignDslLexer extends Lexer {
             "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
             "",
             "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
-            "\1\u00b2",
+            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
             "\1\u00b3",
             "\1\u00b4",
             "",
@@ -2402,38 +2400,37 @@ public class InternalDomainDrivenDesignDslLexer extends Lexer {
             "\1\u00bd",
             "",
             "",
+            "",
+            "\1\u00be",
             "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
-            "\1\u00bf",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
+            "\1\u00c0",
             "\1\u00c1",
             "\1\u00c2",
             "\1\u00c3",
             "\1\u00c4",
             "\1\u00c5",
-            "\1\u00c6",
             "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
             "",
-            "\1\u00c8",
-            "",
+            "\1\u00c7",
             "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
             "",
-            "\1\u00cb\1\u00ca",
+            "\1\u00ca\1\u00c9",
             "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
+            "\1\u00cc",
             "\1\u00cd",
             "\1\u00ce",
-            "\1\u00cf",
             "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
             "",
-            "\1\u00d1\2\uffff\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff"+
+            "\1\u00d0\2\uffff\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff"+
             "\32\30",
             "",
             "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
             "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
             "",
             "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\32\30",
-            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\22\30\1\u00d6\7"+
+            "\12\30\7\uffff\32\30\4\uffff\1\30\1\uffff\22\30\1\u00d5\7"+
             "\30",
-            "\1\u00d8",
+            "\1\u00d7",
             "",
             "",
             "",

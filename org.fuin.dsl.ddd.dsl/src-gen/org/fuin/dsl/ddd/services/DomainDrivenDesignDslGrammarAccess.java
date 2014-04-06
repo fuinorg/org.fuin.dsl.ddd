@@ -1370,9 +1370,9 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final Assignment cLabelAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
 		private final RuleCall cLabelSTRINGTerminalRuleCall_2_1_0 = (RuleCall)cLabelAssignment_2_1.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cTooltippKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cTooltippAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cTooltippSTRINGTerminalRuleCall_3_1_0 = (RuleCall)cTooltippAssignment_3_1.eContents().get(0);
+		private final Keyword cTooltipKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cTooltipAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cTooltipSTRINGTerminalRuleCall_3_1_0 = (RuleCall)cTooltipAssignment_3_1.eContents().get(0);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
 		private final Keyword cPromptKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Assignment cPromptAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
@@ -1383,11 +1383,11 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final RuleCall cExamplesSTRINGTerminalRuleCall_5_1_0 = (RuleCall)cExamplesAssignment_5_1.eContents().get(0);
 		
 		//TypeMetaInfo:
-		//	{TypeMetaInfo} ("slabel" slabel=STRING)? ("label" label=STRING)? ("tooltipp" tooltipp=STRING)? ("prompt"
+		//	{TypeMetaInfo} ("slabel" slabel=STRING)? ("label" label=STRING)? ("tooltip" tooltip=STRING)? ("prompt"
 		//	prompt=STRING)? ("examples" examples+=STRING*)?;
 		public ParserRule getRule() { return rule; }
 
-		//{TypeMetaInfo} ("slabel" slabel=STRING)? ("label" label=STRING)? ("tooltipp" tooltipp=STRING)? ("prompt" prompt=STRING)?
+		//{TypeMetaInfo} ("slabel" slabel=STRING)? ("label" label=STRING)? ("tooltip" tooltip=STRING)? ("prompt" prompt=STRING)?
 		//("examples" examples+=STRING*)?
 		public Group getGroup() { return cGroup; }
 
@@ -1418,17 +1418,17 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		//STRING
 		public RuleCall getLabelSTRINGTerminalRuleCall_2_1_0() { return cLabelSTRINGTerminalRuleCall_2_1_0; }
 
-		//("tooltipp" tooltipp=STRING)?
+		//("tooltip" tooltip=STRING)?
 		public Group getGroup_3() { return cGroup_3; }
 
-		//"tooltipp"
-		public Keyword getTooltippKeyword_3_0() { return cTooltippKeyword_3_0; }
+		//"tooltip"
+		public Keyword getTooltipKeyword_3_0() { return cTooltipKeyword_3_0; }
 
-		//tooltipp=STRING
-		public Assignment getTooltippAssignment_3_1() { return cTooltippAssignment_3_1; }
+		//tooltip=STRING
+		public Assignment getTooltipAssignment_3_1() { return cTooltipAssignment_3_1; }
 
 		//STRING
-		public RuleCall getTooltippSTRINGTerminalRuleCall_3_1_0() { return cTooltippSTRINGTerminalRuleCall_3_1_0; }
+		public RuleCall getTooltipSTRINGTerminalRuleCall_3_1_0() { return cTooltipSTRINGTerminalRuleCall_3_1_0; }
 
 		//("prompt" prompt=STRING)?
 		public Group getGroup_4() { return cGroup_4; }
@@ -2277,7 +2277,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//TypeMetaInfo:
-	//	{TypeMetaInfo} ("slabel" slabel=STRING)? ("label" label=STRING)? ("tooltipp" tooltipp=STRING)? ("prompt"
+	//	{TypeMetaInfo} ("slabel" slabel=STRING)? ("label" label=STRING)? ("tooltip" tooltip=STRING)? ("prompt"
 	//	prompt=STRING)? ("examples" examples+=STRING*)?;
 	public TypeMetaInfoElements getTypeMetaInfoAccess() {
 		return (pTypeMetaInfo != null) ? pTypeMetaInfo : (pTypeMetaInfo = new TypeMetaInfoElements());
