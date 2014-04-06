@@ -35,6 +35,8 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
   
   public final static String CONSTRAINT_MSG_UNKNOWN_VAR = "constraintMsgUnknownVar";
   
+  public final static String EXCEPTION_MSG_UNKNOWN_VAR = "exceptionMsgUnknownVar";
+  
   public final static String REF_TO_AGGREGATE_NOT_ALLOWED = "refToAggregateNotAllowed";
   
   public final static String VO_CANNOT_REF_ENTITY = "voCannotRefEntity";
@@ -69,12 +71,81 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
   
   @Check
   public void checkVariablesInConstraintMessage(final Constraint constraint) {
-    Set<String> vars = this.allVariables(constraint);
-    String str = constraint.getMessage();
+    Set<String> _allVariables = this.allVariables(constraint);
+    String _message = constraint.getMessage();
+    final String name = this.findUnknownVar(_allVariables, _message);
+    boolean _notEquals = (!Objects.equal(name, null));
+    if (_notEquals) {
+      String _plus = ("A variable with the name \'" + name);
+      String _plus_1 = (_plus + "\' is unknown");
+      this.error(_plus_1, constraint, 
+        Literals.CONSTRAINT__MESSAGE, 
+        DomainDrivenDesignDslValidator.CONSTRAINT_MSG_UNKNOWN_VAR);
+    }
+  }
+  
+  @Check
+  public void checkVariablesInExceptionMessage(final org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception ex) {
+    Set<String> _allVariables = this.allVariables(ex);
+    String _message = ex.getMessage();
+    final String name = this.findUnknownVar(_allVariables, _message);
+    boolean _notEquals = (!Objects.equal(name, null));
+    if (_notEquals) {
+      String _plus = ("A variable \'" + name);
+      String _plus_1 = (_plus + "\' is not defined in the exception");
+      this.error(_plus_1, ex, 
+        Literals.EXCEPTION__MESSAGE, 
+        DomainDrivenDesignDslValidator.EXCEPTION_MSG_UNKNOWN_VAR);
+    }
+  }
+  
+  @Check
+  public void checkNoRefToAggregate(final Variable variable) {
+    Type _type = variable.getType();
+    if ((_type instanceof Aggregate)) {
+      Type _type_1 = variable.getType();
+      Aggregate aggregate = ((Aggregate) _type_1);
+      AggregateId _idType = aggregate.getIdType();
+      String _name = _idType.getName();
+      this.error(
+        "A direct reference to an aggregates is not allowed", variable, 
+        Literals.VARIABLE__TYPE, 
+        DomainDrivenDesignDslValidator.REF_TO_AGGREGATE_NOT_ALLOWED, _name);
+    }
+  }
+  
+  @Check
+  public void checkNoRefToEntity(final ValueObject vo) {
+    EList<Variable> _variables = vo.getVariables();
+    for (final Variable v : _variables) {
+      Type _type = v.getType();
+      if ((_type instanceof AbstractEntity)) {
+        String idTypeName = null;
+        Type _type_1 = v.getType();
+        if ((_type_1 instanceof Entity)) {
+          Type _type_2 = v.getType();
+          EntityId _idType = ((Entity) _type_2).getIdType();
+          String _name = _idType.getName();
+          idTypeName = _name;
+        } else {
+          Type _type_3 = v.getType();
+          AggregateId _idType_1 = ((Aggregate) _type_3).getIdType();
+          String _name_1 = _idType_1.getName();
+          idTypeName = _name_1;
+        }
+        this.error(
+          "A reference from a value object to an entity is not allowed", v, 
+          Literals.VARIABLE__TYPE, 
+          DomainDrivenDesignDslValidator.VO_CANNOT_REF_ENTITY, idTypeName);
+      }
+    }
+  }
+  
+  private String findUnknownVar(final Set<String> vars, final String msg) {
     int end = (-1);
     int from = 0;
     int start = (-1);
-    int _indexOf = str.indexOf("${", from);
+    int _indexOf = msg.indexOf("${", from);
     int _start = start = _indexOf;
     int _minus = (-1);
     boolean _greaterThan = (_start > _minus);
@@ -82,39 +153,50 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
     while (_while) {
       {
         int _plus = (start + 1);
-        int _indexOf_1 = str.indexOf("}", _plus);
+        int _indexOf_1 = msg.indexOf("}", _plus);
         end = _indexOf_1;
         int _minus_1 = (-1);
         boolean _equals = (end == _minus_1);
         if (_equals) {
-          int _length = str.length();
+          int _length = msg.length();
           from = _length;
         } else {
           int _plus_1 = (start + 2);
-          String name = str.substring(_plus_1, end);
+          String name = msg.substring(_plus_1, end);
           boolean _contains = vars.contains(name);
           boolean _not = (!_contains);
           if (_not) {
-            String _plus_2 = ("A variable with the name \'" + name);
-            String _plus_3 = (_plus_2 + "\' is unknown");
-            this.error(_plus_3, constraint, 
-              Literals.CONSTRAINT__MESSAGE, 
-              DomainDrivenDesignDslValidator.CONSTRAINT_MSG_UNKNOWN_VAR);
-            return;
+            return name;
           }
-          int _plus_4 = (end + 1);
-          from = _plus_4;
+          int _plus_2 = (end + 1);
+          from = _plus_2;
         }
       }
-      int _indexOf_1 = str.indexOf("${", from);
+      int _indexOf_1 = msg.indexOf("${", from);
       int _start_1 = start = _indexOf_1;
       int _minus_1 = (-1);
       boolean _greaterThan_1 = (_start_1 > _minus_1);
       _while = _greaterThan_1;
     }
+    return null;
   }
   
-  public Set<String> allVariables(final Constraint constraint) {
+  private Set<String> allVariables(final org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception ex) {
+    HashSet<String> _hashSet = new HashSet<String>();
+    Set<String> vars = _hashSet;
+    EList<Variable> _variables = ex.getVariables();
+    boolean _notEquals = (!Objects.equal(_variables, null));
+    if (_notEquals) {
+      EList<Variable> _variables_1 = ex.getVariables();
+      for (final Variable v : _variables_1) {
+        String _name = v.getName();
+        vars.add(_name);
+      }
+    }
+    return vars;
+  }
+  
+  private Set<String> allVariables(final Constraint constraint) {
     HashSet<String> _hashSet = new HashSet<String>();
     Set<String> vars = _hashSet;
     EList<Variable> _variables = constraint.getVariables();
@@ -145,45 +227,5 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
       }
     }
     return vars;
-  }
-  
-  @Check
-  public void checkNoRefToAggregate(final Variable variable) {
-    Type _type = variable.getType();
-    if ((_type instanceof Aggregate)) {
-      Type _type_1 = variable.getType();
-      Aggregate aggregate = ((Aggregate) _type_1);
-      AggregateId _idType = aggregate.getIdType();
-      String _name = _idType.getName();
-      this.error("A direct reference to an aggregates is not allowed", variable, 
-        Literals.VARIABLE__TYPE, 
-        DomainDrivenDesignDslValidator.REF_TO_AGGREGATE_NOT_ALLOWED, _name);
-    }
-  }
-  
-  @Check
-  public void checkNoRefToEntity(final ValueObject vo) {
-    EList<Variable> _variables = vo.getVariables();
-    for (final Variable v : _variables) {
-      Type _type = v.getType();
-      if ((_type instanceof AbstractEntity)) {
-        String idTypeName = null;
-        Type _type_1 = v.getType();
-        if ((_type_1 instanceof Entity)) {
-          Type _type_2 = v.getType();
-          EntityId _idType = ((Entity) _type_2).getIdType();
-          String _name = _idType.getName();
-          idTypeName = _name;
-        } else {
-          Type _type_3 = v.getType();
-          AggregateId _idType_1 = ((Aggregate) _type_3).getIdType();
-          String _name_1 = _idType_1.getName();
-          idTypeName = _name_1;
-        }
-        this.error("A reference from a value object to an entity is not allowed", v, 
-          Literals.VARIABLE__TYPE, 
-          DomainDrivenDesignDslValidator.VO_CANNOT_REF_ENTITY, idTypeName);
-      }
-    }
   }
 }

@@ -131,6 +131,15 @@ public interface DomainDrivenDesignDslFactory extends EFactory
   Constraint createConstraint();
 
   /**
+   * Returns a new object of class '<em>Exception</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Exception</em>'.
+   * @generated
+   */
+  Exception createException();
+
+  /**
    * Returns a new object of class '<em>Value Object</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

@@ -327,6 +327,16 @@ ruleType returns [EObject current=null]
         $current = $this_InternalType_1.current; 
         afterParserOrEnumRuleCall();
     }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getTypeAccess().getExceptionParserRuleCall_2()); 
+    }
+    this_Exception_2=ruleException
+    { 
+        $current = $this_Exception_2.current; 
+        afterParserOrEnumRuleCall();
+    }
 )
 ;
 
@@ -607,9 +617,9 @@ ruleConstraint returns [EObject current=null]
 	    }
 
 )
-)	otherlv_3='on' 
+)(	otherlv_3='on' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getConstraintAccess().getOnKeyword_3());
+    	newLeafNode(otherlv_3, grammarAccess.getConstraintAccess().getOnKeyword_3_0());
     }
 (
 (
@@ -620,40 +630,35 @@ ruleConstraint returns [EObject current=null]
         }
 	otherlv_4=RULE_ID
 	{
-		newLeafNode(otherlv_4, grammarAccess.getConstraintAccess().getTargetConstraintTargetCrossReference_4_0()); 
+		newLeafNode(otherlv_4, grammarAccess.getConstraintAccess().getTargetConstraintTargetCrossReference_3_1_0()); 
 	}
 
 )
-)(	otherlv_5='exception' 
+))?(	otherlv_5='exception' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getConstraintAccess().getExceptionKeyword_5_0());
+    	newLeafNode(otherlv_5, grammarAccess.getConstraintAccess().getExceptionKeyword_4_0());
     }
 (
 (
-		lv_exception_6_0=RULE_ID
 		{
-			newLeafNode(lv_exception_6_0, grammarAccess.getConstraintAccess().getExceptionIDTerminalRuleCall_5_1_0()); 
-		}
-		{
-	        if ($current==null) {
+			if ($current==null) {
 	            $current = createModelElement(grammarAccess.getConstraintRule());
 	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"exception",
-        		lv_exception_6_0, 
-        		"ID");
-	    }
+        }
+	otherlv_6=RULE_ID
+	{
+		newLeafNode(otherlv_6, grammarAccess.getConstraintAccess().getExceptionExceptionCrossReference_4_1_0()); 
+	}
 
 )
 ))?	otherlv_7='{' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getConstraintAccess().getLeftCurlyBracketKeyword_6());
+    	newLeafNode(otherlv_7, grammarAccess.getConstraintAccess().getLeftCurlyBracketKeyword_5());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getConstraintAccess().getVariablesVariableParserRuleCall_7_0()); 
+	        newCompositeNode(grammarAccess.getConstraintAccess().getVariablesVariableParserRuleCall_6_0()); 
 	    }
 		lv_variables_8_0=ruleVariable		{
 	        if ($current==null) {
@@ -668,15 +673,15 @@ ruleConstraint returns [EObject current=null]
 	    }
 
 )
-)*	otherlv_9='message' 
+)*(	otherlv_9='message' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getConstraintAccess().getMessageKeyword_8());
+    	newLeafNode(otherlv_9, grammarAccess.getConstraintAccess().getMessageKeyword_7_0());
     }
 (
 (
 		lv_message_10_0=RULE_STRING
 		{
-			newLeafNode(lv_message_10_0, grammarAccess.getConstraintAccess().getMessageSTRINGTerminalRuleCall_9_0()); 
+			newLeafNode(lv_message_10_0, grammarAccess.getConstraintAccess().getMessageSTRINGTerminalRuleCall_7_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -692,11 +697,124 @@ ruleConstraint returns [EObject current=null]
 )
 )	otherlv_11=';' 
     {
-    	newLeafNode(otherlv_11, grammarAccess.getConstraintAccess().getSemicolonKeyword_10());
+    	newLeafNode(otherlv_11, grammarAccess.getConstraintAccess().getSemicolonKeyword_7_2());
     }
-	otherlv_12='}' 
+)?	otherlv_12='}' 
     {
-    	newLeafNode(otherlv_12, grammarAccess.getConstraintAccess().getRightCurlyBracketKeyword_11());
+    	newLeafNode(otherlv_12, grammarAccess.getConstraintAccess().getRightCurlyBracketKeyword_8());
+    }
+)
+;
+
+
+
+
+
+// Entry rule entryRuleException
+entryRuleException returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getExceptionRule()); }
+	 iv_ruleException=ruleException 
+	 { $current=$iv_ruleException.current; } 
+	 EOF 
+;
+
+// Rule Exception
+ruleException returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+(
+		lv_doc_0_0=RULE_DOC
+		{
+			newLeafNode(lv_doc_0_0, grammarAccess.getExceptionAccess().getDocDOCTerminalRuleCall_0_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getExceptionRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"doc",
+        		lv_doc_0_0, 
+        		"DOC");
+	    }
+
+)
+)	otherlv_1='exception' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getExceptionAccess().getExceptionKeyword_1());
+    }
+(
+(
+		lv_name_2_0=RULE_ID
+		{
+			newLeafNode(lv_name_2_0, grammarAccess.getExceptionAccess().getNameIDTerminalRuleCall_2_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getExceptionRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"name",
+        		lv_name_2_0, 
+        		"ID");
+	    }
+
+)
+)	otherlv_3='{' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getExceptionAccess().getLeftCurlyBracketKeyword_3());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getExceptionAccess().getVariablesVariableParserRuleCall_4_0()); 
+	    }
+		lv_variables_4_0=ruleVariable		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getExceptionRule());
+	        }
+       		add(
+       			$current, 
+       			"variables",
+        		lv_variables_4_0, 
+        		"Variable");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)*	otherlv_5='message' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getExceptionAccess().getMessageKeyword_5());
+    }
+(
+(
+		lv_message_6_0=RULE_STRING
+		{
+			newLeafNode(lv_message_6_0, grammarAccess.getExceptionAccess().getMessageSTRINGTerminalRuleCall_6_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getExceptionRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"message",
+        		lv_message_6_0, 
+        		"STRING");
+	    }
+
+)
+)	otherlv_7=';' 
+    {
+    	newLeafNode(otherlv_7, grammarAccess.getExceptionAccess().getSemicolonKeyword_7());
+    }
+	otherlv_8='}' 
+    {
+    	newLeafNode(otherlv_8, grammarAccess.getExceptionAccess().getRightCurlyBracketKeyword_8());
     }
 )
 ;

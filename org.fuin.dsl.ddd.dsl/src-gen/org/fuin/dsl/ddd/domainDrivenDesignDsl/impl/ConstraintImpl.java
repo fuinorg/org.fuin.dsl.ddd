@@ -72,24 +72,14 @@ public class ConstraintImpl extends AbstractElementImpl implements Constraint
   protected ConstraintTarget target;
 
   /**
-   * The default value of the '{@link #getException() <em>Exception</em>}' attribute.
+   * The cached value of the '{@link #getException() <em>Exception</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getException()
    * @generated
    * @ordered
    */
-  protected static final String EXCEPTION_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getException() <em>Exception</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getException()
-   * @generated
-   * @ordered
-   */
-  protected String exception = EXCEPTION_EDEFAULT;
+  protected org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception exception;
 
   /**
    * The cached value of the '{@link #getVariables() <em>Variables</em>}' containment reference list.
@@ -213,7 +203,27 @@ public class ConstraintImpl extends AbstractElementImpl implements Constraint
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getException()
+  public org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception getException()
+  {
+    if (exception != null && exception.eIsProxy())
+    {
+      InternalEObject oldException = (InternalEObject)exception;
+      exception = (org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception)eResolveProxy(oldException);
+      if (exception != oldException)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, DomainDrivenDesignDslPackage.CONSTRAINT__EXCEPTION, oldException, exception));
+      }
+    }
+    return exception;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception basicGetException()
   {
     return exception;
   }
@@ -223,9 +233,9 @@ public class ConstraintImpl extends AbstractElementImpl implements Constraint
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setException(String newException)
+  public void setException(org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception newException)
   {
-    String oldException = exception;
+    org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception oldException = exception;
     exception = newException;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.CONSTRAINT__EXCEPTION, oldException, exception));
@@ -300,7 +310,8 @@ public class ConstraintImpl extends AbstractElementImpl implements Constraint
         if (resolve) return getTarget();
         return basicGetTarget();
       case DomainDrivenDesignDslPackage.CONSTRAINT__EXCEPTION:
-        return getException();
+        if (resolve) return getException();
+        return basicGetException();
       case DomainDrivenDesignDslPackage.CONSTRAINT__VARIABLES:
         return getVariables();
       case DomainDrivenDesignDslPackage.CONSTRAINT__MESSAGE:
@@ -327,7 +338,7 @@ public class ConstraintImpl extends AbstractElementImpl implements Constraint
         setTarget((ConstraintTarget)newValue);
         return;
       case DomainDrivenDesignDslPackage.CONSTRAINT__EXCEPTION:
-        setException((String)newValue);
+        setException((org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception)newValue);
         return;
       case DomainDrivenDesignDslPackage.CONSTRAINT__VARIABLES:
         getVariables().clear();
@@ -357,7 +368,7 @@ public class ConstraintImpl extends AbstractElementImpl implements Constraint
         setTarget((ConstraintTarget)null);
         return;
       case DomainDrivenDesignDslPackage.CONSTRAINT__EXCEPTION:
-        setException(EXCEPTION_EDEFAULT);
+        setException((org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception)null);
         return;
       case DomainDrivenDesignDslPackage.CONSTRAINT__VARIABLES:
         getVariables().clear();
@@ -384,7 +395,7 @@ public class ConstraintImpl extends AbstractElementImpl implements Constraint
       case DomainDrivenDesignDslPackage.CONSTRAINT__TARGET:
         return target != null;
       case DomainDrivenDesignDslPackage.CONSTRAINT__EXCEPTION:
-        return EXCEPTION_EDEFAULT == null ? exception != null : !EXCEPTION_EDEFAULT.equals(exception);
+        return exception != null;
       case DomainDrivenDesignDslPackage.CONSTRAINT__VARIABLES:
         return variables != null && !variables.isEmpty();
       case DomainDrivenDesignDslPackage.CONSTRAINT__MESSAGE:
@@ -406,8 +417,6 @@ public class ConstraintImpl extends AbstractElementImpl implements Constraint
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (doc: ");
     result.append(doc);
-    result.append(", exception: ");
-    result.append(exception);
     result.append(", message: ");
     result.append(message);
     result.append(')');

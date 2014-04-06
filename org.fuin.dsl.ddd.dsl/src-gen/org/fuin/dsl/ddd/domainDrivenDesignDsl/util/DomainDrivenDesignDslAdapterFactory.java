@@ -9,7 +9,41 @@ import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 
 import org.eclipse.emf.ecore.EObject;
 
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.*;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractElement;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntity;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntityId;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractVO;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.BooleanLiteral;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintCall;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraints;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constructor;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainModel;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.EntityId;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumInstance;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumObject;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Import;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.InternalType;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Invariants;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Literal;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Method;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Namespace;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.NullLiteral;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.NumberLiteral;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.OverriddenTypeMetaInfo;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.StringLiteral;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Type;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.TypeMetaInfo;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ValueObject;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
 
 /**
  * <!-- begin-user-doc -->
@@ -133,6 +167,11 @@ public class DomainDrivenDesignDslAdapterFactory extends AdapterFactoryImpl
       public Adapter caseConstraint(Constraint object)
       {
         return createConstraintAdapter();
+      }
+      @Override
+      public Adapter caseException(org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception object)
+      {
+        return createExceptionAdapter();
       }
       @Override
       public Adapter caseValueObject(ValueObject object)
@@ -442,6 +481,21 @@ public class DomainDrivenDesignDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createConstraintAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception <em>Exception</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception
+   * @generated
+   */
+  public Adapter createExceptionAdapter()
   {
     return null;
   }

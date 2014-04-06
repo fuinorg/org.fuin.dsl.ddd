@@ -143,6 +143,13 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass exceptionEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass valueObjectEClass = null;
 
   /**
@@ -620,9 +627,9 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getConstraint_Exception()
+  public EReference getConstraint_Exception()
   {
-    return (EAttribute)constraintEClass.getEStructuralFeatures().get(2);
+    return (EReference)constraintEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -643,6 +650,46 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
   public EAttribute getConstraint_Message()
   {
     return (EAttribute)constraintEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getException()
+  {
+    return exceptionEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getException_Doc()
+  {
+    return (EAttribute)exceptionEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getException_Variables()
+  {
+    return (EReference)exceptionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getException_Message()
+  {
+    return (EAttribute)exceptionEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1282,9 +1329,14 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     constraintEClass = createEClass(CONSTRAINT);
     createEAttribute(constraintEClass, CONSTRAINT__DOC);
     createEReference(constraintEClass, CONSTRAINT__TARGET);
-    createEAttribute(constraintEClass, CONSTRAINT__EXCEPTION);
+    createEReference(constraintEClass, CONSTRAINT__EXCEPTION);
     createEReference(constraintEClass, CONSTRAINT__VARIABLES);
     createEAttribute(constraintEClass, CONSTRAINT__MESSAGE);
+
+    exceptionEClass = createEClass(EXCEPTION);
+    createEAttribute(exceptionEClass, EXCEPTION__DOC);
+    createEReference(exceptionEClass, EXCEPTION__VARIABLES);
+    createEAttribute(exceptionEClass, EXCEPTION__MESSAGE);
 
     valueObjectEClass = createEClass(VALUE_OBJECT);
     createEReference(valueObjectEClass, VALUE_OBJECT__BASE);
@@ -1403,6 +1455,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     externalTypeEClass.getESuperTypes().add(this.getType());
     externalTypeEClass.getESuperTypes().add(this.getConstraintTarget());
     constraintEClass.getESuperTypes().add(this.getAbstractElement());
+    exceptionEClass.getESuperTypes().add(this.getType());
     valueObjectEClass.getESuperTypes().add(this.getAbstractVO());
     valueObjectEClass.getESuperTypes().add(this.getConstraintTarget());
     entityIdEClass.getESuperTypes().add(this.getAbstractEntityId());
@@ -1457,9 +1510,14 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     initEClass(constraintEClass, Constraint.class, "Constraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getConstraint_Doc(), ecorePackage.getEString(), "doc", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getConstraint_Target(), this.getConstraintTarget(), null, "target", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getConstraint_Exception(), ecorePackage.getEString(), "exception", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getConstraint_Exception(), this.getException(), null, "exception", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getConstraint_Variables(), this.getVariable(), null, "variables", null, 0, -1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getConstraint_Message(), ecorePackage.getEString(), "message", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(exceptionEClass, org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception.class, "Exception", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getException_Doc(), ecorePackage.getEString(), "doc", null, 0, 1, org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getException_Variables(), this.getVariable(), null, "variables", null, 0, -1, org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getException_Message(), ecorePackage.getEString(), "message", null, 0, 1, org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(valueObjectEClass, ValueObject.class, "ValueObject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getValueObject_Base(), this.getExternalType(), null, "base", null, 0, 1, ValueObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

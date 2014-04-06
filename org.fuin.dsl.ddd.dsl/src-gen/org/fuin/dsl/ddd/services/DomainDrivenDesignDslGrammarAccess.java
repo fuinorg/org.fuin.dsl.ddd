@@ -142,12 +142,13 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cExternalTypeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cInternalTypeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cExceptionParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//Type:
-		//	ExternalType | InternalType;
+		//	ExternalType | InternalType | Exception;
 		public ParserRule getRule() { return rule; }
 
-		//ExternalType | InternalType
+		//ExternalType | InternalType | Exception
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//ExternalType
@@ -155,6 +156,9 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 
 		//InternalType
 		public RuleCall getInternalTypeParserRuleCall_1() { return cInternalTypeParserRuleCall_1; }
+
+		//Exception
+		public RuleCall getExceptionParserRuleCall_2() { return cExceptionParserRuleCall_2; }
 	}
 
 	public class InternalTypeElements extends AbstractParserRuleElementFinder {
@@ -297,30 +301,33 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final Keyword cConstraintKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Keyword cOnKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cTargetAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final CrossReference cTargetConstraintTargetCrossReference_4_0 = (CrossReference)cTargetAssignment_4.eContents().get(0);
-		private final RuleCall cTargetConstraintTargetIDTerminalRuleCall_4_0_1 = (RuleCall)cTargetConstraintTargetCrossReference_4_0.eContents().get(1);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cExceptionKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cExceptionAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cExceptionIDTerminalRuleCall_5_1_0 = (RuleCall)cExceptionAssignment_5_1.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		private final Assignment cVariablesAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cVariablesVariableParserRuleCall_7_0 = (RuleCall)cVariablesAssignment_7.eContents().get(0);
-		private final Keyword cMessageKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Assignment cMessageAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cMessageSTRINGTerminalRuleCall_9_0 = (RuleCall)cMessageAssignment_9.eContents().get(0);
-		private final Keyword cSemicolonKeyword_10 = (Keyword)cGroup.eContents().get(10);
-		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cOnKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cTargetAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final CrossReference cTargetConstraintTargetCrossReference_3_1_0 = (CrossReference)cTargetAssignment_3_1.eContents().get(0);
+		private final RuleCall cTargetConstraintTargetIDTerminalRuleCall_3_1_0_1 = (RuleCall)cTargetConstraintTargetCrossReference_3_1_0.eContents().get(1);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cExceptionKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cExceptionAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final CrossReference cExceptionExceptionCrossReference_4_1_0 = (CrossReference)cExceptionAssignment_4_1.eContents().get(0);
+		private final RuleCall cExceptionExceptionIDTerminalRuleCall_4_1_0_1 = (RuleCall)cExceptionExceptionCrossReference_4_1_0.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cVariablesAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cVariablesVariableParserRuleCall_6_0 = (RuleCall)cVariablesAssignment_6.eContents().get(0);
+		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
+		private final Keyword cMessageKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
+		private final Assignment cMessageAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
+		private final RuleCall cMessageSTRINGTerminalRuleCall_7_1_0 = (RuleCall)cMessageAssignment_7_1.eContents().get(0);
+		private final Keyword cSemicolonKeyword_7_2 = (Keyword)cGroup_7.eContents().get(2);
+		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//Constraint:
-		//	doc=DOC "constraint" name=ID "on" target=[ConstraintTarget] ("exception" exception=ID)? "{" variables+=Variable*
-		//	"message" message=STRING ";" "}";
+		//	doc=DOC "constraint" name=ID ("on" target=[ConstraintTarget])? ("exception" exception=[Exception])? "{"
+		//	variables+=Variable* ("message" message=STRING ";")? "}";
 		public ParserRule getRule() { return rule; }
 
-		//doc=DOC "constraint" name=ID "on" target=[ConstraintTarget] ("exception" exception=ID)? "{" variables+=Variable*
-		//"message" message=STRING ";" "}"
+		//doc=DOC "constraint" name=ID ("on" target=[ConstraintTarget])? ("exception" exception=[Exception])? "{"
+		//variables+=Variable* ("message" message=STRING ";")? "}"
 		public Group getGroup() { return cGroup; }
 
 		//doc=DOC
@@ -338,53 +345,126 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 
+		//("on" target=[ConstraintTarget])?
+		public Group getGroup_3() { return cGroup_3; }
+
 		//"on"
-		public Keyword getOnKeyword_3() { return cOnKeyword_3; }
+		public Keyword getOnKeyword_3_0() { return cOnKeyword_3_0; }
 
 		//target=[ConstraintTarget]
-		public Assignment getTargetAssignment_4() { return cTargetAssignment_4; }
+		public Assignment getTargetAssignment_3_1() { return cTargetAssignment_3_1; }
 
 		//[ConstraintTarget]
-		public CrossReference getTargetConstraintTargetCrossReference_4_0() { return cTargetConstraintTargetCrossReference_4_0; }
+		public CrossReference getTargetConstraintTargetCrossReference_3_1_0() { return cTargetConstraintTargetCrossReference_3_1_0; }
 
 		//ID
-		public RuleCall getTargetConstraintTargetIDTerminalRuleCall_4_0_1() { return cTargetConstraintTargetIDTerminalRuleCall_4_0_1; }
+		public RuleCall getTargetConstraintTargetIDTerminalRuleCall_3_1_0_1() { return cTargetConstraintTargetIDTerminalRuleCall_3_1_0_1; }
 
-		//("exception" exception=ID)?
-		public Group getGroup_5() { return cGroup_5; }
+		//("exception" exception=[Exception])?
+		public Group getGroup_4() { return cGroup_4; }
 
 		//"exception"
-		public Keyword getExceptionKeyword_5_0() { return cExceptionKeyword_5_0; }
+		public Keyword getExceptionKeyword_4_0() { return cExceptionKeyword_4_0; }
 
-		//exception=ID
-		public Assignment getExceptionAssignment_5_1() { return cExceptionAssignment_5_1; }
+		//exception=[Exception]
+		public Assignment getExceptionAssignment_4_1() { return cExceptionAssignment_4_1; }
+
+		//[Exception]
+		public CrossReference getExceptionExceptionCrossReference_4_1_0() { return cExceptionExceptionCrossReference_4_1_0; }
 
 		//ID
-		public RuleCall getExceptionIDTerminalRuleCall_5_1_0() { return cExceptionIDTerminalRuleCall_5_1_0; }
+		public RuleCall getExceptionExceptionIDTerminalRuleCall_4_1_0_1() { return cExceptionExceptionIDTerminalRuleCall_4_1_0_1; }
 
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_6() { return cLeftCurlyBracketKeyword_6; }
+		public Keyword getLeftCurlyBracketKeyword_5() { return cLeftCurlyBracketKeyword_5; }
 
 		//variables+=Variable*
-		public Assignment getVariablesAssignment_7() { return cVariablesAssignment_7; }
+		public Assignment getVariablesAssignment_6() { return cVariablesAssignment_6; }
 
 		//Variable
-		public RuleCall getVariablesVariableParserRuleCall_7_0() { return cVariablesVariableParserRuleCall_7_0; }
+		public RuleCall getVariablesVariableParserRuleCall_6_0() { return cVariablesVariableParserRuleCall_6_0; }
+
+		//("message" message=STRING ";")?
+		public Group getGroup_7() { return cGroup_7; }
 
 		//"message"
-		public Keyword getMessageKeyword_8() { return cMessageKeyword_8; }
+		public Keyword getMessageKeyword_7_0() { return cMessageKeyword_7_0; }
 
 		//message=STRING
-		public Assignment getMessageAssignment_9() { return cMessageAssignment_9; }
+		public Assignment getMessageAssignment_7_1() { return cMessageAssignment_7_1; }
 
 		//STRING
-		public RuleCall getMessageSTRINGTerminalRuleCall_9_0() { return cMessageSTRINGTerminalRuleCall_9_0; }
+		public RuleCall getMessageSTRINGTerminalRuleCall_7_1_0() { return cMessageSTRINGTerminalRuleCall_7_1_0; }
 
 		//";"
-		public Keyword getSemicolonKeyword_10() { return cSemicolonKeyword_10; }
+		public Keyword getSemicolonKeyword_7_2() { return cSemicolonKeyword_7_2; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
+		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
+	}
+
+	public class ExceptionElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Exception");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cDocAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cDocDOCTerminalRuleCall_0_0 = (RuleCall)cDocAssignment_0.eContents().get(0);
+		private final Keyword cExceptionKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cVariablesAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cVariablesVariableParserRuleCall_4_0 = (RuleCall)cVariablesAssignment_4.eContents().get(0);
+		private final Keyword cMessageKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cMessageAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cMessageSTRINGTerminalRuleCall_6_0 = (RuleCall)cMessageAssignment_6.eContents().get(0);
+		private final Keyword cSemicolonKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		
+		//Exception:
+		//	doc=DOC "exception" name=ID "{" variables+=Variable* "message" message=STRING ";" "}";
+		public ParserRule getRule() { return rule; }
+
+		//doc=DOC "exception" name=ID "{" variables+=Variable* "message" message=STRING ";" "}"
+		public Group getGroup() { return cGroup; }
+
+		//doc=DOC
+		public Assignment getDocAssignment_0() { return cDocAssignment_0; }
+
+		//DOC
+		public RuleCall getDocDOCTerminalRuleCall_0_0() { return cDocDOCTerminalRuleCall_0_0; }
+
+		//"exception"
+		public Keyword getExceptionKeyword_1() { return cExceptionKeyword_1; }
+
+		//name=ID
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+
+		//variables+=Variable*
+		public Assignment getVariablesAssignment_4() { return cVariablesAssignment_4; }
+
+		//Variable
+		public RuleCall getVariablesVariableParserRuleCall_4_0() { return cVariablesVariableParserRuleCall_4_0; }
+
+		//"message"
+		public Keyword getMessageKeyword_5() { return cMessageKeyword_5; }
+
+		//message=STRING
+		public Assignment getMessageAssignment_6() { return cMessageAssignment_6; }
+
+		//STRING
+		public RuleCall getMessageSTRINGTerminalRuleCall_6_0() { return cMessageSTRINGTerminalRuleCall_6_0; }
+
+		//";"
+		public Keyword getSemicolonKeyword_7() { return cSemicolonKeyword_7; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
 	}
 
 	public class ValueObjectElements extends AbstractParserRuleElementFinder {
@@ -1850,6 +1930,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	private ConstraintTargetElements pConstraintTarget;
 	private ExternalTypeElements pExternalType;
 	private ConstraintElements pConstraint;
+	private ExceptionElements pException;
 	private ValueObjectElements pValueObject;
 	private EntityIdElements pEntityId;
 	private AggregateIdElements pAggregateId;
@@ -1956,7 +2037,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//Type:
-	//	ExternalType | InternalType;
+	//	ExternalType | InternalType | Exception;
 	public TypeElements getTypeAccess() {
 		return (pType != null) ? pType : (pType = new TypeElements());
 	}
@@ -2026,14 +2107,24 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//Constraint:
-	//	doc=DOC "constraint" name=ID "on" target=[ConstraintTarget] ("exception" exception=ID)? "{" variables+=Variable*
-	//	"message" message=STRING ";" "}";
+	//	doc=DOC "constraint" name=ID ("on" target=[ConstraintTarget])? ("exception" exception=[Exception])? "{"
+	//	variables+=Variable* ("message" message=STRING ";")? "}";
 	public ConstraintElements getConstraintAccess() {
 		return (pConstraint != null) ? pConstraint : (pConstraint = new ConstraintElements());
 	}
 	
 	public ParserRule getConstraintRule() {
 		return getConstraintAccess().getRule();
+	}
+
+	//Exception:
+	//	doc=DOC "exception" name=ID "{" variables+=Variable* "message" message=STRING ";" "}";
+	public ExceptionElements getExceptionAccess() {
+		return (pException != null) ? pException : (pException = new ExceptionElements());
+	}
+	
+	public ParserRule getExceptionRule() {
+		return getExceptionAccess().getRule();
 	}
 
 	//ValueObject:

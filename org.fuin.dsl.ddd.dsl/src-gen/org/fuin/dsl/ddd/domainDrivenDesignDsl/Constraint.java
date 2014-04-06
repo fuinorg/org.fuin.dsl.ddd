@@ -79,30 +79,30 @@ public interface Constraint extends AbstractElement
   void setTarget(ConstraintTarget value);
 
   /**
-   * Returns the value of the '<em><b>Exception</b></em>' attribute.
+   * Returns the value of the '<em><b>Exception</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Exception</em>' attribute isn't clear,
+   * If the meaning of the '<em>Exception</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Exception</em>' attribute.
-   * @see #setException(String)
+   * @return the value of the '<em>Exception</em>' reference.
+   * @see #setException(org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception)
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getConstraint_Exception()
    * @model
    * @generated
    */
-  String getException();
+  org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception getException();
 
   /**
-   * Sets the value of the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint#getException <em>Exception</em>}' attribute.
+   * Sets the value of the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint#getException <em>Exception</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Exception</em>' attribute.
+   * @param value the new value of the '<em>Exception</em>' reference.
    * @see #getException()
    * @generated
    */
-  void setException(String value);
+  void setException(org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception value);
 
   /**
    * Returns the value of the '<em><b>Variables</b></em>' containment reference list.

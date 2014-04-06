@@ -13,9 +13,7 @@ import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightedPositionAcceptor;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.ISemanticHighlightingCalculator;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntity;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractVO;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumInstance;
@@ -67,6 +65,13 @@ public class DddDslHighlightCalculator implements
 					DddDslHighlightConfig.COMMENT_ID);
 		}
 
+		@Override
+		public Void caseException(org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception exception) {
+			return highlightFirst(exception,
+					DomainDrivenDesignDslPackage.eINSTANCE.getException_Doc(),
+					DddDslHighlightConfig.COMMENT_ID);
+		}
+		
 		@Override
 		public Void caseEnumInstance(EnumInstance enumInstance) {
 			return highlightFirst(enumInstance,

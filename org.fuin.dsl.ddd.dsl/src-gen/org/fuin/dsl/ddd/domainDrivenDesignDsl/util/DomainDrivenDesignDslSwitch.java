@@ -7,7 +7,41 @@ import org.eclipse.emf.ecore.EPackage;
 
 import org.eclipse.emf.ecore.util.Switch;
 
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.*;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractElement;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntity;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntityId;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractVO;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.BooleanLiteral;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintCall;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraints;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constructor;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainModel;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.EntityId;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumInstance;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumObject;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Import;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.InternalType;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Invariants;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Literal;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Method;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Namespace;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.NullLiteral;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.NumberLiteral;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.OverriddenTypeMetaInfo;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.StringLiteral;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Type;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.TypeMetaInfo;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ValueObject;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
 
 /**
  * <!-- begin-user-doc -->
@@ -170,6 +204,15 @@ public class DomainDrivenDesignDslSwitch<T> extends Switch<T>
         Constraint constraint = (Constraint)theEObject;
         T result = caseConstraint(constraint);
         if (result == null) result = caseAbstractElement(constraint);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DomainDrivenDesignDslPackage.EXCEPTION:
+      {
+        org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception exception = (org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception)theEObject;
+        T result = caseException(exception);
+        if (result == null) result = caseType(exception);
+        if (result == null) result = caseAbstractElement(exception);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -552,6 +595,22 @@ public class DomainDrivenDesignDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseConstraint(Constraint object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Exception</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Exception</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseException(org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception object)
   {
     return null;
   }

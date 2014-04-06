@@ -152,6 +152,14 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 					return; 
 				}
 				else break;
+			case DomainDrivenDesignDslPackage.EXCEPTION:
+				if(context == grammarAccess.getAbstractElementRule() ||
+				   context == grammarAccess.getExceptionRule() ||
+				   context == grammarAccess.getTypeRule()) {
+					sequence_Exception(context, (org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception) semanticObject); 
+					return; 
+				}
+				else break;
 			case DomainDrivenDesignDslPackage.EXTERNAL_TYPE:
 				if(context == grammarAccess.getAbstractElementRule() ||
 				   context == grammarAccess.getConstraintTargetRule() ||
@@ -297,10 +305,10 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *     (
 	 *         doc=DOC 
 	 *         name=ID 
-	 *         target=[ConstraintTarget|ID] 
-	 *         exception=ID? 
+	 *         target=[ConstraintTarget|ID]? 
+	 *         exception=[Exception|ID]? 
 	 *         variables+=Variable* 
-	 *         message=STRING
+	 *         message=STRING?
 	 *     )
 	 */
 	protected void sequence_Constraint(EObject context, Constraint semanticObject) {
@@ -408,6 +416,15 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *     (doc=DOC? name=ID variables+=Variable*)
 	 */
 	protected void sequence_Event(EObject context, Event semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (doc=DOC name=ID variables+=Variable* message=STRING)
+	 */
+	protected void sequence_Exception(EObject context, org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	

@@ -20,7 +20,7 @@ AbstractElement:
 	Constraint | Type;
 
 Type:
-	ExternalType | InternalType;
+	ExternalType | InternalType | Exception;
 
 InternalType:
 	AbstractVO | AbstractEntity;
@@ -42,11 +42,18 @@ ExternalType:
 
 Constraint:
 	doc=DOC 
-	'constraint' name=ID 'on' target=[ConstraintTarget] ('exception' exception=ID)? '{'
+	'constraint' name=ID ('on' target=[ConstraintTarget])? ('exception' exception=[Exception])? '{'
+		variables+=Variable* 
+		('message' message=STRING ';')?
+	'}';
+	
+Exception:
+	doc=DOC 
+	'exception' name=ID '{'
 		variables+=Variable* 
 		'message' message=STRING ';'
 	'}';
-	
+
 ValueObject:
 	doc=DOC 
 	'value-object' name=ID ('base' base=[ExternalType])? '{'

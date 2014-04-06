@@ -10,7 +10,42 @@ import org.eclipse.emf.ecore.impl.EFactoryImpl;
 
 import org.eclipse.emf.ecore.plugin.EcorePlugin;
 
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.*;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractElement;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntity;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntityId;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractVO;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.BooleanLiteral;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintCall;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraints;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constructor;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslFactory;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainModel;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.EntityId;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumInstance;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumObject;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Import;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.InternalType;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Invariants;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Literal;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Method;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Namespace;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.NullLiteral;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.NumberLiteral;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.OverriddenTypeMetaInfo;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.StringLiteral;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Type;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.TypeMetaInfo;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ValueObject;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
 
 /**
  * <!-- begin-user-doc -->
@@ -76,6 +111,7 @@ public class DomainDrivenDesignDslFactoryImpl extends EFactoryImpl implements Do
       case DomainDrivenDesignDslPackage.CONSTRAINT_TARGET: return createConstraintTarget();
       case DomainDrivenDesignDslPackage.EXTERNAL_TYPE: return createExternalType();
       case DomainDrivenDesignDslPackage.CONSTRAINT: return createConstraint();
+      case DomainDrivenDesignDslPackage.EXCEPTION: return createException();
       case DomainDrivenDesignDslPackage.VALUE_OBJECT: return createValueObject();
       case DomainDrivenDesignDslPackage.ENTITY_ID: return createEntityId();
       case DomainDrivenDesignDslPackage.AGGREGATE_ID: return createAggregateId();
@@ -233,6 +269,17 @@ public class DomainDrivenDesignDslFactoryImpl extends EFactoryImpl implements Do
   {
     ConstraintImpl constraint = new ConstraintImpl();
     return constraint;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception createException()
+  {
+    ExceptionImpl exception = new ExceptionImpl();
+    return exception;
   }
 
   /**
