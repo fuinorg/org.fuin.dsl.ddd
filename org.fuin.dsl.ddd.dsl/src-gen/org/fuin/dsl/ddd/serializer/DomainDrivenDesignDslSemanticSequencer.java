@@ -253,6 +253,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *     (
 	 *         doc=DOC 
 	 *         name=ID 
+	 *         entity=[Aggregate|ID] 
 	 *         base=[ExternalType|ID]? 
 	 *         metaInfo=TypeMetaInfo 
 	 *         variables+=Variable* 
@@ -355,6 +356,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *     (
 	 *         doc=DOC 
 	 *         name=ID 
+	 *         entity=[Entity|ID] 
 	 *         base=[ExternalType|ID]? 
 	 *         metaInfo=TypeMetaInfo 
 	 *         variables+=Variable* 

@@ -65,7 +65,7 @@ ValueObject:
 
 EntityId:
 	doc=DOC 
-	'entity-id' name=ID ('base' base=[ExternalType])? '{'
+	'entity-id' name=ID 'identifies' entity=[Entity] ('base' base=[ExternalType])? '{'
 		metaInfo=TypeMetaInfo
 		variables+=Variable*
 		constructors+=Constructor*
@@ -74,7 +74,7 @@ EntityId:
 
 AggregateId:
 	doc=DOC 
-	'aggregate-id' name=ID ('base' base=[ExternalType])? '{'
+	'aggregate-id' name=ID 'identifies' entity=[Aggregate] ('base' base=[ExternalType])? '{'
 		metaInfo=TypeMetaInfo
 		variables+=Variable*
 		constructors+=Constructor*

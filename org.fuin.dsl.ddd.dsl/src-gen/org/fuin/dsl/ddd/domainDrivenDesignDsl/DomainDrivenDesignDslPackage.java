@@ -846,13 +846,22 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int ENTITY_ID__BASE = ABSTRACT_ENTITY_ID__BASE;
 
   /**
+   * The feature id for the '<em><b>Entity</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENTITY_ID__ENTITY = ABSTRACT_ENTITY_ID_FEATURE_COUNT + 0;
+
+  /**
    * The number of structural features of the '<em>Entity Id</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ENTITY_ID_FEATURE_COUNT = ABSTRACT_ENTITY_ID_FEATURE_COUNT + 0;
+  int ENTITY_ID_FEATURE_COUNT = ABSTRACT_ENTITY_ID_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AggregateIdImpl <em>Aggregate Id</em>}' class.
@@ -928,13 +937,22 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int AGGREGATE_ID__BASE = ABSTRACT_ENTITY_ID__BASE;
 
   /**
+   * The feature id for the '<em><b>Entity</b></em>' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AGGREGATE_ID__ENTITY = ABSTRACT_ENTITY_ID_FEATURE_COUNT + 0;
+
+  /**
    * The number of structural features of the '<em>Aggregate Id</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int AGGREGATE_ID_FEATURE_COUNT = ABSTRACT_ENTITY_ID_FEATURE_COUNT + 0;
+  int AGGREGATE_ID_FEATURE_COUNT = ABSTRACT_ENTITY_ID_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.EnumObjectImpl <em>Enum Object</em>}' class.
@@ -2274,6 +2292,17 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   EClass getEntityId();
 
   /**
+   * Returns the meta object for the reference '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.EntityId#getEntity <em>Entity</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Entity</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.EntityId#getEntity()
+   * @see #getEntityId()
+   * @generated
+   */
+  EReference getEntityId_Entity();
+
+  /**
    * Returns the meta object for class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId <em>Aggregate Id</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2282,6 +2311,17 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @generated
    */
   EClass getAggregateId();
+
+  /**
+   * Returns the meta object for the reference '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId#getEntity <em>Entity</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference '<em>Entity</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId#getEntity()
+   * @see #getAggregateId()
+   * @generated
+   */
+  EReference getAggregateId_Entity();
 
   /**
    * Returns the meta object for class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumObject <em>Enum Object</em>}'.
@@ -3189,6 +3229,14 @@ public interface DomainDrivenDesignDslPackage extends EPackage
     EClass ENTITY_ID = eINSTANCE.getEntityId();
 
     /**
+     * The meta object literal for the '<em><b>Entity</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ENTITY_ID__ENTITY = eINSTANCE.getEntityId_Entity();
+
+    /**
      * The meta object literal for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AggregateIdImpl <em>Aggregate Id</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3197,6 +3245,14 @@ public interface DomainDrivenDesignDslPackage extends EPackage
      * @generated
      */
     EClass AGGREGATE_ID = eINSTANCE.getAggregateId();
+
+    /**
+     * The meta object literal for the '<em><b>Entity</b></em>' reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference AGGREGATE_ID__ENTITY = eINSTANCE.getAggregateId_Entity();
 
     /**
      * The meta object literal for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.EnumObjectImpl <em>Enum Object</em>}' class.

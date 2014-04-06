@@ -727,9 +727,29 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getEntityId_Entity()
+  {
+    return (EReference)entityIdEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getAggregateId()
   {
     return aggregateIdEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getAggregateId_Entity()
+  {
+    return (EReference)aggregateIdEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1342,8 +1362,10 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     createEReference(valueObjectEClass, VALUE_OBJECT__BASE);
 
     entityIdEClass = createEClass(ENTITY_ID);
+    createEReference(entityIdEClass, ENTITY_ID__ENTITY);
 
     aggregateIdEClass = createEClass(AGGREGATE_ID);
+    createEReference(aggregateIdEClass, AGGREGATE_ID__ENTITY);
 
     enumObjectEClass = createEClass(ENUM_OBJECT);
     createEReference(enumObjectEClass, ENUM_OBJECT__INSTANCES);
@@ -1523,8 +1545,10 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     initEReference(getValueObject_Base(), this.getExternalType(), null, "base", null, 0, 1, ValueObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(entityIdEClass, EntityId.class, "EntityId", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getEntityId_Entity(), this.getEntity(), null, "entity", null, 0, 1, EntityId.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(aggregateIdEClass, AggregateId.class, "AggregateId", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getAggregateId_Entity(), this.getAggregate(), null, "entity", null, 0, 1, AggregateId.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(enumObjectEClass, EnumObject.class, "EnumObject", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getEnumObject_Instances(), this.getEnumInstance(), null, "instances", null, 0, -1, EnumObject.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
