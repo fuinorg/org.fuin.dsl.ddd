@@ -21,8 +21,7 @@ public class DomainDrivenDesignDslXtext2EcorePostProcessor implements IXtext2Eco
     boolean _xblockexpression = false;
     {
       final EClass abstractEntityClass = this.find(p, "AbstractEntity");
-      boolean _addMethod = this.addMethod(abstractEntityClass, "AbstractEntityId", "getIdType");
-      _xblockexpression = (_addMethod);
+      _xblockexpression = this.addMethod(abstractEntityClass, "AbstractEntityId", "getIdType");
     }
     return _xblockexpression;
   }
@@ -44,8 +43,7 @@ public class DomainDrivenDesignDslXtext2EcorePostProcessor implements IXtext2Eco
       operation.setName(methodName);
       operation.setEType(returnValueClass);
       EList<EOperation> _eOperations = intfClass.getEOperations();
-      boolean _add = _eOperations.add(operation);
-      _xblockexpression = (_add);
+      _xblockexpression = _eOperations.add(operation);
     }
     return _xblockexpression;
   }

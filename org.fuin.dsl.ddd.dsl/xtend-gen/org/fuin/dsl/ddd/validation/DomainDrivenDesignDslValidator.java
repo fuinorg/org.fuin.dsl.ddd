@@ -11,7 +11,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage.Literals;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.EntityId;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event;
@@ -49,7 +49,7 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
     boolean _not = (!_isLowerCase);
     if (_not) {
       this.warning("Variable names should start with a lower case", variable, 
-        Literals.VARIABLE__NAME, DomainDrivenDesignDslValidator.INVALID_VAR_NAME);
+        DomainDrivenDesignDslPackage.Literals.VARIABLE__NAME, DomainDrivenDesignDslValidator.INVALID_VAR_NAME);
     }
   }
   
@@ -63,7 +63,7 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
         EList<Event> _events_1 = method.getEvents();
         for (final Event event : _events_1) {
           this.error("Events are only allowed within entity methods", event, 
-            Literals.EVENT__NAME, DomainDrivenDesignDslValidator.EVENT_NOT_ALLOWED_FOR_VO);
+            DomainDrivenDesignDslPackage.Literals.EVENT__NAME, DomainDrivenDesignDslValidator.EVENT_NOT_ALLOWED_FOR_VO);
         }
       }
     }
@@ -76,10 +76,9 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
     final String name = this.findUnknownVar(_allVariables, _message);
     boolean _notEquals = (!Objects.equal(name, null));
     if (_notEquals) {
-      String _plus = ("A variable with the name \'" + name);
-      String _plus_1 = (_plus + "\' is unknown");
-      this.error(_plus_1, constraint, 
-        Literals.CONSTRAINT__MESSAGE, 
+      this.error(
+        (("A variable with the name \'" + name) + "\' is unknown"), constraint, 
+        DomainDrivenDesignDslPackage.Literals.CONSTRAINT__MESSAGE, 
         DomainDrivenDesignDslValidator.CONSTRAINT_MSG_UNKNOWN_VAR);
     }
   }
@@ -91,10 +90,9 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
     final String name = this.findUnknownVar(_allVariables, _message);
     boolean _notEquals = (!Objects.equal(name, null));
     if (_notEquals) {
-      String _plus = ("A variable \'" + name);
-      String _plus_1 = (_plus + "\' is not defined in the exception");
-      this.error(_plus_1, ex, 
-        Literals.EXCEPTION__MESSAGE, 
+      this.error(
+        (("A variable \'" + name) + "\' is not defined in the exception"), ex, 
+        DomainDrivenDesignDslPackage.Literals.EXCEPTION__MESSAGE, 
         DomainDrivenDesignDslValidator.EXCEPTION_MSG_UNKNOWN_VAR);
     }
   }
@@ -109,7 +107,7 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
       String _name = _idType.getName();
       this.error(
         "A direct reference to an aggregates is not allowed", variable, 
-        Literals.VARIABLE__TYPE, 
+        DomainDrivenDesignDslPackage.Literals.VARIABLE__TYPE, 
         DomainDrivenDesignDslValidator.REF_TO_AGGREGATE_NOT_ALLOWED, _name);
     }
   }
@@ -135,7 +133,7 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
         }
         this.error(
           "A reference from a value object to an entity is not allowed", v, 
-          Literals.VARIABLE__TYPE, 
+          DomainDrivenDesignDslPackage.Literals.VARIABLE__TYPE, 
           DomainDrivenDesignDslValidator.VO_CANNOT_REF_ENTITY, idTypeName);
       }
     }
@@ -147,43 +145,35 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
     int start = (-1);
     int _indexOf = msg.indexOf("${", from);
     int _start = start = _indexOf;
-    int _minus = (-1);
-    boolean _greaterThan = (_start > _minus);
+    boolean _greaterThan = (_start > (-1));
     boolean _while = _greaterThan;
     while (_while) {
       {
-        int _plus = (start + 1);
-        int _indexOf_1 = msg.indexOf("}", _plus);
+        int _indexOf_1 = msg.indexOf("}", (start + 1));
         end = _indexOf_1;
-        int _minus_1 = (-1);
-        boolean _equals = (end == _minus_1);
-        if (_equals) {
+        if ((end == (-1))) {
           int _length = msg.length();
           from = _length;
         } else {
-          int _plus_1 = (start + 2);
-          String name = msg.substring(_plus_1, end);
+          String name = msg.substring((start + 2), end);
           boolean _contains = vars.contains(name);
           boolean _not = (!_contains);
           if (_not) {
             return name;
           }
-          int _plus_2 = (end + 1);
-          from = _plus_2;
+          from = (end + 1);
         }
       }
       int _indexOf_1 = msg.indexOf("${", from);
       int _start_1 = start = _indexOf_1;
-      int _minus_1 = (-1);
-      boolean _greaterThan_1 = (_start_1 > _minus_1);
+      boolean _greaterThan_1 = (_start_1 > (-1));
       _while = _greaterThan_1;
     }
     return null;
   }
   
   private Set<String> allVariables(final org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception ex) {
-    HashSet<String> _hashSet = new HashSet<String>();
-    Set<String> vars = _hashSet;
+    Set<String> vars = new HashSet<String>();
     EList<Variable> _variables = ex.getVariables();
     boolean _notEquals = (!Objects.equal(_variables, null));
     if (_notEquals) {
@@ -197,8 +187,7 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
   }
   
   private Set<String> allVariables(final Constraint constraint) {
-    HashSet<String> _hashSet = new HashSet<String>();
-    Set<String> vars = _hashSet;
+    Set<String> vars = new HashSet<String>();
     EList<Variable> _variables = constraint.getVariables();
     boolean _notEquals = (!Objects.equal(_variables, null));
     if (_notEquals) {

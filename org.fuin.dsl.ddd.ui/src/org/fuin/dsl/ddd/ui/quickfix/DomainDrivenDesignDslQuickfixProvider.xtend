@@ -3,6 +3,7 @@
 */
 package org.fuin.dsl.ddd.ui.quickfix
 
+import org.eclipse.xtext.ui.editor.quickfix.DefaultQuickfixProvider
 import org.eclipse.xtext.ui.editor.quickfix.Fix
 import org.eclipse.xtext.ui.editor.quickfix.IssueResolutionAcceptor
 import org.eclipse.xtext.validation.Issue
@@ -13,7 +14,7 @@ import org.fuin.dsl.ddd.validation.DomainDrivenDesignDslValidator
  *
  * see http://www.eclipse.org/Xtext/documentation.html#quickfixes
  */
-class DomainDrivenDesignDslQuickfixProvider extends org.eclipse.xtext.ui.editor.quickfix.DefaultQuickfixProvider {
+class DomainDrivenDesignDslQuickfixProvider extends DefaultQuickfixProvider {
 
 	@Fix(DomainDrivenDesignDslValidator::INVALID_VAR_NAME)
 	def makeVarNameLowerCase(Issue issue, IssueResolutionAcceptor acceptor) {
