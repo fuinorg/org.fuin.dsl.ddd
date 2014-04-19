@@ -17,10 +17,10 @@ Import:
 	'import' importedNamespace=(FQN | FQNWithWildcard) ';';
 
 AbstractElement:
-	Constraint | Type;
+	Constraint | Type | Service | Exception;
 
 Type:
-	ExternalType | InternalType | Exception;
+	ExternalType | InternalType;
 
 InternalType:
 	AbstractVO | AbstractEntity;
@@ -128,6 +128,7 @@ Method:
 	doc=DOC? 
 	'method' name=ID ('ref' refMethod=[Method|FQN])? '{'
 		variables+=Variable*
+		functions+=Function*
 		constraints=Constraints?
 		events+=Event*
 	'}';
@@ -162,6 +163,20 @@ OverriddenTypeMetaInfo:
 
 ConstraintCall:
 	constraint=[Constraint] ('(' params+=Literal (',' params+=Literal)* ')')?;
+
+Function:
+	doc=DOC? 
+	'function' name=ID '{'
+	    ('input' '{' input+=Variable* '}')?
+		(outDoc=DOC? 'output' output=[AbstractVO])?
+		('exceptions' '{' exceptions+=[Exception] (',' exceptions+=[Exception])* '}')?
+	'}';
+
+Service:
+	doc=DOC? 
+	'service' name=ID '{'
+		functions+=Function*
+	'}';			
 
 Literal:
 	NullLiteral | BooleanLiteral | NumberLiteral | StringLiteral;

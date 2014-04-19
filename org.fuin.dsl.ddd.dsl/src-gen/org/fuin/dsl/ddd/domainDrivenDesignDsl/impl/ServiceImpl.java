@@ -18,24 +18,24 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Function;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Service;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Exception</b></em>'.
+ * An implementation of the model object '<em><b>Service</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ExceptionImpl#getDoc <em>Doc</em>}</li>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ExceptionImpl#getVariables <em>Variables</em>}</li>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ExceptionImpl#getMessage <em>Message</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ServiceImpl#getDoc <em>Doc</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ServiceImpl#getFunctions <em>Functions</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ExceptionImpl extends AbstractElementImpl implements org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception
+public class ServiceImpl extends AbstractElementImpl implements Service
 {
   /**
    * The default value of the '{@link #getDoc() <em>Doc</em>}' attribute.
@@ -58,41 +58,21 @@ public class ExceptionImpl extends AbstractElementImpl implements org.fuin.dsl.d
   protected String doc = DOC_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getVariables() <em>Variables</em>}' containment reference list.
+   * The cached value of the '{@link #getFunctions() <em>Functions</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVariables()
+   * @see #getFunctions()
    * @generated
    * @ordered
    */
-  protected EList<Variable> variables;
-
-  /**
-   * The default value of the '{@link #getMessage() <em>Message</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMessage()
-   * @generated
-   * @ordered
-   */
-  protected static final String MESSAGE_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getMessage() <em>Message</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMessage()
-   * @generated
-   * @ordered
-   */
-  protected String message = MESSAGE_EDEFAULT;
+  protected EList<Function> functions;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ExceptionImpl()
+  protected ServiceImpl()
   {
     super();
   }
@@ -105,7 +85,7 @@ public class ExceptionImpl extends AbstractElementImpl implements org.fuin.dsl.d
   @Override
   protected EClass eStaticClass()
   {
-    return DomainDrivenDesignDslPackage.Literals.EXCEPTION;
+    return DomainDrivenDesignDslPackage.Literals.SERVICE;
   }
 
   /**
@@ -128,7 +108,7 @@ public class ExceptionImpl extends AbstractElementImpl implements org.fuin.dsl.d
     String oldDoc = doc;
     doc = newDoc;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.EXCEPTION__DOC, oldDoc, doc));
+      eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.SERVICE__DOC, oldDoc, doc));
   }
 
   /**
@@ -136,36 +116,13 @@ public class ExceptionImpl extends AbstractElementImpl implements org.fuin.dsl.d
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Variable> getVariables()
+  public EList<Function> getFunctions()
   {
-    if (variables == null)
+    if (functions == null)
     {
-      variables = new EObjectContainmentEList<Variable>(Variable.class, this, DomainDrivenDesignDslPackage.EXCEPTION__VARIABLES);
+      functions = new EObjectContainmentEList<Function>(Function.class, this, DomainDrivenDesignDslPackage.SERVICE__FUNCTIONS);
     }
-    return variables;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getMessage()
-  {
-    return message;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setMessage(String newMessage)
-  {
-    String oldMessage = message;
-    message = newMessage;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.EXCEPTION__MESSAGE, oldMessage, message));
+    return functions;
   }
 
   /**
@@ -178,8 +135,8 @@ public class ExceptionImpl extends AbstractElementImpl implements org.fuin.dsl.d
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.EXCEPTION__VARIABLES:
-        return ((InternalEList<?>)getVariables()).basicRemove(otherEnd, msgs);
+      case DomainDrivenDesignDslPackage.SERVICE__FUNCTIONS:
+        return ((InternalEList<?>)getFunctions()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -194,12 +151,10 @@ public class ExceptionImpl extends AbstractElementImpl implements org.fuin.dsl.d
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.EXCEPTION__DOC:
+      case DomainDrivenDesignDslPackage.SERVICE__DOC:
         return getDoc();
-      case DomainDrivenDesignDslPackage.EXCEPTION__VARIABLES:
-        return getVariables();
-      case DomainDrivenDesignDslPackage.EXCEPTION__MESSAGE:
-        return getMessage();
+      case DomainDrivenDesignDslPackage.SERVICE__FUNCTIONS:
+        return getFunctions();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -215,15 +170,12 @@ public class ExceptionImpl extends AbstractElementImpl implements org.fuin.dsl.d
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.EXCEPTION__DOC:
+      case DomainDrivenDesignDslPackage.SERVICE__DOC:
         setDoc((String)newValue);
         return;
-      case DomainDrivenDesignDslPackage.EXCEPTION__VARIABLES:
-        getVariables().clear();
-        getVariables().addAll((Collection<? extends Variable>)newValue);
-        return;
-      case DomainDrivenDesignDslPackage.EXCEPTION__MESSAGE:
-        setMessage((String)newValue);
+      case DomainDrivenDesignDslPackage.SERVICE__FUNCTIONS:
+        getFunctions().clear();
+        getFunctions().addAll((Collection<? extends Function>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -239,14 +191,11 @@ public class ExceptionImpl extends AbstractElementImpl implements org.fuin.dsl.d
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.EXCEPTION__DOC:
+      case DomainDrivenDesignDslPackage.SERVICE__DOC:
         setDoc(DOC_EDEFAULT);
         return;
-      case DomainDrivenDesignDslPackage.EXCEPTION__VARIABLES:
-        getVariables().clear();
-        return;
-      case DomainDrivenDesignDslPackage.EXCEPTION__MESSAGE:
-        setMessage(MESSAGE_EDEFAULT);
+      case DomainDrivenDesignDslPackage.SERVICE__FUNCTIONS:
+        getFunctions().clear();
         return;
     }
     super.eUnset(featureID);
@@ -262,12 +211,10 @@ public class ExceptionImpl extends AbstractElementImpl implements org.fuin.dsl.d
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.EXCEPTION__DOC:
+      case DomainDrivenDesignDslPackage.SERVICE__DOC:
         return DOC_EDEFAULT == null ? doc != null : !DOC_EDEFAULT.equals(doc);
-      case DomainDrivenDesignDslPackage.EXCEPTION__VARIABLES:
-        return variables != null && !variables.isEmpty();
-      case DomainDrivenDesignDslPackage.EXCEPTION__MESSAGE:
-        return MESSAGE_EDEFAULT == null ? message != null : !MESSAGE_EDEFAULT.equals(message);
+      case DomainDrivenDesignDslPackage.SERVICE__FUNCTIONS:
+        return functions != null && !functions.isEmpty();
     }
     return super.eIsSet(featureID);
   }
@@ -285,10 +232,8 @@ public class ExceptionImpl extends AbstractElementImpl implements org.fuin.dsl.d
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (doc: ");
     result.append(doc);
-    result.append(", message: ");
-    result.append(message);
     result.append(')');
     return result.toString();
   }
 
-} //ExceptionImpl
+} //ServiceImpl

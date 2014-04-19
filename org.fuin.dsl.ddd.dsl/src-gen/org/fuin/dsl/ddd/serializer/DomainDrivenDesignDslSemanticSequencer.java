@@ -28,6 +28,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumInstance;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumObject;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Function;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Import;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Invariants;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Method;
@@ -35,6 +36,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Namespace;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.NullLiteral;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.NumberLiteral;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.OverriddenTypeMetaInfo;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Service;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.StringLiteral;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.TypeMetaInfo;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ValueObject;
@@ -154,8 +156,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 				else break;
 			case DomainDrivenDesignDslPackage.EXCEPTION:
 				if(context == grammarAccess.getAbstractElementRule() ||
-				   context == grammarAccess.getExceptionRule() ||
-				   context == grammarAccess.getTypeRule()) {
+				   context == grammarAccess.getExceptionRule()) {
 					sequence_Exception(context, (org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception) semanticObject); 
 					return; 
 				}
@@ -166,6 +167,12 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 				   context == grammarAccess.getExternalTypeRule() ||
 				   context == grammarAccess.getTypeRule()) {
 					sequence_ExternalType(context, (ExternalType) semanticObject); 
+					return; 
+				}
+				else break;
+			case DomainDrivenDesignDslPackage.FUNCTION:
+				if(context == grammarAccess.getFunctionRule()) {
+					sequence_Function(context, (Function) semanticObject); 
 					return; 
 				}
 				else break;
@@ -211,6 +218,13 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 			case DomainDrivenDesignDslPackage.OVERRIDDEN_TYPE_META_INFO:
 				if(context == grammarAccess.getOverriddenTypeMetaInfoRule()) {
 					sequence_OverriddenTypeMetaInfo(context, (OverriddenTypeMetaInfo) semanticObject); 
+					return; 
+				}
+				else break;
+			case DomainDrivenDesignDslPackage.SERVICE:
+				if(context == grammarAccess.getAbstractElementRule() ||
+				   context == grammarAccess.getServiceRule()) {
+					sequence_Service(context, (Service) semanticObject); 
 					return; 
 				}
 				else break;
@@ -449,6 +463,15 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	
 	/**
 	 * Constraint:
+	 *     (doc=DOC? name=ID input+=Variable* (outDoc=DOC? output=[AbstractVO|ID])? (exceptions+=[Exception|ID] exceptions+=[Exception|ID]*)?)
+	 */
+	protected void sequence_Function(EObject context, Function semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (importedNamespace=FQN | importedNamespace=FQNWithWildcard)
 	 */
 	protected void sequence_Import(EObject context, Import semanticObject) {
@@ -472,6 +495,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *         name=ID 
 	 *         refMethod=[Method|FQN]? 
 	 *         variables+=Variable* 
+	 *         functions+=Function* 
 	 *         constraints=Constraints? 
 	 *         events+=Event*
 	 *     )
@@ -535,6 +559,15 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
 		feeder.accept(grammarAccess.getOverriddenTypeMetaInfoAccess().getMetaInfoTypeMetaInfoParserRuleCall_1_0(), semanticObject.getMetaInfo());
 		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (doc=DOC? name=ID functions+=Function*)
+	 */
+	protected void sequence_Service(EObject context, Service semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

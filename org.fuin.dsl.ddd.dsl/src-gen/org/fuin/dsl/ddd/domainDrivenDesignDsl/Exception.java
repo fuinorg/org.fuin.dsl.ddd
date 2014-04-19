@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Exception extends Type
+public interface Exception extends AbstractElement
 {
   /**
    * Returns the value of the '<em><b>Doc</b></em>' attribute.
