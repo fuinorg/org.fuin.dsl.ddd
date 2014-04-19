@@ -342,7 +342,14 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	
 	/**
 	 * Constraint:
-	 *     (doc=DOC? name=ID variables+=Variable* constraints=Constraints? events+=Event*)
+	 *     (
+	 *         doc=DOC? 
+	 *         name=ID 
+	 *         variables+=Variable* 
+	 *         functions+=Function* 
+	 *         constraints=Constraints? 
+	 *         events+=Event*
+	 *     )
 	 */
 	protected void sequence_Constructor(EObject context, Constructor semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -463,7 +470,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	
 	/**
 	 * Constraint:
-	 *     (doc=DOC? name=ID input+=Variable* (outDoc=DOC? output=[AbstractVO|ID])? (exceptions+=[Exception|ID] exceptions+=[Exception|ID]*)?)
+	 *     (doc=DOC? name=ID input+=Variable* (outDoc=DOC? output=[Type|ID])? (exceptions+=[Exception|ID] exceptions+=[Exception|ID]*)?)
 	 */
 	protected void sequence_Function(EObject context, Function semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

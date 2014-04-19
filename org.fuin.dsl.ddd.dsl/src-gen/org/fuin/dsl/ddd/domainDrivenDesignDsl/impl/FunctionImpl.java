@@ -19,9 +19,9 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractVO;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Function;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Type;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
 
 /**
@@ -122,7 +122,7 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
    * @generated
    * @ordered
    */
-  protected AbstractVO output;
+  protected Type output;
 
   /**
    * The cached value of the '{@link #getExceptions() <em>Exceptions</em>}' reference list.
@@ -243,12 +243,12 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
    * <!-- end-user-doc -->
    * @generated
    */
-  public AbstractVO getOutput()
+  public Type getOutput()
   {
     if (output != null && output.eIsProxy())
     {
       InternalEObject oldOutput = (InternalEObject)output;
-      output = (AbstractVO)eResolveProxy(oldOutput);
+      output = (Type)eResolveProxy(oldOutput);
       if (output != oldOutput)
       {
         if (eNotificationRequired())
@@ -263,7 +263,7 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
    * <!-- end-user-doc -->
    * @generated
    */
-  public AbstractVO basicGetOutput()
+  public Type basicGetOutput()
   {
     return output;
   }
@@ -273,9 +273,9 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setOutput(AbstractVO newOutput)
+  public void setOutput(Type newOutput)
   {
-    AbstractVO oldOutput = output;
+    Type oldOutput = output;
     output = newOutput;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.FUNCTION__OUTPUT, oldOutput, output));
@@ -363,7 +363,7 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
         setOutDoc((String)newValue);
         return;
       case DomainDrivenDesignDslPackage.FUNCTION__OUTPUT:
-        setOutput((AbstractVO)newValue);
+        setOutput((Type)newValue);
         return;
       case DomainDrivenDesignDslPackage.FUNCTION__EXCEPTIONS:
         getExceptions().clear();
@@ -396,7 +396,7 @@ public class FunctionImpl extends MinimalEObjectImpl.Container implements Functi
         setOutDoc(OUT_DOC_EDEFAULT);
         return;
       case DomainDrivenDesignDslPackage.FUNCTION__OUTPUT:
-        setOutput((AbstractVO)null);
+        setOutput((Type)null);
         return;
       case DomainDrivenDesignDslPackage.FUNCTION__EXCEPTIONS:
         getExceptions().clear();

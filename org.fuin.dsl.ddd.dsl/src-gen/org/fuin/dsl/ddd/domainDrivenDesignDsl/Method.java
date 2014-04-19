@@ -2,7 +2,6 @@
  */
 package org.fuin.dsl.ddd.domainDrivenDesignDsl;
 
-import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,7 +12,6 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Method#getRefMethod <em>Ref Method</em>}</li>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Method#getFunctions <em>Functions</em>}</li>
  * </ul>
  * </p>
  *
@@ -48,21 +46,5 @@ public interface Method extends AbstractMethod
    * @generated
    */
   void setRefMethod(Method value);
-
-  /**
-   * Returns the value of the '<em><b>Functions</b></em>' containment reference list.
-   * The list contents are of type {@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Function}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Functions</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Functions</em>' containment reference list.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getMethod_Functions()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Function> getFunctions();
 
 } // Method

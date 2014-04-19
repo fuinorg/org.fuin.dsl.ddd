@@ -13,6 +13,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ValueObject
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Function
 
 /**
  * Custom validation rules. 
@@ -30,6 +31,8 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 	public static val EXCEPTION_MSG_UNKNOWN_VAR = 'exceptionMsgUnknownVar'
 
 	public static val REF_TO_AGGREGATE_NOT_ALLOWED = 'refToAggregateNotAllowed'
+
+	public static val REF_TO_ENTITY_NOT_ALLOWED = 'refToEntityNotAllowed'
 
 	public static val VO_CANNOT_REF_ENTITY = 'voCannotRefEntity'
 
@@ -84,15 +87,40 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 	}
 
 	@Check
-	def checkNoRefToAggregate(Variable variable) {
+	def checkForbiddenTypeRefs(Variable variable) {
 
 		if (variable.type instanceof Aggregate) {
 			var Aggregate aggregate = (variable.type as Aggregate);
-
 			error(
 				"A direct reference to an aggregates is not allowed",
 				variable,
 				DomainDrivenDesignDslPackage$Literals::VARIABLE__TYPE,
+				REF_TO_AGGREGATE_NOT_ALLOWED,
+				aggregate.idType.name
+			)
+		}
+		if ((variable.type instanceof Entity) && (variable.eContainer instanceof Function)) {
+			var Entity entity = (variable.type as Entity);
+			error(
+				"A direct reference to an entity is not allowed in a function",
+				variable,
+				DomainDrivenDesignDslPackage$Literals::VARIABLE__TYPE,
+				REF_TO_ENTITY_NOT_ALLOWED,
+				entity.idType.name
+			)
+		}
+
+	}
+
+	@Check
+	def checkNoRefToAggregate(Function func) {
+
+		if (func.output instanceof Aggregate) {
+			var Aggregate aggregate = (func.output as Aggregate);
+			error(
+				"A direct reference to an aggregates is not allowed in a function",
+				func,
+				DomainDrivenDesignDslPackage$Literals::FUNCTION__OUTPUT,
 				REF_TO_AGGREGATE_NOT_ALLOWED,
 				aggregate.idType.name
 			)

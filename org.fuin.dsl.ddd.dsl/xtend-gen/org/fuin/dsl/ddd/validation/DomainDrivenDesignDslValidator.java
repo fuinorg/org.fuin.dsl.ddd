@@ -4,6 +4,7 @@ import com.google.common.base.Objects;
 import java.util.HashSet;
 import java.util.Set;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.xtext.validation.Check;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntity;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractVO;
@@ -16,6 +17,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.EntityId;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Function;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Method;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Type;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ValueObject;
@@ -38,6 +40,8 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
   public final static String EXCEPTION_MSG_UNKNOWN_VAR = "exceptionMsgUnknownVar";
   
   public final static String REF_TO_AGGREGATE_NOT_ALLOWED = "refToAggregateNotAllowed";
+  
+  public final static String REF_TO_ENTITY_NOT_ALLOWED = "refToEntityNotAllowed";
   
   public final static String VO_CANNOT_REF_ENTITY = "voCannotRefEntity";
   
@@ -98,7 +102,7 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
   }
   
   @Check
-  public void checkNoRefToAggregate(final Variable variable) {
+  public void checkForbiddenTypeRefs(final Variable variable) {
     Type _type = variable.getType();
     if ((_type instanceof Aggregate)) {
       Type _type_1 = variable.getType();
@@ -108,6 +112,39 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
       this.error(
         "A direct reference to an aggregates is not allowed", variable, 
         DomainDrivenDesignDslPackage.Literals.VARIABLE__TYPE, 
+        DomainDrivenDesignDslValidator.REF_TO_AGGREGATE_NOT_ALLOWED, _name);
+    }
+    boolean _and = false;
+    Type _type_2 = variable.getType();
+    if (!(_type_2 instanceof Entity)) {
+      _and = false;
+    } else {
+      EObject _eContainer = variable.eContainer();
+      _and = (_eContainer instanceof Function);
+    }
+    if (_and) {
+      Type _type_3 = variable.getType();
+      Entity entity = ((Entity) _type_3);
+      EntityId _idType_1 = entity.getIdType();
+      String _name_1 = _idType_1.getName();
+      this.error(
+        "A direct reference to an entity is not allowed in a function", variable, 
+        DomainDrivenDesignDslPackage.Literals.VARIABLE__TYPE, 
+        DomainDrivenDesignDslValidator.REF_TO_ENTITY_NOT_ALLOWED, _name_1);
+    }
+  }
+  
+  @Check
+  public void checkNoRefToAggregate(final Function func) {
+    Type _output = func.getOutput();
+    if ((_output instanceof Aggregate)) {
+      Type _output_1 = func.getOutput();
+      Aggregate aggregate = ((Aggregate) _output_1);
+      AggregateId _idType = aggregate.getIdType();
+      String _name = _idType.getName();
+      this.error(
+        "A direct reference to an aggregates is not allowed in a function", func, 
+        DomainDrivenDesignDslPackage.Literals.FUNCTION__OUTPUT, 
         DomainDrivenDesignDslValidator.REF_TO_AGGREGATE_NOT_ALLOWED, _name);
     }
   }

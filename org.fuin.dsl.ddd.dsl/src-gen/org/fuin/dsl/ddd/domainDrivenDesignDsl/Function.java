@@ -132,12 +132,12 @@ public interface Function extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Output</em>' reference.
-   * @see #setOutput(AbstractVO)
+   * @see #setOutput(Type)
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getFunction_Output()
    * @model
    * @generated
    */
-  AbstractVO getOutput();
+  Type getOutput();
 
   /**
    * Sets the value of the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Function#getOutput <em>Output</em>}' reference.
@@ -147,7 +147,7 @@ public interface Function extends EObject
    * @see #getOutput()
    * @generated
    */
-  void setOutput(AbstractVO value);
+  void setOutput(Type value);
 
   /**
    * Returns the value of the '<em><b>Exceptions</b></em>' reference list.

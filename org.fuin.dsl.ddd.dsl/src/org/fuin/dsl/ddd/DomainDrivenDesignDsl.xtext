@@ -120,6 +120,7 @@ Constructor:
 	doc=DOC? 
 	'constructor' name=ID '{'
 		variables+=Variable*
+		functions+=Function*
 		constraints=Constraints?
 		events+=Event*
 	'}';
@@ -168,7 +169,7 @@ Function:
 	doc=DOC? 
 	'function' name=ID '{'
 	    ('input' '{' input+=Variable* '}')?
-		(outDoc=DOC? 'output' output=[AbstractVO])?
+		(outDoc=DOC? 'output' output=[Type] ';')?
 		('exceptions' '{' exceptions+=[Exception] (',' exceptions+=[Exception])* '}')?
 	'}';
 

@@ -2,23 +2,14 @@
  */
 package org.fuin.dsl.ddd.domainDrivenDesignDsl.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
-
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Function;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Method;
 
 /**
@@ -29,7 +20,6 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Method;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.MethodImpl#getRefMethod <em>Ref Method</em>}</li>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.MethodImpl#getFunctions <em>Functions</em>}</li>
  * </ul>
  * </p>
  *
@@ -46,16 +36,6 @@ public class MethodImpl extends AbstractMethodImpl implements Method
    * @ordered
    */
   protected Method refMethod;
-
-  /**
-   * The cached value of the '{@link #getFunctions() <em>Functions</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getFunctions()
-   * @generated
-   * @ordered
-   */
-  protected EList<Function> functions;
 
   /**
    * <!-- begin-user-doc -->
@@ -126,36 +106,6 @@ public class MethodImpl extends AbstractMethodImpl implements Method
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Function> getFunctions()
-  {
-    if (functions == null)
-    {
-      functions = new EObjectContainmentEList<Function>(Function.class, this, DomainDrivenDesignDslPackage.METHOD__FUNCTIONS);
-    }
-    return functions;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
-  {
-    switch (featureID)
-    {
-      case DomainDrivenDesignDslPackage.METHOD__FUNCTIONS:
-        return ((InternalEList<?>)getFunctions()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -164,8 +114,6 @@ public class MethodImpl extends AbstractMethodImpl implements Method
       case DomainDrivenDesignDslPackage.METHOD__REF_METHOD:
         if (resolve) return getRefMethod();
         return basicGetRefMethod();
-      case DomainDrivenDesignDslPackage.METHOD__FUNCTIONS:
-        return getFunctions();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -175,7 +123,6 @@ public class MethodImpl extends AbstractMethodImpl implements Method
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -183,10 +130,6 @@ public class MethodImpl extends AbstractMethodImpl implements Method
     {
       case DomainDrivenDesignDslPackage.METHOD__REF_METHOD:
         setRefMethod((Method)newValue);
-        return;
-      case DomainDrivenDesignDslPackage.METHOD__FUNCTIONS:
-        getFunctions().clear();
-        getFunctions().addAll((Collection<? extends Function>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -205,9 +148,6 @@ public class MethodImpl extends AbstractMethodImpl implements Method
       case DomainDrivenDesignDslPackage.METHOD__REF_METHOD:
         setRefMethod((Method)null);
         return;
-      case DomainDrivenDesignDslPackage.METHOD__FUNCTIONS:
-        getFunctions().clear();
-        return;
     }
     super.eUnset(featureID);
   }
@@ -224,8 +164,6 @@ public class MethodImpl extends AbstractMethodImpl implements Method
     {
       case DomainDrivenDesignDslPackage.METHOD__REF_METHOD:
         return refMethod != null;
-      case DomainDrivenDesignDslPackage.METHOD__FUNCTIONS:
-        return functions != null && !functions.isEmpty();
     }
     return super.eIsSet(featureID);
   }
