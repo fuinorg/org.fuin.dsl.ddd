@@ -55,9 +55,29 @@
 		<para>Describes how the high-level concepts from the book
 			Domain-Driven Design can be expressed with the DSL
 		</para>
+		<sect1 xml:id="namespace">
+			<title>Namespace</title>
+			<para>
+			A namespace organizes types belonging to the same category or providing similar functionality.
+			<programlisting language="ddd">
+			namespace a.b.c {
+				...
+			}
+			</programlisting> 
+			</para>
+		</sect1>
 		<sect1 xml:id="external-type">
 			<title>External Type</title>
-			<para>TBD</para>
+			<para>
+			An external type is something that is defined outside the DSL.
+			To define an external type, use the keyword 'type' followed by a unique name.
+			<programlisting language="ddd">
+			namespace types {
+				type Integer;
+				type String;
+			}
+			</programlisting> 
+			</para>
 		</sect1>
 		<sect1 xml:id="constraint">
 			<title>Constraint</title>

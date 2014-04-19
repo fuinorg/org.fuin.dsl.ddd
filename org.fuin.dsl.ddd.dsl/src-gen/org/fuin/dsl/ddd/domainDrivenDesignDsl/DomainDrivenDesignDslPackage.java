@@ -67,13 +67,13 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int DOMAIN_MODEL = 0;
 
   /**
-   * The feature id for the '<em><b>Namespace</b></em>' containment reference.
+   * The feature id for the '<em><b>Contexts</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int DOMAIN_MODEL__NAMESPACE = 0;
+  int DOMAIN_MODEL__CONTEXTS = 0;
 
   /**
    * The number of structural features of the '<em>Domain Model</em>' class.
@@ -85,6 +85,43 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int DOMAIN_MODEL_FEATURE_COUNT = 1;
 
   /**
+   * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ContextImpl <em>Context</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ContextImpl
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getContext()
+   * @generated
+   */
+  int CONTEXT = 1;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTEXT__NAME = 0;
+
+  /**
+   * The feature id for the '<em><b>Namespaces</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTEXT__NAMESPACES = 1;
+
+  /**
+   * The number of structural features of the '<em>Context</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONTEXT_FEATURE_COUNT = 2;
+
+  /**
    * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.NamespaceImpl <em>Namespace</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -92,7 +129,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getNamespace()
    * @generated
    */
-  int NAMESPACE = 1;
+  int NAMESPACE = 2;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -138,7 +175,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getImport()
    * @generated
    */
-  int IMPORT = 2;
+  int IMPORT = 3;
 
   /**
    * The feature id for the '<em><b>Imported Namespace</b></em>' attribute.
@@ -166,7 +203,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getAbstractElement()
    * @generated
    */
-  int ABSTRACT_ELEMENT = 3;
+  int ABSTRACT_ELEMENT = 4;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -194,7 +231,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getType()
    * @generated
    */
-  int TYPE = 4;
+  int TYPE = 5;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -222,7 +259,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getInternalType()
    * @generated
    */
-  int INTERNAL_TYPE = 5;
+  int INTERNAL_TYPE = 6;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -295,7 +332,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getAbstractVO()
    * @generated
    */
-  int ABSTRACT_VO = 6;
+  int ABSTRACT_VO = 7;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -368,7 +405,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getAbstractEntityId()
    * @generated
    */
-  int ABSTRACT_ENTITY_ID = 7;
+  int ABSTRACT_ENTITY_ID = 8;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -450,7 +487,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getAbstractEntity()
    * @generated
    */
-  int ABSTRACT_ENTITY = 8;
+  int ABSTRACT_ENTITY = 9;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -523,7 +560,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getConstraintTarget()
    * @generated
    */
-  int CONSTRAINT_TARGET = 9;
+  int CONSTRAINT_TARGET = 10;
 
   /**
    * The number of structural features of the '<em>Constraint Target</em>' class.
@@ -542,7 +579,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getExternalType()
    * @generated
    */
-  int EXTERNAL_TYPE = 10;
+  int EXTERNAL_TYPE = 11;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -570,7 +607,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getConstraint()
    * @generated
    */
-  int CONSTRAINT = 11;
+  int CONSTRAINT = 12;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -643,7 +680,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getException()
    * @generated
    */
-  int EXCEPTION = 12;
+  int EXCEPTION = 13;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -698,7 +735,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getValueObject()
    * @generated
    */
-  int VALUE_OBJECT = 13;
+  int VALUE_OBJECT = 14;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -780,7 +817,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getEntityId()
    * @generated
    */
-  int ENTITY_ID = 14;
+  int ENTITY_ID = 15;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -871,7 +908,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getAggregateId()
    * @generated
    */
-  int AGGREGATE_ID = 15;
+  int AGGREGATE_ID = 16;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -962,7 +999,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getEnumObject()
    * @generated
    */
-  int ENUM_OBJECT = 16;
+  int ENUM_OBJECT = 17;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1044,7 +1081,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getEnumInstance()
    * @generated
    */
-  int ENUM_INSTANCE = 17;
+  int ENUM_INSTANCE = 18;
 
   /**
    * The feature id for the '<em><b>Doc</b></em>' attribute.
@@ -1090,7 +1127,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getEntity()
    * @generated
    */
-  int ENTITY = 18;
+  int ENTITY = 19;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1181,7 +1218,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getAggregate()
    * @generated
    */
-  int AGGREGATE = 19;
+  int AGGREGATE = 20;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1263,7 +1300,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getAbstractMethod()
    * @generated
    */
-  int ABSTRACT_METHOD = 20;
+  int ABSTRACT_METHOD = 21;
 
   /**
    * The feature id for the '<em><b>Doc</b></em>' attribute.
@@ -1336,7 +1373,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getConstructor()
    * @generated
    */
-  int CONSTRUCTOR = 21;
+  int CONSTRUCTOR = 22;
 
   /**
    * The feature id for the '<em><b>Doc</b></em>' attribute.
@@ -1409,7 +1446,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getMethod()
    * @generated
    */
-  int METHOD = 22;
+  int METHOD = 23;
 
   /**
    * The feature id for the '<em><b>Doc</b></em>' attribute.
@@ -1491,7 +1528,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getEvent()
    * @generated
    */
-  int EVENT = 23;
+  int EVENT = 24;
 
   /**
    * The feature id for the '<em><b>Doc</b></em>' attribute.
@@ -1537,7 +1574,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getTypeMetaInfo()
    * @generated
    */
-  int TYPE_META_INFO = 24;
+  int TYPE_META_INFO = 25;
 
   /**
    * The feature id for the '<em><b>Slabel</b></em>' attribute.
@@ -1601,7 +1638,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getVariable()
    * @generated
    */
-  int VARIABLE = 25;
+  int VARIABLE = 26;
 
   /**
    * The feature id for the '<em><b>Doc</b></em>' attribute.
@@ -1683,7 +1720,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getConstraints()
    * @generated
    */
-  int CONSTRAINTS = 26;
+  int CONSTRAINTS = 27;
 
   /**
    * The feature id for the '<em><b>Calls</b></em>' containment reference list.
@@ -1711,7 +1748,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getInvariants()
    * @generated
    */
-  int INVARIANTS = 27;
+  int INVARIANTS = 28;
 
   /**
    * The feature id for the '<em><b>Calls</b></em>' containment reference list.
@@ -1739,7 +1776,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getOverriddenTypeMetaInfo()
    * @generated
    */
-  int OVERRIDDEN_TYPE_META_INFO = 28;
+  int OVERRIDDEN_TYPE_META_INFO = 29;
 
   /**
    * The feature id for the '<em><b>Meta Info</b></em>' containment reference.
@@ -1767,7 +1804,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getConstraintCall()
    * @generated
    */
-  int CONSTRAINT_CALL = 29;
+  int CONSTRAINT_CALL = 30;
 
   /**
    * The feature id for the '<em><b>Constraint</b></em>' reference.
@@ -1804,7 +1841,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getFunction()
    * @generated
    */
-  int FUNCTION = 30;
+  int FUNCTION = 31;
 
   /**
    * The feature id for the '<em><b>Doc</b></em>' attribute.
@@ -1877,7 +1914,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getService()
    * @generated
    */
-  int SERVICE = 31;
+  int SERVICE = 32;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1923,7 +1960,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getLiteral()
    * @generated
    */
-  int LITERAL = 32;
+  int LITERAL = 33;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1951,7 +1988,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getBooleanLiteral()
    * @generated
    */
-  int BOOLEAN_LITERAL = 33;
+  int BOOLEAN_LITERAL = 34;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -1979,7 +2016,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getNullLiteral()
    * @generated
    */
-  int NULL_LITERAL = 34;
+  int NULL_LITERAL = 35;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2007,7 +2044,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getNumberLiteral()
    * @generated
    */
-  int NUMBER_LITERAL = 35;
+  int NUMBER_LITERAL = 36;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2035,7 +2072,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getStringLiteral()
    * @generated
    */
-  int STRING_LITERAL = 36;
+  int STRING_LITERAL = 37;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2067,15 +2104,47 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   EClass getDomainModel();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainModel#getNamespace <em>Namespace</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainModel#getContexts <em>Contexts</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Namespace</em>'.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainModel#getNamespace()
+   * @return the meta object for the containment reference list '<em>Contexts</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainModel#getContexts()
    * @see #getDomainModel()
    * @generated
    */
-  EReference getDomainModel_Namespace();
+  EReference getDomainModel_Contexts();
+
+  /**
+   * Returns the meta object for class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Context <em>Context</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Context</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Context
+   * @generated
+   */
+  EClass getContext();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Context#getName <em>Name</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Name</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Context#getName()
+   * @see #getContext()
+   * @generated
+   */
+  EAttribute getContext_Name();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Context#getNamespaces <em>Namespaces</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Namespaces</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Context#getNamespaces()
+   * @see #getContext()
+   * @generated
+   */
+  EReference getContext_Namespaces();
 
   /**
    * Returns the meta object for class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Namespace <em>Namespace</em>}'.
@@ -3186,12 +3255,38 @@ public interface DomainDrivenDesignDslPackage extends EPackage
     EClass DOMAIN_MODEL = eINSTANCE.getDomainModel();
 
     /**
-     * The meta object literal for the '<em><b>Namespace</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Contexts</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference DOMAIN_MODEL__NAMESPACE = eINSTANCE.getDomainModel_Namespace();
+    EReference DOMAIN_MODEL__CONTEXTS = eINSTANCE.getDomainModel_Contexts();
+
+    /**
+     * The meta object literal for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ContextImpl <em>Context</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ContextImpl
+     * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getContext()
+     * @generated
+     */
+    EClass CONTEXT = eINSTANCE.getContext();
+
+    /**
+     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONTEXT__NAME = eINSTANCE.getContext_Name();
+
+    /**
+     * The meta object literal for the '<em><b>Namespaces</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONTEXT__NAMESPACES = eINSTANCE.getContext_Namespaces();
 
     /**
      * The meta object literal for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.NamespaceImpl <em>Namespace</em>}' class.

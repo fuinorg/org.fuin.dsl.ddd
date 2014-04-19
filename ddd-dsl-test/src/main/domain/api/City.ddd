@@ -1,17 +1,21 @@
-namespace api {
-	
-	import types.*;
-	import constr.*;
-	
-	/**
-	 * Represents a city name.
-	 */
-	value-object City base String {
+context axonsample {
+
+	namespace api {
 		
-		/** Internal value. */
-		String value invariants Length(1, 100);
+		import axonsample.types.*
+		import axonsample.constr.*
+		
+		/**
+		 * Represents a city name.
+		 */
+		value-object City base String {
+			
+			/** Internal value. */
+			String value invariants Length(1, 100)
+			
+		}
+		
 		
 	}
-	
 	
 }

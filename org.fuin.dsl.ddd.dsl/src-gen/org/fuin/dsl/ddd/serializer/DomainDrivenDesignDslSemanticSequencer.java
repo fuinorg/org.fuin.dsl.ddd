@@ -20,6 +20,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintCall;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraints;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constructor;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Context;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainModel;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity;
@@ -102,6 +103,12 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 				if(context == grammarAccess.getAbstractMethodRule() ||
 				   context == grammarAccess.getConstructorRule()) {
 					sequence_Constructor(context, (Constructor) semanticObject); 
+					return; 
+				}
+				else break;
+			case DomainDrivenDesignDslPackage.CONTEXT:
+				if(context == grammarAccess.getContextRule()) {
+					sequence_Context(context, (Context) semanticObject); 
 					return; 
 				}
 				else break;
@@ -358,17 +365,19 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	
 	/**
 	 * Constraint:
-	 *     namespace=Namespace
+	 *     (name=ID namespaces+=Namespace*)
+	 */
+	protected void sequence_Context(EObject context, Context semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     contexts+=Context*
 	 */
 	protected void sequence_DomainModel(EObject context, DomainModel semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, DomainDrivenDesignDslPackage.Literals.DOMAIN_MODEL__NAMESPACE) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DomainDrivenDesignDslPackage.Literals.DOMAIN_MODEL__NAMESPACE));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getDomainModelAccess().getNamespaceNamespaceParserRuleCall_0(), semanticObject.getNamespace());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

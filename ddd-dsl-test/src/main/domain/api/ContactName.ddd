@@ -1,17 +1,21 @@
-namespace api {
-	
-	import types.*;
-	import constr.*;
-	
-	/**
-	 * Name of a contact.
-	 */
-	value-object ContactName base String {
+context axonsample {
+
+	namespace api {
 		
-		/** Internal value. */
-		String value invariants Length(1, 100);
+		import axonsample.types.*
+		import axonsample.constr.*
+		
+		/**
+		 * Name of a contact.
+		 */
+		value-object ContactName base String {
+			
+			/** Internal value. */
+			String value invariants Length(1, 100)
+			
+		}
+		
 		
 	}
-	
-	
+
 }

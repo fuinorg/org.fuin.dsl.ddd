@@ -23,6 +23,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintCall;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraints;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constructor;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Context;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslFactory;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainModel;
@@ -102,6 +103,7 @@ public class DomainDrivenDesignDslFactoryImpl extends EFactoryImpl implements Do
     switch (eClass.getClassifierID())
     {
       case DomainDrivenDesignDslPackage.DOMAIN_MODEL: return createDomainModel();
+      case DomainDrivenDesignDslPackage.CONTEXT: return createContext();
       case DomainDrivenDesignDslPackage.NAMESPACE: return createNamespace();
       case DomainDrivenDesignDslPackage.IMPORT: return createImport();
       case DomainDrivenDesignDslPackage.ABSTRACT_ELEMENT: return createAbstractElement();
@@ -152,6 +154,17 @@ public class DomainDrivenDesignDslFactoryImpl extends EFactoryImpl implements Do
   {
     DomainModelImpl domainModel = new DomainModelImpl();
     return domainModel;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Context createContext()
+  {
+    ContextImpl context = new ContextImpl();
+    return context;
   }
 
   /**

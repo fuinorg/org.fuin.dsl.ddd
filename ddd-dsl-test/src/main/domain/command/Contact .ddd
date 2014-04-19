@@ -1,72 +1,76 @@
-namespace command {
+context axonsample {
 
-	import types.*;
-	import api.*;
-	import constr.*;
-
-	/**
-	 * A contact in the sample application.
-	 */
-	aggregate Contact identifier ContactId {
-		
-		/** List of addresses. */
-		Address* addresses;		
-		
-		/** Creates a new classification tree. */
-		constructor create {
-
-			/** Identifier to use for the new contact. */			
-			ContactId id;
-			
-			/** Name of the contact. */			
-			ContactName name;
-			
-			/** A new classification tree was created. */
-			event ContactCreatedEvent {
-
-				/** Name of the contact. */			
-				ContactName name;
-				
-			}
-						
-		}		
+	namespace command {
 	
-		/** Registers a new address or updates an existing one. */
-		method registerAddress {
+		import axonsample.types.*
+		import axonsample.api.*
+		import axonsample.constr.*
+	
+		/**
+		 * A contact in the sample application.
+		 */
+		aggregate Contact identifier ContactId {
 			
-			/** Type of the address. */
-			AddressType adrType;
+			/** List of addresses. */
+			Address* addresses
 			
-			/** The address to register. */
-			Address address;
-			
-			/** A new address was added to a contact. */
-			event AddressAddedEvent {
-
-				/** Type of the added address. */
-				AddressType addressType;
+			/** Creates a new classification tree. */
+			constructor create {
+	
+				/** Identifier to use for the new contact. */			
+				ContactId id
 				
-				/** New added address. */
-				Address address;
+				/** Name of the contact. */			
+				ContactName name
 				
-			}
-
-			/** An existing address of a contact was updated. */
-			event AddressChangedEvent {
-				
-				/** Type of the changed address. */
-				AddressType addressType;
-				
-				/** Address that was replaced. */
-				Address oldAddress;
-
-				/** New assigned address. */
-				Address newAddress;
-				
-			}
-			
-		}	
+				/** A new classification tree was created. */
+				event ContactCreatedEvent {
+	
+					/** Name of the contact. */			
+					ContactName name
+					
+				}
+							
+			}		
 		
+			/** Registers a new address or updates an existing one. */
+			method registerAddress {
+				
+				/** Type of the address. */
+				AddressType adrType
+				
+				/** The address to register. */
+				Address address
+				
+				/** A new address was added to a contact. */
+				event AddressAddedEvent {
+	
+					/** Type of the added address. */
+					AddressType addressType
+					
+					/** New added address. */
+					Address address
+					
+				}
+	
+				/** An existing address of a contact was updated. */
+				event AddressChangedEvent {
+					
+					/** Type of the changed address. */
+					AddressType addressType
+					
+					/** Address that was replaced. */
+					Address oldAddress
+	
+					/** New assigned address. */
+					Address newAddress
+					
+				}
+				
+			}	
+			
+		}
+	
 	}
 
 }

@@ -2,6 +2,8 @@
  */
 package org.fuin.dsl.ddd.domainDrivenDesignDsl;
 
+import org.eclipse.emf.common.util.EList;
+
 import org.eclipse.emf.ecore.EObject;
 
 /**
@@ -12,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainModel#getNamespace <em>Namespace</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainModel#getContexts <em>Contexts</em>}</li>
  * </ul>
  * </p>
  *
@@ -23,29 +25,19 @@ import org.eclipse.emf.ecore.EObject;
 public interface DomainModel extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Namespace</b></em>' containment reference.
+   * Returns the value of the '<em><b>Contexts</b></em>' containment reference list.
+   * The list contents are of type {@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Context}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Namespace</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Contexts</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Namespace</em>' containment reference.
-   * @see #setNamespace(Namespace)
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getDomainModel_Namespace()
+   * @return the value of the '<em>Contexts</em>' containment reference list.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getDomainModel_Contexts()
    * @model containment="true"
    * @generated
    */
-  Namespace getNamespace();
-
-  /**
-   * Sets the value of the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainModel#getNamespace <em>Namespace</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Namespace</em>' containment reference.
-   * @see #getNamespace()
-   * @generated
-   */
-  void setNamespace(Namespace value);
+  EList<Context> getContexts();
 
 } // DomainModel

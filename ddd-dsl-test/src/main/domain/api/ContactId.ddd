@@ -1,16 +1,21 @@
-namespace api {
+context axonsample {
 
-	import types.*;
-	import constr.*;
-
-	/**
-	 * Identifies a contact uniquely in the whole context.
-	 */
-	aggregate-id ContactId base String {
-		
-		/** Persistent value. */
-		UUID val;
-		
+	namespace api {
+	
+		import axonsample.types.*
+		import axonsample.constr.*
+		import axonsample.command.*
+	
+		/**
+		 * Identifies a contact uniquely in the whole context.
+		 */
+		aggregate-id ContactId identifies Contact base String {
+			
+			/** Persistent value. */
+			UUID val
+			
+		}
+	
 	}
-
+	
 }

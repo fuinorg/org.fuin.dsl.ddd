@@ -46,12 +46,12 @@ public class DomainDrivenDesignDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAbstractEntityAccess().getAlternatives(), "rule__AbstractEntity__Alternatives");
 					put(grammarAccess.getConstraintTargetAccess().getAlternatives(), "rule__ConstraintTarget__Alternatives");
 					put(grammarAccess.getAbstractMethodAccess().getAlternatives(), "rule__AbstractMethod__Alternatives");
-					put(grammarAccess.getVariableAccess().getAlternatives_6(), "rule__Variable__Alternatives_6");
 					put(grammarAccess.getLiteralAccess().getAlternatives(), "rule__Literal__Alternatives");
 					put(grammarAccess.getBooleanLiteralAccess().getValueAlternatives_1_0(), "rule__BooleanLiteral__ValueAlternatives_1_0");
 					put(grammarAccess.getNumberAccess().getAlternatives(), "rule__Number__Alternatives");
 					put(grammarAccess.getNumberAccess().getAlternatives_1_0(), "rule__Number__Alternatives_1_0");
 					put(grammarAccess.getNumberAccess().getAlternatives_1_1_1(), "rule__Number__Alternatives_1_1_1");
+					put(grammarAccess.getContextAccess().getGroup(), "rule__Context__Group__0");
 					put(grammarAccess.getNamespaceAccess().getGroup(), "rule__Namespace__Group__0");
 					put(grammarAccess.getImportAccess().getGroup(), "rule__Import__Group__0");
 					put(grammarAccess.getExternalTypeAccess().getGroup(), "rule__ExternalType__Group__0");
@@ -106,7 +106,9 @@ public class DomainDrivenDesignDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getStringLiteralAccess().getGroup(), "rule__StringLiteral__Group__0");
 					put(grammarAccess.getNumberAccess().getGroup_1(), "rule__Number__Group_1__0");
 					put(grammarAccess.getNumberAccess().getGroup_1_1(), "rule__Number__Group_1_1__0");
-					put(grammarAccess.getDomainModelAccess().getNamespaceAssignment(), "rule__DomainModel__NamespaceAssignment");
+					put(grammarAccess.getDomainModelAccess().getContextsAssignment(), "rule__DomainModel__ContextsAssignment");
+					put(grammarAccess.getContextAccess().getNameAssignment_1(), "rule__Context__NameAssignment_1");
+					put(grammarAccess.getContextAccess().getNamespacesAssignment_3(), "rule__Context__NamespacesAssignment_3");
 					put(grammarAccess.getNamespaceAccess().getNameAssignment_1(), "rule__Namespace__NameAssignment_1");
 					put(grammarAccess.getNamespaceAccess().getImportsAssignment_3(), "rule__Namespace__ImportsAssignment_3");
 					put(grammarAccess.getNamespaceAccess().getElementsAssignment_4(), "rule__Namespace__ElementsAssignment_4");
@@ -198,7 +200,7 @@ public class DomainDrivenDesignDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getVariableAccess().getMultiplicityAssignment_3(), "rule__Variable__MultiplicityAssignment_3");
 					put(grammarAccess.getVariableAccess().getNameAssignment_4(), "rule__Variable__NameAssignment_4");
 					put(grammarAccess.getVariableAccess().getInvariantsAssignment_5(), "rule__Variable__InvariantsAssignment_5");
-					put(grammarAccess.getVariableAccess().getOverriddenAssignment_6_0(), "rule__Variable__OverriddenAssignment_6_0");
+					put(grammarAccess.getVariableAccess().getOverriddenAssignment_6(), "rule__Variable__OverriddenAssignment_6");
 					put(grammarAccess.getConstraintsAccess().getCallsAssignment_2(), "rule__Constraints__CallsAssignment_2");
 					put(grammarAccess.getConstraintsAccess().getCallsAssignment_3_1(), "rule__Constraints__CallsAssignment_3_1");
 					put(grammarAccess.getInvariantsAccess().getCallsAssignment_1(), "rule__Invariants__CallsAssignment_1");

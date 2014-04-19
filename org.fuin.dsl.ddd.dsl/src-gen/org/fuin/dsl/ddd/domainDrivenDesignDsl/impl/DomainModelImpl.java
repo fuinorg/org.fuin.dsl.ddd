@@ -2,18 +2,23 @@
  */
 package org.fuin.dsl.ddd.domainDrivenDesignDsl.impl;
 
-import org.eclipse.emf.common.notify.Notification;
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
-import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Context;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainModel;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Namespace;
 
 /**
  * <!-- begin-user-doc -->
@@ -22,7 +27,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Namespace;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainModelImpl#getNamespace <em>Namespace</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainModelImpl#getContexts <em>Contexts</em>}</li>
  * </ul>
  * </p>
  *
@@ -31,14 +36,14 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Namespace;
 public class DomainModelImpl extends MinimalEObjectImpl.Container implements DomainModel
 {
   /**
-   * The cached value of the '{@link #getNamespace() <em>Namespace</em>}' containment reference.
+   * The cached value of the '{@link #getContexts() <em>Contexts</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getNamespace()
+   * @see #getContexts()
    * @generated
    * @ordered
    */
-  protected Namespace namespace;
+  protected EList<Context> contexts;
 
   /**
    * <!-- begin-user-doc -->
@@ -66,47 +71,13 @@ public class DomainModelImpl extends MinimalEObjectImpl.Container implements Dom
    * <!-- end-user-doc -->
    * @generated
    */
-  public Namespace getNamespace()
+  public EList<Context> getContexts()
   {
-    return namespace;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetNamespace(Namespace newNamespace, NotificationChain msgs)
-  {
-    Namespace oldNamespace = namespace;
-    namespace = newNamespace;
-    if (eNotificationRequired())
+    if (contexts == null)
     {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.DOMAIN_MODEL__NAMESPACE, oldNamespace, newNamespace);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
+      contexts = new EObjectContainmentEList<Context>(Context.class, this, DomainDrivenDesignDslPackage.DOMAIN_MODEL__CONTEXTS);
     }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setNamespace(Namespace newNamespace)
-  {
-    if (newNamespace != namespace)
-    {
-      NotificationChain msgs = null;
-      if (namespace != null)
-        msgs = ((InternalEObject)namespace).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DomainDrivenDesignDslPackage.DOMAIN_MODEL__NAMESPACE, null, msgs);
-      if (newNamespace != null)
-        msgs = ((InternalEObject)newNamespace).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DomainDrivenDesignDslPackage.DOMAIN_MODEL__NAMESPACE, null, msgs);
-      msgs = basicSetNamespace(newNamespace, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.DOMAIN_MODEL__NAMESPACE, newNamespace, newNamespace));
+    return contexts;
   }
 
   /**
@@ -119,8 +90,8 @@ public class DomainModelImpl extends MinimalEObjectImpl.Container implements Dom
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.DOMAIN_MODEL__NAMESPACE:
-        return basicSetNamespace(null, msgs);
+      case DomainDrivenDesignDslPackage.DOMAIN_MODEL__CONTEXTS:
+        return ((InternalEList<?>)getContexts()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -135,8 +106,8 @@ public class DomainModelImpl extends MinimalEObjectImpl.Container implements Dom
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.DOMAIN_MODEL__NAMESPACE:
-        return getNamespace();
+      case DomainDrivenDesignDslPackage.DOMAIN_MODEL__CONTEXTS:
+        return getContexts();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -146,13 +117,15 @@ public class DomainModelImpl extends MinimalEObjectImpl.Container implements Dom
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.DOMAIN_MODEL__NAMESPACE:
-        setNamespace((Namespace)newValue);
+      case DomainDrivenDesignDslPackage.DOMAIN_MODEL__CONTEXTS:
+        getContexts().clear();
+        getContexts().addAll((Collection<? extends Context>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -168,8 +141,8 @@ public class DomainModelImpl extends MinimalEObjectImpl.Container implements Dom
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.DOMAIN_MODEL__NAMESPACE:
-        setNamespace((Namespace)null);
+      case DomainDrivenDesignDslPackage.DOMAIN_MODEL__CONTEXTS:
+        getContexts().clear();
         return;
     }
     super.eUnset(featureID);
@@ -185,8 +158,8 @@ public class DomainModelImpl extends MinimalEObjectImpl.Container implements Dom
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.DOMAIN_MODEL__NAMESPACE:
-        return namespace != null;
+      case DomainDrivenDesignDslPackage.DOMAIN_MODEL__CONTEXTS:
+        return contexts != null && !contexts.isEmpty();
     }
     return super.eIsSet(featureID);
   }

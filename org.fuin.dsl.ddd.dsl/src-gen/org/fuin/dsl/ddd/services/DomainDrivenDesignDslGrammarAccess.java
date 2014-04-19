@@ -19,18 +19,58 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	
 	public class DomainModelElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "DomainModel");
-		private final Assignment cNamespaceAssignment = (Assignment)rule.eContents().get(1);
-		private final RuleCall cNamespaceNamespaceParserRuleCall_0 = (RuleCall)cNamespaceAssignment.eContents().get(0);
+		private final Assignment cContextsAssignment = (Assignment)rule.eContents().get(1);
+		private final RuleCall cContextsContextParserRuleCall_0 = (RuleCall)cContextsAssignment.eContents().get(0);
 		
 		//DomainModel:
-		//	namespace=Namespace;
+		//	contexts+=Context*;
 		public ParserRule getRule() { return rule; }
 
-		//namespace=Namespace
-		public Assignment getNamespaceAssignment() { return cNamespaceAssignment; }
+		//contexts+=Context*
+		public Assignment getContextsAssignment() { return cContextsAssignment; }
+
+		//Context
+		public RuleCall getContextsContextParserRuleCall_0() { return cContextsContextParserRuleCall_0; }
+	}
+
+	public class ContextElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Context");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cContextKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_2 = (Keyword)cGroup.eContents().get(2);
+		private final Assignment cNamespacesAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cNamespacesNamespaceParserRuleCall_3_0 = (RuleCall)cNamespacesAssignment_3.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		
+		//Context:
+		//	"context" name=ID "{" namespaces+=Namespace* "}";
+		public ParserRule getRule() { return rule; }
+
+		//"context" name=ID "{" namespaces+=Namespace* "}"
+		public Group getGroup() { return cGroup; }
+
+		//"context"
+		public Keyword getContextKeyword_0() { return cContextKeyword_0; }
+
+		//name=ID
+		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_2() { return cLeftCurlyBracketKeyword_2; }
+
+		//namespaces+=Namespace*
+		public Assignment getNamespacesAssignment_3() { return cNamespacesAssignment_3; }
 
 		//Namespace
-		public RuleCall getNamespaceNamespaceParserRuleCall_0() { return cNamespaceNamespaceParserRuleCall_0; }
+		public RuleCall getNamespacesNamespaceParserRuleCall_3_0() { return cNamespacesNamespaceParserRuleCall_3_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 
 	public class NamespaceElements extends AbstractParserRuleElementFinder {
@@ -89,13 +129,12 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final Alternatives cImportedNamespaceAlternatives_1_0 = (Alternatives)cImportedNamespaceAssignment_1.eContents().get(0);
 		private final RuleCall cImportedNamespaceFQNParserRuleCall_1_0_0 = (RuleCall)cImportedNamespaceAlternatives_1_0.eContents().get(0);
 		private final RuleCall cImportedNamespaceFQNWithWildcardParserRuleCall_1_0_1 = (RuleCall)cImportedNamespaceAlternatives_1_0.eContents().get(1);
-		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//Import:
-		//	"import" importedNamespace=(FQN | FQNWithWildcard) ";";
+		//	"import" importedNamespace=(FQN | FQNWithWildcard);
 		public ParserRule getRule() { return rule; }
 
-		//"import" importedNamespace=(FQN | FQNWithWildcard) ";"
+		//"import" importedNamespace=(FQN | FQNWithWildcard)
 		public Group getGroup() { return cGroup; }
 
 		//"import"
@@ -112,9 +151,6 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 
 		//FQNWithWildcard
 		public RuleCall getImportedNamespaceFQNWithWildcardParserRuleCall_1_0_1() { return cImportedNamespaceFQNWithWildcardParserRuleCall_1_0_1; }
-
-		//";"
-		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
 	}
 
 	public class AbstractElementElements extends AbstractParserRuleElementFinder {
@@ -275,13 +311,12 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final Keyword cTypeKeyword_0 = (Keyword)cGroup.eContents().get(0);
 		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
 		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Keyword cSemicolonKeyword_2 = (Keyword)cGroup.eContents().get(2);
 		
 		//ExternalType:
-		//	"type" name=ID ";";
+		//	"type" name=ID;
 		public ParserRule getRule() { return rule; }
 
-		//"type" name=ID ";"
+		//"type" name=ID
 		public Group getGroup() { return cGroup; }
 
 		//"type"
@@ -292,9 +327,6 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
-
-		//";"
-		public Keyword getSemicolonKeyword_2() { return cSemicolonKeyword_2; }
 	}
 
 	public class ConstraintElements extends AbstractParserRuleElementFinder {
@@ -322,16 +354,15 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final Keyword cMessageKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
 		private final Assignment cMessageAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
 		private final RuleCall cMessageSTRINGTerminalRuleCall_7_1_0 = (RuleCall)cMessageAssignment_7_1.eContents().get(0);
-		private final Keyword cSemicolonKeyword_7_2 = (Keyword)cGroup_7.eContents().get(2);
 		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//Constraint:
 		//	doc=DOC "constraint" name=ID ("on" target=[ConstraintTarget])? ("exception" exception=[Exception])? "{"
-		//	variables+=Variable* ("message" message=STRING ";")? "}";
+		//	variables+=Variable* ("message" message=STRING)? "}";
 		public ParserRule getRule() { return rule; }
 
 		//doc=DOC "constraint" name=ID ("on" target=[ConstraintTarget])? ("exception" exception=[Exception])? "{"
-		//variables+=Variable* ("message" message=STRING ";")? "}"
+		//variables+=Variable* ("message" message=STRING)? "}"
 		public Group getGroup() { return cGroup; }
 
 		//doc=DOC
@@ -388,7 +419,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		//Variable
 		public RuleCall getVariablesVariableParserRuleCall_6_0() { return cVariablesVariableParserRuleCall_6_0; }
 
-		//("message" message=STRING ";")?
+		//("message" message=STRING)?
 		public Group getGroup_7() { return cGroup_7; }
 
 		//"message"
@@ -399,9 +430,6 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 
 		//STRING
 		public RuleCall getMessageSTRINGTerminalRuleCall_7_1_0() { return cMessageSTRINGTerminalRuleCall_7_1_0; }
-
-		//";"
-		public Keyword getSemicolonKeyword_7_2() { return cSemicolonKeyword_7_2; }
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
@@ -421,14 +449,13 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final Keyword cMessageKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Assignment cMessageAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final RuleCall cMessageSTRINGTerminalRuleCall_6_0 = (RuleCall)cMessageAssignment_6.eContents().get(0);
-		private final Keyword cSemicolonKeyword_7 = (Keyword)cGroup.eContents().get(7);
-		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Exception:
-		//	doc=DOC "exception" name=ID "{" variables+=Variable* "message" message=STRING ";" "}";
+		//	doc=DOC "exception" name=ID "{" variables+=Variable* "message" message=STRING "}";
 		public ParserRule getRule() { return rule; }
 
-		//doc=DOC "exception" name=ID "{" variables+=Variable* "message" message=STRING ";" "}"
+		//doc=DOC "exception" name=ID "{" variables+=Variable* "message" message=STRING "}"
 		public Group getGroup() { return cGroup; }
 
 		//doc=DOC
@@ -464,11 +491,8 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		//STRING
 		public RuleCall getMessageSTRINGTerminalRuleCall_6_0() { return cMessageSTRINGTerminalRuleCall_6_0; }
 
-		//";"
-		public Keyword getSemicolonKeyword_7() { return cSemicolonKeyword_7; }
-
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
+		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
 	}
 
 	public class ValueObjectElements extends AbstractParserRuleElementFinder {
@@ -895,13 +919,12 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final Assignment cParamsAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
 		private final RuleCall cParamsLiteralParserRuleCall_2_2_1_0 = (RuleCall)cParamsAssignment_2_2_1.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_2_3 = (Keyword)cGroup_2.eContents().get(3);
-		private final Keyword cSemicolonKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		
 		//EnumInstance:
-		//	doc=DOC name=ID ("(" params+=Literal ("," params+=Literal)* ")")? ";";
+		//	doc=DOC name=ID ("(" params+=Literal ("," params+=Literal)* ")")?;
 		public ParserRule getRule() { return rule; }
 
-		//doc=DOC name=ID ("(" params+=Literal ("," params+=Literal)* ")")? ";"
+		//doc=DOC name=ID ("(" params+=Literal ("," params+=Literal)* ")")?
 		public Group getGroup() { return cGroup; }
 
 		//doc=DOC
@@ -942,9 +965,6 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 
 		//")"
 		public Keyword getRightParenthesisKeyword_2_3() { return cRightParenthesisKeyword_2_3; }
-
-		//";"
-		public Keyword getSemicolonKeyword_3() { return cSemicolonKeyword_3; }
 	}
 
 	public class EntityElements extends AbstractParserRuleElementFinder {
@@ -1492,18 +1512,16 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final RuleCall cNameIDTerminalRuleCall_4_0 = (RuleCall)cNameAssignment_4.eContents().get(0);
 		private final Assignment cInvariantsAssignment_5 = (Assignment)cGroup.eContents().get(5);
 		private final RuleCall cInvariantsInvariantsParserRuleCall_5_0 = (RuleCall)cInvariantsAssignment_5.eContents().get(0);
-		private final Alternatives cAlternatives_6 = (Alternatives)cGroup.eContents().get(6);
-		private final Assignment cOverriddenAssignment_6_0 = (Assignment)cAlternatives_6.eContents().get(0);
-		private final RuleCall cOverriddenOverriddenTypeMetaInfoParserRuleCall_6_0_0 = (RuleCall)cOverriddenAssignment_6_0.eContents().get(0);
-		private final Keyword cSemicolonKeyword_6_1 = (Keyword)cAlternatives_6.eContents().get(1);
+		private final Assignment cOverriddenAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cOverriddenOverriddenTypeMetaInfoParserRuleCall_6_0 = (RuleCall)cOverriddenAssignment_6.eContents().get(0);
 		
 		//Variable:
 		//	doc=DOC? nullable="nullable"? type=[Type] multiplicity="*"? name=ID invariants=Invariants?
-		//	(overridden=OverriddenTypeMetaInfo? | ";");
+		//	overridden=OverriddenTypeMetaInfo?;
 		public ParserRule getRule() { return rule; }
 
 		//doc=DOC? nullable="nullable"? type=[Type] multiplicity="*"? name=ID invariants=Invariants?
-		//(overridden=OverriddenTypeMetaInfo? | ";")
+		//overridden=OverriddenTypeMetaInfo?
 		public Group getGroup() { return cGroup; }
 
 		//doc=DOC?
@@ -1545,17 +1563,11 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		//Invariants
 		public RuleCall getInvariantsInvariantsParserRuleCall_5_0() { return cInvariantsInvariantsParserRuleCall_5_0; }
 
-		//overridden=OverriddenTypeMetaInfo? | ";"
-		public Alternatives getAlternatives_6() { return cAlternatives_6; }
-
 		//overridden=OverriddenTypeMetaInfo?
-		public Assignment getOverriddenAssignment_6_0() { return cOverriddenAssignment_6_0; }
+		public Assignment getOverriddenAssignment_6() { return cOverriddenAssignment_6; }
 
 		//OverriddenTypeMetaInfo
-		public RuleCall getOverriddenOverriddenTypeMetaInfoParserRuleCall_6_0_0() { return cOverriddenOverriddenTypeMetaInfoParserRuleCall_6_0_0; }
-
-		//";"
-		public Keyword getSemicolonKeyword_6_1() { return cSemicolonKeyword_6_1; }
+		public RuleCall getOverriddenOverriddenTypeMetaInfoParserRuleCall_6_0() { return cOverriddenOverriddenTypeMetaInfoParserRuleCall_6_0; }
 	}
 
 	public class ConstraintsElements extends AbstractParserRuleElementFinder {
@@ -1756,7 +1768,6 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final Assignment cOutputAssignment_5_2 = (Assignment)cGroup_5.eContents().get(2);
 		private final CrossReference cOutputTypeCrossReference_5_2_0 = (CrossReference)cOutputAssignment_5_2.eContents().get(0);
 		private final RuleCall cOutputTypeIDTerminalRuleCall_5_2_0_1 = (RuleCall)cOutputTypeCrossReference_5_2_0.eContents().get(1);
-		private final Keyword cSemicolonKeyword_5_3 = (Keyword)cGroup_5.eContents().get(3);
 		private final Group cGroup_6 = (Group)cGroup.eContents().get(6);
 		private final Keyword cExceptionsKeyword_6_0 = (Keyword)cGroup_6.eContents().get(0);
 		private final Keyword cLeftCurlyBracketKeyword_6_1 = (Keyword)cGroup_6.eContents().get(1);
@@ -1772,12 +1783,12 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Function:
-		//	doc=DOC? "function" name=ID "{" ("input" "{" input+=Variable* "}")? (outDoc=DOC? "output" output=[Type] ";")?
+		//	doc=DOC? "function" name=ID "{" ("input" "{" input+=Variable* "}")? (outDoc=DOC? "output" output=[Type])?
 		//	("exceptions" "{" exceptions+=[Exception] ("," exceptions+=[Exception])* "}")? "}";
 		public ParserRule getRule() { return rule; }
 
-		//doc=DOC? "function" name=ID "{" ("input" "{" input+=Variable* "}")? (outDoc=DOC? "output" output=[Type] ";")?
-		//("exceptions" "{" exceptions+=[Exception] ("," exceptions+=[Exception])* "}")? "}"
+		//doc=DOC? "function" name=ID "{" ("input" "{" input+=Variable* "}")? (outDoc=DOC? "output" output=[Type])? ("exceptions"
+		//"{" exceptions+=[Exception] ("," exceptions+=[Exception])* "}")? "}"
 		public Group getGroup() { return cGroup; }
 
 		//doc=DOC?
@@ -1816,7 +1827,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_4_3() { return cRightCurlyBracketKeyword_4_3; }
 
-		//(outDoc=DOC? "output" output=[Type] ";")?
+		//(outDoc=DOC? "output" output=[Type])?
 		public Group getGroup_5() { return cGroup_5; }
 
 		//outDoc=DOC?
@@ -1836,9 +1847,6 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 
 		//ID
 		public RuleCall getOutputTypeIDTerminalRuleCall_5_2_0_1() { return cOutputTypeIDTerminalRuleCall_5_2_0_1; }
-
-		//";"
-		public Keyword getSemicolonKeyword_5_3() { return cSemicolonKeyword_5_3; }
 
 		//("exceptions" "{" exceptions+=[Exception] ("," exceptions+=[Exception])* "}")?
 		public Group getGroup_6() { return cGroup_6; }
@@ -2166,6 +2174,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	
 	
 	private DomainModelElements pDomainModel;
+	private ContextElements pContext;
 	private NamespaceElements pNamespace;
 	private ImportElements pImport;
 	private AbstractElementElements pAbstractElement;
@@ -2246,13 +2255,23 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 
 	
 	//DomainModel:
-	//	namespace=Namespace;
+	//	contexts+=Context*;
 	public DomainModelElements getDomainModelAccess() {
 		return (pDomainModel != null) ? pDomainModel : (pDomainModel = new DomainModelElements());
 	}
 	
 	public ParserRule getDomainModelRule() {
 		return getDomainModelAccess().getRule();
+	}
+
+	//Context:
+	//	"context" name=ID "{" namespaces+=Namespace* "}";
+	public ContextElements getContextAccess() {
+		return (pContext != null) ? pContext : (pContext = new ContextElements());
+	}
+	
+	public ParserRule getContextRule() {
+		return getContextAccess().getRule();
 	}
 
 	//Namespace:
@@ -2266,7 +2285,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//Import:
-	//	"import" importedNamespace=(FQN | FQNWithWildcard) ";";
+	//	"import" importedNamespace=(FQN | FQNWithWildcard);
 	public ImportElements getImportAccess() {
 		return (pImport != null) ? pImport : (pImport = new ImportElements());
 	}
@@ -2346,7 +2365,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//ExternalType:
-	//	"type" name=ID ";";
+	//	"type" name=ID;
 	public ExternalTypeElements getExternalTypeAccess() {
 		return (pExternalType != null) ? pExternalType : (pExternalType = new ExternalTypeElements());
 	}
@@ -2357,7 +2376,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 
 	//Constraint:
 	//	doc=DOC "constraint" name=ID ("on" target=[ConstraintTarget])? ("exception" exception=[Exception])? "{"
-	//	variables+=Variable* ("message" message=STRING ";")? "}";
+	//	variables+=Variable* ("message" message=STRING)? "}";
 	public ConstraintElements getConstraintAccess() {
 		return (pConstraint != null) ? pConstraint : (pConstraint = new ConstraintElements());
 	}
@@ -2367,7 +2386,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//Exception:
-	//	doc=DOC "exception" name=ID "{" variables+=Variable* "message" message=STRING ";" "}";
+	//	doc=DOC "exception" name=ID "{" variables+=Variable* "message" message=STRING "}";
 	public ExceptionElements getExceptionAccess() {
 		return (pException != null) ? pException : (pException = new ExceptionElements());
 	}
@@ -2421,7 +2440,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//EnumInstance:
-	//	doc=DOC name=ID ("(" params+=Literal ("," params+=Literal)* ")")? ";";
+	//	doc=DOC name=ID ("(" params+=Literal ("," params+=Literal)* ")")?;
 	public EnumInstanceElements getEnumInstanceAccess() {
 		return (pEnumInstance != null) ? pEnumInstance : (pEnumInstance = new EnumInstanceElements());
 	}
@@ -2507,7 +2526,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 
 	//Variable:
 	//	doc=DOC? nullable="nullable"? type=[Type] multiplicity="*"? name=ID invariants=Invariants?
-	//	(overridden=OverriddenTypeMetaInfo? | ";");
+	//	overridden=OverriddenTypeMetaInfo?;
 	public VariableElements getVariableAccess() {
 		return (pVariable != null) ? pVariable : (pVariable = new VariableElements());
 	}
@@ -2557,7 +2576,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//Function:
-	//	doc=DOC? "function" name=ID "{" ("input" "{" input+=Variable* "}")? (outDoc=DOC? "output" output=[Type] ";")?
+	//	doc=DOC? "function" name=ID "{" ("input" "{" input+=Variable* "}")? (outDoc=DOC? "output" output=[Type])?
 	//	("exceptions" "{" exceptions+=[Exception] ("," exceptions+=[Exception])* "}")? "}";
 	public FunctionElements getFunctionAccess() {
 		return (pFunction != null) ? pFunction : (pFunction = new FunctionElements());

@@ -1,16 +1,20 @@
-namespace api {
-	
-	import types.*;
-	import constr.*;
-	
-	/**
-	 * Represents a postal ZIP code.
-	 */
-	value-object ZipCode base String {
+context axonsample {
+
+	namespace api {
 		
-		/** Internal value. */
-		String value invariants Length(4, 6);
+		import axonsample.types.*
+		import axonsample.constr.*
 		
+		/**
+		 * Represents a postal ZIP code.
+		 */
+		value-object ZipCode base String {
+			
+			/** Internal value. */
+			String value invariants Length(4, 6)
+			
+		}
+			
 	}
-		
+	
 }

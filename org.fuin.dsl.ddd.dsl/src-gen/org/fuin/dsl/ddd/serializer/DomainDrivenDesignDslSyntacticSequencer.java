@@ -20,14 +20,12 @@ public class DomainDrivenDesignDslSyntacticSequencer extends AbstractSyntacticSe
 	protected DomainDrivenDesignDslGrammarAccess grammarAccess;
 	protected AbstractElementAlias match_Function___InputKeyword_4_0_LeftCurlyBracketKeyword_4_1_RightCurlyBracketKeyword_4_3__q;
 	protected AbstractElementAlias match_TypeMetaInfo_ExamplesKeyword_5_0_q;
-	protected AbstractElementAlias match_Variable_SemicolonKeyword_6_1_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (DomainDrivenDesignDslGrammarAccess) access;
 		match_Function___InputKeyword_4_0_LeftCurlyBracketKeyword_4_1_RightCurlyBracketKeyword_4_3__q = new GroupAlias(false, true, new TokenAlias(false, false, grammarAccess.getFunctionAccess().getInputKeyword_4_0()), new TokenAlias(false, false, grammarAccess.getFunctionAccess().getLeftCurlyBracketKeyword_4_1()), new TokenAlias(false, false, grammarAccess.getFunctionAccess().getRightCurlyBracketKeyword_4_3()));
 		match_TypeMetaInfo_ExamplesKeyword_5_0_q = new TokenAlias(false, true, grammarAccess.getTypeMetaInfoAccess().getExamplesKeyword_5_0());
-		match_Variable_SemicolonKeyword_6_1_q = new TokenAlias(false, true, grammarAccess.getVariableAccess().getSemicolonKeyword_6_1());
 	}
 	
 	@Override
@@ -46,8 +44,6 @@ public class DomainDrivenDesignDslSyntacticSequencer extends AbstractSyntacticSe
 				emit_Function___InputKeyword_4_0_LeftCurlyBracketKeyword_4_1_RightCurlyBracketKeyword_4_3__q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else if(match_TypeMetaInfo_ExamplesKeyword_5_0_q.equals(syntax))
 				emit_TypeMetaInfo_ExamplesKeyword_5_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
-			else if(match_Variable_SemicolonKeyword_6_1_q.equals(syntax))
-				emit_Variable_SemicolonKeyword_6_1_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
@@ -65,14 +61,6 @@ public class DomainDrivenDesignDslSyntacticSequencer extends AbstractSyntacticSe
 	 *     'examples'?
 	 */
 	protected void emit_TypeMetaInfo_ExamplesKeyword_5_0_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
-		acceptNodes(transition, nodes);
-	}
-	
-	/**
-	 * Syntax:
-	 *     ';'?
-	 */
-	protected void emit_Variable_SemicolonKeyword_6_1_q(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
 		acceptNodes(transition, nodes);
 	}
 	

@@ -5,8 +5,13 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 generate domainDrivenDesignDsl "http://www.fuin.org/dsl/ddd/DomainDrivenDesignDsl"
 
 DomainModel:
-	namespace=Namespace;
+	contexts+=Context*;
 
+Context:
+	'context' name=ID '{'
+		namespaces+=Namespace*
+	'}';
+	
 Namespace:
 	'namespace' name=FQN '{'
 		imports+=Import*
@@ -14,7 +19,7 @@ Namespace:
 	'}';
 
 Import:
-	'import' importedNamespace=(FQN | FQNWithWildcard) ';';
+	'import' importedNamespace=(FQN | FQNWithWildcard);
 
 AbstractElement:
 	Constraint | Type | Service | Exception;
@@ -38,20 +43,20 @@ ConstraintTarget:
 	ExternalType | ValueObject;
 
 ExternalType:
-	'type' name=ID ';';
+	'type' name=ID;
 
 Constraint:
 	doc=DOC 
 	'constraint' name=ID ('on' target=[ConstraintTarget])? ('exception' exception=[Exception])? '{'
 		variables+=Variable* 
-		('message' message=STRING ';')?
+		('message' message=STRING)?
 	'}';
 	
 Exception:
 	doc=DOC 
 	'exception' name=ID '{'
 		variables+=Variable* 
-		'message' message=STRING ';'
+		'message' message=STRING
 	'}';
 
 ValueObject:
@@ -93,7 +98,7 @@ EnumObject:
 	
 EnumInstance:
 	doc=DOC
-	name=ID ('(' params+=Literal (',' params+=Literal)* ')')? ';';	
+	name=ID ('(' params+=Literal (',' params+=Literal)* ')')?;	
 	
 Entity:
 	doc=DOC 
@@ -151,7 +156,7 @@ TypeMetaInfo:
 Variable:
 	doc=DOC? 
 	(nullable='nullable')? 
-	type=[Type] (multiplicity='*')? name=ID (invariants=Invariants)? ((overridden=OverriddenTypeMetaInfo)? | ';');
+	type=[Type] (multiplicity='*')? name=ID (invariants=Invariants)? (overridden=OverriddenTypeMetaInfo)?;
 
 Constraints:
 	'constraints' '{' calls+=ConstraintCall (',' calls+=ConstraintCall)* '}';
@@ -169,7 +174,7 @@ Function:
 	doc=DOC? 
 	'function' name=ID '{'
 	    ('input' '{' input+=Variable* '}')?
-		(outDoc=DOC? 'output' output=[Type] ';')?
+		(outDoc=DOC? 'output' output=[Type])?
 		('exceptions' '{' exceptions+=[Exception] (',' exceptions+=[Exception])* '}')?
 	'}';
 
