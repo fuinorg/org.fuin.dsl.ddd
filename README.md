@@ -3,6 +3,16 @@ DDD DSL
 
 Xtext based DSL supporting Domain-driven design (DDD)
 
+Installation
+------------
+
+1. Inside Eclipse click menu "Help / Install New Software..."
+2. Press "Add" button to add the repository: http://www.fuin.org/p2-repository
+3. Install "DDD DSL"  
+[![ScreenShot](https://raw.github.com/fuinorg/org.fuin.dsl.ddd/master/doc/install-eclipse.jpg)]
+
+###Build
+
 [![Build Status](https://fuin-org.ci.cloudbees.com/job/org.fuin.dsl.ddd/badge/icon)](https://fuin-org.ci.cloudbees.com/job/org.fuin.dsl.ddd/)
 
 <a href="https://fuin-org.ci.cloudbees.com/job/org.fuin.dsl.ddd"><img src="http://www.fuin.org/images/Button-Built-on-CB-1.png" width="213" height="72" border="0" alt="Built on CloudBees"/></a>
