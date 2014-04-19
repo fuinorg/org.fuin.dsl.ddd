@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.fuin.dsl.ddd</groupId>
+		<artifactId>org.fuin.dsl.ddd</artifactId>
+		<version>0.1.0-SNAPSHOT</version>
+	</parent>
+
+	<artifactId>org.fuin.dsl.ddd.doc</artifactId>
+	<version>0.1.0-SNAPSHOT</version>
+	<name>DDD DSL / Documentation</name>
+	<packaging>pom</packaging>
+
+	<build>
+
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>2.7</version>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>com.agilejava.docbkx</groupId>
+				<artifactId>docbkx-maven-plugin</artifactId>
+				<version>2.0.15</version>
+				<executions>
+					<execution>
+						<id>ddd-dsl-doc</id>
+						<phase>pre-site</phase>
+						<goals>
+							<goal>generate-html</goal>
+						</goals>
+						<configuration>
+							<includes>reference-guide.xml</includes>
+							<draftMode>yes</draftMode>
+						</configuration>
+					</execution>
+				</executions>
+				<configuration>
+					<generatedSourceDirectory>${project.build.directory}/docbkx/generated</generatedSourceDirectory>
+					<xincludeSupported>true</xincludeSupported>
+					<paperType>A4</paperType>
+					<fop1Extensions>1</fop1Extensions>
+					<foCustomization>src/docbkx-stylesheet/fo/docbook.xsl</foCustomization>
+				</configuration>
+			</plugin>
+
+		</plugins>
+
+	</build>
+
+</project>

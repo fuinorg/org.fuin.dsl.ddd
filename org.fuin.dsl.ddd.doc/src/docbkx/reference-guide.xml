@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<book version="5.0" xmlns="http://docbook.org/ns/docbook"
+	xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude">
+
+	<info>
+		<title>Reference Guide</title>
+		<author>
+			<personname>
+				<firstname>Michael</firstname>
+				<surname>Schnell</surname>
+			</personname>
+			<affiliation>
+				<orgname>http://www.fuin.org</orgname>
+			</affiliation>
+		</author>
+		<releaseinfo>
+			DDD DSL <?eval ${project.version}?>
+		</releaseinfo>
+		<subjectset>
+			<subject>
+				<subjectterm>Domain-driven design (DDD) DSL Reference Guide
+				</subjectterm>
+			</subject>
+		</subjectset>
+	</info>
+
+	<chapter>
+		<title>Introduction</title>
+		<para>This reference guide explains the syntax of the DSL and how you
+			can use it.
+		</para>
+	</chapter>
+
+	<chapter>
+		<title>Installation</title>
+		<para>
+			<orderedlist>
+				<listitem>
+					Inside Eclipse click menu "Help / Install New Software..."
+				</listitem>
+				<listitem>
+					Press "Add" button to add the repository:
+					<link xmlns:ns1="http://www.w3.org/1999/xlink" ns1:href="http://www.fuin.org/p2-repository"
+						ns1:show="new">http://www.fuin.org/p2-repository</link>
+				</listitem>
+				<listitem>
+					Install "DDD DSL"
+				</listitem>				
+			</orderedlist>
+		</para>
+	</chapter>
+
+	<chapter>
+		<title>Building blocks</title>
+		<para>Describes how the high-level concepts from the book
+			Domain-Driven Design can be expressed with the DSL
+		</para>
+		<sect1 xml:id="external-type">
+			<title>External Type</title>
+			<para>TBD</para>
+		</sect1>
+		<sect1 xml:id="constraint">
+			<title>Constraint</title>
+			<para>TBD</para>
+		</sect1>
+		<sect1 xml:id="exception">
+			<title>Exception</title>
+			<para>TBD</para>
+		</sect1>
+		<sect1 xml:id="value-object">
+			<title>Value Object</title>
+			<para>TBD</para>
+			<sect2 xml:id="entity-id">
+				<title>Entity Identifier</title>
+				<para>TBD</para>
+			</sect2>
+			<sect2 xml:id="aggregate-id">
+				<title>Aggregate Identifier</title>
+				<para>TBD</para>
+			</sect2>
+			<sect2 xml:id="enum">
+				<title>Enumeration</title>
+				<para>TBD</para>
+			</sect2>
+		</sect1>
+		<sect1 xml:id="entity">
+			<title>Entity</title>
+			<para>TBD</para>
+		</sect1>
+		<sect1 xml:id="aggregate">
+			<title>Aggregate</title>
+			<para>TBD</para>
+		</sect1>
+	</chapter>
+
+	<chapter>
+		<title>License information</title>
+		<para>
+			The DDD DSL and its documentation are licensed under the
+			<link xmlns:ns1="http://www.w3.org/1999/xlink" ns1:href="http://www.gnu.org/licenses/lgpl-3.0"
+				ns1:show="new">GNU LESSER GENERAL PUBLIC LICENSE</link>
+			.
+		</para>
+	</chapter>
+
+</book>

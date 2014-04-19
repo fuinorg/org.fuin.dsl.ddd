@@ -86,6 +86,7 @@
     <!-- Check why this does not work in Jenkins...  
     <module>org.fuin.dsl.ddd.repository</module>
      -->
+    <module>org.fuin.dsl.ddd.doc</module>
   </modules>
   
 </project>
