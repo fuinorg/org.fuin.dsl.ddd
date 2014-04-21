@@ -45,6 +45,8 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
   
   public final static String VO_CANNOT_REF_ENTITY = "voCannotRefEntity";
   
+  public final static String MISSING_DOC = "missingDOC";
+  
   @Check
   public void checkNameStartsWithCapital(final Variable variable) {
     String _name = variable.getName();

@@ -666,7 +666,7 @@ ruleConstraint returns [EObject current=null]
 	    }
 
 )
-)	otherlv_1='constraint' 
+)?	otherlv_1='constraint' 
     {
     	newLeafNode(otherlv_1, grammarAccess.getConstraintAccess().getConstraintKeyword_1());
     }
@@ -809,7 +809,7 @@ ruleException returns [EObject current=null]
 	    }
 
 )
-)	otherlv_1='exception' 
+)?	otherlv_1='exception' 
     {
     	newLeafNode(otherlv_1, grammarAccess.getExceptionAccess().getExceptionKeyword_1());
     }
@@ -918,7 +918,7 @@ ruleValueObject returns [EObject current=null]
 	    }
 
 )
-)	otherlv_1='value-object' 
+)?	otherlv_1='value-object' 
     {
     	newLeafNode(otherlv_1, grammarAccess.getValueObjectAccess().getValueObjectKeyword_1());
     }
@@ -1076,7 +1076,7 @@ ruleEntityId returns [EObject current=null]
 	    }
 
 )
-)	otherlv_1='entity-id' 
+)?	otherlv_1='entity-id' 
     {
     	newLeafNode(otherlv_1, grammarAccess.getEntityIdAccess().getEntityIdKeyword_1());
     }
@@ -1251,7 +1251,7 @@ ruleAggregateId returns [EObject current=null]
 	    }
 
 )
-)	otherlv_1='aggregate-id' 
+)?	otherlv_1='aggregate-id' 
     {
     	newLeafNode(otherlv_1, grammarAccess.getAggregateIdAccess().getAggregateIdKeyword_1());
     }
@@ -1426,7 +1426,7 @@ ruleEnumObject returns [EObject current=null]
 	    }
 
 )
-)	otherlv_1='enum' 
+)?	otherlv_1='enum' 
     {
     	newLeafNode(otherlv_1, grammarAccess.getEnumObjectAccess().getEnumKeyword_1());
     }
@@ -1597,7 +1597,7 @@ ruleEnumInstance returns [EObject current=null]
 	    }
 
 )
-)(
+)?(
 (
 		lv_name_1_0=RULE_ID
 		{
@@ -1702,7 +1702,7 @@ ruleEntity returns [EObject current=null]
 	    }
 
 )
-)	otherlv_1='entity' 
+)?	otherlv_1='entity' 
     {
     	newLeafNode(otherlv_1, grammarAccess.getEntityAccess().getEntityKeyword_1());
     }
@@ -1877,7 +1877,7 @@ ruleAggregate returns [EObject current=null]
 	    }
 
 )
-)	otherlv_1='aggregate' 
+)?	otherlv_1='aggregate' 
     {
     	newLeafNode(otherlv_1, grammarAccess.getAggregateAccess().getAggregateKeyword_1());
     }

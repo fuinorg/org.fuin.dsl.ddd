@@ -272,7 +272,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	/**
 	 * Constraint:
 	 *     (
-	 *         doc=DOC 
+	 *         doc=DOC? 
 	 *         name=ID 
 	 *         entity=[Aggregate|ID] 
 	 *         base=[ExternalType|ID]? 
@@ -290,7 +290,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	/**
 	 * Constraint:
 	 *     (
-	 *         doc=DOC 
+	 *         doc=DOC? 
 	 *         name=ID 
 	 *         idType=[AggregateId|ID] 
 	 *         metaInfo=TypeMetaInfo 
@@ -325,7 +325,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	/**
 	 * Constraint:
 	 *     (
-	 *         doc=DOC 
+	 *         doc=DOC? 
 	 *         name=ID 
 	 *         target=[ConstraintTarget|ID]? 
 	 *         exception=[Exception|ID]? 
@@ -384,7 +384,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	/**
 	 * Constraint:
 	 *     (
-	 *         doc=DOC 
+	 *         doc=DOC? 
 	 *         name=ID 
 	 *         entity=[Entity|ID] 
 	 *         base=[ExternalType|ID]? 
@@ -402,7 +402,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	/**
 	 * Constraint:
 	 *     (
-	 *         doc=DOC 
+	 *         doc=DOC? 
 	 *         name=ID 
 	 *         idType=[EntityId|ID] 
 	 *         root=[Aggregate|ID] 
@@ -419,7 +419,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	
 	/**
 	 * Constraint:
-	 *     (doc=DOC name=ID (params+=Literal params+=Literal*)?)
+	 *     (doc=DOC? name=ID (params+=Literal params+=Literal*)?)
 	 */
 	protected void sequence_EnumInstance(EObject context, EnumInstance semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -429,7 +429,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	/**
 	 * Constraint:
 	 *     (
-	 *         doc=DOC 
+	 *         doc=DOC? 
 	 *         name=ID 
 	 *         metaInfo=TypeMetaInfo 
 	 *         variables+=Variable* 
@@ -454,7 +454,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	
 	/**
 	 * Constraint:
-	 *     (doc=DOC name=ID variables+=Variable* message=STRING)
+	 *     (doc=DOC? name=ID variables+=Variable* message=STRING)
 	 */
 	protected void sequence_Exception(EObject context, org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -615,7 +615,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	/**
 	 * Constraint:
 	 *     (
-	 *         doc=DOC 
+	 *         doc=DOC? 
 	 *         name=ID 
 	 *         base=[ExternalType|ID]? 
 	 *         metaInfo=TypeMetaInfo 

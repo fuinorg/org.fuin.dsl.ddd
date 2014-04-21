@@ -14,6 +14,8 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.ValueObject
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Function
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntityId
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.InternalType
 
 /**
  * Custom validation rules. 
@@ -35,6 +37,9 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 	public static val REF_TO_ENTITY_NOT_ALLOWED = 'refToEntityNotAllowed'
 
 	public static val VO_CANNOT_REF_ENTITY = 'voCannotRefEntity'
+
+	public static val MISSING_DOC = 'missingDOC'
+	
 
 	@Check
 	def checkNameStartsWithCapital(Variable variable) {

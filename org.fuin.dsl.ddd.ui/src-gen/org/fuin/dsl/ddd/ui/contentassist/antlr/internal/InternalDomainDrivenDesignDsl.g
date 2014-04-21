@@ -1959,7 +1959,7 @@ rule__Constraint__Group__0__Impl
 :
 (
 { before(grammarAccess.getConstraintAccess().getDocAssignment_0()); }
-(rule__Constraint__DocAssignment_0)
+(rule__Constraint__DocAssignment_0)?
 { after(grammarAccess.getConstraintAccess().getDocAssignment_0()); }
 )
 
@@ -2432,7 +2432,7 @@ rule__Exception__Group__0__Impl
 :
 (
 { before(grammarAccess.getExceptionAccess().getDocAssignment_0()); }
-(rule__Exception__DocAssignment_0)
+(rule__Exception__DocAssignment_0)?
 { after(grammarAccess.getExceptionAccess().getDocAssignment_0()); }
 )
 
@@ -2687,7 +2687,7 @@ rule__ValueObject__Group__0__Impl
 :
 (
 { before(grammarAccess.getValueObjectAccess().getDocAssignment_0()); }
-(rule__ValueObject__DocAssignment_0)
+(rule__ValueObject__DocAssignment_0)?
 { after(grammarAccess.getValueObjectAccess().getDocAssignment_0()); }
 )
 
@@ -3065,7 +3065,7 @@ rule__EntityId__Group__0__Impl
 :
 (
 { before(grammarAccess.getEntityIdAccess().getDocAssignment_0()); }
-(rule__EntityId__DocAssignment_0)
+(rule__EntityId__DocAssignment_0)?
 { after(grammarAccess.getEntityIdAccess().getDocAssignment_0()); }
 )
 
@@ -3507,7 +3507,7 @@ rule__AggregateId__Group__0__Impl
 :
 (
 { before(grammarAccess.getAggregateIdAccess().getDocAssignment_0()); }
-(rule__AggregateId__DocAssignment_0)
+(rule__AggregateId__DocAssignment_0)?
 { after(grammarAccess.getAggregateIdAccess().getDocAssignment_0()); }
 )
 
@@ -3949,7 +3949,7 @@ rule__EnumObject__Group__0__Impl
 :
 (
 { before(grammarAccess.getEnumObjectAccess().getDocAssignment_0()); }
-(rule__EnumObject__DocAssignment_0)
+(rule__EnumObject__DocAssignment_0)?
 { after(grammarAccess.getEnumObjectAccess().getDocAssignment_0()); }
 )
 
@@ -4370,7 +4370,7 @@ rule__EnumInstance__Group__0__Impl
 :
 (
 { before(grammarAccess.getEnumInstanceAccess().getDocAssignment_0()); }
-(rule__EnumInstance__DocAssignment_0)
+(rule__EnumInstance__DocAssignment_0)?
 { after(grammarAccess.getEnumInstanceAccess().getDocAssignment_0()); }
 )
 
@@ -4652,7 +4652,7 @@ rule__Entity__Group__0__Impl
 :
 (
 { before(grammarAccess.getEntityAccess().getDocAssignment_0()); }
-(rule__Entity__DocAssignment_0)
+(rule__Entity__DocAssignment_0)?
 { after(grammarAccess.getEntityAccess().getDocAssignment_0()); }
 )
 
@@ -5064,7 +5064,7 @@ rule__Aggregate__Group__0__Impl
 :
 (
 { before(grammarAccess.getAggregateAccess().getDocAssignment_0()); }
-(rule__Aggregate__DocAssignment_0)
+(rule__Aggregate__DocAssignment_0)?
 { after(grammarAccess.getAggregateAccess().getDocAssignment_0()); }
 )
 

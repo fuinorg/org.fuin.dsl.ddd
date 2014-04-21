@@ -357,15 +357,15 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//Constraint:
-		//	doc=DOC "constraint" name=ID ("on" target=[ConstraintTarget])? ("exception" exception=[Exception])? "{"
+		//	doc=DOC? "constraint" name=ID ("on" target=[ConstraintTarget])? ("exception" exception=[Exception])? "{"
 		//	variables+=Variable* ("message" message=STRING)? "}";
 		public ParserRule getRule() { return rule; }
 
-		//doc=DOC "constraint" name=ID ("on" target=[ConstraintTarget])? ("exception" exception=[Exception])? "{"
+		//doc=DOC? "constraint" name=ID ("on" target=[ConstraintTarget])? ("exception" exception=[Exception])? "{"
 		//variables+=Variable* ("message" message=STRING)? "}"
 		public Group getGroup() { return cGroup; }
 
-		//doc=DOC
+		//doc=DOC?
 		public Assignment getDocAssignment_0() { return cDocAssignment_0; }
 
 		//DOC
@@ -452,13 +452,13 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
 		
 		//Exception:
-		//	doc=DOC "exception" name=ID "{" variables+=Variable* "message" message=STRING "}";
+		//	doc=DOC? "exception" name=ID "{" variables+=Variable* "message" message=STRING "}";
 		public ParserRule getRule() { return rule; }
 
-		//doc=DOC "exception" name=ID "{" variables+=Variable* "message" message=STRING "}"
+		//doc=DOC? "exception" name=ID "{" variables+=Variable* "message" message=STRING "}"
 		public Group getGroup() { return cGroup; }
 
-		//doc=DOC
+		//doc=DOC?
 		public Assignment getDocAssignment_0() { return cDocAssignment_0; }
 
 		//DOC
@@ -520,15 +520,15 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		//ValueObject:
-		//	doc=DOC "value-object" name=ID ("base" base=[ExternalType])? "{" metaInfo=TypeMetaInfo variables+=Variable*
+		//	doc=DOC? "value-object" name=ID ("base" base=[ExternalType])? "{" metaInfo=TypeMetaInfo variables+=Variable*
 		//	constructors+=Constructor* methods+=Method* "}";
 		public ParserRule getRule() { return rule; }
 
-		//doc=DOC "value-object" name=ID ("base" base=[ExternalType])? "{" metaInfo=TypeMetaInfo variables+=Variable*
+		//doc=DOC? "value-object" name=ID ("base" base=[ExternalType])? "{" metaInfo=TypeMetaInfo variables+=Variable*
 		//constructors+=Constructor* methods+=Method* "}"
 		public Group getGroup() { return cGroup; }
 
-		//doc=DOC
+		//doc=DOC?
 		public Assignment getDocAssignment_0() { return cDocAssignment_0; }
 
 		//DOC
@@ -618,15 +618,15 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		
 		//EntityId:
-		//	doc=DOC "entity-id" name=ID "identifies" entity=[Entity] ("base" base=[ExternalType])? "{" metaInfo=TypeMetaInfo
+		//	doc=DOC? "entity-id" name=ID "identifies" entity=[Entity] ("base" base=[ExternalType])? "{" metaInfo=TypeMetaInfo
 		//	variables+=Variable* constructors+=Constructor* methods+=Method* "}";
 		public ParserRule getRule() { return rule; }
 
-		//doc=DOC "entity-id" name=ID "identifies" entity=[Entity] ("base" base=[ExternalType])? "{" metaInfo=TypeMetaInfo
+		//doc=DOC? "entity-id" name=ID "identifies" entity=[Entity] ("base" base=[ExternalType])? "{" metaInfo=TypeMetaInfo
 		//variables+=Variable* constructors+=Constructor* methods+=Method* "}"
 		public Group getGroup() { return cGroup; }
 
-		//doc=DOC
+		//doc=DOC?
 		public Assignment getDocAssignment_0() { return cDocAssignment_0; }
 
 		//DOC
@@ -728,15 +728,15 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		
 		//AggregateId:
-		//	doc=DOC "aggregate-id" name=ID "identifies" entity=[Aggregate] ("base" base=[ExternalType])? "{"
+		//	doc=DOC? "aggregate-id" name=ID "identifies" entity=[Aggregate] ("base" base=[ExternalType])? "{"
 		//	metaInfo=TypeMetaInfo variables+=Variable* constructors+=Constructor* methods+=Method* "}";
 		public ParserRule getRule() { return rule; }
 
-		//doc=DOC "aggregate-id" name=ID "identifies" entity=[Aggregate] ("base" base=[ExternalType])? "{" metaInfo=TypeMetaInfo
+		//doc=DOC? "aggregate-id" name=ID "identifies" entity=[Aggregate] ("base" base=[ExternalType])? "{" metaInfo=TypeMetaInfo
 		//variables+=Variable* constructors+=Constructor* methods+=Method* "}"
 		public Group getGroup() { return cGroup; }
 
-		//doc=DOC
+		//doc=DOC?
 		public Assignment getDocAssignment_0() { return cDocAssignment_0; }
 
 		//DOC
@@ -834,15 +834,15 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final Keyword cRightCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
 		
 		//EnumObject:
-		//	doc=DOC "enum" name=ID "{" metaInfo=TypeMetaInfo variables+=Variable* constructors+=Constructor* methods+=Method*
+		//	doc=DOC? "enum" name=ID "{" metaInfo=TypeMetaInfo variables+=Variable* constructors+=Constructor* methods+=Method*
 		//	"instances" "{" instances+=EnumInstance+ "}" "}";
 		public ParserRule getRule() { return rule; }
 
-		//doc=DOC "enum" name=ID "{" metaInfo=TypeMetaInfo variables+=Variable* constructors+=Constructor* methods+=Method*
+		//doc=DOC? "enum" name=ID "{" metaInfo=TypeMetaInfo variables+=Variable* constructors+=Constructor* methods+=Method*
 		//"instances" "{" instances+=EnumInstance+ "}" "}"
 		public Group getGroup() { return cGroup; }
 
-		//doc=DOC
+		//doc=DOC?
 		public Assignment getDocAssignment_0() { return cDocAssignment_0; }
 
 		//DOC
@@ -921,13 +921,13 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final Keyword cRightParenthesisKeyword_2_3 = (Keyword)cGroup_2.eContents().get(3);
 		
 		//EnumInstance:
-		//	doc=DOC name=ID ("(" params+=Literal ("," params+=Literal)* ")")?;
+		//	doc=DOC? name=ID ("(" params+=Literal ("," params+=Literal)* ")")?;
 		public ParserRule getRule() { return rule; }
 
-		//doc=DOC name=ID ("(" params+=Literal ("," params+=Literal)* ")")?
+		//doc=DOC? name=ID ("(" params+=Literal ("," params+=Literal)* ")")?
 		public Group getGroup() { return cGroup; }
 
-		//doc=DOC
+		//doc=DOC?
 		public Assignment getDocAssignment_0() { return cDocAssignment_0; }
 
 		//DOC
@@ -995,15 +995,15 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final Keyword cRightCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
 		
 		//Entity:
-		//	doc=DOC "entity" name=ID "identifier" idType=[EntityId] "root" root=[Aggregate] "{" metaInfo=TypeMetaInfo
+		//	doc=DOC? "entity" name=ID "identifier" idType=[EntityId] "root" root=[Aggregate] "{" metaInfo=TypeMetaInfo
 		//	variables+=Variable* constructors+=Constructor* methods+=Method* "}";
 		public ParserRule getRule() { return rule; }
 
-		//doc=DOC "entity" name=ID "identifier" idType=[EntityId] "root" root=[Aggregate] "{" metaInfo=TypeMetaInfo
+		//doc=DOC? "entity" name=ID "identifier" idType=[EntityId] "root" root=[Aggregate] "{" metaInfo=TypeMetaInfo
 		//variables+=Variable* constructors+=Constructor* methods+=Method* "}"
 		public Group getGroup() { return cGroup; }
 
-		//doc=DOC
+		//doc=DOC?
 		public Assignment getDocAssignment_0() { return cDocAssignment_0; }
 
 		//DOC
@@ -1097,15 +1097,15 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		
 		//Aggregate:
-		//	doc=DOC "aggregate" name=ID "identifier" idType=[AggregateId] "{" metaInfo=TypeMetaInfo variables+=Variable*
+		//	doc=DOC? "aggregate" name=ID "identifier" idType=[AggregateId] "{" metaInfo=TypeMetaInfo variables+=Variable*
 		//	constructors+=Constructor* methods+=Method* "}";
 		public ParserRule getRule() { return rule; }
 
-		//doc=DOC "aggregate" name=ID "identifier" idType=[AggregateId] "{" metaInfo=TypeMetaInfo variables+=Variable*
+		//doc=DOC? "aggregate" name=ID "identifier" idType=[AggregateId] "{" metaInfo=TypeMetaInfo variables+=Variable*
 		//constructors+=Constructor* methods+=Method* "}"
 		public Group getGroup() { return cGroup; }
 
-		//doc=DOC
+		//doc=DOC?
 		public Assignment getDocAssignment_0() { return cDocAssignment_0; }
 
 		//DOC
@@ -2375,7 +2375,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//Constraint:
-	//	doc=DOC "constraint" name=ID ("on" target=[ConstraintTarget])? ("exception" exception=[Exception])? "{"
+	//	doc=DOC? "constraint" name=ID ("on" target=[ConstraintTarget])? ("exception" exception=[Exception])? "{"
 	//	variables+=Variable* ("message" message=STRING)? "}";
 	public ConstraintElements getConstraintAccess() {
 		return (pConstraint != null) ? pConstraint : (pConstraint = new ConstraintElements());
@@ -2386,7 +2386,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//Exception:
-	//	doc=DOC "exception" name=ID "{" variables+=Variable* "message" message=STRING "}";
+	//	doc=DOC? "exception" name=ID "{" variables+=Variable* "message" message=STRING "}";
 	public ExceptionElements getExceptionAccess() {
 		return (pException != null) ? pException : (pException = new ExceptionElements());
 	}
@@ -2396,7 +2396,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//ValueObject:
-	//	doc=DOC "value-object" name=ID ("base" base=[ExternalType])? "{" metaInfo=TypeMetaInfo variables+=Variable*
+	//	doc=DOC? "value-object" name=ID ("base" base=[ExternalType])? "{" metaInfo=TypeMetaInfo variables+=Variable*
 	//	constructors+=Constructor* methods+=Method* "}";
 	public ValueObjectElements getValueObjectAccess() {
 		return (pValueObject != null) ? pValueObject : (pValueObject = new ValueObjectElements());
@@ -2407,7 +2407,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//EntityId:
-	//	doc=DOC "entity-id" name=ID "identifies" entity=[Entity] ("base" base=[ExternalType])? "{" metaInfo=TypeMetaInfo
+	//	doc=DOC? "entity-id" name=ID "identifies" entity=[Entity] ("base" base=[ExternalType])? "{" metaInfo=TypeMetaInfo
 	//	variables+=Variable* constructors+=Constructor* methods+=Method* "}";
 	public EntityIdElements getEntityIdAccess() {
 		return (pEntityId != null) ? pEntityId : (pEntityId = new EntityIdElements());
@@ -2418,7 +2418,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//AggregateId:
-	//	doc=DOC "aggregate-id" name=ID "identifies" entity=[Aggregate] ("base" base=[ExternalType])? "{"
+	//	doc=DOC? "aggregate-id" name=ID "identifies" entity=[Aggregate] ("base" base=[ExternalType])? "{"
 	//	metaInfo=TypeMetaInfo variables+=Variable* constructors+=Constructor* methods+=Method* "}";
 	public AggregateIdElements getAggregateIdAccess() {
 		return (pAggregateId != null) ? pAggregateId : (pAggregateId = new AggregateIdElements());
@@ -2429,7 +2429,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//EnumObject:
-	//	doc=DOC "enum" name=ID "{" metaInfo=TypeMetaInfo variables+=Variable* constructors+=Constructor* methods+=Method*
+	//	doc=DOC? "enum" name=ID "{" metaInfo=TypeMetaInfo variables+=Variable* constructors+=Constructor* methods+=Method*
 	//	"instances" "{" instances+=EnumInstance+ "}" "}";
 	public EnumObjectElements getEnumObjectAccess() {
 		return (pEnumObject != null) ? pEnumObject : (pEnumObject = new EnumObjectElements());
@@ -2440,7 +2440,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//EnumInstance:
-	//	doc=DOC name=ID ("(" params+=Literal ("," params+=Literal)* ")")?;
+	//	doc=DOC? name=ID ("(" params+=Literal ("," params+=Literal)* ")")?;
 	public EnumInstanceElements getEnumInstanceAccess() {
 		return (pEnumInstance != null) ? pEnumInstance : (pEnumInstance = new EnumInstanceElements());
 	}
@@ -2450,7 +2450,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//Entity:
-	//	doc=DOC "entity" name=ID "identifier" idType=[EntityId] "root" root=[Aggregate] "{" metaInfo=TypeMetaInfo
+	//	doc=DOC? "entity" name=ID "identifier" idType=[EntityId] "root" root=[Aggregate] "{" metaInfo=TypeMetaInfo
 	//	variables+=Variable* constructors+=Constructor* methods+=Method* "}";
 	public EntityElements getEntityAccess() {
 		return (pEntity != null) ? pEntity : (pEntity = new EntityElements());
@@ -2461,7 +2461,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//Aggregate:
-	//	doc=DOC "aggregate" name=ID "identifier" idType=[AggregateId] "{" metaInfo=TypeMetaInfo variables+=Variable*
+	//	doc=DOC? "aggregate" name=ID "identifier" idType=[AggregateId] "{" metaInfo=TypeMetaInfo variables+=Variable*
 	//	constructors+=Constructor* methods+=Method* "}";
 	public AggregateElements getAggregateAccess() {
 		return (pAggregate != null) ? pAggregate : (pAggregate = new AggregateElements());

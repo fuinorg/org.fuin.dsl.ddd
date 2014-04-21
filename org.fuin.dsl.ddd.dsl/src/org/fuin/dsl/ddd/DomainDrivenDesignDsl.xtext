@@ -46,21 +46,21 @@ ExternalType:
 	'type' name=ID;
 
 Constraint:
-	doc=DOC 
+	doc=DOC? 
 	'constraint' name=ID ('on' target=[ConstraintTarget])? ('exception' exception=[Exception])? '{'
 		variables+=Variable* 
 		('message' message=STRING)?
 	'}';
 	
 Exception:
-	doc=DOC 
+	doc=DOC?
 	'exception' name=ID '{'
 		variables+=Variable* 
 		'message' message=STRING
 	'}';
 
 ValueObject:
-	doc=DOC 
+	doc=DOC? 
 	'value-object' name=ID ('base' base=[ExternalType])? '{'
 		metaInfo=TypeMetaInfo
 		variables+=Variable*
@@ -69,7 +69,7 @@ ValueObject:
 	'}';
 
 EntityId:
-	doc=DOC 
+	doc=DOC?
 	'entity-id' name=ID 'identifies' entity=[Entity] ('base' base=[ExternalType])? '{'
 		metaInfo=TypeMetaInfo
 		variables+=Variable*
@@ -78,7 +78,7 @@ EntityId:
 	'}';
 
 AggregateId:
-	doc=DOC 
+	doc=DOC?
 	'aggregate-id' name=ID 'identifies' entity=[Aggregate] ('base' base=[ExternalType])? '{'
 		metaInfo=TypeMetaInfo
 		variables+=Variable*
@@ -87,7 +87,7 @@ AggregateId:
 	'}';
 
 EnumObject:
-	doc=DOC 
+	doc=DOC?
 	'enum' name=ID '{'
 		metaInfo=TypeMetaInfo
 		variables+=Variable*
@@ -97,11 +97,11 @@ EnumObject:
 	'}';
 	
 EnumInstance:
-	doc=DOC
+	doc=DOC?
 	name=ID ('(' params+=Literal (',' params+=Literal)* ')')?;	
 	
 Entity:
-	doc=DOC 
+	doc=DOC?
 	'entity' name=ID 'identifier' idType=[EntityId] 'root' root=[Aggregate] '{'
 		metaInfo=TypeMetaInfo
 		variables+=Variable*
@@ -110,7 +110,7 @@ Entity:
 	'}';
 
 Aggregate:
-	doc=DOC 
+	doc=DOC?
 	'aggregate' name=ID 'identifier' idType=[AggregateId] '{'
 		metaInfo=TypeMetaInfo
 		variables+=Variable*
