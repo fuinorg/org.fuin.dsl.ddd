@@ -143,6 +143,7 @@ Event:
 	doc=DOC? 
 	'event' name=ID '{'
 		variables+=Variable*
+		('message' message=STRING)?
 	'}';
 	
 TypeMetaInfo:

@@ -2382,9 +2382,31 @@ ruleEvent returns [EObject current=null]
 	    }
 
 )
-)*	otherlv_5='}' 
+)*(	otherlv_5='message' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getEventAccess().getRightCurlyBracketKeyword_5());
+    	newLeafNode(otherlv_5, grammarAccess.getEventAccess().getMessageKeyword_5_0());
+    }
+(
+(
+		lv_message_6_0=RULE_STRING
+		{
+			newLeafNode(lv_message_6_0, grammarAccess.getEventAccess().getMessageSTRINGTerminalRuleCall_5_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getEventRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"message",
+        		lv_message_6_0, 
+        		"STRING");
+	    }
+
+)
+))?	otherlv_7='}' 
+    {
+    	newLeafNode(otherlv_7, grammarAccess.getEventAccess().getRightCurlyBracketKeyword_6());
     }
 )
 ;

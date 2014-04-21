@@ -445,7 +445,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	
 	/**
 	 * Constraint:
-	 *     (doc=DOC? name=ID variables+=Variable*)
+	 *     (doc=DOC? name=ID variables+=Variable* message=STRING?)
 	 */
 	protected void sequence_Event(EObject context, Event semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

@@ -1361,13 +1361,17 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
 		private final Assignment cVariablesAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cVariablesVariableParserRuleCall_4_0 = (RuleCall)cVariablesAssignment_4.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cMessageKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cMessageAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cMessageSTRINGTerminalRuleCall_5_1_0 = (RuleCall)cMessageAssignment_5_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
 		
 		//Event:
-		//	doc=DOC? "event" name=ID "{" variables+=Variable* "}";
+		//	doc=DOC? "event" name=ID "{" variables+=Variable* ("message" message=STRING)? "}";
 		public ParserRule getRule() { return rule; }
 
-		//doc=DOC? "event" name=ID "{" variables+=Variable* "}"
+		//doc=DOC? "event" name=ID "{" variables+=Variable* ("message" message=STRING)? "}"
 		public Group getGroup() { return cGroup; }
 
 		//doc=DOC?
@@ -1394,8 +1398,20 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		//Variable
 		public RuleCall getVariablesVariableParserRuleCall_4_0() { return cVariablesVariableParserRuleCall_4_0; }
 
+		//("message" message=STRING)?
+		public Group getGroup_5() { return cGroup_5; }
+
+		//"message"
+		public Keyword getMessageKeyword_5_0() { return cMessageKeyword_5_0; }
+
+		//message=STRING
+		public Assignment getMessageAssignment_5_1() { return cMessageAssignment_5_1; }
+
+		//STRING
+		public RuleCall getMessageSTRINGTerminalRuleCall_5_1_0() { return cMessageSTRINGTerminalRuleCall_5_1_0; }
+
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_5() { return cRightCurlyBracketKeyword_5; }
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 	}
 
 	public class TypeMetaInfoElements extends AbstractParserRuleElementFinder {
@@ -2504,7 +2520,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//Event:
-	//	doc=DOC? "event" name=ID "{" variables+=Variable* "}";
+	//	doc=DOC? "event" name=ID "{" variables+=Variable* ("message" message=STRING)? "}";
 	public EventElements getEventAccess() {
 		return (pEvent != null) ? pEvent : (pEvent = new EventElements());
 	}

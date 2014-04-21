@@ -6210,6 +6210,7 @@ rule__Event__Group__5
     }
 :
 	rule__Event__Group__5__Impl
+	rule__Event__Group__6
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -6221,11 +6222,39 @@ rule__Event__Group__5__Impl
     }
 :
 (
-{ before(grammarAccess.getEventAccess().getRightCurlyBracketKeyword_5()); }
+{ before(grammarAccess.getEventAccess().getGroup_5()); }
+(rule__Event__Group_5__0)?
+{ after(grammarAccess.getEventAccess().getGroup_5()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__Event__Group__6
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__Event__Group__6__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Event__Group__6__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getEventAccess().getRightCurlyBracketKeyword_6()); }
 
 	'}' 
 
-{ after(grammarAccess.getEventAccess().getRightCurlyBracketKeyword_5()); }
+{ after(grammarAccess.getEventAccess().getRightCurlyBracketKeyword_6()); }
 )
 
 ;
@@ -6240,6 +6269,71 @@ finally {
 
 
 
+
+
+
+
+
+
+
+
+rule__Event__Group_5__0
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__Event__Group_5__0__Impl
+	rule__Event__Group_5__1
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Event__Group_5__0__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getEventAccess().getMessageKeyword_5_0()); }
+
+	'message' 
+
+{ after(grammarAccess.getEventAccess().getMessageKeyword_5_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
+rule__Event__Group_5__1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__Event__Group_5__1__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Event__Group_5__1__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getEventAccess().getMessageAssignment_5_1()); }
+(rule__Event__MessageAssignment_5_1)
+{ after(grammarAccess.getEventAccess().getMessageAssignment_5_1()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
 
 
 
@@ -10461,6 +10555,21 @@ rule__Event__VariablesAssignment_4
 (
 { before(grammarAccess.getEventAccess().getVariablesVariableParserRuleCall_4_0()); }
 	ruleVariable{ after(grammarAccess.getEventAccess().getVariablesVariableParserRuleCall_4_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__Event__MessageAssignment_5_1
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getEventAccess().getMessageSTRINGTerminalRuleCall_5_1_0()); }
+	RULE_STRING{ after(grammarAccess.getEventAccess().getMessageSTRINGTerminalRuleCall_5_1_0()); }
 )
 
 ;

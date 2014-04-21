@@ -17,6 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Event#getDoc <em>Doc</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Event#getName <em>Name</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Event#getVariables <em>Variables</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Event#getMessage <em>Message</em>}</li>
  * </ul>
  * </p>
  *
@@ -93,5 +94,31 @@ public interface Event extends EObject
    * @generated
    */
   EList<Variable> getVariables();
+
+  /**
+   * Returns the value of the '<em><b>Message</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Message</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Message</em>' attribute.
+   * @see #setMessage(String)
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getEvent_Message()
+   * @model
+   * @generated
+   */
+  String getMessage();
+
+  /**
+   * Sets the value of the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Event#getMessage <em>Message</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Message</em>' attribute.
+   * @see #getMessage()
+   * @generated
+   */
+  void setMessage(String value);
 
 } // Event

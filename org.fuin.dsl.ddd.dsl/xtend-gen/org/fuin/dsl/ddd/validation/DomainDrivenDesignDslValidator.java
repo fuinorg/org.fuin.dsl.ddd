@@ -47,6 +47,8 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
   
   public final static String MISSING_DOC = "missingDOC";
   
+  public final static String EVENT_MSG_UNKNOWN_VAR = "eventMsgUnknownVar";
+  
   @Check
   public void checkNameStartsWithCapital(final Variable variable) {
     String _name = variable.getName();
@@ -178,6 +180,24 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
     }
   }
   
+  @Check
+  public void checkVariablesInEventMessage(final Event event) {
+    String _message = event.getMessage();
+    boolean _notEquals = (!Objects.equal(_message, null));
+    if (_notEquals) {
+      Set<String> _allVariables = this.allVariables(event);
+      String _message_1 = event.getMessage();
+      final String name = this.findUnknownVar(_allVariables, _message_1);
+      boolean _notEquals_1 = (!Objects.equal(name, null));
+      if (_notEquals_1) {
+        this.error(
+          (("A variable with the name \'" + name) + "\' is unknown"), event, 
+          DomainDrivenDesignDslPackage.Literals.EVENT__MESSAGE, 
+          DomainDrivenDesignDslValidator.EVENT_MSG_UNKNOWN_VAR);
+      }
+    }
+  }
+  
   private String findUnknownVar(final Set<String> vars, final String msg) {
     int end = (-1);
     int from = 0;
@@ -195,9 +215,17 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
           from = _length;
         } else {
           String name = msg.substring((start + 2), end);
+          boolean _and = false;
           boolean _contains = vars.contains(name);
           boolean _not = (!_contains);
-          if (_not) {
+          if (!_not) {
+            _and = false;
+          } else {
+            boolean _startsWith = name.startsWith("#");
+            boolean _not_1 = (!_startsWith);
+            _and = _not_1;
+          }
+          if (_and) {
             return name;
           }
           from = (end + 1);
@@ -209,6 +237,20 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
       _while = _greaterThan_1;
     }
     return null;
+  }
+  
+  private Set<String> allVariables(final Event event) {
+    Set<String> vars = new HashSet<String>();
+    EList<Variable> _variables = event.getVariables();
+    boolean _notEquals = (!Objects.equal(_variables, null));
+    if (_notEquals) {
+      EList<Variable> _variables_1 = event.getVariables();
+      for (final Variable v : _variables_1) {
+        String _name = v.getName();
+        vars.add(_name);
+      }
+    }
+    return vars;
   }
   
   private Set<String> allVariables(final org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception ex) {

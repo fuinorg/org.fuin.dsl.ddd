@@ -1558,13 +1558,22 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int EVENT__VARIABLES = 2;
 
   /**
+   * The feature id for the '<em><b>Message</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EVENT__MESSAGE = 3;
+
+  /**
    * The number of structural features of the '<em>Event</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EVENT_FEATURE_COUNT = 3;
+  int EVENT_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.TypeMetaInfoImpl <em>Type Meta Info</em>}' class.
@@ -2806,6 +2815,17 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   EReference getEvent_Variables();
 
   /**
+   * Returns the meta object for the attribute '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Event#getMessage <em>Message</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Message</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Event#getMessage()
+   * @see #getEvent()
+   * @generated
+   */
+  EAttribute getEvent_Message();
+
+  /**
    * Returns the meta object for class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.TypeMetaInfo <em>Type Meta Info</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3829,6 +3849,14 @@ public interface DomainDrivenDesignDslPackage extends EPackage
      * @generated
      */
     EReference EVENT__VARIABLES = eINSTANCE.getEvent_Variables();
+
+    /**
+     * The meta object literal for the '<em><b>Message</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EVENT__MESSAGE = eINSTANCE.getEvent_Message();
 
     /**
      * The meta object literal for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.TypeMetaInfoImpl <em>Type Meta Info</em>}' class.

@@ -32,6 +32,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.EventImpl#getDoc <em>Doc</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.EventImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.EventImpl#getVariables <em>Variables</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.EventImpl#getMessage <em>Message</em>}</li>
  * </ul>
  * </p>
  *
@@ -88,6 +89,26 @@ public class EventImpl extends MinimalEObjectImpl.Container implements Event
    * @ordered
    */
   protected EList<Variable> variables;
+
+  /**
+   * The default value of the '{@link #getMessage() <em>Message</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMessage()
+   * @generated
+   * @ordered
+   */
+  protected static final String MESSAGE_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getMessage() <em>Message</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMessage()
+   * @generated
+   * @ordered
+   */
+  protected String message = MESSAGE_EDEFAULT;
 
   /**
    * <!-- begin-user-doc -->
@@ -175,6 +196,29 @@ public class EventImpl extends MinimalEObjectImpl.Container implements Event
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getMessage()
+  {
+    return message;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setMessage(String newMessage)
+  {
+    String oldMessage = message;
+    message = newMessage;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.EVENT__MESSAGE, oldMessage, message));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -202,6 +246,8 @@ public class EventImpl extends MinimalEObjectImpl.Container implements Event
         return getName();
       case DomainDrivenDesignDslPackage.EVENT__VARIABLES:
         return getVariables();
+      case DomainDrivenDesignDslPackage.EVENT__MESSAGE:
+        return getMessage();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -227,6 +273,9 @@ public class EventImpl extends MinimalEObjectImpl.Container implements Event
         getVariables().clear();
         getVariables().addAll((Collection<? extends Variable>)newValue);
         return;
+      case DomainDrivenDesignDslPackage.EVENT__MESSAGE:
+        setMessage((String)newValue);
+        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -250,6 +299,9 @@ public class EventImpl extends MinimalEObjectImpl.Container implements Event
       case DomainDrivenDesignDslPackage.EVENT__VARIABLES:
         getVariables().clear();
         return;
+      case DomainDrivenDesignDslPackage.EVENT__MESSAGE:
+        setMessage(MESSAGE_EDEFAULT);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -270,6 +322,8 @@ public class EventImpl extends MinimalEObjectImpl.Container implements Event
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case DomainDrivenDesignDslPackage.EVENT__VARIABLES:
         return variables != null && !variables.isEmpty();
+      case DomainDrivenDesignDslPackage.EVENT__MESSAGE:
+        return MESSAGE_EDEFAULT == null ? message != null : !MESSAGE_EDEFAULT.equals(message);
     }
     return super.eIsSet(featureID);
   }
@@ -289,6 +343,8 @@ public class EventImpl extends MinimalEObjectImpl.Container implements Event
     result.append(doc);
     result.append(", name: ");
     result.append(name);
+    result.append(", message: ");
+    result.append(message);
     result.append(')');
     return result.toString();
   }
