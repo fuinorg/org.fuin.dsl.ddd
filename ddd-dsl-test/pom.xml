@@ -22,7 +22,7 @@
 		<dependency>
 			<groupId>joda-time</groupId>
 			<artifactId>joda-time</artifactId>
-			<version>2.2</version>
+			<version>2.3</version>
 		</dependency>
 
 		<dependency>
@@ -34,7 +34,7 @@
 		<dependency>
 			<groupId>org.fuin</groupId>
 			<artifactId>objects4j</artifactId>
-			<version>0.4.0-SNAPSHOT</version>
+			<version>0.5.0-SNAPSHOT</version>
 		</dependency>
 
 		<!-- Test -->
@@ -78,7 +78,7 @@
 			<plugin>
 				<groupId>org.fuin.srcgen4j</groupId>
 				<artifactId>srcgen4j-maven-plugin</artifactId>
-				<version>0.3.0-SNAPSHOT</version>
+				<version>0.4.0-SNAPSHOT</version>
 				<configuration>
 					<jaxbClassesToBeBound>
 						<param>org.fuin.srcgen4j.core.xtext.XtextParserConfig</param>
