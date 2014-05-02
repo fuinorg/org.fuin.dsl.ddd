@@ -103,11 +103,11 @@
 						<artifactId>org.fuin.dsl.ddd.dsl</artifactId>
 						<version>0.1.0-SNAPSHOT</version>
 					</dependency>
-					<dependency>
+					<!-- dependency>
 						<groupId>org.fuin.dsl.ddd</groupId>
 						<artifactId>ddd-templates</artifactId>
 						<version>0.1.0-SNAPSHOT</version>
-					</dependency>
+					</dependency-->
 
 					<!-- EMF Ecore -->
 					<dependency>
