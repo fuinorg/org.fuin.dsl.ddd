@@ -60,6 +60,7 @@ public class DomainDrivenDesignDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getConstraintAccess().getGroup_4(), "rule__Constraint__Group_4__0");
 					put(grammarAccess.getConstraintAccess().getGroup_7(), "rule__Constraint__Group_7__0");
 					put(grammarAccess.getExceptionAccess().getGroup(), "rule__Exception__Group__0");
+					put(grammarAccess.getExceptionAccess().getGroup_3(), "rule__Exception__Group_3__0");
 					put(grammarAccess.getValueObjectAccess().getGroup(), "rule__ValueObject__Group__0");
 					put(grammarAccess.getValueObjectAccess().getGroup_3(), "rule__ValueObject__Group_3__0");
 					put(grammarAccess.getEntityIdAccess().getGroup(), "rule__EntityId__Group__0");
@@ -123,8 +124,9 @@ public class DomainDrivenDesignDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getConstraintAccess().getMessageAssignment_7_1(), "rule__Constraint__MessageAssignment_7_1");
 					put(grammarAccess.getExceptionAccess().getDocAssignment_0(), "rule__Exception__DocAssignment_0");
 					put(grammarAccess.getExceptionAccess().getNameAssignment_2(), "rule__Exception__NameAssignment_2");
-					put(grammarAccess.getExceptionAccess().getVariablesAssignment_4(), "rule__Exception__VariablesAssignment_4");
-					put(grammarAccess.getExceptionAccess().getMessageAssignment_6(), "rule__Exception__MessageAssignment_6");
+					put(grammarAccess.getExceptionAccess().getCidAssignment_3_1(), "rule__Exception__CidAssignment_3_1");
+					put(grammarAccess.getExceptionAccess().getVariablesAssignment_5(), "rule__Exception__VariablesAssignment_5");
+					put(grammarAccess.getExceptionAccess().getMessageAssignment_7(), "rule__Exception__MessageAssignment_7");
 					put(grammarAccess.getValueObjectAccess().getDocAssignment_0(), "rule__ValueObject__DocAssignment_0");
 					put(grammarAccess.getValueObjectAccess().getNameAssignment_2(), "rule__ValueObject__NameAssignment_2");
 					put(grammarAccess.getValueObjectAccess().getBaseAssignment_3_1(), "rule__ValueObject__BaseAssignment_3_1");

@@ -78,4 +78,19 @@ public class DomainDrivenDesignDslQuickfixProvider extends DefaultQuickfixProvid
     };
     acceptor.accept(issue, "Change to entity ID", null, null, _function);
   }
+  
+  @Fix(DomainDrivenDesignDslValidator.EXCEPTION_DUPLICATE_CID)
+  public void changeExceptionUidToHighest(final Issue issue, final IssueResolutionAcceptor acceptor) {
+    String[] _data = issue.getData();
+    final String nextId = _data[0];
+    final IModification _function = new IModification() {
+      public void apply(final IModificationContext context) throws Exception {
+        final IXtextDocument xtextDocument = context.getXtextDocument();
+        Integer _offset = issue.getOffset();
+        Integer _length = issue.getLength();
+        xtextDocument.replace((_offset).intValue(), (_length).intValue(), nextId);
+      }
+    };
+    acceptor.accept(issue, "Change to next free exception CID", null, null, _function);
+  }
 }

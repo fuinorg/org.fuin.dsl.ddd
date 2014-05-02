@@ -54,7 +54,7 @@ Constraint:
 	
 Exception:
 	doc=DOC?
-	'exception' name=ID '{'
+	'exception' name=ID ('cid' cid=INT)? '{'
 		variables+=Variable* 
 		'message' message=STRING
 	'}';

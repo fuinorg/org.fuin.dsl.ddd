@@ -1,13 +1,21 @@
 package org.fuin.dsl.ddd.validation
 
+import com.google.inject.Inject
 import java.util.HashSet
+import java.util.Iterator
 import java.util.Set
+import org.eclipse.emf.ecore.EObject
+import org.eclipse.emf.ecore.util.EcoreUtil
+import org.eclipse.xtext.resource.IContainer
+import org.eclipse.xtext.resource.IEObjectDescription
+import org.eclipse.xtext.resource.impl.ResourceDescriptionsProvider
 import org.eclipse.xtext.validation.Check
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntity
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractVO
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Context
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event
@@ -16,6 +24,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Function
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ValueObject
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable
+import static org.fuin.dsl.ddd.validation.DomainDrivenDesignDslValidator.*
 
 /**
  * Custom validation rules. 
@@ -39,9 +48,16 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 	public static val VO_CANNOT_REF_ENTITY = 'voCannotRefEntity'
 
 	public static val MISSING_DOC = 'missingDOC'
-	
+
 	public static val EVENT_MSG_UNKNOWN_VAR = 'eventMsgUnknownVar'
-	
+
+	public static val EXCEPTION_DUPLICATE_CID = 'exceptionDuplicateCID'
+
+	@Inject
+	private IContainer.Manager containerManager
+
+	@Inject
+	private ResourceDescriptionsProvider resourceDescriptionsProvider;
 
 	@Check
 	def checkNameStartsWithCapital(Variable variable) {
@@ -174,6 +190,71 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 		}
 	}
 
+	@Check
+	def checkUniqueExceptionUID(Exception ex) {
+
+		var String name = null
+		var int max = 0
+		val Iterator<Exception> allExceptions = getAllExceptions(ex).iterator
+		while (allExceptions.hasNext) {
+			val Exception other = allExceptions.next as Exception
+
+			// Find highest number
+			if ((other.cid > max) && ex.context.name.equals(other.context.name)) {
+				max = other.cid
+			}
+
+			// Check for duplicate
+			if ((name == null) && (ex != other) && (ex.cid > 0) && (ex.cid == other.cid) &&
+				ex.context.name.equals(other.context.name)) {
+				name = other.name
+			}
+		}
+
+		if (name != null) {
+			val String nextId = "" + (max + 1)
+			error(
+				"The CID is already used by exception '" + name + "'",
+				ex,
+				DomainDrivenDesignDslPackage.Literals::EXCEPTION__CID,
+				EXCEPTION_DUPLICATE_CID,
+				nextId
+			)
+		}
+	}
+
+	private def getAllExceptions(EObject obj) {
+		val Set<Exception> list = new HashSet<Exception>()
+		val resource = obj.eResource
+		val resourceDescriptions = resourceDescriptionsProvider.getResourceDescriptions(resource)
+		val resourceDescription = resourceDescriptions.getResourceDescription(resource.URI)
+		val containers = containerManager.getVisibleContainers(resourceDescription, resourceDescriptions)
+		for (container : containers) {
+			for (IEObjectDescription descr : container.getExportedObjects()) {
+				val EObject eObjectOrProxy = descr.getEObjectOrProxy()
+				if (eObjectOrProxy instanceof Exception) {
+					val Exception ex = EcoreUtil.resolve(eObjectOrProxy, obj) as Exception;
+					list.add(ex)
+				}
+			}
+		}
+		return list
+	}
+
+	private def EObject getRoot(EObject obj) {
+		if (obj.eContainer == null) {
+			return obj
+		}
+		return getRoot(obj.eContainer)
+	}
+
+	private def Context getContext(EObject obj) {
+		if (obj instanceof Context) {
+			return obj
+		}
+		return getContext(obj.eContainer)
+	}
+
 	private def String findUnknownVar(Set<String> vars, String msg) {
 		var int end = -1;
 		var int from = 0;
@@ -185,7 +266,7 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 				// No closing bracket found...
 				from = msg.length();
 			} else {
-				var String name = msg.substring(start + 2, end);				
+				var String name = msg.substring(start + 2, end);
 				if (!vars.contains(name) && !name.startsWith("#")) {
 					return name
 				}
@@ -194,7 +275,6 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 		}
 		return null
 	}
-
 
 	private def Set<String> allVariables(Event event) {
 		var Set<String> vars = new HashSet<String>();
@@ -215,7 +295,7 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 		}
 		return vars;
 	}
-	
+
 	private def Set<String> allVariables(Constraint constraint) {
 		var Set<String> vars = new HashSet<String>();
 		if (constraint.variables != null) {
@@ -236,6 +316,5 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 		}
 		return vars;
 	}
-
 
 }

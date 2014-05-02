@@ -28,6 +28,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ExceptionImpl#getDoc <em>Doc</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ExceptionImpl#getCid <em>Cid</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ExceptionImpl#getVariables <em>Variables</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ExceptionImpl#getMessage <em>Message</em>}</li>
  * </ul>
@@ -56,6 +57,26 @@ public class ExceptionImpl extends AbstractElementImpl implements org.fuin.dsl.d
    * @ordered
    */
   protected String doc = DOC_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getCid() <em>Cid</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCid()
+   * @generated
+   * @ordered
+   */
+  protected static final int CID_EDEFAULT = 0;
+
+  /**
+   * The cached value of the '{@link #getCid() <em>Cid</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getCid()
+   * @generated
+   * @ordered
+   */
+  protected int cid = CID_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getVariables() <em>Variables</em>}' containment reference list.
@@ -136,6 +157,29 @@ public class ExceptionImpl extends AbstractElementImpl implements org.fuin.dsl.d
    * <!-- end-user-doc -->
    * @generated
    */
+  public int getCid()
+  {
+    return cid;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setCid(int newCid)
+  {
+    int oldCid = cid;
+    cid = newCid;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.EXCEPTION__CID, oldCid, cid));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EList<Variable> getVariables()
   {
     if (variables == null)
@@ -196,6 +240,8 @@ public class ExceptionImpl extends AbstractElementImpl implements org.fuin.dsl.d
     {
       case DomainDrivenDesignDslPackage.EXCEPTION__DOC:
         return getDoc();
+      case DomainDrivenDesignDslPackage.EXCEPTION__CID:
+        return getCid();
       case DomainDrivenDesignDslPackage.EXCEPTION__VARIABLES:
         return getVariables();
       case DomainDrivenDesignDslPackage.EXCEPTION__MESSAGE:
@@ -217,6 +263,9 @@ public class ExceptionImpl extends AbstractElementImpl implements org.fuin.dsl.d
     {
       case DomainDrivenDesignDslPackage.EXCEPTION__DOC:
         setDoc((String)newValue);
+        return;
+      case DomainDrivenDesignDslPackage.EXCEPTION__CID:
+        setCid((Integer)newValue);
         return;
       case DomainDrivenDesignDslPackage.EXCEPTION__VARIABLES:
         getVariables().clear();
@@ -242,6 +291,9 @@ public class ExceptionImpl extends AbstractElementImpl implements org.fuin.dsl.d
       case DomainDrivenDesignDslPackage.EXCEPTION__DOC:
         setDoc(DOC_EDEFAULT);
         return;
+      case DomainDrivenDesignDslPackage.EXCEPTION__CID:
+        setCid(CID_EDEFAULT);
+        return;
       case DomainDrivenDesignDslPackage.EXCEPTION__VARIABLES:
         getVariables().clear();
         return;
@@ -264,6 +316,8 @@ public class ExceptionImpl extends AbstractElementImpl implements org.fuin.dsl.d
     {
       case DomainDrivenDesignDslPackage.EXCEPTION__DOC:
         return DOC_EDEFAULT == null ? doc != null : !DOC_EDEFAULT.equals(doc);
+      case DomainDrivenDesignDslPackage.EXCEPTION__CID:
+        return cid != CID_EDEFAULT;
       case DomainDrivenDesignDslPackage.EXCEPTION__VARIABLES:
         return variables != null && !variables.isEmpty();
       case DomainDrivenDesignDslPackage.EXCEPTION__MESSAGE:
@@ -285,6 +339,8 @@ public class ExceptionImpl extends AbstractElementImpl implements org.fuin.dsl.d
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (doc: ");
     result.append(doc);
+    result.append(", cid: ");
+    result.append(cid);
     result.append(", message: ");
     result.append(message);
     result.append(')');

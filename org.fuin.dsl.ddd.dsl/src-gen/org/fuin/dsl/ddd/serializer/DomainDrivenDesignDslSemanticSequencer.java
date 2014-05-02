@@ -454,7 +454,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	
 	/**
 	 * Constraint:
-	 *     (doc=DOC? name=ID variables+=Variable* message=STRING)
+	 *     (doc=DOC? name=ID cid=INT? variables+=Variable* message=STRING)
 	 */
 	protected void sequence_Exception(EObject context, org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

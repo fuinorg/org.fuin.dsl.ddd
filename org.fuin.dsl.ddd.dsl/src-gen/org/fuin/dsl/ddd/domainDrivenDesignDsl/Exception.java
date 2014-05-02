@@ -13,6 +13,7 @@ import org.eclipse.emf.common.util.EList;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception#getDoc <em>Doc</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception#getCid <em>Cid</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception#getVariables <em>Variables</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception#getMessage <em>Message</em>}</li>
  * </ul>
@@ -49,6 +50,32 @@ public interface Exception extends AbstractElement
    * @generated
    */
   void setDoc(String value);
+
+  /**
+   * Returns the value of the '<em><b>Cid</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Cid</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Cid</em>' attribute.
+   * @see #setCid(int)
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getException_Cid()
+   * @model
+   * @generated
+   */
+  int getCid();
+
+  /**
+   * Sets the value of the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception#getCid <em>Cid</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Cid</em>' attribute.
+   * @see #getCid()
+   * @generated
+   */
+  void setCid(int value);
 
   /**
    * Returns the value of the '<em><b>Variables</b></em>' containment reference list.

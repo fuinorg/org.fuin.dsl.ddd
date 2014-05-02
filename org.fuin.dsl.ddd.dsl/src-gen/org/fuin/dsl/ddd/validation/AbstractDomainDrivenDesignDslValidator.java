@@ -6,7 +6,9 @@ package org.fuin.dsl.ddd.validation;
 import java.util.ArrayList;
 import java.util.List;
 import org.eclipse.emf.ecore.EPackage;
+import org.eclipse.xtext.validation.ComposedChecks;
 
+@ComposedChecks(validators= {org.eclipse.xtext.validation.NamesAreUniqueValidator.class})
 public class AbstractDomainDrivenDesignDslValidator extends org.eclipse.xtext.validation.AbstractDeclarativeValidator {
 
 	@Override

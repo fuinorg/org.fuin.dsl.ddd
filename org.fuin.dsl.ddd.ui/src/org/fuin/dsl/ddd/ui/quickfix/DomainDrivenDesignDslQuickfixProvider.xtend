@@ -64,5 +64,18 @@ class DomainDrivenDesignDslQuickfixProvider extends DefaultQuickfixProvider {
 		]
 				
 	}	
+
+		@Fix(DomainDrivenDesignDslValidator::EXCEPTION_DUPLICATE_CID)
+	def changeExceptionUidToHighest(Issue issue, IssueResolutionAcceptor acceptor) {
+		
+		val String nextId = issue.data.get(0);
+		
+		acceptor.accept(issue, 'Change to next free exception CID', null, null) [
+			context |
+			val xtextDocument = context.xtextDocument
+			xtextDocument.replace(issue.offset, issue.length, nextId)
+		]
+				
+	}	
 	
 }

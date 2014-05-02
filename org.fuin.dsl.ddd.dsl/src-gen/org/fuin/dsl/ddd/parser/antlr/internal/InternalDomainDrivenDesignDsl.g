@@ -831,37 +831,59 @@ ruleException returns [EObject current=null]
 	    }
 
 )
-)	otherlv_3='{' 
+)(	otherlv_3='cid' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getExceptionAccess().getLeftCurlyBracketKeyword_3());
+    	newLeafNode(otherlv_3, grammarAccess.getExceptionAccess().getCidKeyword_3_0());
+    }
+(
+(
+		lv_cid_4_0=RULE_INT
+		{
+			newLeafNode(lv_cid_4_0, grammarAccess.getExceptionAccess().getCidINTTerminalRuleCall_3_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getExceptionRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"cid",
+        		lv_cid_4_0, 
+        		"INT");
+	    }
+
+)
+))?	otherlv_5='{' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getExceptionAccess().getLeftCurlyBracketKeyword_4());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getExceptionAccess().getVariablesVariableParserRuleCall_4_0()); 
+	        newCompositeNode(grammarAccess.getExceptionAccess().getVariablesVariableParserRuleCall_5_0()); 
 	    }
-		lv_variables_4_0=ruleVariable		{
+		lv_variables_6_0=ruleVariable		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getExceptionRule());
 	        }
        		add(
        			$current, 
        			"variables",
-        		lv_variables_4_0, 
+        		lv_variables_6_0, 
         		"Variable");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
-)*	otherlv_5='message' 
+)*	otherlv_7='message' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getExceptionAccess().getMessageKeyword_5());
+    	newLeafNode(otherlv_7, grammarAccess.getExceptionAccess().getMessageKeyword_6());
     }
 (
 (
-		lv_message_6_0=RULE_STRING
+		lv_message_8_0=RULE_STRING
 		{
-			newLeafNode(lv_message_6_0, grammarAccess.getExceptionAccess().getMessageSTRINGTerminalRuleCall_6_0()); 
+			newLeafNode(lv_message_8_0, grammarAccess.getExceptionAccess().getMessageSTRINGTerminalRuleCall_7_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -870,14 +892,14 @@ ruleException returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"message",
-        		lv_message_6_0, 
+        		lv_message_8_0, 
         		"STRING");
 	    }
 
 )
-)	otherlv_7='}' 
+)	otherlv_9='}' 
     {
-    	newLeafNode(otherlv_7, grammarAccess.getExceptionAccess().getRightCurlyBracketKeyword_7());
+    	newLeafNode(otherlv_9, grammarAccess.getExceptionAccess().getRightCurlyBracketKeyword_8());
     }
 )
 ;

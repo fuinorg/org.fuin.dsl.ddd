@@ -731,9 +731,19 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getException_Cid()
+  {
+    return (EAttribute)exceptionEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getException_Variables()
   {
-    return (EReference)exceptionEClass.getEStructuralFeatures().get(1);
+    return (EReference)exceptionEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -743,7 +753,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    */
   public EAttribute getException_Message()
   {
-    return (EAttribute)exceptionEClass.getEStructuralFeatures().get(2);
+    return (EAttribute)exceptionEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1533,6 +1543,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
 
     exceptionEClass = createEClass(EXCEPTION);
     createEAttribute(exceptionEClass, EXCEPTION__DOC);
+    createEAttribute(exceptionEClass, EXCEPTION__CID);
     createEReference(exceptionEClass, EXCEPTION__VARIABLES);
     createEAttribute(exceptionEClass, EXCEPTION__MESSAGE);
 
@@ -1735,6 +1746,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
 
     initEClass(exceptionEClass, org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception.class, "Exception", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getException_Doc(), ecorePackage.getEString(), "doc", null, 0, 1, org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getException_Cid(), ecorePackage.getEInt(), "cid", null, 0, 1, org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getException_Variables(), this.getVariable(), null, "variables", null, 0, -1, org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getException_Message(), ecorePackage.getEString(), "message", null, 0, 1, org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

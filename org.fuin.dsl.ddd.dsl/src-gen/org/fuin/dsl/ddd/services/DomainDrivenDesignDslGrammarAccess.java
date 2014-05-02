@@ -443,19 +443,23 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final Keyword cExceptionKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cVariablesAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cVariablesVariableParserRuleCall_4_0 = (RuleCall)cVariablesAssignment_4.eContents().get(0);
-		private final Keyword cMessageKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cMessageAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cMessageSTRINGTerminalRuleCall_6_0 = (RuleCall)cMessageAssignment_6.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cCidKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cCidAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cCidINTTerminalRuleCall_3_1_0 = (RuleCall)cCidAssignment_3_1.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cVariablesAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cVariablesVariableParserRuleCall_5_0 = (RuleCall)cVariablesAssignment_5.eContents().get(0);
+		private final Keyword cMessageKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cMessageAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cMessageSTRINGTerminalRuleCall_7_0 = (RuleCall)cMessageAssignment_7.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//Exception:
-		//	doc=DOC? "exception" name=ID "{" variables+=Variable* "message" message=STRING "}";
+		//	doc=DOC? "exception" name=ID ("cid" cid=INT)? "{" variables+=Variable* "message" message=STRING "}";
 		public ParserRule getRule() { return rule; }
 
-		//doc=DOC? "exception" name=ID "{" variables+=Variable* "message" message=STRING "}"
+		//doc=DOC? "exception" name=ID ("cid" cid=INT)? "{" variables+=Variable* "message" message=STRING "}"
 		public Group getGroup() { return cGroup; }
 
 		//doc=DOC?
@@ -473,26 +477,38 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 
+		//("cid" cid=INT)?
+		public Group getGroup_3() { return cGroup_3; }
+
+		//"cid"
+		public Keyword getCidKeyword_3_0() { return cCidKeyword_3_0; }
+
+		//cid=INT
+		public Assignment getCidAssignment_3_1() { return cCidAssignment_3_1; }
+
+		//INT
+		public RuleCall getCidINTTerminalRuleCall_3_1_0() { return cCidINTTerminalRuleCall_3_1_0; }
+
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
 
 		//variables+=Variable*
-		public Assignment getVariablesAssignment_4() { return cVariablesAssignment_4; }
+		public Assignment getVariablesAssignment_5() { return cVariablesAssignment_5; }
 
 		//Variable
-		public RuleCall getVariablesVariableParserRuleCall_4_0() { return cVariablesVariableParserRuleCall_4_0; }
+		public RuleCall getVariablesVariableParserRuleCall_5_0() { return cVariablesVariableParserRuleCall_5_0; }
 
 		//"message"
-		public Keyword getMessageKeyword_5() { return cMessageKeyword_5; }
+		public Keyword getMessageKeyword_6() { return cMessageKeyword_6; }
 
 		//message=STRING
-		public Assignment getMessageAssignment_6() { return cMessageAssignment_6; }
+		public Assignment getMessageAssignment_7() { return cMessageAssignment_7; }
 
 		//STRING
-		public RuleCall getMessageSTRINGTerminalRuleCall_6_0() { return cMessageSTRINGTerminalRuleCall_6_0; }
+		public RuleCall getMessageSTRINGTerminalRuleCall_7_0() { return cMessageSTRINGTerminalRuleCall_7_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_7() { return cRightCurlyBracketKeyword_7; }
+		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
 	}
 
 	public class ValueObjectElements extends AbstractParserRuleElementFinder {
@@ -1440,8 +1456,8 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final RuleCall cExamplesSTRINGTerminalRuleCall_5_1_0 = (RuleCall)cExamplesAssignment_5_1.eContents().get(0);
 		
 		//TypeMetaInfo:
-		//	{TypeMetaInfo} ("slabel" slabel=STRING)? ("label" label=STRING)? ("tooltip" tooltip=STRING)? ("prompt"
-		//	prompt=STRING)? ("examples" examples+=STRING*)?;
+		//	{TypeMetaInfo} ("slabel" slabel=STRING)? ("label" label=STRING)? ("tooltip" tooltip=STRING)? ("prompt" prompt=STRING)?
+		//	("examples" examples+=STRING*)?;
 		public ParserRule getRule() { return rule; }
 
 		//{TypeMetaInfo} ("slabel" slabel=STRING)? ("label" label=STRING)? ("tooltip" tooltip=STRING)? ("prompt" prompt=STRING)?
@@ -2402,7 +2418,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//Exception:
-	//	doc=DOC? "exception" name=ID "{" variables+=Variable* "message" message=STRING "}";
+	//	doc=DOC? "exception" name=ID ("cid" cid=INT)? "{" variables+=Variable* "message" message=STRING "}";
 	public ExceptionElements getExceptionAccess() {
 		return (pException != null) ? pException : (pException = new ExceptionElements());
 	}
@@ -2530,8 +2546,8 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//TypeMetaInfo:
-	//	{TypeMetaInfo} ("slabel" slabel=STRING)? ("label" label=STRING)? ("tooltip" tooltip=STRING)? ("prompt"
-	//	prompt=STRING)? ("examples" examples+=STRING*)?;
+	//	{TypeMetaInfo} ("slabel" slabel=STRING)? ("label" label=STRING)? ("tooltip" tooltip=STRING)? ("prompt" prompt=STRING)?
+	//	("examples" examples+=STRING*)?;
 	public TypeMetaInfoElements getTypeMetaInfoAccess() {
 		return (pTypeMetaInfo != null) ? pTypeMetaInfo : (pTypeMetaInfo = new TypeMetaInfoElements());
 	}

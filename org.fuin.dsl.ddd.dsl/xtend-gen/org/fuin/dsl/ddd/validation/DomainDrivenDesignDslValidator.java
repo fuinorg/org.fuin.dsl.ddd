@@ -1,10 +1,21 @@
 package org.fuin.dsl.ddd.validation;
 
 import com.google.common.base.Objects;
+import com.google.inject.Inject;
 import java.util.HashSet;
+import java.util.Iterator;
+import java.util.List;
 import java.util.Set;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.ecore.resource.Resource;
+import org.eclipse.emf.ecore.util.EcoreUtil;
+import org.eclipse.xtext.resource.IContainer;
+import org.eclipse.xtext.resource.IEObjectDescription;
+import org.eclipse.xtext.resource.IResourceDescription;
+import org.eclipse.xtext.resource.IResourceDescriptions;
+import org.eclipse.xtext.resource.impl.ResourceDescriptionsProvider;
 import org.eclipse.xtext.validation.Check;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntity;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractVO;
@@ -12,6 +23,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Context;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.EntityId;
@@ -48,6 +60,14 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
   public final static String MISSING_DOC = "missingDOC";
   
   public final static String EVENT_MSG_UNKNOWN_VAR = "eventMsgUnknownVar";
+  
+  public final static String EXCEPTION_DUPLICATE_CID = "exceptionDuplicateCID";
+  
+  @Inject
+  private IContainer.Manager containerManager;
+  
+  @Inject
+  private ResourceDescriptionsProvider resourceDescriptionsProvider;
   
   @Check
   public void checkNameStartsWithCapital(final Variable variable) {
@@ -196,6 +216,130 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
           DomainDrivenDesignDslValidator.EVENT_MSG_UNKNOWN_VAR);
       }
     }
+  }
+  
+  @Check
+  public void checkUniqueExceptionUID(final org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception ex) {
+    String name = null;
+    int max = 0;
+    Set<org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception> _allExceptions = this.getAllExceptions(ex);
+    final Iterator<org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception> allExceptions = _allExceptions.iterator();
+    boolean _hasNext = allExceptions.hasNext();
+    boolean _while = _hasNext;
+    while (_while) {
+      {
+        org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception _next = allExceptions.next();
+        final org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception other = ((org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception) _next);
+        boolean _and = false;
+        int _cid = other.getCid();
+        boolean _greaterThan = (_cid > max);
+        if (!_greaterThan) {
+          _and = false;
+        } else {
+          Context _context = this.getContext(ex);
+          String _name = _context.getName();
+          Context _context_1 = this.getContext(other);
+          String _name_1 = _context_1.getName();
+          boolean _equals = _name.equals(_name_1);
+          _and = _equals;
+        }
+        if (_and) {
+          int _cid_1 = other.getCid();
+          max = _cid_1;
+        }
+        boolean _and_1 = false;
+        boolean _and_2 = false;
+        boolean _and_3 = false;
+        boolean _and_4 = false;
+        boolean _equals_1 = Objects.equal(name, null);
+        if (!_equals_1) {
+          _and_4 = false;
+        } else {
+          boolean _notEquals = (!Objects.equal(ex, other));
+          _and_4 = _notEquals;
+        }
+        if (!_and_4) {
+          _and_3 = false;
+        } else {
+          int _cid_2 = ex.getCid();
+          boolean _greaterThan_1 = (_cid_2 > 0);
+          _and_3 = _greaterThan_1;
+        }
+        if (!_and_3) {
+          _and_2 = false;
+        } else {
+          int _cid_3 = ex.getCid();
+          int _cid_4 = other.getCid();
+          boolean _equals_2 = (_cid_3 == _cid_4);
+          _and_2 = _equals_2;
+        }
+        if (!_and_2) {
+          _and_1 = false;
+        } else {
+          Context _context_2 = this.getContext(ex);
+          String _name_2 = _context_2.getName();
+          Context _context_3 = this.getContext(other);
+          String _name_3 = _context_3.getName();
+          boolean _equals_3 = _name_2.equals(_name_3);
+          _and_1 = _equals_3;
+        }
+        if (_and_1) {
+          String _name_4 = other.getName();
+          name = _name_4;
+        }
+      }
+      boolean _hasNext_1 = allExceptions.hasNext();
+      _while = _hasNext_1;
+    }
+    boolean _notEquals = (!Objects.equal(name, null));
+    if (_notEquals) {
+      final String nextId = ("" + Integer.valueOf((max + 1)));
+      this.error(
+        (("The CID is already used by exception \'" + name) + "\'"), ex, 
+        DomainDrivenDesignDslPackage.Literals.EXCEPTION__CID, 
+        DomainDrivenDesignDslValidator.EXCEPTION_DUPLICATE_CID, nextId);
+    }
+  }
+  
+  private Set<org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception> getAllExceptions(final EObject obj) {
+    final Set<org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception> list = new HashSet<org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception>();
+    final Resource resource = obj.eResource();
+    final IResourceDescriptions resourceDescriptions = this.resourceDescriptionsProvider.getResourceDescriptions(resource);
+    URI _uRI = resource.getURI();
+    final IResourceDescription resourceDescription = resourceDescriptions.getResourceDescription(_uRI);
+    final List<IContainer> containers = this.containerManager.getVisibleContainers(resourceDescription, resourceDescriptions);
+    for (final IContainer container : containers) {
+      Iterable<IEObjectDescription> _exportedObjects = container.getExportedObjects();
+      for (final IEObjectDescription descr : _exportedObjects) {
+        {
+          final EObject eObjectOrProxy = descr.getEObjectOrProxy();
+          if ((eObjectOrProxy instanceof org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception)) {
+            EObject _resolve = EcoreUtil.resolve(eObjectOrProxy, obj);
+            final org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception ex = ((org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception) _resolve);
+            list.add(ex);
+          }
+        }
+      }
+    }
+    return list;
+  }
+  
+  private EObject getRoot(final EObject obj) {
+    EObject _eContainer = obj.eContainer();
+    boolean _equals = Objects.equal(_eContainer, null);
+    if (_equals) {
+      return obj;
+    }
+    EObject _eContainer_1 = obj.eContainer();
+    return this.getRoot(_eContainer_1);
+  }
+  
+  private Context getContext(final EObject obj) {
+    if ((obj instanceof Context)) {
+      return ((Context)obj);
+    }
+    EObject _eContainer = obj.eContainer();
+    return this.getContext(_eContainer);
   }
   
   private String findUnknownVar(final Set<String> vars, final String msg) {
