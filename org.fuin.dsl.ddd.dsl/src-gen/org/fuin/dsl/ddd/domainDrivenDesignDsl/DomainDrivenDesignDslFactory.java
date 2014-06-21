@@ -230,6 +230,15 @@ public interface DomainDrivenDesignDslFactory extends EFactory
   Constructor createConstructor();
 
   /**
+   * Returns a new object of class '<em>Return Type</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Return Type</em>'.
+   * @generated
+   */
+  ReturnType createReturnType();
+
+  /**
    * Returns a new object of class '<em>Method</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -300,15 +309,6 @@ public interface DomainDrivenDesignDslFactory extends EFactory
    * @generated
    */
   ConstraintCall createConstraintCall();
-
-  /**
-   * Returns a new object of class '<em>Function</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Function</em>'.
-   * @generated
-   */
-  Function createFunction();
 
   /**
    * Returns a new object of class '<em>Service</em>'.

@@ -29,7 +29,6 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumInstance;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumObject;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Function;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Import;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.InternalType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Invariants;
@@ -39,6 +38,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Namespace;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.NullLiteral;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.NumberLiteral;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.OverriddenTypeMetaInfo;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ReturnType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Service;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.StringLiteral;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Type;
@@ -316,6 +316,13 @@ public class DomainDrivenDesignDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case DomainDrivenDesignDslPackage.RETURN_TYPE:
+      {
+        ReturnType returnType = (ReturnType)theEObject;
+        T result = caseReturnType(returnType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case DomainDrivenDesignDslPackage.METHOD:
       {
         Method method = (Method)theEObject;
@@ -370,13 +377,6 @@ public class DomainDrivenDesignDslSwitch<T> extends Switch<T>
       {
         ConstraintCall constraintCall = (ConstraintCall)theEObject;
         T result = caseConstraintCall(constraintCall);
-        if (result == null) result = defaultCase(theEObject);
-        return result;
-      }
-      case DomainDrivenDesignDslPackage.FUNCTION:
-      {
-        Function function = (Function)theEObject;
-        T result = caseFunction(function);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -800,6 +800,22 @@ public class DomainDrivenDesignDslSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Return Type</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Return Type</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseReturnType(ReturnType object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Method</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -923,22 +939,6 @@ public class DomainDrivenDesignDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseConstraintCall(ConstraintCall object)
-  {
-    return null;
-  }
-
-  /**
-   * Returns the result of interpreting the object as an instance of '<em>Function</em>'.
-   * <!-- begin-user-doc -->
-   * This implementation returns null;
-   * returning a non-null result will terminate the switch.
-   * <!-- end-user-doc -->
-   * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Function</em>'.
-   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-   * @generated
-   */
-  public T caseFunction(Function object)
   {
     return null;
   }

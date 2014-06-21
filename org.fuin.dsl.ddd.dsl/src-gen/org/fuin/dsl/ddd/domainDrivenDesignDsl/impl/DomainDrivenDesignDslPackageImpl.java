@@ -32,7 +32,6 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumInstance;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumObject;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Function;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Import;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.InternalType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Invariants;
@@ -42,6 +41,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Namespace;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.NullLiteral;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.NumberLiteral;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.OverriddenTypeMetaInfo;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ReturnType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Service;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.StringLiteral;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Type;
@@ -223,6 +223,13 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass returnTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass methodEClass = null;
 
   /**
@@ -273,13 +280,6 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * @generated
    */
   private EClass constraintCallEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass functionEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -971,7 +971,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAbstractMethod_Functions()
+  public EReference getAbstractMethod_Service()
   {
     return (EReference)abstractMethodEClass.getEStructuralFeatures().get(3);
   }
@@ -1011,6 +1011,36 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getReturnType()
+  {
+    return returnTypeEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getReturnType_Doc()
+  {
+    return (EAttribute)returnTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getReturnType_Type()
+  {
+    return (EReference)returnTypeEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getMethod()
   {
     return methodEClass;
@@ -1024,6 +1054,16 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
   public EReference getMethod_RefMethod()
   {
     return (EReference)methodEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getMethod_ReturnType()
+  {
+    return (EReference)methodEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1311,76 +1351,6 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getFunction()
-  {
-    return functionEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getFunction_Doc()
-  {
-    return (EAttribute)functionEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getFunction_Name()
-  {
-    return (EAttribute)functionEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFunction_Input()
-  {
-    return (EReference)functionEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getFunction_OutDoc()
-  {
-    return (EAttribute)functionEClass.getEStructuralFeatures().get(3);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFunction_Output()
-  {
-    return (EReference)functionEClass.getEStructuralFeatures().get(4);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getFunction_Exceptions()
-  {
-    return (EReference)functionEClass.getEStructuralFeatures().get(5);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getService()
   {
     return serviceEClass;
@@ -1401,7 +1371,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getService_Functions()
+  public EReference getService_Methods()
   {
     return (EReference)serviceEClass.getEStructuralFeatures().get(1);
   }
@@ -1575,14 +1545,19 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     createEAttribute(abstractMethodEClass, ABSTRACT_METHOD__DOC);
     createEAttribute(abstractMethodEClass, ABSTRACT_METHOD__NAME);
     createEReference(abstractMethodEClass, ABSTRACT_METHOD__VARIABLES);
-    createEReference(abstractMethodEClass, ABSTRACT_METHOD__FUNCTIONS);
+    createEReference(abstractMethodEClass, ABSTRACT_METHOD__SERVICE);
     createEReference(abstractMethodEClass, ABSTRACT_METHOD__CONSTRAINTS);
     createEReference(abstractMethodEClass, ABSTRACT_METHOD__EVENTS);
 
     constructorEClass = createEClass(CONSTRUCTOR);
 
+    returnTypeEClass = createEClass(RETURN_TYPE);
+    createEAttribute(returnTypeEClass, RETURN_TYPE__DOC);
+    createEReference(returnTypeEClass, RETURN_TYPE__TYPE);
+
     methodEClass = createEClass(METHOD);
     createEReference(methodEClass, METHOD__REF_METHOD);
+    createEReference(methodEClass, METHOD__RETURN_TYPE);
 
     eventEClass = createEClass(EVENT);
     createEAttribute(eventEClass, EVENT__DOC);
@@ -1619,17 +1594,9 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     createEReference(constraintCallEClass, CONSTRAINT_CALL__CONSTRAINT);
     createEReference(constraintCallEClass, CONSTRAINT_CALL__PARAMS);
 
-    functionEClass = createEClass(FUNCTION);
-    createEAttribute(functionEClass, FUNCTION__DOC);
-    createEAttribute(functionEClass, FUNCTION__NAME);
-    createEReference(functionEClass, FUNCTION__INPUT);
-    createEAttribute(functionEClass, FUNCTION__OUT_DOC);
-    createEReference(functionEClass, FUNCTION__OUTPUT);
-    createEReference(functionEClass, FUNCTION__EXCEPTIONS);
-
     serviceEClass = createEClass(SERVICE);
     createEAttribute(serviceEClass, SERVICE__DOC);
-    createEReference(serviceEClass, SERVICE__FUNCTIONS);
+    createEReference(serviceEClass, SERVICE__METHODS);
 
     literalEClass = createEClass(LITERAL);
     createEAttribute(literalEClass, LITERAL__VALUE);
@@ -1778,14 +1745,19 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     initEAttribute(getAbstractMethod_Doc(), ecorePackage.getEString(), "doc", null, 0, 1, AbstractMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAbstractMethod_Name(), ecorePackage.getEString(), "name", null, 0, 1, AbstractMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAbstractMethod_Variables(), this.getVariable(), null, "variables", null, 0, -1, AbstractMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAbstractMethod_Functions(), this.getFunction(), null, "functions", null, 0, -1, AbstractMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAbstractMethod_Service(), this.getService(), null, "service", null, 0, 1, AbstractMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAbstractMethod_Constraints(), this.getConstraints(), null, "constraints", null, 0, 1, AbstractMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAbstractMethod_Events(), this.getEvent(), null, "events", null, 0, -1, AbstractMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(constructorEClass, Constructor.class, "Constructor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+    initEClass(returnTypeEClass, ReturnType.class, "ReturnType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getReturnType_Doc(), ecorePackage.getEString(), "doc", null, 0, 1, ReturnType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getReturnType_Type(), this.getType(), null, "type", null, 0, 1, ReturnType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(methodEClass, Method.class, "Method", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getMethod_RefMethod(), this.getMethod(), null, "refMethod", null, 0, 1, Method.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getMethod_ReturnType(), this.getReturnType(), null, "returnType", null, 0, 1, Method.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(eventEClass, Event.class, "Event", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getEvent_Doc(), ecorePackage.getEString(), "doc", null, 0, 1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1822,17 +1794,9 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     initEReference(getConstraintCall_Constraint(), this.getConstraint(), null, "constraint", null, 0, 1, ConstraintCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getConstraintCall_Params(), this.getLiteral(), null, "params", null, 0, -1, ConstraintCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(functionEClass, Function.class, "Function", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getFunction_Doc(), ecorePackage.getEString(), "doc", null, 0, 1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getFunction_Name(), ecorePackage.getEString(), "name", null, 0, 1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFunction_Input(), this.getVariable(), null, "input", null, 0, -1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getFunction_OutDoc(), ecorePackage.getEString(), "outDoc", null, 0, 1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFunction_Output(), this.getType(), null, "output", null, 0, 1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getFunction_Exceptions(), this.getException(), null, "exceptions", null, 0, -1, Function.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
     initEClass(serviceEClass, Service.class, "Service", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getService_Doc(), ecorePackage.getEString(), "doc", null, 0, 1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getService_Functions(), this.getFunction(), null, "functions", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getService_Methods(), this.getMethod(), null, "methods", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(literalEClass, Literal.class, "Literal", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getLiteral_Value(), ecorePackage.getEString(), "value", null, 0, 1, Literal.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -3,12 +3,8 @@
 	xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:xi="http://www.w3.org/2001/XInclude">
 
 	<info>
-		<title>Reference Guide</title>
+		<title>Reference Guide DDD DSL</title>		
 		<author>
-			<personname>
-				<firstname>Michael</firstname>
-				<surname>Schnell</surname>
-			</personname>
 			<affiliation>
 				<orgname>http://www.fuin.org</orgname>
 			</affiliation>
@@ -18,17 +14,14 @@
 		</releaseinfo>
 		<subjectset>
 			<subject>
-				<subjectterm>Domain-driven design (DDD) DSL Reference Guide
-				</subjectterm>
+				<subjectterm>Domain-driven design (DDD) DSL Reference Guide</subjectterm>
 			</subject>
 		</subjectset>
 	</info>
 
 	<chapter>
 		<title>Introduction</title>
-		<para>This reference guide explains the syntax of the DSL and how you
-			can use it.
-		</para>
+		<para>This reference guide explains the syntax of the DSL and how you can use it.</para>
 	</chapter>
 
 	<chapter>
@@ -55,6 +48,17 @@
 		<para>Describes how the high-level concepts from the book
 			Domain-Driven Design can be expressed with the DSL
 		</para>
+		<sect1 xml:id="context">
+			<title>Context</title>
+			<para>
+			The delimited applicability of a particular model. A Bounded Context gives the team members a clear and shared understanding of what has to be consistent and what can develop independently.
+			<programlisting language="ddd">
+			context A {
+				...
+			}
+			</programlisting> 
+			</para>
+		</sect1>
 		<sect1 xml:id="namespace">
 			<title>Namespace</title>
 			<para>

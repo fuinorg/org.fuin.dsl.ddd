@@ -29,8 +29,9 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.EntityId;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Function;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Method;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ReturnType;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Service;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Type;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ValueObject;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
@@ -144,7 +145,8 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
       _and = false;
     } else {
       EObject _eContainer = variable.eContainer();
-      _and = (_eContainer instanceof Function);
+      EObject _eContainer_1 = _eContainer.eContainer();
+      _and = (_eContainer_1 instanceof Service);
     }
     if (_and) {
       Type _type_3 = variable.getType();
@@ -152,23 +154,25 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
       EntityId _idType_1 = entity.getIdType();
       String _name_1 = _idType_1.getName();
       this.error(
-        "A direct reference to an entity is not allowed in a function", variable, 
+        "A direct reference to an entity is not allowed in a service", variable, 
         DomainDrivenDesignDslPackage.Literals.VARIABLE__TYPE, 
         DomainDrivenDesignDslValidator.REF_TO_ENTITY_NOT_ALLOWED, _name_1);
     }
   }
   
   @Check
-  public void checkNoRefToAggregate(final Function func) {
-    Type _output = func.getOutput();
-    if ((_output instanceof Aggregate)) {
-      Type _output_1 = func.getOutput();
-      Aggregate aggregate = ((Aggregate) _output_1);
+  public void checkNoRefToAggregate(final Method method) {
+    ReturnType _returnType = method.getReturnType();
+    Type _type = _returnType.getType();
+    if ((_type instanceof Aggregate)) {
+      ReturnType _returnType_1 = method.getReturnType();
+      Type _type_1 = _returnType_1.getType();
+      Aggregate aggregate = ((Aggregate) _type_1);
       AggregateId _idType = aggregate.getIdType();
       String _name = _idType.getName();
       this.error(
-        "A direct reference to an aggregates is not allowed in a function", func, 
-        DomainDrivenDesignDslPackage.Literals.FUNCTION__OUTPUT, 
+        "A direct reference to an aggregates is not allowed in a method", method, 
+        DomainDrivenDesignDslPackage.Literals.METHOD__RETURN_TYPE, 
         DomainDrivenDesignDslValidator.REF_TO_AGGREGATE_NOT_ALLOWED, _name);
     }
   }

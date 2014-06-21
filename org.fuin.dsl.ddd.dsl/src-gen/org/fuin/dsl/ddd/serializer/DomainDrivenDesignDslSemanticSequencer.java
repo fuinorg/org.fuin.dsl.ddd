@@ -29,7 +29,6 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumInstance;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumObject;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Function;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Import;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Invariants;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Method;
@@ -37,6 +36,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Namespace;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.NullLiteral;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.NumberLiteral;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.OverriddenTypeMetaInfo;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ReturnType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Service;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.StringLiteral;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.TypeMetaInfo;
@@ -177,12 +177,6 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 					return; 
 				}
 				else break;
-			case DomainDrivenDesignDslPackage.FUNCTION:
-				if(context == grammarAccess.getFunctionRule()) {
-					sequence_Function(context, (Function) semanticObject); 
-					return; 
-				}
-				else break;
 			case DomainDrivenDesignDslPackage.IMPORT:
 				if(context == grammarAccess.getImportRule()) {
 					sequence_Import(context, (Import) semanticObject); 
@@ -225,6 +219,12 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 			case DomainDrivenDesignDslPackage.OVERRIDDEN_TYPE_META_INFO:
 				if(context == grammarAccess.getOverriddenTypeMetaInfoRule()) {
 					sequence_OverriddenTypeMetaInfo(context, (OverriddenTypeMetaInfo) semanticObject); 
+					return; 
+				}
+				else break;
+			case DomainDrivenDesignDslPackage.RETURN_TYPE:
+				if(context == grammarAccess.getReturnTypeRule()) {
+					sequence_ReturnType(context, (ReturnType) semanticObject); 
 					return; 
 				}
 				else break;
@@ -353,7 +353,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *         doc=DOC? 
 	 *         name=ID 
 	 *         variables+=Variable* 
-	 *         functions+=Function* 
+	 *         service=[Service|ID]? 
 	 *         constraints=Constraints? 
 	 *         events+=Event*
 	 *     )
@@ -479,15 +479,6 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	
 	/**
 	 * Constraint:
-	 *     (doc=DOC? name=ID input+=Variable* (outDoc=DOC? output=[Type|ID])? (exceptions+=[Exception|ID] exceptions+=[Exception|ID]*)?)
-	 */
-	protected void sequence_Function(EObject context, Function semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     (importedNamespace=FQN | importedNamespace=FQNWithWildcard)
 	 */
 	protected void sequence_Import(EObject context, Import semanticObject) {
@@ -511,7 +502,8 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *         name=ID 
 	 *         refMethod=[Method|FQN]? 
 	 *         variables+=Variable* 
-	 *         functions+=Function* 
+	 *         service=[Service|ID]? 
+	 *         returnType=ReturnType? 
 	 *         constraints=Constraints? 
 	 *         events+=Event*
 	 *     )
@@ -580,7 +572,16 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	
 	/**
 	 * Constraint:
-	 *     (doc=DOC? name=ID functions+=Function*)
+	 *     (doc=DOC? type=[Type|ID])
+	 */
+	protected void sequence_ReturnType(EObject context, ReturnType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (doc=DOC? name=ID methods+=Method*)
 	 */
 	protected void sequence_Service(EObject context, Service semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

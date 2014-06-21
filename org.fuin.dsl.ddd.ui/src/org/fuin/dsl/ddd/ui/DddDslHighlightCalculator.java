@@ -18,8 +18,8 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumInstance;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Function;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.InternalType;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ReturnType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.util.DomainDrivenDesignDslSwitch;
 
@@ -102,9 +102,9 @@ public class DddDslHighlightCalculator implements
 		}
 
 		@Override
-		public Void caseFunction(Function func) {
-			return highlightFirst(func,
-					DomainDrivenDesignDslPackage.eINSTANCE.getFunction_OutDoc(),
+		public Void caseReturnType(ReturnType returnType) {
+			return highlightFirst(returnType,
+					DomainDrivenDesignDslPackage.eINSTANCE.getReturnType_Doc(),
 					DddDslHighlightConfig.COMMENT_ID);
 		}
 		

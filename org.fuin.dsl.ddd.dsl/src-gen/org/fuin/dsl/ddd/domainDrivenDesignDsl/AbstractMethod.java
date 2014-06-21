@@ -17,7 +17,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getDoc <em>Doc</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getName <em>Name</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getVariables <em>Variables</em>}</li>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getFunctions <em>Functions</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getService <em>Service</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getConstraints <em>Constraints</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getEvents <em>Events</em>}</li>
  * </ul>
@@ -98,20 +98,30 @@ public interface AbstractMethod extends EObject
   EList<Variable> getVariables();
 
   /**
-   * Returns the value of the '<em><b>Functions</b></em>' containment reference list.
-   * The list contents are of type {@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Function}.
+   * Returns the value of the '<em><b>Service</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Functions</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Service</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Functions</em>' containment reference list.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getAbstractMethod_Functions()
-   * @model containment="true"
+   * @return the value of the '<em>Service</em>' reference.
+   * @see #setService(Service)
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getAbstractMethod_Service()
+   * @model
    * @generated
    */
-  EList<Function> getFunctions();
+  Service getService();
+
+  /**
+   * Sets the value of the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getService <em>Service</em>}' reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Service</em>' reference.
+   * @see #getService()
+   * @generated
+   */
+  void setService(Service value);
 
   /**
    * Returns the value of the '<em><b>Constraints</b></em>' containment reference.

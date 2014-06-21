@@ -125,16 +125,21 @@ Constructor:
 	doc=DOC? 
 	'constructor' name=ID '{'
 		variables+=Variable*
-		functions+=Function*
+		service=[Service]?
 		constraints=Constraints?
 		events+=Event*
 	'}';
+
+ReturnType:
+	doc=DOC? 
+	'returns' type=[Type];
 
 Method:
 	doc=DOC? 
 	'method' name=ID ('ref' refMethod=[Method|FQN])? '{'
 		variables+=Variable*
-		functions+=Function*
+		service=[Service]?
+		returnType=ReturnType?
 		constraints=Constraints?
 		events+=Event*
 	'}';
@@ -171,19 +176,11 @@ OverriddenTypeMetaInfo:
 ConstraintCall:
 	constraint=[Constraint] ('(' params+=Literal (',' params+=Literal)* ')')?;
 
-Function:
-	doc=DOC? 
-	'function' name=ID '{'
-	    ('input' '{' input+=Variable* '}')?
-		(outDoc=DOC? 'output' output=[Type])?
-		('exceptions' '{' exceptions+=[Exception] (',' exceptions+=[Exception])* '}')?
-	'}';
-
 Service:
 	doc=DOC? 
 	'service' name=ID '{'
-		functions+=Function*
-	'}';			
+		methods+=Method*
+	'}';
 
 Literal:
 	NullLiteral | BooleanLiteral | NumberLiteral | StringLiteral;

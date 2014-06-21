@@ -2,40 +2,33 @@
  */
 package org.fuin.dsl.ddd.domainDrivenDesignDsl.impl;
 
-import java.util.Collection;
-
 import org.eclipse.emf.common.notify.Notification;
-import org.eclipse.emf.common.notify.NotificationChain;
-
-import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-
-import org.eclipse.emf.ecore.util.EObjectContainmentEList;
-import org.eclipse.emf.ecore.util.InternalEList;
+import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Method;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Service;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ReturnType;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Type;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Service</b></em>'.
+ * An implementation of the model object '<em><b>Return Type</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ServiceImpl#getDoc <em>Doc</em>}</li>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ServiceImpl#getMethods <em>Methods</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ReturnTypeImpl#getDoc <em>Doc</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ReturnTypeImpl#getType <em>Type</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ServiceImpl extends AbstractElementImpl implements Service
+public class ReturnTypeImpl extends MinimalEObjectImpl.Container implements ReturnType
 {
   /**
    * The default value of the '{@link #getDoc() <em>Doc</em>}' attribute.
@@ -58,21 +51,21 @@ public class ServiceImpl extends AbstractElementImpl implements Service
   protected String doc = DOC_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getMethods() <em>Methods</em>}' containment reference list.
+   * The cached value of the '{@link #getType() <em>Type</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMethods()
+   * @see #getType()
    * @generated
    * @ordered
    */
-  protected EList<Method> methods;
+  protected Type type;
 
   /**
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ServiceImpl()
+  protected ReturnTypeImpl()
   {
     super();
   }
@@ -85,7 +78,7 @@ public class ServiceImpl extends AbstractElementImpl implements Service
   @Override
   protected EClass eStaticClass()
   {
-    return DomainDrivenDesignDslPackage.Literals.SERVICE;
+    return DomainDrivenDesignDslPackage.Literals.RETURN_TYPE;
   }
 
   /**
@@ -108,7 +101,7 @@ public class ServiceImpl extends AbstractElementImpl implements Service
     String oldDoc = doc;
     doc = newDoc;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.SERVICE__DOC, oldDoc, doc));
+      eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.RETURN_TYPE__DOC, oldDoc, doc));
   }
 
   /**
@@ -116,13 +109,19 @@ public class ServiceImpl extends AbstractElementImpl implements Service
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Method> getMethods()
+  public Type getType()
   {
-    if (methods == null)
+    if (type != null && type.eIsProxy())
     {
-      methods = new EObjectContainmentEList<Method>(Method.class, this, DomainDrivenDesignDslPackage.SERVICE__METHODS);
+      InternalEObject oldType = (InternalEObject)type;
+      type = (Type)eResolveProxy(oldType);
+      if (type != oldType)
+      {
+        if (eNotificationRequired())
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, DomainDrivenDesignDslPackage.RETURN_TYPE__TYPE, oldType, type));
+      }
     }
-    return methods;
+    return type;
   }
 
   /**
@@ -130,15 +129,22 @@ public class ServiceImpl extends AbstractElementImpl implements Service
    * <!-- end-user-doc -->
    * @generated
    */
-  @Override
-  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  public Type basicGetType()
   {
-    switch (featureID)
-    {
-      case DomainDrivenDesignDslPackage.SERVICE__METHODS:
-        return ((InternalEList<?>)getMethods()).basicRemove(otherEnd, msgs);
-    }
-    return super.eInverseRemove(otherEnd, featureID, msgs);
+    return type;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setType(Type newType)
+  {
+    Type oldType = type;
+    type = newType;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.RETURN_TYPE__TYPE, oldType, type));
   }
 
   /**
@@ -151,10 +157,11 @@ public class ServiceImpl extends AbstractElementImpl implements Service
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.SERVICE__DOC:
+      case DomainDrivenDesignDslPackage.RETURN_TYPE__DOC:
         return getDoc();
-      case DomainDrivenDesignDslPackage.SERVICE__METHODS:
-        return getMethods();
+      case DomainDrivenDesignDslPackage.RETURN_TYPE__TYPE:
+        if (resolve) return getType();
+        return basicGetType();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -164,18 +171,16 @@ public class ServiceImpl extends AbstractElementImpl implements Service
    * <!-- end-user-doc -->
    * @generated
    */
-  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.SERVICE__DOC:
+      case DomainDrivenDesignDslPackage.RETURN_TYPE__DOC:
         setDoc((String)newValue);
         return;
-      case DomainDrivenDesignDslPackage.SERVICE__METHODS:
-        getMethods().clear();
-        getMethods().addAll((Collection<? extends Method>)newValue);
+      case DomainDrivenDesignDslPackage.RETURN_TYPE__TYPE:
+        setType((Type)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -191,11 +196,11 @@ public class ServiceImpl extends AbstractElementImpl implements Service
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.SERVICE__DOC:
+      case DomainDrivenDesignDslPackage.RETURN_TYPE__DOC:
         setDoc(DOC_EDEFAULT);
         return;
-      case DomainDrivenDesignDslPackage.SERVICE__METHODS:
-        getMethods().clear();
+      case DomainDrivenDesignDslPackage.RETURN_TYPE__TYPE:
+        setType((Type)null);
         return;
     }
     super.eUnset(featureID);
@@ -211,10 +216,10 @@ public class ServiceImpl extends AbstractElementImpl implements Service
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.SERVICE__DOC:
+      case DomainDrivenDesignDslPackage.RETURN_TYPE__DOC:
         return DOC_EDEFAULT == null ? doc != null : !DOC_EDEFAULT.equals(doc);
-      case DomainDrivenDesignDslPackage.SERVICE__METHODS:
-        return methods != null && !methods.isEmpty();
+      case DomainDrivenDesignDslPackage.RETURN_TYPE__TYPE:
+        return type != null;
     }
     return super.eIsSet(featureID);
   }
@@ -236,4 +241,4 @@ public class ServiceImpl extends AbstractElementImpl implements Service
     return result.toString();
   }
 
-} //ServiceImpl
+} //ReturnTypeImpl

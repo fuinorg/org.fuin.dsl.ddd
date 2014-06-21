@@ -33,7 +33,6 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumInstance;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumObject;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Function;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Import;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.InternalType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Invariants;
@@ -43,6 +42,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Namespace;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.NullLiteral;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.NumberLiteral;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.OverriddenTypeMetaInfo;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ReturnType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Service;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.StringLiteral;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Type;
@@ -125,6 +125,7 @@ public class DomainDrivenDesignDslFactoryImpl extends EFactoryImpl implements Do
       case DomainDrivenDesignDslPackage.AGGREGATE: return createAggregate();
       case DomainDrivenDesignDslPackage.ABSTRACT_METHOD: return createAbstractMethod();
       case DomainDrivenDesignDslPackage.CONSTRUCTOR: return createConstructor();
+      case DomainDrivenDesignDslPackage.RETURN_TYPE: return createReturnType();
       case DomainDrivenDesignDslPackage.METHOD: return createMethod();
       case DomainDrivenDesignDslPackage.EVENT: return createEvent();
       case DomainDrivenDesignDslPackage.TYPE_META_INFO: return createTypeMetaInfo();
@@ -133,7 +134,6 @@ public class DomainDrivenDesignDslFactoryImpl extends EFactoryImpl implements Do
       case DomainDrivenDesignDslPackage.INVARIANTS: return createInvariants();
       case DomainDrivenDesignDslPackage.OVERRIDDEN_TYPE_META_INFO: return createOverriddenTypeMetaInfo();
       case DomainDrivenDesignDslPackage.CONSTRAINT_CALL: return createConstraintCall();
-      case DomainDrivenDesignDslPackage.FUNCTION: return createFunction();
       case DomainDrivenDesignDslPackage.SERVICE: return createService();
       case DomainDrivenDesignDslPackage.LITERAL: return createLiteral();
       case DomainDrivenDesignDslPackage.BOOLEAN_LITERAL: return createBooleanLiteral();
@@ -403,6 +403,17 @@ public class DomainDrivenDesignDslFactoryImpl extends EFactoryImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
+  public ReturnType createReturnType()
+  {
+    ReturnTypeImpl returnType = new ReturnTypeImpl();
+    return returnType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Method createMethod()
   {
     MethodImpl method = new MethodImpl();
@@ -484,17 +495,6 @@ public class DomainDrivenDesignDslFactoryImpl extends EFactoryImpl implements Do
   {
     ConstraintCallImpl constraintCall = new ConstraintCallImpl();
     return constraintCall;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Function createFunction()
-  {
-    FunctionImpl function = new FunctionImpl();
-    return function;
   }
 
   /**

@@ -21,10 +21,10 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Function
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Method
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Service
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ValueObject
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable
-import static org.fuin.dsl.ddd.validation.DomainDrivenDesignDslValidator.*
 
 /**
  * Custom validation rules. 
@@ -122,10 +122,10 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 				aggregate.idType.name
 			)
 		}
-		if ((variable.type instanceof Entity) && (variable.eContainer instanceof Function)) {
+		if ((variable.type instanceof Entity) && (variable.eContainer.eContainer instanceof Service)) {
 			var Entity entity = (variable.type as Entity);
 			error(
-				"A direct reference to an entity is not allowed in a function",
+				"A direct reference to an entity is not allowed in a service",
 				variable,
 				DomainDrivenDesignDslPackage.Literals::VARIABLE__TYPE,
 				REF_TO_ENTITY_NOT_ALLOWED,
@@ -136,14 +136,14 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 	}
 
 	@Check
-	def checkNoRefToAggregate(Function func) {
+	def checkNoRefToAggregate(Method method) {
 
-		if (func.output instanceof Aggregate) {
-			var Aggregate aggregate = (func.output as Aggregate);
+		if (method.returnType.type instanceof Aggregate) {
+			var Aggregate aggregate = (method.returnType.type as Aggregate);
 			error(
-				"A direct reference to an aggregates is not allowed in a function",
-				func,
-				DomainDrivenDesignDslPackage.Literals::FUNCTION__OUTPUT,
+				"A direct reference to an aggregates is not allowed in a method",
+				method,
+				DomainDrivenDesignDslPackage.Literals::METHOD__RETURN_TYPE,
 				REF_TO_AGGREGATE_NOT_ALLOWED,
 				aggregate.idType.name
 			)
