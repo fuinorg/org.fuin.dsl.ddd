@@ -111,7 +111,7 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 		if (variable.type instanceof Aggregate) {
 			val Aggregate aggregate = (variable.type as Aggregate);
 			val Entity parentEntity = getParent(Entity, variable)
-			if ((parentEntity == null) || (aggregate != parentEntity.root)) {
+			if ((parentEntity == null) || !same(aggregate, parentEntity.root)) {
 				error(
 					MSG_DIRECT_REF_AGGREGATE,
 					variable,
@@ -125,7 +125,7 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 		if (variable.type instanceof Entity) {
 			val Entity entity = (variable.type as Entity);
 			val Aggregate aggregateOfVariable = getAggregate(variable)
-			if ((aggregateOfVariable == null) || (aggregateOfVariable != entity.root)) {
+			if ((aggregateOfVariable == null) || !same(aggregateOfVariable, entity.root)) {
 				error(
 					MSG_DIRECT_REF_ENTITY,
 					variable,
@@ -145,7 +145,7 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 			
 			val Aggregate aggregate = (method.returnType.type as Aggregate);
 			val Entity parentEntity = getParent(Entity, method)
-			if ((parentEntity == null) || (aggregate != parentEntity.root)) {
+			if ((parentEntity == null) || !same(aggregate, parentEntity.root)) {
 				error(
 					MSG_DIRECT_REF_AGGREGATE,
 					method,
@@ -159,7 +159,7 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 			
 			val Entity entity = (method.returnType.type as Entity);
 			val Entity parentEntity = getParent(Entity, method)
-			if ((parentEntity == null) || (entity.root != parentEntity.root)) {
+			if ((parentEntity == null) || !same(entity.root, parentEntity.root)) {
 				error(
 					MSG_DIRECT_REF_ENTITY,
 					method,
@@ -375,6 +375,28 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 	 */
 	private def static Context getContext(EObject obj) {
 		return getParent(Context, obj)
+	}
+
+	/**
+	 * Compares two abstract elements by their unique name.
+	 * 
+	 * @param a1 Element 1.
+	 * @param a2 Element 2.
+	 * 
+	 * @return TRUE if both elements have the same unique name (context/namespace/name).
+	 */
+	private def static boolean same(AbstractElement a1, AbstractElement a2) {
+		if (a1 == null) {
+			if (a2 == null) {
+				return true
+			}
+			return false			
+		} else {
+			if (a2 == null) {
+				return false
+			}
+			return a1.uniqueName.equals(a2.uniqueName)	
+		}
 	}
 
 	/**

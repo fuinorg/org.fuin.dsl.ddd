@@ -135,8 +135,9 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
         _or = true;
       } else {
         Aggregate _root = parentEntity.getRoot();
-        boolean _notEquals = (!Objects.equal(aggregate, _root));
-        _or = _notEquals;
+        boolean _same = DomainDrivenDesignDslValidator.same(aggregate, _root);
+        boolean _not = (!_same);
+        _or = _not;
       }
       if (_or) {
         AggregateId _idType = aggregate.getIdType();
@@ -158,8 +159,9 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
         _or_1 = true;
       } else {
         Aggregate _root_1 = entity.getRoot();
-        boolean _notEquals_1 = (!Objects.equal(aggregateOfVariable, _root_1));
-        _or_1 = _notEquals_1;
+        boolean _same_1 = DomainDrivenDesignDslValidator.same(aggregateOfVariable, _root_1);
+        boolean _not_1 = (!_same_1);
+        _or_1 = _not_1;
       }
       if (_or_1) {
         EntityId _idType_1 = entity.getIdType();
@@ -187,8 +189,9 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
         _or = true;
       } else {
         Aggregate _root = parentEntity.getRoot();
-        boolean _notEquals = (!Objects.equal(aggregate, _root));
-        _or = _notEquals;
+        boolean _same = DomainDrivenDesignDslValidator.same(aggregate, _root);
+        boolean _not = (!_same);
+        _or = _not;
       }
       if (_or) {
         AggregateId _idType = aggregate.getIdType();
@@ -213,8 +216,9 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
         } else {
           Aggregate _root_1 = entity.getRoot();
           Aggregate _root_2 = parentEntity_1.getRoot();
-          boolean _notEquals_1 = (!Objects.equal(_root_1, _root_2));
-          _or_1 = _notEquals_1;
+          boolean _same_1 = DomainDrivenDesignDslValidator.same(_root_1, _root_2);
+          boolean _not_1 = (!_same_1);
+          _or_1 = _not_1;
         }
         if (_or_1) {
           EntityId _idType_1 = entity.getIdType();
@@ -535,6 +539,33 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
    */
   private static Context getContext(final EObject obj) {
     return DomainDrivenDesignDslValidator.<Context>getParent(Context.class, obj);
+  }
+  
+  /**
+   * Compares two abstract elements by their unique name.
+   * 
+   * @param a1 Element 1.
+   * @param a2 Element 2.
+   * 
+   * @return TRUE if both elements have the same unique name (context/namespace/name).
+   */
+  private static boolean same(final AbstractElement a1, final AbstractElement a2) {
+    boolean _equals = Objects.equal(a1, null);
+    if (_equals) {
+      boolean _equals_1 = Objects.equal(a2, null);
+      if (_equals_1) {
+        return true;
+      }
+      return false;
+    } else {
+      boolean _equals_2 = Objects.equal(a2, null);
+      if (_equals_2) {
+        return false;
+      }
+      String _uniqueName = DomainDrivenDesignDslValidator.uniqueName(a1);
+      String _uniqueName_1 = DomainDrivenDesignDslValidator.uniqueName(a2);
+      return _uniqueName.equals(_uniqueName_1);
+    }
   }
   
   /**
