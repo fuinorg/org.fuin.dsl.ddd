@@ -11,6 +11,11 @@ Installation
 3. Install "DDD DSL"  
 [![ScreenShot](https://raw.github.com/fuinorg/org.fuin.dsl.ddd/master/doc/install-eclipse.jpg)]
 
+Overview
+--------
+http://de.slideshare.net/michael-schnell/ddd-dsl/
+
+
 ###Build
 
 [![Build Status](https://fuin-org.ci.cloudbees.com/job/org.fuin.dsl.ddd/badge/icon)](https://fuin-org.ci.cloudbees.com/job/org.fuin.dsl.ddd/)
