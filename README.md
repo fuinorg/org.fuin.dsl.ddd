@@ -3,6 +3,16 @@ DDD DSL
 
 Xtext based DSL supporting Domain-driven design (DDD)
 
+Examples
+--------
+- [![Context, Namespace, External Types](https://raw.github.com/fuinorg/org.fuin.dsl.ddd/master/doc/context-namespace-example.jpg)]
+- [![Value Object](https://raw.github.com/fuinorg/org.fuin.dsl.ddd/master/doc/value-object-example.jpg)]
+- [![Aggregate](https://raw.github.com/fuinorg/org.fuin.dsl.ddd/master/doc/aggregate-example.jpg)]
+
+Presentation
+------------
+http://de.slideshare.net/michael-schnell/ddd-dsl/
+
 Installation
 ------------
 
@@ -10,10 +20,6 @@ Installation
 2. Press "Add" button to add the repository: http://www.fuin.org/p2-repository
 3. Install "DDD DSL"  
 [![ScreenShot](https://raw.github.com/fuinorg/org.fuin.dsl.ddd/master/doc/install-eclipse.jpg)]
-
-Overview
---------
-http://de.slideshare.net/michael-schnell/ddd-dsl/
 
 
 ###Build
