@@ -22,10 +22,10 @@ Import:
 	'import' importedNamespace=(FQN | FQNWithWildcard);
 
 AbstractElement:
-	Constraint | Type | Service | Exception;
+	Constraint | Type | Exception;
 
 Type:
-	ExternalType | InternalType;
+	ExternalType | InternalType | Service;
 
 InternalType:
 	AbstractVO | AbstractEntity;

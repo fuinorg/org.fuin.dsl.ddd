@@ -384,6 +384,7 @@ public class DomainDrivenDesignDslSwitch<T> extends Switch<T>
       {
         Service service = (Service)theEObject;
         T result = caseService(service);
+        if (result == null) result = caseType(service);
         if (result == null) result = caseAbstractElement(service);
         if (result == null) result = defaultCase(theEObject);
         return result;

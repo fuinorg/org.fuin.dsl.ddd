@@ -355,21 +355,11 @@ ruleAbstractElement returns [EObject current=null]
 
     |
     { 
-        newCompositeNode(grammarAccess.getAbstractElementAccess().getServiceParserRuleCall_2()); 
+        newCompositeNode(grammarAccess.getAbstractElementAccess().getExceptionParserRuleCall_2()); 
     }
-    this_Service_2=ruleService
+    this_Exception_2=ruleException
     { 
-        $current = $this_Service_2.current; 
-        afterParserOrEnumRuleCall();
-    }
-
-    |
-    { 
-        newCompositeNode(grammarAccess.getAbstractElementAccess().getExceptionParserRuleCall_3()); 
-    }
-    this_Exception_3=ruleException
-    { 
-        $current = $this_Exception_3.current; 
+        $current = $this_Exception_2.current; 
         afterParserOrEnumRuleCall();
     }
 )
@@ -410,6 +400,16 @@ ruleType returns [EObject current=null]
     this_InternalType_1=ruleInternalType
     { 
         $current = $this_InternalType_1.current; 
+        afterParserOrEnumRuleCall();
+    }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getTypeAccess().getServiceParserRuleCall_2()); 
+    }
+    this_Service_2=ruleService
+    { 
+        $current = $this_Service_2.current; 
         afterParserOrEnumRuleCall();
     }
 )

@@ -158,14 +158,13 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cConstraintParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cTypeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cServiceParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
-		private final RuleCall cExceptionParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
+		private final RuleCall cExceptionParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//AbstractElement:
-		//	Constraint | Type | Service | Exception;
+		//	Constraint | Type | Exception;
 		public ParserRule getRule() { return rule; }
 
-		//Constraint | Type | Service | Exception
+		//Constraint | Type | Exception
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//Constraint
@@ -174,11 +173,8 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		//Type
 		public RuleCall getTypeParserRuleCall_1() { return cTypeParserRuleCall_1; }
 
-		//Service
-		public RuleCall getServiceParserRuleCall_2() { return cServiceParserRuleCall_2; }
-
 		//Exception
-		public RuleCall getExceptionParserRuleCall_3() { return cExceptionParserRuleCall_3; }
+		public RuleCall getExceptionParserRuleCall_2() { return cExceptionParserRuleCall_2; }
 	}
 
 	public class TypeElements extends AbstractParserRuleElementFinder {
@@ -186,12 +182,13 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cExternalTypeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cInternalTypeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cServiceParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//Type:
-		//	ExternalType | InternalType;
+		//	ExternalType | InternalType | Service;
 		public ParserRule getRule() { return rule; }
 
-		//ExternalType | InternalType
+		//ExternalType | InternalType | Service
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//ExternalType
@@ -199,6 +196,9 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 
 		//InternalType
 		public RuleCall getInternalTypeParserRuleCall_1() { return cInternalTypeParserRuleCall_1; }
+
+		//Service
+		public RuleCall getServiceParserRuleCall_2() { return cServiceParserRuleCall_2; }
 	}
 
 	public class InternalTypeElements extends AbstractParserRuleElementFinder {
@@ -2237,7 +2237,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//AbstractElement:
-	//	Constraint | Type | Service | Exception;
+	//	Constraint | Type | Exception;
 	public AbstractElementElements getAbstractElementAccess() {
 		return (pAbstractElement != null) ? pAbstractElement : (pAbstractElement = new AbstractElementElements());
 	}
@@ -2247,7 +2247,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//Type:
-	//	ExternalType | InternalType;
+	//	ExternalType | InternalType | Service;
 	public TypeElements getTypeAccess() {
 		return (pType != null) ? pType : (pType = new TypeElements());
 	}

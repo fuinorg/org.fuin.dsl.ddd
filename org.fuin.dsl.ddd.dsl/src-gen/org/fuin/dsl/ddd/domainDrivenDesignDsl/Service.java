@@ -21,7 +21,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface Service extends AbstractElement
+public interface Service extends Type
 {
   /**
    * Returns the value of the '<em><b>Doc</b></em>' attribute.

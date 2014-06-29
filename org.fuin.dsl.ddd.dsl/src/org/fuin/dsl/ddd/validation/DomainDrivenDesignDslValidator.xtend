@@ -11,7 +11,6 @@ import org.eclipse.xtext.resource.IEObjectDescription
 import org.eclipse.xtext.resource.impl.ResourceDescriptionsProvider
 import org.eclipse.xtext.validation.Check
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntity
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractVO
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget
@@ -22,7 +21,6 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Method
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Service
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ValueObject
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable
 
@@ -33,9 +31,13 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable
  */
 class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValidator {
 
+	private static val MSG_DIRECT_REF_AGGREGATE = "A direct reference to an aggregate is only allowed from entities in the same aggregate"
+
+	private static val MSG_DIRECT_REF_ENTITY = "A direct reference to an entity is only allowed from entities in the same aggregate"
+
 	public static val INVALID_VAR_NAME = 'invalidVarName'
 
-	public static val EVENT_NOT_ALLOWED_FOR_VO = 'eventNotAllowedForVO'
+	public static val EVENT_ONLY_ALLOWED_FOR_ENTITY = 'eventOnlyAllowedForEntity'
 
 	public static val CONSTRAINT_MSG_UNKNOWN_VAR = 'constraintMsgUnknownVar'
 
@@ -44,8 +46,6 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 	public static val REF_TO_AGGREGATE_NOT_ALLOWED = 'refToAggregateNotAllowed'
 
 	public static val REF_TO_ENTITY_NOT_ALLOWED = 'refToEntityNotAllowed'
-
-	public static val VO_CANNOT_REF_ENTITY = 'voCannotRefEntity'
 
 	public static val MISSING_DOC = 'missingDOC'
 
@@ -68,17 +68,11 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 	}
 
 	@Check
-	def checkNoEventsInValueObjects(AbstractVO vo) {
+	def checkEventsOnlyAllowedInEntities(Event event) {
 
-		for (method : vo.methods) {
-			if (method.events != null) {
-				for (event : method.events) {
-
-					error("Events are only allowed within entity methods", event,
-						DomainDrivenDesignDslPackage.Literals::EVENT__NAME, EVENT_NOT_ALLOWED_FOR_VO)
-
-				}
-			}
+		if (!event.isChildOfAbstractEntity) {
+			error("Events are only allowed within entity methods", event,
+				DomainDrivenDesignDslPackage.Literals::EVENT__NAME, EVENT_ONLY_ALLOWED_FOR_ENTITY)
 		}
 
 	}
@@ -113,24 +107,31 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 	def checkForbiddenTypeRefs(Variable variable) {
 
 		if (variable.type instanceof Aggregate) {
-			var Aggregate aggregate = (variable.type as Aggregate);
-			error(
-				"A direct reference to an aggregates is not allowed",
-				variable,
-				DomainDrivenDesignDslPackage.Literals::VARIABLE__TYPE,
-				REF_TO_AGGREGATE_NOT_ALLOWED,
-				aggregate.idType.name
-			)
+			val Aggregate aggregate = (variable.type as Aggregate);
+			val Entity parentEntity = getParent(Entity, variable)
+			if ((parentEntity == null) || (aggregate != parentEntity.root)) {
+				error(
+					MSG_DIRECT_REF_AGGREGATE,
+					variable,
+					DomainDrivenDesignDslPackage.Literals::VARIABLE__TYPE,
+					REF_TO_AGGREGATE_NOT_ALLOWED,
+					aggregate.idType.name
+				)
+			}
 		}
-		if ((variable.type instanceof Entity) && (variable.eContainer.eContainer instanceof Service)) {
-			var Entity entity = (variable.type as Entity);
-			error(
-				"A direct reference to an entity is not allowed in a service",
-				variable,
-				DomainDrivenDesignDslPackage.Literals::VARIABLE__TYPE,
-				REF_TO_ENTITY_NOT_ALLOWED,
-				entity.idType.name
-			)
+
+		if (variable.type instanceof Entity) {
+			val Entity entity = (variable.type as Entity);
+			val Aggregate aggregateOfVariable = getAggregate(variable)
+			if ((aggregateOfVariable == null) || (aggregateOfVariable != entity.root)) {
+				error(
+					MSG_DIRECT_REF_ENTITY,
+					variable,
+					DomainDrivenDesignDslPackage.Literals::VARIABLE__TYPE,
+					REF_TO_ENTITY_NOT_ALLOWED,
+					entity.idType.name
+				)
+			}
 		}
 
 	}
@@ -139,40 +140,35 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 	def checkNoRefToAggregate(Method method) {
 
 		if (method.returnType.type instanceof Aggregate) {
-			var Aggregate aggregate = (method.returnType.type as Aggregate);
-			error(
-				"A direct reference to an aggregates is not allowed in a method",
-				method,
-				DomainDrivenDesignDslPackage.Literals::METHOD__RETURN_TYPE,
-				REF_TO_AGGREGATE_NOT_ALLOWED,
-				aggregate.idType.name
-			)
-		}
-
-	}
-
-	@Check
-	def checkNoRefToEntity(ValueObject vo) {
-
-		for (v : vo.variables) {
-			if (v.type instanceof AbstractEntity) {
-				var String idTypeName;
-				if (v.type instanceof Entity) {
-					idTypeName = (v.type as Entity).idType.name
-				} else {
-
-					// Aggregate
-					idTypeName = (v.type as Aggregate).idType.name
-				}
+			
+			val Aggregate aggregate = (method.returnType.type as Aggregate);
+			val Entity parentEntity = getParent(Entity, method)
+			if ((parentEntity == null) || (aggregate != parentEntity.root)) {
 				error(
-					"A reference from a value object to an entity is not allowed",
-					v,
-					DomainDrivenDesignDslPackage.Literals::VARIABLE__TYPE,
-					VO_CANNOT_REF_ENTITY,
-					idTypeName
+					MSG_DIRECT_REF_AGGREGATE,
+					method,
+					DomainDrivenDesignDslPackage.Literals::METHOD__RETURN_TYPE,
+					REF_TO_AGGREGATE_NOT_ALLOWED,
+					aggregate.idType.name
 				)
 			}
+			
+		} else if (method.returnType.type instanceof Entity) {
+			
+			val Entity entity = (method.returnType.type as Entity);
+			val Entity parentEntity = getParent(Entity, method)
+			if ((parentEntity == null) || (entity.root != parentEntity.root)) {
+				error(
+					MSG_DIRECT_REF_ENTITY,
+					method,
+					DomainDrivenDesignDslPackage.Literals::METHOD__RETURN_TYPE,
+					REF_TO_ENTITY_NOT_ALLOWED,
+					entity.idType.name
+				)
+			}
+			
 		}
+
 	}
 
 	@Check
@@ -241,21 +237,21 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 		return list
 	}
 
-	private def EObject getRoot(EObject obj) {
+	private static def EObject getRoot(EObject obj) {
 		if (obj.eContainer == null) {
 			return obj
 		}
 		return getRoot(obj.eContainer)
 	}
 
-	private def Context getContext(EObject obj) {
+	private static def Context getContext(EObject obj) {
 		if (obj instanceof Context) {
 			return obj
 		}
 		return getContext(obj.eContainer)
 	}
 
-	private def String findUnknownVar(Set<String> vars, String msg) {
+	private static def String findUnknownVar(Set<String> vars, String msg) {
 		var int end = -1;
 		var int from = 0;
 		var int start = -1;
@@ -276,7 +272,7 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 		return null
 	}
 
-	private def Set<String> allVariables(Event event) {
+	private static def Set<String> allVariables(Event event) {
 		var Set<String> vars = new HashSet<String>();
 		if (event.variables != null) {
 			for (v : event.variables) {
@@ -286,7 +282,7 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 		return vars;
 	}
 
-	private def Set<String> allVariables(Exception ex) {
+	private static def Set<String> allVariables(Exception ex) {
 		var Set<String> vars = new HashSet<String>();
 		if (ex.variables != null) {
 			for (v : ex.variables) {
@@ -296,7 +292,7 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 		return vars;
 	}
 
-	private def Set<String> allVariables(Constraint constraint) {
+	private static def Set<String> allVariables(Constraint constraint) {
 		var Set<String> vars = new HashSet<String>();
 		if (constraint.variables != null) {
 			for (v : constraint.variables) {
@@ -315,6 +311,53 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 			}
 		}
 		return vars;
+	}
+
+	/**
+	 * Returns the aggregate an object belongs to. All objects directly defined inside 
+	 * an aggregate will be found and also entities that belong to the aggregate.
+	 * 
+	 * @param obj Object to return the aggregate for.
+	 * 
+	 * @return Aggregate or null if the object does not belong to an aggregate.
+	 */
+	private def static Aggregate getAggregate(EObject obj) {
+		val AbstractEntity ae = getParent(AbstractEntity, obj)
+		if (ae instanceof Aggregate) {
+			return ae as Aggregate
+		}
+		if (ae instanceof Entity) {
+			return (ae as Entity).root
+		}
+		return null
+	}
+
+	/**
+	 * Returns the information if an object is defined inside an abstract entity.
+	 * 
+	 * @param obj Object to verify.
+	 * 
+	 * @return TRUE if the object is part of an Aggregate or Entity.
+	 */
+	private def static boolean isChildOfAbstractEntity(EObject obj) {
+		return getParent(AbstractEntity, obj) != null
+	}
+
+	/**
+	 * Returns the first parent with a given type for an object.
+	 * 
+	 * @param obj Object to return the parent for.
+	 * 
+	 * @return Parent or null if the object is not inside the requested type.
+	 */
+	private def static <T> T getParent(Class<T> clasz, EObject obj) {
+		if (obj == null) {
+			return null
+		}
+		if (clasz.isAssignableFrom(obj.class)) {
+			return (obj as T)
+		}
+		return getParent(clasz, obj.eContainer)
 	}
 
 }

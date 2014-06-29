@@ -1914,7 +1914,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SERVICE__NAME = ABSTRACT_ELEMENT__NAME;
+  int SERVICE__NAME = TYPE__NAME;
 
   /**
    * The feature id for the '<em><b>Doc</b></em>' attribute.
@@ -1923,7 +1923,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SERVICE__DOC = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
+  int SERVICE__DOC = TYPE_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Methods</b></em>' containment reference list.
@@ -1932,7 +1932,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SERVICE__METHODS = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
+  int SERVICE__METHODS = TYPE_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Service</em>' class.
@@ -1941,7 +1941,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SERVICE_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 2;
+  int SERVICE_FEATURE_COUNT = TYPE_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.LiteralImpl <em>Literal</em>}' class.

@@ -35,7 +35,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Service;
  *
  * @generated
  */
-public class ServiceImpl extends AbstractElementImpl implements Service
+public class ServiceImpl extends TypeImpl implements Service
 {
   /**
    * The default value of the '{@link #getDoc() <em>Doc</em>}' attribute.

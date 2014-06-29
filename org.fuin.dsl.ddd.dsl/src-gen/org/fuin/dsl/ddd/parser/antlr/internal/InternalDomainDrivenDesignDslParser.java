@@ -803,7 +803,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "ruleAbstractElement"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:332:1: ruleAbstractElement returns [EObject current=null] : (this_Constraint_0= ruleConstraint | this_Type_1= ruleType | this_Service_2= ruleService | this_Exception_3= ruleException ) ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:332:1: ruleAbstractElement returns [EObject current=null] : (this_Constraint_0= ruleConstraint | this_Type_1= ruleType | this_Exception_2= ruleException ) ;
     public final EObject ruleAbstractElement() throws RecognitionException {
         EObject current = null;
 
@@ -811,19 +811,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
         EObject this_Type_1 = null;
 
-        EObject this_Service_2 = null;
-
-        EObject this_Exception_3 = null;
+        EObject this_Exception_2 = null;
 
 
          enterRule(); 
             
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:335:28: ( (this_Constraint_0= ruleConstraint | this_Type_1= ruleType | this_Service_2= ruleService | this_Exception_3= ruleException ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:336:1: (this_Constraint_0= ruleConstraint | this_Type_1= ruleType | this_Service_2= ruleService | this_Exception_3= ruleException )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:335:28: ( (this_Constraint_0= ruleConstraint | this_Type_1= ruleType | this_Exception_2= ruleException ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:336:1: (this_Constraint_0= ruleConstraint | this_Type_1= ruleType | this_Exception_2= ruleException )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:336:1: (this_Constraint_0= ruleConstraint | this_Type_1= ruleType | this_Service_2= ruleService | this_Exception_3= ruleException )
-            int alt6=4;
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:336:1: (this_Constraint_0= ruleConstraint | this_Type_1= ruleType | this_Exception_2= ruleException )
+            int alt6=3;
             switch ( input.LA(1) ) {
             case RULE_DOC:
                 {
@@ -834,23 +832,19 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                 case 29:
                 case 34:
                 case 37:
+                case 52:
                     {
                     alt6=2;
                     }
                     break;
                 case 21:
                     {
-                    alt6=4;
+                    alt6=3;
                     }
                     break;
                 case 19:
                     {
                     alt6=1;
-                    }
-                    break;
-                case 52:
-                    {
-                    alt6=3;
                     }
                     break;
                 default:
@@ -874,18 +868,14 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
             case 29:
             case 34:
             case 37:
+            case 52:
                 {
                 alt6=2;
                 }
                 break;
-            case 52:
-                {
-                alt6=3;
-                }
-                break;
             case 21:
                 {
-                alt6=4;
+                alt6=3;
                 }
                 break;
             default:
@@ -933,36 +923,18 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                     }
                     break;
                 case 3 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:357:5: this_Service_2= ruleService
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:357:5: this_Exception_2= ruleException
                     {
                      
-                            newCompositeNode(grammarAccess.getAbstractElementAccess().getServiceParserRuleCall_2()); 
+                            newCompositeNode(grammarAccess.getAbstractElementAccess().getExceptionParserRuleCall_2()); 
                         
-                    pushFollow(FOLLOW_ruleService_in_ruleAbstractElement728);
-                    this_Service_2=ruleService();
+                    pushFollow(FOLLOW_ruleException_in_ruleAbstractElement728);
+                    this_Exception_2=ruleException();
 
                     state._fsp--;
 
                      
-                            current = this_Service_2; 
-                            afterParserOrEnumRuleCall();
-                        
-
-                    }
-                    break;
-                case 4 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:367:5: this_Exception_3= ruleException
-                    {
-                     
-                            newCompositeNode(grammarAccess.getAbstractElementAccess().getExceptionParserRuleCall_3()); 
-                        
-                    pushFollow(FOLLOW_ruleException_in_ruleAbstractElement755);
-                    this_Exception_3=ruleException();
-
-                    state._fsp--;
-
-                     
-                            current = this_Exception_3; 
+                            current = this_Exception_2; 
                             afterParserOrEnumRuleCall();
                         
 
@@ -989,7 +961,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "entryRuleType"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:383:1: entryRuleType returns [EObject current=null] : iv_ruleType= ruleType EOF ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:373:1: entryRuleType returns [EObject current=null] : iv_ruleType= ruleType EOF ;
     public final EObject entryRuleType() throws RecognitionException {
         EObject current = null;
 
@@ -997,17 +969,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:384:2: (iv_ruleType= ruleType EOF )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:385:2: iv_ruleType= ruleType EOF
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:374:2: (iv_ruleType= ruleType EOF )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:375:2: iv_ruleType= ruleType EOF
             {
              newCompositeNode(grammarAccess.getTypeRule()); 
-            pushFollow(FOLLOW_ruleType_in_entryRuleType790);
+            pushFollow(FOLLOW_ruleType_in_entryRuleType763);
             iv_ruleType=ruleType();
 
             state._fsp--;
 
              current =iv_ruleType; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleType800); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleType773); 
 
             }
 
@@ -1025,7 +997,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "ruleType"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:392:1: ruleType returns [EObject current=null] : (this_ExternalType_0= ruleExternalType | this_InternalType_1= ruleInternalType ) ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:382:1: ruleType returns [EObject current=null] : (this_ExternalType_0= ruleExternalType | this_InternalType_1= ruleInternalType | this_Service_2= ruleService ) ;
     public final EObject ruleType() throws RecognitionException {
         EObject current = null;
 
@@ -1033,37 +1005,71 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
         EObject this_InternalType_1 = null;
 
+        EObject this_Service_2 = null;
+
 
          enterRule(); 
             
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:395:28: ( (this_ExternalType_0= ruleExternalType | this_InternalType_1= ruleInternalType ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:396:1: (this_ExternalType_0= ruleExternalType | this_InternalType_1= ruleInternalType )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:385:28: ( (this_ExternalType_0= ruleExternalType | this_InternalType_1= ruleInternalType | this_Service_2= ruleService ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:386:1: (this_ExternalType_0= ruleExternalType | this_InternalType_1= ruleInternalType | this_Service_2= ruleService )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:396:1: (this_ExternalType_0= ruleExternalType | this_InternalType_1= ruleInternalType )
-            int alt7=2;
-            int LA7_0 = input.LA(1);
-
-            if ( (LA7_0==18) ) {
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:386:1: (this_ExternalType_0= ruleExternalType | this_InternalType_1= ruleInternalType | this_Service_2= ruleService )
+            int alt7=3;
+            switch ( input.LA(1) ) {
+            case 18:
+                {
                 alt7=1;
-            }
-            else if ( (LA7_0==RULE_DOC||LA7_0==24||LA7_0==26||(LA7_0>=28 && LA7_0<=29)||LA7_0==34||LA7_0==37) ) {
+                }
+                break;
+            case RULE_DOC:
+                {
+                int LA7_2 = input.LA(2);
+
+                if ( (LA7_2==24||LA7_2==26||(LA7_2>=28 && LA7_2<=29)||LA7_2==34||LA7_2==37) ) {
+                    alt7=2;
+                }
+                else if ( (LA7_2==52) ) {
+                    alt7=3;
+                }
+                else {
+                    NoViableAltException nvae =
+                        new NoViableAltException("", 7, 2, input);
+
+                    throw nvae;
+                }
+                }
+                break;
+            case 24:
+            case 26:
+            case 28:
+            case 29:
+            case 34:
+            case 37:
+                {
                 alt7=2;
-            }
-            else {
+                }
+                break;
+            case 52:
+                {
+                alt7=3;
+                }
+                break;
+            default:
                 NoViableAltException nvae =
                     new NoViableAltException("", 7, 0, input);
 
                 throw nvae;
             }
+
             switch (alt7) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:397:5: this_ExternalType_0= ruleExternalType
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:387:5: this_ExternalType_0= ruleExternalType
                     {
                      
                             newCompositeNode(grammarAccess.getTypeAccess().getExternalTypeParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleExternalType_in_ruleType847);
+                    pushFollow(FOLLOW_ruleExternalType_in_ruleType820);
                     this_ExternalType_0=ruleExternalType();
 
                     state._fsp--;
@@ -1076,18 +1082,36 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                     }
                     break;
                 case 2 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:407:5: this_InternalType_1= ruleInternalType
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:397:5: this_InternalType_1= ruleInternalType
                     {
                      
                             newCompositeNode(grammarAccess.getTypeAccess().getInternalTypeParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleInternalType_in_ruleType874);
+                    pushFollow(FOLLOW_ruleInternalType_in_ruleType847);
                     this_InternalType_1=ruleInternalType();
 
                     state._fsp--;
 
                      
                             current = this_InternalType_1; 
+                            afterParserOrEnumRuleCall();
+                        
+
+                    }
+                    break;
+                case 3 :
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:407:5: this_Service_2= ruleService
+                    {
+                     
+                            newCompositeNode(grammarAccess.getTypeAccess().getServiceParserRuleCall_2()); 
+                        
+                    pushFollow(FOLLOW_ruleService_in_ruleType874);
+                    this_Service_2=ruleService();
+
+                    state._fsp--;
+
+                     
+                            current = this_Service_2; 
                             afterParserOrEnumRuleCall();
                         
 
@@ -9138,12 +9162,12 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
     public static final BitSet FOLLOW_EOF_in_entryRuleAbstractElement627 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleConstraint_in_ruleAbstractElement674 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleType_in_ruleAbstractElement701 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleService_in_ruleAbstractElement728 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleException_in_ruleAbstractElement755 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleType_in_entryRuleType790 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleType800 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExternalType_in_ruleType847 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInternalType_in_ruleType874 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleException_in_ruleAbstractElement728 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleType_in_entryRuleType763 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleType773 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExternalType_in_ruleType820 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInternalType_in_ruleType847 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleService_in_ruleType874 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleInternalType_in_entryRuleInternalType909 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleInternalType919 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAbstractVO_in_ruleInternalType966 = new BitSet(new long[]{0x0000000000000002L});

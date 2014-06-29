@@ -52,20 +52,7 @@ class DomainDrivenDesignDslQuickfixProvider extends DefaultQuickfixProvider {
 				
 	}
 		
-	@Fix(DomainDrivenDesignDslValidator::VO_CANNOT_REF_ENTITY)
-	def changeAbstractEntityToId(Issue issue, IssueResolutionAcceptor acceptor) {
-		
-		val String idType = issue.data.get(0);
-		
-		acceptor.accept(issue, 'Change to entity ID', null, null) [
-			context |
-			val xtextDocument = context.xtextDocument
-			xtextDocument.replace(issue.offset, issue.length, idType)
-		]
-				
-	}	
-
-		@Fix(DomainDrivenDesignDslValidator::EXCEPTION_DUPLICATE_CID)
+	@Fix(DomainDrivenDesignDslValidator::EXCEPTION_DUPLICATE_CID)
 	def changeExceptionUidToHighest(Issue issue, IssueResolutionAcceptor acceptor) {
 		
 		val String nextId = issue.data.get(0);

@@ -1201,15 +1201,9 @@ rule__AbstractElement__Alternatives
 )
 
     |(
-{ before(grammarAccess.getAbstractElementAccess().getServiceParserRuleCall_2()); }
-	ruleService
-{ after(grammarAccess.getAbstractElementAccess().getServiceParserRuleCall_2()); }
-)
-
-    |(
-{ before(grammarAccess.getAbstractElementAccess().getExceptionParserRuleCall_3()); }
+{ before(grammarAccess.getAbstractElementAccess().getExceptionParserRuleCall_2()); }
 	ruleException
-{ after(grammarAccess.getAbstractElementAccess().getExceptionParserRuleCall_3()); }
+{ after(grammarAccess.getAbstractElementAccess().getExceptionParserRuleCall_2()); }
 )
 
 ;
@@ -1232,6 +1226,12 @@ rule__Type__Alternatives
 { before(grammarAccess.getTypeAccess().getInternalTypeParserRuleCall_1()); }
 	ruleInternalType
 { after(grammarAccess.getTypeAccess().getInternalTypeParserRuleCall_1()); }
+)
+
+    |(
+{ before(grammarAccess.getTypeAccess().getServiceParserRuleCall_2()); }
+	ruleService
+{ after(grammarAccess.getTypeAccess().getServiceParserRuleCall_2()); }
 )
 
 ;

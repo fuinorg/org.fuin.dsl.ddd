@@ -230,7 +230,8 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 				else break;
 			case DomainDrivenDesignDslPackage.SERVICE:
 				if(context == grammarAccess.getAbstractElementRule() ||
-				   context == grammarAccess.getServiceRule()) {
+				   context == grammarAccess.getServiceRule() ||
+				   context == grammarAccess.getTypeRule()) {
 					sequence_Service(context, (Service) semanticObject); 
 					return; 
 				}

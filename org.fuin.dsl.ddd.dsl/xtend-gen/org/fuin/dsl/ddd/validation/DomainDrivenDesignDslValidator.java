@@ -18,7 +18,6 @@ import org.eclipse.xtext.resource.IResourceDescriptions;
 import org.eclipse.xtext.resource.impl.ResourceDescriptionsProvider;
 import org.eclipse.xtext.validation.Check;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntity;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractVO;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
@@ -31,7 +30,6 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Method;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ReturnType;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Service;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Type;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ValueObject;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
@@ -44,9 +42,13 @@ import org.fuin.dsl.ddd.validation.AbstractDomainDrivenDesignDslValidator;
  */
 @SuppressWarnings("all")
 public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValidator {
+  private final static String MSG_DIRECT_REF_AGGREGATE = "A direct reference to an aggregate is only allowed from entities in the same aggregate";
+  
+  private final static String MSG_DIRECT_REF_ENTITY = "A direct reference to an entity is only allowed from entities in the same aggregate";
+  
   public final static String INVALID_VAR_NAME = "invalidVarName";
   
-  public final static String EVENT_NOT_ALLOWED_FOR_VO = "eventNotAllowedForVO";
+  public final static String EVENT_ONLY_ALLOWED_FOR_ENTITY = "eventOnlyAllowedForEntity";
   
   public final static String CONSTRAINT_MSG_UNKNOWN_VAR = "constraintMsgUnknownVar";
   
@@ -55,8 +57,6 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
   public final static String REF_TO_AGGREGATE_NOT_ALLOWED = "refToAggregateNotAllowed";
   
   public final static String REF_TO_ENTITY_NOT_ALLOWED = "refToEntityNotAllowed";
-  
-  public final static String VO_CANNOT_REF_ENTITY = "voCannotRefEntity";
   
   public final static String MISSING_DOC = "missingDOC";
   
@@ -83,26 +83,20 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
   }
   
   @Check
-  public void checkNoEventsInValueObjects(final AbstractVO vo) {
-    EList<Method> _methods = vo.getMethods();
-    for (final Method method : _methods) {
-      EList<Event> _events = method.getEvents();
-      boolean _notEquals = (!Objects.equal(_events, null));
-      if (_notEquals) {
-        EList<Event> _events_1 = method.getEvents();
-        for (final Event event : _events_1) {
-          this.error("Events are only allowed within entity methods", event, 
-            DomainDrivenDesignDslPackage.Literals.EVENT__NAME, DomainDrivenDesignDslValidator.EVENT_NOT_ALLOWED_FOR_VO);
-        }
-      }
+  public void checkEventsOnlyAllowedInEntities(final Event event) {
+    boolean _isChildOfAbstractEntity = DomainDrivenDesignDslValidator.isChildOfAbstractEntity(event);
+    boolean _not = (!_isChildOfAbstractEntity);
+    if (_not) {
+      this.error("Events are only allowed within entity methods", event, 
+        DomainDrivenDesignDslPackage.Literals.EVENT__NAME, DomainDrivenDesignDslValidator.EVENT_ONLY_ALLOWED_FOR_ENTITY);
     }
   }
   
   @Check
   public void checkVariablesInConstraintMessage(final Constraint constraint) {
-    Set<String> _allVariables = this.allVariables(constraint);
+    Set<String> _allVariables = DomainDrivenDesignDslValidator.allVariables(constraint);
     String _message = constraint.getMessage();
-    final String name = this.findUnknownVar(_allVariables, _message);
+    final String name = DomainDrivenDesignDslValidator.findUnknownVar(_allVariables, _message);
     boolean _notEquals = (!Objects.equal(name, null));
     if (_notEquals) {
       this.error(
@@ -114,9 +108,9 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
   
   @Check
   public void checkVariablesInExceptionMessage(final org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception ex) {
-    Set<String> _allVariables = this.allVariables(ex);
+    Set<String> _allVariables = DomainDrivenDesignDslValidator.allVariables(ex);
     String _message = ex.getMessage();
-    final String name = this.findUnknownVar(_allVariables, _message);
+    final String name = DomainDrivenDesignDslValidator.findUnknownVar(_allVariables, _message);
     boolean _notEquals = (!Objects.equal(name, null));
     if (_notEquals) {
       this.error(
@@ -131,32 +125,48 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
     Type _type = variable.getType();
     if ((_type instanceof Aggregate)) {
       Type _type_1 = variable.getType();
-      Aggregate aggregate = ((Aggregate) _type_1);
-      AggregateId _idType = aggregate.getIdType();
-      String _name = _idType.getName();
-      this.error(
-        "A direct reference to an aggregates is not allowed", variable, 
-        DomainDrivenDesignDslPackage.Literals.VARIABLE__TYPE, 
-        DomainDrivenDesignDslValidator.REF_TO_AGGREGATE_NOT_ALLOWED, _name);
+      final Aggregate aggregate = ((Aggregate) _type_1);
+      final Entity parentEntity = DomainDrivenDesignDslValidator.<Entity>getParent(Entity.class, variable);
+      boolean _or = false;
+      boolean _equals = Objects.equal(parentEntity, null);
+      if (_equals) {
+        _or = true;
+      } else {
+        Aggregate _root = parentEntity.getRoot();
+        boolean _notEquals = (!Objects.equal(aggregate, _root));
+        _or = _notEquals;
+      }
+      if (_or) {
+        AggregateId _idType = aggregate.getIdType();
+        String _name = _idType.getName();
+        this.error(
+          DomainDrivenDesignDslValidator.MSG_DIRECT_REF_AGGREGATE, variable, 
+          DomainDrivenDesignDslPackage.Literals.VARIABLE__TYPE, 
+          DomainDrivenDesignDslValidator.REF_TO_AGGREGATE_NOT_ALLOWED, _name);
+      }
     }
-    boolean _and = false;
     Type _type_2 = variable.getType();
-    if (!(_type_2 instanceof Entity)) {
-      _and = false;
-    } else {
-      EObject _eContainer = variable.eContainer();
-      EObject _eContainer_1 = _eContainer.eContainer();
-      _and = (_eContainer_1 instanceof Service);
-    }
-    if (_and) {
+    if ((_type_2 instanceof Entity)) {
       Type _type_3 = variable.getType();
-      Entity entity = ((Entity) _type_3);
-      EntityId _idType_1 = entity.getIdType();
-      String _name_1 = _idType_1.getName();
-      this.error(
-        "A direct reference to an entity is not allowed in a service", variable, 
-        DomainDrivenDesignDslPackage.Literals.VARIABLE__TYPE, 
-        DomainDrivenDesignDslValidator.REF_TO_ENTITY_NOT_ALLOWED, _name_1);
+      final Entity entity = ((Entity) _type_3);
+      final Aggregate aggregateOfVariable = DomainDrivenDesignDslValidator.getAggregate(variable);
+      boolean _or_1 = false;
+      boolean _equals_1 = Objects.equal(aggregateOfVariable, null);
+      if (_equals_1) {
+        _or_1 = true;
+      } else {
+        Aggregate _root_1 = entity.getRoot();
+        boolean _notEquals_1 = (!Objects.equal(aggregateOfVariable, _root_1));
+        _or_1 = _notEquals_1;
+      }
+      if (_or_1) {
+        EntityId _idType_1 = entity.getIdType();
+        String _name_1 = _idType_1.getName();
+        this.error(
+          DomainDrivenDesignDslValidator.MSG_DIRECT_REF_ENTITY, variable, 
+          DomainDrivenDesignDslPackage.Literals.VARIABLE__TYPE, 
+          DomainDrivenDesignDslValidator.REF_TO_ENTITY_NOT_ALLOWED, _name_1);
+      }
     }
   }
   
@@ -167,39 +177,51 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
     if ((_type instanceof Aggregate)) {
       ReturnType _returnType_1 = method.getReturnType();
       Type _type_1 = _returnType_1.getType();
-      Aggregate aggregate = ((Aggregate) _type_1);
-      AggregateId _idType = aggregate.getIdType();
-      String _name = _idType.getName();
-      this.error(
-        "A direct reference to an aggregates is not allowed in a method", method, 
-        DomainDrivenDesignDslPackage.Literals.METHOD__RETURN_TYPE, 
-        DomainDrivenDesignDslValidator.REF_TO_AGGREGATE_NOT_ALLOWED, _name);
-    }
-  }
-  
-  @Check
-  public void checkNoRefToEntity(final ValueObject vo) {
-    EList<Variable> _variables = vo.getVariables();
-    for (final Variable v : _variables) {
-      Type _type = v.getType();
-      if ((_type instanceof AbstractEntity)) {
-        String idTypeName = null;
-        Type _type_1 = v.getType();
-        if ((_type_1 instanceof Entity)) {
-          Type _type_2 = v.getType();
-          EntityId _idType = ((Entity) _type_2).getIdType();
-          String _name = _idType.getName();
-          idTypeName = _name;
-        } else {
-          Type _type_3 = v.getType();
-          AggregateId _idType_1 = ((Aggregate) _type_3).getIdType();
-          String _name_1 = _idType_1.getName();
-          idTypeName = _name_1;
-        }
+      final Aggregate aggregate = ((Aggregate) _type_1);
+      final Entity parentEntity = DomainDrivenDesignDslValidator.<Entity>getParent(Entity.class, method);
+      boolean _or = false;
+      boolean _equals = Objects.equal(parentEntity, null);
+      if (_equals) {
+        _or = true;
+      } else {
+        Aggregate _root = parentEntity.getRoot();
+        boolean _notEquals = (!Objects.equal(aggregate, _root));
+        _or = _notEquals;
+      }
+      if (_or) {
+        AggregateId _idType = aggregate.getIdType();
+        String _name = _idType.getName();
         this.error(
-          "A reference from a value object to an entity is not allowed", v, 
-          DomainDrivenDesignDslPackage.Literals.VARIABLE__TYPE, 
-          DomainDrivenDesignDslValidator.VO_CANNOT_REF_ENTITY, idTypeName);
+          DomainDrivenDesignDslValidator.MSG_DIRECT_REF_AGGREGATE, method, 
+          DomainDrivenDesignDslPackage.Literals.METHOD__RETURN_TYPE, 
+          DomainDrivenDesignDslValidator.REF_TO_AGGREGATE_NOT_ALLOWED, _name);
+      }
+    } else {
+      ReturnType _returnType_2 = method.getReturnType();
+      Type _type_2 = _returnType_2.getType();
+      if ((_type_2 instanceof Entity)) {
+        ReturnType _returnType_3 = method.getReturnType();
+        Type _type_3 = _returnType_3.getType();
+        final Entity entity = ((Entity) _type_3);
+        final Entity parentEntity_1 = DomainDrivenDesignDslValidator.<Entity>getParent(Entity.class, method);
+        boolean _or_1 = false;
+        boolean _equals_1 = Objects.equal(parentEntity_1, null);
+        if (_equals_1) {
+          _or_1 = true;
+        } else {
+          Aggregate _root_1 = entity.getRoot();
+          Aggregate _root_2 = parentEntity_1.getRoot();
+          boolean _notEquals_1 = (!Objects.equal(_root_1, _root_2));
+          _or_1 = _notEquals_1;
+        }
+        if (_or_1) {
+          EntityId _idType_1 = entity.getIdType();
+          String _name_1 = _idType_1.getName();
+          this.error(
+            DomainDrivenDesignDslValidator.MSG_DIRECT_REF_ENTITY, method, 
+            DomainDrivenDesignDslPackage.Literals.METHOD__RETURN_TYPE, 
+            DomainDrivenDesignDslValidator.REF_TO_ENTITY_NOT_ALLOWED, _name_1);
+        }
       }
     }
   }
@@ -209,9 +231,9 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
     String _message = event.getMessage();
     boolean _notEquals = (!Objects.equal(_message, null));
     if (_notEquals) {
-      Set<String> _allVariables = this.allVariables(event);
+      Set<String> _allVariables = DomainDrivenDesignDslValidator.allVariables(event);
       String _message_1 = event.getMessage();
-      final String name = this.findUnknownVar(_allVariables, _message_1);
+      final String name = DomainDrivenDesignDslValidator.findUnknownVar(_allVariables, _message_1);
       boolean _notEquals_1 = (!Objects.equal(name, null));
       if (_notEquals_1) {
         this.error(
@@ -240,9 +262,9 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
         if (!_greaterThan) {
           _and = false;
         } else {
-          Context _context = this.getContext(ex);
+          Context _context = DomainDrivenDesignDslValidator.getContext(ex);
           String _name = _context.getName();
-          Context _context_1 = this.getContext(other);
+          Context _context_1 = DomainDrivenDesignDslValidator.getContext(other);
           String _name_1 = _context_1.getName();
           boolean _equals = _name.equals(_name_1);
           _and = _equals;
@@ -280,9 +302,9 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
         if (!_and_2) {
           _and_1 = false;
         } else {
-          Context _context_2 = this.getContext(ex);
+          Context _context_2 = DomainDrivenDesignDslValidator.getContext(ex);
           String _name_2 = _context_2.getName();
-          Context _context_3 = this.getContext(other);
+          Context _context_3 = DomainDrivenDesignDslValidator.getContext(other);
           String _name_3 = _context_3.getName();
           boolean _equals_3 = _name_2.equals(_name_3);
           _and_1 = _equals_3;
@@ -328,25 +350,25 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
     return list;
   }
   
-  private EObject getRoot(final EObject obj) {
+  private static EObject getRoot(final EObject obj) {
     EObject _eContainer = obj.eContainer();
     boolean _equals = Objects.equal(_eContainer, null);
     if (_equals) {
       return obj;
     }
     EObject _eContainer_1 = obj.eContainer();
-    return this.getRoot(_eContainer_1);
+    return DomainDrivenDesignDslValidator.getRoot(_eContainer_1);
   }
   
-  private Context getContext(final EObject obj) {
+  private static Context getContext(final EObject obj) {
     if ((obj instanceof Context)) {
       return ((Context)obj);
     }
     EObject _eContainer = obj.eContainer();
-    return this.getContext(_eContainer);
+    return DomainDrivenDesignDslValidator.getContext(_eContainer);
   }
   
-  private String findUnknownVar(final Set<String> vars, final String msg) {
+  private static String findUnknownVar(final Set<String> vars, final String msg) {
     int end = (-1);
     int from = 0;
     int start = (-1);
@@ -387,7 +409,7 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
     return null;
   }
   
-  private Set<String> allVariables(final Event event) {
+  private static Set<String> allVariables(final Event event) {
     Set<String> vars = new HashSet<String>();
     EList<Variable> _variables = event.getVariables();
     boolean _notEquals = (!Objects.equal(_variables, null));
@@ -401,7 +423,7 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
     return vars;
   }
   
-  private Set<String> allVariables(final org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception ex) {
+  private static Set<String> allVariables(final org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception ex) {
     Set<String> vars = new HashSet<String>();
     EList<Variable> _variables = ex.getVariables();
     boolean _notEquals = (!Objects.equal(_variables, null));
@@ -415,7 +437,7 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
     return vars;
   }
   
-  private Set<String> allVariables(final Constraint constraint) {
+  private static Set<String> allVariables(final Constraint constraint) {
     Set<String> vars = new HashSet<String>();
     EList<Variable> _variables = constraint.getVariables();
     boolean _notEquals = (!Objects.equal(_variables, null));
@@ -445,5 +467,57 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
       }
     }
     return vars;
+  }
+  
+  /**
+   * Returns the aggregate an object belongs to. All objects directly defined inside
+   * an aggregate will be found and also entities that belong to the aggregate.
+   * 
+   * @param obj Object to return the aggregate for.
+   * 
+   * @return Aggregate or null if the object does not belong to an aggregate.
+   */
+  private static Aggregate getAggregate(final EObject obj) {
+    final AbstractEntity ae = DomainDrivenDesignDslValidator.<AbstractEntity>getParent(AbstractEntity.class, obj);
+    if ((ae instanceof Aggregate)) {
+      return ((Aggregate) ae);
+    }
+    if ((ae instanceof Entity)) {
+      return ((Entity) ae).getRoot();
+    }
+    return null;
+  }
+  
+  /**
+   * Returns the information if an object is defined inside an abstract entity.
+   * 
+   * @param obj Object to verify.
+   * 
+   * @return TRUE if the object is part of an Aggregate or Entity.
+   */
+  private static boolean isChildOfAbstractEntity(final EObject obj) {
+    AbstractEntity _parent = DomainDrivenDesignDslValidator.<AbstractEntity>getParent(AbstractEntity.class, obj);
+    return (!Objects.equal(_parent, null));
+  }
+  
+  /**
+   * Returns the first parent with a given type for an object.
+   * 
+   * @param obj Object to return the parent for.
+   * 
+   * @return Parent or null if the object is not inside the requested type.
+   */
+  private static <T extends Object> T getParent(final Class<T> clasz, final EObject obj) {
+    boolean _equals = Objects.equal(obj, null);
+    if (_equals) {
+      return null;
+    }
+    Class<? extends EObject> _class = obj.getClass();
+    boolean _isAssignableFrom = clasz.isAssignableFrom(_class);
+    if (_isAssignableFrom) {
+      return ((T) obj);
+    }
+    EObject _eContainer = obj.eContainer();
+    return DomainDrivenDesignDslValidator.<T>getParent(clasz, _eContainer);
   }
 }

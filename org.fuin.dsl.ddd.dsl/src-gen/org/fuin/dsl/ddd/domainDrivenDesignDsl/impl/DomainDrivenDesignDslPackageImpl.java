@@ -1657,7 +1657,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     aggregateEClass.getESuperTypes().add(this.getAbstractEntity());
     constructorEClass.getESuperTypes().add(this.getAbstractMethod());
     methodEClass.getESuperTypes().add(this.getAbstractMethod());
-    serviceEClass.getESuperTypes().add(this.getAbstractElement());
+    serviceEClass.getESuperTypes().add(this.getType());
     booleanLiteralEClass.getESuperTypes().add(this.getLiteral());
     nullLiteralEClass.getESuperTypes().add(this.getLiteral());
     numberLiteralEClass.getESuperTypes().add(this.getLiteral());
