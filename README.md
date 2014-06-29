@@ -5,9 +5,14 @@ Xtext based DSL supporting Domain-driven design (DDD)
 
 Examples
 --------
+Context, Namespace, External Types
 [![Context, Namespace, External Types](https://raw.github.com/fuinorg/org.fuin.dsl.ddd/master/doc/context-namespace-example.jpg)]
+
+Value Object
 [![Value Object](https://raw.github.com/fuinorg/org.fuin.dsl.ddd/master/doc/value-object-example.jpg)]
-[![Aggregate](https://raw.github.com/fuinorg/org.fuin.dsl.ddd/master/doc/aggregate-example.jpg)]
+
+Aggregate
+![Aggregate](https://raw.github.com/fuinorg/org.fuin.dsl.ddd/master/doc/aggregate-example.jpg)
 
 Presentation
 ------------
