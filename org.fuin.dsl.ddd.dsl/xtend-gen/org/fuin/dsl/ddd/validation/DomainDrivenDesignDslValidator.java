@@ -17,6 +17,7 @@ import org.eclipse.xtext.resource.IResourceDescription;
 import org.eclipse.xtext.resource.IResourceDescriptions;
 import org.eclipse.xtext.resource.impl.ResourceDescriptionsProvider;
 import org.eclipse.xtext.validation.Check;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractElement;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntity;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId;
@@ -29,6 +30,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.EntityId;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Method;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Namespace;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ReturnType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Type;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ValueObject;
@@ -360,14 +362,6 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
     return DomainDrivenDesignDslValidator.getRoot(_eContainer_1);
   }
   
-  private static Context getContext(final EObject obj) {
-    if ((obj instanceof Context)) {
-      return ((Context)obj);
-    }
-    EObject _eContainer = obj.eContainer();
-    return DomainDrivenDesignDslValidator.getContext(_eContainer);
-  }
-  
   private static String findUnknownVar(final Set<String> vars, final String msg) {
     int end = (-1);
     int from = 0;
@@ -519,5 +513,107 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
     }
     EObject _eContainer = obj.eContainer();
     return DomainDrivenDesignDslValidator.<T>getParent(clasz, _eContainer);
+  }
+  
+  /**
+   * Returns the namespace for an object.
+   * 
+   * @param obj Object to return the namespace for.
+   * 
+   * @return Namespace or null if the object is not inside one.
+   */
+  private static Namespace getNamespace(final EObject obj) {
+    return DomainDrivenDesignDslValidator.<Namespace>getParent(Namespace.class, obj);
+  }
+  
+  /**
+   * Returns the context for an object.
+   * 
+   * @param obj Object to return the context for.
+   * 
+   * @return Context or null if the object is not inside one.
+   */
+  private static Context getContext(final EObject obj) {
+    return DomainDrivenDesignDslValidator.<Context>getParent(Context.class, obj);
+  }
+  
+  /**
+   * Returns the unique name .
+   * 
+   * @param el Element to return a unique name for.
+   * 
+   * @return Unique name in the context/namespace.
+   */
+  private static String uniqueName(final AbstractElement el) {
+    boolean _equals = Objects.equal(el, null);
+    if (_equals) {
+      throw new IllegalArgumentException("argument \'el\' cannot be null");
+    }
+    Context _context = DomainDrivenDesignDslValidator.getContext(el);
+    boolean _equals_1 = Objects.equal(_context, null);
+    if (_equals_1) {
+      String _path = DomainDrivenDesignDslValidator.getPath(el);
+      String _plus = ("argument \'el.context\' cannot be null: " + _path);
+      throw new IllegalArgumentException(_plus);
+    }
+    Namespace _namespace = DomainDrivenDesignDslValidator.getNamespace(el);
+    boolean _equals_2 = Objects.equal(_namespace, null);
+    if (_equals_2) {
+      String _path_1 = DomainDrivenDesignDslValidator.getPath(el);
+      String _plus_1 = ("argument \'el.namespace\' cannot be null: " + _path_1);
+      throw new IllegalArgumentException(_plus_1);
+    }
+    Context _context_1 = DomainDrivenDesignDslValidator.getContext(el);
+    String _name = _context_1.getName();
+    Namespace _namespace_1 = DomainDrivenDesignDslValidator.getNamespace(el);
+    String _name_1 = _namespace_1.getName();
+    String _name_2 = el.getName();
+    return DomainDrivenDesignDslValidator.separated(".", _name, _name_1, _name_2);
+  }
+  
+  /**
+   * Returns a string containing all tokens separated by a separator string.
+   * 
+   * @param separator Separator to use.
+   * @param tokens Array of tokens, empty array or null.
+   * 
+   * @return Tokens in the same order as in the array separated by the given separator.
+   *         An empty array or null will return an empty string.
+   */
+  private static String separated(final String separator, final String... tokens) {
+    boolean _equals = Objects.equal(tokens, null);
+    if (_equals) {
+      return "";
+    }
+    final StringBuilder sb = new StringBuilder();
+    int count = 0;
+    for (final String token : tokens) {
+      {
+        if ((count > 0)) {
+          sb.append(separator);
+        }
+        sb.append(token);
+        count = (count + 1);
+      }
+    }
+    return sb.toString();
+  }
+  
+  /**
+   * Returns the path in the model to the object.
+   * 
+   * @param obj Object to return the path for.
+   * 
+   * @return Path or empty string if the object is not inside one.
+   */
+  private static String getPath(final EObject obj) {
+    boolean _equals = Objects.equal(obj, null);
+    if (_equals) {
+      return "";
+    }
+    EObject _eContainer = obj.eContainer();
+    String _path = DomainDrivenDesignDslValidator.getPath(_eContainer);
+    String _plus = (_path + "/");
+    return (_plus + obj);
   }
 }

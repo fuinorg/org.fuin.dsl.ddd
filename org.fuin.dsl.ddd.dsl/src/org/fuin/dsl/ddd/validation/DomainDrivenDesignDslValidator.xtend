@@ -10,6 +10,7 @@ import org.eclipse.xtext.resource.IContainer
 import org.eclipse.xtext.resource.IEObjectDescription
 import org.eclipse.xtext.resource.impl.ResourceDescriptionsProvider
 import org.eclipse.xtext.validation.Check
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractElement
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntity
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint
@@ -21,6 +22,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Method
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Namespace
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ValueObject
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable
 
@@ -244,13 +246,6 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 		return getRoot(obj.eContainer)
 	}
 
-	private static def Context getContext(EObject obj) {
-		if (obj instanceof Context) {
-			return obj
-		}
-		return getContext(obj.eContainer)
-	}
-
 	private static def String findUnknownVar(Set<String> vars, String msg) {
 		var int end = -1;
 		var int from = 0;
@@ -358,6 +353,87 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 			return (obj as T)
 		}
 		return getParent(clasz, obj.eContainer)
+	}
+
+	/**
+	 * Returns the namespace for an object.
+	 * 
+	 * @param obj Object to return the namespace for.
+	 * 
+	 * @return Namespace or null if the object is not inside one.
+	 */
+	private def static Namespace getNamespace(EObject obj) {
+		return getParent(Namespace, obj)
+	}
+
+	/**
+	 * Returns the context for an object.
+	 * 
+	 * @param obj Object to return the context for.
+	 * 
+	 * @return Context or null if the object is not inside one.
+	 */
+	private def static Context getContext(EObject obj) {
+		return getParent(Context, obj)
+	}
+
+	/**
+	 * Returns the unique name .
+	 * 
+	 * @param el Element to return a unique name for.
+	 * 
+	 * @return Unique name in the context/namespace.
+	 */
+	private def static String uniqueName(AbstractElement el) {
+		if (el == null) {
+			throw new IllegalArgumentException("argument 'el' cannot be null")
+		}
+		if (el.context == null) {
+			throw new IllegalArgumentException("argument 'el.context' cannot be null: " + el.path)
+		}
+		if (el.namespace == null) {
+			throw new IllegalArgumentException("argument 'el.namespace' cannot be null: " + el.path)
+		}
+		return separated(".", el.context.name, el.namespace.name, el.name)
+	}
+
+	/**
+	 * Returns a string containing all tokens separated by a separator string.
+	 * 
+	 * @param separator Separator to use.
+	 * @param tokens Array of tokens, empty array or null.
+	 * 
+	 * @return Tokens in the same order as in the array separated by the given separator. 
+	 *         An empty array or null will return an empty string. 
+	 */
+	private def static String separated(String separator, String... tokens) {
+		if (tokens == null) {
+			return ""
+		}
+		val StringBuilder sb = new StringBuilder()
+		var int count = 0
+		for (String token : tokens) {
+			if (count > 0) {
+				sb.append(separator)
+			}
+			sb.append(token)
+			count = count + 1
+		}
+		return sb.toString
+	}
+
+	/**
+	 * Returns the path in the model to the object.
+	 * 
+	 * @param obj Object to return the path for.
+	 * 
+	 * @return Path or empty string if the object is not inside one.
+	 */
+	private def static String getPath(EObject obj) {
+		if (obj == null) {
+			return ""
+		}
+		return getPath(obj.eContainer) + "/" + obj
 	}
 
 }
