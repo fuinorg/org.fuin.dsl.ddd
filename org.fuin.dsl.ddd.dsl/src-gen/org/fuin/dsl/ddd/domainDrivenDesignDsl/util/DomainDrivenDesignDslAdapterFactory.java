@@ -207,6 +207,11 @@ public class DomainDrivenDesignDslAdapterFactory extends AdapterFactoryImpl
         return createEnumInstanceAdapter();
       }
       @Override
+      public Adapter caseEvent(Event object)
+      {
+        return createEventAdapter();
+      }
+      @Override
       public Adapter caseEntity(Entity object)
       {
         return createEntityAdapter();
@@ -235,11 +240,6 @@ public class DomainDrivenDesignDslAdapterFactory extends AdapterFactoryImpl
       public Adapter caseMethod(Method object)
       {
         return createMethodAdapter();
-      }
-      @Override
-      public Adapter caseEvent(Event object)
-      {
-        return createEventAdapter();
       }
       @Override
       public Adapter caseTypeMetaInfo(TypeMetaInfo object)
@@ -609,6 +609,21 @@ public class DomainDrivenDesignDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Event <em>Event</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Event
+   * @generated
+   */
+  public Adapter createEventAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity <em>Entity</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -694,21 +709,6 @@ public class DomainDrivenDesignDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createMethodAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Event <em>Event</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Event
-   * @generated
-   */
-  public Adapter createEventAdapter()
   {
     return null;
   }

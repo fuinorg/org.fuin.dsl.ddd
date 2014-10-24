@@ -159,12 +159,13 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final RuleCall cConstraintParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cTypeParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		private final RuleCall cExceptionParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cEventParserRuleCall_3 = (RuleCall)cAlternatives.eContents().get(3);
 		
 		//AbstractElement:
-		//	Constraint | Type | Exception;
+		//	Constraint | Type | Exception | Event;
 		public ParserRule getRule() { return rule; }
 
-		//Constraint | Type | Exception
+		//Constraint | Type | Exception | Event
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//Constraint
@@ -175,6 +176,9 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 
 		//Exception
 		public RuleCall getExceptionParserRuleCall_2() { return cExceptionParserRuleCall_2; }
+
+		//Event
+		public RuleCall getEventParserRuleCall_3() { return cEventParserRuleCall_3; }
 	}
 
 	public class TypeElements extends AbstractParserRuleElementFinder {
@@ -983,6 +987,70 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		public Keyword getRightParenthesisKeyword_2_3() { return cRightParenthesisKeyword_2_3; }
 	}
 
+	public class EventElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Event");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cDocAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cDocDOCTerminalRuleCall_0_0 = (RuleCall)cDocAssignment_0.eContents().get(0);
+		private final Keyword cEventKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		private final Assignment cVariablesAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cVariablesVariableParserRuleCall_4_0 = (RuleCall)cVariablesAssignment_4.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cMessageKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cMessageAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final RuleCall cMessageSTRINGTerminalRuleCall_5_1_0 = (RuleCall)cMessageAssignment_5_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		
+		//Event:
+		//	doc=DOC? "event" name=ID "{" variables+=Variable* ("message" message=STRING)? "}";
+		public ParserRule getRule() { return rule; }
+
+		//doc=DOC? "event" name=ID "{" variables+=Variable* ("message" message=STRING)? "}"
+		public Group getGroup() { return cGroup; }
+
+		//doc=DOC?
+		public Assignment getDocAssignment_0() { return cDocAssignment_0; }
+
+		//DOC
+		public RuleCall getDocDOCTerminalRuleCall_0_0() { return cDocDOCTerminalRuleCall_0_0; }
+
+		//"event"
+		public Keyword getEventKeyword_1() { return cEventKeyword_1; }
+
+		//name=ID
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+
+		//ID
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+
+		//variables+=Variable*
+		public Assignment getVariablesAssignment_4() { return cVariablesAssignment_4; }
+
+		//Variable
+		public RuleCall getVariablesVariableParserRuleCall_4_0() { return cVariablesVariableParserRuleCall_4_0; }
+
+		//("message" message=STRING)?
+		public Group getGroup_5() { return cGroup_5; }
+
+		//"message"
+		public Keyword getMessageKeyword_5_0() { return cMessageKeyword_5_0; }
+
+		//message=STRING
+		public Assignment getMessageAssignment_5_1() { return cMessageAssignment_5_1; }
+
+		//STRING
+		public RuleCall getMessageSTRINGTerminalRuleCall_5_1_0() { return cMessageSTRINGTerminalRuleCall_5_1_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
+	}
+
 	public class EntityElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Entity");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -1008,15 +1076,17 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final RuleCall cConstructorsConstructorParserRuleCall_10_0 = (RuleCall)cConstructorsAssignment_10.eContents().get(0);
 		private final Assignment cMethodsAssignment_11 = (Assignment)cGroup.eContents().get(11);
 		private final RuleCall cMethodsMethodParserRuleCall_11_0 = (RuleCall)cMethodsAssignment_11.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
+		private final Assignment cEventsAssignment_12 = (Assignment)cGroup.eContents().get(12);
+		private final RuleCall cEventsEventParserRuleCall_12_0 = (RuleCall)cEventsAssignment_12.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_13 = (Keyword)cGroup.eContents().get(13);
 		
 		//Entity:
 		//	doc=DOC? "entity" name=ID "identifier" idType=[EntityId] "root" root=[Aggregate] "{" metaInfo=TypeMetaInfo
-		//	variables+=Variable* constructors+=Constructor* methods+=Method* "}";
+		//	variables+=Variable* constructors+=Constructor* methods+=Method* events+=Event* "}";
 		public ParserRule getRule() { return rule; }
 
 		//doc=DOC? "entity" name=ID "identifier" idType=[EntityId] "root" root=[Aggregate] "{" metaInfo=TypeMetaInfo
-		//variables+=Variable* constructors+=Constructor* methods+=Method* "}"
+		//variables+=Variable* constructors+=Constructor* methods+=Method* events+=Event* "}"
 		public Group getGroup() { return cGroup; }
 
 		//doc=DOC?
@@ -1085,8 +1155,14 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		//Method
 		public RuleCall getMethodsMethodParserRuleCall_11_0() { return cMethodsMethodParserRuleCall_11_0; }
 
+		//events+=Event*
+		public Assignment getEventsAssignment_12() { return cEventsAssignment_12; }
+
+		//Event
+		public RuleCall getEventsEventParserRuleCall_12_0() { return cEventsEventParserRuleCall_12_0; }
+
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_12() { return cRightCurlyBracketKeyword_12; }
+		public Keyword getRightCurlyBracketKeyword_13() { return cRightCurlyBracketKeyword_13; }
 	}
 
 	public class AggregateElements extends AbstractParserRuleElementFinder {
@@ -1110,15 +1186,17 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final RuleCall cConstructorsConstructorParserRuleCall_8_0 = (RuleCall)cConstructorsAssignment_8.eContents().get(0);
 		private final Assignment cMethodsAssignment_9 = (Assignment)cGroup.eContents().get(9);
 		private final RuleCall cMethodsMethodParserRuleCall_9_0 = (RuleCall)cMethodsAssignment_9.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
+		private final Assignment cEventsAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final RuleCall cEventsEventParserRuleCall_10_0 = (RuleCall)cEventsAssignment_10.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		
 		//Aggregate:
 		//	doc=DOC? "aggregate" name=ID "identifier" idType=[AggregateId] "{" metaInfo=TypeMetaInfo variables+=Variable*
-		//	constructors+=Constructor* methods+=Method* "}";
+		//	constructors+=Constructor* methods+=Method* events+=Event* "}";
 		public ParserRule getRule() { return rule; }
 
 		//doc=DOC? "aggregate" name=ID "identifier" idType=[AggregateId] "{" metaInfo=TypeMetaInfo variables+=Variable*
-		//constructors+=Constructor* methods+=Method* "}"
+		//constructors+=Constructor* methods+=Method* events+=Event* "}"
 		public Group getGroup() { return cGroup; }
 
 		//doc=DOC?
@@ -1175,8 +1253,14 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		//Method
 		public RuleCall getMethodsMethodParserRuleCall_9_0() { return cMethodsMethodParserRuleCall_9_0; }
 
+		//events+=Event*
+		public Assignment getEventsAssignment_10() { return cEventsAssignment_10; }
+
+		//Event
+		public RuleCall getEventsEventParserRuleCall_10_0() { return cEventsEventParserRuleCall_10_0; }
+
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
+		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
 	}
 
 	public class AbstractMethodElements extends AbstractParserRuleElementFinder {
@@ -1207,24 +1291,33 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final Keyword cConstructorKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cVariablesAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cVariablesVariableParserRuleCall_4_0 = (RuleCall)cVariablesAssignment_4.eContents().get(0);
-		private final Assignment cServiceAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final CrossReference cServiceServiceCrossReference_5_0 = (CrossReference)cServiceAssignment_5.eContents().get(0);
-		private final RuleCall cServiceServiceIDTerminalRuleCall_5_0_1 = (RuleCall)cServiceServiceCrossReference_5_0.eContents().get(1);
-		private final Assignment cConstraintsAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cConstraintsConstraintsParserRuleCall_6_0 = (RuleCall)cConstraintsAssignment_6.eContents().get(0);
-		private final Assignment cEventsAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cEventsEventParserRuleCall_7_0 = (RuleCall)cEventsAssignment_7.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cFiresKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cFiredEventsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final CrossReference cFiredEventsEventCrossReference_3_1_0 = (CrossReference)cFiredEventsAssignment_3_1.eContents().get(0);
+		private final RuleCall cFiredEventsEventIDTerminalRuleCall_3_1_0_1 = (RuleCall)cFiredEventsEventCrossReference_3_1_0.eContents().get(1);
+		private final Group cGroup_3_2 = (Group)cGroup_3.eContents().get(2);
+		private final Keyword cCommaKeyword_3_2_0 = (Keyword)cGroup_3_2.eContents().get(0);
+		private final Assignment cFiredEventsAssignment_3_2_1 = (Assignment)cGroup_3_2.eContents().get(1);
+		private final CrossReference cFiredEventsEventCrossReference_3_2_1_0 = (CrossReference)cFiredEventsAssignment_3_2_1.eContents().get(0);
+		private final RuleCall cFiredEventsEventIDTerminalRuleCall_3_2_1_0_1 = (RuleCall)cFiredEventsEventCrossReference_3_2_1_0.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cVariablesAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cVariablesVariableParserRuleCall_5_0 = (RuleCall)cVariablesAssignment_5.eContents().get(0);
+		private final Assignment cServiceAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final CrossReference cServiceServiceCrossReference_6_0 = (CrossReference)cServiceAssignment_6.eContents().get(0);
+		private final RuleCall cServiceServiceIDTerminalRuleCall_6_0_1 = (RuleCall)cServiceServiceCrossReference_6_0.eContents().get(1);
+		private final Assignment cConstraintsAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cConstraintsConstraintsParserRuleCall_7_0 = (RuleCall)cConstraintsAssignment_7.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//Constructor:
-		//	doc=DOC? "constructor" name=ID "{" variables+=Variable* service=[Service]? constraints=Constraints? events+=Event*
-		//	"}";
+		//	doc=DOC? "constructor" name=ID ("fires" firedEvents+=[Event] ("," firedEvents+=[Event])*)? "{" variables+=Variable*
+		//	service=[Service]? constraints=Constraints? "}";
 		public ParserRule getRule() { return rule; }
 
-		//doc=DOC? "constructor" name=ID "{" variables+=Variable* service=[Service]? constraints=Constraints? events+=Event* "}"
+		//doc=DOC? "constructor" name=ID ("fires" firedEvents+=[Event] ("," firedEvents+=[Event])*)? "{" variables+=Variable*
+		//service=[Service]? constraints=Constraints? "}"
 		public Group getGroup() { return cGroup; }
 
 		//doc=DOC?
@@ -1242,35 +1335,59 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		//("fires" firedEvents+=[Event] ("," firedEvents+=[Event])*)?
+		public Group getGroup_3() { return cGroup_3; }
 
-		//variables+=Variable*
-		public Assignment getVariablesAssignment_4() { return cVariablesAssignment_4; }
+		//"fires"
+		public Keyword getFiresKeyword_3_0() { return cFiresKeyword_3_0; }
 
-		//Variable
-		public RuleCall getVariablesVariableParserRuleCall_4_0() { return cVariablesVariableParserRuleCall_4_0; }
+		//firedEvents+=[Event]
+		public Assignment getFiredEventsAssignment_3_1() { return cFiredEventsAssignment_3_1; }
 
-		//service=[Service]?
-		public Assignment getServiceAssignment_5() { return cServiceAssignment_5; }
-
-		//[Service]
-		public CrossReference getServiceServiceCrossReference_5_0() { return cServiceServiceCrossReference_5_0; }
+		//[Event]
+		public CrossReference getFiredEventsEventCrossReference_3_1_0() { return cFiredEventsEventCrossReference_3_1_0; }
 
 		//ID
-		public RuleCall getServiceServiceIDTerminalRuleCall_5_0_1() { return cServiceServiceIDTerminalRuleCall_5_0_1; }
+		public RuleCall getFiredEventsEventIDTerminalRuleCall_3_1_0_1() { return cFiredEventsEventIDTerminalRuleCall_3_1_0_1; }
+
+		//("," firedEvents+=[Event])*
+		public Group getGroup_3_2() { return cGroup_3_2; }
+
+		//","
+		public Keyword getCommaKeyword_3_2_0() { return cCommaKeyword_3_2_0; }
+
+		//firedEvents+=[Event]
+		public Assignment getFiredEventsAssignment_3_2_1() { return cFiredEventsAssignment_3_2_1; }
+
+		//[Event]
+		public CrossReference getFiredEventsEventCrossReference_3_2_1_0() { return cFiredEventsEventCrossReference_3_2_1_0; }
+
+		//ID
+		public RuleCall getFiredEventsEventIDTerminalRuleCall_3_2_1_0_1() { return cFiredEventsEventIDTerminalRuleCall_3_2_1_0_1; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
+
+		//variables+=Variable*
+		public Assignment getVariablesAssignment_5() { return cVariablesAssignment_5; }
+
+		//Variable
+		public RuleCall getVariablesVariableParserRuleCall_5_0() { return cVariablesVariableParserRuleCall_5_0; }
+
+		//service=[Service]?
+		public Assignment getServiceAssignment_6() { return cServiceAssignment_6; }
+
+		//[Service]
+		public CrossReference getServiceServiceCrossReference_6_0() { return cServiceServiceCrossReference_6_0; }
+
+		//ID
+		public RuleCall getServiceServiceIDTerminalRuleCall_6_0_1() { return cServiceServiceIDTerminalRuleCall_6_0_1; }
 
 		//constraints=Constraints?
-		public Assignment getConstraintsAssignment_6() { return cConstraintsAssignment_6; }
+		public Assignment getConstraintsAssignment_7() { return cConstraintsAssignment_7; }
 
 		//Constraints
-		public RuleCall getConstraintsConstraintsParserRuleCall_6_0() { return cConstraintsConstraintsParserRuleCall_6_0; }
-
-		//events+=Event*
-		public Assignment getEventsAssignment_7() { return cEventsAssignment_7; }
-
-		//Event
-		public RuleCall getEventsEventParserRuleCall_7_0() { return cEventsEventParserRuleCall_7_0; }
+		public RuleCall getConstraintsConstraintsParserRuleCall_7_0() { return cConstraintsConstraintsParserRuleCall_7_0; }
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
@@ -1325,27 +1442,35 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final Assignment cRefMethodAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final CrossReference cRefMethodMethodCrossReference_3_1_0 = (CrossReference)cRefMethodAssignment_3_1.eContents().get(0);
 		private final RuleCall cRefMethodMethodFQNParserRuleCall_3_1_0_1 = (RuleCall)cRefMethodMethodCrossReference_3_1_0.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cVariablesAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cVariablesVariableParserRuleCall_5_0 = (RuleCall)cVariablesAssignment_5.eContents().get(0);
-		private final Assignment cServiceAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final CrossReference cServiceServiceCrossReference_6_0 = (CrossReference)cServiceAssignment_6.eContents().get(0);
-		private final RuleCall cServiceServiceIDTerminalRuleCall_6_0_1 = (RuleCall)cServiceServiceCrossReference_6_0.eContents().get(1);
-		private final Assignment cReturnTypeAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cReturnTypeReturnTypeParserRuleCall_7_0 = (RuleCall)cReturnTypeAssignment_7.eContents().get(0);
-		private final Assignment cConstraintsAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final RuleCall cConstraintsConstraintsParserRuleCall_8_0 = (RuleCall)cConstraintsAssignment_8.eContents().get(0);
-		private final Assignment cEventsAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cEventsEventParserRuleCall_9_0 = (RuleCall)cEventsAssignment_9.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cFiresKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cFiredEventsAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final CrossReference cFiredEventsEventCrossReference_4_1_0 = (CrossReference)cFiredEventsAssignment_4_1.eContents().get(0);
+		private final RuleCall cFiredEventsEventIDTerminalRuleCall_4_1_0_1 = (RuleCall)cFiredEventsEventCrossReference_4_1_0.eContents().get(1);
+		private final Group cGroup_4_2 = (Group)cGroup_4.eContents().get(2);
+		private final Keyword cCommaKeyword_4_2_0 = (Keyword)cGroup_4_2.eContents().get(0);
+		private final Assignment cFiredEventsAssignment_4_2_1 = (Assignment)cGroup_4_2.eContents().get(1);
+		private final CrossReference cFiredEventsEventCrossReference_4_2_1_0 = (CrossReference)cFiredEventsAssignment_4_2_1.eContents().get(0);
+		private final RuleCall cFiredEventsEventIDTerminalRuleCall_4_2_1_0_1 = (RuleCall)cFiredEventsEventCrossReference_4_2_1_0.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cVariablesAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cVariablesVariableParserRuleCall_6_0 = (RuleCall)cVariablesAssignment_6.eContents().get(0);
+		private final Assignment cServiceAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final CrossReference cServiceServiceCrossReference_7_0 = (CrossReference)cServiceAssignment_7.eContents().get(0);
+		private final RuleCall cServiceServiceIDTerminalRuleCall_7_0_1 = (RuleCall)cServiceServiceCrossReference_7_0.eContents().get(1);
+		private final Assignment cReturnTypeAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cReturnTypeReturnTypeParserRuleCall_8_0 = (RuleCall)cReturnTypeAssignment_8.eContents().get(0);
+		private final Assignment cConstraintsAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cConstraintsConstraintsParserRuleCall_9_0 = (RuleCall)cConstraintsAssignment_9.eContents().get(0);
 		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		
 		//Method:
-		//	doc=DOC? "method" name=ID ("ref" refMethod=[Method|FQN])? "{" variables+=Variable* service=[Service]?
-		//	returnType=ReturnType? constraints=Constraints? events+=Event* "}";
+		//	doc=DOC? "method" name=ID ("ref" refMethod=[Method|FQN])? ("fires" firedEvents+=[Event] ("," firedEvents+=[Event])*)?
+		//	"{" variables+=Variable* service=[Service]? returnType=ReturnType? constraints=Constraints? "}";
 		public ParserRule getRule() { return rule; }
 
-		//doc=DOC? "method" name=ID ("ref" refMethod=[Method|FQN])? "{" variables+=Variable* service=[Service]?
-		//returnType=ReturnType? constraints=Constraints? events+=Event* "}"
+		//doc=DOC? "method" name=ID ("ref" refMethod=[Method|FQN])? ("fires" firedEvents+=[Event] ("," firedEvents+=[Event])*)?
+		//"{" variables+=Variable* service=[Service]? returnType=ReturnType? constraints=Constraints? "}"
 		public Group getGroup() { return cGroup; }
 
 		//doc=DOC?
@@ -1378,108 +1503,68 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		//FQN
 		public RuleCall getRefMethodMethodFQNParserRuleCall_3_1_0_1() { return cRefMethodMethodFQNParserRuleCall_3_1_0_1; }
 
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
+		//("fires" firedEvents+=[Event] ("," firedEvents+=[Event])*)?
+		public Group getGroup_4() { return cGroup_4; }
 
-		//variables+=Variable*
-		public Assignment getVariablesAssignment_5() { return cVariablesAssignment_5; }
+		//"fires"
+		public Keyword getFiresKeyword_4_0() { return cFiresKeyword_4_0; }
 
-		//Variable
-		public RuleCall getVariablesVariableParserRuleCall_5_0() { return cVariablesVariableParserRuleCall_5_0; }
+		//firedEvents+=[Event]
+		public Assignment getFiredEventsAssignment_4_1() { return cFiredEventsAssignment_4_1; }
 
-		//service=[Service]?
-		public Assignment getServiceAssignment_6() { return cServiceAssignment_6; }
-
-		//[Service]
-		public CrossReference getServiceServiceCrossReference_6_0() { return cServiceServiceCrossReference_6_0; }
+		//[Event]
+		public CrossReference getFiredEventsEventCrossReference_4_1_0() { return cFiredEventsEventCrossReference_4_1_0; }
 
 		//ID
-		public RuleCall getServiceServiceIDTerminalRuleCall_6_0_1() { return cServiceServiceIDTerminalRuleCall_6_0_1; }
+		public RuleCall getFiredEventsEventIDTerminalRuleCall_4_1_0_1() { return cFiredEventsEventIDTerminalRuleCall_4_1_0_1; }
+
+		//("," firedEvents+=[Event])*
+		public Group getGroup_4_2() { return cGroup_4_2; }
+
+		//","
+		public Keyword getCommaKeyword_4_2_0() { return cCommaKeyword_4_2_0; }
+
+		//firedEvents+=[Event]
+		public Assignment getFiredEventsAssignment_4_2_1() { return cFiredEventsAssignment_4_2_1; }
+
+		//[Event]
+		public CrossReference getFiredEventsEventCrossReference_4_2_1_0() { return cFiredEventsEventCrossReference_4_2_1_0; }
+
+		//ID
+		public RuleCall getFiredEventsEventIDTerminalRuleCall_4_2_1_0_1() { return cFiredEventsEventIDTerminalRuleCall_4_2_1_0_1; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_5() { return cLeftCurlyBracketKeyword_5; }
+
+		//variables+=Variable*
+		public Assignment getVariablesAssignment_6() { return cVariablesAssignment_6; }
+
+		//Variable
+		public RuleCall getVariablesVariableParserRuleCall_6_0() { return cVariablesVariableParserRuleCall_6_0; }
+
+		//service=[Service]?
+		public Assignment getServiceAssignment_7() { return cServiceAssignment_7; }
+
+		//[Service]
+		public CrossReference getServiceServiceCrossReference_7_0() { return cServiceServiceCrossReference_7_0; }
+
+		//ID
+		public RuleCall getServiceServiceIDTerminalRuleCall_7_0_1() { return cServiceServiceIDTerminalRuleCall_7_0_1; }
 
 		//returnType=ReturnType?
-		public Assignment getReturnTypeAssignment_7() { return cReturnTypeAssignment_7; }
+		public Assignment getReturnTypeAssignment_8() { return cReturnTypeAssignment_8; }
 
 		//ReturnType
-		public RuleCall getReturnTypeReturnTypeParserRuleCall_7_0() { return cReturnTypeReturnTypeParserRuleCall_7_0; }
+		public RuleCall getReturnTypeReturnTypeParserRuleCall_8_0() { return cReturnTypeReturnTypeParserRuleCall_8_0; }
 
 		//constraints=Constraints?
-		public Assignment getConstraintsAssignment_8() { return cConstraintsAssignment_8; }
+		public Assignment getConstraintsAssignment_9() { return cConstraintsAssignment_9; }
 
 		//Constraints
-		public RuleCall getConstraintsConstraintsParserRuleCall_8_0() { return cConstraintsConstraintsParserRuleCall_8_0; }
-
-		//events+=Event*
-		public Assignment getEventsAssignment_9() { return cEventsAssignment_9; }
-
-		//Event
-		public RuleCall getEventsEventParserRuleCall_9_0() { return cEventsEventParserRuleCall_9_0; }
+		public RuleCall getConstraintsConstraintsParserRuleCall_9_0() { return cConstraintsConstraintsParserRuleCall_9_0; }
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
-	}
-
-	public class EventElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Event");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Assignment cDocAssignment_0 = (Assignment)cGroup.eContents().get(0);
-		private final RuleCall cDocDOCTerminalRuleCall_0_0 = (RuleCall)cDocAssignment_0.eContents().get(0);
-		private final Keyword cEventKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cVariablesAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cVariablesVariableParserRuleCall_4_0 = (RuleCall)cVariablesAssignment_4.eContents().get(0);
-		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
-		private final Keyword cMessageKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
-		private final Assignment cMessageAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
-		private final RuleCall cMessageSTRINGTerminalRuleCall_5_1_0 = (RuleCall)cMessageAssignment_5_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
-		
-		//Event:
-		//	doc=DOC? "event" name=ID "{" variables+=Variable* ("message" message=STRING)? "}";
-		public ParserRule getRule() { return rule; }
-
-		//doc=DOC? "event" name=ID "{" variables+=Variable* ("message" message=STRING)? "}"
-		public Group getGroup() { return cGroup; }
-
-		//doc=DOC?
-		public Assignment getDocAssignment_0() { return cDocAssignment_0; }
-
-		//DOC
-		public RuleCall getDocDOCTerminalRuleCall_0_0() { return cDocDOCTerminalRuleCall_0_0; }
-
-		//"event"
-		public Keyword getEventKeyword_1() { return cEventKeyword_1; }
-
-		//name=ID
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
-
-		//ID
-		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
-
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
-
-		//variables+=Variable*
-		public Assignment getVariablesAssignment_4() { return cVariablesAssignment_4; }
-
-		//Variable
-		public RuleCall getVariablesVariableParserRuleCall_4_0() { return cVariablesVariableParserRuleCall_4_0; }
-
-		//("message" message=STRING)?
-		public Group getGroup_5() { return cGroup_5; }
-
-		//"message"
-		public Keyword getMessageKeyword_5_0() { return cMessageKeyword_5_0; }
-
-		//message=STRING
-		public Assignment getMessageAssignment_5_1() { return cMessageAssignment_5_1; }
-
-		//STRING
-		public RuleCall getMessageSTRINGTerminalRuleCall_5_1_0() { return cMessageSTRINGTerminalRuleCall_5_1_0; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_6() { return cRightCurlyBracketKeyword_6; }
 	}
 
 	public class TypeMetaInfoElements extends AbstractParserRuleElementFinder {
@@ -2115,62 +2200,112 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	}
 	
 	
-	private DomainModelElements pDomainModel;
-	private ContextElements pContext;
-	private NamespaceElements pNamespace;
-	private ImportElements pImport;
-	private AbstractElementElements pAbstractElement;
-	private TypeElements pType;
-	private InternalTypeElements pInternalType;
-	private AbstractVOElements pAbstractVO;
-	private AbstractEntityIdElements pAbstractEntityId;
-	private AbstractEntityElements pAbstractEntity;
-	private ConstraintTargetElements pConstraintTarget;
-	private ExternalTypeElements pExternalType;
-	private ConstraintElements pConstraint;
-	private ExceptionElements pException;
-	private ValueObjectElements pValueObject;
-	private EntityIdElements pEntityId;
-	private AggregateIdElements pAggregateId;
-	private EnumObjectElements pEnumObject;
-	private EnumInstanceElements pEnumInstance;
-	private EntityElements pEntity;
-	private AggregateElements pAggregate;
-	private AbstractMethodElements pAbstractMethod;
-	private ConstructorElements pConstructor;
-	private ReturnTypeElements pReturnType;
-	private MethodElements pMethod;
-	private EventElements pEvent;
-	private TypeMetaInfoElements pTypeMetaInfo;
-	private VariableElements pVariable;
-	private ConstraintsElements pConstraints;
-	private InvariantsElements pInvariants;
-	private OverriddenTypeMetaInfoElements pOverriddenTypeMetaInfo;
-	private ConstraintCallElements pConstraintCall;
-	private ServiceElements pService;
-	private LiteralElements pLiteral;
-	private FQNElements pFQN;
-	private FQNWithWildcardElements pFQNWithWildcard;
-	private BooleanLiteralElements pBooleanLiteral;
-	private NullLiteralElements pNullLiteral;
-	private NumberLiteralElements pNumberLiteral;
-	private StringLiteralElements pStringLiteral;
-	private TerminalRule tID;
-	private TerminalRule tSTRING;
-	private NumberElements pNumber;
-	private TerminalRule tHEX;
-	private TerminalRule tINT;
-	private TerminalRule tDECIMAL;
-	private TerminalRule tDOC;
-	private TerminalRule tML_COMMENT;
-	private TerminalRule tSL_COMMENT;
-	private TerminalRule tWS;
+	private final DomainModelElements pDomainModel;
+	private final ContextElements pContext;
+	private final NamespaceElements pNamespace;
+	private final ImportElements pImport;
+	private final AbstractElementElements pAbstractElement;
+	private final TypeElements pType;
+	private final InternalTypeElements pInternalType;
+	private final AbstractVOElements pAbstractVO;
+	private final AbstractEntityIdElements pAbstractEntityId;
+	private final AbstractEntityElements pAbstractEntity;
+	private final ConstraintTargetElements pConstraintTarget;
+	private final ExternalTypeElements pExternalType;
+	private final ConstraintElements pConstraint;
+	private final ExceptionElements pException;
+	private final ValueObjectElements pValueObject;
+	private final EntityIdElements pEntityId;
+	private final AggregateIdElements pAggregateId;
+	private final EnumObjectElements pEnumObject;
+	private final EnumInstanceElements pEnumInstance;
+	private final EventElements pEvent;
+	private final EntityElements pEntity;
+	private final AggregateElements pAggregate;
+	private final AbstractMethodElements pAbstractMethod;
+	private final ConstructorElements pConstructor;
+	private final ReturnTypeElements pReturnType;
+	private final MethodElements pMethod;
+	private final TypeMetaInfoElements pTypeMetaInfo;
+	private final VariableElements pVariable;
+	private final ConstraintsElements pConstraints;
+	private final InvariantsElements pInvariants;
+	private final OverriddenTypeMetaInfoElements pOverriddenTypeMetaInfo;
+	private final ConstraintCallElements pConstraintCall;
+	private final ServiceElements pService;
+	private final LiteralElements pLiteral;
+	private final FQNElements pFQN;
+	private final FQNWithWildcardElements pFQNWithWildcard;
+	private final BooleanLiteralElements pBooleanLiteral;
+	private final NullLiteralElements pNullLiteral;
+	private final NumberLiteralElements pNumberLiteral;
+	private final StringLiteralElements pStringLiteral;
+	private final TerminalRule tID;
+	private final TerminalRule tSTRING;
+	private final NumberElements pNumber;
+	private final TerminalRule tHEX;
+	private final TerminalRule tINT;
+	private final TerminalRule tDECIMAL;
+	private final TerminalRule tDOC;
+	private final TerminalRule tML_COMMENT;
+	private final TerminalRule tSL_COMMENT;
+	private final TerminalRule tWS;
 	
 	private final Grammar grammar;
 
 	@Inject
 	public DomainDrivenDesignDslGrammarAccess(GrammarProvider grammarProvider) {
 		this.grammar = internalFindGrammar(grammarProvider);
+		this.pDomainModel = new DomainModelElements();
+		this.pContext = new ContextElements();
+		this.pNamespace = new NamespaceElements();
+		this.pImport = new ImportElements();
+		this.pAbstractElement = new AbstractElementElements();
+		this.pType = new TypeElements();
+		this.pInternalType = new InternalTypeElements();
+		this.pAbstractVO = new AbstractVOElements();
+		this.pAbstractEntityId = new AbstractEntityIdElements();
+		this.pAbstractEntity = new AbstractEntityElements();
+		this.pConstraintTarget = new ConstraintTargetElements();
+		this.pExternalType = new ExternalTypeElements();
+		this.pConstraint = new ConstraintElements();
+		this.pException = new ExceptionElements();
+		this.pValueObject = new ValueObjectElements();
+		this.pEntityId = new EntityIdElements();
+		this.pAggregateId = new AggregateIdElements();
+		this.pEnumObject = new EnumObjectElements();
+		this.pEnumInstance = new EnumInstanceElements();
+		this.pEvent = new EventElements();
+		this.pEntity = new EntityElements();
+		this.pAggregate = new AggregateElements();
+		this.pAbstractMethod = new AbstractMethodElements();
+		this.pConstructor = new ConstructorElements();
+		this.pReturnType = new ReturnTypeElements();
+		this.pMethod = new MethodElements();
+		this.pTypeMetaInfo = new TypeMetaInfoElements();
+		this.pVariable = new VariableElements();
+		this.pConstraints = new ConstraintsElements();
+		this.pInvariants = new InvariantsElements();
+		this.pOverriddenTypeMetaInfo = new OverriddenTypeMetaInfoElements();
+		this.pConstraintCall = new ConstraintCallElements();
+		this.pService = new ServiceElements();
+		this.pLiteral = new LiteralElements();
+		this.pFQN = new FQNElements();
+		this.pFQNWithWildcard = new FQNWithWildcardElements();
+		this.pBooleanLiteral = new BooleanLiteralElements();
+		this.pNullLiteral = new NullLiteralElements();
+		this.pNumberLiteral = new NumberLiteralElements();
+		this.pStringLiteral = new StringLiteralElements();
+		this.tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ID");
+		this.tSTRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "STRING");
+		this.pNumber = new NumberElements();
+		this.tHEX = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "HEX");
+		this.tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "INT");
+		this.tDECIMAL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "DECIMAL");
+		this.tDOC = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "DOC");
+		this.tML_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ML_COMMENT");
+		this.tSL_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SL_COMMENT");
+		this.tWS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "WS");
 	}
 	
 	protected Grammar internalFindGrammar(GrammarProvider grammarProvider) {
@@ -2199,7 +2334,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	//DomainModel:
 	//	contexts+=Context*;
 	public DomainModelElements getDomainModelAccess() {
-		return (pDomainModel != null) ? pDomainModel : (pDomainModel = new DomainModelElements());
+		return pDomainModel;
 	}
 	
 	public ParserRule getDomainModelRule() {
@@ -2209,7 +2344,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	//Context:
 	//	"context" name=ID "{" namespaces+=Namespace* "}";
 	public ContextElements getContextAccess() {
-		return (pContext != null) ? pContext : (pContext = new ContextElements());
+		return pContext;
 	}
 	
 	public ParserRule getContextRule() {
@@ -2219,7 +2354,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	//Namespace:
 	//	"namespace" name=FQN "{" imports+=Import* elements+=AbstractElement* "}";
 	public NamespaceElements getNamespaceAccess() {
-		return (pNamespace != null) ? pNamespace : (pNamespace = new NamespaceElements());
+		return pNamespace;
 	}
 	
 	public ParserRule getNamespaceRule() {
@@ -2229,7 +2364,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	//Import:
 	//	"import" importedNamespace=(FQN | FQNWithWildcard);
 	public ImportElements getImportAccess() {
-		return (pImport != null) ? pImport : (pImport = new ImportElements());
+		return pImport;
 	}
 	
 	public ParserRule getImportRule() {
@@ -2237,9 +2372,9 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//AbstractElement:
-	//	Constraint | Type | Exception;
+	//	Constraint | Type | Exception | Event;
 	public AbstractElementElements getAbstractElementAccess() {
-		return (pAbstractElement != null) ? pAbstractElement : (pAbstractElement = new AbstractElementElements());
+		return pAbstractElement;
 	}
 	
 	public ParserRule getAbstractElementRule() {
@@ -2249,7 +2384,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	//Type:
 	//	ExternalType | InternalType | Service;
 	public TypeElements getTypeAccess() {
-		return (pType != null) ? pType : (pType = new TypeElements());
+		return pType;
 	}
 	
 	public ParserRule getTypeRule() {
@@ -2259,7 +2394,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	//InternalType:
 	//	AbstractVO | AbstractEntity;
 	public InternalTypeElements getInternalTypeAccess() {
-		return (pInternalType != null) ? pInternalType : (pInternalType = new InternalTypeElements());
+		return pInternalType;
 	}
 	
 	public ParserRule getInternalTypeRule() {
@@ -2269,7 +2404,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	//AbstractVO:
 	//	ValueObject | EnumObject | AbstractEntityId;
 	public AbstractVOElements getAbstractVOAccess() {
-		return (pAbstractVO != null) ? pAbstractVO : (pAbstractVO = new AbstractVOElements());
+		return pAbstractVO;
 	}
 	
 	public ParserRule getAbstractVORule() {
@@ -2279,7 +2414,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	//AbstractEntityId:
 	//	EntityId | AggregateId;
 	public AbstractEntityIdElements getAbstractEntityIdAccess() {
-		return (pAbstractEntityId != null) ? pAbstractEntityId : (pAbstractEntityId = new AbstractEntityIdElements());
+		return pAbstractEntityId;
 	}
 	
 	public ParserRule getAbstractEntityIdRule() {
@@ -2289,7 +2424,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	//AbstractEntity:
 	//	Entity | Aggregate;
 	public AbstractEntityElements getAbstractEntityAccess() {
-		return (pAbstractEntity != null) ? pAbstractEntity : (pAbstractEntity = new AbstractEntityElements());
+		return pAbstractEntity;
 	}
 	
 	public ParserRule getAbstractEntityRule() {
@@ -2299,7 +2434,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	//ConstraintTarget:
 	//	ExternalType | ValueObject;
 	public ConstraintTargetElements getConstraintTargetAccess() {
-		return (pConstraintTarget != null) ? pConstraintTarget : (pConstraintTarget = new ConstraintTargetElements());
+		return pConstraintTarget;
 	}
 	
 	public ParserRule getConstraintTargetRule() {
@@ -2309,7 +2444,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	//ExternalType:
 	//	"type" name=ID;
 	public ExternalTypeElements getExternalTypeAccess() {
-		return (pExternalType != null) ? pExternalType : (pExternalType = new ExternalTypeElements());
+		return pExternalType;
 	}
 	
 	public ParserRule getExternalTypeRule() {
@@ -2320,7 +2455,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	//	doc=DOC? "constraint" name=ID ("on" target=[ConstraintTarget])? ("exception" exception=[Exception])? "{"
 	//	variables+=Variable* ("message" message=STRING)? "}";
 	public ConstraintElements getConstraintAccess() {
-		return (pConstraint != null) ? pConstraint : (pConstraint = new ConstraintElements());
+		return pConstraint;
 	}
 	
 	public ParserRule getConstraintRule() {
@@ -2330,7 +2465,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	//Exception:
 	//	doc=DOC? "exception" name=ID ("cid" cid=INT)? "{" variables+=Variable* "message" message=STRING "}";
 	public ExceptionElements getExceptionAccess() {
-		return (pException != null) ? pException : (pException = new ExceptionElements());
+		return pException;
 	}
 	
 	public ParserRule getExceptionRule() {
@@ -2341,7 +2476,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	//	doc=DOC? "value-object" name=ID ("base" base=[ExternalType])? "{" metaInfo=TypeMetaInfo variables+=Variable*
 	//	constructors+=Constructor* methods+=Method* "}";
 	public ValueObjectElements getValueObjectAccess() {
-		return (pValueObject != null) ? pValueObject : (pValueObject = new ValueObjectElements());
+		return pValueObject;
 	}
 	
 	public ParserRule getValueObjectRule() {
@@ -2352,7 +2487,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	//	doc=DOC? "entity-id" name=ID "identifies" entity=[Entity] ("base" base=[ExternalType])? "{" metaInfo=TypeMetaInfo
 	//	variables+=Variable* constructors+=Constructor* methods+=Method* "}";
 	public EntityIdElements getEntityIdAccess() {
-		return (pEntityId != null) ? pEntityId : (pEntityId = new EntityIdElements());
+		return pEntityId;
 	}
 	
 	public ParserRule getEntityIdRule() {
@@ -2363,7 +2498,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	//	doc=DOC? "aggregate-id" name=ID "identifies" entity=[Aggregate] ("base" base=[ExternalType])? "{"
 	//	metaInfo=TypeMetaInfo variables+=Variable* constructors+=Constructor* methods+=Method* "}";
 	public AggregateIdElements getAggregateIdAccess() {
-		return (pAggregateId != null) ? pAggregateId : (pAggregateId = new AggregateIdElements());
+		return pAggregateId;
 	}
 	
 	public ParserRule getAggregateIdRule() {
@@ -2374,7 +2509,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	//	doc=DOC? "enum" name=ID "{" metaInfo=TypeMetaInfo variables+=Variable* constructors+=Constructor* methods+=Method*
 	//	"instances" "{" instances+=EnumInstance+ "}" "}";
 	public EnumObjectElements getEnumObjectAccess() {
-		return (pEnumObject != null) ? pEnumObject : (pEnumObject = new EnumObjectElements());
+		return pEnumObject;
 	}
 	
 	public ParserRule getEnumObjectRule() {
@@ -2384,18 +2519,28 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	//EnumInstance:
 	//	doc=DOC? name=ID ("(" params+=Literal ("," params+=Literal)* ")")?;
 	public EnumInstanceElements getEnumInstanceAccess() {
-		return (pEnumInstance != null) ? pEnumInstance : (pEnumInstance = new EnumInstanceElements());
+		return pEnumInstance;
 	}
 	
 	public ParserRule getEnumInstanceRule() {
 		return getEnumInstanceAccess().getRule();
 	}
 
+	//Event:
+	//	doc=DOC? "event" name=ID "{" variables+=Variable* ("message" message=STRING)? "}";
+	public EventElements getEventAccess() {
+		return pEvent;
+	}
+	
+	public ParserRule getEventRule() {
+		return getEventAccess().getRule();
+	}
+
 	//Entity:
 	//	doc=DOC? "entity" name=ID "identifier" idType=[EntityId] "root" root=[Aggregate] "{" metaInfo=TypeMetaInfo
-	//	variables+=Variable* constructors+=Constructor* methods+=Method* "}";
+	//	variables+=Variable* constructors+=Constructor* methods+=Method* events+=Event* "}";
 	public EntityElements getEntityAccess() {
-		return (pEntity != null) ? pEntity : (pEntity = new EntityElements());
+		return pEntity;
 	}
 	
 	public ParserRule getEntityRule() {
@@ -2404,9 +2549,9 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 
 	//Aggregate:
 	//	doc=DOC? "aggregate" name=ID "identifier" idType=[AggregateId] "{" metaInfo=TypeMetaInfo variables+=Variable*
-	//	constructors+=Constructor* methods+=Method* "}";
+	//	constructors+=Constructor* methods+=Method* events+=Event* "}";
 	public AggregateElements getAggregateAccess() {
-		return (pAggregate != null) ? pAggregate : (pAggregate = new AggregateElements());
+		return pAggregate;
 	}
 	
 	public ParserRule getAggregateRule() {
@@ -2416,7 +2561,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	//AbstractMethod:
 	//	Constructor | Method;
 	public AbstractMethodElements getAbstractMethodAccess() {
-		return (pAbstractMethod != null) ? pAbstractMethod : (pAbstractMethod = new AbstractMethodElements());
+		return pAbstractMethod;
 	}
 	
 	public ParserRule getAbstractMethodRule() {
@@ -2424,10 +2569,10 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//Constructor:
-	//	doc=DOC? "constructor" name=ID "{" variables+=Variable* service=[Service]? constraints=Constraints? events+=Event*
-	//	"}";
+	//	doc=DOC? "constructor" name=ID ("fires" firedEvents+=[Event] ("," firedEvents+=[Event])*)? "{" variables+=Variable*
+	//	service=[Service]? constraints=Constraints? "}";
 	public ConstructorElements getConstructorAccess() {
-		return (pConstructor != null) ? pConstructor : (pConstructor = new ConstructorElements());
+		return pConstructor;
 	}
 	
 	public ParserRule getConstructorRule() {
@@ -2437,7 +2582,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	//ReturnType:
 	//	doc=DOC? "returns" type=[Type];
 	public ReturnTypeElements getReturnTypeAccess() {
-		return (pReturnType != null) ? pReturnType : (pReturnType = new ReturnTypeElements());
+		return pReturnType;
 	}
 	
 	public ParserRule getReturnTypeRule() {
@@ -2445,31 +2590,21 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//Method:
-	//	doc=DOC? "method" name=ID ("ref" refMethod=[Method|FQN])? "{" variables+=Variable* service=[Service]?
-	//	returnType=ReturnType? constraints=Constraints? events+=Event* "}";
+	//	doc=DOC? "method" name=ID ("ref" refMethod=[Method|FQN])? ("fires" firedEvents+=[Event] ("," firedEvents+=[Event])*)?
+	//	"{" variables+=Variable* service=[Service]? returnType=ReturnType? constraints=Constraints? "}";
 	public MethodElements getMethodAccess() {
-		return (pMethod != null) ? pMethod : (pMethod = new MethodElements());
+		return pMethod;
 	}
 	
 	public ParserRule getMethodRule() {
 		return getMethodAccess().getRule();
 	}
 
-	//Event:
-	//	doc=DOC? "event" name=ID "{" variables+=Variable* ("message" message=STRING)? "}";
-	public EventElements getEventAccess() {
-		return (pEvent != null) ? pEvent : (pEvent = new EventElements());
-	}
-	
-	public ParserRule getEventRule() {
-		return getEventAccess().getRule();
-	}
-
 	//TypeMetaInfo:
 	//	{TypeMetaInfo} ("slabel" slabel=STRING)? ("label" label=STRING)? ("tooltip" tooltip=STRING)? ("prompt" prompt=STRING)?
 	//	("examples" examples+=STRING*)?;
 	public TypeMetaInfoElements getTypeMetaInfoAccess() {
-		return (pTypeMetaInfo != null) ? pTypeMetaInfo : (pTypeMetaInfo = new TypeMetaInfoElements());
+		return pTypeMetaInfo;
 	}
 	
 	public ParserRule getTypeMetaInfoRule() {
@@ -2480,7 +2615,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	//	doc=DOC? nullable="nullable"? type=[Type] multiplicity="*"? name=ID invariants=Invariants?
 	//	overridden=OverriddenTypeMetaInfo?;
 	public VariableElements getVariableAccess() {
-		return (pVariable != null) ? pVariable : (pVariable = new VariableElements());
+		return pVariable;
 	}
 	
 	public ParserRule getVariableRule() {
@@ -2490,7 +2625,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	//Constraints:
 	//	"constraints" "{" calls+=ConstraintCall ("," calls+=ConstraintCall)* "}";
 	public ConstraintsElements getConstraintsAccess() {
-		return (pConstraints != null) ? pConstraints : (pConstraints = new ConstraintsElements());
+		return pConstraints;
 	}
 	
 	public ParserRule getConstraintsRule() {
@@ -2500,7 +2635,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	//Invariants:
 	//	"invariants" calls+=ConstraintCall ("," calls+=ConstraintCall)*;
 	public InvariantsElements getInvariantsAccess() {
-		return (pInvariants != null) ? pInvariants : (pInvariants = new InvariantsElements());
+		return pInvariants;
 	}
 	
 	public ParserRule getInvariantsRule() {
@@ -2510,7 +2645,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	//OverriddenTypeMetaInfo:
 	//	"{" metaInfo=TypeMetaInfo "}";
 	public OverriddenTypeMetaInfoElements getOverriddenTypeMetaInfoAccess() {
-		return (pOverriddenTypeMetaInfo != null) ? pOverriddenTypeMetaInfo : (pOverriddenTypeMetaInfo = new OverriddenTypeMetaInfoElements());
+		return pOverriddenTypeMetaInfo;
 	}
 	
 	public ParserRule getOverriddenTypeMetaInfoRule() {
@@ -2520,7 +2655,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	//ConstraintCall:
 	//	constraint=[Constraint] ("(" params+=Literal ("," params+=Literal)* ")")?;
 	public ConstraintCallElements getConstraintCallAccess() {
-		return (pConstraintCall != null) ? pConstraintCall : (pConstraintCall = new ConstraintCallElements());
+		return pConstraintCall;
 	}
 	
 	public ParserRule getConstraintCallRule() {
@@ -2530,7 +2665,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	//Service:
 	//	doc=DOC? "service" name=ID "{" methods+=Method* "}";
 	public ServiceElements getServiceAccess() {
-		return (pService != null) ? pService : (pService = new ServiceElements());
+		return pService;
 	}
 	
 	public ParserRule getServiceRule() {
@@ -2540,7 +2675,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	//Literal:
 	//	NullLiteral | BooleanLiteral | NumberLiteral | StringLiteral;
 	public LiteralElements getLiteralAccess() {
-		return (pLiteral != null) ? pLiteral : (pLiteral = new LiteralElements());
+		return pLiteral;
 	}
 	
 	public ParserRule getLiteralRule() {
@@ -2550,7 +2685,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	//FQN:
 	//	ID ("." ID)*;
 	public FQNElements getFQNAccess() {
-		return (pFQN != null) ? pFQN : (pFQN = new FQNElements());
+		return pFQN;
 	}
 	
 	public ParserRule getFQNRule() {
@@ -2560,7 +2695,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	//FQNWithWildcard:
 	//	FQN "." "*";
 	public FQNWithWildcardElements getFQNWithWildcardAccess() {
-		return (pFQNWithWildcard != null) ? pFQNWithWildcard : (pFQNWithWildcard = new FQNWithWildcardElements());
+		return pFQNWithWildcard;
 	}
 	
 	public ParserRule getFQNWithWildcardRule() {
@@ -2570,7 +2705,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	//BooleanLiteral:
 	//	{BooleanLiteral} value=("false" | "true");
 	public BooleanLiteralElements getBooleanLiteralAccess() {
-		return (pBooleanLiteral != null) ? pBooleanLiteral : (pBooleanLiteral = new BooleanLiteralElements());
+		return pBooleanLiteral;
 	}
 	
 	public ParserRule getBooleanLiteralRule() {
@@ -2580,7 +2715,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	//NullLiteral:
 	//	{NullLiteral} value="null";
 	public NullLiteralElements getNullLiteralAccess() {
-		return (pNullLiteral != null) ? pNullLiteral : (pNullLiteral = new NullLiteralElements());
+		return pNullLiteral;
 	}
 	
 	public ParserRule getNullLiteralRule() {
@@ -2590,7 +2725,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	//NumberLiteral:
 	//	{NumberLiteral} value=Number;
 	public NumberLiteralElements getNumberLiteralAccess() {
-		return (pNumberLiteral != null) ? pNumberLiteral : (pNumberLiteral = new NumberLiteralElements());
+		return pNumberLiteral;
 	}
 	
 	public ParserRule getNumberLiteralRule() {
@@ -2600,7 +2735,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	//StringLiteral:
 	//	{StringLiteral} value=STRING;
 	public StringLiteralElements getStringLiteralAccess() {
-		return (pStringLiteral != null) ? pStringLiteral : (pStringLiteral = new StringLiteralElements());
+		return pStringLiteral;
 	}
 	
 	public ParserRule getStringLiteralRule() {
@@ -2610,20 +2745,20 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	//terminal ID:
 	//	("A".."Z" | "a".."z") ("a".."z" | "A".."Z" | "_" | "0".."9")*;
 	public TerminalRule getIDRule() {
-		return (tID != null) ? tID : (tID = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ID"));
+		return tID;
 	} 
 
 	//terminal STRING:
 	//	"\"" ("\\" ("b" | "t" | "n" | "f" | "r" | "u" | "\"" | "\'" | "\\") | !("\\" | "\""))* "\"" | "\'" ("\\" ("b" | "t" |
 	//	"n" | "f" | "r" | "u" | "\"" | "\'" | "\\") | !("\\" | "\'"))* "\'";
 	public TerminalRule getSTRINGRule() {
-		return (tSTRING != null) ? tSTRING : (tSTRING = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "STRING"));
+		return tSTRING;
 	} 
 
 	//Number hidden():
 	//	HEX | (INT | DECIMAL) ("." (INT | DECIMAL))?;
 	public NumberElements getNumberAccess() {
-		return (pNumber != null) ? pNumber : (pNumber = new NumberElements());
+		return pNumber;
 	}
 	
 	public ParserRule getNumberRule() {
@@ -2633,46 +2768,46 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	//terminal HEX:
 	//	("0x" | "0X") ("0".."9" | "a".."f" | "A".."F" | "_")+ ("#" (("b" | "B") ("i" | "I") | ("l" | "L")))?;
 	public TerminalRule getHEXRule() {
-		return (tHEX != null) ? tHEX : (tHEX = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "HEX"));
+		return tHEX;
 	} 
 
 	//terminal INT returns ecore::EInt:
 	//	"0".."9" ("0".."9" | "_")*;
 	public TerminalRule getINTRule() {
-		return (tINT != null) ? tINT : (tINT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "INT"));
+		return tINT;
 	} 
 
 	//terminal DECIMAL:
 	//	INT (("e" | "E") ("+" | "-")? INT)? (("b" | "B") ("i" | "I" | "d" | "D") | ("l" | "L" | "d" | "D" | "f" | "F"))?;
 	public TerminalRule getDECIMALRule() {
-		return (tDECIMAL != null) ? tDECIMAL : (tDECIMAL = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "DECIMAL"));
+		return tDECIMAL;
 	} 
 
 	//// Documentation
 	//terminal DOC:
 	//	"/ **"->"* /";
 	public TerminalRule getDOCRule() {
-		return (tDOC != null) ? tDOC : (tDOC = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "DOC"));
+		return tDOC;
 	} 
 
 	//// Multi line comment		 
 	//terminal ML_COMMENT:
 	//	"/ *" !"*"->"* /";
 	public TerminalRule getML_COMMENTRule() {
-		return (tML_COMMENT != null) ? tML_COMMENT : (tML_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "ML_COMMENT"));
+		return tML_COMMENT;
 	} 
 
 	//// Single line comment
 	//terminal SL_COMMENT:
 	//	"//" !("\n" | "\r")* ("\r"? "\n")?;
 	public TerminalRule getSL_COMMENTRule() {
-		return (tSL_COMMENT != null) ? tSL_COMMENT : (tSL_COMMENT = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "SL_COMMENT"));
+		return tSL_COMMENT;
 	} 
 
 	//// Whitespace - Anything that is ignored.
 	//terminal WS:
 	//	(" " | "\t" | "\r" | "\n")+;
 	public TerminalRule getWSRule() {
-		return (tWS != null) ? tWS : (tWS = (TerminalRule) GrammarUtil.findRuleForName(getGrammar(), "WS"));
+		return tWS;
 	} 
 }

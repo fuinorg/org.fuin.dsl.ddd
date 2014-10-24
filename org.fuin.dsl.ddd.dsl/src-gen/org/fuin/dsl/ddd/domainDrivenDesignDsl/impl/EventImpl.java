@@ -13,7 +13,6 @@ import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
-import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -30,7 +29,6 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.EventImpl#getDoc <em>Doc</em>}</li>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.EventImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.EventImpl#getVariables <em>Variables</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.EventImpl#getMessage <em>Message</em>}</li>
  * </ul>
@@ -38,7 +36,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
  *
  * @generated
  */
-public class EventImpl extends MinimalEObjectImpl.Container implements Event
+public class EventImpl extends AbstractElementImpl implements Event
 {
   /**
    * The default value of the '{@link #getDoc() <em>Doc</em>}' attribute.
@@ -59,26 +57,6 @@ public class EventImpl extends MinimalEObjectImpl.Container implements Event
    * @ordered
    */
   protected String doc = DOC_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected static final String NAME_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getName() <em>Name</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getName()
-   * @generated
-   * @ordered
-   */
-  protected String name = NAME_EDEFAULT;
 
   /**
    * The cached value of the '{@link #getVariables() <em>Variables</em>}' containment reference list.
@@ -159,29 +137,6 @@ public class EventImpl extends MinimalEObjectImpl.Container implements Event
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getName()
-  {
-    return name;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setName(String newName)
-  {
-    String oldName = name;
-    name = newName;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.EVENT__NAME, oldName, name));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EList<Variable> getVariables()
   {
     if (variables == null)
@@ -242,8 +197,6 @@ public class EventImpl extends MinimalEObjectImpl.Container implements Event
     {
       case DomainDrivenDesignDslPackage.EVENT__DOC:
         return getDoc();
-      case DomainDrivenDesignDslPackage.EVENT__NAME:
-        return getName();
       case DomainDrivenDesignDslPackage.EVENT__VARIABLES:
         return getVariables();
       case DomainDrivenDesignDslPackage.EVENT__MESSAGE:
@@ -265,9 +218,6 @@ public class EventImpl extends MinimalEObjectImpl.Container implements Event
     {
       case DomainDrivenDesignDslPackage.EVENT__DOC:
         setDoc((String)newValue);
-        return;
-      case DomainDrivenDesignDslPackage.EVENT__NAME:
-        setName((String)newValue);
         return;
       case DomainDrivenDesignDslPackage.EVENT__VARIABLES:
         getVariables().clear();
@@ -293,9 +243,6 @@ public class EventImpl extends MinimalEObjectImpl.Container implements Event
       case DomainDrivenDesignDslPackage.EVENT__DOC:
         setDoc(DOC_EDEFAULT);
         return;
-      case DomainDrivenDesignDslPackage.EVENT__NAME:
-        setName(NAME_EDEFAULT);
-        return;
       case DomainDrivenDesignDslPackage.EVENT__VARIABLES:
         getVariables().clear();
         return;
@@ -318,8 +265,6 @@ public class EventImpl extends MinimalEObjectImpl.Container implements Event
     {
       case DomainDrivenDesignDslPackage.EVENT__DOC:
         return DOC_EDEFAULT == null ? doc != null : !DOC_EDEFAULT.equals(doc);
-      case DomainDrivenDesignDslPackage.EVENT__NAME:
-        return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case DomainDrivenDesignDslPackage.EVENT__VARIABLES:
         return variables != null && !variables.isEmpty();
       case DomainDrivenDesignDslPackage.EVENT__MESSAGE:
@@ -341,8 +286,6 @@ public class EventImpl extends MinimalEObjectImpl.Container implements Event
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (doc: ");
     result.append(doc);
-    result.append(", name: ");
-    result.append(name);
     result.append(", message: ");
     result.append(message);
     result.append(')');

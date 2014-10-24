@@ -16,6 +16,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod;
@@ -34,10 +35,10 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
  * <ul>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AbstractMethodImpl#getDoc <em>Doc</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AbstractMethodImpl#getName <em>Name</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AbstractMethodImpl#getFiredEvents <em>Fired Events</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AbstractMethodImpl#getVariables <em>Variables</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AbstractMethodImpl#getService <em>Service</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AbstractMethodImpl#getConstraints <em>Constraints</em>}</li>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AbstractMethodImpl#getEvents <em>Events</em>}</li>
  * </ul>
  * </p>
  *
@@ -86,6 +87,16 @@ public class AbstractMethodImpl extends MinimalEObjectImpl.Container implements 
   protected String name = NAME_EDEFAULT;
 
   /**
+   * The cached value of the '{@link #getFiredEvents() <em>Fired Events</em>}' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getFiredEvents()
+   * @generated
+   * @ordered
+   */
+  protected EList<Event> firedEvents;
+
+  /**
    * The cached value of the '{@link #getVariables() <em>Variables</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -114,16 +125,6 @@ public class AbstractMethodImpl extends MinimalEObjectImpl.Container implements 
    * @ordered
    */
   protected Constraints constraints;
-
-  /**
-   * The cached value of the '{@link #getEvents() <em>Events</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getEvents()
-   * @generated
-   * @ordered
-   */
-  protected EList<Event> events;
 
   /**
    * <!-- begin-user-doc -->
@@ -190,6 +191,20 @@ public class AbstractMethodImpl extends MinimalEObjectImpl.Container implements 
     name = newName;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.ABSTRACT_METHOD__NAME, oldName, name));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Event> getFiredEvents()
+  {
+    if (firedEvents == null)
+    {
+      firedEvents = new EObjectResolvingEList<Event>(Event.class, this, DomainDrivenDesignDslPackage.ABSTRACT_METHOD__FIRED_EVENTS);
+    }
+    return firedEvents;
   }
 
   /**
@@ -302,20 +317,6 @@ public class AbstractMethodImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Event> getEvents()
-  {
-    if (events == null)
-    {
-      events = new EObjectContainmentEList<Event>(Event.class, this, DomainDrivenDesignDslPackage.ABSTRACT_METHOD__EVENTS);
-    }
-    return events;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -325,8 +326,6 @@ public class AbstractMethodImpl extends MinimalEObjectImpl.Container implements 
         return ((InternalEList<?>)getVariables()).basicRemove(otherEnd, msgs);
       case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__CONSTRAINTS:
         return basicSetConstraints(null, msgs);
-      case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__EVENTS:
-        return ((InternalEList<?>)getEvents()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -345,6 +344,8 @@ public class AbstractMethodImpl extends MinimalEObjectImpl.Container implements 
         return getDoc();
       case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__NAME:
         return getName();
+      case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__FIRED_EVENTS:
+        return getFiredEvents();
       case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__VARIABLES:
         return getVariables();
       case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__SERVICE:
@@ -352,8 +353,6 @@ public class AbstractMethodImpl extends MinimalEObjectImpl.Container implements 
         return basicGetService();
       case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__CONSTRAINTS:
         return getConstraints();
-      case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__EVENTS:
-        return getEvents();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -375,6 +374,10 @@ public class AbstractMethodImpl extends MinimalEObjectImpl.Container implements 
       case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__NAME:
         setName((String)newValue);
         return;
+      case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__FIRED_EVENTS:
+        getFiredEvents().clear();
+        getFiredEvents().addAll((Collection<? extends Event>)newValue);
+        return;
       case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__VARIABLES:
         getVariables().clear();
         getVariables().addAll((Collection<? extends Variable>)newValue);
@@ -384,10 +387,6 @@ public class AbstractMethodImpl extends MinimalEObjectImpl.Container implements 
         return;
       case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__CONSTRAINTS:
         setConstraints((Constraints)newValue);
-        return;
-      case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__EVENTS:
-        getEvents().clear();
-        getEvents().addAll((Collection<? extends Event>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -409,6 +408,9 @@ public class AbstractMethodImpl extends MinimalEObjectImpl.Container implements 
       case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__NAME:
         setName(NAME_EDEFAULT);
         return;
+      case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__FIRED_EVENTS:
+        getFiredEvents().clear();
+        return;
       case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__VARIABLES:
         getVariables().clear();
         return;
@@ -417,9 +419,6 @@ public class AbstractMethodImpl extends MinimalEObjectImpl.Container implements 
         return;
       case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__CONSTRAINTS:
         setConstraints((Constraints)null);
-        return;
-      case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__EVENTS:
-        getEvents().clear();
         return;
     }
     super.eUnset(featureID);
@@ -439,14 +438,14 @@ public class AbstractMethodImpl extends MinimalEObjectImpl.Container implements 
         return DOC_EDEFAULT == null ? doc != null : !DOC_EDEFAULT.equals(doc);
       case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
+      case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__FIRED_EVENTS:
+        return firedEvents != null && !firedEvents.isEmpty();
       case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__VARIABLES:
         return variables != null && !variables.isEmpty();
       case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__SERVICE:
         return service != null;
       case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__CONSTRAINTS:
         return constraints != null;
-      case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__EVENTS:
-        return events != null && !events.isEmpty();
     }
     return super.eIsSet(featureID);
   }

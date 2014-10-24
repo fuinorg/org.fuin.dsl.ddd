@@ -194,6 +194,15 @@ public interface DomainDrivenDesignDslFactory extends EFactory
   EnumInstance createEnumInstance();
 
   /**
+   * Returns a new object of class '<em>Event</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Event</em>'.
+   * @generated
+   */
+  Event createEvent();
+
+  /**
    * Returns a new object of class '<em>Entity</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -246,15 +255,6 @@ public interface DomainDrivenDesignDslFactory extends EFactory
    * @generated
    */
   Method createMethod();
-
-  /**
-   * Returns a new object of class '<em>Event</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Event</em>'.
-   * @generated
-   */
-  Event createEvent();
 
   /**
    * Returns a new object of class '<em>Type Meta Info</em>'.

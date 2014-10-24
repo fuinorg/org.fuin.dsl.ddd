@@ -16,10 +16,10 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getDoc <em>Doc</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getName <em>Name</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getFiredEvents <em>Fired Events</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getVariables <em>Variables</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getService <em>Service</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getConstraints <em>Constraints</em>}</li>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getEvents <em>Events</em>}</li>
  * </ul>
  * </p>
  *
@@ -80,6 +80,22 @@ public interface AbstractMethod extends EObject
    * @generated
    */
   void setName(String value);
+
+  /**
+   * Returns the value of the '<em><b>Fired Events</b></em>' reference list.
+   * The list contents are of type {@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Event}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Fired Events</em>' reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Fired Events</em>' reference list.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getAbstractMethod_FiredEvents()
+   * @model
+   * @generated
+   */
+  EList<Event> getFiredEvents();
 
   /**
    * Returns the value of the '<em><b>Variables</b></em>' containment reference list.
@@ -148,21 +164,5 @@ public interface AbstractMethod extends EObject
    * @generated
    */
   void setConstraints(Constraints value);
-
-  /**
-   * Returns the value of the '<em><b>Events</b></em>' containment reference list.
-   * The list contents are of type {@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Event}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Events</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Events</em>' containment reference list.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getAbstractMethod_Events()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Event> getEvents();
 
 } // AbstractMethod

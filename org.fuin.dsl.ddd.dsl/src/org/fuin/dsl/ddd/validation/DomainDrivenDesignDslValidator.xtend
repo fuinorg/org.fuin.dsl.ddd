@@ -70,16 +70,6 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 	}
 
 	@Check
-	def checkEventsOnlyAllowedInEntities(Event event) {
-
-		if (!event.isChildOfAbstractEntity) {
-			error("Events are only allowed within entity methods", event,
-				DomainDrivenDesignDslPackage.Literals::EVENT__NAME, EVENT_ONLY_ALLOWED_FOR_ENTITY)
-		}
-
-	}
-
-	@Check
 	def checkVariablesInConstraintMessage(Constraint constraint) {
 		val name = findUnknownVar(constraint.allVariables, constraint.message);
 		if (name != null) {
@@ -325,17 +315,6 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 			return (ae as Entity).root
 		}
 		return null
-	}
-
-	/**
-	 * Returns the information if an object is defined inside an abstract entity.
-	 * 
-	 * @param obj Object to verify.
-	 * 
-	 * @return TRUE if the object is part of an Aggregate or Entity.
-	 */
-	private def static boolean isChildOfAbstractEntity(EObject obj) {
-		return getParent(AbstractEntity, obj) != null
 	}
 
 	/**

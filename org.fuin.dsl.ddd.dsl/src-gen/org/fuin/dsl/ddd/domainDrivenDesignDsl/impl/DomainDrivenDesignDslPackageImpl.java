@@ -195,6 +195,13 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
+  private EClass eventEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   private EClass entityEClass = null;
 
   /**
@@ -231,13 +238,6 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * @generated
    */
   private EClass methodEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass eventEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -631,6 +631,16 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getAbstractEntity_Events()
+  {
+    return (EReference)abstractEntityEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getConstraintTarget()
   {
     return constraintTargetEClass;
@@ -881,6 +891,46 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getEvent()
+  {
+    return eventEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEvent_Doc()
+  {
+    return (EAttribute)eventEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getEvent_Variables()
+  {
+    return (EReference)eventEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getEvent_Message()
+  {
+    return (EAttribute)eventEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getEntity()
   {
     return entityEClass;
@@ -961,7 +1011,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAbstractMethod_Variables()
+  public EReference getAbstractMethod_FiredEvents()
   {
     return (EReference)abstractMethodEClass.getEStructuralFeatures().get(2);
   }
@@ -971,7 +1021,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAbstractMethod_Service()
+  public EReference getAbstractMethod_Variables()
   {
     return (EReference)abstractMethodEClass.getEStructuralFeatures().get(3);
   }
@@ -981,7 +1031,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAbstractMethod_Constraints()
+  public EReference getAbstractMethod_Service()
   {
     return (EReference)abstractMethodEClass.getEStructuralFeatures().get(4);
   }
@@ -991,7 +1041,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAbstractMethod_Events()
+  public EReference getAbstractMethod_Constraints()
   {
     return (EReference)abstractMethodEClass.getEStructuralFeatures().get(5);
   }
@@ -1064,56 +1114,6 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
   public EReference getMethod_ReturnType()
   {
     return (EReference)methodEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getEvent()
-  {
-    return eventEClass;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getEvent_Doc()
-  {
-    return (EAttribute)eventEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getEvent_Name()
-  {
-    return (EAttribute)eventEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getEvent_Variables()
-  {
-    return (EReference)eventEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getEvent_Message()
-  {
-    return (EAttribute)eventEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1499,6 +1499,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     createEReference(abstractEntityIdEClass, ABSTRACT_ENTITY_ID__BASE);
 
     abstractEntityEClass = createEClass(ABSTRACT_ENTITY);
+    createEReference(abstractEntityEClass, ABSTRACT_ENTITY__EVENTS);
 
     constraintTargetEClass = createEClass(CONSTRAINT_TARGET);
 
@@ -1534,6 +1535,11 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     createEAttribute(enumInstanceEClass, ENUM_INSTANCE__NAME);
     createEReference(enumInstanceEClass, ENUM_INSTANCE__PARAMS);
 
+    eventEClass = createEClass(EVENT);
+    createEAttribute(eventEClass, EVENT__DOC);
+    createEReference(eventEClass, EVENT__VARIABLES);
+    createEAttribute(eventEClass, EVENT__MESSAGE);
+
     entityEClass = createEClass(ENTITY);
     createEReference(entityEClass, ENTITY__ID_TYPE);
     createEReference(entityEClass, ENTITY__ROOT);
@@ -1544,10 +1550,10 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     abstractMethodEClass = createEClass(ABSTRACT_METHOD);
     createEAttribute(abstractMethodEClass, ABSTRACT_METHOD__DOC);
     createEAttribute(abstractMethodEClass, ABSTRACT_METHOD__NAME);
+    createEReference(abstractMethodEClass, ABSTRACT_METHOD__FIRED_EVENTS);
     createEReference(abstractMethodEClass, ABSTRACT_METHOD__VARIABLES);
     createEReference(abstractMethodEClass, ABSTRACT_METHOD__SERVICE);
     createEReference(abstractMethodEClass, ABSTRACT_METHOD__CONSTRAINTS);
-    createEReference(abstractMethodEClass, ABSTRACT_METHOD__EVENTS);
 
     constructorEClass = createEClass(CONSTRUCTOR);
 
@@ -1558,12 +1564,6 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     methodEClass = createEClass(METHOD);
     createEReference(methodEClass, METHOD__REF_METHOD);
     createEReference(methodEClass, METHOD__RETURN_TYPE);
-
-    eventEClass = createEClass(EVENT);
-    createEAttribute(eventEClass, EVENT__DOC);
-    createEAttribute(eventEClass, EVENT__NAME);
-    createEReference(eventEClass, EVENT__VARIABLES);
-    createEAttribute(eventEClass, EVENT__MESSAGE);
 
     typeMetaInfoEClass = createEClass(TYPE_META_INFO);
     createEAttribute(typeMetaInfoEClass, TYPE_META_INFO__SLABEL);
@@ -1653,6 +1653,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     entityIdEClass.getESuperTypes().add(this.getAbstractEntityId());
     aggregateIdEClass.getESuperTypes().add(this.getAbstractEntityId());
     enumObjectEClass.getESuperTypes().add(this.getAbstractVO());
+    eventEClass.getESuperTypes().add(this.getAbstractElement());
     entityEClass.getESuperTypes().add(this.getAbstractEntity());
     aggregateEClass.getESuperTypes().add(this.getAbstractEntity());
     constructorEClass.getESuperTypes().add(this.getAbstractMethod());
@@ -1697,6 +1698,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     initEReference(getAbstractEntityId_Base(), this.getExternalType(), null, "base", null, 0, 1, AbstractEntityId.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(abstractEntityEClass, AbstractEntity.class, "AbstractEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getAbstractEntity_Events(), this.getEvent(), null, "events", null, 0, -1, AbstractEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     addEOperation(abstractEntityEClass, this.getAbstractEntityId(), "getIdType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1734,6 +1736,11 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     initEAttribute(getEnumInstance_Name(), ecorePackage.getEString(), "name", null, 0, 1, EnumInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getEnumInstance_Params(), this.getLiteral(), null, "params", null, 0, -1, EnumInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(eventEClass, Event.class, "Event", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getEvent_Doc(), ecorePackage.getEString(), "doc", null, 0, 1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getEvent_Variables(), this.getVariable(), null, "variables", null, 0, -1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEvent_Message(), ecorePackage.getEString(), "message", null, 0, 1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(entityEClass, Entity.class, "Entity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getEntity_IdType(), this.getEntityId(), null, "idType", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getEntity_Root(), this.getAggregate(), null, "root", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1744,10 +1751,10 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     initEClass(abstractMethodEClass, AbstractMethod.class, "AbstractMethod", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAbstractMethod_Doc(), ecorePackage.getEString(), "doc", null, 0, 1, AbstractMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAbstractMethod_Name(), ecorePackage.getEString(), "name", null, 0, 1, AbstractMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAbstractMethod_FiredEvents(), this.getEvent(), null, "firedEvents", null, 0, -1, AbstractMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAbstractMethod_Variables(), this.getVariable(), null, "variables", null, 0, -1, AbstractMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAbstractMethod_Service(), this.getService(), null, "service", null, 0, 1, AbstractMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAbstractMethod_Constraints(), this.getConstraints(), null, "constraints", null, 0, 1, AbstractMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAbstractMethod_Events(), this.getEvent(), null, "events", null, 0, -1, AbstractMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(constructorEClass, Constructor.class, "Constructor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1758,12 +1765,6 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     initEClass(methodEClass, Method.class, "Method", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getMethod_RefMethod(), this.getMethod(), null, "refMethod", null, 0, 1, Method.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getMethod_ReturnType(), this.getReturnType(), null, "returnType", null, 0, 1, Method.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-    initEClass(eventEClass, Event.class, "Event", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEAttribute(getEvent_Doc(), ecorePackage.getEString(), "doc", null, 0, 1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getEvent_Name(), ecorePackage.getEString(), "name", null, 0, 1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getEvent_Variables(), this.getVariable(), null, "variables", null, 0, -1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getEvent_Message(), ecorePackage.getEString(), "message", null, 0, 1, Event.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(typeMetaInfoEClass, TypeMetaInfo.class, "TypeMetaInfo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getTypeMetaInfo_Slabel(), ecorePackage.getEString(), "slabel", null, 0, 1, TypeMetaInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

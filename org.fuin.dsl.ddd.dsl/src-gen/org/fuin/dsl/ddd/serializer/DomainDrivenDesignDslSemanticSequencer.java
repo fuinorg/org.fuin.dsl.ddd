@@ -156,7 +156,8 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 				}
 				else break;
 			case DomainDrivenDesignDslPackage.EVENT:
-				if(context == grammarAccess.getEventRule()) {
+				if(context == grammarAccess.getAbstractElementRule() ||
+				   context == grammarAccess.getEventRule()) {
 					sequence_Event(context, (Event) semanticObject); 
 					return; 
 				}
@@ -297,7 +298,8 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *         metaInfo=TypeMetaInfo 
 	 *         variables+=Variable* 
 	 *         constructors+=Constructor* 
-	 *         methods+=Method*
+	 *         methods+=Method* 
+	 *         events+=Event*
 	 *     )
 	 */
 	protected void sequence_Aggregate(EObject context, Aggregate semanticObject) {
@@ -353,10 +355,10 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *     (
 	 *         doc=DOC? 
 	 *         name=ID 
+	 *         (firedEvents+=[Event|ID] firedEvents+=[Event|ID]*)? 
 	 *         variables+=Variable* 
 	 *         service=[Service|ID]? 
-	 *         constraints=Constraints? 
-	 *         events+=Event*
+	 *         constraints=Constraints?
 	 *     )
 	 */
 	protected void sequence_Constructor(EObject context, Constructor semanticObject) {
@@ -410,7 +412,8 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *         metaInfo=TypeMetaInfo 
 	 *         variables+=Variable* 
 	 *         constructors+=Constructor* 
-	 *         methods+=Method*
+	 *         methods+=Method* 
+	 *         events+=Event*
 	 *     )
 	 */
 	protected void sequence_Entity(EObject context, Entity semanticObject) {
@@ -502,11 +505,11 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *         doc=DOC? 
 	 *         name=ID 
 	 *         refMethod=[Method|FQN]? 
+	 *         (firedEvents+=[Event|ID] firedEvents+=[Event|ID]*)? 
 	 *         variables+=Variable* 
 	 *         service=[Service|ID]? 
 	 *         returnType=ReturnType? 
-	 *         constraints=Constraints? 
-	 *         events+=Event*
+	 *         constraints=Constraints?
 	 *     )
 	 */
 	protected void sequence_Method(EObject context, Method semanticObject) {

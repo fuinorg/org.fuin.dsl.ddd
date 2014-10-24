@@ -544,13 +544,22 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int ABSTRACT_ENTITY__METHODS = INTERNAL_TYPE__METHODS;
 
   /**
+   * The feature id for the '<em><b>Events</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ABSTRACT_ENTITY__EVENTS = INTERNAL_TYPE_FEATURE_COUNT + 0;
+
+  /**
    * The number of structural features of the '<em>Abstract Entity</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ABSTRACT_ENTITY_FEATURE_COUNT = INTERNAL_TYPE_FEATURE_COUNT + 0;
+  int ABSTRACT_ENTITY_FEATURE_COUNT = INTERNAL_TYPE_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConstraintTargetImpl <em>Constraint Target</em>}' class.
@@ -1129,6 +1138,61 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int ENUM_INSTANCE_FEATURE_COUNT = 3;
 
   /**
+   * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.EventImpl <em>Event</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.EventImpl
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getEvent()
+   * @generated
+   */
+  int EVENT = 19;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EVENT__NAME = ABSTRACT_ELEMENT__NAME;
+
+  /**
+   * The feature id for the '<em><b>Doc</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EVENT__DOC = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
+
+  /**
+   * The feature id for the '<em><b>Variables</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EVENT__VARIABLES = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
+
+  /**
+   * The feature id for the '<em><b>Message</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EVENT__MESSAGE = ABSTRACT_ELEMENT_FEATURE_COUNT + 2;
+
+  /**
+   * The number of structural features of the '<em>Event</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EVENT_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 3;
+
+  /**
    * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.EntityImpl <em>Entity</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1136,7 +1200,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getEntity()
    * @generated
    */
-  int ENTITY = 19;
+  int ENTITY = 20;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1193,6 +1257,15 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int ENTITY__METHODS = ABSTRACT_ENTITY__METHODS;
 
   /**
+   * The feature id for the '<em><b>Events</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENTITY__EVENTS = ABSTRACT_ENTITY__EVENTS;
+
+  /**
    * The feature id for the '<em><b>Id Type</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1227,7 +1300,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getAggregate()
    * @generated
    */
-  int AGGREGATE = 20;
+  int AGGREGATE = 21;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -1284,6 +1357,15 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int AGGREGATE__METHODS = ABSTRACT_ENTITY__METHODS;
 
   /**
+   * The feature id for the '<em><b>Events</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AGGREGATE__EVENTS = ABSTRACT_ENTITY__EVENTS;
+
+  /**
    * The feature id for the '<em><b>Id Type</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1309,7 +1391,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getAbstractMethod()
    * @generated
    */
-  int ABSTRACT_METHOD = 21;
+  int ABSTRACT_METHOD = 22;
 
   /**
    * The feature id for the '<em><b>Doc</b></em>' attribute.
@@ -1330,13 +1412,22 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int ABSTRACT_METHOD__NAME = 1;
 
   /**
+   * The feature id for the '<em><b>Fired Events</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ABSTRACT_METHOD__FIRED_EVENTS = 2;
+
+  /**
    * The feature id for the '<em><b>Variables</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ABSTRACT_METHOD__VARIABLES = 2;
+  int ABSTRACT_METHOD__VARIABLES = 3;
 
   /**
    * The feature id for the '<em><b>Service</b></em>' reference.
@@ -1345,7 +1436,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ABSTRACT_METHOD__SERVICE = 3;
+  int ABSTRACT_METHOD__SERVICE = 4;
 
   /**
    * The feature id for the '<em><b>Constraints</b></em>' containment reference.
@@ -1354,16 +1445,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ABSTRACT_METHOD__CONSTRAINTS = 4;
-
-  /**
-   * The feature id for the '<em><b>Events</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ABSTRACT_METHOD__EVENTS = 5;
+  int ABSTRACT_METHOD__CONSTRAINTS = 5;
 
   /**
    * The number of structural features of the '<em>Abstract Method</em>' class.
@@ -1382,7 +1464,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getConstructor()
    * @generated
    */
-  int CONSTRUCTOR = 22;
+  int CONSTRUCTOR = 23;
 
   /**
    * The feature id for the '<em><b>Doc</b></em>' attribute.
@@ -1401,6 +1483,15 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @ordered
    */
   int CONSTRUCTOR__NAME = ABSTRACT_METHOD__NAME;
+
+  /**
+   * The feature id for the '<em><b>Fired Events</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSTRUCTOR__FIRED_EVENTS = ABSTRACT_METHOD__FIRED_EVENTS;
 
   /**
    * The feature id for the '<em><b>Variables</b></em>' containment reference list.
@@ -1430,15 +1521,6 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int CONSTRUCTOR__CONSTRAINTS = ABSTRACT_METHOD__CONSTRAINTS;
 
   /**
-   * The feature id for the '<em><b>Events</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONSTRUCTOR__EVENTS = ABSTRACT_METHOD__EVENTS;
-
-  /**
    * The number of structural features of the '<em>Constructor</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1455,7 +1537,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getReturnType()
    * @generated
    */
-  int RETURN_TYPE = 23;
+  int RETURN_TYPE = 24;
 
   /**
    * The feature id for the '<em><b>Doc</b></em>' attribute.
@@ -1492,7 +1574,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getMethod()
    * @generated
    */
-  int METHOD = 24;
+  int METHOD = 25;
 
   /**
    * The feature id for the '<em><b>Doc</b></em>' attribute.
@@ -1511,6 +1593,15 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @ordered
    */
   int METHOD__NAME = ABSTRACT_METHOD__NAME;
+
+  /**
+   * The feature id for the '<em><b>Fired Events</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD__FIRED_EVENTS = ABSTRACT_METHOD__FIRED_EVENTS;
 
   /**
    * The feature id for the '<em><b>Variables</b></em>' containment reference list.
@@ -1540,15 +1631,6 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int METHOD__CONSTRAINTS = ABSTRACT_METHOD__CONSTRAINTS;
 
   /**
-   * The feature id for the '<em><b>Events</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int METHOD__EVENTS = ABSTRACT_METHOD__EVENTS;
-
-  /**
    * The feature id for the '<em><b>Ref Method</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1574,61 +1656,6 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @ordered
    */
   int METHOD_FEATURE_COUNT = ABSTRACT_METHOD_FEATURE_COUNT + 2;
-
-  /**
-   * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.EventImpl <em>Event</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.EventImpl
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getEvent()
-   * @generated
-   */
-  int EVENT = 25;
-
-  /**
-   * The feature id for the '<em><b>Doc</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EVENT__DOC = 0;
-
-  /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EVENT__NAME = 1;
-
-  /**
-   * The feature id for the '<em><b>Variables</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EVENT__VARIABLES = 2;
-
-  /**
-   * The feature id for the '<em><b>Message</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EVENT__MESSAGE = 3;
-
-  /**
-   * The number of structural features of the '<em>Event</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EVENT_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.TypeMetaInfoImpl <em>Type Meta Info</em>}' class.
@@ -2339,6 +2366,17 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   EClass getAbstractEntity();
 
   /**
+   * Returns the meta object for the containment reference list '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntity#getEvents <em>Events</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Events</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntity#getEvents()
+   * @see #getAbstractEntity()
+   * @generated
+   */
+  EReference getAbstractEntity_Events();
+
+  /**
    * Returns the meta object for class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget <em>Constraint Target</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2605,6 +2643,49 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   EReference getEnumInstance_Params();
 
   /**
+   * Returns the meta object for class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Event <em>Event</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Event</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Event
+   * @generated
+   */
+  EClass getEvent();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Event#getDoc <em>Doc</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Doc</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Event#getDoc()
+   * @see #getEvent()
+   * @generated
+   */
+  EAttribute getEvent_Doc();
+
+  /**
+   * Returns the meta object for the containment reference list '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Event#getVariables <em>Variables</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Variables</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Event#getVariables()
+   * @see #getEvent()
+   * @generated
+   */
+  EReference getEvent_Variables();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Event#getMessage <em>Message</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Message</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Event#getMessage()
+   * @see #getEvent()
+   * @generated
+   */
+  EAttribute getEvent_Message();
+
+  /**
    * Returns the meta object for class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity <em>Entity</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2690,6 +2771,17 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   EAttribute getAbstractMethod_Name();
 
   /**
+   * Returns the meta object for the reference list '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getFiredEvents <em>Fired Events</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Fired Events</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getFiredEvents()
+   * @see #getAbstractMethod()
+   * @generated
+   */
+  EReference getAbstractMethod_FiredEvents();
+
+  /**
    * Returns the meta object for the containment reference list '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getVariables <em>Variables</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2721,17 +2813,6 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @generated
    */
   EReference getAbstractMethod_Constraints();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getEvents <em>Events</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Events</em>'.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getEvents()
-   * @see #getAbstractMethod()
-   * @generated
-   */
-  EReference getAbstractMethod_Events();
 
   /**
    * Returns the meta object for class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Constructor <em>Constructor</em>}'.
@@ -2806,60 +2887,6 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @generated
    */
   EReference getMethod_ReturnType();
-
-  /**
-   * Returns the meta object for class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Event <em>Event</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Event</em>'.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Event
-   * @generated
-   */
-  EClass getEvent();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Event#getDoc <em>Doc</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Doc</em>'.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Event#getDoc()
-   * @see #getEvent()
-   * @generated
-   */
-  EAttribute getEvent_Doc();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Event#getName <em>Name</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Name</em>'.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Event#getName()
-   * @see #getEvent()
-   * @generated
-   */
-  EAttribute getEvent_Name();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Event#getVariables <em>Variables</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Variables</em>'.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Event#getVariables()
-   * @see #getEvent()
-   * @generated
-   */
-  EReference getEvent_Variables();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Event#getMessage <em>Message</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Message</em>'.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Event#getMessage()
-   * @see #getEvent()
-   * @generated
-   */
-  EAttribute getEvent_Message();
 
   /**
    * Returns the meta object for class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.TypeMetaInfo <em>Type Meta Info</em>}'.
@@ -3437,6 +3464,14 @@ public interface DomainDrivenDesignDslPackage extends EPackage
     EClass ABSTRACT_ENTITY = eINSTANCE.getAbstractEntity();
 
     /**
+     * The meta object literal for the '<em><b>Events</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ABSTRACT_ENTITY__EVENTS = eINSTANCE.getAbstractEntity_Events();
+
+    /**
      * The meta object literal for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConstraintTargetImpl <em>Constraint Target</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3655,6 +3690,40 @@ public interface DomainDrivenDesignDslPackage extends EPackage
     EReference ENUM_INSTANCE__PARAMS = eINSTANCE.getEnumInstance_Params();
 
     /**
+     * The meta object literal for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.EventImpl <em>Event</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.EventImpl
+     * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getEvent()
+     * @generated
+     */
+    EClass EVENT = eINSTANCE.getEvent();
+
+    /**
+     * The meta object literal for the '<em><b>Doc</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EVENT__DOC = eINSTANCE.getEvent_Doc();
+
+    /**
+     * The meta object literal for the '<em><b>Variables</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference EVENT__VARIABLES = eINSTANCE.getEvent_Variables();
+
+    /**
+     * The meta object literal for the '<em><b>Message</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EVENT__MESSAGE = eINSTANCE.getEvent_Message();
+
+    /**
      * The meta object literal for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.EntityImpl <em>Entity</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3725,6 +3794,14 @@ public interface DomainDrivenDesignDslPackage extends EPackage
     EAttribute ABSTRACT_METHOD__NAME = eINSTANCE.getAbstractMethod_Name();
 
     /**
+     * The meta object literal for the '<em><b>Fired Events</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ABSTRACT_METHOD__FIRED_EVENTS = eINSTANCE.getAbstractMethod_FiredEvents();
+
+    /**
      * The meta object literal for the '<em><b>Variables</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3747,14 +3824,6 @@ public interface DomainDrivenDesignDslPackage extends EPackage
      * @generated
      */
     EReference ABSTRACT_METHOD__CONSTRAINTS = eINSTANCE.getAbstractMethod_Constraints();
-
-    /**
-     * The meta object literal for the '<em><b>Events</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference ABSTRACT_METHOD__EVENTS = eINSTANCE.getAbstractMethod_Events();
 
     /**
      * The meta object literal for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConstructorImpl <em>Constructor</em>}' class.
@@ -3817,48 +3886,6 @@ public interface DomainDrivenDesignDslPackage extends EPackage
      * @generated
      */
     EReference METHOD__RETURN_TYPE = eINSTANCE.getMethod_ReturnType();
-
-    /**
-     * The meta object literal for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.EventImpl <em>Event</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.EventImpl
-     * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getEvent()
-     * @generated
-     */
-    EClass EVENT = eINSTANCE.getEvent();
-
-    /**
-     * The meta object literal for the '<em><b>Doc</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute EVENT__DOC = eINSTANCE.getEvent_Doc();
-
-    /**
-     * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute EVENT__NAME = eINSTANCE.getEvent_Name();
-
-    /**
-     * The meta object literal for the '<em><b>Variables</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference EVENT__VARIABLES = eINSTANCE.getEvent_Variables();
-
-    /**
-     * The meta object literal for the '<em><b>Message</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute EVENT__MESSAGE = eINSTANCE.getEvent_Message();
 
     /**
      * The meta object literal for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.TypeMetaInfoImpl <em>Type Meta Info</em>}' class.

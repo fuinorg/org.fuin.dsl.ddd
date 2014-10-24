@@ -38,6 +38,7 @@
 						<phase>pre-site</phase>
 						<goals>
 							<goal>generate-html</goal>
+							<goal>generate-pdf</goal>
 						</goals>
 						<configuration>
 							<includes>reference-guide.xml</includes>

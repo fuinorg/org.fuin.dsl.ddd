@@ -21,7 +21,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_DOC", "RULE_STRING", "RULE_INT", "RULE_HEX", "RULE_DECIMAL", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "'context'", "'{'", "'}'", "'namespace'", "'import'", "'type'", "'constraint'", "'on'", "'exception'", "'message'", "'cid'", "'value-object'", "'base'", "'entity-id'", "'identifies'", "'aggregate-id'", "'enum'", "'instances'", "'('", "','", "')'", "'entity'", "'identifier'", "'root'", "'aggregate'", "'constructor'", "'returns'", "'method'", "'ref'", "'event'", "'slabel'", "'label'", "'tooltip'", "'prompt'", "'examples'", "'nullable'", "'*'", "'constraints'", "'invariants'", "'service'", "'.'", "'false'", "'true'", "'null'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_ID", "RULE_DOC", "RULE_STRING", "RULE_INT", "RULE_HEX", "RULE_DECIMAL", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "'context'", "'{'", "'}'", "'namespace'", "'import'", "'type'", "'constraint'", "'on'", "'exception'", "'message'", "'cid'", "'value-object'", "'base'", "'entity-id'", "'identifies'", "'aggregate-id'", "'enum'", "'instances'", "'('", "','", "')'", "'event'", "'entity'", "'identifier'", "'root'", "'aggregate'", "'constructor'", "'fires'", "'returns'", "'method'", "'ref'", "'slabel'", "'label'", "'tooltip'", "'prompt'", "'examples'", "'nullable'", "'*'", "'constraints'", "'invariants'", "'service'", "'.'", "'false'", "'true'", "'null'"
     };
     public static final int RULE_ID=4;
     public static final int T__29=29;
@@ -39,6 +39,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
     public static final int T__55=55;
     public static final int T__56=56;
     public static final int T__19=19;
+    public static final int T__57=57;
     public static final int RULE_HEX=8;
     public static final int T__16=16;
     public static final int T__51=51;
@@ -550,7 +551,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                 int alt4=2;
                 int LA4_0 = input.LA(1);
 
-                if ( (LA4_0==RULE_DOC||(LA4_0>=18 && LA4_0<=19)||LA4_0==21||LA4_0==24||LA4_0==26||(LA4_0>=28 && LA4_0<=29)||LA4_0==34||LA4_0==37||LA4_0==52) ) {
+                if ( (LA4_0==RULE_DOC||(LA4_0>=18 && LA4_0<=19)||LA4_0==21||LA4_0==24||LA4_0==26||(LA4_0>=28 && LA4_0<=29)||(LA4_0>=34 && LA4_0<=35)||LA4_0==38||LA4_0==53) ) {
                     alt4=1;
                 }
 
@@ -803,7 +804,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "ruleAbstractElement"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:332:1: ruleAbstractElement returns [EObject current=null] : (this_Constraint_0= ruleConstraint | this_Type_1= ruleType | this_Exception_2= ruleException ) ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:332:1: ruleAbstractElement returns [EObject current=null] : (this_Constraint_0= ruleConstraint | this_Type_1= ruleType | this_Exception_2= ruleException | this_Event_3= ruleEvent ) ;
     public final EObject ruleAbstractElement() throws RecognitionException {
         EObject current = null;
 
@@ -813,15 +814,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
         EObject this_Exception_2 = null;
 
+        EObject this_Event_3 = null;
+
 
          enterRule(); 
             
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:335:28: ( (this_Constraint_0= ruleConstraint | this_Type_1= ruleType | this_Exception_2= ruleException ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:336:1: (this_Constraint_0= ruleConstraint | this_Type_1= ruleType | this_Exception_2= ruleException )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:335:28: ( (this_Constraint_0= ruleConstraint | this_Type_1= ruleType | this_Exception_2= ruleException | this_Event_3= ruleEvent ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:336:1: (this_Constraint_0= ruleConstraint | this_Type_1= ruleType | this_Exception_2= ruleException | this_Event_3= ruleEvent )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:336:1: (this_Constraint_0= ruleConstraint | this_Type_1= ruleType | this_Exception_2= ruleException )
-            int alt6=3;
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:336:1: (this_Constraint_0= ruleConstraint | this_Type_1= ruleType | this_Exception_2= ruleException | this_Event_3= ruleEvent )
+            int alt6=4;
             switch ( input.LA(1) ) {
             case RULE_DOC:
                 {
@@ -830,11 +833,16 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                 case 26:
                 case 28:
                 case 29:
-                case 34:
-                case 37:
-                case 52:
+                case 35:
+                case 38:
+                case 53:
                     {
                     alt6=2;
+                    }
+                    break;
+                case 34:
+                    {
+                    alt6=4;
                     }
                     break;
                 case 21:
@@ -866,9 +874,9 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
             case 26:
             case 28:
             case 29:
-            case 34:
-            case 37:
-            case 52:
+            case 35:
+            case 38:
+            case 53:
                 {
                 alt6=2;
                 }
@@ -876,6 +884,11 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
             case 21:
                 {
                 alt6=3;
+                }
+                break;
+            case 34:
+                {
+                alt6=4;
                 }
                 break;
             default:
@@ -940,6 +953,24 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
                     }
                     break;
+                case 4 :
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:367:5: this_Event_3= ruleEvent
+                    {
+                     
+                            newCompositeNode(grammarAccess.getAbstractElementAccess().getEventParserRuleCall_3()); 
+                        
+                    pushFollow(FOLLOW_ruleEvent_in_ruleAbstractElement755);
+                    this_Event_3=ruleEvent();
+
+                    state._fsp--;
+
+                     
+                            current = this_Event_3; 
+                            afterParserOrEnumRuleCall();
+                        
+
+                    }
+                    break;
 
             }
 
@@ -961,7 +992,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "entryRuleType"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:373:1: entryRuleType returns [EObject current=null] : iv_ruleType= ruleType EOF ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:383:1: entryRuleType returns [EObject current=null] : iv_ruleType= ruleType EOF ;
     public final EObject entryRuleType() throws RecognitionException {
         EObject current = null;
 
@@ -969,17 +1000,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:374:2: (iv_ruleType= ruleType EOF )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:375:2: iv_ruleType= ruleType EOF
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:384:2: (iv_ruleType= ruleType EOF )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:385:2: iv_ruleType= ruleType EOF
             {
              newCompositeNode(grammarAccess.getTypeRule()); 
-            pushFollow(FOLLOW_ruleType_in_entryRuleType763);
+            pushFollow(FOLLOW_ruleType_in_entryRuleType790);
             iv_ruleType=ruleType();
 
             state._fsp--;
 
              current =iv_ruleType; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleType773); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleType800); 
 
             }
 
@@ -997,7 +1028,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "ruleType"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:382:1: ruleType returns [EObject current=null] : (this_ExternalType_0= ruleExternalType | this_InternalType_1= ruleInternalType | this_Service_2= ruleService ) ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:392:1: ruleType returns [EObject current=null] : (this_ExternalType_0= ruleExternalType | this_InternalType_1= ruleInternalType | this_Service_2= ruleService ) ;
     public final EObject ruleType() throws RecognitionException {
         EObject current = null;
 
@@ -1011,10 +1042,10 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
          enterRule(); 
             
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:385:28: ( (this_ExternalType_0= ruleExternalType | this_InternalType_1= ruleInternalType | this_Service_2= ruleService ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:386:1: (this_ExternalType_0= ruleExternalType | this_InternalType_1= ruleInternalType | this_Service_2= ruleService )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:395:28: ( (this_ExternalType_0= ruleExternalType | this_InternalType_1= ruleInternalType | this_Service_2= ruleService ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:396:1: (this_ExternalType_0= ruleExternalType | this_InternalType_1= ruleInternalType | this_Service_2= ruleService )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:386:1: (this_ExternalType_0= ruleExternalType | this_InternalType_1= ruleInternalType | this_Service_2= ruleService )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:396:1: (this_ExternalType_0= ruleExternalType | this_InternalType_1= ruleInternalType | this_Service_2= ruleService )
             int alt7=3;
             switch ( input.LA(1) ) {
             case 18:
@@ -1026,10 +1057,10 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                 {
                 int LA7_2 = input.LA(2);
 
-                if ( (LA7_2==24||LA7_2==26||(LA7_2>=28 && LA7_2<=29)||LA7_2==34||LA7_2==37) ) {
+                if ( (LA7_2==24||LA7_2==26||(LA7_2>=28 && LA7_2<=29)||LA7_2==35||LA7_2==38) ) {
                     alt7=2;
                 }
-                else if ( (LA7_2==52) ) {
+                else if ( (LA7_2==53) ) {
                     alt7=3;
                 }
                 else {
@@ -1044,13 +1075,13 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
             case 26:
             case 28:
             case 29:
-            case 34:
-            case 37:
+            case 35:
+            case 38:
                 {
                 alt7=2;
                 }
                 break;
-            case 52:
+            case 53:
                 {
                 alt7=3;
                 }
@@ -1064,12 +1095,12 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             switch (alt7) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:387:5: this_ExternalType_0= ruleExternalType
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:397:5: this_ExternalType_0= ruleExternalType
                     {
                      
                             newCompositeNode(grammarAccess.getTypeAccess().getExternalTypeParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleExternalType_in_ruleType820);
+                    pushFollow(FOLLOW_ruleExternalType_in_ruleType847);
                     this_ExternalType_0=ruleExternalType();
 
                     state._fsp--;
@@ -1082,12 +1113,12 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                     }
                     break;
                 case 2 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:397:5: this_InternalType_1= ruleInternalType
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:407:5: this_InternalType_1= ruleInternalType
                     {
                      
                             newCompositeNode(grammarAccess.getTypeAccess().getInternalTypeParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleInternalType_in_ruleType847);
+                    pushFollow(FOLLOW_ruleInternalType_in_ruleType874);
                     this_InternalType_1=ruleInternalType();
 
                     state._fsp--;
@@ -1100,12 +1131,12 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                     }
                     break;
                 case 3 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:407:5: this_Service_2= ruleService
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:417:5: this_Service_2= ruleService
                     {
                      
                             newCompositeNode(grammarAccess.getTypeAccess().getServiceParserRuleCall_2()); 
                         
-                    pushFollow(FOLLOW_ruleService_in_ruleType874);
+                    pushFollow(FOLLOW_ruleService_in_ruleType901);
                     this_Service_2=ruleService();
 
                     state._fsp--;
@@ -1138,7 +1169,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "entryRuleInternalType"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:423:1: entryRuleInternalType returns [EObject current=null] : iv_ruleInternalType= ruleInternalType EOF ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:433:1: entryRuleInternalType returns [EObject current=null] : iv_ruleInternalType= ruleInternalType EOF ;
     public final EObject entryRuleInternalType() throws RecognitionException {
         EObject current = null;
 
@@ -1146,17 +1177,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:424:2: (iv_ruleInternalType= ruleInternalType EOF )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:425:2: iv_ruleInternalType= ruleInternalType EOF
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:434:2: (iv_ruleInternalType= ruleInternalType EOF )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:435:2: iv_ruleInternalType= ruleInternalType EOF
             {
              newCompositeNode(grammarAccess.getInternalTypeRule()); 
-            pushFollow(FOLLOW_ruleInternalType_in_entryRuleInternalType909);
+            pushFollow(FOLLOW_ruleInternalType_in_entryRuleInternalType936);
             iv_ruleInternalType=ruleInternalType();
 
             state._fsp--;
 
              current =iv_ruleInternalType; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleInternalType919); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleInternalType946); 
 
             }
 
@@ -1174,7 +1205,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "ruleInternalType"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:432:1: ruleInternalType returns [EObject current=null] : (this_AbstractVO_0= ruleAbstractVO | this_AbstractEntity_1= ruleAbstractEntity ) ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:442:1: ruleInternalType returns [EObject current=null] : (this_AbstractVO_0= ruleAbstractVO | this_AbstractEntity_1= ruleAbstractEntity ) ;
     public final EObject ruleInternalType() throws RecognitionException {
         EObject current = null;
 
@@ -1186,17 +1217,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
          enterRule(); 
             
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:435:28: ( (this_AbstractVO_0= ruleAbstractVO | this_AbstractEntity_1= ruleAbstractEntity ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:436:1: (this_AbstractVO_0= ruleAbstractVO | this_AbstractEntity_1= ruleAbstractEntity )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:445:28: ( (this_AbstractVO_0= ruleAbstractVO | this_AbstractEntity_1= ruleAbstractEntity ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:446:1: (this_AbstractVO_0= ruleAbstractVO | this_AbstractEntity_1= ruleAbstractEntity )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:436:1: (this_AbstractVO_0= ruleAbstractVO | this_AbstractEntity_1= ruleAbstractEntity )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:446:1: (this_AbstractVO_0= ruleAbstractVO | this_AbstractEntity_1= ruleAbstractEntity )
             int alt8=2;
             switch ( input.LA(1) ) {
             case RULE_DOC:
                 {
                 int LA8_1 = input.LA(2);
 
-                if ( (LA8_1==34||LA8_1==37) ) {
+                if ( (LA8_1==35||LA8_1==38) ) {
                     alt8=2;
                 }
                 else if ( (LA8_1==24||LA8_1==26||(LA8_1>=28 && LA8_1<=29)) ) {
@@ -1218,8 +1249,8 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                 alt8=1;
                 }
                 break;
-            case 34:
-            case 37:
+            case 35:
+            case 38:
                 {
                 alt8=2;
                 }
@@ -1233,12 +1264,12 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             switch (alt8) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:437:5: this_AbstractVO_0= ruleAbstractVO
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:447:5: this_AbstractVO_0= ruleAbstractVO
                     {
                      
                             newCompositeNode(grammarAccess.getInternalTypeAccess().getAbstractVOParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleAbstractVO_in_ruleInternalType966);
+                    pushFollow(FOLLOW_ruleAbstractVO_in_ruleInternalType993);
                     this_AbstractVO_0=ruleAbstractVO();
 
                     state._fsp--;
@@ -1251,12 +1282,12 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                     }
                     break;
                 case 2 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:447:5: this_AbstractEntity_1= ruleAbstractEntity
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:457:5: this_AbstractEntity_1= ruleAbstractEntity
                     {
                      
                             newCompositeNode(grammarAccess.getInternalTypeAccess().getAbstractEntityParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleAbstractEntity_in_ruleInternalType993);
+                    pushFollow(FOLLOW_ruleAbstractEntity_in_ruleInternalType1020);
                     this_AbstractEntity_1=ruleAbstractEntity();
 
                     state._fsp--;
@@ -1289,7 +1320,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "entryRuleAbstractVO"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:463:1: entryRuleAbstractVO returns [EObject current=null] : iv_ruleAbstractVO= ruleAbstractVO EOF ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:473:1: entryRuleAbstractVO returns [EObject current=null] : iv_ruleAbstractVO= ruleAbstractVO EOF ;
     public final EObject entryRuleAbstractVO() throws RecognitionException {
         EObject current = null;
 
@@ -1297,17 +1328,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:464:2: (iv_ruleAbstractVO= ruleAbstractVO EOF )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:465:2: iv_ruleAbstractVO= ruleAbstractVO EOF
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:474:2: (iv_ruleAbstractVO= ruleAbstractVO EOF )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:475:2: iv_ruleAbstractVO= ruleAbstractVO EOF
             {
              newCompositeNode(grammarAccess.getAbstractVORule()); 
-            pushFollow(FOLLOW_ruleAbstractVO_in_entryRuleAbstractVO1028);
+            pushFollow(FOLLOW_ruleAbstractVO_in_entryRuleAbstractVO1055);
             iv_ruleAbstractVO=ruleAbstractVO();
 
             state._fsp--;
 
              current =iv_ruleAbstractVO; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAbstractVO1038); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAbstractVO1065); 
 
             }
 
@@ -1325,7 +1356,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "ruleAbstractVO"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:472:1: ruleAbstractVO returns [EObject current=null] : (this_ValueObject_0= ruleValueObject | this_EnumObject_1= ruleEnumObject | this_AbstractEntityId_2= ruleAbstractEntityId ) ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:482:1: ruleAbstractVO returns [EObject current=null] : (this_ValueObject_0= ruleValueObject | this_EnumObject_1= ruleEnumObject | this_AbstractEntityId_2= ruleAbstractEntityId ) ;
     public final EObject ruleAbstractVO() throws RecognitionException {
         EObject current = null;
 
@@ -1339,21 +1370,15 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
          enterRule(); 
             
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:475:28: ( (this_ValueObject_0= ruleValueObject | this_EnumObject_1= ruleEnumObject | this_AbstractEntityId_2= ruleAbstractEntityId ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:476:1: (this_ValueObject_0= ruleValueObject | this_EnumObject_1= ruleEnumObject | this_AbstractEntityId_2= ruleAbstractEntityId )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:485:28: ( (this_ValueObject_0= ruleValueObject | this_EnumObject_1= ruleEnumObject | this_AbstractEntityId_2= ruleAbstractEntityId ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:486:1: (this_ValueObject_0= ruleValueObject | this_EnumObject_1= ruleEnumObject | this_AbstractEntityId_2= ruleAbstractEntityId )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:476:1: (this_ValueObject_0= ruleValueObject | this_EnumObject_1= ruleEnumObject | this_AbstractEntityId_2= ruleAbstractEntityId )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:486:1: (this_ValueObject_0= ruleValueObject | this_EnumObject_1= ruleEnumObject | this_AbstractEntityId_2= ruleAbstractEntityId )
             int alt9=3;
             switch ( input.LA(1) ) {
             case RULE_DOC:
                 {
                 switch ( input.LA(2) ) {
-                case 26:
-                case 28:
-                    {
-                    alt9=3;
-                    }
-                    break;
                 case 29:
                     {
                     alt9=2;
@@ -1362,6 +1387,12 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                 case 24:
                     {
                     alt9=1;
+                    }
+                    break;
+                case 26:
+                case 28:
+                    {
+                    alt9=3;
                     }
                     break;
                 default:
@@ -1398,12 +1429,12 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             switch (alt9) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:477:5: this_ValueObject_0= ruleValueObject
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:487:5: this_ValueObject_0= ruleValueObject
                     {
                      
                             newCompositeNode(grammarAccess.getAbstractVOAccess().getValueObjectParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleValueObject_in_ruleAbstractVO1085);
+                    pushFollow(FOLLOW_ruleValueObject_in_ruleAbstractVO1112);
                     this_ValueObject_0=ruleValueObject();
 
                     state._fsp--;
@@ -1416,12 +1447,12 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                     }
                     break;
                 case 2 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:487:5: this_EnumObject_1= ruleEnumObject
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:497:5: this_EnumObject_1= ruleEnumObject
                     {
                      
                             newCompositeNode(grammarAccess.getAbstractVOAccess().getEnumObjectParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleEnumObject_in_ruleAbstractVO1112);
+                    pushFollow(FOLLOW_ruleEnumObject_in_ruleAbstractVO1139);
                     this_EnumObject_1=ruleEnumObject();
 
                     state._fsp--;
@@ -1434,12 +1465,12 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                     }
                     break;
                 case 3 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:497:5: this_AbstractEntityId_2= ruleAbstractEntityId
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:507:5: this_AbstractEntityId_2= ruleAbstractEntityId
                     {
                      
                             newCompositeNode(grammarAccess.getAbstractVOAccess().getAbstractEntityIdParserRuleCall_2()); 
                         
-                    pushFollow(FOLLOW_ruleAbstractEntityId_in_ruleAbstractVO1139);
+                    pushFollow(FOLLOW_ruleAbstractEntityId_in_ruleAbstractVO1166);
                     this_AbstractEntityId_2=ruleAbstractEntityId();
 
                     state._fsp--;
@@ -1472,7 +1503,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "entryRuleAbstractEntityId"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:513:1: entryRuleAbstractEntityId returns [EObject current=null] : iv_ruleAbstractEntityId= ruleAbstractEntityId EOF ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:523:1: entryRuleAbstractEntityId returns [EObject current=null] : iv_ruleAbstractEntityId= ruleAbstractEntityId EOF ;
     public final EObject entryRuleAbstractEntityId() throws RecognitionException {
         EObject current = null;
 
@@ -1480,17 +1511,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:514:2: (iv_ruleAbstractEntityId= ruleAbstractEntityId EOF )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:515:2: iv_ruleAbstractEntityId= ruleAbstractEntityId EOF
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:524:2: (iv_ruleAbstractEntityId= ruleAbstractEntityId EOF )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:525:2: iv_ruleAbstractEntityId= ruleAbstractEntityId EOF
             {
              newCompositeNode(grammarAccess.getAbstractEntityIdRule()); 
-            pushFollow(FOLLOW_ruleAbstractEntityId_in_entryRuleAbstractEntityId1174);
+            pushFollow(FOLLOW_ruleAbstractEntityId_in_entryRuleAbstractEntityId1201);
             iv_ruleAbstractEntityId=ruleAbstractEntityId();
 
             state._fsp--;
 
              current =iv_ruleAbstractEntityId; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAbstractEntityId1184); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAbstractEntityId1211); 
 
             }
 
@@ -1508,7 +1539,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "ruleAbstractEntityId"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:522:1: ruleAbstractEntityId returns [EObject current=null] : (this_EntityId_0= ruleEntityId | this_AggregateId_1= ruleAggregateId ) ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:532:1: ruleAbstractEntityId returns [EObject current=null] : (this_EntityId_0= ruleEntityId | this_AggregateId_1= ruleAggregateId ) ;
     public final EObject ruleAbstractEntityId() throws RecognitionException {
         EObject current = null;
 
@@ -1520,10 +1551,10 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
          enterRule(); 
             
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:525:28: ( (this_EntityId_0= ruleEntityId | this_AggregateId_1= ruleAggregateId ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:526:1: (this_EntityId_0= ruleEntityId | this_AggregateId_1= ruleAggregateId )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:535:28: ( (this_EntityId_0= ruleEntityId | this_AggregateId_1= ruleAggregateId ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:536:1: (this_EntityId_0= ruleEntityId | this_AggregateId_1= ruleAggregateId )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:526:1: (this_EntityId_0= ruleEntityId | this_AggregateId_1= ruleAggregateId )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:536:1: (this_EntityId_0= ruleEntityId | this_AggregateId_1= ruleAggregateId )
             int alt10=2;
             switch ( input.LA(1) ) {
             case RULE_DOC:
@@ -1563,12 +1594,12 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             switch (alt10) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:527:5: this_EntityId_0= ruleEntityId
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:537:5: this_EntityId_0= ruleEntityId
                     {
                      
                             newCompositeNode(grammarAccess.getAbstractEntityIdAccess().getEntityIdParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleEntityId_in_ruleAbstractEntityId1231);
+                    pushFollow(FOLLOW_ruleEntityId_in_ruleAbstractEntityId1258);
                     this_EntityId_0=ruleEntityId();
 
                     state._fsp--;
@@ -1581,12 +1612,12 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                     }
                     break;
                 case 2 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:537:5: this_AggregateId_1= ruleAggregateId
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:547:5: this_AggregateId_1= ruleAggregateId
                     {
                      
                             newCompositeNode(grammarAccess.getAbstractEntityIdAccess().getAggregateIdParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleAggregateId_in_ruleAbstractEntityId1258);
+                    pushFollow(FOLLOW_ruleAggregateId_in_ruleAbstractEntityId1285);
                     this_AggregateId_1=ruleAggregateId();
 
                     state._fsp--;
@@ -1619,7 +1650,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "entryRuleAbstractEntity"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:553:1: entryRuleAbstractEntity returns [EObject current=null] : iv_ruleAbstractEntity= ruleAbstractEntity EOF ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:563:1: entryRuleAbstractEntity returns [EObject current=null] : iv_ruleAbstractEntity= ruleAbstractEntity EOF ;
     public final EObject entryRuleAbstractEntity() throws RecognitionException {
         EObject current = null;
 
@@ -1627,17 +1658,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:554:2: (iv_ruleAbstractEntity= ruleAbstractEntity EOF )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:555:2: iv_ruleAbstractEntity= ruleAbstractEntity EOF
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:564:2: (iv_ruleAbstractEntity= ruleAbstractEntity EOF )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:565:2: iv_ruleAbstractEntity= ruleAbstractEntity EOF
             {
              newCompositeNode(grammarAccess.getAbstractEntityRule()); 
-            pushFollow(FOLLOW_ruleAbstractEntity_in_entryRuleAbstractEntity1293);
+            pushFollow(FOLLOW_ruleAbstractEntity_in_entryRuleAbstractEntity1320);
             iv_ruleAbstractEntity=ruleAbstractEntity();
 
             state._fsp--;
 
              current =iv_ruleAbstractEntity; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAbstractEntity1303); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAbstractEntity1330); 
 
             }
 
@@ -1655,7 +1686,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "ruleAbstractEntity"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:562:1: ruleAbstractEntity returns [EObject current=null] : (this_Entity_0= ruleEntity | this_Aggregate_1= ruleAggregate ) ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:572:1: ruleAbstractEntity returns [EObject current=null] : (this_Entity_0= ruleEntity | this_Aggregate_1= ruleAggregate ) ;
     public final EObject ruleAbstractEntity() throws RecognitionException {
         EObject current = null;
 
@@ -1667,20 +1698,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
          enterRule(); 
             
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:565:28: ( (this_Entity_0= ruleEntity | this_Aggregate_1= ruleAggregate ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:566:1: (this_Entity_0= ruleEntity | this_Aggregate_1= ruleAggregate )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:575:28: ( (this_Entity_0= ruleEntity | this_Aggregate_1= ruleAggregate ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:576:1: (this_Entity_0= ruleEntity | this_Aggregate_1= ruleAggregate )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:566:1: (this_Entity_0= ruleEntity | this_Aggregate_1= ruleAggregate )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:576:1: (this_Entity_0= ruleEntity | this_Aggregate_1= ruleAggregate )
             int alt11=2;
             switch ( input.LA(1) ) {
             case RULE_DOC:
                 {
                 int LA11_1 = input.LA(2);
 
-                if ( (LA11_1==37) ) {
+                if ( (LA11_1==38) ) {
                     alt11=2;
                 }
-                else if ( (LA11_1==34) ) {
+                else if ( (LA11_1==35) ) {
                     alt11=1;
                 }
                 else {
@@ -1691,12 +1722,12 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                 }
                 }
                 break;
-            case 34:
+            case 35:
                 {
                 alt11=1;
                 }
                 break;
-            case 37:
+            case 38:
                 {
                 alt11=2;
                 }
@@ -1710,12 +1741,12 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             switch (alt11) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:567:5: this_Entity_0= ruleEntity
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:577:5: this_Entity_0= ruleEntity
                     {
                      
                             newCompositeNode(grammarAccess.getAbstractEntityAccess().getEntityParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleEntity_in_ruleAbstractEntity1350);
+                    pushFollow(FOLLOW_ruleEntity_in_ruleAbstractEntity1377);
                     this_Entity_0=ruleEntity();
 
                     state._fsp--;
@@ -1728,12 +1759,12 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                     }
                     break;
                 case 2 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:577:5: this_Aggregate_1= ruleAggregate
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:587:5: this_Aggregate_1= ruleAggregate
                     {
                      
                             newCompositeNode(grammarAccess.getAbstractEntityAccess().getAggregateParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleAggregate_in_ruleAbstractEntity1377);
+                    pushFollow(FOLLOW_ruleAggregate_in_ruleAbstractEntity1404);
                     this_Aggregate_1=ruleAggregate();
 
                     state._fsp--;
@@ -1766,7 +1797,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "entryRuleExternalType"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:595:1: entryRuleExternalType returns [EObject current=null] : iv_ruleExternalType= ruleExternalType EOF ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:605:1: entryRuleExternalType returns [EObject current=null] : iv_ruleExternalType= ruleExternalType EOF ;
     public final EObject entryRuleExternalType() throws RecognitionException {
         EObject current = null;
 
@@ -1774,17 +1805,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:596:2: (iv_ruleExternalType= ruleExternalType EOF )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:597:2: iv_ruleExternalType= ruleExternalType EOF
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:606:2: (iv_ruleExternalType= ruleExternalType EOF )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:607:2: iv_ruleExternalType= ruleExternalType EOF
             {
              newCompositeNode(grammarAccess.getExternalTypeRule()); 
-            pushFollow(FOLLOW_ruleExternalType_in_entryRuleExternalType1414);
+            pushFollow(FOLLOW_ruleExternalType_in_entryRuleExternalType1441);
             iv_ruleExternalType=ruleExternalType();
 
             state._fsp--;
 
              current =iv_ruleExternalType; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleExternalType1424); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleExternalType1451); 
 
             }
 
@@ -1802,7 +1833,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "ruleExternalType"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:604:1: ruleExternalType returns [EObject current=null] : (otherlv_0= 'type' ( (lv_name_1_0= RULE_ID ) ) ) ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:614:1: ruleExternalType returns [EObject current=null] : (otherlv_0= 'type' ( (lv_name_1_0= RULE_ID ) ) ) ;
     public final EObject ruleExternalType() throws RecognitionException {
         EObject current = null;
 
@@ -1812,23 +1843,23 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
          enterRule(); 
             
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:607:28: ( (otherlv_0= 'type' ( (lv_name_1_0= RULE_ID ) ) ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:608:1: (otherlv_0= 'type' ( (lv_name_1_0= RULE_ID ) ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:617:28: ( (otherlv_0= 'type' ( (lv_name_1_0= RULE_ID ) ) ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:618:1: (otherlv_0= 'type' ( (lv_name_1_0= RULE_ID ) ) )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:608:1: (otherlv_0= 'type' ( (lv_name_1_0= RULE_ID ) ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:608:3: otherlv_0= 'type' ( (lv_name_1_0= RULE_ID ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:618:1: (otherlv_0= 'type' ( (lv_name_1_0= RULE_ID ) ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:618:3: otherlv_0= 'type' ( (lv_name_1_0= RULE_ID ) )
             {
-            otherlv_0=(Token)match(input,18,FOLLOW_18_in_ruleExternalType1461); 
+            otherlv_0=(Token)match(input,18,FOLLOW_18_in_ruleExternalType1488); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getExternalTypeAccess().getTypeKeyword_0());
                 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:612:1: ( (lv_name_1_0= RULE_ID ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:613:1: (lv_name_1_0= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:622:1: ( (lv_name_1_0= RULE_ID ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:623:1: (lv_name_1_0= RULE_ID )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:613:1: (lv_name_1_0= RULE_ID )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:614:3: lv_name_1_0= RULE_ID
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:623:1: (lv_name_1_0= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:624:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleExternalType1478); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleExternalType1505); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getExternalTypeAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -1869,7 +1900,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "entryRuleConstraint"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:638:1: entryRuleConstraint returns [EObject current=null] : iv_ruleConstraint= ruleConstraint EOF ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:648:1: entryRuleConstraint returns [EObject current=null] : iv_ruleConstraint= ruleConstraint EOF ;
     public final EObject entryRuleConstraint() throws RecognitionException {
         EObject current = null;
 
@@ -1877,17 +1908,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:639:2: (iv_ruleConstraint= ruleConstraint EOF )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:640:2: iv_ruleConstraint= ruleConstraint EOF
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:649:2: (iv_ruleConstraint= ruleConstraint EOF )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:650:2: iv_ruleConstraint= ruleConstraint EOF
             {
              newCompositeNode(grammarAccess.getConstraintRule()); 
-            pushFollow(FOLLOW_ruleConstraint_in_entryRuleConstraint1519);
+            pushFollow(FOLLOW_ruleConstraint_in_entryRuleConstraint1546);
             iv_ruleConstraint=ruleConstraint();
 
             state._fsp--;
 
              current =iv_ruleConstraint; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleConstraint1529); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleConstraint1556); 
 
             }
 
@@ -1905,7 +1936,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "ruleConstraint"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:647:1: ruleConstraint returns [EObject current=null] : ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'constraint' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'on' ( (otherlv_4= RULE_ID ) ) )? (otherlv_5= 'exception' ( (otherlv_6= RULE_ID ) ) )? otherlv_7= '{' ( (lv_variables_8_0= ruleVariable ) )* (otherlv_9= 'message' ( (lv_message_10_0= RULE_STRING ) ) )? otherlv_11= '}' ) ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:657:1: ruleConstraint returns [EObject current=null] : ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'constraint' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'on' ( (otherlv_4= RULE_ID ) ) )? (otherlv_5= 'exception' ( (otherlv_6= RULE_ID ) ) )? otherlv_7= '{' ( (lv_variables_8_0= ruleVariable ) )* (otherlv_9= 'message' ( (lv_message_10_0= RULE_STRING ) ) )? otherlv_11= '}' ) ;
     public final EObject ruleConstraint() throws RecognitionException {
         EObject current = null;
 
@@ -1926,13 +1957,13 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
          enterRule(); 
             
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:650:28: ( ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'constraint' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'on' ( (otherlv_4= RULE_ID ) ) )? (otherlv_5= 'exception' ( (otherlv_6= RULE_ID ) ) )? otherlv_7= '{' ( (lv_variables_8_0= ruleVariable ) )* (otherlv_9= 'message' ( (lv_message_10_0= RULE_STRING ) ) )? otherlv_11= '}' ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:651:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'constraint' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'on' ( (otherlv_4= RULE_ID ) ) )? (otherlv_5= 'exception' ( (otherlv_6= RULE_ID ) ) )? otherlv_7= '{' ( (lv_variables_8_0= ruleVariable ) )* (otherlv_9= 'message' ( (lv_message_10_0= RULE_STRING ) ) )? otherlv_11= '}' )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:660:28: ( ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'constraint' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'on' ( (otherlv_4= RULE_ID ) ) )? (otherlv_5= 'exception' ( (otherlv_6= RULE_ID ) ) )? otherlv_7= '{' ( (lv_variables_8_0= ruleVariable ) )* (otherlv_9= 'message' ( (lv_message_10_0= RULE_STRING ) ) )? otherlv_11= '}' ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:661:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'constraint' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'on' ( (otherlv_4= RULE_ID ) ) )? (otherlv_5= 'exception' ( (otherlv_6= RULE_ID ) ) )? otherlv_7= '{' ( (lv_variables_8_0= ruleVariable ) )* (otherlv_9= 'message' ( (lv_message_10_0= RULE_STRING ) ) )? otherlv_11= '}' )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:651:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'constraint' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'on' ( (otherlv_4= RULE_ID ) ) )? (otherlv_5= 'exception' ( (otherlv_6= RULE_ID ) ) )? otherlv_7= '{' ( (lv_variables_8_0= ruleVariable ) )* (otherlv_9= 'message' ( (lv_message_10_0= RULE_STRING ) ) )? otherlv_11= '}' )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:651:2: ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'constraint' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'on' ( (otherlv_4= RULE_ID ) ) )? (otherlv_5= 'exception' ( (otherlv_6= RULE_ID ) ) )? otherlv_7= '{' ( (lv_variables_8_0= ruleVariable ) )* (otherlv_9= 'message' ( (lv_message_10_0= RULE_STRING ) ) )? otherlv_11= '}'
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:661:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'constraint' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'on' ( (otherlv_4= RULE_ID ) ) )? (otherlv_5= 'exception' ( (otherlv_6= RULE_ID ) ) )? otherlv_7= '{' ( (lv_variables_8_0= ruleVariable ) )* (otherlv_9= 'message' ( (lv_message_10_0= RULE_STRING ) ) )? otherlv_11= '}' )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:661:2: ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'constraint' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'on' ( (otherlv_4= RULE_ID ) ) )? (otherlv_5= 'exception' ( (otherlv_6= RULE_ID ) ) )? otherlv_7= '{' ( (lv_variables_8_0= ruleVariable ) )* (otherlv_9= 'message' ( (lv_message_10_0= RULE_STRING ) ) )? otherlv_11= '}'
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:651:2: ( (lv_doc_0_0= RULE_DOC ) )?
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:661:2: ( (lv_doc_0_0= RULE_DOC ) )?
             int alt12=2;
             int LA12_0 = input.LA(1);
 
@@ -1941,12 +1972,12 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
             }
             switch (alt12) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:652:1: (lv_doc_0_0= RULE_DOC )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:662:1: (lv_doc_0_0= RULE_DOC )
                     {
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:652:1: (lv_doc_0_0= RULE_DOC )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:653:3: lv_doc_0_0= RULE_DOC
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:662:1: (lv_doc_0_0= RULE_DOC )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:663:3: lv_doc_0_0= RULE_DOC
                     {
-                    lv_doc_0_0=(Token)match(input,RULE_DOC,FOLLOW_RULE_DOC_in_ruleConstraint1571); 
+                    lv_doc_0_0=(Token)match(input,RULE_DOC,FOLLOW_RULE_DOC_in_ruleConstraint1598); 
 
                     			newLeafNode(lv_doc_0_0, grammarAccess.getConstraintAccess().getDocDOCTerminalRuleCall_0_0()); 
                     		
@@ -1969,17 +2000,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            otherlv_1=(Token)match(input,19,FOLLOW_19_in_ruleConstraint1589); 
+            otherlv_1=(Token)match(input,19,FOLLOW_19_in_ruleConstraint1616); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getConstraintAccess().getConstraintKeyword_1());
                 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:673:1: ( (lv_name_2_0= RULE_ID ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:674:1: (lv_name_2_0= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:683:1: ( (lv_name_2_0= RULE_ID ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:684:1: (lv_name_2_0= RULE_ID )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:674:1: (lv_name_2_0= RULE_ID )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:675:3: lv_name_2_0= RULE_ID
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:684:1: (lv_name_2_0= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:685:3: lv_name_2_0= RULE_ID
             {
-            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleConstraint1606); 
+            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleConstraint1633); 
 
             			newLeafNode(lv_name_2_0, grammarAccess.getConstraintAccess().getNameIDTerminalRuleCall_2_0()); 
             		
@@ -1999,7 +2030,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:691:2: (otherlv_3= 'on' ( (otherlv_4= RULE_ID ) ) )?
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:701:2: (otherlv_3= 'on' ( (otherlv_4= RULE_ID ) ) )?
             int alt13=2;
             int LA13_0 = input.LA(1);
 
@@ -2008,24 +2039,24 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
             }
             switch (alt13) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:691:4: otherlv_3= 'on' ( (otherlv_4= RULE_ID ) )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:701:4: otherlv_3= 'on' ( (otherlv_4= RULE_ID ) )
                     {
-                    otherlv_3=(Token)match(input,20,FOLLOW_20_in_ruleConstraint1624); 
+                    otherlv_3=(Token)match(input,20,FOLLOW_20_in_ruleConstraint1651); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getConstraintAccess().getOnKeyword_3_0());
                         
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:695:1: ( (otherlv_4= RULE_ID ) )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:696:1: (otherlv_4= RULE_ID )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:705:1: ( (otherlv_4= RULE_ID ) )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:706:1: (otherlv_4= RULE_ID )
                     {
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:696:1: (otherlv_4= RULE_ID )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:697:3: otherlv_4= RULE_ID
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:706:1: (otherlv_4= RULE_ID )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:707:3: otherlv_4= RULE_ID
                     {
 
                     			if (current==null) {
                     	            current = createModelElement(grammarAccess.getConstraintRule());
                     	        }
                             
-                    otherlv_4=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleConstraint1644); 
+                    otherlv_4=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleConstraint1671); 
 
                     		newLeafNode(otherlv_4, grammarAccess.getConstraintAccess().getTargetConstraintTargetCrossReference_3_1_0()); 
                     	
@@ -2041,7 +2072,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:708:4: (otherlv_5= 'exception' ( (otherlv_6= RULE_ID ) ) )?
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:718:4: (otherlv_5= 'exception' ( (otherlv_6= RULE_ID ) ) )?
             int alt14=2;
             int LA14_0 = input.LA(1);
 
@@ -2050,24 +2081,24 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
             }
             switch (alt14) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:708:6: otherlv_5= 'exception' ( (otherlv_6= RULE_ID ) )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:718:6: otherlv_5= 'exception' ( (otherlv_6= RULE_ID ) )
                     {
-                    otherlv_5=(Token)match(input,21,FOLLOW_21_in_ruleConstraint1659); 
+                    otherlv_5=(Token)match(input,21,FOLLOW_21_in_ruleConstraint1686); 
 
                         	newLeafNode(otherlv_5, grammarAccess.getConstraintAccess().getExceptionKeyword_4_0());
                         
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:712:1: ( (otherlv_6= RULE_ID ) )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:713:1: (otherlv_6= RULE_ID )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:722:1: ( (otherlv_6= RULE_ID ) )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:723:1: (otherlv_6= RULE_ID )
                     {
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:713:1: (otherlv_6= RULE_ID )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:714:3: otherlv_6= RULE_ID
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:723:1: (otherlv_6= RULE_ID )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:724:3: otherlv_6= RULE_ID
                     {
 
                     			if (current==null) {
                     	            current = createModelElement(grammarAccess.getConstraintRule());
                     	        }
                             
-                    otherlv_6=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleConstraint1679); 
+                    otherlv_6=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleConstraint1706); 
 
                     		newLeafNode(otherlv_6, grammarAccess.getConstraintAccess().getExceptionExceptionCrossReference_4_1_0()); 
                     	
@@ -2083,32 +2114,32 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            otherlv_7=(Token)match(input,14,FOLLOW_14_in_ruleConstraint1693); 
+            otherlv_7=(Token)match(input,14,FOLLOW_14_in_ruleConstraint1720); 
 
                 	newLeafNode(otherlv_7, grammarAccess.getConstraintAccess().getLeftCurlyBracketKeyword_5());
                 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:729:1: ( (lv_variables_8_0= ruleVariable ) )*
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:739:1: ( (lv_variables_8_0= ruleVariable ) )*
             loop15:
             do {
                 int alt15=2;
                 int LA15_0 = input.LA(1);
 
-                if ( ((LA15_0>=RULE_ID && LA15_0<=RULE_DOC)||LA15_0==48) ) {
+                if ( ((LA15_0>=RULE_ID && LA15_0<=RULE_DOC)||LA15_0==49) ) {
                     alt15=1;
                 }
 
 
                 switch (alt15) {
             	case 1 :
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:730:1: (lv_variables_8_0= ruleVariable )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:740:1: (lv_variables_8_0= ruleVariable )
             	    {
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:730:1: (lv_variables_8_0= ruleVariable )
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:731:3: lv_variables_8_0= ruleVariable
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:740:1: (lv_variables_8_0= ruleVariable )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:741:3: lv_variables_8_0= ruleVariable
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getConstraintAccess().getVariablesVariableParserRuleCall_6_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleVariable_in_ruleConstraint1714);
+            	    pushFollow(FOLLOW_ruleVariable_in_ruleConstraint1741);
             	    lv_variables_8_0=ruleVariable();
 
             	    state._fsp--;
@@ -2136,7 +2167,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                 }
             } while (true);
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:747:3: (otherlv_9= 'message' ( (lv_message_10_0= RULE_STRING ) ) )?
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:757:3: (otherlv_9= 'message' ( (lv_message_10_0= RULE_STRING ) ) )?
             int alt16=2;
             int LA16_0 = input.LA(1);
 
@@ -2145,19 +2176,19 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
             }
             switch (alt16) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:747:5: otherlv_9= 'message' ( (lv_message_10_0= RULE_STRING ) )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:757:5: otherlv_9= 'message' ( (lv_message_10_0= RULE_STRING ) )
                     {
-                    otherlv_9=(Token)match(input,22,FOLLOW_22_in_ruleConstraint1728); 
+                    otherlv_9=(Token)match(input,22,FOLLOW_22_in_ruleConstraint1755); 
 
                         	newLeafNode(otherlv_9, grammarAccess.getConstraintAccess().getMessageKeyword_7_0());
                         
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:751:1: ( (lv_message_10_0= RULE_STRING ) )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:752:1: (lv_message_10_0= RULE_STRING )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:761:1: ( (lv_message_10_0= RULE_STRING ) )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:762:1: (lv_message_10_0= RULE_STRING )
                     {
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:752:1: (lv_message_10_0= RULE_STRING )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:753:3: lv_message_10_0= RULE_STRING
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:762:1: (lv_message_10_0= RULE_STRING )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:763:3: lv_message_10_0= RULE_STRING
                     {
-                    lv_message_10_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleConstraint1745); 
+                    lv_message_10_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleConstraint1772); 
 
                     			newLeafNode(lv_message_10_0, grammarAccess.getConstraintAccess().getMessageSTRINGTerminalRuleCall_7_1_0()); 
                     		
@@ -2183,7 +2214,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            otherlv_11=(Token)match(input,15,FOLLOW_15_in_ruleConstraint1764); 
+            otherlv_11=(Token)match(input,15,FOLLOW_15_in_ruleConstraint1791); 
 
                 	newLeafNode(otherlv_11, grammarAccess.getConstraintAccess().getRightCurlyBracketKeyword_8());
                 
@@ -2208,7 +2239,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "entryRuleException"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:781:1: entryRuleException returns [EObject current=null] : iv_ruleException= ruleException EOF ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:791:1: entryRuleException returns [EObject current=null] : iv_ruleException= ruleException EOF ;
     public final EObject entryRuleException() throws RecognitionException {
         EObject current = null;
 
@@ -2216,17 +2247,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:782:2: (iv_ruleException= ruleException EOF )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:783:2: iv_ruleException= ruleException EOF
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:792:2: (iv_ruleException= ruleException EOF )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:793:2: iv_ruleException= ruleException EOF
             {
              newCompositeNode(grammarAccess.getExceptionRule()); 
-            pushFollow(FOLLOW_ruleException_in_entryRuleException1800);
+            pushFollow(FOLLOW_ruleException_in_entryRuleException1827);
             iv_ruleException=ruleException();
 
             state._fsp--;
 
              current =iv_ruleException; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleException1810); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleException1837); 
 
             }
 
@@ -2244,7 +2275,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "ruleException"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:790:1: ruleException returns [EObject current=null] : ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'exception' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'cid' ( (lv_cid_4_0= RULE_INT ) ) )? otherlv_5= '{' ( (lv_variables_6_0= ruleVariable ) )* otherlv_7= 'message' ( (lv_message_8_0= RULE_STRING ) ) otherlv_9= '}' ) ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:800:1: ruleException returns [EObject current=null] : ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'exception' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'cid' ( (lv_cid_4_0= RULE_INT ) ) )? otherlv_5= '{' ( (lv_variables_6_0= ruleVariable ) )* otherlv_7= 'message' ( (lv_message_8_0= RULE_STRING ) ) otherlv_9= '}' ) ;
     public final EObject ruleException() throws RecognitionException {
         EObject current = null;
 
@@ -2263,13 +2294,13 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
          enterRule(); 
             
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:793:28: ( ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'exception' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'cid' ( (lv_cid_4_0= RULE_INT ) ) )? otherlv_5= '{' ( (lv_variables_6_0= ruleVariable ) )* otherlv_7= 'message' ( (lv_message_8_0= RULE_STRING ) ) otherlv_9= '}' ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:794:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'exception' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'cid' ( (lv_cid_4_0= RULE_INT ) ) )? otherlv_5= '{' ( (lv_variables_6_0= ruleVariable ) )* otherlv_7= 'message' ( (lv_message_8_0= RULE_STRING ) ) otherlv_9= '}' )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:803:28: ( ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'exception' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'cid' ( (lv_cid_4_0= RULE_INT ) ) )? otherlv_5= '{' ( (lv_variables_6_0= ruleVariable ) )* otherlv_7= 'message' ( (lv_message_8_0= RULE_STRING ) ) otherlv_9= '}' ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:804:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'exception' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'cid' ( (lv_cid_4_0= RULE_INT ) ) )? otherlv_5= '{' ( (lv_variables_6_0= ruleVariable ) )* otherlv_7= 'message' ( (lv_message_8_0= RULE_STRING ) ) otherlv_9= '}' )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:794:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'exception' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'cid' ( (lv_cid_4_0= RULE_INT ) ) )? otherlv_5= '{' ( (lv_variables_6_0= ruleVariable ) )* otherlv_7= 'message' ( (lv_message_8_0= RULE_STRING ) ) otherlv_9= '}' )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:794:2: ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'exception' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'cid' ( (lv_cid_4_0= RULE_INT ) ) )? otherlv_5= '{' ( (lv_variables_6_0= ruleVariable ) )* otherlv_7= 'message' ( (lv_message_8_0= RULE_STRING ) ) otherlv_9= '}'
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:804:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'exception' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'cid' ( (lv_cid_4_0= RULE_INT ) ) )? otherlv_5= '{' ( (lv_variables_6_0= ruleVariable ) )* otherlv_7= 'message' ( (lv_message_8_0= RULE_STRING ) ) otherlv_9= '}' )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:804:2: ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'exception' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'cid' ( (lv_cid_4_0= RULE_INT ) ) )? otherlv_5= '{' ( (lv_variables_6_0= ruleVariable ) )* otherlv_7= 'message' ( (lv_message_8_0= RULE_STRING ) ) otherlv_9= '}'
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:794:2: ( (lv_doc_0_0= RULE_DOC ) )?
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:804:2: ( (lv_doc_0_0= RULE_DOC ) )?
             int alt17=2;
             int LA17_0 = input.LA(1);
 
@@ -2278,12 +2309,12 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
             }
             switch (alt17) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:795:1: (lv_doc_0_0= RULE_DOC )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:805:1: (lv_doc_0_0= RULE_DOC )
                     {
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:795:1: (lv_doc_0_0= RULE_DOC )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:796:3: lv_doc_0_0= RULE_DOC
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:805:1: (lv_doc_0_0= RULE_DOC )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:806:3: lv_doc_0_0= RULE_DOC
                     {
-                    lv_doc_0_0=(Token)match(input,RULE_DOC,FOLLOW_RULE_DOC_in_ruleException1852); 
+                    lv_doc_0_0=(Token)match(input,RULE_DOC,FOLLOW_RULE_DOC_in_ruleException1879); 
 
                     			newLeafNode(lv_doc_0_0, grammarAccess.getExceptionAccess().getDocDOCTerminalRuleCall_0_0()); 
                     		
@@ -2306,17 +2337,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            otherlv_1=(Token)match(input,21,FOLLOW_21_in_ruleException1870); 
+            otherlv_1=(Token)match(input,21,FOLLOW_21_in_ruleException1897); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getExceptionAccess().getExceptionKeyword_1());
                 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:816:1: ( (lv_name_2_0= RULE_ID ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:817:1: (lv_name_2_0= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:826:1: ( (lv_name_2_0= RULE_ID ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:827:1: (lv_name_2_0= RULE_ID )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:817:1: (lv_name_2_0= RULE_ID )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:818:3: lv_name_2_0= RULE_ID
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:827:1: (lv_name_2_0= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:828:3: lv_name_2_0= RULE_ID
             {
-            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleException1887); 
+            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleException1914); 
 
             			newLeafNode(lv_name_2_0, grammarAccess.getExceptionAccess().getNameIDTerminalRuleCall_2_0()); 
             		
@@ -2336,7 +2367,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:834:2: (otherlv_3= 'cid' ( (lv_cid_4_0= RULE_INT ) ) )?
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:844:2: (otherlv_3= 'cid' ( (lv_cid_4_0= RULE_INT ) ) )?
             int alt18=2;
             int LA18_0 = input.LA(1);
 
@@ -2345,19 +2376,19 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
             }
             switch (alt18) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:834:4: otherlv_3= 'cid' ( (lv_cid_4_0= RULE_INT ) )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:844:4: otherlv_3= 'cid' ( (lv_cid_4_0= RULE_INT ) )
                     {
-                    otherlv_3=(Token)match(input,23,FOLLOW_23_in_ruleException1905); 
+                    otherlv_3=(Token)match(input,23,FOLLOW_23_in_ruleException1932); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getExceptionAccess().getCidKeyword_3_0());
                         
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:838:1: ( (lv_cid_4_0= RULE_INT ) )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:839:1: (lv_cid_4_0= RULE_INT )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:848:1: ( (lv_cid_4_0= RULE_INT ) )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:849:1: (lv_cid_4_0= RULE_INT )
                     {
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:839:1: (lv_cid_4_0= RULE_INT )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:840:3: lv_cid_4_0= RULE_INT
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:849:1: (lv_cid_4_0= RULE_INT )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:850:3: lv_cid_4_0= RULE_INT
                     {
-                    lv_cid_4_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleException1922); 
+                    lv_cid_4_0=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleException1949); 
 
                     			newLeafNode(lv_cid_4_0, grammarAccess.getExceptionAccess().getCidINTTerminalRuleCall_3_1_0()); 
                     		
@@ -2383,32 +2414,32 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            otherlv_5=(Token)match(input,14,FOLLOW_14_in_ruleException1941); 
+            otherlv_5=(Token)match(input,14,FOLLOW_14_in_ruleException1968); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getExceptionAccess().getLeftCurlyBracketKeyword_4());
                 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:860:1: ( (lv_variables_6_0= ruleVariable ) )*
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:870:1: ( (lv_variables_6_0= ruleVariable ) )*
             loop19:
             do {
                 int alt19=2;
                 int LA19_0 = input.LA(1);
 
-                if ( ((LA19_0>=RULE_ID && LA19_0<=RULE_DOC)||LA19_0==48) ) {
+                if ( ((LA19_0>=RULE_ID && LA19_0<=RULE_DOC)||LA19_0==49) ) {
                     alt19=1;
                 }
 
 
                 switch (alt19) {
             	case 1 :
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:861:1: (lv_variables_6_0= ruleVariable )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:871:1: (lv_variables_6_0= ruleVariable )
             	    {
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:861:1: (lv_variables_6_0= ruleVariable )
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:862:3: lv_variables_6_0= ruleVariable
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:871:1: (lv_variables_6_0= ruleVariable )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:872:3: lv_variables_6_0= ruleVariable
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getExceptionAccess().getVariablesVariableParserRuleCall_5_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleVariable_in_ruleException1962);
+            	    pushFollow(FOLLOW_ruleVariable_in_ruleException1989);
             	    lv_variables_6_0=ruleVariable();
 
             	    state._fsp--;
@@ -2436,17 +2467,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                 }
             } while (true);
 
-            otherlv_7=(Token)match(input,22,FOLLOW_22_in_ruleException1975); 
+            otherlv_7=(Token)match(input,22,FOLLOW_22_in_ruleException2002); 
 
                 	newLeafNode(otherlv_7, grammarAccess.getExceptionAccess().getMessageKeyword_6());
                 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:882:1: ( (lv_message_8_0= RULE_STRING ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:883:1: (lv_message_8_0= RULE_STRING )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:892:1: ( (lv_message_8_0= RULE_STRING ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:893:1: (lv_message_8_0= RULE_STRING )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:883:1: (lv_message_8_0= RULE_STRING )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:884:3: lv_message_8_0= RULE_STRING
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:893:1: (lv_message_8_0= RULE_STRING )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:894:3: lv_message_8_0= RULE_STRING
             {
-            lv_message_8_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleException1992); 
+            lv_message_8_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleException2019); 
 
             			newLeafNode(lv_message_8_0, grammarAccess.getExceptionAccess().getMessageSTRINGTerminalRuleCall_7_0()); 
             		
@@ -2466,7 +2497,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            otherlv_9=(Token)match(input,15,FOLLOW_15_in_ruleException2009); 
+            otherlv_9=(Token)match(input,15,FOLLOW_15_in_ruleException2036); 
 
                 	newLeafNode(otherlv_9, grammarAccess.getExceptionAccess().getRightCurlyBracketKeyword_8());
                 
@@ -2491,7 +2522,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "entryRuleValueObject"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:912:1: entryRuleValueObject returns [EObject current=null] : iv_ruleValueObject= ruleValueObject EOF ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:922:1: entryRuleValueObject returns [EObject current=null] : iv_ruleValueObject= ruleValueObject EOF ;
     public final EObject entryRuleValueObject() throws RecognitionException {
         EObject current = null;
 
@@ -2499,17 +2530,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:913:2: (iv_ruleValueObject= ruleValueObject EOF )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:914:2: iv_ruleValueObject= ruleValueObject EOF
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:923:2: (iv_ruleValueObject= ruleValueObject EOF )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:924:2: iv_ruleValueObject= ruleValueObject EOF
             {
              newCompositeNode(grammarAccess.getValueObjectRule()); 
-            pushFollow(FOLLOW_ruleValueObject_in_entryRuleValueObject2045);
+            pushFollow(FOLLOW_ruleValueObject_in_entryRuleValueObject2072);
             iv_ruleValueObject=ruleValueObject();
 
             state._fsp--;
 
              current =iv_ruleValueObject; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleValueObject2055); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleValueObject2082); 
 
             }
 
@@ -2527,7 +2558,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "ruleValueObject"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:921:1: ruleValueObject returns [EObject current=null] : ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'value-object' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'base' ( (otherlv_4= RULE_ID ) ) )? otherlv_5= '{' ( (lv_metaInfo_6_0= ruleTypeMetaInfo ) ) ( (lv_variables_7_0= ruleVariable ) )* ( (lv_constructors_8_0= ruleConstructor ) )* ( (lv_methods_9_0= ruleMethod ) )* otherlv_10= '}' ) ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:931:1: ruleValueObject returns [EObject current=null] : ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'value-object' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'base' ( (otherlv_4= RULE_ID ) ) )? otherlv_5= '{' ( (lv_metaInfo_6_0= ruleTypeMetaInfo ) ) ( (lv_variables_7_0= ruleVariable ) )* ( (lv_constructors_8_0= ruleConstructor ) )* ( (lv_methods_9_0= ruleMethod ) )* otherlv_10= '}' ) ;
     public final EObject ruleValueObject() throws RecognitionException {
         EObject current = null;
 
@@ -2550,13 +2581,13 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
          enterRule(); 
             
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:924:28: ( ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'value-object' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'base' ( (otherlv_4= RULE_ID ) ) )? otherlv_5= '{' ( (lv_metaInfo_6_0= ruleTypeMetaInfo ) ) ( (lv_variables_7_0= ruleVariable ) )* ( (lv_constructors_8_0= ruleConstructor ) )* ( (lv_methods_9_0= ruleMethod ) )* otherlv_10= '}' ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:925:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'value-object' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'base' ( (otherlv_4= RULE_ID ) ) )? otherlv_5= '{' ( (lv_metaInfo_6_0= ruleTypeMetaInfo ) ) ( (lv_variables_7_0= ruleVariable ) )* ( (lv_constructors_8_0= ruleConstructor ) )* ( (lv_methods_9_0= ruleMethod ) )* otherlv_10= '}' )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:934:28: ( ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'value-object' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'base' ( (otherlv_4= RULE_ID ) ) )? otherlv_5= '{' ( (lv_metaInfo_6_0= ruleTypeMetaInfo ) ) ( (lv_variables_7_0= ruleVariable ) )* ( (lv_constructors_8_0= ruleConstructor ) )* ( (lv_methods_9_0= ruleMethod ) )* otherlv_10= '}' ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:935:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'value-object' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'base' ( (otherlv_4= RULE_ID ) ) )? otherlv_5= '{' ( (lv_metaInfo_6_0= ruleTypeMetaInfo ) ) ( (lv_variables_7_0= ruleVariable ) )* ( (lv_constructors_8_0= ruleConstructor ) )* ( (lv_methods_9_0= ruleMethod ) )* otherlv_10= '}' )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:925:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'value-object' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'base' ( (otherlv_4= RULE_ID ) ) )? otherlv_5= '{' ( (lv_metaInfo_6_0= ruleTypeMetaInfo ) ) ( (lv_variables_7_0= ruleVariable ) )* ( (lv_constructors_8_0= ruleConstructor ) )* ( (lv_methods_9_0= ruleMethod ) )* otherlv_10= '}' )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:925:2: ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'value-object' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'base' ( (otherlv_4= RULE_ID ) ) )? otherlv_5= '{' ( (lv_metaInfo_6_0= ruleTypeMetaInfo ) ) ( (lv_variables_7_0= ruleVariable ) )* ( (lv_constructors_8_0= ruleConstructor ) )* ( (lv_methods_9_0= ruleMethod ) )* otherlv_10= '}'
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:935:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'value-object' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'base' ( (otherlv_4= RULE_ID ) ) )? otherlv_5= '{' ( (lv_metaInfo_6_0= ruleTypeMetaInfo ) ) ( (lv_variables_7_0= ruleVariable ) )* ( (lv_constructors_8_0= ruleConstructor ) )* ( (lv_methods_9_0= ruleMethod ) )* otherlv_10= '}' )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:935:2: ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'value-object' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'base' ( (otherlv_4= RULE_ID ) ) )? otherlv_5= '{' ( (lv_metaInfo_6_0= ruleTypeMetaInfo ) ) ( (lv_variables_7_0= ruleVariable ) )* ( (lv_constructors_8_0= ruleConstructor ) )* ( (lv_methods_9_0= ruleMethod ) )* otherlv_10= '}'
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:925:2: ( (lv_doc_0_0= RULE_DOC ) )?
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:935:2: ( (lv_doc_0_0= RULE_DOC ) )?
             int alt20=2;
             int LA20_0 = input.LA(1);
 
@@ -2565,12 +2596,12 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
             }
             switch (alt20) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:926:1: (lv_doc_0_0= RULE_DOC )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:936:1: (lv_doc_0_0= RULE_DOC )
                     {
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:926:1: (lv_doc_0_0= RULE_DOC )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:927:3: lv_doc_0_0= RULE_DOC
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:936:1: (lv_doc_0_0= RULE_DOC )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:937:3: lv_doc_0_0= RULE_DOC
                     {
-                    lv_doc_0_0=(Token)match(input,RULE_DOC,FOLLOW_RULE_DOC_in_ruleValueObject2097); 
+                    lv_doc_0_0=(Token)match(input,RULE_DOC,FOLLOW_RULE_DOC_in_ruleValueObject2124); 
 
                     			newLeafNode(lv_doc_0_0, grammarAccess.getValueObjectAccess().getDocDOCTerminalRuleCall_0_0()); 
                     		
@@ -2593,17 +2624,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            otherlv_1=(Token)match(input,24,FOLLOW_24_in_ruleValueObject2115); 
+            otherlv_1=(Token)match(input,24,FOLLOW_24_in_ruleValueObject2142); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getValueObjectAccess().getValueObjectKeyword_1());
                 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:947:1: ( (lv_name_2_0= RULE_ID ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:948:1: (lv_name_2_0= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:957:1: ( (lv_name_2_0= RULE_ID ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:958:1: (lv_name_2_0= RULE_ID )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:948:1: (lv_name_2_0= RULE_ID )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:949:3: lv_name_2_0= RULE_ID
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:958:1: (lv_name_2_0= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:959:3: lv_name_2_0= RULE_ID
             {
-            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleValueObject2132); 
+            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleValueObject2159); 
 
             			newLeafNode(lv_name_2_0, grammarAccess.getValueObjectAccess().getNameIDTerminalRuleCall_2_0()); 
             		
@@ -2623,7 +2654,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:965:2: (otherlv_3= 'base' ( (otherlv_4= RULE_ID ) ) )?
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:975:2: (otherlv_3= 'base' ( (otherlv_4= RULE_ID ) ) )?
             int alt21=2;
             int LA21_0 = input.LA(1);
 
@@ -2632,24 +2663,24 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
             }
             switch (alt21) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:965:4: otherlv_3= 'base' ( (otherlv_4= RULE_ID ) )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:975:4: otherlv_3= 'base' ( (otherlv_4= RULE_ID ) )
                     {
-                    otherlv_3=(Token)match(input,25,FOLLOW_25_in_ruleValueObject2150); 
+                    otherlv_3=(Token)match(input,25,FOLLOW_25_in_ruleValueObject2177); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getValueObjectAccess().getBaseKeyword_3_0());
                         
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:969:1: ( (otherlv_4= RULE_ID ) )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:970:1: (otherlv_4= RULE_ID )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:979:1: ( (otherlv_4= RULE_ID ) )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:980:1: (otherlv_4= RULE_ID )
                     {
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:970:1: (otherlv_4= RULE_ID )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:971:3: otherlv_4= RULE_ID
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:980:1: (otherlv_4= RULE_ID )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:981:3: otherlv_4= RULE_ID
                     {
 
                     			if (current==null) {
                     	            current = createModelElement(grammarAccess.getValueObjectRule());
                     	        }
                             
-                    otherlv_4=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleValueObject2170); 
+                    otherlv_4=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleValueObject2197); 
 
                     		newLeafNode(otherlv_4, grammarAccess.getValueObjectAccess().getBaseExternalTypeCrossReference_3_1_0()); 
                     	
@@ -2665,20 +2696,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            otherlv_5=(Token)match(input,14,FOLLOW_14_in_ruleValueObject2184); 
+            otherlv_5=(Token)match(input,14,FOLLOW_14_in_ruleValueObject2211); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getValueObjectAccess().getLeftCurlyBracketKeyword_4());
                 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:986:1: ( (lv_metaInfo_6_0= ruleTypeMetaInfo ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:987:1: (lv_metaInfo_6_0= ruleTypeMetaInfo )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:996:1: ( (lv_metaInfo_6_0= ruleTypeMetaInfo ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:997:1: (lv_metaInfo_6_0= ruleTypeMetaInfo )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:987:1: (lv_metaInfo_6_0= ruleTypeMetaInfo )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:988:3: lv_metaInfo_6_0= ruleTypeMetaInfo
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:997:1: (lv_metaInfo_6_0= ruleTypeMetaInfo )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:998:3: lv_metaInfo_6_0= ruleTypeMetaInfo
             {
              
             	        newCompositeNode(grammarAccess.getValueObjectAccess().getMetaInfoTypeMetaInfoParserRuleCall_5_0()); 
             	    
-            pushFollow(FOLLOW_ruleTypeMetaInfo_in_ruleValueObject2205);
+            pushFollow(FOLLOW_ruleTypeMetaInfo_in_ruleValueObject2232);
             lv_metaInfo_6_0=ruleTypeMetaInfo();
 
             state._fsp--;
@@ -2700,7 +2731,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1004:2: ( (lv_variables_7_0= ruleVariable ) )*
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1014:2: ( (lv_variables_7_0= ruleVariable ) )*
             loop22:
             do {
                 int alt22=2;
@@ -2709,28 +2740,28 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                 if ( (LA22_0==RULE_DOC) ) {
                     int LA22_1 = input.LA(2);
 
-                    if ( (LA22_1==RULE_ID||LA22_1==48) ) {
+                    if ( (LA22_1==RULE_ID||LA22_1==49) ) {
                         alt22=1;
                     }
 
 
                 }
-                else if ( (LA22_0==RULE_ID||LA22_0==48) ) {
+                else if ( (LA22_0==RULE_ID||LA22_0==49) ) {
                     alt22=1;
                 }
 
 
                 switch (alt22) {
             	case 1 :
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1005:1: (lv_variables_7_0= ruleVariable )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1015:1: (lv_variables_7_0= ruleVariable )
             	    {
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1005:1: (lv_variables_7_0= ruleVariable )
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1006:3: lv_variables_7_0= ruleVariable
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1015:1: (lv_variables_7_0= ruleVariable )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1016:3: lv_variables_7_0= ruleVariable
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getValueObjectAccess().getVariablesVariableParserRuleCall_6_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleVariable_in_ruleValueObject2226);
+            	    pushFollow(FOLLOW_ruleVariable_in_ruleValueObject2253);
             	    lv_variables_7_0=ruleVariable();
 
             	    state._fsp--;
@@ -2758,7 +2789,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                 }
             } while (true);
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1022:3: ( (lv_constructors_8_0= ruleConstructor ) )*
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1032:3: ( (lv_constructors_8_0= ruleConstructor ) )*
             loop23:
             do {
                 int alt23=2;
@@ -2767,28 +2798,28 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                 if ( (LA23_0==RULE_DOC) ) {
                     int LA23_1 = input.LA(2);
 
-                    if ( (LA23_1==38) ) {
+                    if ( (LA23_1==39) ) {
                         alt23=1;
                     }
 
 
                 }
-                else if ( (LA23_0==38) ) {
+                else if ( (LA23_0==39) ) {
                     alt23=1;
                 }
 
 
                 switch (alt23) {
             	case 1 :
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1023:1: (lv_constructors_8_0= ruleConstructor )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1033:1: (lv_constructors_8_0= ruleConstructor )
             	    {
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1023:1: (lv_constructors_8_0= ruleConstructor )
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1024:3: lv_constructors_8_0= ruleConstructor
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1033:1: (lv_constructors_8_0= ruleConstructor )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1034:3: lv_constructors_8_0= ruleConstructor
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getValueObjectAccess().getConstructorsConstructorParserRuleCall_7_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleConstructor_in_ruleValueObject2248);
+            	    pushFollow(FOLLOW_ruleConstructor_in_ruleValueObject2275);
             	    lv_constructors_8_0=ruleConstructor();
 
             	    state._fsp--;
@@ -2816,28 +2847,28 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                 }
             } while (true);
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1040:3: ( (lv_methods_9_0= ruleMethod ) )*
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1050:3: ( (lv_methods_9_0= ruleMethod ) )*
             loop24:
             do {
                 int alt24=2;
                 int LA24_0 = input.LA(1);
 
-                if ( (LA24_0==RULE_DOC||LA24_0==40) ) {
+                if ( (LA24_0==RULE_DOC||LA24_0==42) ) {
                     alt24=1;
                 }
 
 
                 switch (alt24) {
             	case 1 :
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1041:1: (lv_methods_9_0= ruleMethod )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1051:1: (lv_methods_9_0= ruleMethod )
             	    {
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1041:1: (lv_methods_9_0= ruleMethod )
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1042:3: lv_methods_9_0= ruleMethod
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1051:1: (lv_methods_9_0= ruleMethod )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1052:3: lv_methods_9_0= ruleMethod
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getValueObjectAccess().getMethodsMethodParserRuleCall_8_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleMethod_in_ruleValueObject2270);
+            	    pushFollow(FOLLOW_ruleMethod_in_ruleValueObject2297);
             	    lv_methods_9_0=ruleMethod();
 
             	    state._fsp--;
@@ -2865,7 +2896,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                 }
             } while (true);
 
-            otherlv_10=(Token)match(input,15,FOLLOW_15_in_ruleValueObject2283); 
+            otherlv_10=(Token)match(input,15,FOLLOW_15_in_ruleValueObject2310); 
 
                 	newLeafNode(otherlv_10, grammarAccess.getValueObjectAccess().getRightCurlyBracketKeyword_9());
                 
@@ -2890,7 +2921,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "entryRuleEntityId"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1070:1: entryRuleEntityId returns [EObject current=null] : iv_ruleEntityId= ruleEntityId EOF ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1080:1: entryRuleEntityId returns [EObject current=null] : iv_ruleEntityId= ruleEntityId EOF ;
     public final EObject entryRuleEntityId() throws RecognitionException {
         EObject current = null;
 
@@ -2898,17 +2929,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1071:2: (iv_ruleEntityId= ruleEntityId EOF )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1072:2: iv_ruleEntityId= ruleEntityId EOF
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1081:2: (iv_ruleEntityId= ruleEntityId EOF )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1082:2: iv_ruleEntityId= ruleEntityId EOF
             {
              newCompositeNode(grammarAccess.getEntityIdRule()); 
-            pushFollow(FOLLOW_ruleEntityId_in_entryRuleEntityId2319);
+            pushFollow(FOLLOW_ruleEntityId_in_entryRuleEntityId2346);
             iv_ruleEntityId=ruleEntityId();
 
             state._fsp--;
 
              current =iv_ruleEntityId; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleEntityId2329); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEntityId2356); 
 
             }
 
@@ -2926,7 +2957,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "ruleEntityId"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1079:1: ruleEntityId returns [EObject current=null] : ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'entity-id' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'identifies' ( (otherlv_4= RULE_ID ) ) (otherlv_5= 'base' ( (otherlv_6= RULE_ID ) ) )? otherlv_7= '{' ( (lv_metaInfo_8_0= ruleTypeMetaInfo ) ) ( (lv_variables_9_0= ruleVariable ) )* ( (lv_constructors_10_0= ruleConstructor ) )* ( (lv_methods_11_0= ruleMethod ) )* otherlv_12= '}' ) ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1089:1: ruleEntityId returns [EObject current=null] : ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'entity-id' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'identifies' ( (otherlv_4= RULE_ID ) ) (otherlv_5= 'base' ( (otherlv_6= RULE_ID ) ) )? otherlv_7= '{' ( (lv_metaInfo_8_0= ruleTypeMetaInfo ) ) ( (lv_variables_9_0= ruleVariable ) )* ( (lv_constructors_10_0= ruleConstructor ) )* ( (lv_methods_11_0= ruleMethod ) )* otherlv_12= '}' ) ;
     public final EObject ruleEntityId() throws RecognitionException {
         EObject current = null;
 
@@ -2951,13 +2982,13 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
          enterRule(); 
             
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1082:28: ( ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'entity-id' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'identifies' ( (otherlv_4= RULE_ID ) ) (otherlv_5= 'base' ( (otherlv_6= RULE_ID ) ) )? otherlv_7= '{' ( (lv_metaInfo_8_0= ruleTypeMetaInfo ) ) ( (lv_variables_9_0= ruleVariable ) )* ( (lv_constructors_10_0= ruleConstructor ) )* ( (lv_methods_11_0= ruleMethod ) )* otherlv_12= '}' ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1083:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'entity-id' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'identifies' ( (otherlv_4= RULE_ID ) ) (otherlv_5= 'base' ( (otherlv_6= RULE_ID ) ) )? otherlv_7= '{' ( (lv_metaInfo_8_0= ruleTypeMetaInfo ) ) ( (lv_variables_9_0= ruleVariable ) )* ( (lv_constructors_10_0= ruleConstructor ) )* ( (lv_methods_11_0= ruleMethod ) )* otherlv_12= '}' )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1092:28: ( ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'entity-id' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'identifies' ( (otherlv_4= RULE_ID ) ) (otherlv_5= 'base' ( (otherlv_6= RULE_ID ) ) )? otherlv_7= '{' ( (lv_metaInfo_8_0= ruleTypeMetaInfo ) ) ( (lv_variables_9_0= ruleVariable ) )* ( (lv_constructors_10_0= ruleConstructor ) )* ( (lv_methods_11_0= ruleMethod ) )* otherlv_12= '}' ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1093:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'entity-id' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'identifies' ( (otherlv_4= RULE_ID ) ) (otherlv_5= 'base' ( (otherlv_6= RULE_ID ) ) )? otherlv_7= '{' ( (lv_metaInfo_8_0= ruleTypeMetaInfo ) ) ( (lv_variables_9_0= ruleVariable ) )* ( (lv_constructors_10_0= ruleConstructor ) )* ( (lv_methods_11_0= ruleMethod ) )* otherlv_12= '}' )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1083:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'entity-id' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'identifies' ( (otherlv_4= RULE_ID ) ) (otherlv_5= 'base' ( (otherlv_6= RULE_ID ) ) )? otherlv_7= '{' ( (lv_metaInfo_8_0= ruleTypeMetaInfo ) ) ( (lv_variables_9_0= ruleVariable ) )* ( (lv_constructors_10_0= ruleConstructor ) )* ( (lv_methods_11_0= ruleMethod ) )* otherlv_12= '}' )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1083:2: ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'entity-id' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'identifies' ( (otherlv_4= RULE_ID ) ) (otherlv_5= 'base' ( (otherlv_6= RULE_ID ) ) )? otherlv_7= '{' ( (lv_metaInfo_8_0= ruleTypeMetaInfo ) ) ( (lv_variables_9_0= ruleVariable ) )* ( (lv_constructors_10_0= ruleConstructor ) )* ( (lv_methods_11_0= ruleMethod ) )* otherlv_12= '}'
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1093:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'entity-id' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'identifies' ( (otherlv_4= RULE_ID ) ) (otherlv_5= 'base' ( (otherlv_6= RULE_ID ) ) )? otherlv_7= '{' ( (lv_metaInfo_8_0= ruleTypeMetaInfo ) ) ( (lv_variables_9_0= ruleVariable ) )* ( (lv_constructors_10_0= ruleConstructor ) )* ( (lv_methods_11_0= ruleMethod ) )* otherlv_12= '}' )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1093:2: ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'entity-id' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'identifies' ( (otherlv_4= RULE_ID ) ) (otherlv_5= 'base' ( (otherlv_6= RULE_ID ) ) )? otherlv_7= '{' ( (lv_metaInfo_8_0= ruleTypeMetaInfo ) ) ( (lv_variables_9_0= ruleVariable ) )* ( (lv_constructors_10_0= ruleConstructor ) )* ( (lv_methods_11_0= ruleMethod ) )* otherlv_12= '}'
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1083:2: ( (lv_doc_0_0= RULE_DOC ) )?
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1093:2: ( (lv_doc_0_0= RULE_DOC ) )?
             int alt25=2;
             int LA25_0 = input.LA(1);
 
@@ -2966,12 +2997,12 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
             }
             switch (alt25) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1084:1: (lv_doc_0_0= RULE_DOC )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1094:1: (lv_doc_0_0= RULE_DOC )
                     {
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1084:1: (lv_doc_0_0= RULE_DOC )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1085:3: lv_doc_0_0= RULE_DOC
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1094:1: (lv_doc_0_0= RULE_DOC )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1095:3: lv_doc_0_0= RULE_DOC
                     {
-                    lv_doc_0_0=(Token)match(input,RULE_DOC,FOLLOW_RULE_DOC_in_ruleEntityId2371); 
+                    lv_doc_0_0=(Token)match(input,RULE_DOC,FOLLOW_RULE_DOC_in_ruleEntityId2398); 
 
                     			newLeafNode(lv_doc_0_0, grammarAccess.getEntityIdAccess().getDocDOCTerminalRuleCall_0_0()); 
                     		
@@ -2994,17 +3025,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            otherlv_1=(Token)match(input,26,FOLLOW_26_in_ruleEntityId2389); 
+            otherlv_1=(Token)match(input,26,FOLLOW_26_in_ruleEntityId2416); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getEntityIdAccess().getEntityIdKeyword_1());
                 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1105:1: ( (lv_name_2_0= RULE_ID ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1106:1: (lv_name_2_0= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1115:1: ( (lv_name_2_0= RULE_ID ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1116:1: (lv_name_2_0= RULE_ID )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1106:1: (lv_name_2_0= RULE_ID )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1107:3: lv_name_2_0= RULE_ID
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1116:1: (lv_name_2_0= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1117:3: lv_name_2_0= RULE_ID
             {
-            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEntityId2406); 
+            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEntityId2433); 
 
             			newLeafNode(lv_name_2_0, grammarAccess.getEntityIdAccess().getNameIDTerminalRuleCall_2_0()); 
             		
@@ -3024,22 +3055,22 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            otherlv_3=(Token)match(input,27,FOLLOW_27_in_ruleEntityId2423); 
+            otherlv_3=(Token)match(input,27,FOLLOW_27_in_ruleEntityId2450); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getEntityIdAccess().getIdentifiesKeyword_3());
                 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1127:1: ( (otherlv_4= RULE_ID ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1128:1: (otherlv_4= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1137:1: ( (otherlv_4= RULE_ID ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1138:1: (otherlv_4= RULE_ID )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1128:1: (otherlv_4= RULE_ID )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1129:3: otherlv_4= RULE_ID
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1138:1: (otherlv_4= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1139:3: otherlv_4= RULE_ID
             {
 
             			if (current==null) {
             	            current = createModelElement(grammarAccess.getEntityIdRule());
             	        }
                     
-            otherlv_4=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEntityId2443); 
+            otherlv_4=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEntityId2470); 
 
             		newLeafNode(otherlv_4, grammarAccess.getEntityIdAccess().getEntityEntityCrossReference_4_0()); 
             	
@@ -3049,7 +3080,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1140:2: (otherlv_5= 'base' ( (otherlv_6= RULE_ID ) ) )?
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1150:2: (otherlv_5= 'base' ( (otherlv_6= RULE_ID ) ) )?
             int alt26=2;
             int LA26_0 = input.LA(1);
 
@@ -3058,24 +3089,24 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
             }
             switch (alt26) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1140:4: otherlv_5= 'base' ( (otherlv_6= RULE_ID ) )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1150:4: otherlv_5= 'base' ( (otherlv_6= RULE_ID ) )
                     {
-                    otherlv_5=(Token)match(input,25,FOLLOW_25_in_ruleEntityId2456); 
+                    otherlv_5=(Token)match(input,25,FOLLOW_25_in_ruleEntityId2483); 
 
                         	newLeafNode(otherlv_5, grammarAccess.getEntityIdAccess().getBaseKeyword_5_0());
                         
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1144:1: ( (otherlv_6= RULE_ID ) )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1145:1: (otherlv_6= RULE_ID )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1154:1: ( (otherlv_6= RULE_ID ) )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1155:1: (otherlv_6= RULE_ID )
                     {
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1145:1: (otherlv_6= RULE_ID )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1146:3: otherlv_6= RULE_ID
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1155:1: (otherlv_6= RULE_ID )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1156:3: otherlv_6= RULE_ID
                     {
 
                     			if (current==null) {
                     	            current = createModelElement(grammarAccess.getEntityIdRule());
                     	        }
                             
-                    otherlv_6=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEntityId2476); 
+                    otherlv_6=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEntityId2503); 
 
                     		newLeafNode(otherlv_6, grammarAccess.getEntityIdAccess().getBaseExternalTypeCrossReference_5_1_0()); 
                     	
@@ -3091,20 +3122,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            otherlv_7=(Token)match(input,14,FOLLOW_14_in_ruleEntityId2490); 
+            otherlv_7=(Token)match(input,14,FOLLOW_14_in_ruleEntityId2517); 
 
                 	newLeafNode(otherlv_7, grammarAccess.getEntityIdAccess().getLeftCurlyBracketKeyword_6());
                 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1161:1: ( (lv_metaInfo_8_0= ruleTypeMetaInfo ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1162:1: (lv_metaInfo_8_0= ruleTypeMetaInfo )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1171:1: ( (lv_metaInfo_8_0= ruleTypeMetaInfo ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1172:1: (lv_metaInfo_8_0= ruleTypeMetaInfo )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1162:1: (lv_metaInfo_8_0= ruleTypeMetaInfo )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1163:3: lv_metaInfo_8_0= ruleTypeMetaInfo
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1172:1: (lv_metaInfo_8_0= ruleTypeMetaInfo )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1173:3: lv_metaInfo_8_0= ruleTypeMetaInfo
             {
              
             	        newCompositeNode(grammarAccess.getEntityIdAccess().getMetaInfoTypeMetaInfoParserRuleCall_7_0()); 
             	    
-            pushFollow(FOLLOW_ruleTypeMetaInfo_in_ruleEntityId2511);
+            pushFollow(FOLLOW_ruleTypeMetaInfo_in_ruleEntityId2538);
             lv_metaInfo_8_0=ruleTypeMetaInfo();
 
             state._fsp--;
@@ -3126,7 +3157,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1179:2: ( (lv_variables_9_0= ruleVariable ) )*
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1189:2: ( (lv_variables_9_0= ruleVariable ) )*
             loop27:
             do {
                 int alt27=2;
@@ -3135,28 +3166,28 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                 if ( (LA27_0==RULE_DOC) ) {
                     int LA27_1 = input.LA(2);
 
-                    if ( (LA27_1==RULE_ID||LA27_1==48) ) {
+                    if ( (LA27_1==RULE_ID||LA27_1==49) ) {
                         alt27=1;
                     }
 
 
                 }
-                else if ( (LA27_0==RULE_ID||LA27_0==48) ) {
+                else if ( (LA27_0==RULE_ID||LA27_0==49) ) {
                     alt27=1;
                 }
 
 
                 switch (alt27) {
             	case 1 :
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1180:1: (lv_variables_9_0= ruleVariable )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1190:1: (lv_variables_9_0= ruleVariable )
             	    {
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1180:1: (lv_variables_9_0= ruleVariable )
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1181:3: lv_variables_9_0= ruleVariable
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1190:1: (lv_variables_9_0= ruleVariable )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1191:3: lv_variables_9_0= ruleVariable
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getEntityIdAccess().getVariablesVariableParserRuleCall_8_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleVariable_in_ruleEntityId2532);
+            	    pushFollow(FOLLOW_ruleVariable_in_ruleEntityId2559);
             	    lv_variables_9_0=ruleVariable();
 
             	    state._fsp--;
@@ -3184,7 +3215,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                 }
             } while (true);
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1197:3: ( (lv_constructors_10_0= ruleConstructor ) )*
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1207:3: ( (lv_constructors_10_0= ruleConstructor ) )*
             loop28:
             do {
                 int alt28=2;
@@ -3193,28 +3224,28 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                 if ( (LA28_0==RULE_DOC) ) {
                     int LA28_1 = input.LA(2);
 
-                    if ( (LA28_1==38) ) {
+                    if ( (LA28_1==39) ) {
                         alt28=1;
                     }
 
 
                 }
-                else if ( (LA28_0==38) ) {
+                else if ( (LA28_0==39) ) {
                     alt28=1;
                 }
 
 
                 switch (alt28) {
             	case 1 :
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1198:1: (lv_constructors_10_0= ruleConstructor )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1208:1: (lv_constructors_10_0= ruleConstructor )
             	    {
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1198:1: (lv_constructors_10_0= ruleConstructor )
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1199:3: lv_constructors_10_0= ruleConstructor
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1208:1: (lv_constructors_10_0= ruleConstructor )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1209:3: lv_constructors_10_0= ruleConstructor
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getEntityIdAccess().getConstructorsConstructorParserRuleCall_9_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleConstructor_in_ruleEntityId2554);
+            	    pushFollow(FOLLOW_ruleConstructor_in_ruleEntityId2581);
             	    lv_constructors_10_0=ruleConstructor();
 
             	    state._fsp--;
@@ -3242,28 +3273,28 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                 }
             } while (true);
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1215:3: ( (lv_methods_11_0= ruleMethod ) )*
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1225:3: ( (lv_methods_11_0= ruleMethod ) )*
             loop29:
             do {
                 int alt29=2;
                 int LA29_0 = input.LA(1);
 
-                if ( (LA29_0==RULE_DOC||LA29_0==40) ) {
+                if ( (LA29_0==RULE_DOC||LA29_0==42) ) {
                     alt29=1;
                 }
 
 
                 switch (alt29) {
             	case 1 :
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1216:1: (lv_methods_11_0= ruleMethod )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1226:1: (lv_methods_11_0= ruleMethod )
             	    {
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1216:1: (lv_methods_11_0= ruleMethod )
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1217:3: lv_methods_11_0= ruleMethod
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1226:1: (lv_methods_11_0= ruleMethod )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1227:3: lv_methods_11_0= ruleMethod
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getEntityIdAccess().getMethodsMethodParserRuleCall_10_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleMethod_in_ruleEntityId2576);
+            	    pushFollow(FOLLOW_ruleMethod_in_ruleEntityId2603);
             	    lv_methods_11_0=ruleMethod();
 
             	    state._fsp--;
@@ -3291,7 +3322,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                 }
             } while (true);
 
-            otherlv_12=(Token)match(input,15,FOLLOW_15_in_ruleEntityId2589); 
+            otherlv_12=(Token)match(input,15,FOLLOW_15_in_ruleEntityId2616); 
 
                 	newLeafNode(otherlv_12, grammarAccess.getEntityIdAccess().getRightCurlyBracketKeyword_11());
                 
@@ -3316,7 +3347,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "entryRuleAggregateId"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1245:1: entryRuleAggregateId returns [EObject current=null] : iv_ruleAggregateId= ruleAggregateId EOF ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1255:1: entryRuleAggregateId returns [EObject current=null] : iv_ruleAggregateId= ruleAggregateId EOF ;
     public final EObject entryRuleAggregateId() throws RecognitionException {
         EObject current = null;
 
@@ -3324,17 +3355,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1246:2: (iv_ruleAggregateId= ruleAggregateId EOF )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1247:2: iv_ruleAggregateId= ruleAggregateId EOF
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1256:2: (iv_ruleAggregateId= ruleAggregateId EOF )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1257:2: iv_ruleAggregateId= ruleAggregateId EOF
             {
              newCompositeNode(grammarAccess.getAggregateIdRule()); 
-            pushFollow(FOLLOW_ruleAggregateId_in_entryRuleAggregateId2625);
+            pushFollow(FOLLOW_ruleAggregateId_in_entryRuleAggregateId2652);
             iv_ruleAggregateId=ruleAggregateId();
 
             state._fsp--;
 
              current =iv_ruleAggregateId; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAggregateId2635); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAggregateId2662); 
 
             }
 
@@ -3352,7 +3383,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "ruleAggregateId"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1254:1: ruleAggregateId returns [EObject current=null] : ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'aggregate-id' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'identifies' ( (otherlv_4= RULE_ID ) ) (otherlv_5= 'base' ( (otherlv_6= RULE_ID ) ) )? otherlv_7= '{' ( (lv_metaInfo_8_0= ruleTypeMetaInfo ) ) ( (lv_variables_9_0= ruleVariable ) )* ( (lv_constructors_10_0= ruleConstructor ) )* ( (lv_methods_11_0= ruleMethod ) )* otherlv_12= '}' ) ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1264:1: ruleAggregateId returns [EObject current=null] : ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'aggregate-id' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'identifies' ( (otherlv_4= RULE_ID ) ) (otherlv_5= 'base' ( (otherlv_6= RULE_ID ) ) )? otherlv_7= '{' ( (lv_metaInfo_8_0= ruleTypeMetaInfo ) ) ( (lv_variables_9_0= ruleVariable ) )* ( (lv_constructors_10_0= ruleConstructor ) )* ( (lv_methods_11_0= ruleMethod ) )* otherlv_12= '}' ) ;
     public final EObject ruleAggregateId() throws RecognitionException {
         EObject current = null;
 
@@ -3377,13 +3408,13 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
          enterRule(); 
             
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1257:28: ( ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'aggregate-id' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'identifies' ( (otherlv_4= RULE_ID ) ) (otherlv_5= 'base' ( (otherlv_6= RULE_ID ) ) )? otherlv_7= '{' ( (lv_metaInfo_8_0= ruleTypeMetaInfo ) ) ( (lv_variables_9_0= ruleVariable ) )* ( (lv_constructors_10_0= ruleConstructor ) )* ( (lv_methods_11_0= ruleMethod ) )* otherlv_12= '}' ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1258:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'aggregate-id' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'identifies' ( (otherlv_4= RULE_ID ) ) (otherlv_5= 'base' ( (otherlv_6= RULE_ID ) ) )? otherlv_7= '{' ( (lv_metaInfo_8_0= ruleTypeMetaInfo ) ) ( (lv_variables_9_0= ruleVariable ) )* ( (lv_constructors_10_0= ruleConstructor ) )* ( (lv_methods_11_0= ruleMethod ) )* otherlv_12= '}' )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1267:28: ( ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'aggregate-id' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'identifies' ( (otherlv_4= RULE_ID ) ) (otherlv_5= 'base' ( (otherlv_6= RULE_ID ) ) )? otherlv_7= '{' ( (lv_metaInfo_8_0= ruleTypeMetaInfo ) ) ( (lv_variables_9_0= ruleVariable ) )* ( (lv_constructors_10_0= ruleConstructor ) )* ( (lv_methods_11_0= ruleMethod ) )* otherlv_12= '}' ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1268:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'aggregate-id' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'identifies' ( (otherlv_4= RULE_ID ) ) (otherlv_5= 'base' ( (otherlv_6= RULE_ID ) ) )? otherlv_7= '{' ( (lv_metaInfo_8_0= ruleTypeMetaInfo ) ) ( (lv_variables_9_0= ruleVariable ) )* ( (lv_constructors_10_0= ruleConstructor ) )* ( (lv_methods_11_0= ruleMethod ) )* otherlv_12= '}' )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1258:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'aggregate-id' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'identifies' ( (otherlv_4= RULE_ID ) ) (otherlv_5= 'base' ( (otherlv_6= RULE_ID ) ) )? otherlv_7= '{' ( (lv_metaInfo_8_0= ruleTypeMetaInfo ) ) ( (lv_variables_9_0= ruleVariable ) )* ( (lv_constructors_10_0= ruleConstructor ) )* ( (lv_methods_11_0= ruleMethod ) )* otherlv_12= '}' )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1258:2: ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'aggregate-id' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'identifies' ( (otherlv_4= RULE_ID ) ) (otherlv_5= 'base' ( (otherlv_6= RULE_ID ) ) )? otherlv_7= '{' ( (lv_metaInfo_8_0= ruleTypeMetaInfo ) ) ( (lv_variables_9_0= ruleVariable ) )* ( (lv_constructors_10_0= ruleConstructor ) )* ( (lv_methods_11_0= ruleMethod ) )* otherlv_12= '}'
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1268:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'aggregate-id' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'identifies' ( (otherlv_4= RULE_ID ) ) (otherlv_5= 'base' ( (otherlv_6= RULE_ID ) ) )? otherlv_7= '{' ( (lv_metaInfo_8_0= ruleTypeMetaInfo ) ) ( (lv_variables_9_0= ruleVariable ) )* ( (lv_constructors_10_0= ruleConstructor ) )* ( (lv_methods_11_0= ruleMethod ) )* otherlv_12= '}' )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1268:2: ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'aggregate-id' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'identifies' ( (otherlv_4= RULE_ID ) ) (otherlv_5= 'base' ( (otherlv_6= RULE_ID ) ) )? otherlv_7= '{' ( (lv_metaInfo_8_0= ruleTypeMetaInfo ) ) ( (lv_variables_9_0= ruleVariable ) )* ( (lv_constructors_10_0= ruleConstructor ) )* ( (lv_methods_11_0= ruleMethod ) )* otherlv_12= '}'
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1258:2: ( (lv_doc_0_0= RULE_DOC ) )?
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1268:2: ( (lv_doc_0_0= RULE_DOC ) )?
             int alt30=2;
             int LA30_0 = input.LA(1);
 
@@ -3392,12 +3423,12 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
             }
             switch (alt30) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1259:1: (lv_doc_0_0= RULE_DOC )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1269:1: (lv_doc_0_0= RULE_DOC )
                     {
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1259:1: (lv_doc_0_0= RULE_DOC )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1260:3: lv_doc_0_0= RULE_DOC
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1269:1: (lv_doc_0_0= RULE_DOC )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1270:3: lv_doc_0_0= RULE_DOC
                     {
-                    lv_doc_0_0=(Token)match(input,RULE_DOC,FOLLOW_RULE_DOC_in_ruleAggregateId2677); 
+                    lv_doc_0_0=(Token)match(input,RULE_DOC,FOLLOW_RULE_DOC_in_ruleAggregateId2704); 
 
                     			newLeafNode(lv_doc_0_0, grammarAccess.getAggregateIdAccess().getDocDOCTerminalRuleCall_0_0()); 
                     		
@@ -3420,17 +3451,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            otherlv_1=(Token)match(input,28,FOLLOW_28_in_ruleAggregateId2695); 
+            otherlv_1=(Token)match(input,28,FOLLOW_28_in_ruleAggregateId2722); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getAggregateIdAccess().getAggregateIdKeyword_1());
                 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1280:1: ( (lv_name_2_0= RULE_ID ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1281:1: (lv_name_2_0= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1290:1: ( (lv_name_2_0= RULE_ID ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1291:1: (lv_name_2_0= RULE_ID )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1281:1: (lv_name_2_0= RULE_ID )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1282:3: lv_name_2_0= RULE_ID
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1291:1: (lv_name_2_0= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1292:3: lv_name_2_0= RULE_ID
             {
-            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAggregateId2712); 
+            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAggregateId2739); 
 
             			newLeafNode(lv_name_2_0, grammarAccess.getAggregateIdAccess().getNameIDTerminalRuleCall_2_0()); 
             		
@@ -3450,22 +3481,22 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            otherlv_3=(Token)match(input,27,FOLLOW_27_in_ruleAggregateId2729); 
+            otherlv_3=(Token)match(input,27,FOLLOW_27_in_ruleAggregateId2756); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getAggregateIdAccess().getIdentifiesKeyword_3());
                 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1302:1: ( (otherlv_4= RULE_ID ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1303:1: (otherlv_4= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1312:1: ( (otherlv_4= RULE_ID ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1313:1: (otherlv_4= RULE_ID )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1303:1: (otherlv_4= RULE_ID )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1304:3: otherlv_4= RULE_ID
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1313:1: (otherlv_4= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1314:3: otherlv_4= RULE_ID
             {
 
             			if (current==null) {
             	            current = createModelElement(grammarAccess.getAggregateIdRule());
             	        }
                     
-            otherlv_4=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAggregateId2749); 
+            otherlv_4=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAggregateId2776); 
 
             		newLeafNode(otherlv_4, grammarAccess.getAggregateIdAccess().getEntityAggregateCrossReference_4_0()); 
             	
@@ -3475,7 +3506,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1315:2: (otherlv_5= 'base' ( (otherlv_6= RULE_ID ) ) )?
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1325:2: (otherlv_5= 'base' ( (otherlv_6= RULE_ID ) ) )?
             int alt31=2;
             int LA31_0 = input.LA(1);
 
@@ -3484,24 +3515,24 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
             }
             switch (alt31) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1315:4: otherlv_5= 'base' ( (otherlv_6= RULE_ID ) )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1325:4: otherlv_5= 'base' ( (otherlv_6= RULE_ID ) )
                     {
-                    otherlv_5=(Token)match(input,25,FOLLOW_25_in_ruleAggregateId2762); 
+                    otherlv_5=(Token)match(input,25,FOLLOW_25_in_ruleAggregateId2789); 
 
                         	newLeafNode(otherlv_5, grammarAccess.getAggregateIdAccess().getBaseKeyword_5_0());
                         
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1319:1: ( (otherlv_6= RULE_ID ) )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1320:1: (otherlv_6= RULE_ID )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1329:1: ( (otherlv_6= RULE_ID ) )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1330:1: (otherlv_6= RULE_ID )
                     {
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1320:1: (otherlv_6= RULE_ID )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1321:3: otherlv_6= RULE_ID
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1330:1: (otherlv_6= RULE_ID )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1331:3: otherlv_6= RULE_ID
                     {
 
                     			if (current==null) {
                     	            current = createModelElement(grammarAccess.getAggregateIdRule());
                     	        }
                             
-                    otherlv_6=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAggregateId2782); 
+                    otherlv_6=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAggregateId2809); 
 
                     		newLeafNode(otherlv_6, grammarAccess.getAggregateIdAccess().getBaseExternalTypeCrossReference_5_1_0()); 
                     	
@@ -3517,20 +3548,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            otherlv_7=(Token)match(input,14,FOLLOW_14_in_ruleAggregateId2796); 
+            otherlv_7=(Token)match(input,14,FOLLOW_14_in_ruleAggregateId2823); 
 
                 	newLeafNode(otherlv_7, grammarAccess.getAggregateIdAccess().getLeftCurlyBracketKeyword_6());
                 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1336:1: ( (lv_metaInfo_8_0= ruleTypeMetaInfo ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1337:1: (lv_metaInfo_8_0= ruleTypeMetaInfo )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1346:1: ( (lv_metaInfo_8_0= ruleTypeMetaInfo ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1347:1: (lv_metaInfo_8_0= ruleTypeMetaInfo )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1337:1: (lv_metaInfo_8_0= ruleTypeMetaInfo )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1338:3: lv_metaInfo_8_0= ruleTypeMetaInfo
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1347:1: (lv_metaInfo_8_0= ruleTypeMetaInfo )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1348:3: lv_metaInfo_8_0= ruleTypeMetaInfo
             {
              
             	        newCompositeNode(grammarAccess.getAggregateIdAccess().getMetaInfoTypeMetaInfoParserRuleCall_7_0()); 
             	    
-            pushFollow(FOLLOW_ruleTypeMetaInfo_in_ruleAggregateId2817);
+            pushFollow(FOLLOW_ruleTypeMetaInfo_in_ruleAggregateId2844);
             lv_metaInfo_8_0=ruleTypeMetaInfo();
 
             state._fsp--;
@@ -3552,7 +3583,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1354:2: ( (lv_variables_9_0= ruleVariable ) )*
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1364:2: ( (lv_variables_9_0= ruleVariable ) )*
             loop32:
             do {
                 int alt32=2;
@@ -3561,28 +3592,28 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                 if ( (LA32_0==RULE_DOC) ) {
                     int LA32_1 = input.LA(2);
 
-                    if ( (LA32_1==RULE_ID||LA32_1==48) ) {
+                    if ( (LA32_1==RULE_ID||LA32_1==49) ) {
                         alt32=1;
                     }
 
 
                 }
-                else if ( (LA32_0==RULE_ID||LA32_0==48) ) {
+                else if ( (LA32_0==RULE_ID||LA32_0==49) ) {
                     alt32=1;
                 }
 
 
                 switch (alt32) {
             	case 1 :
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1355:1: (lv_variables_9_0= ruleVariable )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1365:1: (lv_variables_9_0= ruleVariable )
             	    {
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1355:1: (lv_variables_9_0= ruleVariable )
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1356:3: lv_variables_9_0= ruleVariable
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1365:1: (lv_variables_9_0= ruleVariable )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1366:3: lv_variables_9_0= ruleVariable
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getAggregateIdAccess().getVariablesVariableParserRuleCall_8_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleVariable_in_ruleAggregateId2838);
+            	    pushFollow(FOLLOW_ruleVariable_in_ruleAggregateId2865);
             	    lv_variables_9_0=ruleVariable();
 
             	    state._fsp--;
@@ -3610,7 +3641,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                 }
             } while (true);
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1372:3: ( (lv_constructors_10_0= ruleConstructor ) )*
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1382:3: ( (lv_constructors_10_0= ruleConstructor ) )*
             loop33:
             do {
                 int alt33=2;
@@ -3619,28 +3650,28 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                 if ( (LA33_0==RULE_DOC) ) {
                     int LA33_1 = input.LA(2);
 
-                    if ( (LA33_1==38) ) {
+                    if ( (LA33_1==39) ) {
                         alt33=1;
                     }
 
 
                 }
-                else if ( (LA33_0==38) ) {
+                else if ( (LA33_0==39) ) {
                     alt33=1;
                 }
 
 
                 switch (alt33) {
             	case 1 :
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1373:1: (lv_constructors_10_0= ruleConstructor )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1383:1: (lv_constructors_10_0= ruleConstructor )
             	    {
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1373:1: (lv_constructors_10_0= ruleConstructor )
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1374:3: lv_constructors_10_0= ruleConstructor
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1383:1: (lv_constructors_10_0= ruleConstructor )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1384:3: lv_constructors_10_0= ruleConstructor
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getAggregateIdAccess().getConstructorsConstructorParserRuleCall_9_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleConstructor_in_ruleAggregateId2860);
+            	    pushFollow(FOLLOW_ruleConstructor_in_ruleAggregateId2887);
             	    lv_constructors_10_0=ruleConstructor();
 
             	    state._fsp--;
@@ -3668,28 +3699,28 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                 }
             } while (true);
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1390:3: ( (lv_methods_11_0= ruleMethod ) )*
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1400:3: ( (lv_methods_11_0= ruleMethod ) )*
             loop34:
             do {
                 int alt34=2;
                 int LA34_0 = input.LA(1);
 
-                if ( (LA34_0==RULE_DOC||LA34_0==40) ) {
+                if ( (LA34_0==RULE_DOC||LA34_0==42) ) {
                     alt34=1;
                 }
 
 
                 switch (alt34) {
             	case 1 :
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1391:1: (lv_methods_11_0= ruleMethod )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1401:1: (lv_methods_11_0= ruleMethod )
             	    {
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1391:1: (lv_methods_11_0= ruleMethod )
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1392:3: lv_methods_11_0= ruleMethod
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1401:1: (lv_methods_11_0= ruleMethod )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1402:3: lv_methods_11_0= ruleMethod
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getAggregateIdAccess().getMethodsMethodParserRuleCall_10_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleMethod_in_ruleAggregateId2882);
+            	    pushFollow(FOLLOW_ruleMethod_in_ruleAggregateId2909);
             	    lv_methods_11_0=ruleMethod();
 
             	    state._fsp--;
@@ -3717,7 +3748,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                 }
             } while (true);
 
-            otherlv_12=(Token)match(input,15,FOLLOW_15_in_ruleAggregateId2895); 
+            otherlv_12=(Token)match(input,15,FOLLOW_15_in_ruleAggregateId2922); 
 
                 	newLeafNode(otherlv_12, grammarAccess.getAggregateIdAccess().getRightCurlyBracketKeyword_11());
                 
@@ -3742,7 +3773,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "entryRuleEnumObject"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1420:1: entryRuleEnumObject returns [EObject current=null] : iv_ruleEnumObject= ruleEnumObject EOF ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1430:1: entryRuleEnumObject returns [EObject current=null] : iv_ruleEnumObject= ruleEnumObject EOF ;
     public final EObject entryRuleEnumObject() throws RecognitionException {
         EObject current = null;
 
@@ -3750,17 +3781,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1421:2: (iv_ruleEnumObject= ruleEnumObject EOF )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1422:2: iv_ruleEnumObject= ruleEnumObject EOF
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1431:2: (iv_ruleEnumObject= ruleEnumObject EOF )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1432:2: iv_ruleEnumObject= ruleEnumObject EOF
             {
              newCompositeNode(grammarAccess.getEnumObjectRule()); 
-            pushFollow(FOLLOW_ruleEnumObject_in_entryRuleEnumObject2931);
+            pushFollow(FOLLOW_ruleEnumObject_in_entryRuleEnumObject2958);
             iv_ruleEnumObject=ruleEnumObject();
 
             state._fsp--;
 
              current =iv_ruleEnumObject; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleEnumObject2941); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEnumObject2968); 
 
             }
 
@@ -3778,7 +3809,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "ruleEnumObject"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1429:1: ruleEnumObject returns [EObject current=null] : ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'enum' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_metaInfo_4_0= ruleTypeMetaInfo ) ) ( (lv_variables_5_0= ruleVariable ) )* ( (lv_constructors_6_0= ruleConstructor ) )* ( (lv_methods_7_0= ruleMethod ) )* otherlv_8= 'instances' otherlv_9= '{' ( (lv_instances_10_0= ruleEnumInstance ) )+ otherlv_11= '}' otherlv_12= '}' ) ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1439:1: ruleEnumObject returns [EObject current=null] : ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'enum' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_metaInfo_4_0= ruleTypeMetaInfo ) ) ( (lv_variables_5_0= ruleVariable ) )* ( (lv_constructors_6_0= ruleConstructor ) )* ( (lv_methods_7_0= ruleMethod ) )* otherlv_8= 'instances' otherlv_9= '{' ( (lv_instances_10_0= ruleEnumInstance ) )+ otherlv_11= '}' otherlv_12= '}' ) ;
     public final EObject ruleEnumObject() throws RecognitionException {
         EObject current = null;
 
@@ -3804,13 +3835,13 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
          enterRule(); 
             
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1432:28: ( ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'enum' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_metaInfo_4_0= ruleTypeMetaInfo ) ) ( (lv_variables_5_0= ruleVariable ) )* ( (lv_constructors_6_0= ruleConstructor ) )* ( (lv_methods_7_0= ruleMethod ) )* otherlv_8= 'instances' otherlv_9= '{' ( (lv_instances_10_0= ruleEnumInstance ) )+ otherlv_11= '}' otherlv_12= '}' ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1433:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'enum' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_metaInfo_4_0= ruleTypeMetaInfo ) ) ( (lv_variables_5_0= ruleVariable ) )* ( (lv_constructors_6_0= ruleConstructor ) )* ( (lv_methods_7_0= ruleMethod ) )* otherlv_8= 'instances' otherlv_9= '{' ( (lv_instances_10_0= ruleEnumInstance ) )+ otherlv_11= '}' otherlv_12= '}' )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1442:28: ( ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'enum' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_metaInfo_4_0= ruleTypeMetaInfo ) ) ( (lv_variables_5_0= ruleVariable ) )* ( (lv_constructors_6_0= ruleConstructor ) )* ( (lv_methods_7_0= ruleMethod ) )* otherlv_8= 'instances' otherlv_9= '{' ( (lv_instances_10_0= ruleEnumInstance ) )+ otherlv_11= '}' otherlv_12= '}' ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1443:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'enum' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_metaInfo_4_0= ruleTypeMetaInfo ) ) ( (lv_variables_5_0= ruleVariable ) )* ( (lv_constructors_6_0= ruleConstructor ) )* ( (lv_methods_7_0= ruleMethod ) )* otherlv_8= 'instances' otherlv_9= '{' ( (lv_instances_10_0= ruleEnumInstance ) )+ otherlv_11= '}' otherlv_12= '}' )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1433:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'enum' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_metaInfo_4_0= ruleTypeMetaInfo ) ) ( (lv_variables_5_0= ruleVariable ) )* ( (lv_constructors_6_0= ruleConstructor ) )* ( (lv_methods_7_0= ruleMethod ) )* otherlv_8= 'instances' otherlv_9= '{' ( (lv_instances_10_0= ruleEnumInstance ) )+ otherlv_11= '}' otherlv_12= '}' )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1433:2: ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'enum' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_metaInfo_4_0= ruleTypeMetaInfo ) ) ( (lv_variables_5_0= ruleVariable ) )* ( (lv_constructors_6_0= ruleConstructor ) )* ( (lv_methods_7_0= ruleMethod ) )* otherlv_8= 'instances' otherlv_9= '{' ( (lv_instances_10_0= ruleEnumInstance ) )+ otherlv_11= '}' otherlv_12= '}'
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1443:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'enum' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_metaInfo_4_0= ruleTypeMetaInfo ) ) ( (lv_variables_5_0= ruleVariable ) )* ( (lv_constructors_6_0= ruleConstructor ) )* ( (lv_methods_7_0= ruleMethod ) )* otherlv_8= 'instances' otherlv_9= '{' ( (lv_instances_10_0= ruleEnumInstance ) )+ otherlv_11= '}' otherlv_12= '}' )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1443:2: ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'enum' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_metaInfo_4_0= ruleTypeMetaInfo ) ) ( (lv_variables_5_0= ruleVariable ) )* ( (lv_constructors_6_0= ruleConstructor ) )* ( (lv_methods_7_0= ruleMethod ) )* otherlv_8= 'instances' otherlv_9= '{' ( (lv_instances_10_0= ruleEnumInstance ) )+ otherlv_11= '}' otherlv_12= '}'
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1433:2: ( (lv_doc_0_0= RULE_DOC ) )?
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1443:2: ( (lv_doc_0_0= RULE_DOC ) )?
             int alt35=2;
             int LA35_0 = input.LA(1);
 
@@ -3819,12 +3850,12 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
             }
             switch (alt35) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1434:1: (lv_doc_0_0= RULE_DOC )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1444:1: (lv_doc_0_0= RULE_DOC )
                     {
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1434:1: (lv_doc_0_0= RULE_DOC )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1435:3: lv_doc_0_0= RULE_DOC
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1444:1: (lv_doc_0_0= RULE_DOC )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1445:3: lv_doc_0_0= RULE_DOC
                     {
-                    lv_doc_0_0=(Token)match(input,RULE_DOC,FOLLOW_RULE_DOC_in_ruleEnumObject2983); 
+                    lv_doc_0_0=(Token)match(input,RULE_DOC,FOLLOW_RULE_DOC_in_ruleEnumObject3010); 
 
                     			newLeafNode(lv_doc_0_0, grammarAccess.getEnumObjectAccess().getDocDOCTerminalRuleCall_0_0()); 
                     		
@@ -3847,17 +3878,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            otherlv_1=(Token)match(input,29,FOLLOW_29_in_ruleEnumObject3001); 
+            otherlv_1=(Token)match(input,29,FOLLOW_29_in_ruleEnumObject3028); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getEnumObjectAccess().getEnumKeyword_1());
                 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1455:1: ( (lv_name_2_0= RULE_ID ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1456:1: (lv_name_2_0= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1465:1: ( (lv_name_2_0= RULE_ID ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1466:1: (lv_name_2_0= RULE_ID )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1456:1: (lv_name_2_0= RULE_ID )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1457:3: lv_name_2_0= RULE_ID
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1466:1: (lv_name_2_0= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1467:3: lv_name_2_0= RULE_ID
             {
-            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEnumObject3018); 
+            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEnumObject3045); 
 
             			newLeafNode(lv_name_2_0, grammarAccess.getEnumObjectAccess().getNameIDTerminalRuleCall_2_0()); 
             		
@@ -3877,20 +3908,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            otherlv_3=(Token)match(input,14,FOLLOW_14_in_ruleEnumObject3035); 
+            otherlv_3=(Token)match(input,14,FOLLOW_14_in_ruleEnumObject3062); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getEnumObjectAccess().getLeftCurlyBracketKeyword_3());
                 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1477:1: ( (lv_metaInfo_4_0= ruleTypeMetaInfo ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1478:1: (lv_metaInfo_4_0= ruleTypeMetaInfo )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1487:1: ( (lv_metaInfo_4_0= ruleTypeMetaInfo ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1488:1: (lv_metaInfo_4_0= ruleTypeMetaInfo )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1478:1: (lv_metaInfo_4_0= ruleTypeMetaInfo )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1479:3: lv_metaInfo_4_0= ruleTypeMetaInfo
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1488:1: (lv_metaInfo_4_0= ruleTypeMetaInfo )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1489:3: lv_metaInfo_4_0= ruleTypeMetaInfo
             {
              
             	        newCompositeNode(grammarAccess.getEnumObjectAccess().getMetaInfoTypeMetaInfoParserRuleCall_4_0()); 
             	    
-            pushFollow(FOLLOW_ruleTypeMetaInfo_in_ruleEnumObject3056);
+            pushFollow(FOLLOW_ruleTypeMetaInfo_in_ruleEnumObject3083);
             lv_metaInfo_4_0=ruleTypeMetaInfo();
 
             state._fsp--;
@@ -3912,7 +3943,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1495:2: ( (lv_variables_5_0= ruleVariable ) )*
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1505:2: ( (lv_variables_5_0= ruleVariable ) )*
             loop36:
             do {
                 int alt36=2;
@@ -3921,28 +3952,28 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                 if ( (LA36_0==RULE_DOC) ) {
                     int LA36_1 = input.LA(2);
 
-                    if ( (LA36_1==RULE_ID||LA36_1==48) ) {
+                    if ( (LA36_1==RULE_ID||LA36_1==49) ) {
                         alt36=1;
                     }
 
 
                 }
-                else if ( (LA36_0==RULE_ID||LA36_0==48) ) {
+                else if ( (LA36_0==RULE_ID||LA36_0==49) ) {
                     alt36=1;
                 }
 
 
                 switch (alt36) {
             	case 1 :
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1496:1: (lv_variables_5_0= ruleVariable )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1506:1: (lv_variables_5_0= ruleVariable )
             	    {
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1496:1: (lv_variables_5_0= ruleVariable )
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1497:3: lv_variables_5_0= ruleVariable
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1506:1: (lv_variables_5_0= ruleVariable )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1507:3: lv_variables_5_0= ruleVariable
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getEnumObjectAccess().getVariablesVariableParserRuleCall_5_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleVariable_in_ruleEnumObject3077);
+            	    pushFollow(FOLLOW_ruleVariable_in_ruleEnumObject3104);
             	    lv_variables_5_0=ruleVariable();
 
             	    state._fsp--;
@@ -3970,7 +4001,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                 }
             } while (true);
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1513:3: ( (lv_constructors_6_0= ruleConstructor ) )*
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1523:3: ( (lv_constructors_6_0= ruleConstructor ) )*
             loop37:
             do {
                 int alt37=2;
@@ -3979,28 +4010,28 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                 if ( (LA37_0==RULE_DOC) ) {
                     int LA37_1 = input.LA(2);
 
-                    if ( (LA37_1==38) ) {
+                    if ( (LA37_1==39) ) {
                         alt37=1;
                     }
 
 
                 }
-                else if ( (LA37_0==38) ) {
+                else if ( (LA37_0==39) ) {
                     alt37=1;
                 }
 
 
                 switch (alt37) {
             	case 1 :
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1514:1: (lv_constructors_6_0= ruleConstructor )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1524:1: (lv_constructors_6_0= ruleConstructor )
             	    {
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1514:1: (lv_constructors_6_0= ruleConstructor )
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1515:3: lv_constructors_6_0= ruleConstructor
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1524:1: (lv_constructors_6_0= ruleConstructor )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1525:3: lv_constructors_6_0= ruleConstructor
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getEnumObjectAccess().getConstructorsConstructorParserRuleCall_6_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleConstructor_in_ruleEnumObject3099);
+            	    pushFollow(FOLLOW_ruleConstructor_in_ruleEnumObject3126);
             	    lv_constructors_6_0=ruleConstructor();
 
             	    state._fsp--;
@@ -4028,28 +4059,28 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                 }
             } while (true);
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1531:3: ( (lv_methods_7_0= ruleMethod ) )*
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1541:3: ( (lv_methods_7_0= ruleMethod ) )*
             loop38:
             do {
                 int alt38=2;
                 int LA38_0 = input.LA(1);
 
-                if ( (LA38_0==RULE_DOC||LA38_0==40) ) {
+                if ( (LA38_0==RULE_DOC||LA38_0==42) ) {
                     alt38=1;
                 }
 
 
                 switch (alt38) {
             	case 1 :
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1532:1: (lv_methods_7_0= ruleMethod )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1542:1: (lv_methods_7_0= ruleMethod )
             	    {
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1532:1: (lv_methods_7_0= ruleMethod )
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1533:3: lv_methods_7_0= ruleMethod
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1542:1: (lv_methods_7_0= ruleMethod )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1543:3: lv_methods_7_0= ruleMethod
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getEnumObjectAccess().getMethodsMethodParserRuleCall_7_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleMethod_in_ruleEnumObject3121);
+            	    pushFollow(FOLLOW_ruleMethod_in_ruleEnumObject3148);
             	    lv_methods_7_0=ruleMethod();
 
             	    state._fsp--;
@@ -4077,15 +4108,15 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                 }
             } while (true);
 
-            otherlv_8=(Token)match(input,30,FOLLOW_30_in_ruleEnumObject3134); 
+            otherlv_8=(Token)match(input,30,FOLLOW_30_in_ruleEnumObject3161); 
 
                 	newLeafNode(otherlv_8, grammarAccess.getEnumObjectAccess().getInstancesKeyword_8());
                 
-            otherlv_9=(Token)match(input,14,FOLLOW_14_in_ruleEnumObject3146); 
+            otherlv_9=(Token)match(input,14,FOLLOW_14_in_ruleEnumObject3173); 
 
                 	newLeafNode(otherlv_9, grammarAccess.getEnumObjectAccess().getLeftCurlyBracketKeyword_9());
                 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1557:1: ( (lv_instances_10_0= ruleEnumInstance ) )+
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1567:1: ( (lv_instances_10_0= ruleEnumInstance ) )+
             int cnt39=0;
             loop39:
             do {
@@ -4099,15 +4130,15 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
                 switch (alt39) {
             	case 1 :
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1558:1: (lv_instances_10_0= ruleEnumInstance )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1568:1: (lv_instances_10_0= ruleEnumInstance )
             	    {
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1558:1: (lv_instances_10_0= ruleEnumInstance )
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1559:3: lv_instances_10_0= ruleEnumInstance
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1568:1: (lv_instances_10_0= ruleEnumInstance )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1569:3: lv_instances_10_0= ruleEnumInstance
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getEnumObjectAccess().getInstancesEnumInstanceParserRuleCall_10_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleEnumInstance_in_ruleEnumObject3167);
+            	    pushFollow(FOLLOW_ruleEnumInstance_in_ruleEnumObject3194);
             	    lv_instances_10_0=ruleEnumInstance();
 
             	    state._fsp--;
@@ -4139,11 +4170,11 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                 cnt39++;
             } while (true);
 
-            otherlv_11=(Token)match(input,15,FOLLOW_15_in_ruleEnumObject3180); 
+            otherlv_11=(Token)match(input,15,FOLLOW_15_in_ruleEnumObject3207); 
 
                 	newLeafNode(otherlv_11, grammarAccess.getEnumObjectAccess().getRightCurlyBracketKeyword_11());
                 
-            otherlv_12=(Token)match(input,15,FOLLOW_15_in_ruleEnumObject3192); 
+            otherlv_12=(Token)match(input,15,FOLLOW_15_in_ruleEnumObject3219); 
 
                 	newLeafNode(otherlv_12, grammarAccess.getEnumObjectAccess().getRightCurlyBracketKeyword_12());
                 
@@ -4168,7 +4199,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "entryRuleEnumInstance"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1591:1: entryRuleEnumInstance returns [EObject current=null] : iv_ruleEnumInstance= ruleEnumInstance EOF ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1601:1: entryRuleEnumInstance returns [EObject current=null] : iv_ruleEnumInstance= ruleEnumInstance EOF ;
     public final EObject entryRuleEnumInstance() throws RecognitionException {
         EObject current = null;
 
@@ -4176,17 +4207,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1592:2: (iv_ruleEnumInstance= ruleEnumInstance EOF )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1593:2: iv_ruleEnumInstance= ruleEnumInstance EOF
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1602:2: (iv_ruleEnumInstance= ruleEnumInstance EOF )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1603:2: iv_ruleEnumInstance= ruleEnumInstance EOF
             {
              newCompositeNode(grammarAccess.getEnumInstanceRule()); 
-            pushFollow(FOLLOW_ruleEnumInstance_in_entryRuleEnumInstance3228);
+            pushFollow(FOLLOW_ruleEnumInstance_in_entryRuleEnumInstance3255);
             iv_ruleEnumInstance=ruleEnumInstance();
 
             state._fsp--;
 
              current =iv_ruleEnumInstance; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleEnumInstance3238); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEnumInstance3265); 
 
             }
 
@@ -4204,7 +4235,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "ruleEnumInstance"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1600:1: ruleEnumInstance returns [EObject current=null] : ( ( (lv_doc_0_0= RULE_DOC ) )? ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= '(' ( (lv_params_3_0= ruleLiteral ) ) (otherlv_4= ',' ( (lv_params_5_0= ruleLiteral ) ) )* otherlv_6= ')' )? ) ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1610:1: ruleEnumInstance returns [EObject current=null] : ( ( (lv_doc_0_0= RULE_DOC ) )? ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= '(' ( (lv_params_3_0= ruleLiteral ) ) (otherlv_4= ',' ( (lv_params_5_0= ruleLiteral ) ) )* otherlv_6= ')' )? ) ;
     public final EObject ruleEnumInstance() throws RecognitionException {
         EObject current = null;
 
@@ -4221,13 +4252,13 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
          enterRule(); 
             
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1603:28: ( ( ( (lv_doc_0_0= RULE_DOC ) )? ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= '(' ( (lv_params_3_0= ruleLiteral ) ) (otherlv_4= ',' ( (lv_params_5_0= ruleLiteral ) ) )* otherlv_6= ')' )? ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1604:1: ( ( (lv_doc_0_0= RULE_DOC ) )? ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= '(' ( (lv_params_3_0= ruleLiteral ) ) (otherlv_4= ',' ( (lv_params_5_0= ruleLiteral ) ) )* otherlv_6= ')' )? )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1613:28: ( ( ( (lv_doc_0_0= RULE_DOC ) )? ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= '(' ( (lv_params_3_0= ruleLiteral ) ) (otherlv_4= ',' ( (lv_params_5_0= ruleLiteral ) ) )* otherlv_6= ')' )? ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1614:1: ( ( (lv_doc_0_0= RULE_DOC ) )? ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= '(' ( (lv_params_3_0= ruleLiteral ) ) (otherlv_4= ',' ( (lv_params_5_0= ruleLiteral ) ) )* otherlv_6= ')' )? )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1604:1: ( ( (lv_doc_0_0= RULE_DOC ) )? ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= '(' ( (lv_params_3_0= ruleLiteral ) ) (otherlv_4= ',' ( (lv_params_5_0= ruleLiteral ) ) )* otherlv_6= ')' )? )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1604:2: ( (lv_doc_0_0= RULE_DOC ) )? ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= '(' ( (lv_params_3_0= ruleLiteral ) ) (otherlv_4= ',' ( (lv_params_5_0= ruleLiteral ) ) )* otherlv_6= ')' )?
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1614:1: ( ( (lv_doc_0_0= RULE_DOC ) )? ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= '(' ( (lv_params_3_0= ruleLiteral ) ) (otherlv_4= ',' ( (lv_params_5_0= ruleLiteral ) ) )* otherlv_6= ')' )? )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1614:2: ( (lv_doc_0_0= RULE_DOC ) )? ( (lv_name_1_0= RULE_ID ) ) (otherlv_2= '(' ( (lv_params_3_0= ruleLiteral ) ) (otherlv_4= ',' ( (lv_params_5_0= ruleLiteral ) ) )* otherlv_6= ')' )?
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1604:2: ( (lv_doc_0_0= RULE_DOC ) )?
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1614:2: ( (lv_doc_0_0= RULE_DOC ) )?
             int alt40=2;
             int LA40_0 = input.LA(1);
 
@@ -4236,12 +4267,12 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
             }
             switch (alt40) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1605:1: (lv_doc_0_0= RULE_DOC )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1615:1: (lv_doc_0_0= RULE_DOC )
                     {
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1605:1: (lv_doc_0_0= RULE_DOC )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1606:3: lv_doc_0_0= RULE_DOC
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1615:1: (lv_doc_0_0= RULE_DOC )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1616:3: lv_doc_0_0= RULE_DOC
                     {
-                    lv_doc_0_0=(Token)match(input,RULE_DOC,FOLLOW_RULE_DOC_in_ruleEnumInstance3280); 
+                    lv_doc_0_0=(Token)match(input,RULE_DOC,FOLLOW_RULE_DOC_in_ruleEnumInstance3307); 
 
                     			newLeafNode(lv_doc_0_0, grammarAccess.getEnumInstanceAccess().getDocDOCTerminalRuleCall_0_0()); 
                     		
@@ -4264,13 +4295,13 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1622:3: ( (lv_name_1_0= RULE_ID ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1623:1: (lv_name_1_0= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1632:3: ( (lv_name_1_0= RULE_ID ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1633:1: (lv_name_1_0= RULE_ID )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1623:1: (lv_name_1_0= RULE_ID )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1624:3: lv_name_1_0= RULE_ID
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1633:1: (lv_name_1_0= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1634:3: lv_name_1_0= RULE_ID
             {
-            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEnumInstance3303); 
+            lv_name_1_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEnumInstance3330); 
 
             			newLeafNode(lv_name_1_0, grammarAccess.getEnumInstanceAccess().getNameIDTerminalRuleCall_1_0()); 
             		
@@ -4290,7 +4321,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1640:2: (otherlv_2= '(' ( (lv_params_3_0= ruleLiteral ) ) (otherlv_4= ',' ( (lv_params_5_0= ruleLiteral ) ) )* otherlv_6= ')' )?
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1650:2: (otherlv_2= '(' ( (lv_params_3_0= ruleLiteral ) ) (otherlv_4= ',' ( (lv_params_5_0= ruleLiteral ) ) )* otherlv_6= ')' )?
             int alt42=2;
             int LA42_0 = input.LA(1);
 
@@ -4299,22 +4330,22 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
             }
             switch (alt42) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1640:4: otherlv_2= '(' ( (lv_params_3_0= ruleLiteral ) ) (otherlv_4= ',' ( (lv_params_5_0= ruleLiteral ) ) )* otherlv_6= ')'
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1650:4: otherlv_2= '(' ( (lv_params_3_0= ruleLiteral ) ) (otherlv_4= ',' ( (lv_params_5_0= ruleLiteral ) ) )* otherlv_6= ')'
                     {
-                    otherlv_2=(Token)match(input,31,FOLLOW_31_in_ruleEnumInstance3321); 
+                    otherlv_2=(Token)match(input,31,FOLLOW_31_in_ruleEnumInstance3348); 
 
                         	newLeafNode(otherlv_2, grammarAccess.getEnumInstanceAccess().getLeftParenthesisKeyword_2_0());
                         
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1644:1: ( (lv_params_3_0= ruleLiteral ) )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1645:1: (lv_params_3_0= ruleLiteral )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1654:1: ( (lv_params_3_0= ruleLiteral ) )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1655:1: (lv_params_3_0= ruleLiteral )
                     {
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1645:1: (lv_params_3_0= ruleLiteral )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1646:3: lv_params_3_0= ruleLiteral
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1655:1: (lv_params_3_0= ruleLiteral )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1656:3: lv_params_3_0= ruleLiteral
                     {
                      
                     	        newCompositeNode(grammarAccess.getEnumInstanceAccess().getParamsLiteralParserRuleCall_2_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleLiteral_in_ruleEnumInstance3342);
+                    pushFollow(FOLLOW_ruleLiteral_in_ruleEnumInstance3369);
                     lv_params_3_0=ruleLiteral();
 
                     state._fsp--;
@@ -4336,7 +4367,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
                     }
 
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1662:2: (otherlv_4= ',' ( (lv_params_5_0= ruleLiteral ) ) )*
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1672:2: (otherlv_4= ',' ( (lv_params_5_0= ruleLiteral ) ) )*
                     loop41:
                     do {
                         int alt41=2;
@@ -4349,22 +4380,22 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
                         switch (alt41) {
                     	case 1 :
-                    	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1662:4: otherlv_4= ',' ( (lv_params_5_0= ruleLiteral ) )
+                    	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1672:4: otherlv_4= ',' ( (lv_params_5_0= ruleLiteral ) )
                     	    {
-                    	    otherlv_4=(Token)match(input,32,FOLLOW_32_in_ruleEnumInstance3355); 
+                    	    otherlv_4=(Token)match(input,32,FOLLOW_32_in_ruleEnumInstance3382); 
 
                     	        	newLeafNode(otherlv_4, grammarAccess.getEnumInstanceAccess().getCommaKeyword_2_2_0());
                     	        
-                    	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1666:1: ( (lv_params_5_0= ruleLiteral ) )
-                    	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1667:1: (lv_params_5_0= ruleLiteral )
+                    	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1676:1: ( (lv_params_5_0= ruleLiteral ) )
+                    	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1677:1: (lv_params_5_0= ruleLiteral )
                     	    {
-                    	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1667:1: (lv_params_5_0= ruleLiteral )
-                    	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1668:3: lv_params_5_0= ruleLiteral
+                    	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1677:1: (lv_params_5_0= ruleLiteral )
+                    	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1678:3: lv_params_5_0= ruleLiteral
                     	    {
                     	     
                     	    	        newCompositeNode(grammarAccess.getEnumInstanceAccess().getParamsLiteralParserRuleCall_2_2_1_0()); 
                     	    	    
-                    	    pushFollow(FOLLOW_ruleLiteral_in_ruleEnumInstance3376);
+                    	    pushFollow(FOLLOW_ruleLiteral_in_ruleEnumInstance3403);
                     	    lv_params_5_0=ruleLiteral();
 
                     	    state._fsp--;
@@ -4395,7 +4426,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                         }
                     } while (true);
 
-                    otherlv_6=(Token)match(input,33,FOLLOW_33_in_ruleEnumInstance3390); 
+                    otherlv_6=(Token)match(input,33,FOLLOW_33_in_ruleEnumInstance3417); 
 
                         	newLeafNode(otherlv_6, grammarAccess.getEnumInstanceAccess().getRightParenthesisKeyword_2_3());
                         
@@ -4425,8 +4456,259 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
     // $ANTLR end "ruleEnumInstance"
 
 
+    // $ANTLR start "entryRuleEvent"
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1706:1: entryRuleEvent returns [EObject current=null] : iv_ruleEvent= ruleEvent EOF ;
+    public final EObject entryRuleEvent() throws RecognitionException {
+        EObject current = null;
+
+        EObject iv_ruleEvent = null;
+
+
+        try {
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1707:2: (iv_ruleEvent= ruleEvent EOF )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1708:2: iv_ruleEvent= ruleEvent EOF
+            {
+             newCompositeNode(grammarAccess.getEventRule()); 
+            pushFollow(FOLLOW_ruleEvent_in_entryRuleEvent3455);
+            iv_ruleEvent=ruleEvent();
+
+            state._fsp--;
+
+             current =iv_ruleEvent; 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEvent3465); 
+
+            }
+
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "entryRuleEvent"
+
+
+    // $ANTLR start "ruleEvent"
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1715:1: ruleEvent returns [EObject current=null] : ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'event' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_variables_4_0= ruleVariable ) )* (otherlv_5= 'message' ( (lv_message_6_0= RULE_STRING ) ) )? otherlv_7= '}' ) ;
+    public final EObject ruleEvent() throws RecognitionException {
+        EObject current = null;
+
+        Token lv_doc_0_0=null;
+        Token otherlv_1=null;
+        Token lv_name_2_0=null;
+        Token otherlv_3=null;
+        Token otherlv_5=null;
+        Token lv_message_6_0=null;
+        Token otherlv_7=null;
+        EObject lv_variables_4_0 = null;
+
+
+         enterRule(); 
+            
+        try {
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1718:28: ( ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'event' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_variables_4_0= ruleVariable ) )* (otherlv_5= 'message' ( (lv_message_6_0= RULE_STRING ) ) )? otherlv_7= '}' ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1719:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'event' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_variables_4_0= ruleVariable ) )* (otherlv_5= 'message' ( (lv_message_6_0= RULE_STRING ) ) )? otherlv_7= '}' )
+            {
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1719:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'event' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_variables_4_0= ruleVariable ) )* (otherlv_5= 'message' ( (lv_message_6_0= RULE_STRING ) ) )? otherlv_7= '}' )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1719:2: ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'event' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_variables_4_0= ruleVariable ) )* (otherlv_5= 'message' ( (lv_message_6_0= RULE_STRING ) ) )? otherlv_7= '}'
+            {
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1719:2: ( (lv_doc_0_0= RULE_DOC ) )?
+            int alt43=2;
+            int LA43_0 = input.LA(1);
+
+            if ( (LA43_0==RULE_DOC) ) {
+                alt43=1;
+            }
+            switch (alt43) {
+                case 1 :
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1720:1: (lv_doc_0_0= RULE_DOC )
+                    {
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1720:1: (lv_doc_0_0= RULE_DOC )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1721:3: lv_doc_0_0= RULE_DOC
+                    {
+                    lv_doc_0_0=(Token)match(input,RULE_DOC,FOLLOW_RULE_DOC_in_ruleEvent3507); 
+
+                    			newLeafNode(lv_doc_0_0, grammarAccess.getEventAccess().getDocDOCTerminalRuleCall_0_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getEventRule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"doc",
+                            		lv_doc_0_0, 
+                            		"DOC");
+                    	    
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            otherlv_1=(Token)match(input,34,FOLLOW_34_in_ruleEvent3525); 
+
+                	newLeafNode(otherlv_1, grammarAccess.getEventAccess().getEventKeyword_1());
+                
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1741:1: ( (lv_name_2_0= RULE_ID ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1742:1: (lv_name_2_0= RULE_ID )
+            {
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1742:1: (lv_name_2_0= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1743:3: lv_name_2_0= RULE_ID
+            {
+            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEvent3542); 
+
+            			newLeafNode(lv_name_2_0, grammarAccess.getEventAccess().getNameIDTerminalRuleCall_2_0()); 
+            		
+
+            	        if (current==null) {
+            	            current = createModelElement(grammarAccess.getEventRule());
+            	        }
+                   		setWithLastConsumed(
+                   			current, 
+                   			"name",
+                    		lv_name_2_0, 
+                    		"ID");
+            	    
+
+            }
+
+
+            }
+
+            otherlv_3=(Token)match(input,14,FOLLOW_14_in_ruleEvent3559); 
+
+                	newLeafNode(otherlv_3, grammarAccess.getEventAccess().getLeftCurlyBracketKeyword_3());
+                
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1763:1: ( (lv_variables_4_0= ruleVariable ) )*
+            loop44:
+            do {
+                int alt44=2;
+                int LA44_0 = input.LA(1);
+
+                if ( ((LA44_0>=RULE_ID && LA44_0<=RULE_DOC)||LA44_0==49) ) {
+                    alt44=1;
+                }
+
+
+                switch (alt44) {
+            	case 1 :
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1764:1: (lv_variables_4_0= ruleVariable )
+            	    {
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1764:1: (lv_variables_4_0= ruleVariable )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1765:3: lv_variables_4_0= ruleVariable
+            	    {
+            	     
+            	    	        newCompositeNode(grammarAccess.getEventAccess().getVariablesVariableParserRuleCall_4_0()); 
+            	    	    
+            	    pushFollow(FOLLOW_ruleVariable_in_ruleEvent3580);
+            	    lv_variables_4_0=ruleVariable();
+
+            	    state._fsp--;
+
+
+            	    	        if (current==null) {
+            	    	            current = createModelElementForParent(grammarAccess.getEventRule());
+            	    	        }
+            	           		add(
+            	           			current, 
+            	           			"variables",
+            	            		lv_variables_4_0, 
+            	            		"Variable");
+            	    	        afterParserOrEnumRuleCall();
+            	    	    
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop44;
+                }
+            } while (true);
+
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1781:3: (otherlv_5= 'message' ( (lv_message_6_0= RULE_STRING ) ) )?
+            int alt45=2;
+            int LA45_0 = input.LA(1);
+
+            if ( (LA45_0==22) ) {
+                alt45=1;
+            }
+            switch (alt45) {
+                case 1 :
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1781:5: otherlv_5= 'message' ( (lv_message_6_0= RULE_STRING ) )
+                    {
+                    otherlv_5=(Token)match(input,22,FOLLOW_22_in_ruleEvent3594); 
+
+                        	newLeafNode(otherlv_5, grammarAccess.getEventAccess().getMessageKeyword_5_0());
+                        
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1785:1: ( (lv_message_6_0= RULE_STRING ) )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1786:1: (lv_message_6_0= RULE_STRING )
+                    {
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1786:1: (lv_message_6_0= RULE_STRING )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1787:3: lv_message_6_0= RULE_STRING
+                    {
+                    lv_message_6_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleEvent3611); 
+
+                    			newLeafNode(lv_message_6_0, grammarAccess.getEventAccess().getMessageSTRINGTerminalRuleCall_5_1_0()); 
+                    		
+
+                    	        if (current==null) {
+                    	            current = createModelElement(grammarAccess.getEventRule());
+                    	        }
+                           		setWithLastConsumed(
+                           			current, 
+                           			"message",
+                            		lv_message_6_0, 
+                            		"STRING");
+                    	    
+
+                    }
+
+
+                    }
+
+
+                    }
+                    break;
+
+            }
+
+            otherlv_7=(Token)match(input,15,FOLLOW_15_in_ruleEvent3630); 
+
+                	newLeafNode(otherlv_7, grammarAccess.getEventAccess().getRightCurlyBracketKeyword_6());
+                
+
+            }
+
+
+            }
+
+             leaveRule(); 
+        }
+         
+            catch (RecognitionException re) { 
+                recover(input,re); 
+                appendSkippedTokens();
+            } 
+        finally {
+        }
+        return current;
+    }
+    // $ANTLR end "ruleEvent"
+
+
     // $ANTLR start "entryRuleEntity"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1696:1: entryRuleEntity returns [EObject current=null] : iv_ruleEntity= ruleEntity EOF ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1815:1: entryRuleEntity returns [EObject current=null] : iv_ruleEntity= ruleEntity EOF ;
     public final EObject entryRuleEntity() throws RecognitionException {
         EObject current = null;
 
@@ -4434,17 +4716,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1697:2: (iv_ruleEntity= ruleEntity EOF )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1698:2: iv_ruleEntity= ruleEntity EOF
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1816:2: (iv_ruleEntity= ruleEntity EOF )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1817:2: iv_ruleEntity= ruleEntity EOF
             {
              newCompositeNode(grammarAccess.getEntityRule()); 
-            pushFollow(FOLLOW_ruleEntity_in_entryRuleEntity3428);
+            pushFollow(FOLLOW_ruleEntity_in_entryRuleEntity3666);
             iv_ruleEntity=ruleEntity();
 
             state._fsp--;
 
              current =iv_ruleEntity; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleEntity3438); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleEntity3676); 
 
             }
 
@@ -4462,7 +4744,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "ruleEntity"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1705:1: ruleEntity returns [EObject current=null] : ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'entity' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'identifier' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'root' ( (otherlv_6= RULE_ID ) ) otherlv_7= '{' ( (lv_metaInfo_8_0= ruleTypeMetaInfo ) ) ( (lv_variables_9_0= ruleVariable ) )* ( (lv_constructors_10_0= ruleConstructor ) )* ( (lv_methods_11_0= ruleMethod ) )* otherlv_12= '}' ) ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1824:1: ruleEntity returns [EObject current=null] : ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'entity' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'identifier' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'root' ( (otherlv_6= RULE_ID ) ) otherlv_7= '{' ( (lv_metaInfo_8_0= ruleTypeMetaInfo ) ) ( (lv_variables_9_0= ruleVariable ) )* ( (lv_constructors_10_0= ruleConstructor ) )* ( (lv_methods_11_0= ruleMethod ) )* ( (lv_events_12_0= ruleEvent ) )* otherlv_13= '}' ) ;
     public final EObject ruleEntity() throws RecognitionException {
         EObject current = null;
 
@@ -4474,7 +4756,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
         Token otherlv_5=null;
         Token otherlv_6=null;
         Token otherlv_7=null;
-        Token otherlv_12=null;
+        Token otherlv_13=null;
         EObject lv_metaInfo_8_0 = null;
 
         EObject lv_variables_9_0 = null;
@@ -4483,31 +4765,33 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
         EObject lv_methods_11_0 = null;
 
+        EObject lv_events_12_0 = null;
+
 
          enterRule(); 
             
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1708:28: ( ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'entity' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'identifier' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'root' ( (otherlv_6= RULE_ID ) ) otherlv_7= '{' ( (lv_metaInfo_8_0= ruleTypeMetaInfo ) ) ( (lv_variables_9_0= ruleVariable ) )* ( (lv_constructors_10_0= ruleConstructor ) )* ( (lv_methods_11_0= ruleMethod ) )* otherlv_12= '}' ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1709:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'entity' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'identifier' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'root' ( (otherlv_6= RULE_ID ) ) otherlv_7= '{' ( (lv_metaInfo_8_0= ruleTypeMetaInfo ) ) ( (lv_variables_9_0= ruleVariable ) )* ( (lv_constructors_10_0= ruleConstructor ) )* ( (lv_methods_11_0= ruleMethod ) )* otherlv_12= '}' )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1827:28: ( ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'entity' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'identifier' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'root' ( (otherlv_6= RULE_ID ) ) otherlv_7= '{' ( (lv_metaInfo_8_0= ruleTypeMetaInfo ) ) ( (lv_variables_9_0= ruleVariable ) )* ( (lv_constructors_10_0= ruleConstructor ) )* ( (lv_methods_11_0= ruleMethod ) )* ( (lv_events_12_0= ruleEvent ) )* otherlv_13= '}' ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1828:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'entity' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'identifier' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'root' ( (otherlv_6= RULE_ID ) ) otherlv_7= '{' ( (lv_metaInfo_8_0= ruleTypeMetaInfo ) ) ( (lv_variables_9_0= ruleVariable ) )* ( (lv_constructors_10_0= ruleConstructor ) )* ( (lv_methods_11_0= ruleMethod ) )* ( (lv_events_12_0= ruleEvent ) )* otherlv_13= '}' )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1709:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'entity' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'identifier' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'root' ( (otherlv_6= RULE_ID ) ) otherlv_7= '{' ( (lv_metaInfo_8_0= ruleTypeMetaInfo ) ) ( (lv_variables_9_0= ruleVariable ) )* ( (lv_constructors_10_0= ruleConstructor ) )* ( (lv_methods_11_0= ruleMethod ) )* otherlv_12= '}' )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1709:2: ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'entity' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'identifier' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'root' ( (otherlv_6= RULE_ID ) ) otherlv_7= '{' ( (lv_metaInfo_8_0= ruleTypeMetaInfo ) ) ( (lv_variables_9_0= ruleVariable ) )* ( (lv_constructors_10_0= ruleConstructor ) )* ( (lv_methods_11_0= ruleMethod ) )* otherlv_12= '}'
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1828:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'entity' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'identifier' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'root' ( (otherlv_6= RULE_ID ) ) otherlv_7= '{' ( (lv_metaInfo_8_0= ruleTypeMetaInfo ) ) ( (lv_variables_9_0= ruleVariable ) )* ( (lv_constructors_10_0= ruleConstructor ) )* ( (lv_methods_11_0= ruleMethod ) )* ( (lv_events_12_0= ruleEvent ) )* otherlv_13= '}' )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1828:2: ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'entity' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'identifier' ( (otherlv_4= RULE_ID ) ) otherlv_5= 'root' ( (otherlv_6= RULE_ID ) ) otherlv_7= '{' ( (lv_metaInfo_8_0= ruleTypeMetaInfo ) ) ( (lv_variables_9_0= ruleVariable ) )* ( (lv_constructors_10_0= ruleConstructor ) )* ( (lv_methods_11_0= ruleMethod ) )* ( (lv_events_12_0= ruleEvent ) )* otherlv_13= '}'
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1709:2: ( (lv_doc_0_0= RULE_DOC ) )?
-            int alt43=2;
-            int LA43_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1828:2: ( (lv_doc_0_0= RULE_DOC ) )?
+            int alt46=2;
+            int LA46_0 = input.LA(1);
 
-            if ( (LA43_0==RULE_DOC) ) {
-                alt43=1;
+            if ( (LA46_0==RULE_DOC) ) {
+                alt46=1;
             }
-            switch (alt43) {
+            switch (alt46) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1710:1: (lv_doc_0_0= RULE_DOC )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1829:1: (lv_doc_0_0= RULE_DOC )
                     {
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1710:1: (lv_doc_0_0= RULE_DOC )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1711:3: lv_doc_0_0= RULE_DOC
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1829:1: (lv_doc_0_0= RULE_DOC )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1830:3: lv_doc_0_0= RULE_DOC
                     {
-                    lv_doc_0_0=(Token)match(input,RULE_DOC,FOLLOW_RULE_DOC_in_ruleEntity3480); 
+                    lv_doc_0_0=(Token)match(input,RULE_DOC,FOLLOW_RULE_DOC_in_ruleEntity3718); 
 
                     			newLeafNode(lv_doc_0_0, grammarAccess.getEntityAccess().getDocDOCTerminalRuleCall_0_0()); 
                     		
@@ -4530,17 +4814,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            otherlv_1=(Token)match(input,34,FOLLOW_34_in_ruleEntity3498); 
+            otherlv_1=(Token)match(input,35,FOLLOW_35_in_ruleEntity3736); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getEntityAccess().getEntityKeyword_1());
                 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1731:1: ( (lv_name_2_0= RULE_ID ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1732:1: (lv_name_2_0= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1850:1: ( (lv_name_2_0= RULE_ID ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1851:1: (lv_name_2_0= RULE_ID )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1732:1: (lv_name_2_0= RULE_ID )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1733:3: lv_name_2_0= RULE_ID
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1851:1: (lv_name_2_0= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1852:3: lv_name_2_0= RULE_ID
             {
-            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEntity3515); 
+            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEntity3753); 
 
             			newLeafNode(lv_name_2_0, grammarAccess.getEntityAccess().getNameIDTerminalRuleCall_2_0()); 
             		
@@ -4560,22 +4844,22 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            otherlv_3=(Token)match(input,35,FOLLOW_35_in_ruleEntity3532); 
+            otherlv_3=(Token)match(input,36,FOLLOW_36_in_ruleEntity3770); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getEntityAccess().getIdentifierKeyword_3());
                 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1753:1: ( (otherlv_4= RULE_ID ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1754:1: (otherlv_4= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1872:1: ( (otherlv_4= RULE_ID ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1873:1: (otherlv_4= RULE_ID )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1754:1: (otherlv_4= RULE_ID )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1755:3: otherlv_4= RULE_ID
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1873:1: (otherlv_4= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1874:3: otherlv_4= RULE_ID
             {
 
             			if (current==null) {
             	            current = createModelElement(grammarAccess.getEntityRule());
             	        }
                     
-            otherlv_4=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEntity3552); 
+            otherlv_4=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEntity3790); 
 
             		newLeafNode(otherlv_4, grammarAccess.getEntityAccess().getIdTypeEntityIdCrossReference_4_0()); 
             	
@@ -4585,22 +4869,22 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            otherlv_5=(Token)match(input,36,FOLLOW_36_in_ruleEntity3564); 
+            otherlv_5=(Token)match(input,37,FOLLOW_37_in_ruleEntity3802); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getEntityAccess().getRootKeyword_5());
                 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1770:1: ( (otherlv_6= RULE_ID ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1771:1: (otherlv_6= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1889:1: ( (otherlv_6= RULE_ID ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1890:1: (otherlv_6= RULE_ID )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1771:1: (otherlv_6= RULE_ID )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1772:3: otherlv_6= RULE_ID
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1890:1: (otherlv_6= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1891:3: otherlv_6= RULE_ID
             {
 
             			if (current==null) {
             	            current = createModelElement(grammarAccess.getEntityRule());
             	        }
                     
-            otherlv_6=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEntity3584); 
+            otherlv_6=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEntity3822); 
 
             		newLeafNode(otherlv_6, grammarAccess.getEntityAccess().getRootAggregateCrossReference_6_0()); 
             	
@@ -4610,20 +4894,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            otherlv_7=(Token)match(input,14,FOLLOW_14_in_ruleEntity3596); 
+            otherlv_7=(Token)match(input,14,FOLLOW_14_in_ruleEntity3834); 
 
                 	newLeafNode(otherlv_7, grammarAccess.getEntityAccess().getLeftCurlyBracketKeyword_7());
                 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1787:1: ( (lv_metaInfo_8_0= ruleTypeMetaInfo ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1788:1: (lv_metaInfo_8_0= ruleTypeMetaInfo )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1906:1: ( (lv_metaInfo_8_0= ruleTypeMetaInfo ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1907:1: (lv_metaInfo_8_0= ruleTypeMetaInfo )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1788:1: (lv_metaInfo_8_0= ruleTypeMetaInfo )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1789:3: lv_metaInfo_8_0= ruleTypeMetaInfo
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1907:1: (lv_metaInfo_8_0= ruleTypeMetaInfo )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1908:3: lv_metaInfo_8_0= ruleTypeMetaInfo
             {
              
             	        newCompositeNode(grammarAccess.getEntityAccess().getMetaInfoTypeMetaInfoParserRuleCall_8_0()); 
             	    
-            pushFollow(FOLLOW_ruleTypeMetaInfo_in_ruleEntity3617);
+            pushFollow(FOLLOW_ruleTypeMetaInfo_in_ruleEntity3855);
             lv_metaInfo_8_0=ruleTypeMetaInfo();
 
             state._fsp--;
@@ -4645,37 +4929,37 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1805:2: ( (lv_variables_9_0= ruleVariable ) )*
-            loop44:
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1924:2: ( (lv_variables_9_0= ruleVariable ) )*
+            loop47:
             do {
-                int alt44=2;
-                int LA44_0 = input.LA(1);
+                int alt47=2;
+                int LA47_0 = input.LA(1);
 
-                if ( (LA44_0==RULE_DOC) ) {
-                    int LA44_1 = input.LA(2);
+                if ( (LA47_0==RULE_DOC) ) {
+                    int LA47_1 = input.LA(2);
 
-                    if ( (LA44_1==RULE_ID||LA44_1==48) ) {
-                        alt44=1;
+                    if ( (LA47_1==RULE_ID||LA47_1==49) ) {
+                        alt47=1;
                     }
 
 
                 }
-                else if ( (LA44_0==RULE_ID||LA44_0==48) ) {
-                    alt44=1;
+                else if ( (LA47_0==RULE_ID||LA47_0==49) ) {
+                    alt47=1;
                 }
 
 
-                switch (alt44) {
+                switch (alt47) {
             	case 1 :
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1806:1: (lv_variables_9_0= ruleVariable )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1925:1: (lv_variables_9_0= ruleVariable )
             	    {
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1806:1: (lv_variables_9_0= ruleVariable )
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1807:3: lv_variables_9_0= ruleVariable
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1925:1: (lv_variables_9_0= ruleVariable )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1926:3: lv_variables_9_0= ruleVariable
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getEntityAccess().getVariablesVariableParserRuleCall_9_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleVariable_in_ruleEntity3638);
+            	    pushFollow(FOLLOW_ruleVariable_in_ruleEntity3876);
             	    lv_variables_9_0=ruleVariable();
 
             	    state._fsp--;
@@ -4699,41 +4983,41 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
             	    break;
 
             	default :
-            	    break loop44;
+            	    break loop47;
                 }
             } while (true);
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1823:3: ( (lv_constructors_10_0= ruleConstructor ) )*
-            loop45:
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1942:3: ( (lv_constructors_10_0= ruleConstructor ) )*
+            loop48:
             do {
-                int alt45=2;
-                int LA45_0 = input.LA(1);
+                int alt48=2;
+                int LA48_0 = input.LA(1);
 
-                if ( (LA45_0==RULE_DOC) ) {
-                    int LA45_1 = input.LA(2);
+                if ( (LA48_0==RULE_DOC) ) {
+                    int LA48_1 = input.LA(2);
 
-                    if ( (LA45_1==38) ) {
-                        alt45=1;
+                    if ( (LA48_1==39) ) {
+                        alt48=1;
                     }
 
 
                 }
-                else if ( (LA45_0==38) ) {
-                    alt45=1;
+                else if ( (LA48_0==39) ) {
+                    alt48=1;
                 }
 
 
-                switch (alt45) {
+                switch (alt48) {
             	case 1 :
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1824:1: (lv_constructors_10_0= ruleConstructor )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1943:1: (lv_constructors_10_0= ruleConstructor )
             	    {
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1824:1: (lv_constructors_10_0= ruleConstructor )
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1825:3: lv_constructors_10_0= ruleConstructor
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1943:1: (lv_constructors_10_0= ruleConstructor )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1944:3: lv_constructors_10_0= ruleConstructor
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getEntityAccess().getConstructorsConstructorParserRuleCall_10_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleConstructor_in_ruleEntity3660);
+            	    pushFollow(FOLLOW_ruleConstructor_in_ruleEntity3898);
             	    lv_constructors_10_0=ruleConstructor();
 
             	    state._fsp--;
@@ -4757,32 +5041,41 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
             	    break;
 
             	default :
-            	    break loop45;
+            	    break loop48;
                 }
             } while (true);
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1841:3: ( (lv_methods_11_0= ruleMethod ) )*
-            loop46:
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1960:3: ( (lv_methods_11_0= ruleMethod ) )*
+            loop49:
             do {
-                int alt46=2;
-                int LA46_0 = input.LA(1);
+                int alt49=2;
+                int LA49_0 = input.LA(1);
 
-                if ( (LA46_0==RULE_DOC||LA46_0==40) ) {
-                    alt46=1;
+                if ( (LA49_0==RULE_DOC) ) {
+                    int LA49_1 = input.LA(2);
+
+                    if ( (LA49_1==42) ) {
+                        alt49=1;
+                    }
+
+
+                }
+                else if ( (LA49_0==42) ) {
+                    alt49=1;
                 }
 
 
-                switch (alt46) {
+                switch (alt49) {
             	case 1 :
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1842:1: (lv_methods_11_0= ruleMethod )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1961:1: (lv_methods_11_0= ruleMethod )
             	    {
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1842:1: (lv_methods_11_0= ruleMethod )
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1843:3: lv_methods_11_0= ruleMethod
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1961:1: (lv_methods_11_0= ruleMethod )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1962:3: lv_methods_11_0= ruleMethod
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getEntityAccess().getMethodsMethodParserRuleCall_11_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleMethod_in_ruleEntity3682);
+            	    pushFollow(FOLLOW_ruleMethod_in_ruleEntity3920);
             	    lv_methods_11_0=ruleMethod();
 
             	    state._fsp--;
@@ -4806,13 +5099,62 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
             	    break;
 
             	default :
-            	    break loop46;
+            	    break loop49;
                 }
             } while (true);
 
-            otherlv_12=(Token)match(input,15,FOLLOW_15_in_ruleEntity3695); 
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1978:3: ( (lv_events_12_0= ruleEvent ) )*
+            loop50:
+            do {
+                int alt50=2;
+                int LA50_0 = input.LA(1);
 
-                	newLeafNode(otherlv_12, grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_12());
+                if ( (LA50_0==RULE_DOC||LA50_0==34) ) {
+                    alt50=1;
+                }
+
+
+                switch (alt50) {
+            	case 1 :
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1979:1: (lv_events_12_0= ruleEvent )
+            	    {
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1979:1: (lv_events_12_0= ruleEvent )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1980:3: lv_events_12_0= ruleEvent
+            	    {
+            	     
+            	    	        newCompositeNode(grammarAccess.getEntityAccess().getEventsEventParserRuleCall_12_0()); 
+            	    	    
+            	    pushFollow(FOLLOW_ruleEvent_in_ruleEntity3942);
+            	    lv_events_12_0=ruleEvent();
+
+            	    state._fsp--;
+
+
+            	    	        if (current==null) {
+            	    	            current = createModelElementForParent(grammarAccess.getEntityRule());
+            	    	        }
+            	           		add(
+            	           			current, 
+            	           			"events",
+            	            		lv_events_12_0, 
+            	            		"Event");
+            	    	        afterParserOrEnumRuleCall();
+            	    	    
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop50;
+                }
+            } while (true);
+
+            otherlv_13=(Token)match(input,15,FOLLOW_15_in_ruleEntity3955); 
+
+                	newLeafNode(otherlv_13, grammarAccess.getEntityAccess().getRightCurlyBracketKeyword_13());
                 
 
             }
@@ -4835,7 +5177,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "entryRuleAggregate"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1871:1: entryRuleAggregate returns [EObject current=null] : iv_ruleAggregate= ruleAggregate EOF ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2008:1: entryRuleAggregate returns [EObject current=null] : iv_ruleAggregate= ruleAggregate EOF ;
     public final EObject entryRuleAggregate() throws RecognitionException {
         EObject current = null;
 
@@ -4843,17 +5185,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1872:2: (iv_ruleAggregate= ruleAggregate EOF )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1873:2: iv_ruleAggregate= ruleAggregate EOF
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2009:2: (iv_ruleAggregate= ruleAggregate EOF )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2010:2: iv_ruleAggregate= ruleAggregate EOF
             {
              newCompositeNode(grammarAccess.getAggregateRule()); 
-            pushFollow(FOLLOW_ruleAggregate_in_entryRuleAggregate3731);
+            pushFollow(FOLLOW_ruleAggregate_in_entryRuleAggregate3991);
             iv_ruleAggregate=ruleAggregate();
 
             state._fsp--;
 
              current =iv_ruleAggregate; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleAggregate3741); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleAggregate4001); 
 
             }
 
@@ -4871,7 +5213,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "ruleAggregate"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1880:1: ruleAggregate returns [EObject current=null] : ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'aggregate' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'identifier' ( (otherlv_4= RULE_ID ) ) otherlv_5= '{' ( (lv_metaInfo_6_0= ruleTypeMetaInfo ) ) ( (lv_variables_7_0= ruleVariable ) )* ( (lv_constructors_8_0= ruleConstructor ) )* ( (lv_methods_9_0= ruleMethod ) )* otherlv_10= '}' ) ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2017:1: ruleAggregate returns [EObject current=null] : ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'aggregate' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'identifier' ( (otherlv_4= RULE_ID ) ) otherlv_5= '{' ( (lv_metaInfo_6_0= ruleTypeMetaInfo ) ) ( (lv_variables_7_0= ruleVariable ) )* ( (lv_constructors_8_0= ruleConstructor ) )* ( (lv_methods_9_0= ruleMethod ) )* ( (lv_events_10_0= ruleEvent ) )* otherlv_11= '}' ) ;
     public final EObject ruleAggregate() throws RecognitionException {
         EObject current = null;
 
@@ -4881,7 +5223,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
         Token otherlv_3=null;
         Token otherlv_4=null;
         Token otherlv_5=null;
-        Token otherlv_10=null;
+        Token otherlv_11=null;
         EObject lv_metaInfo_6_0 = null;
 
         EObject lv_variables_7_0 = null;
@@ -4890,31 +5232,33 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
         EObject lv_methods_9_0 = null;
 
+        EObject lv_events_10_0 = null;
+
 
          enterRule(); 
             
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1883:28: ( ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'aggregate' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'identifier' ( (otherlv_4= RULE_ID ) ) otherlv_5= '{' ( (lv_metaInfo_6_0= ruleTypeMetaInfo ) ) ( (lv_variables_7_0= ruleVariable ) )* ( (lv_constructors_8_0= ruleConstructor ) )* ( (lv_methods_9_0= ruleMethod ) )* otherlv_10= '}' ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1884:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'aggregate' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'identifier' ( (otherlv_4= RULE_ID ) ) otherlv_5= '{' ( (lv_metaInfo_6_0= ruleTypeMetaInfo ) ) ( (lv_variables_7_0= ruleVariable ) )* ( (lv_constructors_8_0= ruleConstructor ) )* ( (lv_methods_9_0= ruleMethod ) )* otherlv_10= '}' )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2020:28: ( ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'aggregate' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'identifier' ( (otherlv_4= RULE_ID ) ) otherlv_5= '{' ( (lv_metaInfo_6_0= ruleTypeMetaInfo ) ) ( (lv_variables_7_0= ruleVariable ) )* ( (lv_constructors_8_0= ruleConstructor ) )* ( (lv_methods_9_0= ruleMethod ) )* ( (lv_events_10_0= ruleEvent ) )* otherlv_11= '}' ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2021:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'aggregate' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'identifier' ( (otherlv_4= RULE_ID ) ) otherlv_5= '{' ( (lv_metaInfo_6_0= ruleTypeMetaInfo ) ) ( (lv_variables_7_0= ruleVariable ) )* ( (lv_constructors_8_0= ruleConstructor ) )* ( (lv_methods_9_0= ruleMethod ) )* ( (lv_events_10_0= ruleEvent ) )* otherlv_11= '}' )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1884:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'aggregate' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'identifier' ( (otherlv_4= RULE_ID ) ) otherlv_5= '{' ( (lv_metaInfo_6_0= ruleTypeMetaInfo ) ) ( (lv_variables_7_0= ruleVariable ) )* ( (lv_constructors_8_0= ruleConstructor ) )* ( (lv_methods_9_0= ruleMethod ) )* otherlv_10= '}' )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1884:2: ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'aggregate' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'identifier' ( (otherlv_4= RULE_ID ) ) otherlv_5= '{' ( (lv_metaInfo_6_0= ruleTypeMetaInfo ) ) ( (lv_variables_7_0= ruleVariable ) )* ( (lv_constructors_8_0= ruleConstructor ) )* ( (lv_methods_9_0= ruleMethod ) )* otherlv_10= '}'
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2021:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'aggregate' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'identifier' ( (otherlv_4= RULE_ID ) ) otherlv_5= '{' ( (lv_metaInfo_6_0= ruleTypeMetaInfo ) ) ( (lv_variables_7_0= ruleVariable ) )* ( (lv_constructors_8_0= ruleConstructor ) )* ( (lv_methods_9_0= ruleMethod ) )* ( (lv_events_10_0= ruleEvent ) )* otherlv_11= '}' )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2021:2: ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'aggregate' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= 'identifier' ( (otherlv_4= RULE_ID ) ) otherlv_5= '{' ( (lv_metaInfo_6_0= ruleTypeMetaInfo ) ) ( (lv_variables_7_0= ruleVariable ) )* ( (lv_constructors_8_0= ruleConstructor ) )* ( (lv_methods_9_0= ruleMethod ) )* ( (lv_events_10_0= ruleEvent ) )* otherlv_11= '}'
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1884:2: ( (lv_doc_0_0= RULE_DOC ) )?
-            int alt47=2;
-            int LA47_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2021:2: ( (lv_doc_0_0= RULE_DOC ) )?
+            int alt51=2;
+            int LA51_0 = input.LA(1);
 
-            if ( (LA47_0==RULE_DOC) ) {
-                alt47=1;
+            if ( (LA51_0==RULE_DOC) ) {
+                alt51=1;
             }
-            switch (alt47) {
+            switch (alt51) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1885:1: (lv_doc_0_0= RULE_DOC )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2022:1: (lv_doc_0_0= RULE_DOC )
                     {
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1885:1: (lv_doc_0_0= RULE_DOC )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1886:3: lv_doc_0_0= RULE_DOC
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2022:1: (lv_doc_0_0= RULE_DOC )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2023:3: lv_doc_0_0= RULE_DOC
                     {
-                    lv_doc_0_0=(Token)match(input,RULE_DOC,FOLLOW_RULE_DOC_in_ruleAggregate3783); 
+                    lv_doc_0_0=(Token)match(input,RULE_DOC,FOLLOW_RULE_DOC_in_ruleAggregate4043); 
 
                     			newLeafNode(lv_doc_0_0, grammarAccess.getAggregateAccess().getDocDOCTerminalRuleCall_0_0()); 
                     		
@@ -4937,17 +5281,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            otherlv_1=(Token)match(input,37,FOLLOW_37_in_ruleAggregate3801); 
+            otherlv_1=(Token)match(input,38,FOLLOW_38_in_ruleAggregate4061); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getAggregateAccess().getAggregateKeyword_1());
                 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1906:1: ( (lv_name_2_0= RULE_ID ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1907:1: (lv_name_2_0= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2043:1: ( (lv_name_2_0= RULE_ID ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2044:1: (lv_name_2_0= RULE_ID )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1907:1: (lv_name_2_0= RULE_ID )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1908:3: lv_name_2_0= RULE_ID
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2044:1: (lv_name_2_0= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2045:3: lv_name_2_0= RULE_ID
             {
-            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAggregate3818); 
+            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAggregate4078); 
 
             			newLeafNode(lv_name_2_0, grammarAccess.getAggregateAccess().getNameIDTerminalRuleCall_2_0()); 
             		
@@ -4967,22 +5311,22 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            otherlv_3=(Token)match(input,35,FOLLOW_35_in_ruleAggregate3835); 
+            otherlv_3=(Token)match(input,36,FOLLOW_36_in_ruleAggregate4095); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getAggregateAccess().getIdentifierKeyword_3());
                 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1928:1: ( (otherlv_4= RULE_ID ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1929:1: (otherlv_4= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2065:1: ( (otherlv_4= RULE_ID ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2066:1: (otherlv_4= RULE_ID )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1929:1: (otherlv_4= RULE_ID )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1930:3: otherlv_4= RULE_ID
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2066:1: (otherlv_4= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2067:3: otherlv_4= RULE_ID
             {
 
             			if (current==null) {
             	            current = createModelElement(grammarAccess.getAggregateRule());
             	        }
                     
-            otherlv_4=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAggregate3855); 
+            otherlv_4=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleAggregate4115); 
 
             		newLeafNode(otherlv_4, grammarAccess.getAggregateAccess().getIdTypeAggregateIdCrossReference_4_0()); 
             	
@@ -4992,20 +5336,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            otherlv_5=(Token)match(input,14,FOLLOW_14_in_ruleAggregate3867); 
+            otherlv_5=(Token)match(input,14,FOLLOW_14_in_ruleAggregate4127); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getAggregateAccess().getLeftCurlyBracketKeyword_5());
                 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1945:1: ( (lv_metaInfo_6_0= ruleTypeMetaInfo ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1946:1: (lv_metaInfo_6_0= ruleTypeMetaInfo )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2082:1: ( (lv_metaInfo_6_0= ruleTypeMetaInfo ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2083:1: (lv_metaInfo_6_0= ruleTypeMetaInfo )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1946:1: (lv_metaInfo_6_0= ruleTypeMetaInfo )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1947:3: lv_metaInfo_6_0= ruleTypeMetaInfo
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2083:1: (lv_metaInfo_6_0= ruleTypeMetaInfo )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2084:3: lv_metaInfo_6_0= ruleTypeMetaInfo
             {
              
             	        newCompositeNode(grammarAccess.getAggregateAccess().getMetaInfoTypeMetaInfoParserRuleCall_6_0()); 
             	    
-            pushFollow(FOLLOW_ruleTypeMetaInfo_in_ruleAggregate3888);
+            pushFollow(FOLLOW_ruleTypeMetaInfo_in_ruleAggregate4148);
             lv_metaInfo_6_0=ruleTypeMetaInfo();
 
             state._fsp--;
@@ -5027,37 +5371,37 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1963:2: ( (lv_variables_7_0= ruleVariable ) )*
-            loop48:
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2100:2: ( (lv_variables_7_0= ruleVariable ) )*
+            loop52:
             do {
-                int alt48=2;
-                int LA48_0 = input.LA(1);
+                int alt52=2;
+                int LA52_0 = input.LA(1);
 
-                if ( (LA48_0==RULE_DOC) ) {
-                    int LA48_1 = input.LA(2);
+                if ( (LA52_0==RULE_DOC) ) {
+                    int LA52_1 = input.LA(2);
 
-                    if ( (LA48_1==RULE_ID||LA48_1==48) ) {
-                        alt48=1;
+                    if ( (LA52_1==RULE_ID||LA52_1==49) ) {
+                        alt52=1;
                     }
 
 
                 }
-                else if ( (LA48_0==RULE_ID||LA48_0==48) ) {
-                    alt48=1;
+                else if ( (LA52_0==RULE_ID||LA52_0==49) ) {
+                    alt52=1;
                 }
 
 
-                switch (alt48) {
+                switch (alt52) {
             	case 1 :
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1964:1: (lv_variables_7_0= ruleVariable )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2101:1: (lv_variables_7_0= ruleVariable )
             	    {
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1964:1: (lv_variables_7_0= ruleVariable )
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1965:3: lv_variables_7_0= ruleVariable
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2101:1: (lv_variables_7_0= ruleVariable )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2102:3: lv_variables_7_0= ruleVariable
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getAggregateAccess().getVariablesVariableParserRuleCall_7_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleVariable_in_ruleAggregate3909);
+            	    pushFollow(FOLLOW_ruleVariable_in_ruleAggregate4169);
             	    lv_variables_7_0=ruleVariable();
 
             	    state._fsp--;
@@ -5081,41 +5425,41 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
             	    break;
 
             	default :
-            	    break loop48;
+            	    break loop52;
                 }
             } while (true);
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1981:3: ( (lv_constructors_8_0= ruleConstructor ) )*
-            loop49:
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2118:3: ( (lv_constructors_8_0= ruleConstructor ) )*
+            loop53:
             do {
-                int alt49=2;
-                int LA49_0 = input.LA(1);
+                int alt53=2;
+                int LA53_0 = input.LA(1);
 
-                if ( (LA49_0==RULE_DOC) ) {
-                    int LA49_1 = input.LA(2);
+                if ( (LA53_0==RULE_DOC) ) {
+                    int LA53_1 = input.LA(2);
 
-                    if ( (LA49_1==38) ) {
-                        alt49=1;
+                    if ( (LA53_1==39) ) {
+                        alt53=1;
                     }
 
 
                 }
-                else if ( (LA49_0==38) ) {
-                    alt49=1;
+                else if ( (LA53_0==39) ) {
+                    alt53=1;
                 }
 
 
-                switch (alt49) {
+                switch (alt53) {
             	case 1 :
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1982:1: (lv_constructors_8_0= ruleConstructor )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2119:1: (lv_constructors_8_0= ruleConstructor )
             	    {
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1982:1: (lv_constructors_8_0= ruleConstructor )
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1983:3: lv_constructors_8_0= ruleConstructor
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2119:1: (lv_constructors_8_0= ruleConstructor )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2120:3: lv_constructors_8_0= ruleConstructor
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getAggregateAccess().getConstructorsConstructorParserRuleCall_8_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleConstructor_in_ruleAggregate3931);
+            	    pushFollow(FOLLOW_ruleConstructor_in_ruleAggregate4191);
             	    lv_constructors_8_0=ruleConstructor();
 
             	    state._fsp--;
@@ -5139,32 +5483,41 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
             	    break;
 
             	default :
-            	    break loop49;
+            	    break loop53;
                 }
             } while (true);
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:1999:3: ( (lv_methods_9_0= ruleMethod ) )*
-            loop50:
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2136:3: ( (lv_methods_9_0= ruleMethod ) )*
+            loop54:
             do {
-                int alt50=2;
-                int LA50_0 = input.LA(1);
+                int alt54=2;
+                int LA54_0 = input.LA(1);
 
-                if ( (LA50_0==RULE_DOC||LA50_0==40) ) {
-                    alt50=1;
+                if ( (LA54_0==RULE_DOC) ) {
+                    int LA54_1 = input.LA(2);
+
+                    if ( (LA54_1==42) ) {
+                        alt54=1;
+                    }
+
+
+                }
+                else if ( (LA54_0==42) ) {
+                    alt54=1;
                 }
 
 
-                switch (alt50) {
+                switch (alt54) {
             	case 1 :
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2000:1: (lv_methods_9_0= ruleMethod )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2137:1: (lv_methods_9_0= ruleMethod )
             	    {
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2000:1: (lv_methods_9_0= ruleMethod )
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2001:3: lv_methods_9_0= ruleMethod
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2137:1: (lv_methods_9_0= ruleMethod )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2138:3: lv_methods_9_0= ruleMethod
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getAggregateAccess().getMethodsMethodParserRuleCall_9_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleMethod_in_ruleAggregate3953);
+            	    pushFollow(FOLLOW_ruleMethod_in_ruleAggregate4213);
             	    lv_methods_9_0=ruleMethod();
 
             	    state._fsp--;
@@ -5188,13 +5541,62 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
             	    break;
 
             	default :
-            	    break loop50;
+            	    break loop54;
                 }
             } while (true);
 
-            otherlv_10=(Token)match(input,15,FOLLOW_15_in_ruleAggregate3966); 
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2154:3: ( (lv_events_10_0= ruleEvent ) )*
+            loop55:
+            do {
+                int alt55=2;
+                int LA55_0 = input.LA(1);
 
-                	newLeafNode(otherlv_10, grammarAccess.getAggregateAccess().getRightCurlyBracketKeyword_10());
+                if ( (LA55_0==RULE_DOC||LA55_0==34) ) {
+                    alt55=1;
+                }
+
+
+                switch (alt55) {
+            	case 1 :
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2155:1: (lv_events_10_0= ruleEvent )
+            	    {
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2155:1: (lv_events_10_0= ruleEvent )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2156:3: lv_events_10_0= ruleEvent
+            	    {
+            	     
+            	    	        newCompositeNode(grammarAccess.getAggregateAccess().getEventsEventParserRuleCall_10_0()); 
+            	    	    
+            	    pushFollow(FOLLOW_ruleEvent_in_ruleAggregate4235);
+            	    lv_events_10_0=ruleEvent();
+
+            	    state._fsp--;
+
+
+            	    	        if (current==null) {
+            	    	            current = createModelElementForParent(grammarAccess.getAggregateRule());
+            	    	        }
+            	           		add(
+            	           			current, 
+            	           			"events",
+            	            		lv_events_10_0, 
+            	            		"Event");
+            	    	        afterParserOrEnumRuleCall();
+            	    	    
+
+            	    }
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop55;
+                }
+            } while (true);
+
+            otherlv_11=(Token)match(input,15,FOLLOW_15_in_ruleAggregate4248); 
+
+                	newLeafNode(otherlv_11, grammarAccess.getAggregateAccess().getRightCurlyBracketKeyword_11());
                 
 
             }
@@ -5217,7 +5619,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "entryRuleConstructor"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2031:1: entryRuleConstructor returns [EObject current=null] : iv_ruleConstructor= ruleConstructor EOF ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2186:1: entryRuleConstructor returns [EObject current=null] : iv_ruleConstructor= ruleConstructor EOF ;
     public final EObject entryRuleConstructor() throws RecognitionException {
         EObject current = null;
 
@@ -5225,17 +5627,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2032:2: (iv_ruleConstructor= ruleConstructor EOF )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2033:2: iv_ruleConstructor= ruleConstructor EOF
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2187:2: (iv_ruleConstructor= ruleConstructor EOF )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2188:2: iv_ruleConstructor= ruleConstructor EOF
             {
              newCompositeNode(grammarAccess.getConstructorRule()); 
-            pushFollow(FOLLOW_ruleConstructor_in_entryRuleConstructor4004);
+            pushFollow(FOLLOW_ruleConstructor_in_entryRuleConstructor4286);
             iv_ruleConstructor=ruleConstructor();
 
             state._fsp--;
 
              current =iv_ruleConstructor; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleConstructor4014); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleConstructor4296); 
 
             }
 
@@ -5253,7 +5655,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "ruleConstructor"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2040:1: ruleConstructor returns [EObject current=null] : ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'constructor' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_variables_4_0= ruleVariable ) )* ( (otherlv_5= RULE_ID ) )? ( (lv_constraints_6_0= ruleConstraints ) )? ( (lv_events_7_0= ruleEvent ) )* otherlv_8= '}' ) ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2195:1: ruleConstructor returns [EObject current=null] : ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'constructor' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'fires' ( (otherlv_4= RULE_ID ) ) (otherlv_5= ',' ( (otherlv_6= RULE_ID ) ) )* )? otherlv_7= '{' ( (lv_variables_8_0= ruleVariable ) )* ( (otherlv_9= RULE_ID ) )? ( (lv_constraints_10_0= ruleConstraints ) )? otherlv_11= '}' ) ;
     public final EObject ruleConstructor() throws RecognitionException {
         EObject current = null;
 
@@ -5261,39 +5663,41 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
         Token otherlv_1=null;
         Token lv_name_2_0=null;
         Token otherlv_3=null;
+        Token otherlv_4=null;
         Token otherlv_5=null;
-        Token otherlv_8=null;
-        EObject lv_variables_4_0 = null;
+        Token otherlv_6=null;
+        Token otherlv_7=null;
+        Token otherlv_9=null;
+        Token otherlv_11=null;
+        EObject lv_variables_8_0 = null;
 
-        EObject lv_constraints_6_0 = null;
-
-        EObject lv_events_7_0 = null;
+        EObject lv_constraints_10_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2043:28: ( ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'constructor' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_variables_4_0= ruleVariable ) )* ( (otherlv_5= RULE_ID ) )? ( (lv_constraints_6_0= ruleConstraints ) )? ( (lv_events_7_0= ruleEvent ) )* otherlv_8= '}' ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2044:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'constructor' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_variables_4_0= ruleVariable ) )* ( (otherlv_5= RULE_ID ) )? ( (lv_constraints_6_0= ruleConstraints ) )? ( (lv_events_7_0= ruleEvent ) )* otherlv_8= '}' )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2198:28: ( ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'constructor' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'fires' ( (otherlv_4= RULE_ID ) ) (otherlv_5= ',' ( (otherlv_6= RULE_ID ) ) )* )? otherlv_7= '{' ( (lv_variables_8_0= ruleVariable ) )* ( (otherlv_9= RULE_ID ) )? ( (lv_constraints_10_0= ruleConstraints ) )? otherlv_11= '}' ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2199:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'constructor' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'fires' ( (otherlv_4= RULE_ID ) ) (otherlv_5= ',' ( (otherlv_6= RULE_ID ) ) )* )? otherlv_7= '{' ( (lv_variables_8_0= ruleVariable ) )* ( (otherlv_9= RULE_ID ) )? ( (lv_constraints_10_0= ruleConstraints ) )? otherlv_11= '}' )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2044:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'constructor' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_variables_4_0= ruleVariable ) )* ( (otherlv_5= RULE_ID ) )? ( (lv_constraints_6_0= ruleConstraints ) )? ( (lv_events_7_0= ruleEvent ) )* otherlv_8= '}' )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2044:2: ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'constructor' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_variables_4_0= ruleVariable ) )* ( (otherlv_5= RULE_ID ) )? ( (lv_constraints_6_0= ruleConstraints ) )? ( (lv_events_7_0= ruleEvent ) )* otherlv_8= '}'
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2199:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'constructor' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'fires' ( (otherlv_4= RULE_ID ) ) (otherlv_5= ',' ( (otherlv_6= RULE_ID ) ) )* )? otherlv_7= '{' ( (lv_variables_8_0= ruleVariable ) )* ( (otherlv_9= RULE_ID ) )? ( (lv_constraints_10_0= ruleConstraints ) )? otherlv_11= '}' )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2199:2: ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'constructor' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'fires' ( (otherlv_4= RULE_ID ) ) (otherlv_5= ',' ( (otherlv_6= RULE_ID ) ) )* )? otherlv_7= '{' ( (lv_variables_8_0= ruleVariable ) )* ( (otherlv_9= RULE_ID ) )? ( (lv_constraints_10_0= ruleConstraints ) )? otherlv_11= '}'
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2044:2: ( (lv_doc_0_0= RULE_DOC ) )?
-            int alt51=2;
-            int LA51_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2199:2: ( (lv_doc_0_0= RULE_DOC ) )?
+            int alt56=2;
+            int LA56_0 = input.LA(1);
 
-            if ( (LA51_0==RULE_DOC) ) {
-                alt51=1;
+            if ( (LA56_0==RULE_DOC) ) {
+                alt56=1;
             }
-            switch (alt51) {
+            switch (alt56) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2045:1: (lv_doc_0_0= RULE_DOC )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2200:1: (lv_doc_0_0= RULE_DOC )
                     {
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2045:1: (lv_doc_0_0= RULE_DOC )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2046:3: lv_doc_0_0= RULE_DOC
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2200:1: (lv_doc_0_0= RULE_DOC )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2201:3: lv_doc_0_0= RULE_DOC
                     {
-                    lv_doc_0_0=(Token)match(input,RULE_DOC,FOLLOW_RULE_DOC_in_ruleConstructor4056); 
+                    lv_doc_0_0=(Token)match(input,RULE_DOC,FOLLOW_RULE_DOC_in_ruleConstructor4338); 
 
                     			newLeafNode(lv_doc_0_0, grammarAccess.getConstructorAccess().getDocDOCTerminalRuleCall_0_0()); 
                     		
@@ -5316,17 +5720,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            otherlv_1=(Token)match(input,38,FOLLOW_38_in_ruleConstructor4074); 
+            otherlv_1=(Token)match(input,39,FOLLOW_39_in_ruleConstructor4356); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getConstructorAccess().getConstructorKeyword_1());
                 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2066:1: ( (lv_name_2_0= RULE_ID ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2067:1: (lv_name_2_0= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2221:1: ( (lv_name_2_0= RULE_ID ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2222:1: (lv_name_2_0= RULE_ID )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2067:1: (lv_name_2_0= RULE_ID )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2068:3: lv_name_2_0= RULE_ID
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2222:1: (lv_name_2_0= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2223:3: lv_name_2_0= RULE_ID
             {
-            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleConstructor4091); 
+            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleConstructor4373); 
 
             			newLeafNode(lv_name_2_0, grammarAccess.getConstructorAccess().getNameIDTerminalRuleCall_2_0()); 
             		
@@ -5346,57 +5750,133 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            otherlv_3=(Token)match(input,14,FOLLOW_14_in_ruleConstructor4108); 
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2239:2: (otherlv_3= 'fires' ( (otherlv_4= RULE_ID ) ) (otherlv_5= ',' ( (otherlv_6= RULE_ID ) ) )* )?
+            int alt58=2;
+            int LA58_0 = input.LA(1);
 
-                	newLeafNode(otherlv_3, grammarAccess.getConstructorAccess().getLeftCurlyBracketKeyword_3());
+            if ( (LA58_0==40) ) {
+                alt58=1;
+            }
+            switch (alt58) {
+                case 1 :
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2239:4: otherlv_3= 'fires' ( (otherlv_4= RULE_ID ) ) (otherlv_5= ',' ( (otherlv_6= RULE_ID ) ) )*
+                    {
+                    otherlv_3=(Token)match(input,40,FOLLOW_40_in_ruleConstructor4391); 
+
+                        	newLeafNode(otherlv_3, grammarAccess.getConstructorAccess().getFiresKeyword_3_0());
+                        
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2243:1: ( (otherlv_4= RULE_ID ) )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2244:1: (otherlv_4= RULE_ID )
+                    {
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2244:1: (otherlv_4= RULE_ID )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2245:3: otherlv_4= RULE_ID
+                    {
+
+                    			if (current==null) {
+                    	            current = createModelElement(grammarAccess.getConstructorRule());
+                    	        }
+                            
+                    otherlv_4=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleConstructor4411); 
+
+                    		newLeafNode(otherlv_4, grammarAccess.getConstructorAccess().getFiredEventsEventCrossReference_3_1_0()); 
+                    	
+
+                    }
+
+
+                    }
+
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2256:2: (otherlv_5= ',' ( (otherlv_6= RULE_ID ) ) )*
+                    loop57:
+                    do {
+                        int alt57=2;
+                        int LA57_0 = input.LA(1);
+
+                        if ( (LA57_0==32) ) {
+                            alt57=1;
+                        }
+
+
+                        switch (alt57) {
+                    	case 1 :
+                    	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2256:4: otherlv_5= ',' ( (otherlv_6= RULE_ID ) )
+                    	    {
+                    	    otherlv_5=(Token)match(input,32,FOLLOW_32_in_ruleConstructor4424); 
+
+                    	        	newLeafNode(otherlv_5, grammarAccess.getConstructorAccess().getCommaKeyword_3_2_0());
+                    	        
+                    	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2260:1: ( (otherlv_6= RULE_ID ) )
+                    	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2261:1: (otherlv_6= RULE_ID )
+                    	    {
+                    	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2261:1: (otherlv_6= RULE_ID )
+                    	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2262:3: otherlv_6= RULE_ID
+                    	    {
+
+                    	    			if (current==null) {
+                    	    	            current = createModelElement(grammarAccess.getConstructorRule());
+                    	    	        }
+                    	            
+                    	    otherlv_6=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleConstructor4444); 
+
+                    	    		newLeafNode(otherlv_6, grammarAccess.getConstructorAccess().getFiredEventsEventCrossReference_3_2_1_0()); 
+                    	    	
+
+                    	    }
+
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop57;
+                        }
+                    } while (true);
+
+
+                    }
+                    break;
+
+            }
+
+            otherlv_7=(Token)match(input,14,FOLLOW_14_in_ruleConstructor4460); 
+
+                	newLeafNode(otherlv_7, grammarAccess.getConstructorAccess().getLeftCurlyBracketKeyword_4());
                 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2088:1: ( (lv_variables_4_0= ruleVariable ) )*
-            loop52:
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2277:1: ( (lv_variables_8_0= ruleVariable ) )*
+            loop59:
             do {
-                int alt52=2;
-                switch ( input.LA(1) ) {
-                case RULE_ID:
-                    {
-                    int LA52_1 = input.LA(2);
+                int alt59=2;
+                int LA59_0 = input.LA(1);
 
-                    if ( (LA52_1==RULE_ID||LA52_1==49) ) {
-                        alt52=1;
+                if ( (LA59_0==RULE_ID) ) {
+                    int LA59_1 = input.LA(2);
+
+                    if ( (LA59_1==RULE_ID||LA59_1==50) ) {
+                        alt59=1;
                     }
 
-
-                    }
-                    break;
-                case RULE_DOC:
-                    {
-                    int LA52_3 = input.LA(2);
-
-                    if ( (LA52_3==RULE_ID||LA52_3==48) ) {
-                        alt52=1;
-                    }
-
-
-                    }
-                    break;
-                case 48:
-                    {
-                    alt52=1;
-                    }
-                    break;
 
                 }
+                else if ( (LA59_0==RULE_DOC||LA59_0==49) ) {
+                    alt59=1;
+                }
 
-                switch (alt52) {
+
+                switch (alt59) {
             	case 1 :
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2089:1: (lv_variables_4_0= ruleVariable )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2278:1: (lv_variables_8_0= ruleVariable )
             	    {
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2089:1: (lv_variables_4_0= ruleVariable )
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2090:3: lv_variables_4_0= ruleVariable
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2278:1: (lv_variables_8_0= ruleVariable )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2279:3: lv_variables_8_0= ruleVariable
             	    {
             	     
-            	    	        newCompositeNode(grammarAccess.getConstructorAccess().getVariablesVariableParserRuleCall_4_0()); 
+            	    	        newCompositeNode(grammarAccess.getConstructorAccess().getVariablesVariableParserRuleCall_5_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleVariable_in_ruleConstructor4129);
-            	    lv_variables_4_0=ruleVariable();
+            	    pushFollow(FOLLOW_ruleVariable_in_ruleConstructor4481);
+            	    lv_variables_8_0=ruleVariable();
 
             	    state._fsp--;
 
@@ -5407,7 +5887,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
             	           		add(
             	           			current, 
             	           			"variables",
-            	            		lv_variables_4_0, 
+            	            		lv_variables_8_0, 
             	            		"Variable");
             	    	        afterParserOrEnumRuleCall();
             	    	    
@@ -5419,32 +5899,32 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
             	    break;
 
             	default :
-            	    break loop52;
+            	    break loop59;
                 }
             } while (true);
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2106:3: ( (otherlv_5= RULE_ID ) )?
-            int alt53=2;
-            int LA53_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2295:3: ( (otherlv_9= RULE_ID ) )?
+            int alt60=2;
+            int LA60_0 = input.LA(1);
 
-            if ( (LA53_0==RULE_ID) ) {
-                alt53=1;
+            if ( (LA60_0==RULE_ID) ) {
+                alt60=1;
             }
-            switch (alt53) {
+            switch (alt60) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2107:1: (otherlv_5= RULE_ID )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2296:1: (otherlv_9= RULE_ID )
                     {
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2107:1: (otherlv_5= RULE_ID )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2108:3: otherlv_5= RULE_ID
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2296:1: (otherlv_9= RULE_ID )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2297:3: otherlv_9= RULE_ID
                     {
 
                     			if (current==null) {
                     	            current = createModelElement(grammarAccess.getConstructorRule());
                     	        }
                             
-                    otherlv_5=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleConstructor4150); 
+                    otherlv_9=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleConstructor4502); 
 
-                    		newLeafNode(otherlv_5, grammarAccess.getConstructorAccess().getServiceServiceCrossReference_5_0()); 
+                    		newLeafNode(otherlv_9, grammarAccess.getConstructorAccess().getServiceServiceCrossReference_6_0()); 
                     	
 
                     }
@@ -5455,25 +5935,25 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2119:3: ( (lv_constraints_6_0= ruleConstraints ) )?
-            int alt54=2;
-            int LA54_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2308:3: ( (lv_constraints_10_0= ruleConstraints ) )?
+            int alt61=2;
+            int LA61_0 = input.LA(1);
 
-            if ( (LA54_0==50) ) {
-                alt54=1;
+            if ( (LA61_0==51) ) {
+                alt61=1;
             }
-            switch (alt54) {
+            switch (alt61) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2120:1: (lv_constraints_6_0= ruleConstraints )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2309:1: (lv_constraints_10_0= ruleConstraints )
                     {
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2120:1: (lv_constraints_6_0= ruleConstraints )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2121:3: lv_constraints_6_0= ruleConstraints
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2309:1: (lv_constraints_10_0= ruleConstraints )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2310:3: lv_constraints_10_0= ruleConstraints
                     {
                      
-                    	        newCompositeNode(grammarAccess.getConstructorAccess().getConstraintsConstraintsParserRuleCall_6_0()); 
+                    	        newCompositeNode(grammarAccess.getConstructorAccess().getConstraintsConstraintsParserRuleCall_7_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleConstraints_in_ruleConstructor4172);
-                    lv_constraints_6_0=ruleConstraints();
+                    pushFollow(FOLLOW_ruleConstraints_in_ruleConstructor4524);
+                    lv_constraints_10_0=ruleConstraints();
 
                     state._fsp--;
 
@@ -5484,7 +5964,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                            		set(
                            			current, 
                            			"constraints",
-                            		lv_constraints_6_0, 
+                            		lv_constraints_10_0, 
                             		"Constraints");
                     	        afterParserOrEnumRuleCall();
                     	    
@@ -5497,58 +5977,9 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2137:3: ( (lv_events_7_0= ruleEvent ) )*
-            loop55:
-            do {
-                int alt55=2;
-                int LA55_0 = input.LA(1);
+            otherlv_11=(Token)match(input,15,FOLLOW_15_in_ruleConstructor4537); 
 
-                if ( (LA55_0==RULE_DOC||LA55_0==42) ) {
-                    alt55=1;
-                }
-
-
-                switch (alt55) {
-            	case 1 :
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2138:1: (lv_events_7_0= ruleEvent )
-            	    {
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2138:1: (lv_events_7_0= ruleEvent )
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2139:3: lv_events_7_0= ruleEvent
-            	    {
-            	     
-            	    	        newCompositeNode(grammarAccess.getConstructorAccess().getEventsEventParserRuleCall_7_0()); 
-            	    	    
-            	    pushFollow(FOLLOW_ruleEvent_in_ruleConstructor4194);
-            	    lv_events_7_0=ruleEvent();
-
-            	    state._fsp--;
-
-
-            	    	        if (current==null) {
-            	    	            current = createModelElementForParent(grammarAccess.getConstructorRule());
-            	    	        }
-            	           		add(
-            	           			current, 
-            	           			"events",
-            	            		lv_events_7_0, 
-            	            		"Event");
-            	    	        afterParserOrEnumRuleCall();
-            	    	    
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop55;
-                }
-            } while (true);
-
-            otherlv_8=(Token)match(input,15,FOLLOW_15_in_ruleConstructor4207); 
-
-                	newLeafNode(otherlv_8, grammarAccess.getConstructorAccess().getRightCurlyBracketKeyword_8());
+                	newLeafNode(otherlv_11, grammarAccess.getConstructorAccess().getRightCurlyBracketKeyword_8());
                 
 
             }
@@ -5571,7 +6002,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "entryRuleReturnType"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2167:1: entryRuleReturnType returns [EObject current=null] : iv_ruleReturnType= ruleReturnType EOF ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2338:1: entryRuleReturnType returns [EObject current=null] : iv_ruleReturnType= ruleReturnType EOF ;
     public final EObject entryRuleReturnType() throws RecognitionException {
         EObject current = null;
 
@@ -5579,17 +6010,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2168:2: (iv_ruleReturnType= ruleReturnType EOF )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2169:2: iv_ruleReturnType= ruleReturnType EOF
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2339:2: (iv_ruleReturnType= ruleReturnType EOF )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2340:2: iv_ruleReturnType= ruleReturnType EOF
             {
              newCompositeNode(grammarAccess.getReturnTypeRule()); 
-            pushFollow(FOLLOW_ruleReturnType_in_entryRuleReturnType4243);
+            pushFollow(FOLLOW_ruleReturnType_in_entryRuleReturnType4573);
             iv_ruleReturnType=ruleReturnType();
 
             state._fsp--;
 
              current =iv_ruleReturnType; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleReturnType4253); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleReturnType4583); 
 
             }
 
@@ -5607,7 +6038,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "ruleReturnType"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2176:1: ruleReturnType returns [EObject current=null] : ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'returns' ( (otherlv_2= RULE_ID ) ) ) ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2347:1: ruleReturnType returns [EObject current=null] : ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'returns' ( (otherlv_2= RULE_ID ) ) ) ;
     public final EObject ruleReturnType() throws RecognitionException {
         EObject current = null;
 
@@ -5618,27 +6049,27 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
          enterRule(); 
             
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2179:28: ( ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'returns' ( (otherlv_2= RULE_ID ) ) ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2180:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'returns' ( (otherlv_2= RULE_ID ) ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2350:28: ( ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'returns' ( (otherlv_2= RULE_ID ) ) ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2351:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'returns' ( (otherlv_2= RULE_ID ) ) )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2180:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'returns' ( (otherlv_2= RULE_ID ) ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2180:2: ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'returns' ( (otherlv_2= RULE_ID ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2351:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'returns' ( (otherlv_2= RULE_ID ) ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2351:2: ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'returns' ( (otherlv_2= RULE_ID ) )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2180:2: ( (lv_doc_0_0= RULE_DOC ) )?
-            int alt56=2;
-            int LA56_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2351:2: ( (lv_doc_0_0= RULE_DOC ) )?
+            int alt62=2;
+            int LA62_0 = input.LA(1);
 
-            if ( (LA56_0==RULE_DOC) ) {
-                alt56=1;
+            if ( (LA62_0==RULE_DOC) ) {
+                alt62=1;
             }
-            switch (alt56) {
+            switch (alt62) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2181:1: (lv_doc_0_0= RULE_DOC )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2352:1: (lv_doc_0_0= RULE_DOC )
                     {
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2181:1: (lv_doc_0_0= RULE_DOC )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2182:3: lv_doc_0_0= RULE_DOC
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2352:1: (lv_doc_0_0= RULE_DOC )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2353:3: lv_doc_0_0= RULE_DOC
                     {
-                    lv_doc_0_0=(Token)match(input,RULE_DOC,FOLLOW_RULE_DOC_in_ruleReturnType4295); 
+                    lv_doc_0_0=(Token)match(input,RULE_DOC,FOLLOW_RULE_DOC_in_ruleReturnType4625); 
 
                     			newLeafNode(lv_doc_0_0, grammarAccess.getReturnTypeAccess().getDocDOCTerminalRuleCall_0_0()); 
                     		
@@ -5661,22 +6092,22 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            otherlv_1=(Token)match(input,39,FOLLOW_39_in_ruleReturnType4313); 
+            otherlv_1=(Token)match(input,41,FOLLOW_41_in_ruleReturnType4643); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getReturnTypeAccess().getReturnsKeyword_1());
                 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2202:1: ( (otherlv_2= RULE_ID ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2203:1: (otherlv_2= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2373:1: ( (otherlv_2= RULE_ID ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2374:1: (otherlv_2= RULE_ID )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2203:1: (otherlv_2= RULE_ID )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2204:3: otherlv_2= RULE_ID
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2374:1: (otherlv_2= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2375:3: otherlv_2= RULE_ID
             {
 
             			if (current==null) {
             	            current = createModelElement(grammarAccess.getReturnTypeRule());
             	        }
                     
-            otherlv_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleReturnType4333); 
+            otherlv_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleReturnType4663); 
 
             		newLeafNode(otherlv_2, grammarAccess.getReturnTypeAccess().getTypeTypeCrossReference_2_0()); 
             	
@@ -5707,7 +6138,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "entryRuleMethod"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2223:1: entryRuleMethod returns [EObject current=null] : iv_ruleMethod= ruleMethod EOF ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2394:1: entryRuleMethod returns [EObject current=null] : iv_ruleMethod= ruleMethod EOF ;
     public final EObject entryRuleMethod() throws RecognitionException {
         EObject current = null;
 
@@ -5715,17 +6146,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2224:2: (iv_ruleMethod= ruleMethod EOF )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2225:2: iv_ruleMethod= ruleMethod EOF
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2395:2: (iv_ruleMethod= ruleMethod EOF )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2396:2: iv_ruleMethod= ruleMethod EOF
             {
              newCompositeNode(grammarAccess.getMethodRule()); 
-            pushFollow(FOLLOW_ruleMethod_in_entryRuleMethod4369);
+            pushFollow(FOLLOW_ruleMethod_in_entryRuleMethod4699);
             iv_ruleMethod=ruleMethod();
 
             state._fsp--;
 
              current =iv_ruleMethod; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleMethod4379); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleMethod4709); 
 
             }
 
@@ -5743,7 +6174,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "ruleMethod"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2232:1: ruleMethod returns [EObject current=null] : ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'method' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'ref' ( ( ruleFQN ) ) )? otherlv_5= '{' ( (lv_variables_6_0= ruleVariable ) )* ( (otherlv_7= RULE_ID ) )? ( (lv_returnType_8_0= ruleReturnType ) )? ( (lv_constraints_9_0= ruleConstraints ) )? ( (lv_events_10_0= ruleEvent ) )* otherlv_11= '}' ) ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2403:1: ruleMethod returns [EObject current=null] : ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'method' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'ref' ( ( ruleFQN ) ) )? (otherlv_5= 'fires' ( (otherlv_6= RULE_ID ) ) (otherlv_7= ',' ( (otherlv_8= RULE_ID ) ) )* )? otherlv_9= '{' ( (lv_variables_10_0= ruleVariable ) )* ( (otherlv_11= RULE_ID ) )? ( (lv_returnType_12_0= ruleReturnType ) )? ( (lv_constraints_13_0= ruleConstraints ) )? otherlv_14= '}' ) ;
     public final EObject ruleMethod() throws RecognitionException {
         EObject current = null;
 
@@ -5752,41 +6183,43 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
         Token lv_name_2_0=null;
         Token otherlv_3=null;
         Token otherlv_5=null;
+        Token otherlv_6=null;
         Token otherlv_7=null;
+        Token otherlv_8=null;
+        Token otherlv_9=null;
         Token otherlv_11=null;
-        EObject lv_variables_6_0 = null;
+        Token otherlv_14=null;
+        EObject lv_variables_10_0 = null;
 
-        EObject lv_returnType_8_0 = null;
+        EObject lv_returnType_12_0 = null;
 
-        EObject lv_constraints_9_0 = null;
-
-        EObject lv_events_10_0 = null;
+        EObject lv_constraints_13_0 = null;
 
 
          enterRule(); 
             
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2235:28: ( ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'method' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'ref' ( ( ruleFQN ) ) )? otherlv_5= '{' ( (lv_variables_6_0= ruleVariable ) )* ( (otherlv_7= RULE_ID ) )? ( (lv_returnType_8_0= ruleReturnType ) )? ( (lv_constraints_9_0= ruleConstraints ) )? ( (lv_events_10_0= ruleEvent ) )* otherlv_11= '}' ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2236:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'method' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'ref' ( ( ruleFQN ) ) )? otherlv_5= '{' ( (lv_variables_6_0= ruleVariable ) )* ( (otherlv_7= RULE_ID ) )? ( (lv_returnType_8_0= ruleReturnType ) )? ( (lv_constraints_9_0= ruleConstraints ) )? ( (lv_events_10_0= ruleEvent ) )* otherlv_11= '}' )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2406:28: ( ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'method' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'ref' ( ( ruleFQN ) ) )? (otherlv_5= 'fires' ( (otherlv_6= RULE_ID ) ) (otherlv_7= ',' ( (otherlv_8= RULE_ID ) ) )* )? otherlv_9= '{' ( (lv_variables_10_0= ruleVariable ) )* ( (otherlv_11= RULE_ID ) )? ( (lv_returnType_12_0= ruleReturnType ) )? ( (lv_constraints_13_0= ruleConstraints ) )? otherlv_14= '}' ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2407:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'method' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'ref' ( ( ruleFQN ) ) )? (otherlv_5= 'fires' ( (otherlv_6= RULE_ID ) ) (otherlv_7= ',' ( (otherlv_8= RULE_ID ) ) )* )? otherlv_9= '{' ( (lv_variables_10_0= ruleVariable ) )* ( (otherlv_11= RULE_ID ) )? ( (lv_returnType_12_0= ruleReturnType ) )? ( (lv_constraints_13_0= ruleConstraints ) )? otherlv_14= '}' )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2236:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'method' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'ref' ( ( ruleFQN ) ) )? otherlv_5= '{' ( (lv_variables_6_0= ruleVariable ) )* ( (otherlv_7= RULE_ID ) )? ( (lv_returnType_8_0= ruleReturnType ) )? ( (lv_constraints_9_0= ruleConstraints ) )? ( (lv_events_10_0= ruleEvent ) )* otherlv_11= '}' )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2236:2: ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'method' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'ref' ( ( ruleFQN ) ) )? otherlv_5= '{' ( (lv_variables_6_0= ruleVariable ) )* ( (otherlv_7= RULE_ID ) )? ( (lv_returnType_8_0= ruleReturnType ) )? ( (lv_constraints_9_0= ruleConstraints ) )? ( (lv_events_10_0= ruleEvent ) )* otherlv_11= '}'
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2407:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'method' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'ref' ( ( ruleFQN ) ) )? (otherlv_5= 'fires' ( (otherlv_6= RULE_ID ) ) (otherlv_7= ',' ( (otherlv_8= RULE_ID ) ) )* )? otherlv_9= '{' ( (lv_variables_10_0= ruleVariable ) )* ( (otherlv_11= RULE_ID ) )? ( (lv_returnType_12_0= ruleReturnType ) )? ( (lv_constraints_13_0= ruleConstraints ) )? otherlv_14= '}' )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2407:2: ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'method' ( (lv_name_2_0= RULE_ID ) ) (otherlv_3= 'ref' ( ( ruleFQN ) ) )? (otherlv_5= 'fires' ( (otherlv_6= RULE_ID ) ) (otherlv_7= ',' ( (otherlv_8= RULE_ID ) ) )* )? otherlv_9= '{' ( (lv_variables_10_0= ruleVariable ) )* ( (otherlv_11= RULE_ID ) )? ( (lv_returnType_12_0= ruleReturnType ) )? ( (lv_constraints_13_0= ruleConstraints ) )? otherlv_14= '}'
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2236:2: ( (lv_doc_0_0= RULE_DOC ) )?
-            int alt57=2;
-            int LA57_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2407:2: ( (lv_doc_0_0= RULE_DOC ) )?
+            int alt63=2;
+            int LA63_0 = input.LA(1);
 
-            if ( (LA57_0==RULE_DOC) ) {
-                alt57=1;
+            if ( (LA63_0==RULE_DOC) ) {
+                alt63=1;
             }
-            switch (alt57) {
+            switch (alt63) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2237:1: (lv_doc_0_0= RULE_DOC )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2408:1: (lv_doc_0_0= RULE_DOC )
                     {
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2237:1: (lv_doc_0_0= RULE_DOC )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2238:3: lv_doc_0_0= RULE_DOC
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2408:1: (lv_doc_0_0= RULE_DOC )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2409:3: lv_doc_0_0= RULE_DOC
                     {
-                    lv_doc_0_0=(Token)match(input,RULE_DOC,FOLLOW_RULE_DOC_in_ruleMethod4421); 
+                    lv_doc_0_0=(Token)match(input,RULE_DOC,FOLLOW_RULE_DOC_in_ruleMethod4751); 
 
                     			newLeafNode(lv_doc_0_0, grammarAccess.getMethodAccess().getDocDOCTerminalRuleCall_0_0()); 
                     		
@@ -5809,17 +6242,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            otherlv_1=(Token)match(input,40,FOLLOW_40_in_ruleMethod4439); 
+            otherlv_1=(Token)match(input,42,FOLLOW_42_in_ruleMethod4769); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getMethodAccess().getMethodKeyword_1());
                 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2258:1: ( (lv_name_2_0= RULE_ID ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2259:1: (lv_name_2_0= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2429:1: ( (lv_name_2_0= RULE_ID ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2430:1: (lv_name_2_0= RULE_ID )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2259:1: (lv_name_2_0= RULE_ID )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2260:3: lv_name_2_0= RULE_ID
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2430:1: (lv_name_2_0= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2431:3: lv_name_2_0= RULE_ID
             {
-            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleMethod4456); 
+            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleMethod4786); 
 
             			newLeafNode(lv_name_2_0, grammarAccess.getMethodAccess().getNameIDTerminalRuleCall_2_0()); 
             		
@@ -5839,26 +6272,26 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2276:2: (otherlv_3= 'ref' ( ( ruleFQN ) ) )?
-            int alt58=2;
-            int LA58_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2447:2: (otherlv_3= 'ref' ( ( ruleFQN ) ) )?
+            int alt64=2;
+            int LA64_0 = input.LA(1);
 
-            if ( (LA58_0==41) ) {
-                alt58=1;
+            if ( (LA64_0==43) ) {
+                alt64=1;
             }
-            switch (alt58) {
+            switch (alt64) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2276:4: otherlv_3= 'ref' ( ( ruleFQN ) )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2447:4: otherlv_3= 'ref' ( ( ruleFQN ) )
                     {
-                    otherlv_3=(Token)match(input,41,FOLLOW_41_in_ruleMethod4474); 
+                    otherlv_3=(Token)match(input,43,FOLLOW_43_in_ruleMethod4804); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getMethodAccess().getRefKeyword_3_0());
                         
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2280:1: ( ( ruleFQN ) )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2281:1: ( ruleFQN )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2451:1: ( ( ruleFQN ) )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2452:1: ( ruleFQN )
                     {
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2281:1: ( ruleFQN )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2282:3: ruleFQN
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2452:1: ( ruleFQN )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2453:3: ruleFQN
                     {
 
                     			if (current==null) {
@@ -5868,7 +6301,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                      
                     	        newCompositeNode(grammarAccess.getMethodAccess().getRefMethodMethodCrossReference_3_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleFQN_in_ruleMethod4497);
+                    pushFollow(FOLLOW_ruleFQN_in_ruleMethod4827);
                     ruleFQN();
 
                     state._fsp--;
@@ -5888,21 +6321,112 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            otherlv_5=(Token)match(input,14,FOLLOW_14_in_ruleMethod4511); 
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2466:4: (otherlv_5= 'fires' ( (otherlv_6= RULE_ID ) ) (otherlv_7= ',' ( (otherlv_8= RULE_ID ) ) )* )?
+            int alt66=2;
+            int LA66_0 = input.LA(1);
 
-                	newLeafNode(otherlv_5, grammarAccess.getMethodAccess().getLeftCurlyBracketKeyword_4());
+            if ( (LA66_0==40) ) {
+                alt66=1;
+            }
+            switch (alt66) {
+                case 1 :
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2466:6: otherlv_5= 'fires' ( (otherlv_6= RULE_ID ) ) (otherlv_7= ',' ( (otherlv_8= RULE_ID ) ) )*
+                    {
+                    otherlv_5=(Token)match(input,40,FOLLOW_40_in_ruleMethod4842); 
+
+                        	newLeafNode(otherlv_5, grammarAccess.getMethodAccess().getFiresKeyword_4_0());
+                        
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2470:1: ( (otherlv_6= RULE_ID ) )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2471:1: (otherlv_6= RULE_ID )
+                    {
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2471:1: (otherlv_6= RULE_ID )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2472:3: otherlv_6= RULE_ID
+                    {
+
+                    			if (current==null) {
+                    	            current = createModelElement(grammarAccess.getMethodRule());
+                    	        }
+                            
+                    otherlv_6=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleMethod4862); 
+
+                    		newLeafNode(otherlv_6, grammarAccess.getMethodAccess().getFiredEventsEventCrossReference_4_1_0()); 
+                    	
+
+                    }
+
+
+                    }
+
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2483:2: (otherlv_7= ',' ( (otherlv_8= RULE_ID ) ) )*
+                    loop65:
+                    do {
+                        int alt65=2;
+                        int LA65_0 = input.LA(1);
+
+                        if ( (LA65_0==32) ) {
+                            alt65=1;
+                        }
+
+
+                        switch (alt65) {
+                    	case 1 :
+                    	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2483:4: otherlv_7= ',' ( (otherlv_8= RULE_ID ) )
+                    	    {
+                    	    otherlv_7=(Token)match(input,32,FOLLOW_32_in_ruleMethod4875); 
+
+                    	        	newLeafNode(otherlv_7, grammarAccess.getMethodAccess().getCommaKeyword_4_2_0());
+                    	        
+                    	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2487:1: ( (otherlv_8= RULE_ID ) )
+                    	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2488:1: (otherlv_8= RULE_ID )
+                    	    {
+                    	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2488:1: (otherlv_8= RULE_ID )
+                    	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2489:3: otherlv_8= RULE_ID
+                    	    {
+
+                    	    			if (current==null) {
+                    	    	            current = createModelElement(grammarAccess.getMethodRule());
+                    	    	        }
+                    	            
+                    	    otherlv_8=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleMethod4895); 
+
+                    	    		newLeafNode(otherlv_8, grammarAccess.getMethodAccess().getFiredEventsEventCrossReference_4_2_1_0()); 
+                    	    	
+
+                    	    }
+
+
+                    	    }
+
+
+                    	    }
+                    	    break;
+
+                    	default :
+                    	    break loop65;
+                        }
+                    } while (true);
+
+
+                    }
+                    break;
+
+            }
+
+            otherlv_9=(Token)match(input,14,FOLLOW_14_in_ruleMethod4911); 
+
+                	newLeafNode(otherlv_9, grammarAccess.getMethodAccess().getLeftCurlyBracketKeyword_5());
                 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2299:1: ( (lv_variables_6_0= ruleVariable ) )*
-            loop59:
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2504:1: ( (lv_variables_10_0= ruleVariable ) )*
+            loop67:
             do {
-                int alt59=2;
+                int alt67=2;
                 switch ( input.LA(1) ) {
                 case RULE_ID:
                     {
-                    int LA59_1 = input.LA(2);
+                    int LA67_1 = input.LA(2);
 
-                    if ( (LA59_1==RULE_ID||LA59_1==49) ) {
-                        alt59=1;
+                    if ( (LA67_1==RULE_ID||LA67_1==50) ) {
+                        alt67=1;
                     }
 
 
@@ -5910,35 +6434,35 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                     break;
                 case RULE_DOC:
                     {
-                    int LA59_2 = input.LA(2);
+                    int LA67_2 = input.LA(2);
 
-                    if ( (LA59_2==RULE_ID||LA59_2==48) ) {
-                        alt59=1;
+                    if ( (LA67_2==RULE_ID||LA67_2==49) ) {
+                        alt67=1;
                     }
 
 
                     }
                     break;
-                case 48:
+                case 49:
                     {
-                    alt59=1;
+                    alt67=1;
                     }
                     break;
 
                 }
 
-                switch (alt59) {
+                switch (alt67) {
             	case 1 :
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2300:1: (lv_variables_6_0= ruleVariable )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2505:1: (lv_variables_10_0= ruleVariable )
             	    {
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2300:1: (lv_variables_6_0= ruleVariable )
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2301:3: lv_variables_6_0= ruleVariable
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2505:1: (lv_variables_10_0= ruleVariable )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2506:3: lv_variables_10_0= ruleVariable
             	    {
             	     
-            	    	        newCompositeNode(grammarAccess.getMethodAccess().getVariablesVariableParserRuleCall_5_0()); 
+            	    	        newCompositeNode(grammarAccess.getMethodAccess().getVariablesVariableParserRuleCall_6_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleVariable_in_ruleMethod4532);
-            	    lv_variables_6_0=ruleVariable();
+            	    pushFollow(FOLLOW_ruleVariable_in_ruleMethod4932);
+            	    lv_variables_10_0=ruleVariable();
 
             	    state._fsp--;
 
@@ -5949,7 +6473,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
             	           		add(
             	           			current, 
             	           			"variables",
-            	            		lv_variables_6_0, 
+            	            		lv_variables_10_0, 
             	            		"Variable");
             	    	        afterParserOrEnumRuleCall();
             	    	    
@@ -5961,32 +6485,32 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
             	    break;
 
             	default :
-            	    break loop59;
+            	    break loop67;
                 }
             } while (true);
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2317:3: ( (otherlv_7= RULE_ID ) )?
-            int alt60=2;
-            int LA60_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2522:3: ( (otherlv_11= RULE_ID ) )?
+            int alt68=2;
+            int LA68_0 = input.LA(1);
 
-            if ( (LA60_0==RULE_ID) ) {
-                alt60=1;
+            if ( (LA68_0==RULE_ID) ) {
+                alt68=1;
             }
-            switch (alt60) {
+            switch (alt68) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2318:1: (otherlv_7= RULE_ID )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2523:1: (otherlv_11= RULE_ID )
                     {
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2318:1: (otherlv_7= RULE_ID )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2319:3: otherlv_7= RULE_ID
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2523:1: (otherlv_11= RULE_ID )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2524:3: otherlv_11= RULE_ID
                     {
 
                     			if (current==null) {
                     	            current = createModelElement(grammarAccess.getMethodRule());
                     	        }
                             
-                    otherlv_7=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleMethod4553); 
+                    otherlv_11=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleMethod4953); 
 
-                    		newLeafNode(otherlv_7, grammarAccess.getMethodAccess().getServiceServiceCrossReference_6_0()); 
+                    		newLeafNode(otherlv_11, grammarAccess.getMethodAccess().getServiceServiceCrossReference_7_0()); 
                     	
 
                     }
@@ -5997,32 +6521,25 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2330:3: ( (lv_returnType_8_0= ruleReturnType ) )?
-            int alt61=2;
-            int LA61_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2535:3: ( (lv_returnType_12_0= ruleReturnType ) )?
+            int alt69=2;
+            int LA69_0 = input.LA(1);
 
-            if ( (LA61_0==RULE_DOC) ) {
-                int LA61_1 = input.LA(2);
-
-                if ( (LA61_1==39) ) {
-                    alt61=1;
-                }
+            if ( (LA69_0==RULE_DOC||LA69_0==41) ) {
+                alt69=1;
             }
-            else if ( (LA61_0==39) ) {
-                alt61=1;
-            }
-            switch (alt61) {
+            switch (alt69) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2331:1: (lv_returnType_8_0= ruleReturnType )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2536:1: (lv_returnType_12_0= ruleReturnType )
                     {
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2331:1: (lv_returnType_8_0= ruleReturnType )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2332:3: lv_returnType_8_0= ruleReturnType
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2536:1: (lv_returnType_12_0= ruleReturnType )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2537:3: lv_returnType_12_0= ruleReturnType
                     {
                      
-                    	        newCompositeNode(grammarAccess.getMethodAccess().getReturnTypeReturnTypeParserRuleCall_7_0()); 
+                    	        newCompositeNode(grammarAccess.getMethodAccess().getReturnTypeReturnTypeParserRuleCall_8_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleReturnType_in_ruleMethod4575);
-                    lv_returnType_8_0=ruleReturnType();
+                    pushFollow(FOLLOW_ruleReturnType_in_ruleMethod4975);
+                    lv_returnType_12_0=ruleReturnType();
 
                     state._fsp--;
 
@@ -6033,7 +6550,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                            		set(
                            			current, 
                            			"returnType",
-                            		lv_returnType_8_0, 
+                            		lv_returnType_12_0, 
                             		"ReturnType");
                     	        afterParserOrEnumRuleCall();
                     	    
@@ -6046,25 +6563,25 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2348:3: ( (lv_constraints_9_0= ruleConstraints ) )?
-            int alt62=2;
-            int LA62_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2553:3: ( (lv_constraints_13_0= ruleConstraints ) )?
+            int alt70=2;
+            int LA70_0 = input.LA(1);
 
-            if ( (LA62_0==50) ) {
-                alt62=1;
+            if ( (LA70_0==51) ) {
+                alt70=1;
             }
-            switch (alt62) {
+            switch (alt70) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2349:1: (lv_constraints_9_0= ruleConstraints )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2554:1: (lv_constraints_13_0= ruleConstraints )
                     {
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2349:1: (lv_constraints_9_0= ruleConstraints )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2350:3: lv_constraints_9_0= ruleConstraints
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2554:1: (lv_constraints_13_0= ruleConstraints )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2555:3: lv_constraints_13_0= ruleConstraints
                     {
                      
-                    	        newCompositeNode(grammarAccess.getMethodAccess().getConstraintsConstraintsParserRuleCall_8_0()); 
+                    	        newCompositeNode(grammarAccess.getMethodAccess().getConstraintsConstraintsParserRuleCall_9_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleConstraints_in_ruleMethod4597);
-                    lv_constraints_9_0=ruleConstraints();
+                    pushFollow(FOLLOW_ruleConstraints_in_ruleMethod4997);
+                    lv_constraints_13_0=ruleConstraints();
 
                     state._fsp--;
 
@@ -6075,7 +6592,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                            		set(
                            			current, 
                            			"constraints",
-                            		lv_constraints_9_0, 
+                            		lv_constraints_13_0, 
                             		"Constraints");
                     	        afterParserOrEnumRuleCall();
                     	    
@@ -6088,58 +6605,9 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2366:3: ( (lv_events_10_0= ruleEvent ) )*
-            loop63:
-            do {
-                int alt63=2;
-                int LA63_0 = input.LA(1);
+            otherlv_14=(Token)match(input,15,FOLLOW_15_in_ruleMethod5010); 
 
-                if ( (LA63_0==RULE_DOC||LA63_0==42) ) {
-                    alt63=1;
-                }
-
-
-                switch (alt63) {
-            	case 1 :
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2367:1: (lv_events_10_0= ruleEvent )
-            	    {
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2367:1: (lv_events_10_0= ruleEvent )
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2368:3: lv_events_10_0= ruleEvent
-            	    {
-            	     
-            	    	        newCompositeNode(grammarAccess.getMethodAccess().getEventsEventParserRuleCall_9_0()); 
-            	    	    
-            	    pushFollow(FOLLOW_ruleEvent_in_ruleMethod4619);
-            	    lv_events_10_0=ruleEvent();
-
-            	    state._fsp--;
-
-
-            	    	        if (current==null) {
-            	    	            current = createModelElementForParent(grammarAccess.getMethodRule());
-            	    	        }
-            	           		add(
-            	           			current, 
-            	           			"events",
-            	            		lv_events_10_0, 
-            	            		"Event");
-            	    	        afterParserOrEnumRuleCall();
-            	    	    
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop63;
-                }
-            } while (true);
-
-            otherlv_11=(Token)match(input,15,FOLLOW_15_in_ruleMethod4632); 
-
-                	newLeafNode(otherlv_11, grammarAccess.getMethodAccess().getRightCurlyBracketKeyword_10());
+                	newLeafNode(otherlv_14, grammarAccess.getMethodAccess().getRightCurlyBracketKeyword_10());
                 
 
             }
@@ -6161,259 +6629,8 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
     // $ANTLR end "ruleMethod"
 
 
-    // $ANTLR start "entryRuleEvent"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2396:1: entryRuleEvent returns [EObject current=null] : iv_ruleEvent= ruleEvent EOF ;
-    public final EObject entryRuleEvent() throws RecognitionException {
-        EObject current = null;
-
-        EObject iv_ruleEvent = null;
-
-
-        try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2397:2: (iv_ruleEvent= ruleEvent EOF )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2398:2: iv_ruleEvent= ruleEvent EOF
-            {
-             newCompositeNode(grammarAccess.getEventRule()); 
-            pushFollow(FOLLOW_ruleEvent_in_entryRuleEvent4668);
-            iv_ruleEvent=ruleEvent();
-
-            state._fsp--;
-
-             current =iv_ruleEvent; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleEvent4678); 
-
-            }
-
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "entryRuleEvent"
-
-
-    // $ANTLR start "ruleEvent"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2405:1: ruleEvent returns [EObject current=null] : ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'event' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_variables_4_0= ruleVariable ) )* (otherlv_5= 'message' ( (lv_message_6_0= RULE_STRING ) ) )? otherlv_7= '}' ) ;
-    public final EObject ruleEvent() throws RecognitionException {
-        EObject current = null;
-
-        Token lv_doc_0_0=null;
-        Token otherlv_1=null;
-        Token lv_name_2_0=null;
-        Token otherlv_3=null;
-        Token otherlv_5=null;
-        Token lv_message_6_0=null;
-        Token otherlv_7=null;
-        EObject lv_variables_4_0 = null;
-
-
-         enterRule(); 
-            
-        try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2408:28: ( ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'event' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_variables_4_0= ruleVariable ) )* (otherlv_5= 'message' ( (lv_message_6_0= RULE_STRING ) ) )? otherlv_7= '}' ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2409:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'event' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_variables_4_0= ruleVariable ) )* (otherlv_5= 'message' ( (lv_message_6_0= RULE_STRING ) ) )? otherlv_7= '}' )
-            {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2409:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'event' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_variables_4_0= ruleVariable ) )* (otherlv_5= 'message' ( (lv_message_6_0= RULE_STRING ) ) )? otherlv_7= '}' )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2409:2: ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'event' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_variables_4_0= ruleVariable ) )* (otherlv_5= 'message' ( (lv_message_6_0= RULE_STRING ) ) )? otherlv_7= '}'
-            {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2409:2: ( (lv_doc_0_0= RULE_DOC ) )?
-            int alt64=2;
-            int LA64_0 = input.LA(1);
-
-            if ( (LA64_0==RULE_DOC) ) {
-                alt64=1;
-            }
-            switch (alt64) {
-                case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2410:1: (lv_doc_0_0= RULE_DOC )
-                    {
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2410:1: (lv_doc_0_0= RULE_DOC )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2411:3: lv_doc_0_0= RULE_DOC
-                    {
-                    lv_doc_0_0=(Token)match(input,RULE_DOC,FOLLOW_RULE_DOC_in_ruleEvent4720); 
-
-                    			newLeafNode(lv_doc_0_0, grammarAccess.getEventAccess().getDocDOCTerminalRuleCall_0_0()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getEventRule());
-                    	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"doc",
-                            		lv_doc_0_0, 
-                            		"DOC");
-                    	    
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            otherlv_1=(Token)match(input,42,FOLLOW_42_in_ruleEvent4738); 
-
-                	newLeafNode(otherlv_1, grammarAccess.getEventAccess().getEventKeyword_1());
-                
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2431:1: ( (lv_name_2_0= RULE_ID ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2432:1: (lv_name_2_0= RULE_ID )
-            {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2432:1: (lv_name_2_0= RULE_ID )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2433:3: lv_name_2_0= RULE_ID
-            {
-            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleEvent4755); 
-
-            			newLeafNode(lv_name_2_0, grammarAccess.getEventAccess().getNameIDTerminalRuleCall_2_0()); 
-            		
-
-            	        if (current==null) {
-            	            current = createModelElement(grammarAccess.getEventRule());
-            	        }
-                   		setWithLastConsumed(
-                   			current, 
-                   			"name",
-                    		lv_name_2_0, 
-                    		"ID");
-            	    
-
-            }
-
-
-            }
-
-            otherlv_3=(Token)match(input,14,FOLLOW_14_in_ruleEvent4772); 
-
-                	newLeafNode(otherlv_3, grammarAccess.getEventAccess().getLeftCurlyBracketKeyword_3());
-                
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2453:1: ( (lv_variables_4_0= ruleVariable ) )*
-            loop65:
-            do {
-                int alt65=2;
-                int LA65_0 = input.LA(1);
-
-                if ( ((LA65_0>=RULE_ID && LA65_0<=RULE_DOC)||LA65_0==48) ) {
-                    alt65=1;
-                }
-
-
-                switch (alt65) {
-            	case 1 :
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2454:1: (lv_variables_4_0= ruleVariable )
-            	    {
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2454:1: (lv_variables_4_0= ruleVariable )
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2455:3: lv_variables_4_0= ruleVariable
-            	    {
-            	     
-            	    	        newCompositeNode(grammarAccess.getEventAccess().getVariablesVariableParserRuleCall_4_0()); 
-            	    	    
-            	    pushFollow(FOLLOW_ruleVariable_in_ruleEvent4793);
-            	    lv_variables_4_0=ruleVariable();
-
-            	    state._fsp--;
-
-
-            	    	        if (current==null) {
-            	    	            current = createModelElementForParent(grammarAccess.getEventRule());
-            	    	        }
-            	           		add(
-            	           			current, 
-            	           			"variables",
-            	            		lv_variables_4_0, 
-            	            		"Variable");
-            	    	        afterParserOrEnumRuleCall();
-            	    	    
-
-            	    }
-
-
-            	    }
-            	    break;
-
-            	default :
-            	    break loop65;
-                }
-            } while (true);
-
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2471:3: (otherlv_5= 'message' ( (lv_message_6_0= RULE_STRING ) ) )?
-            int alt66=2;
-            int LA66_0 = input.LA(1);
-
-            if ( (LA66_0==22) ) {
-                alt66=1;
-            }
-            switch (alt66) {
-                case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2471:5: otherlv_5= 'message' ( (lv_message_6_0= RULE_STRING ) )
-                    {
-                    otherlv_5=(Token)match(input,22,FOLLOW_22_in_ruleEvent4807); 
-
-                        	newLeafNode(otherlv_5, grammarAccess.getEventAccess().getMessageKeyword_5_0());
-                        
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2475:1: ( (lv_message_6_0= RULE_STRING ) )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2476:1: (lv_message_6_0= RULE_STRING )
-                    {
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2476:1: (lv_message_6_0= RULE_STRING )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2477:3: lv_message_6_0= RULE_STRING
-                    {
-                    lv_message_6_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleEvent4824); 
-
-                    			newLeafNode(lv_message_6_0, grammarAccess.getEventAccess().getMessageSTRINGTerminalRuleCall_5_1_0()); 
-                    		
-
-                    	        if (current==null) {
-                    	            current = createModelElement(grammarAccess.getEventRule());
-                    	        }
-                           		setWithLastConsumed(
-                           			current, 
-                           			"message",
-                            		lv_message_6_0, 
-                            		"STRING");
-                    	    
-
-                    }
-
-
-                    }
-
-
-                    }
-                    break;
-
-            }
-
-            otherlv_7=(Token)match(input,15,FOLLOW_15_in_ruleEvent4843); 
-
-                	newLeafNode(otherlv_7, grammarAccess.getEventAccess().getRightCurlyBracketKeyword_6());
-                
-
-            }
-
-
-            }
-
-             leaveRule(); 
-        }
-         
-            catch (RecognitionException re) { 
-                recover(input,re); 
-                appendSkippedTokens();
-            } 
-        finally {
-        }
-        return current;
-    }
-    // $ANTLR end "ruleEvent"
-
-
     // $ANTLR start "entryRuleTypeMetaInfo"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2505:1: entryRuleTypeMetaInfo returns [EObject current=null] : iv_ruleTypeMetaInfo= ruleTypeMetaInfo EOF ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2583:1: entryRuleTypeMetaInfo returns [EObject current=null] : iv_ruleTypeMetaInfo= ruleTypeMetaInfo EOF ;
     public final EObject entryRuleTypeMetaInfo() throws RecognitionException {
         EObject current = null;
 
@@ -6421,17 +6638,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2506:2: (iv_ruleTypeMetaInfo= ruleTypeMetaInfo EOF )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2507:2: iv_ruleTypeMetaInfo= ruleTypeMetaInfo EOF
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2584:2: (iv_ruleTypeMetaInfo= ruleTypeMetaInfo EOF )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2585:2: iv_ruleTypeMetaInfo= ruleTypeMetaInfo EOF
             {
              newCompositeNode(grammarAccess.getTypeMetaInfoRule()); 
-            pushFollow(FOLLOW_ruleTypeMetaInfo_in_entryRuleTypeMetaInfo4879);
+            pushFollow(FOLLOW_ruleTypeMetaInfo_in_entryRuleTypeMetaInfo5046);
             iv_ruleTypeMetaInfo=ruleTypeMetaInfo();
 
             state._fsp--;
 
              current =iv_ruleTypeMetaInfo; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleTypeMetaInfo4889); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleTypeMetaInfo5056); 
 
             }
 
@@ -6449,7 +6666,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "ruleTypeMetaInfo"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2514:1: ruleTypeMetaInfo returns [EObject current=null] : ( () (otherlv_1= 'slabel' ( (lv_slabel_2_0= RULE_STRING ) ) )? (otherlv_3= 'label' ( (lv_label_4_0= RULE_STRING ) ) )? (otherlv_5= 'tooltip' ( (lv_tooltip_6_0= RULE_STRING ) ) )? (otherlv_7= 'prompt' ( (lv_prompt_8_0= RULE_STRING ) ) )? (otherlv_9= 'examples' ( (lv_examples_10_0= RULE_STRING ) )* )? ) ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2592:1: ruleTypeMetaInfo returns [EObject current=null] : ( () (otherlv_1= 'slabel' ( (lv_slabel_2_0= RULE_STRING ) ) )? (otherlv_3= 'label' ( (lv_label_4_0= RULE_STRING ) ) )? (otherlv_5= 'tooltip' ( (lv_tooltip_6_0= RULE_STRING ) ) )? (otherlv_7= 'prompt' ( (lv_prompt_8_0= RULE_STRING ) ) )? (otherlv_9= 'examples' ( (lv_examples_10_0= RULE_STRING ) )* )? ) ;
     public final EObject ruleTypeMetaInfo() throws RecognitionException {
         EObject current = null;
 
@@ -6467,14 +6684,14 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
          enterRule(); 
             
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2517:28: ( ( () (otherlv_1= 'slabel' ( (lv_slabel_2_0= RULE_STRING ) ) )? (otherlv_3= 'label' ( (lv_label_4_0= RULE_STRING ) ) )? (otherlv_5= 'tooltip' ( (lv_tooltip_6_0= RULE_STRING ) ) )? (otherlv_7= 'prompt' ( (lv_prompt_8_0= RULE_STRING ) ) )? (otherlv_9= 'examples' ( (lv_examples_10_0= RULE_STRING ) )* )? ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2518:1: ( () (otherlv_1= 'slabel' ( (lv_slabel_2_0= RULE_STRING ) ) )? (otherlv_3= 'label' ( (lv_label_4_0= RULE_STRING ) ) )? (otherlv_5= 'tooltip' ( (lv_tooltip_6_0= RULE_STRING ) ) )? (otherlv_7= 'prompt' ( (lv_prompt_8_0= RULE_STRING ) ) )? (otherlv_9= 'examples' ( (lv_examples_10_0= RULE_STRING ) )* )? )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2595:28: ( ( () (otherlv_1= 'slabel' ( (lv_slabel_2_0= RULE_STRING ) ) )? (otherlv_3= 'label' ( (lv_label_4_0= RULE_STRING ) ) )? (otherlv_5= 'tooltip' ( (lv_tooltip_6_0= RULE_STRING ) ) )? (otherlv_7= 'prompt' ( (lv_prompt_8_0= RULE_STRING ) ) )? (otherlv_9= 'examples' ( (lv_examples_10_0= RULE_STRING ) )* )? ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2596:1: ( () (otherlv_1= 'slabel' ( (lv_slabel_2_0= RULE_STRING ) ) )? (otherlv_3= 'label' ( (lv_label_4_0= RULE_STRING ) ) )? (otherlv_5= 'tooltip' ( (lv_tooltip_6_0= RULE_STRING ) ) )? (otherlv_7= 'prompt' ( (lv_prompt_8_0= RULE_STRING ) ) )? (otherlv_9= 'examples' ( (lv_examples_10_0= RULE_STRING ) )* )? )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2518:1: ( () (otherlv_1= 'slabel' ( (lv_slabel_2_0= RULE_STRING ) ) )? (otherlv_3= 'label' ( (lv_label_4_0= RULE_STRING ) ) )? (otherlv_5= 'tooltip' ( (lv_tooltip_6_0= RULE_STRING ) ) )? (otherlv_7= 'prompt' ( (lv_prompt_8_0= RULE_STRING ) ) )? (otherlv_9= 'examples' ( (lv_examples_10_0= RULE_STRING ) )* )? )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2518:2: () (otherlv_1= 'slabel' ( (lv_slabel_2_0= RULE_STRING ) ) )? (otherlv_3= 'label' ( (lv_label_4_0= RULE_STRING ) ) )? (otherlv_5= 'tooltip' ( (lv_tooltip_6_0= RULE_STRING ) ) )? (otherlv_7= 'prompt' ( (lv_prompt_8_0= RULE_STRING ) ) )? (otherlv_9= 'examples' ( (lv_examples_10_0= RULE_STRING ) )* )?
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2596:1: ( () (otherlv_1= 'slabel' ( (lv_slabel_2_0= RULE_STRING ) ) )? (otherlv_3= 'label' ( (lv_label_4_0= RULE_STRING ) ) )? (otherlv_5= 'tooltip' ( (lv_tooltip_6_0= RULE_STRING ) ) )? (otherlv_7= 'prompt' ( (lv_prompt_8_0= RULE_STRING ) ) )? (otherlv_9= 'examples' ( (lv_examples_10_0= RULE_STRING ) )* )? )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2596:2: () (otherlv_1= 'slabel' ( (lv_slabel_2_0= RULE_STRING ) ) )? (otherlv_3= 'label' ( (lv_label_4_0= RULE_STRING ) ) )? (otherlv_5= 'tooltip' ( (lv_tooltip_6_0= RULE_STRING ) ) )? (otherlv_7= 'prompt' ( (lv_prompt_8_0= RULE_STRING ) ) )? (otherlv_9= 'examples' ( (lv_examples_10_0= RULE_STRING ) )* )?
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2518:2: ()
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2519:5: 
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2596:2: ()
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2597:5: 
             {
 
                     current = forceCreateModelElement(
@@ -6484,28 +6701,28 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2524:2: (otherlv_1= 'slabel' ( (lv_slabel_2_0= RULE_STRING ) ) )?
-            int alt67=2;
-            int LA67_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2602:2: (otherlv_1= 'slabel' ( (lv_slabel_2_0= RULE_STRING ) ) )?
+            int alt71=2;
+            int LA71_0 = input.LA(1);
 
-            if ( (LA67_0==43) ) {
-                alt67=1;
+            if ( (LA71_0==44) ) {
+                alt71=1;
             }
-            switch (alt67) {
+            switch (alt71) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2524:4: otherlv_1= 'slabel' ( (lv_slabel_2_0= RULE_STRING ) )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2602:4: otherlv_1= 'slabel' ( (lv_slabel_2_0= RULE_STRING ) )
                     {
-                    otherlv_1=(Token)match(input,43,FOLLOW_43_in_ruleTypeMetaInfo4936); 
+                    otherlv_1=(Token)match(input,44,FOLLOW_44_in_ruleTypeMetaInfo5103); 
 
                         	newLeafNode(otherlv_1, grammarAccess.getTypeMetaInfoAccess().getSlabelKeyword_1_0());
                         
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2528:1: ( (lv_slabel_2_0= RULE_STRING ) )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2529:1: (lv_slabel_2_0= RULE_STRING )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2606:1: ( (lv_slabel_2_0= RULE_STRING ) )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2607:1: (lv_slabel_2_0= RULE_STRING )
                     {
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2529:1: (lv_slabel_2_0= RULE_STRING )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2530:3: lv_slabel_2_0= RULE_STRING
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2607:1: (lv_slabel_2_0= RULE_STRING )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2608:3: lv_slabel_2_0= RULE_STRING
                     {
-                    lv_slabel_2_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleTypeMetaInfo4953); 
+                    lv_slabel_2_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleTypeMetaInfo5120); 
 
                     			newLeafNode(lv_slabel_2_0, grammarAccess.getTypeMetaInfoAccess().getSlabelSTRINGTerminalRuleCall_1_1_0()); 
                     		
@@ -6531,28 +6748,28 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2546:4: (otherlv_3= 'label' ( (lv_label_4_0= RULE_STRING ) ) )?
-            int alt68=2;
-            int LA68_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2624:4: (otherlv_3= 'label' ( (lv_label_4_0= RULE_STRING ) ) )?
+            int alt72=2;
+            int LA72_0 = input.LA(1);
 
-            if ( (LA68_0==44) ) {
-                alt68=1;
+            if ( (LA72_0==45) ) {
+                alt72=1;
             }
-            switch (alt68) {
+            switch (alt72) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2546:6: otherlv_3= 'label' ( (lv_label_4_0= RULE_STRING ) )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2624:6: otherlv_3= 'label' ( (lv_label_4_0= RULE_STRING ) )
                     {
-                    otherlv_3=(Token)match(input,44,FOLLOW_44_in_ruleTypeMetaInfo4973); 
+                    otherlv_3=(Token)match(input,45,FOLLOW_45_in_ruleTypeMetaInfo5140); 
 
                         	newLeafNode(otherlv_3, grammarAccess.getTypeMetaInfoAccess().getLabelKeyword_2_0());
                         
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2550:1: ( (lv_label_4_0= RULE_STRING ) )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2551:1: (lv_label_4_0= RULE_STRING )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2628:1: ( (lv_label_4_0= RULE_STRING ) )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2629:1: (lv_label_4_0= RULE_STRING )
                     {
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2551:1: (lv_label_4_0= RULE_STRING )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2552:3: lv_label_4_0= RULE_STRING
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2629:1: (lv_label_4_0= RULE_STRING )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2630:3: lv_label_4_0= RULE_STRING
                     {
-                    lv_label_4_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleTypeMetaInfo4990); 
+                    lv_label_4_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleTypeMetaInfo5157); 
 
                     			newLeafNode(lv_label_4_0, grammarAccess.getTypeMetaInfoAccess().getLabelSTRINGTerminalRuleCall_2_1_0()); 
                     		
@@ -6578,28 +6795,28 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2568:4: (otherlv_5= 'tooltip' ( (lv_tooltip_6_0= RULE_STRING ) ) )?
-            int alt69=2;
-            int LA69_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2646:4: (otherlv_5= 'tooltip' ( (lv_tooltip_6_0= RULE_STRING ) ) )?
+            int alt73=2;
+            int LA73_0 = input.LA(1);
 
-            if ( (LA69_0==45) ) {
-                alt69=1;
+            if ( (LA73_0==46) ) {
+                alt73=1;
             }
-            switch (alt69) {
+            switch (alt73) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2568:6: otherlv_5= 'tooltip' ( (lv_tooltip_6_0= RULE_STRING ) )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2646:6: otherlv_5= 'tooltip' ( (lv_tooltip_6_0= RULE_STRING ) )
                     {
-                    otherlv_5=(Token)match(input,45,FOLLOW_45_in_ruleTypeMetaInfo5010); 
+                    otherlv_5=(Token)match(input,46,FOLLOW_46_in_ruleTypeMetaInfo5177); 
 
                         	newLeafNode(otherlv_5, grammarAccess.getTypeMetaInfoAccess().getTooltipKeyword_3_0());
                         
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2572:1: ( (lv_tooltip_6_0= RULE_STRING ) )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2573:1: (lv_tooltip_6_0= RULE_STRING )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2650:1: ( (lv_tooltip_6_0= RULE_STRING ) )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2651:1: (lv_tooltip_6_0= RULE_STRING )
                     {
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2573:1: (lv_tooltip_6_0= RULE_STRING )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2574:3: lv_tooltip_6_0= RULE_STRING
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2651:1: (lv_tooltip_6_0= RULE_STRING )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2652:3: lv_tooltip_6_0= RULE_STRING
                     {
-                    lv_tooltip_6_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleTypeMetaInfo5027); 
+                    lv_tooltip_6_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleTypeMetaInfo5194); 
 
                     			newLeafNode(lv_tooltip_6_0, grammarAccess.getTypeMetaInfoAccess().getTooltipSTRINGTerminalRuleCall_3_1_0()); 
                     		
@@ -6625,28 +6842,28 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2590:4: (otherlv_7= 'prompt' ( (lv_prompt_8_0= RULE_STRING ) ) )?
-            int alt70=2;
-            int LA70_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2668:4: (otherlv_7= 'prompt' ( (lv_prompt_8_0= RULE_STRING ) ) )?
+            int alt74=2;
+            int LA74_0 = input.LA(1);
 
-            if ( (LA70_0==46) ) {
-                alt70=1;
+            if ( (LA74_0==47) ) {
+                alt74=1;
             }
-            switch (alt70) {
+            switch (alt74) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2590:6: otherlv_7= 'prompt' ( (lv_prompt_8_0= RULE_STRING ) )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2668:6: otherlv_7= 'prompt' ( (lv_prompt_8_0= RULE_STRING ) )
                     {
-                    otherlv_7=(Token)match(input,46,FOLLOW_46_in_ruleTypeMetaInfo5047); 
+                    otherlv_7=(Token)match(input,47,FOLLOW_47_in_ruleTypeMetaInfo5214); 
 
                         	newLeafNode(otherlv_7, grammarAccess.getTypeMetaInfoAccess().getPromptKeyword_4_0());
                         
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2594:1: ( (lv_prompt_8_0= RULE_STRING ) )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2595:1: (lv_prompt_8_0= RULE_STRING )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2672:1: ( (lv_prompt_8_0= RULE_STRING ) )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2673:1: (lv_prompt_8_0= RULE_STRING )
                     {
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2595:1: (lv_prompt_8_0= RULE_STRING )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2596:3: lv_prompt_8_0= RULE_STRING
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2673:1: (lv_prompt_8_0= RULE_STRING )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2674:3: lv_prompt_8_0= RULE_STRING
                     {
-                    lv_prompt_8_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleTypeMetaInfo5064); 
+                    lv_prompt_8_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleTypeMetaInfo5231); 
 
                     			newLeafNode(lv_prompt_8_0, grammarAccess.getTypeMetaInfoAccess().getPromptSTRINGTerminalRuleCall_4_1_0()); 
                     		
@@ -6672,40 +6889,40 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2612:4: (otherlv_9= 'examples' ( (lv_examples_10_0= RULE_STRING ) )* )?
-            int alt72=2;
-            int LA72_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2690:4: (otherlv_9= 'examples' ( (lv_examples_10_0= RULE_STRING ) )* )?
+            int alt76=2;
+            int LA76_0 = input.LA(1);
 
-            if ( (LA72_0==47) ) {
-                alt72=1;
+            if ( (LA76_0==48) ) {
+                alt76=1;
             }
-            switch (alt72) {
+            switch (alt76) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2612:6: otherlv_9= 'examples' ( (lv_examples_10_0= RULE_STRING ) )*
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2690:6: otherlv_9= 'examples' ( (lv_examples_10_0= RULE_STRING ) )*
                     {
-                    otherlv_9=(Token)match(input,47,FOLLOW_47_in_ruleTypeMetaInfo5084); 
+                    otherlv_9=(Token)match(input,48,FOLLOW_48_in_ruleTypeMetaInfo5251); 
 
                         	newLeafNode(otherlv_9, grammarAccess.getTypeMetaInfoAccess().getExamplesKeyword_5_0());
                         
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2616:1: ( (lv_examples_10_0= RULE_STRING ) )*
-                    loop71:
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2694:1: ( (lv_examples_10_0= RULE_STRING ) )*
+                    loop75:
                     do {
-                        int alt71=2;
-                        int LA71_0 = input.LA(1);
+                        int alt75=2;
+                        int LA75_0 = input.LA(1);
 
-                        if ( (LA71_0==RULE_STRING) ) {
-                            alt71=1;
+                        if ( (LA75_0==RULE_STRING) ) {
+                            alt75=1;
                         }
 
 
-                        switch (alt71) {
+                        switch (alt75) {
                     	case 1 :
-                    	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2617:1: (lv_examples_10_0= RULE_STRING )
+                    	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2695:1: (lv_examples_10_0= RULE_STRING )
                     	    {
-                    	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2617:1: (lv_examples_10_0= RULE_STRING )
-                    	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2618:3: lv_examples_10_0= RULE_STRING
+                    	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2695:1: (lv_examples_10_0= RULE_STRING )
+                    	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2696:3: lv_examples_10_0= RULE_STRING
                     	    {
-                    	    lv_examples_10_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleTypeMetaInfo5101); 
+                    	    lv_examples_10_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleTypeMetaInfo5268); 
 
                     	    			newLeafNode(lv_examples_10_0, grammarAccess.getTypeMetaInfoAccess().getExamplesSTRINGTerminalRuleCall_5_1_0()); 
                     	    		
@@ -6727,7 +6944,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                     	    break;
 
                     	default :
-                    	    break loop71;
+                    	    break loop75;
                         }
                     } while (true);
 
@@ -6758,7 +6975,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "entryRuleVariable"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2642:1: entryRuleVariable returns [EObject current=null] : iv_ruleVariable= ruleVariable EOF ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2720:1: entryRuleVariable returns [EObject current=null] : iv_ruleVariable= ruleVariable EOF ;
     public final EObject entryRuleVariable() throws RecognitionException {
         EObject current = null;
 
@@ -6766,17 +6983,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2643:2: (iv_ruleVariable= ruleVariable EOF )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2644:2: iv_ruleVariable= ruleVariable EOF
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2721:2: (iv_ruleVariable= ruleVariable EOF )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2722:2: iv_ruleVariable= ruleVariable EOF
             {
              newCompositeNode(grammarAccess.getVariableRule()); 
-            pushFollow(FOLLOW_ruleVariable_in_entryRuleVariable5145);
+            pushFollow(FOLLOW_ruleVariable_in_entryRuleVariable5312);
             iv_ruleVariable=ruleVariable();
 
             state._fsp--;
 
              current =iv_ruleVariable; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleVariable5155); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleVariable5322); 
 
             }
 
@@ -6794,7 +7011,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "ruleVariable"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2651:1: ruleVariable returns [EObject current=null] : ( ( (lv_doc_0_0= RULE_DOC ) )? ( (lv_nullable_1_0= 'nullable' ) )? ( (otherlv_2= RULE_ID ) ) ( (lv_multiplicity_3_0= '*' ) )? ( (lv_name_4_0= RULE_ID ) ) ( (lv_invariants_5_0= ruleInvariants ) )? ( (lv_overridden_6_0= ruleOverriddenTypeMetaInfo ) )? ) ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2729:1: ruleVariable returns [EObject current=null] : ( ( (lv_doc_0_0= RULE_DOC ) )? ( (lv_nullable_1_0= 'nullable' ) )? ( (otherlv_2= RULE_ID ) ) ( (lv_multiplicity_3_0= '*' ) )? ( (lv_name_4_0= RULE_ID ) ) ( (lv_invariants_5_0= ruleInvariants ) )? ( (lv_overridden_6_0= ruleOverriddenTypeMetaInfo ) )? ) ;
     public final EObject ruleVariable() throws RecognitionException {
         EObject current = null;
 
@@ -6811,27 +7028,27 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
          enterRule(); 
             
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2654:28: ( ( ( (lv_doc_0_0= RULE_DOC ) )? ( (lv_nullable_1_0= 'nullable' ) )? ( (otherlv_2= RULE_ID ) ) ( (lv_multiplicity_3_0= '*' ) )? ( (lv_name_4_0= RULE_ID ) ) ( (lv_invariants_5_0= ruleInvariants ) )? ( (lv_overridden_6_0= ruleOverriddenTypeMetaInfo ) )? ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2655:1: ( ( (lv_doc_0_0= RULE_DOC ) )? ( (lv_nullable_1_0= 'nullable' ) )? ( (otherlv_2= RULE_ID ) ) ( (lv_multiplicity_3_0= '*' ) )? ( (lv_name_4_0= RULE_ID ) ) ( (lv_invariants_5_0= ruleInvariants ) )? ( (lv_overridden_6_0= ruleOverriddenTypeMetaInfo ) )? )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2732:28: ( ( ( (lv_doc_0_0= RULE_DOC ) )? ( (lv_nullable_1_0= 'nullable' ) )? ( (otherlv_2= RULE_ID ) ) ( (lv_multiplicity_3_0= '*' ) )? ( (lv_name_4_0= RULE_ID ) ) ( (lv_invariants_5_0= ruleInvariants ) )? ( (lv_overridden_6_0= ruleOverriddenTypeMetaInfo ) )? ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2733:1: ( ( (lv_doc_0_0= RULE_DOC ) )? ( (lv_nullable_1_0= 'nullable' ) )? ( (otherlv_2= RULE_ID ) ) ( (lv_multiplicity_3_0= '*' ) )? ( (lv_name_4_0= RULE_ID ) ) ( (lv_invariants_5_0= ruleInvariants ) )? ( (lv_overridden_6_0= ruleOverriddenTypeMetaInfo ) )? )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2655:1: ( ( (lv_doc_0_0= RULE_DOC ) )? ( (lv_nullable_1_0= 'nullable' ) )? ( (otherlv_2= RULE_ID ) ) ( (lv_multiplicity_3_0= '*' ) )? ( (lv_name_4_0= RULE_ID ) ) ( (lv_invariants_5_0= ruleInvariants ) )? ( (lv_overridden_6_0= ruleOverriddenTypeMetaInfo ) )? )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2655:2: ( (lv_doc_0_0= RULE_DOC ) )? ( (lv_nullable_1_0= 'nullable' ) )? ( (otherlv_2= RULE_ID ) ) ( (lv_multiplicity_3_0= '*' ) )? ( (lv_name_4_0= RULE_ID ) ) ( (lv_invariants_5_0= ruleInvariants ) )? ( (lv_overridden_6_0= ruleOverriddenTypeMetaInfo ) )?
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2733:1: ( ( (lv_doc_0_0= RULE_DOC ) )? ( (lv_nullable_1_0= 'nullable' ) )? ( (otherlv_2= RULE_ID ) ) ( (lv_multiplicity_3_0= '*' ) )? ( (lv_name_4_0= RULE_ID ) ) ( (lv_invariants_5_0= ruleInvariants ) )? ( (lv_overridden_6_0= ruleOverriddenTypeMetaInfo ) )? )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2733:2: ( (lv_doc_0_0= RULE_DOC ) )? ( (lv_nullable_1_0= 'nullable' ) )? ( (otherlv_2= RULE_ID ) ) ( (lv_multiplicity_3_0= '*' ) )? ( (lv_name_4_0= RULE_ID ) ) ( (lv_invariants_5_0= ruleInvariants ) )? ( (lv_overridden_6_0= ruleOverriddenTypeMetaInfo ) )?
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2655:2: ( (lv_doc_0_0= RULE_DOC ) )?
-            int alt73=2;
-            int LA73_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2733:2: ( (lv_doc_0_0= RULE_DOC ) )?
+            int alt77=2;
+            int LA77_0 = input.LA(1);
 
-            if ( (LA73_0==RULE_DOC) ) {
-                alt73=1;
+            if ( (LA77_0==RULE_DOC) ) {
+                alt77=1;
             }
-            switch (alt73) {
+            switch (alt77) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2656:1: (lv_doc_0_0= RULE_DOC )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2734:1: (lv_doc_0_0= RULE_DOC )
                     {
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2656:1: (lv_doc_0_0= RULE_DOC )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2657:3: lv_doc_0_0= RULE_DOC
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2734:1: (lv_doc_0_0= RULE_DOC )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2735:3: lv_doc_0_0= RULE_DOC
                     {
-                    lv_doc_0_0=(Token)match(input,RULE_DOC,FOLLOW_RULE_DOC_in_ruleVariable5197); 
+                    lv_doc_0_0=(Token)match(input,RULE_DOC,FOLLOW_RULE_DOC_in_ruleVariable5364); 
 
                     			newLeafNode(lv_doc_0_0, grammarAccess.getVariableAccess().getDocDOCTerminalRuleCall_0_0()); 
                     		
@@ -6854,21 +7071,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2673:3: ( (lv_nullable_1_0= 'nullable' ) )?
-            int alt74=2;
-            int LA74_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2751:3: ( (lv_nullable_1_0= 'nullable' ) )?
+            int alt78=2;
+            int LA78_0 = input.LA(1);
 
-            if ( (LA74_0==48) ) {
-                alt74=1;
+            if ( (LA78_0==49) ) {
+                alt78=1;
             }
-            switch (alt74) {
+            switch (alt78) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2674:1: (lv_nullable_1_0= 'nullable' )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2752:1: (lv_nullable_1_0= 'nullable' )
                     {
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2674:1: (lv_nullable_1_0= 'nullable' )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2675:3: lv_nullable_1_0= 'nullable'
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2752:1: (lv_nullable_1_0= 'nullable' )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2753:3: lv_nullable_1_0= 'nullable'
                     {
-                    lv_nullable_1_0=(Token)match(input,48,FOLLOW_48_in_ruleVariable5221); 
+                    lv_nullable_1_0=(Token)match(input,49,FOLLOW_49_in_ruleVariable5388); 
 
                             newLeafNode(lv_nullable_1_0, grammarAccess.getVariableAccess().getNullableNullableKeyword_1_0());
                         
@@ -6887,18 +7104,18 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2688:3: ( (otherlv_2= RULE_ID ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2689:1: (otherlv_2= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2766:3: ( (otherlv_2= RULE_ID ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2767:1: (otherlv_2= RULE_ID )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2689:1: (otherlv_2= RULE_ID )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2690:3: otherlv_2= RULE_ID
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2767:1: (otherlv_2= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2768:3: otherlv_2= RULE_ID
             {
 
             			if (current==null) {
             	            current = createModelElement(grammarAccess.getVariableRule());
             	        }
                     
-            otherlv_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleVariable5255); 
+            otherlv_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleVariable5422); 
 
             		newLeafNode(otherlv_2, grammarAccess.getVariableAccess().getTypeTypeCrossReference_2_0()); 
             	
@@ -6908,21 +7125,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2701:2: ( (lv_multiplicity_3_0= '*' ) )?
-            int alt75=2;
-            int LA75_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2779:2: ( (lv_multiplicity_3_0= '*' ) )?
+            int alt79=2;
+            int LA79_0 = input.LA(1);
 
-            if ( (LA75_0==49) ) {
-                alt75=1;
+            if ( (LA79_0==50) ) {
+                alt79=1;
             }
-            switch (alt75) {
+            switch (alt79) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2702:1: (lv_multiplicity_3_0= '*' )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2780:1: (lv_multiplicity_3_0= '*' )
                     {
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2702:1: (lv_multiplicity_3_0= '*' )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2703:3: lv_multiplicity_3_0= '*'
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2780:1: (lv_multiplicity_3_0= '*' )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2781:3: lv_multiplicity_3_0= '*'
                     {
-                    lv_multiplicity_3_0=(Token)match(input,49,FOLLOW_49_in_ruleVariable5273); 
+                    lv_multiplicity_3_0=(Token)match(input,50,FOLLOW_50_in_ruleVariable5440); 
 
                             newLeafNode(lv_multiplicity_3_0, grammarAccess.getVariableAccess().getMultiplicityAsteriskKeyword_3_0());
                         
@@ -6941,13 +7158,13 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2716:3: ( (lv_name_4_0= RULE_ID ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2717:1: (lv_name_4_0= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2794:3: ( (lv_name_4_0= RULE_ID ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2795:1: (lv_name_4_0= RULE_ID )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2717:1: (lv_name_4_0= RULE_ID )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2718:3: lv_name_4_0= RULE_ID
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2795:1: (lv_name_4_0= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2796:3: lv_name_4_0= RULE_ID
             {
-            lv_name_4_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleVariable5304); 
+            lv_name_4_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleVariable5471); 
 
             			newLeafNode(lv_name_4_0, grammarAccess.getVariableAccess().getNameIDTerminalRuleCall_4_0()); 
             		
@@ -6967,24 +7184,24 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2734:2: ( (lv_invariants_5_0= ruleInvariants ) )?
-            int alt76=2;
-            int LA76_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2812:2: ( (lv_invariants_5_0= ruleInvariants ) )?
+            int alt80=2;
+            int LA80_0 = input.LA(1);
 
-            if ( (LA76_0==51) ) {
-                alt76=1;
+            if ( (LA80_0==52) ) {
+                alt80=1;
             }
-            switch (alt76) {
+            switch (alt80) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2735:1: (lv_invariants_5_0= ruleInvariants )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2813:1: (lv_invariants_5_0= ruleInvariants )
                     {
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2735:1: (lv_invariants_5_0= ruleInvariants )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2736:3: lv_invariants_5_0= ruleInvariants
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2813:1: (lv_invariants_5_0= ruleInvariants )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2814:3: lv_invariants_5_0= ruleInvariants
                     {
                      
                     	        newCompositeNode(grammarAccess.getVariableAccess().getInvariantsInvariantsParserRuleCall_5_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleInvariants_in_ruleVariable5330);
+                    pushFollow(FOLLOW_ruleInvariants_in_ruleVariable5497);
                     lv_invariants_5_0=ruleInvariants();
 
                     state._fsp--;
@@ -7009,24 +7226,24 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2752:3: ( (lv_overridden_6_0= ruleOverriddenTypeMetaInfo ) )?
-            int alt77=2;
-            int LA77_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2830:3: ( (lv_overridden_6_0= ruleOverriddenTypeMetaInfo ) )?
+            int alt81=2;
+            int LA81_0 = input.LA(1);
 
-            if ( (LA77_0==14) ) {
-                alt77=1;
+            if ( (LA81_0==14) ) {
+                alt81=1;
             }
-            switch (alt77) {
+            switch (alt81) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2753:1: (lv_overridden_6_0= ruleOverriddenTypeMetaInfo )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2831:1: (lv_overridden_6_0= ruleOverriddenTypeMetaInfo )
                     {
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2753:1: (lv_overridden_6_0= ruleOverriddenTypeMetaInfo )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2754:3: lv_overridden_6_0= ruleOverriddenTypeMetaInfo
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2831:1: (lv_overridden_6_0= ruleOverriddenTypeMetaInfo )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2832:3: lv_overridden_6_0= ruleOverriddenTypeMetaInfo
                     {
                      
                     	        newCompositeNode(grammarAccess.getVariableAccess().getOverriddenOverriddenTypeMetaInfoParserRuleCall_6_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleOverriddenTypeMetaInfo_in_ruleVariable5352);
+                    pushFollow(FOLLOW_ruleOverriddenTypeMetaInfo_in_ruleVariable5519);
                     lv_overridden_6_0=ruleOverriddenTypeMetaInfo();
 
                     state._fsp--;
@@ -7072,7 +7289,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "entryRuleConstraints"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2778:1: entryRuleConstraints returns [EObject current=null] : iv_ruleConstraints= ruleConstraints EOF ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2856:1: entryRuleConstraints returns [EObject current=null] : iv_ruleConstraints= ruleConstraints EOF ;
     public final EObject entryRuleConstraints() throws RecognitionException {
         EObject current = null;
 
@@ -7080,17 +7297,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2779:2: (iv_ruleConstraints= ruleConstraints EOF )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2780:2: iv_ruleConstraints= ruleConstraints EOF
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2857:2: (iv_ruleConstraints= ruleConstraints EOF )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2858:2: iv_ruleConstraints= ruleConstraints EOF
             {
              newCompositeNode(grammarAccess.getConstraintsRule()); 
-            pushFollow(FOLLOW_ruleConstraints_in_entryRuleConstraints5389);
+            pushFollow(FOLLOW_ruleConstraints_in_entryRuleConstraints5556);
             iv_ruleConstraints=ruleConstraints();
 
             state._fsp--;
 
              current =iv_ruleConstraints; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleConstraints5399); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleConstraints5566); 
 
             }
 
@@ -7108,7 +7325,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "ruleConstraints"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2787:1: ruleConstraints returns [EObject current=null] : (otherlv_0= 'constraints' otherlv_1= '{' ( (lv_calls_2_0= ruleConstraintCall ) ) (otherlv_3= ',' ( (lv_calls_4_0= ruleConstraintCall ) ) )* otherlv_5= '}' ) ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2865:1: ruleConstraints returns [EObject current=null] : (otherlv_0= 'constraints' otherlv_1= '{' ( (lv_calls_2_0= ruleConstraintCall ) ) (otherlv_3= ',' ( (lv_calls_4_0= ruleConstraintCall ) ) )* otherlv_5= '}' ) ;
     public final EObject ruleConstraints() throws RecognitionException {
         EObject current = null;
 
@@ -7124,30 +7341,30 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
          enterRule(); 
             
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2790:28: ( (otherlv_0= 'constraints' otherlv_1= '{' ( (lv_calls_2_0= ruleConstraintCall ) ) (otherlv_3= ',' ( (lv_calls_4_0= ruleConstraintCall ) ) )* otherlv_5= '}' ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2791:1: (otherlv_0= 'constraints' otherlv_1= '{' ( (lv_calls_2_0= ruleConstraintCall ) ) (otherlv_3= ',' ( (lv_calls_4_0= ruleConstraintCall ) ) )* otherlv_5= '}' )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2868:28: ( (otherlv_0= 'constraints' otherlv_1= '{' ( (lv_calls_2_0= ruleConstraintCall ) ) (otherlv_3= ',' ( (lv_calls_4_0= ruleConstraintCall ) ) )* otherlv_5= '}' ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2869:1: (otherlv_0= 'constraints' otherlv_1= '{' ( (lv_calls_2_0= ruleConstraintCall ) ) (otherlv_3= ',' ( (lv_calls_4_0= ruleConstraintCall ) ) )* otherlv_5= '}' )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2791:1: (otherlv_0= 'constraints' otherlv_1= '{' ( (lv_calls_2_0= ruleConstraintCall ) ) (otherlv_3= ',' ( (lv_calls_4_0= ruleConstraintCall ) ) )* otherlv_5= '}' )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2791:3: otherlv_0= 'constraints' otherlv_1= '{' ( (lv_calls_2_0= ruleConstraintCall ) ) (otherlv_3= ',' ( (lv_calls_4_0= ruleConstraintCall ) ) )* otherlv_5= '}'
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2869:1: (otherlv_0= 'constraints' otherlv_1= '{' ( (lv_calls_2_0= ruleConstraintCall ) ) (otherlv_3= ',' ( (lv_calls_4_0= ruleConstraintCall ) ) )* otherlv_5= '}' )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2869:3: otherlv_0= 'constraints' otherlv_1= '{' ( (lv_calls_2_0= ruleConstraintCall ) ) (otherlv_3= ',' ( (lv_calls_4_0= ruleConstraintCall ) ) )* otherlv_5= '}'
             {
-            otherlv_0=(Token)match(input,50,FOLLOW_50_in_ruleConstraints5436); 
+            otherlv_0=(Token)match(input,51,FOLLOW_51_in_ruleConstraints5603); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getConstraintsAccess().getConstraintsKeyword_0());
                 
-            otherlv_1=(Token)match(input,14,FOLLOW_14_in_ruleConstraints5448); 
+            otherlv_1=(Token)match(input,14,FOLLOW_14_in_ruleConstraints5615); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getConstraintsAccess().getLeftCurlyBracketKeyword_1());
                 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2799:1: ( (lv_calls_2_0= ruleConstraintCall ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2800:1: (lv_calls_2_0= ruleConstraintCall )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2877:1: ( (lv_calls_2_0= ruleConstraintCall ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2878:1: (lv_calls_2_0= ruleConstraintCall )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2800:1: (lv_calls_2_0= ruleConstraintCall )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2801:3: lv_calls_2_0= ruleConstraintCall
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2878:1: (lv_calls_2_0= ruleConstraintCall )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2879:3: lv_calls_2_0= ruleConstraintCall
             {
              
             	        newCompositeNode(grammarAccess.getConstraintsAccess().getCallsConstraintCallParserRuleCall_2_0()); 
             	    
-            pushFollow(FOLLOW_ruleConstraintCall_in_ruleConstraints5469);
+            pushFollow(FOLLOW_ruleConstraintCall_in_ruleConstraints5636);
             lv_calls_2_0=ruleConstraintCall();
 
             state._fsp--;
@@ -7169,35 +7386,35 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2817:2: (otherlv_3= ',' ( (lv_calls_4_0= ruleConstraintCall ) ) )*
-            loop78:
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2895:2: (otherlv_3= ',' ( (lv_calls_4_0= ruleConstraintCall ) ) )*
+            loop82:
             do {
-                int alt78=2;
-                int LA78_0 = input.LA(1);
+                int alt82=2;
+                int LA82_0 = input.LA(1);
 
-                if ( (LA78_0==32) ) {
-                    alt78=1;
+                if ( (LA82_0==32) ) {
+                    alt82=1;
                 }
 
 
-                switch (alt78) {
+                switch (alt82) {
             	case 1 :
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2817:4: otherlv_3= ',' ( (lv_calls_4_0= ruleConstraintCall ) )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2895:4: otherlv_3= ',' ( (lv_calls_4_0= ruleConstraintCall ) )
             	    {
-            	    otherlv_3=(Token)match(input,32,FOLLOW_32_in_ruleConstraints5482); 
+            	    otherlv_3=(Token)match(input,32,FOLLOW_32_in_ruleConstraints5649); 
 
             	        	newLeafNode(otherlv_3, grammarAccess.getConstraintsAccess().getCommaKeyword_3_0());
             	        
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2821:1: ( (lv_calls_4_0= ruleConstraintCall ) )
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2822:1: (lv_calls_4_0= ruleConstraintCall )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2899:1: ( (lv_calls_4_0= ruleConstraintCall ) )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2900:1: (lv_calls_4_0= ruleConstraintCall )
             	    {
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2822:1: (lv_calls_4_0= ruleConstraintCall )
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2823:3: lv_calls_4_0= ruleConstraintCall
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2900:1: (lv_calls_4_0= ruleConstraintCall )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2901:3: lv_calls_4_0= ruleConstraintCall
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getConstraintsAccess().getCallsConstraintCallParserRuleCall_3_1_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleConstraintCall_in_ruleConstraints5503);
+            	    pushFollow(FOLLOW_ruleConstraintCall_in_ruleConstraints5670);
             	    lv_calls_4_0=ruleConstraintCall();
 
             	    state._fsp--;
@@ -7224,11 +7441,11 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
             	    break;
 
             	default :
-            	    break loop78;
+            	    break loop82;
                 }
             } while (true);
 
-            otherlv_5=(Token)match(input,15,FOLLOW_15_in_ruleConstraints5517); 
+            otherlv_5=(Token)match(input,15,FOLLOW_15_in_ruleConstraints5684); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getConstraintsAccess().getRightCurlyBracketKeyword_4());
                 
@@ -7253,7 +7470,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "entryRuleInvariants"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2851:1: entryRuleInvariants returns [EObject current=null] : iv_ruleInvariants= ruleInvariants EOF ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2929:1: entryRuleInvariants returns [EObject current=null] : iv_ruleInvariants= ruleInvariants EOF ;
     public final EObject entryRuleInvariants() throws RecognitionException {
         EObject current = null;
 
@@ -7261,17 +7478,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2852:2: (iv_ruleInvariants= ruleInvariants EOF )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2853:2: iv_ruleInvariants= ruleInvariants EOF
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2930:2: (iv_ruleInvariants= ruleInvariants EOF )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2931:2: iv_ruleInvariants= ruleInvariants EOF
             {
              newCompositeNode(grammarAccess.getInvariantsRule()); 
-            pushFollow(FOLLOW_ruleInvariants_in_entryRuleInvariants5553);
+            pushFollow(FOLLOW_ruleInvariants_in_entryRuleInvariants5720);
             iv_ruleInvariants=ruleInvariants();
 
             state._fsp--;
 
              current =iv_ruleInvariants; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleInvariants5563); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleInvariants5730); 
 
             }
 
@@ -7289,7 +7506,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "ruleInvariants"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2860:1: ruleInvariants returns [EObject current=null] : (otherlv_0= 'invariants' ( (lv_calls_1_0= ruleConstraintCall ) ) (otherlv_2= ',' ( (lv_calls_3_0= ruleConstraintCall ) ) )* ) ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2938:1: ruleInvariants returns [EObject current=null] : (otherlv_0= 'invariants' ( (lv_calls_1_0= ruleConstraintCall ) ) (otherlv_2= ',' ( (lv_calls_3_0= ruleConstraintCall ) ) )* ) ;
     public final EObject ruleInvariants() throws RecognitionException {
         EObject current = null;
 
@@ -7303,26 +7520,26 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
          enterRule(); 
             
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2863:28: ( (otherlv_0= 'invariants' ( (lv_calls_1_0= ruleConstraintCall ) ) (otherlv_2= ',' ( (lv_calls_3_0= ruleConstraintCall ) ) )* ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2864:1: (otherlv_0= 'invariants' ( (lv_calls_1_0= ruleConstraintCall ) ) (otherlv_2= ',' ( (lv_calls_3_0= ruleConstraintCall ) ) )* )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2941:28: ( (otherlv_0= 'invariants' ( (lv_calls_1_0= ruleConstraintCall ) ) (otherlv_2= ',' ( (lv_calls_3_0= ruleConstraintCall ) ) )* ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2942:1: (otherlv_0= 'invariants' ( (lv_calls_1_0= ruleConstraintCall ) ) (otherlv_2= ',' ( (lv_calls_3_0= ruleConstraintCall ) ) )* )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2864:1: (otherlv_0= 'invariants' ( (lv_calls_1_0= ruleConstraintCall ) ) (otherlv_2= ',' ( (lv_calls_3_0= ruleConstraintCall ) ) )* )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2864:3: otherlv_0= 'invariants' ( (lv_calls_1_0= ruleConstraintCall ) ) (otherlv_2= ',' ( (lv_calls_3_0= ruleConstraintCall ) ) )*
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2942:1: (otherlv_0= 'invariants' ( (lv_calls_1_0= ruleConstraintCall ) ) (otherlv_2= ',' ( (lv_calls_3_0= ruleConstraintCall ) ) )* )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2942:3: otherlv_0= 'invariants' ( (lv_calls_1_0= ruleConstraintCall ) ) (otherlv_2= ',' ( (lv_calls_3_0= ruleConstraintCall ) ) )*
             {
-            otherlv_0=(Token)match(input,51,FOLLOW_51_in_ruleInvariants5600); 
+            otherlv_0=(Token)match(input,52,FOLLOW_52_in_ruleInvariants5767); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getInvariantsAccess().getInvariantsKeyword_0());
                 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2868:1: ( (lv_calls_1_0= ruleConstraintCall ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2869:1: (lv_calls_1_0= ruleConstraintCall )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2946:1: ( (lv_calls_1_0= ruleConstraintCall ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2947:1: (lv_calls_1_0= ruleConstraintCall )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2869:1: (lv_calls_1_0= ruleConstraintCall )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2870:3: lv_calls_1_0= ruleConstraintCall
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2947:1: (lv_calls_1_0= ruleConstraintCall )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2948:3: lv_calls_1_0= ruleConstraintCall
             {
              
             	        newCompositeNode(grammarAccess.getInvariantsAccess().getCallsConstraintCallParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleConstraintCall_in_ruleInvariants5621);
+            pushFollow(FOLLOW_ruleConstraintCall_in_ruleInvariants5788);
             lv_calls_1_0=ruleConstraintCall();
 
             state._fsp--;
@@ -7344,35 +7561,35 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2886:2: (otherlv_2= ',' ( (lv_calls_3_0= ruleConstraintCall ) ) )*
-            loop79:
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2964:2: (otherlv_2= ',' ( (lv_calls_3_0= ruleConstraintCall ) ) )*
+            loop83:
             do {
-                int alt79=2;
-                int LA79_0 = input.LA(1);
+                int alt83=2;
+                int LA83_0 = input.LA(1);
 
-                if ( (LA79_0==32) ) {
-                    alt79=1;
+                if ( (LA83_0==32) ) {
+                    alt83=1;
                 }
 
 
-                switch (alt79) {
+                switch (alt83) {
             	case 1 :
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2886:4: otherlv_2= ',' ( (lv_calls_3_0= ruleConstraintCall ) )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2964:4: otherlv_2= ',' ( (lv_calls_3_0= ruleConstraintCall ) )
             	    {
-            	    otherlv_2=(Token)match(input,32,FOLLOW_32_in_ruleInvariants5634); 
+            	    otherlv_2=(Token)match(input,32,FOLLOW_32_in_ruleInvariants5801); 
 
             	        	newLeafNode(otherlv_2, grammarAccess.getInvariantsAccess().getCommaKeyword_2_0());
             	        
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2890:1: ( (lv_calls_3_0= ruleConstraintCall ) )
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2891:1: (lv_calls_3_0= ruleConstraintCall )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2968:1: ( (lv_calls_3_0= ruleConstraintCall ) )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2969:1: (lv_calls_3_0= ruleConstraintCall )
             	    {
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2891:1: (lv_calls_3_0= ruleConstraintCall )
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2892:3: lv_calls_3_0= ruleConstraintCall
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2969:1: (lv_calls_3_0= ruleConstraintCall )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2970:3: lv_calls_3_0= ruleConstraintCall
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getInvariantsAccess().getCallsConstraintCallParserRuleCall_2_1_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleConstraintCall_in_ruleInvariants5655);
+            	    pushFollow(FOLLOW_ruleConstraintCall_in_ruleInvariants5822);
             	    lv_calls_3_0=ruleConstraintCall();
 
             	    state._fsp--;
@@ -7399,7 +7616,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
             	    break;
 
             	default :
-            	    break loop79;
+            	    break loop83;
                 }
             } while (true);
 
@@ -7424,7 +7641,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "entryRuleOverriddenTypeMetaInfo"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2916:1: entryRuleOverriddenTypeMetaInfo returns [EObject current=null] : iv_ruleOverriddenTypeMetaInfo= ruleOverriddenTypeMetaInfo EOF ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2994:1: entryRuleOverriddenTypeMetaInfo returns [EObject current=null] : iv_ruleOverriddenTypeMetaInfo= ruleOverriddenTypeMetaInfo EOF ;
     public final EObject entryRuleOverriddenTypeMetaInfo() throws RecognitionException {
         EObject current = null;
 
@@ -7432,17 +7649,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2917:2: (iv_ruleOverriddenTypeMetaInfo= ruleOverriddenTypeMetaInfo EOF )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2918:2: iv_ruleOverriddenTypeMetaInfo= ruleOverriddenTypeMetaInfo EOF
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2995:2: (iv_ruleOverriddenTypeMetaInfo= ruleOverriddenTypeMetaInfo EOF )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2996:2: iv_ruleOverriddenTypeMetaInfo= ruleOverriddenTypeMetaInfo EOF
             {
              newCompositeNode(grammarAccess.getOverriddenTypeMetaInfoRule()); 
-            pushFollow(FOLLOW_ruleOverriddenTypeMetaInfo_in_entryRuleOverriddenTypeMetaInfo5693);
+            pushFollow(FOLLOW_ruleOverriddenTypeMetaInfo_in_entryRuleOverriddenTypeMetaInfo5860);
             iv_ruleOverriddenTypeMetaInfo=ruleOverriddenTypeMetaInfo();
 
             state._fsp--;
 
              current =iv_ruleOverriddenTypeMetaInfo; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleOverriddenTypeMetaInfo5703); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleOverriddenTypeMetaInfo5870); 
 
             }
 
@@ -7460,7 +7677,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "ruleOverriddenTypeMetaInfo"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2925:1: ruleOverriddenTypeMetaInfo returns [EObject current=null] : (otherlv_0= '{' ( (lv_metaInfo_1_0= ruleTypeMetaInfo ) ) otherlv_2= '}' ) ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3003:1: ruleOverriddenTypeMetaInfo returns [EObject current=null] : (otherlv_0= '{' ( (lv_metaInfo_1_0= ruleTypeMetaInfo ) ) otherlv_2= '}' ) ;
     public final EObject ruleOverriddenTypeMetaInfo() throws RecognitionException {
         EObject current = null;
 
@@ -7472,26 +7689,26 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
          enterRule(); 
             
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2928:28: ( (otherlv_0= '{' ( (lv_metaInfo_1_0= ruleTypeMetaInfo ) ) otherlv_2= '}' ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2929:1: (otherlv_0= '{' ( (lv_metaInfo_1_0= ruleTypeMetaInfo ) ) otherlv_2= '}' )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3006:28: ( (otherlv_0= '{' ( (lv_metaInfo_1_0= ruleTypeMetaInfo ) ) otherlv_2= '}' ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3007:1: (otherlv_0= '{' ( (lv_metaInfo_1_0= ruleTypeMetaInfo ) ) otherlv_2= '}' )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2929:1: (otherlv_0= '{' ( (lv_metaInfo_1_0= ruleTypeMetaInfo ) ) otherlv_2= '}' )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2929:3: otherlv_0= '{' ( (lv_metaInfo_1_0= ruleTypeMetaInfo ) ) otherlv_2= '}'
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3007:1: (otherlv_0= '{' ( (lv_metaInfo_1_0= ruleTypeMetaInfo ) ) otherlv_2= '}' )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3007:3: otherlv_0= '{' ( (lv_metaInfo_1_0= ruleTypeMetaInfo ) ) otherlv_2= '}'
             {
-            otherlv_0=(Token)match(input,14,FOLLOW_14_in_ruleOverriddenTypeMetaInfo5740); 
+            otherlv_0=(Token)match(input,14,FOLLOW_14_in_ruleOverriddenTypeMetaInfo5907); 
 
                 	newLeafNode(otherlv_0, grammarAccess.getOverriddenTypeMetaInfoAccess().getLeftCurlyBracketKeyword_0());
                 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2933:1: ( (lv_metaInfo_1_0= ruleTypeMetaInfo ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2934:1: (lv_metaInfo_1_0= ruleTypeMetaInfo )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3011:1: ( (lv_metaInfo_1_0= ruleTypeMetaInfo ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3012:1: (lv_metaInfo_1_0= ruleTypeMetaInfo )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2934:1: (lv_metaInfo_1_0= ruleTypeMetaInfo )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2935:3: lv_metaInfo_1_0= ruleTypeMetaInfo
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3012:1: (lv_metaInfo_1_0= ruleTypeMetaInfo )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3013:3: lv_metaInfo_1_0= ruleTypeMetaInfo
             {
              
             	        newCompositeNode(grammarAccess.getOverriddenTypeMetaInfoAccess().getMetaInfoTypeMetaInfoParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleTypeMetaInfo_in_ruleOverriddenTypeMetaInfo5761);
+            pushFollow(FOLLOW_ruleTypeMetaInfo_in_ruleOverriddenTypeMetaInfo5928);
             lv_metaInfo_1_0=ruleTypeMetaInfo();
 
             state._fsp--;
@@ -7513,7 +7730,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            otherlv_2=(Token)match(input,15,FOLLOW_15_in_ruleOverriddenTypeMetaInfo5773); 
+            otherlv_2=(Token)match(input,15,FOLLOW_15_in_ruleOverriddenTypeMetaInfo5940); 
 
                 	newLeafNode(otherlv_2, grammarAccess.getOverriddenTypeMetaInfoAccess().getRightCurlyBracketKeyword_2());
                 
@@ -7538,7 +7755,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "entryRuleConstraintCall"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2963:1: entryRuleConstraintCall returns [EObject current=null] : iv_ruleConstraintCall= ruleConstraintCall EOF ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3041:1: entryRuleConstraintCall returns [EObject current=null] : iv_ruleConstraintCall= ruleConstraintCall EOF ;
     public final EObject entryRuleConstraintCall() throws RecognitionException {
         EObject current = null;
 
@@ -7546,17 +7763,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2964:2: (iv_ruleConstraintCall= ruleConstraintCall EOF )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2965:2: iv_ruleConstraintCall= ruleConstraintCall EOF
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3042:2: (iv_ruleConstraintCall= ruleConstraintCall EOF )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3043:2: iv_ruleConstraintCall= ruleConstraintCall EOF
             {
              newCompositeNode(grammarAccess.getConstraintCallRule()); 
-            pushFollow(FOLLOW_ruleConstraintCall_in_entryRuleConstraintCall5809);
+            pushFollow(FOLLOW_ruleConstraintCall_in_entryRuleConstraintCall5976);
             iv_ruleConstraintCall=ruleConstraintCall();
 
             state._fsp--;
 
              current =iv_ruleConstraintCall; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleConstraintCall5819); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleConstraintCall5986); 
 
             }
 
@@ -7574,7 +7791,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "ruleConstraintCall"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2972:1: ruleConstraintCall returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '(' ( (lv_params_2_0= ruleLiteral ) ) (otherlv_3= ',' ( (lv_params_4_0= ruleLiteral ) ) )* otherlv_5= ')' )? ) ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3050:1: ruleConstraintCall returns [EObject current=null] : ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '(' ( (lv_params_2_0= ruleLiteral ) ) (otherlv_3= ',' ( (lv_params_4_0= ruleLiteral ) ) )* otherlv_5= ')' )? ) ;
     public final EObject ruleConstraintCall() throws RecognitionException {
         EObject current = null;
 
@@ -7590,24 +7807,24 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
          enterRule(); 
             
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2975:28: ( ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '(' ( (lv_params_2_0= ruleLiteral ) ) (otherlv_3= ',' ( (lv_params_4_0= ruleLiteral ) ) )* otherlv_5= ')' )? ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2976:1: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '(' ( (lv_params_2_0= ruleLiteral ) ) (otherlv_3= ',' ( (lv_params_4_0= ruleLiteral ) ) )* otherlv_5= ')' )? )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3053:28: ( ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '(' ( (lv_params_2_0= ruleLiteral ) ) (otherlv_3= ',' ( (lv_params_4_0= ruleLiteral ) ) )* otherlv_5= ')' )? ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3054:1: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '(' ( (lv_params_2_0= ruleLiteral ) ) (otherlv_3= ',' ( (lv_params_4_0= ruleLiteral ) ) )* otherlv_5= ')' )? )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2976:1: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '(' ( (lv_params_2_0= ruleLiteral ) ) (otherlv_3= ',' ( (lv_params_4_0= ruleLiteral ) ) )* otherlv_5= ')' )? )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2976:2: ( (otherlv_0= RULE_ID ) ) (otherlv_1= '(' ( (lv_params_2_0= ruleLiteral ) ) (otherlv_3= ',' ( (lv_params_4_0= ruleLiteral ) ) )* otherlv_5= ')' )?
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3054:1: ( ( (otherlv_0= RULE_ID ) ) (otherlv_1= '(' ( (lv_params_2_0= ruleLiteral ) ) (otherlv_3= ',' ( (lv_params_4_0= ruleLiteral ) ) )* otherlv_5= ')' )? )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3054:2: ( (otherlv_0= RULE_ID ) ) (otherlv_1= '(' ( (lv_params_2_0= ruleLiteral ) ) (otherlv_3= ',' ( (lv_params_4_0= ruleLiteral ) ) )* otherlv_5= ')' )?
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2976:2: ( (otherlv_0= RULE_ID ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2977:1: (otherlv_0= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3054:2: ( (otherlv_0= RULE_ID ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3055:1: (otherlv_0= RULE_ID )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2977:1: (otherlv_0= RULE_ID )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2978:3: otherlv_0= RULE_ID
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3055:1: (otherlv_0= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3056:3: otherlv_0= RULE_ID
             {
 
             			if (current==null) {
             	            current = createModelElement(grammarAccess.getConstraintCallRule());
             	        }
                     
-            otherlv_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleConstraintCall5864); 
+            otherlv_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleConstraintCall6031); 
 
             		newLeafNode(otherlv_0, grammarAccess.getConstraintCallAccess().getConstraintConstraintCrossReference_0_0()); 
             	
@@ -7617,31 +7834,31 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2989:2: (otherlv_1= '(' ( (lv_params_2_0= ruleLiteral ) ) (otherlv_3= ',' ( (lv_params_4_0= ruleLiteral ) ) )* otherlv_5= ')' )?
-            int alt81=2;
-            int LA81_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3067:2: (otherlv_1= '(' ( (lv_params_2_0= ruleLiteral ) ) (otherlv_3= ',' ( (lv_params_4_0= ruleLiteral ) ) )* otherlv_5= ')' )?
+            int alt85=2;
+            int LA85_0 = input.LA(1);
 
-            if ( (LA81_0==31) ) {
-                alt81=1;
+            if ( (LA85_0==31) ) {
+                alt85=1;
             }
-            switch (alt81) {
+            switch (alt85) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2989:4: otherlv_1= '(' ( (lv_params_2_0= ruleLiteral ) ) (otherlv_3= ',' ( (lv_params_4_0= ruleLiteral ) ) )* otherlv_5= ')'
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3067:4: otherlv_1= '(' ( (lv_params_2_0= ruleLiteral ) ) (otherlv_3= ',' ( (lv_params_4_0= ruleLiteral ) ) )* otherlv_5= ')'
                     {
-                    otherlv_1=(Token)match(input,31,FOLLOW_31_in_ruleConstraintCall5877); 
+                    otherlv_1=(Token)match(input,31,FOLLOW_31_in_ruleConstraintCall6044); 
 
                         	newLeafNode(otherlv_1, grammarAccess.getConstraintCallAccess().getLeftParenthesisKeyword_1_0());
                         
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2993:1: ( (lv_params_2_0= ruleLiteral ) )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2994:1: (lv_params_2_0= ruleLiteral )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3071:1: ( (lv_params_2_0= ruleLiteral ) )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3072:1: (lv_params_2_0= ruleLiteral )
                     {
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2994:1: (lv_params_2_0= ruleLiteral )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:2995:3: lv_params_2_0= ruleLiteral
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3072:1: (lv_params_2_0= ruleLiteral )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3073:3: lv_params_2_0= ruleLiteral
                     {
                      
                     	        newCompositeNode(grammarAccess.getConstraintCallAccess().getParamsLiteralParserRuleCall_1_1_0()); 
                     	    
-                    pushFollow(FOLLOW_ruleLiteral_in_ruleConstraintCall5898);
+                    pushFollow(FOLLOW_ruleLiteral_in_ruleConstraintCall6065);
                     lv_params_2_0=ruleLiteral();
 
                     state._fsp--;
@@ -7663,35 +7880,35 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
                     }
 
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3011:2: (otherlv_3= ',' ( (lv_params_4_0= ruleLiteral ) ) )*
-                    loop80:
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3089:2: (otherlv_3= ',' ( (lv_params_4_0= ruleLiteral ) ) )*
+                    loop84:
                     do {
-                        int alt80=2;
-                        int LA80_0 = input.LA(1);
+                        int alt84=2;
+                        int LA84_0 = input.LA(1);
 
-                        if ( (LA80_0==32) ) {
-                            alt80=1;
+                        if ( (LA84_0==32) ) {
+                            alt84=1;
                         }
 
 
-                        switch (alt80) {
+                        switch (alt84) {
                     	case 1 :
-                    	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3011:4: otherlv_3= ',' ( (lv_params_4_0= ruleLiteral ) )
+                    	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3089:4: otherlv_3= ',' ( (lv_params_4_0= ruleLiteral ) )
                     	    {
-                    	    otherlv_3=(Token)match(input,32,FOLLOW_32_in_ruleConstraintCall5911); 
+                    	    otherlv_3=(Token)match(input,32,FOLLOW_32_in_ruleConstraintCall6078); 
 
                     	        	newLeafNode(otherlv_3, grammarAccess.getConstraintCallAccess().getCommaKeyword_1_2_0());
                     	        
-                    	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3015:1: ( (lv_params_4_0= ruleLiteral ) )
-                    	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3016:1: (lv_params_4_0= ruleLiteral )
+                    	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3093:1: ( (lv_params_4_0= ruleLiteral ) )
+                    	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3094:1: (lv_params_4_0= ruleLiteral )
                     	    {
-                    	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3016:1: (lv_params_4_0= ruleLiteral )
-                    	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3017:3: lv_params_4_0= ruleLiteral
+                    	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3094:1: (lv_params_4_0= ruleLiteral )
+                    	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3095:3: lv_params_4_0= ruleLiteral
                     	    {
                     	     
                     	    	        newCompositeNode(grammarAccess.getConstraintCallAccess().getParamsLiteralParserRuleCall_1_2_1_0()); 
                     	    	    
-                    	    pushFollow(FOLLOW_ruleLiteral_in_ruleConstraintCall5932);
+                    	    pushFollow(FOLLOW_ruleLiteral_in_ruleConstraintCall6099);
                     	    lv_params_4_0=ruleLiteral();
 
                     	    state._fsp--;
@@ -7718,11 +7935,11 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                     	    break;
 
                     	default :
-                    	    break loop80;
+                    	    break loop84;
                         }
                     } while (true);
 
-                    otherlv_5=(Token)match(input,33,FOLLOW_33_in_ruleConstraintCall5946); 
+                    otherlv_5=(Token)match(input,33,FOLLOW_33_in_ruleConstraintCall6113); 
 
                         	newLeafNode(otherlv_5, grammarAccess.getConstraintCallAccess().getRightParenthesisKeyword_1_3());
                         
@@ -7753,7 +7970,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "entryRuleService"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3045:1: entryRuleService returns [EObject current=null] : iv_ruleService= ruleService EOF ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3123:1: entryRuleService returns [EObject current=null] : iv_ruleService= ruleService EOF ;
     public final EObject entryRuleService() throws RecognitionException {
         EObject current = null;
 
@@ -7761,17 +7978,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3046:2: (iv_ruleService= ruleService EOF )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3047:2: iv_ruleService= ruleService EOF
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3124:2: (iv_ruleService= ruleService EOF )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3125:2: iv_ruleService= ruleService EOF
             {
              newCompositeNode(grammarAccess.getServiceRule()); 
-            pushFollow(FOLLOW_ruleService_in_entryRuleService5984);
+            pushFollow(FOLLOW_ruleService_in_entryRuleService6151);
             iv_ruleService=ruleService();
 
             state._fsp--;
 
              current =iv_ruleService; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleService5994); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleService6161); 
 
             }
 
@@ -7789,7 +8006,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "ruleService"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3054:1: ruleService returns [EObject current=null] : ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'service' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_methods_4_0= ruleMethod ) )* otherlv_5= '}' ) ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3132:1: ruleService returns [EObject current=null] : ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'service' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_methods_4_0= ruleMethod ) )* otherlv_5= '}' ) ;
     public final EObject ruleService() throws RecognitionException {
         EObject current = null;
 
@@ -7804,27 +8021,27 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
          enterRule(); 
             
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3057:28: ( ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'service' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_methods_4_0= ruleMethod ) )* otherlv_5= '}' ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3058:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'service' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_methods_4_0= ruleMethod ) )* otherlv_5= '}' )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3135:28: ( ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'service' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_methods_4_0= ruleMethod ) )* otherlv_5= '}' ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3136:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'service' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_methods_4_0= ruleMethod ) )* otherlv_5= '}' )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3058:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'service' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_methods_4_0= ruleMethod ) )* otherlv_5= '}' )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3058:2: ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'service' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_methods_4_0= ruleMethod ) )* otherlv_5= '}'
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3136:1: ( ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'service' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_methods_4_0= ruleMethod ) )* otherlv_5= '}' )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3136:2: ( (lv_doc_0_0= RULE_DOC ) )? otherlv_1= 'service' ( (lv_name_2_0= RULE_ID ) ) otherlv_3= '{' ( (lv_methods_4_0= ruleMethod ) )* otherlv_5= '}'
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3058:2: ( (lv_doc_0_0= RULE_DOC ) )?
-            int alt82=2;
-            int LA82_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3136:2: ( (lv_doc_0_0= RULE_DOC ) )?
+            int alt86=2;
+            int LA86_0 = input.LA(1);
 
-            if ( (LA82_0==RULE_DOC) ) {
-                alt82=1;
+            if ( (LA86_0==RULE_DOC) ) {
+                alt86=1;
             }
-            switch (alt82) {
+            switch (alt86) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3059:1: (lv_doc_0_0= RULE_DOC )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3137:1: (lv_doc_0_0= RULE_DOC )
                     {
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3059:1: (lv_doc_0_0= RULE_DOC )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3060:3: lv_doc_0_0= RULE_DOC
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3137:1: (lv_doc_0_0= RULE_DOC )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3138:3: lv_doc_0_0= RULE_DOC
                     {
-                    lv_doc_0_0=(Token)match(input,RULE_DOC,FOLLOW_RULE_DOC_in_ruleService6036); 
+                    lv_doc_0_0=(Token)match(input,RULE_DOC,FOLLOW_RULE_DOC_in_ruleService6203); 
 
                     			newLeafNode(lv_doc_0_0, grammarAccess.getServiceAccess().getDocDOCTerminalRuleCall_0_0()); 
                     		
@@ -7847,17 +8064,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            otherlv_1=(Token)match(input,52,FOLLOW_52_in_ruleService6054); 
+            otherlv_1=(Token)match(input,53,FOLLOW_53_in_ruleService6221); 
 
                 	newLeafNode(otherlv_1, grammarAccess.getServiceAccess().getServiceKeyword_1());
                 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3080:1: ( (lv_name_2_0= RULE_ID ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3081:1: (lv_name_2_0= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3158:1: ( (lv_name_2_0= RULE_ID ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3159:1: (lv_name_2_0= RULE_ID )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3081:1: (lv_name_2_0= RULE_ID )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3082:3: lv_name_2_0= RULE_ID
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3159:1: (lv_name_2_0= RULE_ID )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3160:3: lv_name_2_0= RULE_ID
             {
-            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleService6071); 
+            lv_name_2_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleService6238); 
 
             			newLeafNode(lv_name_2_0, grammarAccess.getServiceAccess().getNameIDTerminalRuleCall_2_0()); 
             		
@@ -7877,32 +8094,32 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            otherlv_3=(Token)match(input,14,FOLLOW_14_in_ruleService6088); 
+            otherlv_3=(Token)match(input,14,FOLLOW_14_in_ruleService6255); 
 
                 	newLeafNode(otherlv_3, grammarAccess.getServiceAccess().getLeftCurlyBracketKeyword_3());
                 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3102:1: ( (lv_methods_4_0= ruleMethod ) )*
-            loop83:
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3180:1: ( (lv_methods_4_0= ruleMethod ) )*
+            loop87:
             do {
-                int alt83=2;
-                int LA83_0 = input.LA(1);
+                int alt87=2;
+                int LA87_0 = input.LA(1);
 
-                if ( (LA83_0==RULE_DOC||LA83_0==40) ) {
-                    alt83=1;
+                if ( (LA87_0==RULE_DOC||LA87_0==42) ) {
+                    alt87=1;
                 }
 
 
-                switch (alt83) {
+                switch (alt87) {
             	case 1 :
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3103:1: (lv_methods_4_0= ruleMethod )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3181:1: (lv_methods_4_0= ruleMethod )
             	    {
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3103:1: (lv_methods_4_0= ruleMethod )
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3104:3: lv_methods_4_0= ruleMethod
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3181:1: (lv_methods_4_0= ruleMethod )
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3182:3: lv_methods_4_0= ruleMethod
             	    {
             	     
             	    	        newCompositeNode(grammarAccess.getServiceAccess().getMethodsMethodParserRuleCall_4_0()); 
             	    	    
-            	    pushFollow(FOLLOW_ruleMethod_in_ruleService6109);
+            	    pushFollow(FOLLOW_ruleMethod_in_ruleService6276);
             	    lv_methods_4_0=ruleMethod();
 
             	    state._fsp--;
@@ -7926,11 +8143,11 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
             	    break;
 
             	default :
-            	    break loop83;
+            	    break loop87;
                 }
             } while (true);
 
-            otherlv_5=(Token)match(input,15,FOLLOW_15_in_ruleService6122); 
+            otherlv_5=(Token)match(input,15,FOLLOW_15_in_ruleService6289); 
 
                 	newLeafNode(otherlv_5, grammarAccess.getServiceAccess().getRightCurlyBracketKeyword_5());
                 
@@ -7955,7 +8172,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "entryRuleLiteral"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3132:1: entryRuleLiteral returns [EObject current=null] : iv_ruleLiteral= ruleLiteral EOF ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3210:1: entryRuleLiteral returns [EObject current=null] : iv_ruleLiteral= ruleLiteral EOF ;
     public final EObject entryRuleLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -7963,17 +8180,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3133:2: (iv_ruleLiteral= ruleLiteral EOF )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3134:2: iv_ruleLiteral= ruleLiteral EOF
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3211:2: (iv_ruleLiteral= ruleLiteral EOF )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3212:2: iv_ruleLiteral= ruleLiteral EOF
             {
              newCompositeNode(grammarAccess.getLiteralRule()); 
-            pushFollow(FOLLOW_ruleLiteral_in_entryRuleLiteral6158);
+            pushFollow(FOLLOW_ruleLiteral_in_entryRuleLiteral6325);
             iv_ruleLiteral=ruleLiteral();
 
             state._fsp--;
 
              current =iv_ruleLiteral; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleLiteral6168); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleLiteral6335); 
 
             }
 
@@ -7991,7 +8208,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "ruleLiteral"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3141:1: ruleLiteral returns [EObject current=null] : (this_NullLiteral_0= ruleNullLiteral | this_BooleanLiteral_1= ruleBooleanLiteral | this_NumberLiteral_2= ruleNumberLiteral | this_StringLiteral_3= ruleStringLiteral ) ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3219:1: ruleLiteral returns [EObject current=null] : (this_NullLiteral_0= ruleNullLiteral | this_BooleanLiteral_1= ruleBooleanLiteral | this_NumberLiteral_2= ruleNumberLiteral | this_StringLiteral_3= ruleStringLiteral ) ;
     public final EObject ruleLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -8007,50 +8224,50 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
          enterRule(); 
             
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3144:28: ( (this_NullLiteral_0= ruleNullLiteral | this_BooleanLiteral_1= ruleBooleanLiteral | this_NumberLiteral_2= ruleNumberLiteral | this_StringLiteral_3= ruleStringLiteral ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3145:1: (this_NullLiteral_0= ruleNullLiteral | this_BooleanLiteral_1= ruleBooleanLiteral | this_NumberLiteral_2= ruleNumberLiteral | this_StringLiteral_3= ruleStringLiteral )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3222:28: ( (this_NullLiteral_0= ruleNullLiteral | this_BooleanLiteral_1= ruleBooleanLiteral | this_NumberLiteral_2= ruleNumberLiteral | this_StringLiteral_3= ruleStringLiteral ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3223:1: (this_NullLiteral_0= ruleNullLiteral | this_BooleanLiteral_1= ruleBooleanLiteral | this_NumberLiteral_2= ruleNumberLiteral | this_StringLiteral_3= ruleStringLiteral )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3145:1: (this_NullLiteral_0= ruleNullLiteral | this_BooleanLiteral_1= ruleBooleanLiteral | this_NumberLiteral_2= ruleNumberLiteral | this_StringLiteral_3= ruleStringLiteral )
-            int alt84=4;
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3223:1: (this_NullLiteral_0= ruleNullLiteral | this_BooleanLiteral_1= ruleBooleanLiteral | this_NumberLiteral_2= ruleNumberLiteral | this_StringLiteral_3= ruleStringLiteral )
+            int alt88=4;
             switch ( input.LA(1) ) {
-            case 56:
+            case 57:
                 {
-                alt84=1;
+                alt88=1;
                 }
                 break;
-            case 54:
             case 55:
+            case 56:
                 {
-                alt84=2;
+                alt88=2;
                 }
                 break;
             case RULE_INT:
             case RULE_HEX:
             case RULE_DECIMAL:
                 {
-                alt84=3;
+                alt88=3;
                 }
                 break;
             case RULE_STRING:
                 {
-                alt84=4;
+                alt88=4;
                 }
                 break;
             default:
                 NoViableAltException nvae =
-                    new NoViableAltException("", 84, 0, input);
+                    new NoViableAltException("", 88, 0, input);
 
                 throw nvae;
             }
 
-            switch (alt84) {
+            switch (alt88) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3146:5: this_NullLiteral_0= ruleNullLiteral
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3224:5: this_NullLiteral_0= ruleNullLiteral
                     {
                      
                             newCompositeNode(grammarAccess.getLiteralAccess().getNullLiteralParserRuleCall_0()); 
                         
-                    pushFollow(FOLLOW_ruleNullLiteral_in_ruleLiteral6215);
+                    pushFollow(FOLLOW_ruleNullLiteral_in_ruleLiteral6382);
                     this_NullLiteral_0=ruleNullLiteral();
 
                     state._fsp--;
@@ -8063,12 +8280,12 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                     }
                     break;
                 case 2 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3156:5: this_BooleanLiteral_1= ruleBooleanLiteral
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3234:5: this_BooleanLiteral_1= ruleBooleanLiteral
                     {
                      
                             newCompositeNode(grammarAccess.getLiteralAccess().getBooleanLiteralParserRuleCall_1()); 
                         
-                    pushFollow(FOLLOW_ruleBooleanLiteral_in_ruleLiteral6242);
+                    pushFollow(FOLLOW_ruleBooleanLiteral_in_ruleLiteral6409);
                     this_BooleanLiteral_1=ruleBooleanLiteral();
 
                     state._fsp--;
@@ -8081,12 +8298,12 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                     }
                     break;
                 case 3 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3166:5: this_NumberLiteral_2= ruleNumberLiteral
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3244:5: this_NumberLiteral_2= ruleNumberLiteral
                     {
                      
                             newCompositeNode(grammarAccess.getLiteralAccess().getNumberLiteralParserRuleCall_2()); 
                         
-                    pushFollow(FOLLOW_ruleNumberLiteral_in_ruleLiteral6269);
+                    pushFollow(FOLLOW_ruleNumberLiteral_in_ruleLiteral6436);
                     this_NumberLiteral_2=ruleNumberLiteral();
 
                     state._fsp--;
@@ -8099,12 +8316,12 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                     }
                     break;
                 case 4 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3176:5: this_StringLiteral_3= ruleStringLiteral
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3254:5: this_StringLiteral_3= ruleStringLiteral
                     {
                      
                             newCompositeNode(grammarAccess.getLiteralAccess().getStringLiteralParserRuleCall_3()); 
                         
-                    pushFollow(FOLLOW_ruleStringLiteral_in_ruleLiteral6296);
+                    pushFollow(FOLLOW_ruleStringLiteral_in_ruleLiteral6463);
                     this_StringLiteral_3=ruleStringLiteral();
 
                     state._fsp--;
@@ -8137,7 +8354,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "entryRuleFQN"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3192:1: entryRuleFQN returns [String current=null] : iv_ruleFQN= ruleFQN EOF ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3270:1: entryRuleFQN returns [String current=null] : iv_ruleFQN= ruleFQN EOF ;
     public final String entryRuleFQN() throws RecognitionException {
         String current = null;
 
@@ -8145,17 +8362,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3193:2: (iv_ruleFQN= ruleFQN EOF )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3194:2: iv_ruleFQN= ruleFQN EOF
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3271:2: (iv_ruleFQN= ruleFQN EOF )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3272:2: iv_ruleFQN= ruleFQN EOF
             {
              newCompositeNode(grammarAccess.getFQNRule()); 
-            pushFollow(FOLLOW_ruleFQN_in_entryRuleFQN6332);
+            pushFollow(FOLLOW_ruleFQN_in_entryRuleFQN6499);
             iv_ruleFQN=ruleFQN();
 
             state._fsp--;
 
              current =iv_ruleFQN.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFQN6343); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFQN6510); 
 
             }
 
@@ -8173,7 +8390,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "ruleFQN"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3201:1: ruleFQN returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3279:1: ruleFQN returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) ;
     public final AntlrDatatypeRuleToken ruleFQN() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -8184,46 +8401,46 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
          enterRule(); 
             
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3204:28: ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3205:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3282:28: ( (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3283:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3205:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3205:6: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )*
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3283:1: (this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )* )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3283:6: this_ID_0= RULE_ID (kw= '.' this_ID_2= RULE_ID )*
             {
-            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFQN6383); 
+            this_ID_0=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFQN6550); 
 
             		current.merge(this_ID_0);
                 
              
                 newLeafNode(this_ID_0, grammarAccess.getFQNAccess().getIDTerminalRuleCall_0()); 
                 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3212:1: (kw= '.' this_ID_2= RULE_ID )*
-            loop85:
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3290:1: (kw= '.' this_ID_2= RULE_ID )*
+            loop89:
             do {
-                int alt85=2;
-                int LA85_0 = input.LA(1);
+                int alt89=2;
+                int LA89_0 = input.LA(1);
 
-                if ( (LA85_0==53) ) {
-                    int LA85_2 = input.LA(2);
+                if ( (LA89_0==54) ) {
+                    int LA89_2 = input.LA(2);
 
-                    if ( (LA85_2==RULE_ID) ) {
-                        alt85=1;
+                    if ( (LA89_2==RULE_ID) ) {
+                        alt89=1;
                     }
 
 
                 }
 
 
-                switch (alt85) {
+                switch (alt89) {
             	case 1 :
-            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3213:2: kw= '.' this_ID_2= RULE_ID
+            	    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3291:2: kw= '.' this_ID_2= RULE_ID
             	    {
-            	    kw=(Token)match(input,53,FOLLOW_53_in_ruleFQN6402); 
+            	    kw=(Token)match(input,54,FOLLOW_54_in_ruleFQN6569); 
 
             	            current.merge(kw);
             	            newLeafNode(kw, grammarAccess.getFQNAccess().getFullStopKeyword_1_0()); 
             	        
-            	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFQN6417); 
+            	    this_ID_2=(Token)match(input,RULE_ID,FOLLOW_RULE_ID_in_ruleFQN6584); 
 
             	    		current.merge(this_ID_2);
             	        
@@ -8235,7 +8452,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
             	    break;
 
             	default :
-            	    break loop85;
+            	    break loop89;
                 }
             } while (true);
 
@@ -8260,7 +8477,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "entryRuleFQNWithWildcard"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3233:1: entryRuleFQNWithWildcard returns [String current=null] : iv_ruleFQNWithWildcard= ruleFQNWithWildcard EOF ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3311:1: entryRuleFQNWithWildcard returns [String current=null] : iv_ruleFQNWithWildcard= ruleFQNWithWildcard EOF ;
     public final String entryRuleFQNWithWildcard() throws RecognitionException {
         String current = null;
 
@@ -8268,17 +8485,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3234:2: (iv_ruleFQNWithWildcard= ruleFQNWithWildcard EOF )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3235:2: iv_ruleFQNWithWildcard= ruleFQNWithWildcard EOF
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3312:2: (iv_ruleFQNWithWildcard= ruleFQNWithWildcard EOF )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3313:2: iv_ruleFQNWithWildcard= ruleFQNWithWildcard EOF
             {
              newCompositeNode(grammarAccess.getFQNWithWildcardRule()); 
-            pushFollow(FOLLOW_ruleFQNWithWildcard_in_entryRuleFQNWithWildcard6465);
+            pushFollow(FOLLOW_ruleFQNWithWildcard_in_entryRuleFQNWithWildcard6632);
             iv_ruleFQNWithWildcard=ruleFQNWithWildcard();
 
             state._fsp--;
 
              current =iv_ruleFQNWithWildcard.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleFQNWithWildcard6476); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleFQNWithWildcard6643); 
 
             }
 
@@ -8296,7 +8513,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "ruleFQNWithWildcard"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3242:1: ruleFQNWithWildcard returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_FQN_0= ruleFQN kw= '.' kw= '*' ) ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3320:1: ruleFQNWithWildcard returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_FQN_0= ruleFQN kw= '.' kw= '*' ) ;
     public final AntlrDatatypeRuleToken ruleFQNWithWildcard() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -8307,16 +8524,16 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
          enterRule(); 
             
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3245:28: ( (this_FQN_0= ruleFQN kw= '.' kw= '*' ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3246:1: (this_FQN_0= ruleFQN kw= '.' kw= '*' )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3323:28: ( (this_FQN_0= ruleFQN kw= '.' kw= '*' ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3324:1: (this_FQN_0= ruleFQN kw= '.' kw= '*' )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3246:1: (this_FQN_0= ruleFQN kw= '.' kw= '*' )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3247:5: this_FQN_0= ruleFQN kw= '.' kw= '*'
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3324:1: (this_FQN_0= ruleFQN kw= '.' kw= '*' )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3325:5: this_FQN_0= ruleFQN kw= '.' kw= '*'
             {
              
                     newCompositeNode(grammarAccess.getFQNWithWildcardAccess().getFQNParserRuleCall_0()); 
                 
-            pushFollow(FOLLOW_ruleFQN_in_ruleFQNWithWildcard6523);
+            pushFollow(FOLLOW_ruleFQN_in_ruleFQNWithWildcard6690);
             this_FQN_0=ruleFQN();
 
             state._fsp--;
@@ -8327,12 +8544,12 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
              
                     afterParserOrEnumRuleCall();
                 
-            kw=(Token)match(input,53,FOLLOW_53_in_ruleFQNWithWildcard6541); 
+            kw=(Token)match(input,54,FOLLOW_54_in_ruleFQNWithWildcard6708); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getFQNWithWildcardAccess().getFullStopKeyword_1()); 
                 
-            kw=(Token)match(input,49,FOLLOW_49_in_ruleFQNWithWildcard6554); 
+            kw=(Token)match(input,50,FOLLOW_50_in_ruleFQNWithWildcard6721); 
 
                     current.merge(kw);
                     newLeafNode(kw, grammarAccess.getFQNWithWildcardAccess().getAsteriskKeyword_2()); 
@@ -8358,7 +8575,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "entryRuleBooleanLiteral"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3277:1: entryRuleBooleanLiteral returns [EObject current=null] : iv_ruleBooleanLiteral= ruleBooleanLiteral EOF ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3355:1: entryRuleBooleanLiteral returns [EObject current=null] : iv_ruleBooleanLiteral= ruleBooleanLiteral EOF ;
     public final EObject entryRuleBooleanLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -8366,17 +8583,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3278:2: (iv_ruleBooleanLiteral= ruleBooleanLiteral EOF )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3279:2: iv_ruleBooleanLiteral= ruleBooleanLiteral EOF
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3356:2: (iv_ruleBooleanLiteral= ruleBooleanLiteral EOF )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3357:2: iv_ruleBooleanLiteral= ruleBooleanLiteral EOF
             {
              newCompositeNode(grammarAccess.getBooleanLiteralRule()); 
-            pushFollow(FOLLOW_ruleBooleanLiteral_in_entryRuleBooleanLiteral6594);
+            pushFollow(FOLLOW_ruleBooleanLiteral_in_entryRuleBooleanLiteral6761);
             iv_ruleBooleanLiteral=ruleBooleanLiteral();
 
             state._fsp--;
 
              current =iv_ruleBooleanLiteral; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleBooleanLiteral6604); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleBooleanLiteral6771); 
 
             }
 
@@ -8394,7 +8611,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "ruleBooleanLiteral"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3286:1: ruleBooleanLiteral returns [EObject current=null] : ( () ( ( (lv_value_1_1= 'false' | lv_value_1_2= 'true' ) ) ) ) ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3364:1: ruleBooleanLiteral returns [EObject current=null] : ( () ( ( (lv_value_1_1= 'false' | lv_value_1_2= 'true' ) ) ) ) ;
     public final EObject ruleBooleanLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -8404,14 +8621,14 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
          enterRule(); 
             
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3289:28: ( ( () ( ( (lv_value_1_1= 'false' | lv_value_1_2= 'true' ) ) ) ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3290:1: ( () ( ( (lv_value_1_1= 'false' | lv_value_1_2= 'true' ) ) ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3367:28: ( ( () ( ( (lv_value_1_1= 'false' | lv_value_1_2= 'true' ) ) ) ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3368:1: ( () ( ( (lv_value_1_1= 'false' | lv_value_1_2= 'true' ) ) ) )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3290:1: ( () ( ( (lv_value_1_1= 'false' | lv_value_1_2= 'true' ) ) ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3290:2: () ( ( (lv_value_1_1= 'false' | lv_value_1_2= 'true' ) ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3368:1: ( () ( ( (lv_value_1_1= 'false' | lv_value_1_2= 'true' ) ) ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3368:2: () ( ( (lv_value_1_1= 'false' | lv_value_1_2= 'true' ) ) )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3290:2: ()
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3291:5: 
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3368:2: ()
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3369:5: 
             {
 
                     current = forceCreateModelElement(
@@ -8421,33 +8638,33 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3296:2: ( ( (lv_value_1_1= 'false' | lv_value_1_2= 'true' ) ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3297:1: ( (lv_value_1_1= 'false' | lv_value_1_2= 'true' ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3374:2: ( ( (lv_value_1_1= 'false' | lv_value_1_2= 'true' ) ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3375:1: ( (lv_value_1_1= 'false' | lv_value_1_2= 'true' ) )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3297:1: ( (lv_value_1_1= 'false' | lv_value_1_2= 'true' ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3298:1: (lv_value_1_1= 'false' | lv_value_1_2= 'true' )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3375:1: ( (lv_value_1_1= 'false' | lv_value_1_2= 'true' ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3376:1: (lv_value_1_1= 'false' | lv_value_1_2= 'true' )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3298:1: (lv_value_1_1= 'false' | lv_value_1_2= 'true' )
-            int alt86=2;
-            int LA86_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3376:1: (lv_value_1_1= 'false' | lv_value_1_2= 'true' )
+            int alt90=2;
+            int LA90_0 = input.LA(1);
 
-            if ( (LA86_0==54) ) {
-                alt86=1;
+            if ( (LA90_0==55) ) {
+                alt90=1;
             }
-            else if ( (LA86_0==55) ) {
-                alt86=2;
+            else if ( (LA90_0==56) ) {
+                alt90=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 86, 0, input);
+                    new NoViableAltException("", 90, 0, input);
 
                 throw nvae;
             }
-            switch (alt86) {
+            switch (alt90) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3299:3: lv_value_1_1= 'false'
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3377:3: lv_value_1_1= 'false'
                     {
-                    lv_value_1_1=(Token)match(input,54,FOLLOW_54_in_ruleBooleanLiteral6658); 
+                    lv_value_1_1=(Token)match(input,55,FOLLOW_55_in_ruleBooleanLiteral6825); 
 
                             newLeafNode(lv_value_1_1, grammarAccess.getBooleanLiteralAccess().getValueFalseKeyword_1_0_0());
                         
@@ -8461,9 +8678,9 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                     }
                     break;
                 case 2 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3311:8: lv_value_1_2= 'true'
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3389:8: lv_value_1_2= 'true'
                     {
-                    lv_value_1_2=(Token)match(input,55,FOLLOW_55_in_ruleBooleanLiteral6687); 
+                    lv_value_1_2=(Token)match(input,56,FOLLOW_56_in_ruleBooleanLiteral6854); 
 
                             newLeafNode(lv_value_1_2, grammarAccess.getBooleanLiteralAccess().getValueTrueKeyword_1_0_1());
                         
@@ -8506,7 +8723,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "entryRuleNullLiteral"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3334:1: entryRuleNullLiteral returns [EObject current=null] : iv_ruleNullLiteral= ruleNullLiteral EOF ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3412:1: entryRuleNullLiteral returns [EObject current=null] : iv_ruleNullLiteral= ruleNullLiteral EOF ;
     public final EObject entryRuleNullLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -8514,17 +8731,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3335:2: (iv_ruleNullLiteral= ruleNullLiteral EOF )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3336:2: iv_ruleNullLiteral= ruleNullLiteral EOF
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3413:2: (iv_ruleNullLiteral= ruleNullLiteral EOF )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3414:2: iv_ruleNullLiteral= ruleNullLiteral EOF
             {
              newCompositeNode(grammarAccess.getNullLiteralRule()); 
-            pushFollow(FOLLOW_ruleNullLiteral_in_entryRuleNullLiteral6739);
+            pushFollow(FOLLOW_ruleNullLiteral_in_entryRuleNullLiteral6906);
             iv_ruleNullLiteral=ruleNullLiteral();
 
             state._fsp--;
 
              current =iv_ruleNullLiteral; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNullLiteral6749); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNullLiteral6916); 
 
             }
 
@@ -8542,7 +8759,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "ruleNullLiteral"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3343:1: ruleNullLiteral returns [EObject current=null] : ( () ( (lv_value_1_0= 'null' ) ) ) ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3421:1: ruleNullLiteral returns [EObject current=null] : ( () ( (lv_value_1_0= 'null' ) ) ) ;
     public final EObject ruleNullLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -8551,14 +8768,14 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
          enterRule(); 
             
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3346:28: ( ( () ( (lv_value_1_0= 'null' ) ) ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3347:1: ( () ( (lv_value_1_0= 'null' ) ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3424:28: ( ( () ( (lv_value_1_0= 'null' ) ) ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3425:1: ( () ( (lv_value_1_0= 'null' ) ) )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3347:1: ( () ( (lv_value_1_0= 'null' ) ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3347:2: () ( (lv_value_1_0= 'null' ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3425:1: ( () ( (lv_value_1_0= 'null' ) ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3425:2: () ( (lv_value_1_0= 'null' ) )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3347:2: ()
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3348:5: 
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3425:2: ()
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3426:5: 
             {
 
                     current = forceCreateModelElement(
@@ -8568,13 +8785,13 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3353:2: ( (lv_value_1_0= 'null' ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3354:1: (lv_value_1_0= 'null' )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3431:2: ( (lv_value_1_0= 'null' ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3432:1: (lv_value_1_0= 'null' )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3354:1: (lv_value_1_0= 'null' )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3355:3: lv_value_1_0= 'null'
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3432:1: (lv_value_1_0= 'null' )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3433:3: lv_value_1_0= 'null'
             {
-            lv_value_1_0=(Token)match(input,56,FOLLOW_56_in_ruleNullLiteral6801); 
+            lv_value_1_0=(Token)match(input,57,FOLLOW_57_in_ruleNullLiteral6968); 
 
                     newLeafNode(lv_value_1_0, grammarAccess.getNullLiteralAccess().getValueNullKeyword_1_0());
                 
@@ -8611,7 +8828,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "entryRuleNumberLiteral"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3376:1: entryRuleNumberLiteral returns [EObject current=null] : iv_ruleNumberLiteral= ruleNumberLiteral EOF ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3454:1: entryRuleNumberLiteral returns [EObject current=null] : iv_ruleNumberLiteral= ruleNumberLiteral EOF ;
     public final EObject entryRuleNumberLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -8619,17 +8836,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3377:2: (iv_ruleNumberLiteral= ruleNumberLiteral EOF )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3378:2: iv_ruleNumberLiteral= ruleNumberLiteral EOF
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3455:2: (iv_ruleNumberLiteral= ruleNumberLiteral EOF )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3456:2: iv_ruleNumberLiteral= ruleNumberLiteral EOF
             {
              newCompositeNode(grammarAccess.getNumberLiteralRule()); 
-            pushFollow(FOLLOW_ruleNumberLiteral_in_entryRuleNumberLiteral6850);
+            pushFollow(FOLLOW_ruleNumberLiteral_in_entryRuleNumberLiteral7017);
             iv_ruleNumberLiteral=ruleNumberLiteral();
 
             state._fsp--;
 
              current =iv_ruleNumberLiteral; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNumberLiteral6860); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNumberLiteral7027); 
 
             }
 
@@ -8647,7 +8864,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "ruleNumberLiteral"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3385:1: ruleNumberLiteral returns [EObject current=null] : ( () ( (lv_value_1_0= ruleNumber ) ) ) ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3463:1: ruleNumberLiteral returns [EObject current=null] : ( () ( (lv_value_1_0= ruleNumber ) ) ) ;
     public final EObject ruleNumberLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -8657,14 +8874,14 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
          enterRule(); 
             
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3388:28: ( ( () ( (lv_value_1_0= ruleNumber ) ) ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3389:1: ( () ( (lv_value_1_0= ruleNumber ) ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3466:28: ( ( () ( (lv_value_1_0= ruleNumber ) ) ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3467:1: ( () ( (lv_value_1_0= ruleNumber ) ) )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3389:1: ( () ( (lv_value_1_0= ruleNumber ) ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3389:2: () ( (lv_value_1_0= ruleNumber ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3467:1: ( () ( (lv_value_1_0= ruleNumber ) ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3467:2: () ( (lv_value_1_0= ruleNumber ) )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3389:2: ()
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3390:5: 
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3467:2: ()
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3468:5: 
             {
 
                     current = forceCreateModelElement(
@@ -8674,16 +8891,16 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3395:2: ( (lv_value_1_0= ruleNumber ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3396:1: (lv_value_1_0= ruleNumber )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3473:2: ( (lv_value_1_0= ruleNumber ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3474:1: (lv_value_1_0= ruleNumber )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3396:1: (lv_value_1_0= ruleNumber )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3397:3: lv_value_1_0= ruleNumber
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3474:1: (lv_value_1_0= ruleNumber )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3475:3: lv_value_1_0= ruleNumber
             {
              
             	        newCompositeNode(grammarAccess.getNumberLiteralAccess().getValueNumberParserRuleCall_1_0()); 
             	    
-            pushFollow(FOLLOW_ruleNumber_in_ruleNumberLiteral6915);
+            pushFollow(FOLLOW_ruleNumber_in_ruleNumberLiteral7082);
             lv_value_1_0=ruleNumber();
 
             state._fsp--;
@@ -8726,7 +8943,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "entryRuleStringLiteral"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3421:1: entryRuleStringLiteral returns [EObject current=null] : iv_ruleStringLiteral= ruleStringLiteral EOF ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3499:1: entryRuleStringLiteral returns [EObject current=null] : iv_ruleStringLiteral= ruleStringLiteral EOF ;
     public final EObject entryRuleStringLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -8734,17 +8951,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3422:2: (iv_ruleStringLiteral= ruleStringLiteral EOF )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3423:2: iv_ruleStringLiteral= ruleStringLiteral EOF
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3500:2: (iv_ruleStringLiteral= ruleStringLiteral EOF )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3501:2: iv_ruleStringLiteral= ruleStringLiteral EOF
             {
              newCompositeNode(grammarAccess.getStringLiteralRule()); 
-            pushFollow(FOLLOW_ruleStringLiteral_in_entryRuleStringLiteral6951);
+            pushFollow(FOLLOW_ruleStringLiteral_in_entryRuleStringLiteral7118);
             iv_ruleStringLiteral=ruleStringLiteral();
 
             state._fsp--;
 
              current =iv_ruleStringLiteral; 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleStringLiteral6961); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleStringLiteral7128); 
 
             }
 
@@ -8762,7 +8979,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "ruleStringLiteral"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3430:1: ruleStringLiteral returns [EObject current=null] : ( () ( (lv_value_1_0= RULE_STRING ) ) ) ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3508:1: ruleStringLiteral returns [EObject current=null] : ( () ( (lv_value_1_0= RULE_STRING ) ) ) ;
     public final EObject ruleStringLiteral() throws RecognitionException {
         EObject current = null;
 
@@ -8771,14 +8988,14 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
          enterRule(); 
             
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3433:28: ( ( () ( (lv_value_1_0= RULE_STRING ) ) ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3434:1: ( () ( (lv_value_1_0= RULE_STRING ) ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3511:28: ( ( () ( (lv_value_1_0= RULE_STRING ) ) ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3512:1: ( () ( (lv_value_1_0= RULE_STRING ) ) )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3434:1: ( () ( (lv_value_1_0= RULE_STRING ) ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3434:2: () ( (lv_value_1_0= RULE_STRING ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3512:1: ( () ( (lv_value_1_0= RULE_STRING ) ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3512:2: () ( (lv_value_1_0= RULE_STRING ) )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3434:2: ()
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3435:5: 
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3512:2: ()
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3513:5: 
             {
 
                     current = forceCreateModelElement(
@@ -8788,13 +9005,13 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
             }
 
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3440:2: ( (lv_value_1_0= RULE_STRING ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3441:1: (lv_value_1_0= RULE_STRING )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3518:2: ( (lv_value_1_0= RULE_STRING ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3519:1: (lv_value_1_0= RULE_STRING )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3441:1: (lv_value_1_0= RULE_STRING )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3442:3: lv_value_1_0= RULE_STRING
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3519:1: (lv_value_1_0= RULE_STRING )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3520:3: lv_value_1_0= RULE_STRING
             {
-            lv_value_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleStringLiteral7012); 
+            lv_value_1_0=(Token)match(input,RULE_STRING,FOLLOW_RULE_STRING_in_ruleStringLiteral7179); 
 
             			newLeafNode(lv_value_1_0, grammarAccess.getStringLiteralAccess().getValueSTRINGTerminalRuleCall_1_0()); 
             		
@@ -8835,7 +9052,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "entryRuleNumber"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3466:1: entryRuleNumber returns [String current=null] : iv_ruleNumber= ruleNumber EOF ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3544:1: entryRuleNumber returns [String current=null] : iv_ruleNumber= ruleNumber EOF ;
     public final String entryRuleNumber() throws RecognitionException {
         String current = null;
 
@@ -8846,17 +9063,17 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
         	
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3470:2: (iv_ruleNumber= ruleNumber EOF )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3471:2: iv_ruleNumber= ruleNumber EOF
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3548:2: (iv_ruleNumber= ruleNumber EOF )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3549:2: iv_ruleNumber= ruleNumber EOF
             {
              newCompositeNode(grammarAccess.getNumberRule()); 
-            pushFollow(FOLLOW_ruleNumber_in_entryRuleNumber7060);
+            pushFollow(FOLLOW_ruleNumber_in_entryRuleNumber7227);
             iv_ruleNumber=ruleNumber();
 
             state._fsp--;
 
              current =iv_ruleNumber.getText(); 
-            match(input,EOF,FOLLOW_EOF_in_entryRuleNumber7071); 
+            match(input,EOF,FOLLOW_EOF_in_entryRuleNumber7238); 
 
             }
 
@@ -8877,7 +9094,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
 
     // $ANTLR start "ruleNumber"
-    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3481:1: ruleNumber returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_HEX_0= RULE_HEX | ( (this_INT_1= RULE_INT | this_DECIMAL_2= RULE_DECIMAL ) (kw= '.' (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL ) )? ) ) ;
+    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3559:1: ruleNumber returns [AntlrDatatypeRuleToken current=new AntlrDatatypeRuleToken()] : (this_HEX_0= RULE_HEX | ( (this_INT_1= RULE_INT | this_DECIMAL_2= RULE_DECIMAL ) (kw= '.' (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL ) )? ) ) ;
     public final AntlrDatatypeRuleToken ruleNumber() throws RecognitionException {
         AntlrDatatypeRuleToken current = new AntlrDatatypeRuleToken();
 
@@ -8892,30 +9109,30 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
         		HiddenTokens myHiddenTokenState = ((XtextTokenStream)input).setHiddenTokens();
             
         try {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3485:28: ( (this_HEX_0= RULE_HEX | ( (this_INT_1= RULE_INT | this_DECIMAL_2= RULE_DECIMAL ) (kw= '.' (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL ) )? ) ) )
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3486:1: (this_HEX_0= RULE_HEX | ( (this_INT_1= RULE_INT | this_DECIMAL_2= RULE_DECIMAL ) (kw= '.' (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL ) )? ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3563:28: ( (this_HEX_0= RULE_HEX | ( (this_INT_1= RULE_INT | this_DECIMAL_2= RULE_DECIMAL ) (kw= '.' (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL ) )? ) ) )
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3564:1: (this_HEX_0= RULE_HEX | ( (this_INT_1= RULE_INT | this_DECIMAL_2= RULE_DECIMAL ) (kw= '.' (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL ) )? ) )
             {
-            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3486:1: (this_HEX_0= RULE_HEX | ( (this_INT_1= RULE_INT | this_DECIMAL_2= RULE_DECIMAL ) (kw= '.' (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL ) )? ) )
-            int alt90=2;
-            int LA90_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3564:1: (this_HEX_0= RULE_HEX | ( (this_INT_1= RULE_INT | this_DECIMAL_2= RULE_DECIMAL ) (kw= '.' (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL ) )? ) )
+            int alt94=2;
+            int LA94_0 = input.LA(1);
 
-            if ( (LA90_0==RULE_HEX) ) {
-                alt90=1;
+            if ( (LA94_0==RULE_HEX) ) {
+                alt94=1;
             }
-            else if ( (LA90_0==RULE_INT||LA90_0==RULE_DECIMAL) ) {
-                alt90=2;
+            else if ( (LA94_0==RULE_INT||LA94_0==RULE_DECIMAL) ) {
+                alt94=2;
             }
             else {
                 NoViableAltException nvae =
-                    new NoViableAltException("", 90, 0, input);
+                    new NoViableAltException("", 94, 0, input);
 
                 throw nvae;
             }
-            switch (alt90) {
+            switch (alt94) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3486:6: this_HEX_0= RULE_HEX
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3564:6: this_HEX_0= RULE_HEX
                     {
-                    this_HEX_0=(Token)match(input,RULE_HEX,FOLLOW_RULE_HEX_in_ruleNumber7115); 
+                    this_HEX_0=(Token)match(input,RULE_HEX,FOLLOW_RULE_HEX_in_ruleNumber7282); 
 
                     		current.merge(this_HEX_0);
                         
@@ -8926,32 +9143,32 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                     }
                     break;
                 case 2 :
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3494:6: ( (this_INT_1= RULE_INT | this_DECIMAL_2= RULE_DECIMAL ) (kw= '.' (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL ) )? )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3572:6: ( (this_INT_1= RULE_INT | this_DECIMAL_2= RULE_DECIMAL ) (kw= '.' (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL ) )? )
                     {
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3494:6: ( (this_INT_1= RULE_INT | this_DECIMAL_2= RULE_DECIMAL ) (kw= '.' (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL ) )? )
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3494:7: (this_INT_1= RULE_INT | this_DECIMAL_2= RULE_DECIMAL ) (kw= '.' (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL ) )?
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3572:6: ( (this_INT_1= RULE_INT | this_DECIMAL_2= RULE_DECIMAL ) (kw= '.' (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL ) )? )
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3572:7: (this_INT_1= RULE_INT | this_DECIMAL_2= RULE_DECIMAL ) (kw= '.' (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL ) )?
                     {
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3494:7: (this_INT_1= RULE_INT | this_DECIMAL_2= RULE_DECIMAL )
-                    int alt87=2;
-                    int LA87_0 = input.LA(1);
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3572:7: (this_INT_1= RULE_INT | this_DECIMAL_2= RULE_DECIMAL )
+                    int alt91=2;
+                    int LA91_0 = input.LA(1);
 
-                    if ( (LA87_0==RULE_INT) ) {
-                        alt87=1;
+                    if ( (LA91_0==RULE_INT) ) {
+                        alt91=1;
                     }
-                    else if ( (LA87_0==RULE_DECIMAL) ) {
-                        alt87=2;
+                    else if ( (LA91_0==RULE_DECIMAL) ) {
+                        alt91=2;
                     }
                     else {
                         NoViableAltException nvae =
-                            new NoViableAltException("", 87, 0, input);
+                            new NoViableAltException("", 91, 0, input);
 
                         throw nvae;
                     }
-                    switch (alt87) {
+                    switch (alt91) {
                         case 1 :
-                            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3494:12: this_INT_1= RULE_INT
+                            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3572:12: this_INT_1= RULE_INT
                             {
-                            this_INT_1=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleNumber7143); 
+                            this_INT_1=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleNumber7310); 
 
                             		current.merge(this_INT_1);
                                 
@@ -8962,9 +9179,9 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                             }
                             break;
                         case 2 :
-                            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3502:10: this_DECIMAL_2= RULE_DECIMAL
+                            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3580:10: this_DECIMAL_2= RULE_DECIMAL
                             {
-                            this_DECIMAL_2=(Token)match(input,RULE_DECIMAL,FOLLOW_RULE_DECIMAL_in_ruleNumber7169); 
+                            this_DECIMAL_2=(Token)match(input,RULE_DECIMAL,FOLLOW_RULE_DECIMAL_in_ruleNumber7336); 
 
                             		current.merge(this_DECIMAL_2);
                                 
@@ -8977,43 +9194,43 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
 
                     }
 
-                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3509:2: (kw= '.' (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL ) )?
-                    int alt89=2;
-                    int LA89_0 = input.LA(1);
+                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3587:2: (kw= '.' (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL ) )?
+                    int alt93=2;
+                    int LA93_0 = input.LA(1);
 
-                    if ( (LA89_0==53) ) {
-                        alt89=1;
+                    if ( (LA93_0==54) ) {
+                        alt93=1;
                     }
-                    switch (alt89) {
+                    switch (alt93) {
                         case 1 :
-                            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3510:2: kw= '.' (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL )
+                            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3588:2: kw= '.' (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL )
                             {
-                            kw=(Token)match(input,53,FOLLOW_53_in_ruleNumber7189); 
+                            kw=(Token)match(input,54,FOLLOW_54_in_ruleNumber7356); 
 
                                     current.merge(kw);
                                     newLeafNode(kw, grammarAccess.getNumberAccess().getFullStopKeyword_1_1_0()); 
                                 
-                            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3515:1: (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL )
-                            int alt88=2;
-                            int LA88_0 = input.LA(1);
+                            // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3593:1: (this_INT_4= RULE_INT | this_DECIMAL_5= RULE_DECIMAL )
+                            int alt92=2;
+                            int LA92_0 = input.LA(1);
 
-                            if ( (LA88_0==RULE_INT) ) {
-                                alt88=1;
+                            if ( (LA92_0==RULE_INT) ) {
+                                alt92=1;
                             }
-                            else if ( (LA88_0==RULE_DECIMAL) ) {
-                                alt88=2;
+                            else if ( (LA92_0==RULE_DECIMAL) ) {
+                                alt92=2;
                             }
                             else {
                                 NoViableAltException nvae =
-                                    new NoViableAltException("", 88, 0, input);
+                                    new NoViableAltException("", 92, 0, input);
 
                                 throw nvae;
                             }
-                            switch (alt88) {
+                            switch (alt92) {
                                 case 1 :
-                                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3515:6: this_INT_4= RULE_INT
+                                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3593:6: this_INT_4= RULE_INT
                                     {
-                                    this_INT_4=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleNumber7205); 
+                                    this_INT_4=(Token)match(input,RULE_INT,FOLLOW_RULE_INT_in_ruleNumber7372); 
 
                                     		current.merge(this_INT_4);
                                         
@@ -9024,9 +9241,9 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                                     }
                                     break;
                                 case 2 :
-                                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3523:10: this_DECIMAL_5= RULE_DECIMAL
+                                    // ../org.fuin.dsl.ddd.dsl/src-gen/org/fuin/dsl/ddd/parser/antlr/internal/InternalDomainDrivenDesignDsl.g:3601:10: this_DECIMAL_5= RULE_DECIMAL
                                     {
-                                    this_DECIMAL_5=(Token)match(input,RULE_DECIMAL,FOLLOW_RULE_DECIMAL_in_ruleNumber7231); 
+                                    this_DECIMAL_5=(Token)match(input,RULE_DECIMAL,FOLLOW_RULE_DECIMAL_in_ruleNumber7398); 
 
                                     		current.merge(this_DECIMAL_5);
                                         
@@ -9084,20 +9301,18 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
     static final String DFA5_minS =
         "\1\4\1\5\1\4\2\uffff\1\5";
     static final String DFA5_maxS =
-        "\1\4\1\65\1\61\2\uffff\1\65";
+        "\1\4\1\66\1\62\2\uffff\1\66";
     static final String DFA5_acceptS =
         "\3\uffff\1\1\1\2\1\uffff";
     static final String DFA5_specialS =
         "\6\uffff}>";
     static final String[] DFA5_transitionS = {
             "\1\1",
-            "\1\3\11\uffff\1\3\1\uffff\3\3\1\uffff\1\3\2\uffff\1\3\1\uffff"+
-            "\1\3\1\uffff\2\3\4\uffff\1\3\2\uffff\1\3\16\uffff\1\3\1\2",
-            "\1\5\54\uffff\1\4",
+            "\1\3\11\uffff\1\3\1\uffff\3\3\1\uffff\1\3\2\uffff\1\3\1\uffff\1\3\1\uffff\2\3\4\uffff\2\3\2\uffff\1\3\16\uffff\1\3\1\2",
+            "\1\5\55\uffff\1\4",
             "",
             "",
-            "\1\3\11\uffff\1\3\1\uffff\3\3\1\uffff\1\3\2\uffff\1\3\1\uffff"+
-            "\1\3\1\uffff\2\3\4\uffff\1\3\2\uffff\1\3\16\uffff\1\3\1\2"
+            "\1\3\11\uffff\1\3\1\uffff\3\3\1\uffff\1\3\2\uffff\1\3\1\uffff\1\3\1\uffff\2\3\4\uffff\2\3\2\uffff\1\3\16\uffff\1\3\1\2"
     };
 
     static final short[] DFA5_eot = DFA.unpackEncodedString(DFA5_eotS);
@@ -9149,9 +9364,9 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
     public static final BitSet FOLLOW_EOF_in_entryRuleNamespace327 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_16_in_ruleNamespace364 = new BitSet(new long[]{0x0000000000000010L});
     public static final BitSet FOLLOW_ruleFQN_in_ruleNamespace385 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleNamespace397 = new BitSet(new long[]{0x00100024352E8020L});
-    public static final BitSet FOLLOW_ruleImport_in_ruleNamespace418 = new BitSet(new long[]{0x00100024352E8020L});
-    public static final BitSet FOLLOW_ruleAbstractElement_in_ruleNamespace440 = new BitSet(new long[]{0x00100024352C8020L});
+    public static final BitSet FOLLOW_14_in_ruleNamespace397 = new BitSet(new long[]{0x0020004C352E8020L});
+    public static final BitSet FOLLOW_ruleImport_in_ruleNamespace418 = new BitSet(new long[]{0x0020004C352E8020L});
+    public static final BitSet FOLLOW_ruleAbstractElement_in_ruleNamespace440 = new BitSet(new long[]{0x0020004C352C8020L});
     public static final BitSet FOLLOW_15_in_ruleNamespace453 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleImport_in_entryRuleImport489 = new BitSet(new long[]{0x0000000000000000L});
     public static final BitSet FOLLOW_EOF_in_entryRuleImport499 = new BitSet(new long[]{0x0000000000000002L});
@@ -9163,285 +9378,294 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
     public static final BitSet FOLLOW_ruleConstraint_in_ruleAbstractElement674 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleType_in_ruleAbstractElement701 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleException_in_ruleAbstractElement728 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleType_in_entryRuleType763 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleType773 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExternalType_in_ruleType820 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInternalType_in_ruleType847 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleService_in_ruleType874 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInternalType_in_entryRuleInternalType909 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleInternalType919 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAbstractVO_in_ruleInternalType966 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAbstractEntity_in_ruleInternalType993 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAbstractVO_in_entryRuleAbstractVO1028 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAbstractVO1038 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValueObject_in_ruleAbstractVO1085 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEnumObject_in_ruleAbstractVO1112 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAbstractEntityId_in_ruleAbstractVO1139 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAbstractEntityId_in_entryRuleAbstractEntityId1174 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAbstractEntityId1184 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEntityId_in_ruleAbstractEntityId1231 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAggregateId_in_ruleAbstractEntityId1258 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAbstractEntity_in_entryRuleAbstractEntity1293 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAbstractEntity1303 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEntity_in_ruleAbstractEntity1350 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAggregate_in_ruleAbstractEntity1377 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleExternalType_in_entryRuleExternalType1414 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleExternalType1424 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_18_in_ruleExternalType1461 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleExternalType1478 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConstraint_in_entryRuleConstraint1519 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleConstraint1529 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DOC_in_ruleConstraint1571 = new BitSet(new long[]{0x0000000000080000L});
-    public static final BitSet FOLLOW_19_in_ruleConstraint1589 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleConstraint1606 = new BitSet(new long[]{0x0000000000304000L});
-    public static final BitSet FOLLOW_20_in_ruleConstraint1624 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleConstraint1644 = new BitSet(new long[]{0x0000000000204000L});
-    public static final BitSet FOLLOW_21_in_ruleConstraint1659 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleConstraint1679 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleConstraint1693 = new BitSet(new long[]{0x0001000000408030L});
-    public static final BitSet FOLLOW_ruleVariable_in_ruleConstraint1714 = new BitSet(new long[]{0x0001000000408030L});
-    public static final BitSet FOLLOW_22_in_ruleConstraint1728 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleConstraint1745 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_15_in_ruleConstraint1764 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleException_in_entryRuleException1800 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleException1810 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DOC_in_ruleException1852 = new BitSet(new long[]{0x0000000000200000L});
-    public static final BitSet FOLLOW_21_in_ruleException1870 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleException1887 = new BitSet(new long[]{0x0000000000804000L});
-    public static final BitSet FOLLOW_23_in_ruleException1905 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleException1922 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleException1941 = new BitSet(new long[]{0x0001000000400030L});
-    public static final BitSet FOLLOW_ruleVariable_in_ruleException1962 = new BitSet(new long[]{0x0001000000400030L});
-    public static final BitSet FOLLOW_22_in_ruleException1975 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleException1992 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_15_in_ruleException2009 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleValueObject_in_entryRuleValueObject2045 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleValueObject2055 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DOC_in_ruleValueObject2097 = new BitSet(new long[]{0x0000000001000000L});
-    public static final BitSet FOLLOW_24_in_ruleValueObject2115 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleValueObject2132 = new BitSet(new long[]{0x0000000002004000L});
-    public static final BitSet FOLLOW_25_in_ruleValueObject2150 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleValueObject2170 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleValueObject2184 = new BitSet(new long[]{0x0001F94000008030L});
-    public static final BitSet FOLLOW_ruleTypeMetaInfo_in_ruleValueObject2205 = new BitSet(new long[]{0x0001014000008030L});
-    public static final BitSet FOLLOW_ruleVariable_in_ruleValueObject2226 = new BitSet(new long[]{0x0001014000008030L});
-    public static final BitSet FOLLOW_ruleConstructor_in_ruleValueObject2248 = new BitSet(new long[]{0x0000014000008020L});
-    public static final BitSet FOLLOW_ruleMethod_in_ruleValueObject2270 = new BitSet(new long[]{0x0000010000008020L});
-    public static final BitSet FOLLOW_15_in_ruleValueObject2283 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEntityId_in_entryRuleEntityId2319 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleEntityId2329 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DOC_in_ruleEntityId2371 = new BitSet(new long[]{0x0000000004000000L});
-    public static final BitSet FOLLOW_26_in_ruleEntityId2389 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleEntityId2406 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_27_in_ruleEntityId2423 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleEntityId2443 = new BitSet(new long[]{0x0000000002004000L});
-    public static final BitSet FOLLOW_25_in_ruleEntityId2456 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleEntityId2476 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleEntityId2490 = new BitSet(new long[]{0x0001F94000008030L});
-    public static final BitSet FOLLOW_ruleTypeMetaInfo_in_ruleEntityId2511 = new BitSet(new long[]{0x0001014000008030L});
-    public static final BitSet FOLLOW_ruleVariable_in_ruleEntityId2532 = new BitSet(new long[]{0x0001014000008030L});
-    public static final BitSet FOLLOW_ruleConstructor_in_ruleEntityId2554 = new BitSet(new long[]{0x0000014000008020L});
-    public static final BitSet FOLLOW_ruleMethod_in_ruleEntityId2576 = new BitSet(new long[]{0x0000010000008020L});
-    public static final BitSet FOLLOW_15_in_ruleEntityId2589 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAggregateId_in_entryRuleAggregateId2625 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAggregateId2635 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DOC_in_ruleAggregateId2677 = new BitSet(new long[]{0x0000000010000000L});
-    public static final BitSet FOLLOW_28_in_ruleAggregateId2695 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleAggregateId2712 = new BitSet(new long[]{0x0000000008000000L});
-    public static final BitSet FOLLOW_27_in_ruleAggregateId2729 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleAggregateId2749 = new BitSet(new long[]{0x0000000002004000L});
-    public static final BitSet FOLLOW_25_in_ruleAggregateId2762 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleAggregateId2782 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleAggregateId2796 = new BitSet(new long[]{0x0001F94000008030L});
-    public static final BitSet FOLLOW_ruleTypeMetaInfo_in_ruleAggregateId2817 = new BitSet(new long[]{0x0001014000008030L});
-    public static final BitSet FOLLOW_ruleVariable_in_ruleAggregateId2838 = new BitSet(new long[]{0x0001014000008030L});
-    public static final BitSet FOLLOW_ruleConstructor_in_ruleAggregateId2860 = new BitSet(new long[]{0x0000014000008020L});
-    public static final BitSet FOLLOW_ruleMethod_in_ruleAggregateId2882 = new BitSet(new long[]{0x0000010000008020L});
-    public static final BitSet FOLLOW_15_in_ruleAggregateId2895 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEnumObject_in_entryRuleEnumObject2931 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleEnumObject2941 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DOC_in_ruleEnumObject2983 = new BitSet(new long[]{0x0000000020000000L});
-    public static final BitSet FOLLOW_29_in_ruleEnumObject3001 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleEnumObject3018 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleEnumObject3035 = new BitSet(new long[]{0x0001F94040000030L});
-    public static final BitSet FOLLOW_ruleTypeMetaInfo_in_ruleEnumObject3056 = new BitSet(new long[]{0x0001014040000030L});
-    public static final BitSet FOLLOW_ruleVariable_in_ruleEnumObject3077 = new BitSet(new long[]{0x0001014040000030L});
-    public static final BitSet FOLLOW_ruleConstructor_in_ruleEnumObject3099 = new BitSet(new long[]{0x0000014040000020L});
-    public static final BitSet FOLLOW_ruleMethod_in_ruleEnumObject3121 = new BitSet(new long[]{0x0000010040000020L});
-    public static final BitSet FOLLOW_30_in_ruleEnumObject3134 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleEnumObject3146 = new BitSet(new long[]{0x0000000000000030L});
-    public static final BitSet FOLLOW_ruleEnumInstance_in_ruleEnumObject3167 = new BitSet(new long[]{0x0000000000008030L});
-    public static final BitSet FOLLOW_15_in_ruleEnumObject3180 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_15_in_ruleEnumObject3192 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEnumInstance_in_entryRuleEnumInstance3228 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleEnumInstance3238 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DOC_in_ruleEnumInstance3280 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleEnumInstance3303 = new BitSet(new long[]{0x0000000080000002L});
-    public static final BitSet FOLLOW_31_in_ruleEnumInstance3321 = new BitSet(new long[]{0x01C00000000003C0L});
-    public static final BitSet FOLLOW_ruleLiteral_in_ruleEnumInstance3342 = new BitSet(new long[]{0x0000000300000000L});
-    public static final BitSet FOLLOW_32_in_ruleEnumInstance3355 = new BitSet(new long[]{0x01C00000000003C0L});
-    public static final BitSet FOLLOW_ruleLiteral_in_ruleEnumInstance3376 = new BitSet(new long[]{0x0000000300000000L});
-    public static final BitSet FOLLOW_33_in_ruleEnumInstance3390 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEntity_in_entryRuleEntity3428 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleEntity3438 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DOC_in_ruleEntity3480 = new BitSet(new long[]{0x0000000400000000L});
-    public static final BitSet FOLLOW_34_in_ruleEntity3498 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleEntity3515 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_35_in_ruleEntity3532 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleEntity3552 = new BitSet(new long[]{0x0000001000000000L});
-    public static final BitSet FOLLOW_36_in_ruleEntity3564 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleEntity3584 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleEntity3596 = new BitSet(new long[]{0x0001F94000008030L});
-    public static final BitSet FOLLOW_ruleTypeMetaInfo_in_ruleEntity3617 = new BitSet(new long[]{0x0001014000008030L});
-    public static final BitSet FOLLOW_ruleVariable_in_ruleEntity3638 = new BitSet(new long[]{0x0001014000008030L});
-    public static final BitSet FOLLOW_ruleConstructor_in_ruleEntity3660 = new BitSet(new long[]{0x0000014000008020L});
-    public static final BitSet FOLLOW_ruleMethod_in_ruleEntity3682 = new BitSet(new long[]{0x0000010000008020L});
-    public static final BitSet FOLLOW_15_in_ruleEntity3695 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAggregate_in_entryRuleAggregate3731 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleAggregate3741 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DOC_in_ruleAggregate3783 = new BitSet(new long[]{0x0000002000000000L});
-    public static final BitSet FOLLOW_37_in_ruleAggregate3801 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleAggregate3818 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_35_in_ruleAggregate3835 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleAggregate3855 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleAggregate3867 = new BitSet(new long[]{0x0001F94000008030L});
-    public static final BitSet FOLLOW_ruleTypeMetaInfo_in_ruleAggregate3888 = new BitSet(new long[]{0x0001014000008030L});
-    public static final BitSet FOLLOW_ruleVariable_in_ruleAggregate3909 = new BitSet(new long[]{0x0001014000008030L});
-    public static final BitSet FOLLOW_ruleConstructor_in_ruleAggregate3931 = new BitSet(new long[]{0x0000014000008020L});
-    public static final BitSet FOLLOW_ruleMethod_in_ruleAggregate3953 = new BitSet(new long[]{0x0000010000008020L});
-    public static final BitSet FOLLOW_15_in_ruleAggregate3966 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConstructor_in_entryRuleConstructor4004 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleConstructor4014 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DOC_in_ruleConstructor4056 = new BitSet(new long[]{0x0000004000000000L});
-    public static final BitSet FOLLOW_38_in_ruleConstructor4074 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleConstructor4091 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleConstructor4108 = new BitSet(new long[]{0x0005040000008030L});
-    public static final BitSet FOLLOW_ruleVariable_in_ruleConstructor4129 = new BitSet(new long[]{0x0005040000008030L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleConstructor4150 = new BitSet(new long[]{0x0004040000008020L});
-    public static final BitSet FOLLOW_ruleConstraints_in_ruleConstructor4172 = new BitSet(new long[]{0x0000040000008020L});
-    public static final BitSet FOLLOW_ruleEvent_in_ruleConstructor4194 = new BitSet(new long[]{0x0000040000008020L});
-    public static final BitSet FOLLOW_15_in_ruleConstructor4207 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleReturnType_in_entryRuleReturnType4243 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleReturnType4253 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DOC_in_ruleReturnType4295 = new BitSet(new long[]{0x0000008000000000L});
-    public static final BitSet FOLLOW_39_in_ruleReturnType4313 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleReturnType4333 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMethod_in_entryRuleMethod4369 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleMethod4379 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DOC_in_ruleMethod4421 = new BitSet(new long[]{0x0000010000000000L});
-    public static final BitSet FOLLOW_40_in_ruleMethod4439 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleMethod4456 = new BitSet(new long[]{0x0000020000004000L});
-    public static final BitSet FOLLOW_41_in_ruleMethod4474 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleFQN_in_ruleMethod4497 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleMethod4511 = new BitSet(new long[]{0x0005048000008030L});
-    public static final BitSet FOLLOW_ruleVariable_in_ruleMethod4532 = new BitSet(new long[]{0x0005048000008030L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleMethod4553 = new BitSet(new long[]{0x0004048000008020L});
-    public static final BitSet FOLLOW_ruleReturnType_in_ruleMethod4575 = new BitSet(new long[]{0x0004040000008020L});
-    public static final BitSet FOLLOW_ruleConstraints_in_ruleMethod4597 = new BitSet(new long[]{0x0000040000008020L});
-    public static final BitSet FOLLOW_ruleEvent_in_ruleMethod4619 = new BitSet(new long[]{0x0000040000008020L});
-    public static final BitSet FOLLOW_15_in_ruleMethod4632 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEvent_in_entryRuleEvent4668 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleEvent4678 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DOC_in_ruleEvent4720 = new BitSet(new long[]{0x0000040000000000L});
-    public static final BitSet FOLLOW_42_in_ruleEvent4738 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleEvent4755 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleEvent4772 = new BitSet(new long[]{0x0001000000408030L});
-    public static final BitSet FOLLOW_ruleVariable_in_ruleEvent4793 = new BitSet(new long[]{0x0001000000408030L});
-    public static final BitSet FOLLOW_22_in_ruleEvent4807 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleEvent4824 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_15_in_ruleEvent4843 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTypeMetaInfo_in_entryRuleTypeMetaInfo4879 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleTypeMetaInfo4889 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_43_in_ruleTypeMetaInfo4936 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleTypeMetaInfo4953 = new BitSet(new long[]{0x0000F00000000002L});
-    public static final BitSet FOLLOW_44_in_ruleTypeMetaInfo4973 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleTypeMetaInfo4990 = new BitSet(new long[]{0x0000E00000000002L});
-    public static final BitSet FOLLOW_45_in_ruleTypeMetaInfo5010 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleTypeMetaInfo5027 = new BitSet(new long[]{0x0000C00000000002L});
-    public static final BitSet FOLLOW_46_in_ruleTypeMetaInfo5047 = new BitSet(new long[]{0x0000000000000040L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleTypeMetaInfo5064 = new BitSet(new long[]{0x0000800000000002L});
-    public static final BitSet FOLLOW_47_in_ruleTypeMetaInfo5084 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleTypeMetaInfo5101 = new BitSet(new long[]{0x0000000000000042L});
-    public static final BitSet FOLLOW_ruleVariable_in_entryRuleVariable5145 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleVariable5155 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DOC_in_ruleVariable5197 = new BitSet(new long[]{0x0001000000000010L});
-    public static final BitSet FOLLOW_48_in_ruleVariable5221 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleVariable5255 = new BitSet(new long[]{0x0002000000000010L});
-    public static final BitSet FOLLOW_49_in_ruleVariable5273 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleVariable5304 = new BitSet(new long[]{0x0008000000004002L});
-    public static final BitSet FOLLOW_ruleInvariants_in_ruleVariable5330 = new BitSet(new long[]{0x0000000000004002L});
-    public static final BitSet FOLLOW_ruleOverriddenTypeMetaInfo_in_ruleVariable5352 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConstraints_in_entryRuleConstraints5389 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleConstraints5399 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_50_in_ruleConstraints5436 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleConstraints5448 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleConstraintCall_in_ruleConstraints5469 = new BitSet(new long[]{0x0000000100008000L});
-    public static final BitSet FOLLOW_32_in_ruleConstraints5482 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleConstraintCall_in_ruleConstraints5503 = new BitSet(new long[]{0x0000000100008000L});
-    public static final BitSet FOLLOW_15_in_ruleConstraints5517 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInvariants_in_entryRuleInvariants5553 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleInvariants5563 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_51_in_ruleInvariants5600 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleConstraintCall_in_ruleInvariants5621 = new BitSet(new long[]{0x0000000100000002L});
-    public static final BitSet FOLLOW_32_in_ruleInvariants5634 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_ruleConstraintCall_in_ruleInvariants5655 = new BitSet(new long[]{0x0000000100000002L});
-    public static final BitSet FOLLOW_ruleOverriddenTypeMetaInfo_in_entryRuleOverriddenTypeMetaInfo5693 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleOverriddenTypeMetaInfo5703 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_14_in_ruleOverriddenTypeMetaInfo5740 = new BitSet(new long[]{0x0000F80000008000L});
-    public static final BitSet FOLLOW_ruleTypeMetaInfo_in_ruleOverriddenTypeMetaInfo5761 = new BitSet(new long[]{0x0000000000008000L});
-    public static final BitSet FOLLOW_15_in_ruleOverriddenTypeMetaInfo5773 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConstraintCall_in_entryRuleConstraintCall5809 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleConstraintCall5819 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleConstraintCall5864 = new BitSet(new long[]{0x0000000080000002L});
-    public static final BitSet FOLLOW_31_in_ruleConstraintCall5877 = new BitSet(new long[]{0x01C00000000003C0L});
-    public static final BitSet FOLLOW_ruleLiteral_in_ruleConstraintCall5898 = new BitSet(new long[]{0x0000000300000000L});
-    public static final BitSet FOLLOW_32_in_ruleConstraintCall5911 = new BitSet(new long[]{0x01C00000000003C0L});
-    public static final BitSet FOLLOW_ruleLiteral_in_ruleConstraintCall5932 = new BitSet(new long[]{0x0000000300000000L});
-    public static final BitSet FOLLOW_33_in_ruleConstraintCall5946 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleService_in_entryRuleService5984 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleService5994 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DOC_in_ruleService6036 = new BitSet(new long[]{0x0010000000000000L});
-    public static final BitSet FOLLOW_52_in_ruleService6054 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleService6071 = new BitSet(new long[]{0x0000000000004000L});
-    public static final BitSet FOLLOW_14_in_ruleService6088 = new BitSet(new long[]{0x0000010000008020L});
-    public static final BitSet FOLLOW_ruleMethod_in_ruleService6109 = new BitSet(new long[]{0x0000010000008020L});
-    public static final BitSet FOLLOW_15_in_ruleService6122 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLiteral_in_entryRuleLiteral6158 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleLiteral6168 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNullLiteral_in_ruleLiteral6215 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBooleanLiteral_in_ruleLiteral6242 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNumberLiteral_in_ruleLiteral6269 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStringLiteral_in_ruleLiteral6296 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFQN_in_entryRuleFQN6332 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFQN6343 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleFQN6383 = new BitSet(new long[]{0x0020000000000002L});
-    public static final BitSet FOLLOW_53_in_ruleFQN6402 = new BitSet(new long[]{0x0000000000000010L});
-    public static final BitSet FOLLOW_RULE_ID_in_ruleFQN6417 = new BitSet(new long[]{0x0020000000000002L});
-    public static final BitSet FOLLOW_ruleFQNWithWildcard_in_entryRuleFQNWithWildcard6465 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleFQNWithWildcard6476 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFQN_in_ruleFQNWithWildcard6523 = new BitSet(new long[]{0x0020000000000000L});
-    public static final BitSet FOLLOW_53_in_ruleFQNWithWildcard6541 = new BitSet(new long[]{0x0002000000000000L});
-    public static final BitSet FOLLOW_49_in_ruleFQNWithWildcard6554 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleBooleanLiteral_in_entryRuleBooleanLiteral6594 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleBooleanLiteral6604 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_54_in_ruleBooleanLiteral6658 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_55_in_ruleBooleanLiteral6687 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNullLiteral_in_entryRuleNullLiteral6739 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNullLiteral6749 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_56_in_ruleNullLiteral6801 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNumberLiteral_in_entryRuleNumberLiteral6850 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNumberLiteral6860 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNumber_in_ruleNumberLiteral6915 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleStringLiteral_in_entryRuleStringLiteral6951 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleStringLiteral6961 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_ruleStringLiteral7012 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNumber_in_entryRuleNumber7060 = new BitSet(new long[]{0x0000000000000000L});
-    public static final BitSet FOLLOW_EOF_in_entryRuleNumber7071 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_HEX_in_ruleNumber7115 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleNumber7143 = new BitSet(new long[]{0x0020000000000002L});
-    public static final BitSet FOLLOW_RULE_DECIMAL_in_ruleNumber7169 = new BitSet(new long[]{0x0020000000000002L});
-    public static final BitSet FOLLOW_53_in_ruleNumber7189 = new BitSet(new long[]{0x0000000000000280L});
-    public static final BitSet FOLLOW_RULE_INT_in_ruleNumber7205 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DECIMAL_in_ruleNumber7231 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEvent_in_ruleAbstractElement755 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleType_in_entryRuleType790 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleType800 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExternalType_in_ruleType847 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInternalType_in_ruleType874 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleService_in_ruleType901 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInternalType_in_entryRuleInternalType936 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleInternalType946 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAbstractVO_in_ruleInternalType993 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAbstractEntity_in_ruleInternalType1020 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAbstractVO_in_entryRuleAbstractVO1055 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAbstractVO1065 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValueObject_in_ruleAbstractVO1112 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEnumObject_in_ruleAbstractVO1139 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAbstractEntityId_in_ruleAbstractVO1166 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAbstractEntityId_in_entryRuleAbstractEntityId1201 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAbstractEntityId1211 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEntityId_in_ruleAbstractEntityId1258 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAggregateId_in_ruleAbstractEntityId1285 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAbstractEntity_in_entryRuleAbstractEntity1320 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAbstractEntity1330 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEntity_in_ruleAbstractEntity1377 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAggregate_in_ruleAbstractEntity1404 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleExternalType_in_entryRuleExternalType1441 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleExternalType1451 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_18_in_ruleExternalType1488 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleExternalType1505 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConstraint_in_entryRuleConstraint1546 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleConstraint1556 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DOC_in_ruleConstraint1598 = new BitSet(new long[]{0x0000000000080000L});
+    public static final BitSet FOLLOW_19_in_ruleConstraint1616 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleConstraint1633 = new BitSet(new long[]{0x0000000000304000L});
+    public static final BitSet FOLLOW_20_in_ruleConstraint1651 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleConstraint1671 = new BitSet(new long[]{0x0000000000204000L});
+    public static final BitSet FOLLOW_21_in_ruleConstraint1686 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleConstraint1706 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleConstraint1720 = new BitSet(new long[]{0x0002000000408030L});
+    public static final BitSet FOLLOW_ruleVariable_in_ruleConstraint1741 = new BitSet(new long[]{0x0002000000408030L});
+    public static final BitSet FOLLOW_22_in_ruleConstraint1755 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleConstraint1772 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleConstraint1791 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleException_in_entryRuleException1827 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleException1837 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DOC_in_ruleException1879 = new BitSet(new long[]{0x0000000000200000L});
+    public static final BitSet FOLLOW_21_in_ruleException1897 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleException1914 = new BitSet(new long[]{0x0000000000804000L});
+    public static final BitSet FOLLOW_23_in_ruleException1932 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleException1949 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleException1968 = new BitSet(new long[]{0x0002000000400030L});
+    public static final BitSet FOLLOW_ruleVariable_in_ruleException1989 = new BitSet(new long[]{0x0002000000400030L});
+    public static final BitSet FOLLOW_22_in_ruleException2002 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleException2019 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleException2036 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleValueObject_in_entryRuleValueObject2072 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleValueObject2082 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DOC_in_ruleValueObject2124 = new BitSet(new long[]{0x0000000001000000L});
+    public static final BitSet FOLLOW_24_in_ruleValueObject2142 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleValueObject2159 = new BitSet(new long[]{0x0000000002004000L});
+    public static final BitSet FOLLOW_25_in_ruleValueObject2177 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleValueObject2197 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleValueObject2211 = new BitSet(new long[]{0x0003F48000008030L});
+    public static final BitSet FOLLOW_ruleTypeMetaInfo_in_ruleValueObject2232 = new BitSet(new long[]{0x0002048000008030L});
+    public static final BitSet FOLLOW_ruleVariable_in_ruleValueObject2253 = new BitSet(new long[]{0x0002048000008030L});
+    public static final BitSet FOLLOW_ruleConstructor_in_ruleValueObject2275 = new BitSet(new long[]{0x0000048000008020L});
+    public static final BitSet FOLLOW_ruleMethod_in_ruleValueObject2297 = new BitSet(new long[]{0x0000040000008020L});
+    public static final BitSet FOLLOW_15_in_ruleValueObject2310 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEntityId_in_entryRuleEntityId2346 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEntityId2356 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DOC_in_ruleEntityId2398 = new BitSet(new long[]{0x0000000004000000L});
+    public static final BitSet FOLLOW_26_in_ruleEntityId2416 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleEntityId2433 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_27_in_ruleEntityId2450 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleEntityId2470 = new BitSet(new long[]{0x0000000002004000L});
+    public static final BitSet FOLLOW_25_in_ruleEntityId2483 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleEntityId2503 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleEntityId2517 = new BitSet(new long[]{0x0003F48000008030L});
+    public static final BitSet FOLLOW_ruleTypeMetaInfo_in_ruleEntityId2538 = new BitSet(new long[]{0x0002048000008030L});
+    public static final BitSet FOLLOW_ruleVariable_in_ruleEntityId2559 = new BitSet(new long[]{0x0002048000008030L});
+    public static final BitSet FOLLOW_ruleConstructor_in_ruleEntityId2581 = new BitSet(new long[]{0x0000048000008020L});
+    public static final BitSet FOLLOW_ruleMethod_in_ruleEntityId2603 = new BitSet(new long[]{0x0000040000008020L});
+    public static final BitSet FOLLOW_15_in_ruleEntityId2616 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAggregateId_in_entryRuleAggregateId2652 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAggregateId2662 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DOC_in_ruleAggregateId2704 = new BitSet(new long[]{0x0000000010000000L});
+    public static final BitSet FOLLOW_28_in_ruleAggregateId2722 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleAggregateId2739 = new BitSet(new long[]{0x0000000008000000L});
+    public static final BitSet FOLLOW_27_in_ruleAggregateId2756 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleAggregateId2776 = new BitSet(new long[]{0x0000000002004000L});
+    public static final BitSet FOLLOW_25_in_ruleAggregateId2789 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleAggregateId2809 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleAggregateId2823 = new BitSet(new long[]{0x0003F48000008030L});
+    public static final BitSet FOLLOW_ruleTypeMetaInfo_in_ruleAggregateId2844 = new BitSet(new long[]{0x0002048000008030L});
+    public static final BitSet FOLLOW_ruleVariable_in_ruleAggregateId2865 = new BitSet(new long[]{0x0002048000008030L});
+    public static final BitSet FOLLOW_ruleConstructor_in_ruleAggregateId2887 = new BitSet(new long[]{0x0000048000008020L});
+    public static final BitSet FOLLOW_ruleMethod_in_ruleAggregateId2909 = new BitSet(new long[]{0x0000040000008020L});
+    public static final BitSet FOLLOW_15_in_ruleAggregateId2922 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEnumObject_in_entryRuleEnumObject2958 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEnumObject2968 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DOC_in_ruleEnumObject3010 = new BitSet(new long[]{0x0000000020000000L});
+    public static final BitSet FOLLOW_29_in_ruleEnumObject3028 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleEnumObject3045 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleEnumObject3062 = new BitSet(new long[]{0x0003F48040000030L});
+    public static final BitSet FOLLOW_ruleTypeMetaInfo_in_ruleEnumObject3083 = new BitSet(new long[]{0x0002048040000030L});
+    public static final BitSet FOLLOW_ruleVariable_in_ruleEnumObject3104 = new BitSet(new long[]{0x0002048040000030L});
+    public static final BitSet FOLLOW_ruleConstructor_in_ruleEnumObject3126 = new BitSet(new long[]{0x0000048040000020L});
+    public static final BitSet FOLLOW_ruleMethod_in_ruleEnumObject3148 = new BitSet(new long[]{0x0000040040000020L});
+    public static final BitSet FOLLOW_30_in_ruleEnumObject3161 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleEnumObject3173 = new BitSet(new long[]{0x0000000000000030L});
+    public static final BitSet FOLLOW_ruleEnumInstance_in_ruleEnumObject3194 = new BitSet(new long[]{0x0000000000008030L});
+    public static final BitSet FOLLOW_15_in_ruleEnumObject3207 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleEnumObject3219 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEnumInstance_in_entryRuleEnumInstance3255 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEnumInstance3265 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DOC_in_ruleEnumInstance3307 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleEnumInstance3330 = new BitSet(new long[]{0x0000000080000002L});
+    public static final BitSet FOLLOW_31_in_ruleEnumInstance3348 = new BitSet(new long[]{0x03800000000003C0L});
+    public static final BitSet FOLLOW_ruleLiteral_in_ruleEnumInstance3369 = new BitSet(new long[]{0x0000000300000000L});
+    public static final BitSet FOLLOW_32_in_ruleEnumInstance3382 = new BitSet(new long[]{0x03800000000003C0L});
+    public static final BitSet FOLLOW_ruleLiteral_in_ruleEnumInstance3403 = new BitSet(new long[]{0x0000000300000000L});
+    public static final BitSet FOLLOW_33_in_ruleEnumInstance3417 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEvent_in_entryRuleEvent3455 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEvent3465 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DOC_in_ruleEvent3507 = new BitSet(new long[]{0x0000000400000000L});
+    public static final BitSet FOLLOW_34_in_ruleEvent3525 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleEvent3542 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleEvent3559 = new BitSet(new long[]{0x0002000000408030L});
+    public static final BitSet FOLLOW_ruleVariable_in_ruleEvent3580 = new BitSet(new long[]{0x0002000000408030L});
+    public static final BitSet FOLLOW_22_in_ruleEvent3594 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleEvent3611 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleEvent3630 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEntity_in_entryRuleEntity3666 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleEntity3676 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DOC_in_ruleEntity3718 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_35_in_ruleEntity3736 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleEntity3753 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_36_in_ruleEntity3770 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleEntity3790 = new BitSet(new long[]{0x0000002000000000L});
+    public static final BitSet FOLLOW_37_in_ruleEntity3802 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleEntity3822 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleEntity3834 = new BitSet(new long[]{0x0023F4CC352C8030L});
+    public static final BitSet FOLLOW_ruleTypeMetaInfo_in_ruleEntity3855 = new BitSet(new long[]{0x002204CC352C8030L});
+    public static final BitSet FOLLOW_ruleVariable_in_ruleEntity3876 = new BitSet(new long[]{0x002204CC352C8030L});
+    public static final BitSet FOLLOW_ruleConstructor_in_ruleEntity3898 = new BitSet(new long[]{0x002004CC352C8020L});
+    public static final BitSet FOLLOW_ruleMethod_in_ruleEntity3920 = new BitSet(new long[]{0x0020044C352C8020L});
+    public static final BitSet FOLLOW_ruleEvent_in_ruleEntity3942 = new BitSet(new long[]{0x0020004C352C8020L});
+    public static final BitSet FOLLOW_15_in_ruleEntity3955 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAggregate_in_entryRuleAggregate3991 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleAggregate4001 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DOC_in_ruleAggregate4043 = new BitSet(new long[]{0x0000004000000000L});
+    public static final BitSet FOLLOW_38_in_ruleAggregate4061 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleAggregate4078 = new BitSet(new long[]{0x0000001000000000L});
+    public static final BitSet FOLLOW_36_in_ruleAggregate4095 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleAggregate4115 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleAggregate4127 = new BitSet(new long[]{0x0023F4CC352C8030L});
+    public static final BitSet FOLLOW_ruleTypeMetaInfo_in_ruleAggregate4148 = new BitSet(new long[]{0x002204CC352C8030L});
+    public static final BitSet FOLLOW_ruleVariable_in_ruleAggregate4169 = new BitSet(new long[]{0x002204CC352C8030L});
+    public static final BitSet FOLLOW_ruleConstructor_in_ruleAggregate4191 = new BitSet(new long[]{0x002004CC352C8020L});
+    public static final BitSet FOLLOW_ruleMethod_in_ruleAggregate4213 = new BitSet(new long[]{0x0020044C352C8020L});
+    public static final BitSet FOLLOW_ruleEvent_in_ruleAggregate4235 = new BitSet(new long[]{0x0020004C352C8020L});
+    public static final BitSet FOLLOW_15_in_ruleAggregate4248 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConstructor_in_entryRuleConstructor4286 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleConstructor4296 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DOC_in_ruleConstructor4338 = new BitSet(new long[]{0x0000008000000000L});
+    public static final BitSet FOLLOW_39_in_ruleConstructor4356 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleConstructor4373 = new BitSet(new long[]{0x0000010000004000L});
+    public static final BitSet FOLLOW_40_in_ruleConstructor4391 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleConstructor4411 = new BitSet(new long[]{0x0000000100004000L});
+    public static final BitSet FOLLOW_32_in_ruleConstructor4424 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleConstructor4444 = new BitSet(new long[]{0x0000000100004000L});
+    public static final BitSet FOLLOW_14_in_ruleConstructor4460 = new BitSet(new long[]{0x000A000000008030L});
+    public static final BitSet FOLLOW_ruleVariable_in_ruleConstructor4481 = new BitSet(new long[]{0x000A000000008030L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleConstructor4502 = new BitSet(new long[]{0x0008000000008000L});
+    public static final BitSet FOLLOW_ruleConstraints_in_ruleConstructor4524 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleConstructor4537 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleReturnType_in_entryRuleReturnType4573 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleReturnType4583 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DOC_in_ruleReturnType4625 = new BitSet(new long[]{0x0000020000000000L});
+    public static final BitSet FOLLOW_41_in_ruleReturnType4643 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleReturnType4663 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMethod_in_entryRuleMethod4699 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleMethod4709 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DOC_in_ruleMethod4751 = new BitSet(new long[]{0x0000040000000000L});
+    public static final BitSet FOLLOW_42_in_ruleMethod4769 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleMethod4786 = new BitSet(new long[]{0x0000090000004000L});
+    public static final BitSet FOLLOW_43_in_ruleMethod4804 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleFQN_in_ruleMethod4827 = new BitSet(new long[]{0x0000010000004000L});
+    public static final BitSet FOLLOW_40_in_ruleMethod4842 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleMethod4862 = new BitSet(new long[]{0x0000000100004000L});
+    public static final BitSet FOLLOW_32_in_ruleMethod4875 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleMethod4895 = new BitSet(new long[]{0x0000000100004000L});
+    public static final BitSet FOLLOW_14_in_ruleMethod4911 = new BitSet(new long[]{0x000A020000008030L});
+    public static final BitSet FOLLOW_ruleVariable_in_ruleMethod4932 = new BitSet(new long[]{0x000A020000008030L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleMethod4953 = new BitSet(new long[]{0x0008020000008020L});
+    public static final BitSet FOLLOW_ruleReturnType_in_ruleMethod4975 = new BitSet(new long[]{0x0008000000008000L});
+    public static final BitSet FOLLOW_ruleConstraints_in_ruleMethod4997 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleMethod5010 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTypeMetaInfo_in_entryRuleTypeMetaInfo5046 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleTypeMetaInfo5056 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_44_in_ruleTypeMetaInfo5103 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleTypeMetaInfo5120 = new BitSet(new long[]{0x0001E00000000002L});
+    public static final BitSet FOLLOW_45_in_ruleTypeMetaInfo5140 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleTypeMetaInfo5157 = new BitSet(new long[]{0x0001C00000000002L});
+    public static final BitSet FOLLOW_46_in_ruleTypeMetaInfo5177 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleTypeMetaInfo5194 = new BitSet(new long[]{0x0001800000000002L});
+    public static final BitSet FOLLOW_47_in_ruleTypeMetaInfo5214 = new BitSet(new long[]{0x0000000000000040L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleTypeMetaInfo5231 = new BitSet(new long[]{0x0001000000000002L});
+    public static final BitSet FOLLOW_48_in_ruleTypeMetaInfo5251 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleTypeMetaInfo5268 = new BitSet(new long[]{0x0000000000000042L});
+    public static final BitSet FOLLOW_ruleVariable_in_entryRuleVariable5312 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleVariable5322 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DOC_in_ruleVariable5364 = new BitSet(new long[]{0x0002000000000010L});
+    public static final BitSet FOLLOW_49_in_ruleVariable5388 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleVariable5422 = new BitSet(new long[]{0x0004000000000010L});
+    public static final BitSet FOLLOW_50_in_ruleVariable5440 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleVariable5471 = new BitSet(new long[]{0x0010000000004002L});
+    public static final BitSet FOLLOW_ruleInvariants_in_ruleVariable5497 = new BitSet(new long[]{0x0000000000004002L});
+    public static final BitSet FOLLOW_ruleOverriddenTypeMetaInfo_in_ruleVariable5519 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConstraints_in_entryRuleConstraints5556 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleConstraints5566 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_51_in_ruleConstraints5603 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleConstraints5615 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleConstraintCall_in_ruleConstraints5636 = new BitSet(new long[]{0x0000000100008000L});
+    public static final BitSet FOLLOW_32_in_ruleConstraints5649 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleConstraintCall_in_ruleConstraints5670 = new BitSet(new long[]{0x0000000100008000L});
+    public static final BitSet FOLLOW_15_in_ruleConstraints5684 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInvariants_in_entryRuleInvariants5720 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleInvariants5730 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_52_in_ruleInvariants5767 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleConstraintCall_in_ruleInvariants5788 = new BitSet(new long[]{0x0000000100000002L});
+    public static final BitSet FOLLOW_32_in_ruleInvariants5801 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_ruleConstraintCall_in_ruleInvariants5822 = new BitSet(new long[]{0x0000000100000002L});
+    public static final BitSet FOLLOW_ruleOverriddenTypeMetaInfo_in_entryRuleOverriddenTypeMetaInfo5860 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleOverriddenTypeMetaInfo5870 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_14_in_ruleOverriddenTypeMetaInfo5907 = new BitSet(new long[]{0x0001F00000008000L});
+    public static final BitSet FOLLOW_ruleTypeMetaInfo_in_ruleOverriddenTypeMetaInfo5928 = new BitSet(new long[]{0x0000000000008000L});
+    public static final BitSet FOLLOW_15_in_ruleOverriddenTypeMetaInfo5940 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConstraintCall_in_entryRuleConstraintCall5976 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleConstraintCall5986 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleConstraintCall6031 = new BitSet(new long[]{0x0000000080000002L});
+    public static final BitSet FOLLOW_31_in_ruleConstraintCall6044 = new BitSet(new long[]{0x03800000000003C0L});
+    public static final BitSet FOLLOW_ruleLiteral_in_ruleConstraintCall6065 = new BitSet(new long[]{0x0000000300000000L});
+    public static final BitSet FOLLOW_32_in_ruleConstraintCall6078 = new BitSet(new long[]{0x03800000000003C0L});
+    public static final BitSet FOLLOW_ruleLiteral_in_ruleConstraintCall6099 = new BitSet(new long[]{0x0000000300000000L});
+    public static final BitSet FOLLOW_33_in_ruleConstraintCall6113 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleService_in_entryRuleService6151 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleService6161 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DOC_in_ruleService6203 = new BitSet(new long[]{0x0020000000000000L});
+    public static final BitSet FOLLOW_53_in_ruleService6221 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleService6238 = new BitSet(new long[]{0x0000000000004000L});
+    public static final BitSet FOLLOW_14_in_ruleService6255 = new BitSet(new long[]{0x0000040000008020L});
+    public static final BitSet FOLLOW_ruleMethod_in_ruleService6276 = new BitSet(new long[]{0x0000040000008020L});
+    public static final BitSet FOLLOW_15_in_ruleService6289 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLiteral_in_entryRuleLiteral6325 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleLiteral6335 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNullLiteral_in_ruleLiteral6382 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBooleanLiteral_in_ruleLiteral6409 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNumberLiteral_in_ruleLiteral6436 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStringLiteral_in_ruleLiteral6463 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFQN_in_entryRuleFQN6499 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFQN6510 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleFQN6550 = new BitSet(new long[]{0x0040000000000002L});
+    public static final BitSet FOLLOW_54_in_ruleFQN6569 = new BitSet(new long[]{0x0000000000000010L});
+    public static final BitSet FOLLOW_RULE_ID_in_ruleFQN6584 = new BitSet(new long[]{0x0040000000000002L});
+    public static final BitSet FOLLOW_ruleFQNWithWildcard_in_entryRuleFQNWithWildcard6632 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleFQNWithWildcard6643 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFQN_in_ruleFQNWithWildcard6690 = new BitSet(new long[]{0x0040000000000000L});
+    public static final BitSet FOLLOW_54_in_ruleFQNWithWildcard6708 = new BitSet(new long[]{0x0004000000000000L});
+    public static final BitSet FOLLOW_50_in_ruleFQNWithWildcard6721 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleBooleanLiteral_in_entryRuleBooleanLiteral6761 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleBooleanLiteral6771 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_55_in_ruleBooleanLiteral6825 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_56_in_ruleBooleanLiteral6854 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNullLiteral_in_entryRuleNullLiteral6906 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNullLiteral6916 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_57_in_ruleNullLiteral6968 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNumberLiteral_in_entryRuleNumberLiteral7017 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNumberLiteral7027 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNumber_in_ruleNumberLiteral7082 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleStringLiteral_in_entryRuleStringLiteral7118 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleStringLiteral7128 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_ruleStringLiteral7179 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNumber_in_entryRuleNumber7227 = new BitSet(new long[]{0x0000000000000000L});
+    public static final BitSet FOLLOW_EOF_in_entryRuleNumber7238 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_HEX_in_ruleNumber7282 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleNumber7310 = new BitSet(new long[]{0x0040000000000002L});
+    public static final BitSet FOLLOW_RULE_DECIMAL_in_ruleNumber7336 = new BitSet(new long[]{0x0040000000000002L});
+    public static final BitSet FOLLOW_54_in_ruleNumber7356 = new BitSet(new long[]{0x0000000000000280L});
+    public static final BitSet FOLLOW_RULE_INT_in_ruleNumber7372 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DECIMAL_in_ruleNumber7398 = new BitSet(new long[]{0x0000000000000002L});
 
 }

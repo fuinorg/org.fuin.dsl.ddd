@@ -121,13 +121,13 @@ public class DomainDrivenDesignDslFactoryImpl extends EFactoryImpl implements Do
       case DomainDrivenDesignDslPackage.AGGREGATE_ID: return createAggregateId();
       case DomainDrivenDesignDslPackage.ENUM_OBJECT: return createEnumObject();
       case DomainDrivenDesignDslPackage.ENUM_INSTANCE: return createEnumInstance();
+      case DomainDrivenDesignDslPackage.EVENT: return createEvent();
       case DomainDrivenDesignDslPackage.ENTITY: return createEntity();
       case DomainDrivenDesignDslPackage.AGGREGATE: return createAggregate();
       case DomainDrivenDesignDslPackage.ABSTRACT_METHOD: return createAbstractMethod();
       case DomainDrivenDesignDslPackage.CONSTRUCTOR: return createConstructor();
       case DomainDrivenDesignDslPackage.RETURN_TYPE: return createReturnType();
       case DomainDrivenDesignDslPackage.METHOD: return createMethod();
-      case DomainDrivenDesignDslPackage.EVENT: return createEvent();
       case DomainDrivenDesignDslPackage.TYPE_META_INFO: return createTypeMetaInfo();
       case DomainDrivenDesignDslPackage.VARIABLE: return createVariable();
       case DomainDrivenDesignDslPackage.CONSTRAINTS: return createConstraints();
@@ -359,6 +359,17 @@ public class DomainDrivenDesignDslFactoryImpl extends EFactoryImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
+  public Event createEvent()
+  {
+    EventImpl event = new EventImpl();
+    return event;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Entity createEntity()
   {
     EntityImpl entity = new EntityImpl();
@@ -418,17 +429,6 @@ public class DomainDrivenDesignDslFactoryImpl extends EFactoryImpl implements Do
   {
     MethodImpl method = new MethodImpl();
     return method;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Event createEvent()
-  {
-    EventImpl event = new EventImpl();
-    return event;
   }
 
   /**

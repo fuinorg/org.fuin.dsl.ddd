@@ -85,16 +85,6 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
   }
   
   @Check
-  public void checkEventsOnlyAllowedInEntities(final Event event) {
-    boolean _isChildOfAbstractEntity = DomainDrivenDesignDslValidator.isChildOfAbstractEntity(event);
-    boolean _not = (!_isChildOfAbstractEntity);
-    if (_not) {
-      this.error("Events are only allowed within entity methods", event, 
-        DomainDrivenDesignDslPackage.Literals.EVENT__NAME, DomainDrivenDesignDslValidator.EVENT_ONLY_ALLOWED_FOR_ENTITY);
-    }
-  }
-  
-  @Check
   public void checkVariablesInConstraintMessage(final Constraint constraint) {
     Set<String> _allVariables = DomainDrivenDesignDslValidator.allVariables(constraint);
     String _message = constraint.getMessage();
@@ -256,9 +246,7 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
     int max = 0;
     Set<org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception> _allExceptions = this.getAllExceptions(ex);
     final Iterator<org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception> allExceptions = _allExceptions.iterator();
-    boolean _hasNext = allExceptions.hasNext();
-    boolean _while = _hasNext;
-    while (_while) {
+    while (allExceptions.hasNext()) {
       {
         org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception _next = allExceptions.next();
         final org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception other = ((org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception) _next);
@@ -320,8 +308,6 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
           name = _name_4;
         }
       }
-      boolean _hasNext_1 = allExceptions.hasNext();
-      _while = _hasNext_1;
     }
     boolean _notEquals = (!Objects.equal(name, null));
     if (_notEquals) {
@@ -370,14 +356,10 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
     int end = (-1);
     int from = 0;
     int start = (-1);
-    int _indexOf = msg.indexOf("${", from);
-    int _start = start = _indexOf;
-    boolean _greaterThan = (_start > (-1));
-    boolean _while = _greaterThan;
-    while (_while) {
+    while (((start = msg.indexOf("${", from)) > (-1))) {
       {
-        int _indexOf_1 = msg.indexOf("}", (start + 1));
-        end = _indexOf_1;
+        int _indexOf = msg.indexOf("}", (start + 1));
+        end = _indexOf;
         if ((end == (-1))) {
           int _length = msg.length();
           from = _length;
@@ -399,10 +381,6 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
           from = (end + 1);
         }
       }
-      int _indexOf_1 = msg.indexOf("${", from);
-      int _start_1 = start = _indexOf_1;
-      boolean _greaterThan_1 = (_start_1 > (-1));
-      _while = _greaterThan_1;
     }
     return null;
   }
@@ -484,18 +462,6 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
       return ((Entity) ae).getRoot();
     }
     return null;
-  }
-  
-  /**
-   * Returns the information if an object is defined inside an abstract entity.
-   * 
-   * @param obj Object to verify.
-   * 
-   * @return TRUE if the object is part of an Aggregate or Entity.
-   */
-  private static boolean isChildOfAbstractEntity(final EObject obj) {
-    AbstractEntity _parent = DomainDrivenDesignDslValidator.<AbstractEntity>getParent(AbstractEntity.class, obj);
-    return (!Objects.equal(_parent, null));
   }
   
   /**

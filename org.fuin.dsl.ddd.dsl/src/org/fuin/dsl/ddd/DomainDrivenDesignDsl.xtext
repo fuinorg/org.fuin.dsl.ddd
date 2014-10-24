@@ -22,7 +22,7 @@ Import:
 	'import' importedNamespace=(FQN | FQNWithWildcard);
 
 AbstractElement:
-	Constraint | Type | Exception;
+	Constraint | Type | Exception | Event;
 
 Type:
 	ExternalType | InternalType | Service;
@@ -100,6 +100,13 @@ EnumInstance:
 	doc=DOC?
 	name=ID ('(' params+=Literal (',' params+=Literal)* ')')?;	
 	
+Event:
+	doc=DOC? 
+	'event' name=ID '{'
+		variables+=Variable*
+		('message' message=STRING)?
+	'}';
+
 Entity:
 	doc=DOC?
 	'entity' name=ID 'identifier' idType=[EntityId] 'root' root=[Aggregate] '{'
@@ -107,6 +114,7 @@ Entity:
 		variables+=Variable*
 		constructors+=Constructor*
 		methods+=Method*
+		events+=Event*
 	'}';
 
 Aggregate:
@@ -116,6 +124,7 @@ Aggregate:
 		variables+=Variable*
 		constructors+=Constructor*
 		methods+=Method*
+		events+=Event*
 	'}';
 	
 AbstractMethod:
@@ -123,11 +132,10 @@ AbstractMethod:
 	
 Constructor:
 	doc=DOC? 
-	'constructor' name=ID '{'
+	'constructor' name=ID ('fires' firedEvents+=[Event] (',' firedEvents+=[Event])*)? '{'
 		variables+=Variable*
 		service=[Service]?
-		constraints=Constraints?
-		events+=Event*
+		constraints=Constraints?		
 	'}';
 
 ReturnType:
@@ -136,21 +144,13 @@ ReturnType:
 
 Method:
 	doc=DOC? 
-	'method' name=ID ('ref' refMethod=[Method|FQN])? '{'
+	'method' name=ID ('ref' refMethod=[Method|FQN])? ('fires' firedEvents+=[Event] (',' firedEvents+=[Event])*)? '{'
 		variables+=Variable*
 		service=[Service]?
 		returnType=ReturnType?
 		constraints=Constraints?
-		events+=Event*
 	'}';
 
-Event:
-	doc=DOC? 
-	'event' name=ID '{'
-		variables+=Variable*
-		('message' message=STRING)?
-	'}';
-	
 TypeMetaInfo:
 	{TypeMetaInfo}
     	('slabel' (slabel=STRING))?
