@@ -21,9 +21,10 @@ http://de.slideshare.net/michael-schnell/ddd-dsl/
 Installation
 ------------
 
-1. Inside Eclipse click menu "Help / Install New Software..."
-2. Press "Add" button to add the repository: http://www.fuin.org/p2-repository
-3. Install "DDD DSL"<br/>  
+1. Make sure you have Xtext installed in Eclipse Kepler or Luna [Eclipse IDE for Java and DSL Developers](https://www.eclipse.org/downloads/packages/eclipse-ide-java-and-dsl-developers/lunasr1 "Eclipse Luna with Xtext")
+2. Inside Eclipse click menu "Help / Install New Software..."
+3. Press "Add" button to add the repository: http://www.fuin.org/p2-repository
+4. Install "DDD DSL"<br/>  
 ![ScreenShot](https://raw.github.com/fuinorg/org.fuin.dsl.ddd/master/doc/install-eclipse.jpg)
 
 
