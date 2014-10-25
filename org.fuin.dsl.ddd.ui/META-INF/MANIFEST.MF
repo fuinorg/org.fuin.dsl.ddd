@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: org.fuin.dsl.ddd.ui
 Bundle-Vendor: Future Invent Informationsmanagement GmbH
-Bundle-Version: 0.1.0.qualifier
+Bundle-Version: 0.2.1
 Bundle-SymbolicName: org.fuin.dsl.ddd.ui;singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.fuin.dsl.ddd.dsl;visibility:=reexport,

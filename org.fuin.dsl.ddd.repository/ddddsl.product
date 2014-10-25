@@ -5,7 +5,7 @@
          uid="org.fuin.dsl.ddd.product.uid" 
          id="org.fuin.dsl.ddd.product" 
          application="org.fuin.dsl.ddd.application"
-         version="0.1.0.qualifier" 
+         version="0.2.1" 
          useFeatures="true" 
          includeLaunchers="false">
 
@@ -27,7 +27,7 @@
    <plugins />
 
    <features>
-      <feature id="org.fuin.dsl.ddd.sdk" version="0.1.0.qualifier"/>
+      <feature id="org.fuin.dsl.ddd.sdk" version="0.2.1"/>
    </features>
 
 

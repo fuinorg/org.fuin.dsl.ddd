@@ -28,29 +28,11 @@
 <stringAttribute key="pde.version" value="3.3"/>
 <stringAttribute key="product" value="org.eclipse.platform.ide"/>
 <setAttribute key="selected_features">
-<setEntry value="net.sf.eclipsecs:default"/>
 <setEntry value="org.eclipse.cvs:default"/>
 <setEntry value="org.eclipse.e4.rcp:default"/>
 <setEntry value="org.eclipse.egit:default"/>
-<setEntry value="org.eclipse.emf.codegen.ecore.ui:default"/>
-<setEntry value="org.eclipse.emf.codegen.ecore:default"/>
-<setEntry value="org.eclipse.emf.codegen.ui:default"/>
-<setEntry value="org.eclipse.emf.codegen:default"/>
-<setEntry value="org.eclipse.emf.common.ui:default"/>
 <setEntry value="org.eclipse.emf.common:default"/>
-<setEntry value="org.eclipse.emf.converter:default"/>
-<setEntry value="org.eclipse.emf.databinding.edit:default"/>
-<setEntry value="org.eclipse.emf.databinding:default"/>
-<setEntry value="org.eclipse.emf.ecore.edit:default"/>
-<setEntry value="org.eclipse.emf.ecore.editor:default"/>
 <setEntry value="org.eclipse.emf.ecore:default"/>
-<setEntry value="org.eclipse.emf.edit.ui:default"/>
-<setEntry value="org.eclipse.emf.edit:default"/>
-<setEntry value="org.eclipse.emf.mapping.ecore.editor:default"/>
-<setEntry value="org.eclipse.emf.mapping.ecore:default"/>
-<setEntry value="org.eclipse.emf.mapping.ui:default"/>
-<setEntry value="org.eclipse.emf.mapping:default"/>
-<setEntry value="org.eclipse.emf:default"/>
 <setEntry value="org.eclipse.epp.mpc:default"/>
 <setEntry value="org.eclipse.epp.package.common.feature:default"/>
 <setEntry value="org.eclipse.equinox.p2.core.feature:default"/>
@@ -61,14 +43,30 @@
 <setEntry value="org.eclipse.help:default"/>
 <setEntry value="org.eclipse.jdt:default"/>
 <setEntry value="org.eclipse.jgit:default"/>
+<setEntry value="org.eclipse.jsf.feature:default"/>
+<setEntry value="org.eclipse.jst.common.fproj.enablement.jdt:default"/>
+<setEntry value="org.eclipse.jst.enterprise_core.feature:default"/>
+<setEntry value="org.eclipse.jst.enterprise_ui.feature:default"/>
+<setEntry value="org.eclipse.jst.enterprise_userdoc.feature:default"/>
 <setEntry value="org.eclipse.m2e.feature:default"/>
-<setEntry value="org.eclipse.m2e.logback.feature:default"/>
+<setEntry value="org.eclipse.m2e.wtp.feature:default"/>
+<setEntry value="org.eclipse.m2e.wtp.jaxrs.feature:default"/>
+<setEntry value="org.eclipse.m2e.wtp.jpa.feature:default"/>
+<setEntry value="org.eclipse.m2e.wtp.jsf.feature:default"/>
 <setEntry value="org.eclipse.pde:default"/>
 <setEntry value="org.eclipse.platform:default"/>
 <setEntry value="org.eclipse.rcp.configuration:default"/>
 <setEntry value="org.eclipse.rcp:default"/>
+<setEntry value="org.eclipse.wst.common.fproj:default"/>
 <setEntry value="org.eclipse.wst.common_core.feature:default"/>
 <setEntry value="org.eclipse.wst.common_ui.feature:default"/>
+<setEntry value="org.eclipse.wst.jsdt.feature:default"/>
+<setEntry value="org.eclipse.wst.server_core.feature:default"/>
+<setEntry value="org.eclipse.wst.server_ui.feature:default"/>
+<setEntry value="org.eclipse.wst.server_userdoc.feature:default"/>
+<setEntry value="org.eclipse.wst.web_core.feature:default"/>
+<setEntry value="org.eclipse.wst.web_ui.feature:default"/>
+<setEntry value="org.eclipse.wst.web_userdoc.feature:default"/>
 <setEntry value="org.eclipse.wst.xml_core.feature:default"/>
 <setEntry value="org.eclipse.wst.xml_ui.feature:default"/>
 <setEntry value="org.eclipse.wst.xml_userdoc.feature:default"/>
@@ -89,8 +87,10 @@
 <setEntry value="org.eclipse.xtext.xtext.ui:default"/>
 <setEntry value="org.fuin.dsl.ddd.sdk:default"/>
 <setEntry value="org.sonatype.m2e.buildhelper.feature:default"/>
+<setEntry value="org.sonatype.m2e.mavenarchiver.feature:default"/>
 <setEntry value="org.sonatype.tycho.m2e.feature:default"/>
 </setAttribute>
+<stringAttribute key="selected_workspace_plugins" value="org.fuin.dsl.ddd.dsl@default:default,org.fuin.dsl.ddd.templates@default:default,org.fuin.dsl.ddd.tests@default:default,org.fuin.dsl.ddd.ui@default:default"/>
 <booleanAttribute key="show_selected_only" value="false"/>
 <stringAttribute key="templateConfig" value="${target_home}/configuration/config.ini"/>
 <booleanAttribute key="tracing" value="false"/>

@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: org.fuin.dsl.ddd.tests
 Bundle-Vendor: Future Invent Informationsmanagement GmbH
-Bundle-Version: 0.1.0.qualifier
+Bundle-Version: 0.2.1
 Bundle-SymbolicName: org.fuin.dsl.ddd.tests;singleton:=true
 Bundle-ActivationPolicy: lazy
 Require-Bundle: org.fuin.dsl.ddd.dsl,
@@ -11,13 +11,12 @@ Require-Bundle: org.fuin.dsl.ddd.dsl,
  org.eclipse.xtext.junit4,
  org.eclipse.ui.workbench;resolution:=optional,
  org.objectweb.asm;bundle-version="[5.0.1,6.0.0)";resolution:=optional
-Import-Package: org.apache.log4j,
+Import-Package: org.hamcrest.core,
  org.junit;version="4.5.0",
  org.junit.runner;version="4.5.0",
  org.junit.runner.manipulation;version="4.5.0",
  org.junit.runner.notification;version="4.5.0",
  org.junit.runners;version="4.5.0",
- org.junit.runners.model;version="4.5.0",
- org.hamcrest.core
+ org.junit.runners.model;version="4.5.0"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.fuin.dsl.ddd
