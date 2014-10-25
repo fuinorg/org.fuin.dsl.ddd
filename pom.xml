@@ -18,14 +18,14 @@
 	<description>Xtext based DSL supporting Domain-driven design (DDD)</description>
 
 	<scm>
-		<url>https://github.com/fuinorg/ddd-dsl/</url>
-		<connection>scm:git:git://github.com/fuinorg/ddd-dsl.git</connection>
-		<developerConnection>scm:git:git@github.com:fuinorg/ddd-dsl.git</developerConnection>
+		<url>https://github.com/fuinorg/org.fuin.dsl.ddd/</url>
+		<connection>scm:git:git://github.com/fuinorg/org.fuin.dsl.ddd.git</connection>
+		<developerConnection>scm:git:git@github.com:fuinorg/org.fuin.dsl.ddd.git</developerConnection>
 	</scm>
 
 	<issueManagement>
 		<system>GitHub Issues</system>
-		<url>https://github.com/fuinorg/ddd-dsl/issues</url>
+		<url>https://github.com/fuinorg/org.fuin.dsl.ddd/issues</url>
 	</issueManagement>
 
 	<properties>
