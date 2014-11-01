@@ -1448,13 +1448,22 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int ABSTRACT_METHOD__CONSTRAINTS = 5;
 
   /**
+   * The feature id for the '<em><b>Events</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ABSTRACT_METHOD__EVENTS = 6;
+
+  /**
    * The number of structural features of the '<em>Abstract Method</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ABSTRACT_METHOD_FEATURE_COUNT = 6;
+  int ABSTRACT_METHOD_FEATURE_COUNT = 7;
 
   /**
    * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConstructorImpl <em>Constructor</em>}' class.
@@ -1519,6 +1528,15 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @ordered
    */
   int CONSTRUCTOR__CONSTRAINTS = ABSTRACT_METHOD__CONSTRAINTS;
+
+  /**
+   * The feature id for the '<em><b>Events</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSTRUCTOR__EVENTS = ABSTRACT_METHOD__EVENTS;
 
   /**
    * The number of structural features of the '<em>Constructor</em>' class.
@@ -1629,6 +1647,15 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @ordered
    */
   int METHOD__CONSTRAINTS = ABSTRACT_METHOD__CONSTRAINTS;
+
+  /**
+   * The feature id for the '<em><b>Events</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD__EVENTS = ABSTRACT_METHOD__EVENTS;
 
   /**
    * The feature id for the '<em><b>Ref Method</b></em>' reference.
@@ -2815,6 +2842,17 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   EReference getAbstractMethod_Constraints();
 
   /**
+   * Returns the meta object for the containment reference list '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getEvents <em>Events</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Events</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getEvents()
+   * @see #getAbstractMethod()
+   * @generated
+   */
+  EReference getAbstractMethod_Events();
+
+  /**
    * Returns the meta object for class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Constructor <em>Constructor</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3824,6 +3862,14 @@ public interface DomainDrivenDesignDslPackage extends EPackage
      * @generated
      */
     EReference ABSTRACT_METHOD__CONSTRAINTS = eINSTANCE.getAbstractMethod_Constraints();
+
+    /**
+     * The meta object literal for the '<em><b>Events</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ABSTRACT_METHOD__EVENTS = eINSTANCE.getAbstractMethod_Events();
 
     /**
      * The meta object literal for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConstructorImpl <em>Constructor</em>}' class.

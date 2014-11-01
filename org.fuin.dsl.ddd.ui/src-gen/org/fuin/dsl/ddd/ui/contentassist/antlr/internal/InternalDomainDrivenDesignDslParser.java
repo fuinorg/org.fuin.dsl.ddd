@@ -3225,6 +3225,11 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
             case RULE_DOC:
                 {
                 switch ( input.LA(2) ) {
+                case 21:
+                    {
+                    alt3=1;
+                    }
+                    break;
                 case 26:
                 case 28:
                 case 30:
@@ -3244,11 +3249,6 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
                 case 23:
                     {
                     alt3=3;
-                    }
-                    break;
-                case 21:
-                    {
-                    alt3=1;
                     }
                     break;
                 default:
@@ -3407,11 +3407,11 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
                 {
                 int LA4_2 = input.LA(2);
 
-                if ( (LA4_2==53) ) {
-                    alt4=3;
-                }
-                else if ( (LA4_2==26||LA4_2==28||(LA4_2>=30 && LA4_2<=31)||LA4_2==37||LA4_2==40) ) {
+                if ( (LA4_2==26||LA4_2==28||(LA4_2>=30 && LA4_2<=31)||LA4_2==37||LA4_2==40) ) {
                     alt4=2;
+                }
+                else if ( (LA4_2==53) ) {
+                    alt4=3;
                 }
                 else {
                     NoViableAltException nvae =
@@ -3532,11 +3532,11 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
                 {
                 int LA5_1 = input.LA(2);
 
-                if ( (LA5_1==37||LA5_1==40) ) {
-                    alt5=2;
-                }
-                else if ( (LA5_1==26||LA5_1==28||(LA5_1>=30 && LA5_1<=31)) ) {
+                if ( (LA5_1==26||LA5_1==28||(LA5_1>=30 && LA5_1<=31)) ) {
                     alt5=1;
+                }
+                else if ( (LA5_1==37||LA5_1==40) ) {
+                    alt5=2;
                 }
                 else {
                     NoViableAltException nvae =
@@ -3636,6 +3636,11 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
             case RULE_DOC:
                 {
                 switch ( input.LA(2) ) {
+                case 31:
+                    {
+                    alt6=2;
+                    }
+                    break;
                 case 28:
                 case 30:
                     {
@@ -3645,11 +3650,6 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
                 case 26:
                     {
                     alt6=1;
-                    }
-                    break;
-                case 31:
-                    {
-                    alt6=2;
                     }
                     break;
                 default:
@@ -3773,11 +3773,11 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
                 {
                 int LA7_1 = input.LA(2);
 
-                if ( (LA7_1==28) ) {
-                    alt7=1;
-                }
-                else if ( (LA7_1==30) ) {
+                if ( (LA7_1==30) ) {
                     alt7=2;
+                }
+                else if ( (LA7_1==28) ) {
+                    alt7=1;
                 }
                 else {
                     NoViableAltException nvae =
@@ -3874,11 +3874,11 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
                 {
                 int LA8_1 = input.LA(2);
 
-                if ( (LA8_1==40) ) {
-                    alt8=2;
-                }
-                else if ( (LA8_1==37) ) {
+                if ( (LA8_1==37) ) {
                     alt8=1;
+                }
+                else if ( (LA8_1==40) ) {
+                    alt8=2;
                 }
                 else {
                     NoViableAltException nvae =
@@ -16796,22 +16796,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
             loop63:
             do {
                 int alt63=2;
-                int LA63_0 = input.LA(1);
-
-                if ( (LA63_0==RULE_ID) ) {
-                    int LA63_1 = input.LA(2);
-
-                    if ( (LA63_1==RULE_ID||LA63_1==55) ) {
-                        alt63=1;
-                    }
-
-
-                }
-                else if ( (LA63_0==RULE_DOC||LA63_0==56) ) {
-                    alt63=1;
-                }
-
-
+                alt63 = dfa63.predict(input);
                 switch (alt63) {
             	case 1 :
             	    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6011:2: rule__Constructor__VariablesAssignment_5
@@ -17045,17 +17030,22 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Constructor__Group__8"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6079:1: rule__Constructor__Group__8 : rule__Constructor__Group__8__Impl ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6079:1: rule__Constructor__Group__8 : rule__Constructor__Group__8__Impl rule__Constructor__Group__9 ;
     public final void rule__Constructor__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6083:1: ( rule__Constructor__Group__8__Impl )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6084:2: rule__Constructor__Group__8__Impl
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6083:1: ( rule__Constructor__Group__8__Impl rule__Constructor__Group__9 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6084:2: rule__Constructor__Group__8__Impl rule__Constructor__Group__9
             {
             pushFollow(FOLLOW_rule__Constructor__Group__8__Impl_in_rule__Constructor__Group__812267);
             rule__Constructor__Group__8__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__Constructor__Group__9_in_rule__Constructor__Group__812270);
+            rule__Constructor__Group__9();
 
             state._fsp--;
 
@@ -17078,21 +17068,49 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Constructor__Group__8__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6090:1: rule__Constructor__Group__8__Impl : ( '}' ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6091:1: rule__Constructor__Group__8__Impl : ( ( rule__Constructor__EventsAssignment_8 )* ) ;
     public final void rule__Constructor__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6094:1: ( ( '}' ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6095:1: ( '}' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6095:1: ( ( ( rule__Constructor__EventsAssignment_8 )* ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6096:1: ( ( rule__Constructor__EventsAssignment_8 )* )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6095:1: ( '}' )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6096:1: '}'
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6096:1: ( ( rule__Constructor__EventsAssignment_8 )* )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6097:1: ( rule__Constructor__EventsAssignment_8 )*
             {
-             before(grammarAccess.getConstructorAccess().getRightCurlyBracketKeyword_8()); 
-            match(input,17,FOLLOW_17_in_rule__Constructor__Group__8__Impl12295); 
-             after(grammarAccess.getConstructorAccess().getRightCurlyBracketKeyword_8()); 
+             before(grammarAccess.getConstructorAccess().getEventsAssignment_8()); 
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6098:1: ( rule__Constructor__EventsAssignment_8 )*
+            loop66:
+            do {
+                int alt66=2;
+                int LA66_0 = input.LA(1);
+
+                if ( (LA66_0==RULE_DOC||LA66_0==36) ) {
+                    alt66=1;
+                }
+
+
+                switch (alt66) {
+            	case 1 :
+            	    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6098:2: rule__Constructor__EventsAssignment_8
+            	    {
+            	    pushFollow(FOLLOW_rule__Constructor__EventsAssignment_8_in_rule__Constructor__Group__8__Impl12297);
+            	    rule__Constructor__EventsAssignment_8();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop66;
+                }
+            } while (true);
+
+             after(grammarAccess.getConstructorAccess().getEventsAssignment_8()); 
 
             }
 
@@ -17114,22 +17132,92 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
     // $ANTLR end "rule__Constructor__Group__8__Impl"
 
 
+    // $ANTLR start "rule__Constructor__Group__9"
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6108:1: rule__Constructor__Group__9 : rule__Constructor__Group__9__Impl ;
+    public final void rule__Constructor__Group__9() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6112:1: ( rule__Constructor__Group__9__Impl )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6113:2: rule__Constructor__Group__9__Impl
+            {
+            pushFollow(FOLLOW_rule__Constructor__Group__9__Impl_in_rule__Constructor__Group__912328);
+            rule__Constructor__Group__9__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Constructor__Group__9"
+
+
+    // $ANTLR start "rule__Constructor__Group__9__Impl"
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6119:1: rule__Constructor__Group__9__Impl : ( '}' ) ;
+    public final void rule__Constructor__Group__9__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6123:1: ( ( '}' ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6124:1: ( '}' )
+            {
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6124:1: ( '}' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6125:1: '}'
+            {
+             before(grammarAccess.getConstructorAccess().getRightCurlyBracketKeyword_9()); 
+            match(input,17,FOLLOW_17_in_rule__Constructor__Group__9__Impl12356); 
+             after(grammarAccess.getConstructorAccess().getRightCurlyBracketKeyword_9()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Constructor__Group__9__Impl"
+
+
     // $ANTLR start "rule__Constructor__Group_3__0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6127:1: rule__Constructor__Group_3__0 : rule__Constructor__Group_3__0__Impl rule__Constructor__Group_3__1 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6158:1: rule__Constructor__Group_3__0 : rule__Constructor__Group_3__0__Impl rule__Constructor__Group_3__1 ;
     public final void rule__Constructor__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6131:1: ( rule__Constructor__Group_3__0__Impl rule__Constructor__Group_3__1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6132:2: rule__Constructor__Group_3__0__Impl rule__Constructor__Group_3__1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6162:1: ( rule__Constructor__Group_3__0__Impl rule__Constructor__Group_3__1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6163:2: rule__Constructor__Group_3__0__Impl rule__Constructor__Group_3__1
             {
-            pushFollow(FOLLOW_rule__Constructor__Group_3__0__Impl_in_rule__Constructor__Group_3__012344);
+            pushFollow(FOLLOW_rule__Constructor__Group_3__0__Impl_in_rule__Constructor__Group_3__012407);
             rule__Constructor__Group_3__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Constructor__Group_3__1_in_rule__Constructor__Group_3__012347);
+            pushFollow(FOLLOW_rule__Constructor__Group_3__1_in_rule__Constructor__Group_3__012410);
             rule__Constructor__Group_3__1();
 
             state._fsp--;
@@ -17153,20 +17241,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Constructor__Group_3__0__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6139:1: rule__Constructor__Group_3__0__Impl : ( 'fires' ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6170:1: rule__Constructor__Group_3__0__Impl : ( 'fires' ) ;
     public final void rule__Constructor__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6143:1: ( ( 'fires' ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6144:1: ( 'fires' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6174:1: ( ( 'fires' ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6175:1: ( 'fires' )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6144:1: ( 'fires' )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6145:1: 'fires'
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6175:1: ( 'fires' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6176:1: 'fires'
             {
              before(grammarAccess.getConstructorAccess().getFiresKeyword_3_0()); 
-            match(input,42,FOLLOW_42_in_rule__Constructor__Group_3__0__Impl12375); 
+            match(input,42,FOLLOW_42_in_rule__Constructor__Group_3__0__Impl12438); 
              after(grammarAccess.getConstructorAccess().getFiresKeyword_3_0()); 
 
             }
@@ -17190,21 +17278,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Constructor__Group_3__1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6158:1: rule__Constructor__Group_3__1 : rule__Constructor__Group_3__1__Impl rule__Constructor__Group_3__2 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6189:1: rule__Constructor__Group_3__1 : rule__Constructor__Group_3__1__Impl rule__Constructor__Group_3__2 ;
     public final void rule__Constructor__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6162:1: ( rule__Constructor__Group_3__1__Impl rule__Constructor__Group_3__2 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6163:2: rule__Constructor__Group_3__1__Impl rule__Constructor__Group_3__2
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6193:1: ( rule__Constructor__Group_3__1__Impl rule__Constructor__Group_3__2 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6194:2: rule__Constructor__Group_3__1__Impl rule__Constructor__Group_3__2
             {
-            pushFollow(FOLLOW_rule__Constructor__Group_3__1__Impl_in_rule__Constructor__Group_3__112406);
+            pushFollow(FOLLOW_rule__Constructor__Group_3__1__Impl_in_rule__Constructor__Group_3__112469);
             rule__Constructor__Group_3__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Constructor__Group_3__2_in_rule__Constructor__Group_3__112409);
+            pushFollow(FOLLOW_rule__Constructor__Group_3__2_in_rule__Constructor__Group_3__112472);
             rule__Constructor__Group_3__2();
 
             state._fsp--;
@@ -17228,23 +17316,23 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Constructor__Group_3__1__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6170:1: rule__Constructor__Group_3__1__Impl : ( ( rule__Constructor__FiredEventsAssignment_3_1 ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6201:1: rule__Constructor__Group_3__1__Impl : ( ( rule__Constructor__FiredEventsAssignment_3_1 ) ) ;
     public final void rule__Constructor__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6174:1: ( ( ( rule__Constructor__FiredEventsAssignment_3_1 ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6175:1: ( ( rule__Constructor__FiredEventsAssignment_3_1 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6205:1: ( ( ( rule__Constructor__FiredEventsAssignment_3_1 ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6206:1: ( ( rule__Constructor__FiredEventsAssignment_3_1 ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6175:1: ( ( rule__Constructor__FiredEventsAssignment_3_1 ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6176:1: ( rule__Constructor__FiredEventsAssignment_3_1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6206:1: ( ( rule__Constructor__FiredEventsAssignment_3_1 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6207:1: ( rule__Constructor__FiredEventsAssignment_3_1 )
             {
              before(grammarAccess.getConstructorAccess().getFiredEventsAssignment_3_1()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6177:1: ( rule__Constructor__FiredEventsAssignment_3_1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6177:2: rule__Constructor__FiredEventsAssignment_3_1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6208:1: ( rule__Constructor__FiredEventsAssignment_3_1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6208:2: rule__Constructor__FiredEventsAssignment_3_1
             {
-            pushFollow(FOLLOW_rule__Constructor__FiredEventsAssignment_3_1_in_rule__Constructor__Group_3__1__Impl12436);
+            pushFollow(FOLLOW_rule__Constructor__FiredEventsAssignment_3_1_in_rule__Constructor__Group_3__1__Impl12499);
             rule__Constructor__FiredEventsAssignment_3_1();
 
             state._fsp--;
@@ -17275,16 +17363,16 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Constructor__Group_3__2"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6187:1: rule__Constructor__Group_3__2 : rule__Constructor__Group_3__2__Impl ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6218:1: rule__Constructor__Group_3__2 : rule__Constructor__Group_3__2__Impl ;
     public final void rule__Constructor__Group_3__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6191:1: ( rule__Constructor__Group_3__2__Impl )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6192:2: rule__Constructor__Group_3__2__Impl
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6222:1: ( rule__Constructor__Group_3__2__Impl )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6223:2: rule__Constructor__Group_3__2__Impl
             {
-            pushFollow(FOLLOW_rule__Constructor__Group_3__2__Impl_in_rule__Constructor__Group_3__212466);
+            pushFollow(FOLLOW_rule__Constructor__Group_3__2__Impl_in_rule__Constructor__Group_3__212529);
             rule__Constructor__Group_3__2__Impl();
 
             state._fsp--;
@@ -17308,35 +17396,35 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Constructor__Group_3__2__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6198:1: rule__Constructor__Group_3__2__Impl : ( ( rule__Constructor__Group_3_2__0 )* ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6229:1: rule__Constructor__Group_3__2__Impl : ( ( rule__Constructor__Group_3_2__0 )* ) ;
     public final void rule__Constructor__Group_3__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6202:1: ( ( ( rule__Constructor__Group_3_2__0 )* ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6203:1: ( ( rule__Constructor__Group_3_2__0 )* )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6233:1: ( ( ( rule__Constructor__Group_3_2__0 )* ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6234:1: ( ( rule__Constructor__Group_3_2__0 )* )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6203:1: ( ( rule__Constructor__Group_3_2__0 )* )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6204:1: ( rule__Constructor__Group_3_2__0 )*
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6234:1: ( ( rule__Constructor__Group_3_2__0 )* )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6235:1: ( rule__Constructor__Group_3_2__0 )*
             {
              before(grammarAccess.getConstructorAccess().getGroup_3_2()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6205:1: ( rule__Constructor__Group_3_2__0 )*
-            loop66:
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6236:1: ( rule__Constructor__Group_3_2__0 )*
+            loop67:
             do {
-                int alt66=2;
-                int LA66_0 = input.LA(1);
+                int alt67=2;
+                int LA67_0 = input.LA(1);
 
-                if ( (LA66_0==35) ) {
-                    alt66=1;
+                if ( (LA67_0==35) ) {
+                    alt67=1;
                 }
 
 
-                switch (alt66) {
+                switch (alt67) {
             	case 1 :
-            	    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6205:2: rule__Constructor__Group_3_2__0
+            	    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6236:2: rule__Constructor__Group_3_2__0
             	    {
-            	    pushFollow(FOLLOW_rule__Constructor__Group_3_2__0_in_rule__Constructor__Group_3__2__Impl12493);
+            	    pushFollow(FOLLOW_rule__Constructor__Group_3_2__0_in_rule__Constructor__Group_3__2__Impl12556);
             	    rule__Constructor__Group_3_2__0();
 
             	    state._fsp--;
@@ -17346,7 +17434,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
             	    break;
 
             	default :
-            	    break loop66;
+            	    break loop67;
                 }
             } while (true);
 
@@ -17373,21 +17461,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Constructor__Group_3_2__0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6221:1: rule__Constructor__Group_3_2__0 : rule__Constructor__Group_3_2__0__Impl rule__Constructor__Group_3_2__1 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6252:1: rule__Constructor__Group_3_2__0 : rule__Constructor__Group_3_2__0__Impl rule__Constructor__Group_3_2__1 ;
     public final void rule__Constructor__Group_3_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6225:1: ( rule__Constructor__Group_3_2__0__Impl rule__Constructor__Group_3_2__1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6226:2: rule__Constructor__Group_3_2__0__Impl rule__Constructor__Group_3_2__1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6256:1: ( rule__Constructor__Group_3_2__0__Impl rule__Constructor__Group_3_2__1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6257:2: rule__Constructor__Group_3_2__0__Impl rule__Constructor__Group_3_2__1
             {
-            pushFollow(FOLLOW_rule__Constructor__Group_3_2__0__Impl_in_rule__Constructor__Group_3_2__012530);
+            pushFollow(FOLLOW_rule__Constructor__Group_3_2__0__Impl_in_rule__Constructor__Group_3_2__012593);
             rule__Constructor__Group_3_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Constructor__Group_3_2__1_in_rule__Constructor__Group_3_2__012533);
+            pushFollow(FOLLOW_rule__Constructor__Group_3_2__1_in_rule__Constructor__Group_3_2__012596);
             rule__Constructor__Group_3_2__1();
 
             state._fsp--;
@@ -17411,20 +17499,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Constructor__Group_3_2__0__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6233:1: rule__Constructor__Group_3_2__0__Impl : ( ',' ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6264:1: rule__Constructor__Group_3_2__0__Impl : ( ',' ) ;
     public final void rule__Constructor__Group_3_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6237:1: ( ( ',' ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6238:1: ( ',' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6268:1: ( ( ',' ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6269:1: ( ',' )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6238:1: ( ',' )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6239:1: ','
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6269:1: ( ',' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6270:1: ','
             {
              before(grammarAccess.getConstructorAccess().getCommaKeyword_3_2_0()); 
-            match(input,35,FOLLOW_35_in_rule__Constructor__Group_3_2__0__Impl12561); 
+            match(input,35,FOLLOW_35_in_rule__Constructor__Group_3_2__0__Impl12624); 
              after(grammarAccess.getConstructorAccess().getCommaKeyword_3_2_0()); 
 
             }
@@ -17448,16 +17536,16 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Constructor__Group_3_2__1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6252:1: rule__Constructor__Group_3_2__1 : rule__Constructor__Group_3_2__1__Impl ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6283:1: rule__Constructor__Group_3_2__1 : rule__Constructor__Group_3_2__1__Impl ;
     public final void rule__Constructor__Group_3_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6256:1: ( rule__Constructor__Group_3_2__1__Impl )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6257:2: rule__Constructor__Group_3_2__1__Impl
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6287:1: ( rule__Constructor__Group_3_2__1__Impl )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6288:2: rule__Constructor__Group_3_2__1__Impl
             {
-            pushFollow(FOLLOW_rule__Constructor__Group_3_2__1__Impl_in_rule__Constructor__Group_3_2__112592);
+            pushFollow(FOLLOW_rule__Constructor__Group_3_2__1__Impl_in_rule__Constructor__Group_3_2__112655);
             rule__Constructor__Group_3_2__1__Impl();
 
             state._fsp--;
@@ -17481,23 +17569,23 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Constructor__Group_3_2__1__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6263:1: rule__Constructor__Group_3_2__1__Impl : ( ( rule__Constructor__FiredEventsAssignment_3_2_1 ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6294:1: rule__Constructor__Group_3_2__1__Impl : ( ( rule__Constructor__FiredEventsAssignment_3_2_1 ) ) ;
     public final void rule__Constructor__Group_3_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6267:1: ( ( ( rule__Constructor__FiredEventsAssignment_3_2_1 ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6268:1: ( ( rule__Constructor__FiredEventsAssignment_3_2_1 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6298:1: ( ( ( rule__Constructor__FiredEventsAssignment_3_2_1 ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6299:1: ( ( rule__Constructor__FiredEventsAssignment_3_2_1 ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6268:1: ( ( rule__Constructor__FiredEventsAssignment_3_2_1 ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6269:1: ( rule__Constructor__FiredEventsAssignment_3_2_1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6299:1: ( ( rule__Constructor__FiredEventsAssignment_3_2_1 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6300:1: ( rule__Constructor__FiredEventsAssignment_3_2_1 )
             {
              before(grammarAccess.getConstructorAccess().getFiredEventsAssignment_3_2_1()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6270:1: ( rule__Constructor__FiredEventsAssignment_3_2_1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6270:2: rule__Constructor__FiredEventsAssignment_3_2_1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6301:1: ( rule__Constructor__FiredEventsAssignment_3_2_1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6301:2: rule__Constructor__FiredEventsAssignment_3_2_1
             {
-            pushFollow(FOLLOW_rule__Constructor__FiredEventsAssignment_3_2_1_in_rule__Constructor__Group_3_2__1__Impl12619);
+            pushFollow(FOLLOW_rule__Constructor__FiredEventsAssignment_3_2_1_in_rule__Constructor__Group_3_2__1__Impl12682);
             rule__Constructor__FiredEventsAssignment_3_2_1();
 
             state._fsp--;
@@ -17528,21 +17616,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__ReturnType__Group__0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6284:1: rule__ReturnType__Group__0 : rule__ReturnType__Group__0__Impl rule__ReturnType__Group__1 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6315:1: rule__ReturnType__Group__0 : rule__ReturnType__Group__0__Impl rule__ReturnType__Group__1 ;
     public final void rule__ReturnType__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6288:1: ( rule__ReturnType__Group__0__Impl rule__ReturnType__Group__1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6289:2: rule__ReturnType__Group__0__Impl rule__ReturnType__Group__1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6319:1: ( rule__ReturnType__Group__0__Impl rule__ReturnType__Group__1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6320:2: rule__ReturnType__Group__0__Impl rule__ReturnType__Group__1
             {
-            pushFollow(FOLLOW_rule__ReturnType__Group__0__Impl_in_rule__ReturnType__Group__012653);
+            pushFollow(FOLLOW_rule__ReturnType__Group__0__Impl_in_rule__ReturnType__Group__012716);
             rule__ReturnType__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ReturnType__Group__1_in_rule__ReturnType__Group__012656);
+            pushFollow(FOLLOW_rule__ReturnType__Group__1_in_rule__ReturnType__Group__012719);
             rule__ReturnType__Group__1();
 
             state._fsp--;
@@ -17566,31 +17654,31 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__ReturnType__Group__0__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6296:1: rule__ReturnType__Group__0__Impl : ( ( rule__ReturnType__DocAssignment_0 )? ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6327:1: rule__ReturnType__Group__0__Impl : ( ( rule__ReturnType__DocAssignment_0 )? ) ;
     public final void rule__ReturnType__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6300:1: ( ( ( rule__ReturnType__DocAssignment_0 )? ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6301:1: ( ( rule__ReturnType__DocAssignment_0 )? )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6331:1: ( ( ( rule__ReturnType__DocAssignment_0 )? ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6332:1: ( ( rule__ReturnType__DocAssignment_0 )? )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6301:1: ( ( rule__ReturnType__DocAssignment_0 )? )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6302:1: ( rule__ReturnType__DocAssignment_0 )?
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6332:1: ( ( rule__ReturnType__DocAssignment_0 )? )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6333:1: ( rule__ReturnType__DocAssignment_0 )?
             {
              before(grammarAccess.getReturnTypeAccess().getDocAssignment_0()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6303:1: ( rule__ReturnType__DocAssignment_0 )?
-            int alt67=2;
-            int LA67_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6334:1: ( rule__ReturnType__DocAssignment_0 )?
+            int alt68=2;
+            int LA68_0 = input.LA(1);
 
-            if ( (LA67_0==RULE_DOC) ) {
-                alt67=1;
+            if ( (LA68_0==RULE_DOC) ) {
+                alt68=1;
             }
-            switch (alt67) {
+            switch (alt68) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6303:2: rule__ReturnType__DocAssignment_0
+                    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6334:2: rule__ReturnType__DocAssignment_0
                     {
-                    pushFollow(FOLLOW_rule__ReturnType__DocAssignment_0_in_rule__ReturnType__Group__0__Impl12683);
+                    pushFollow(FOLLOW_rule__ReturnType__DocAssignment_0_in_rule__ReturnType__Group__0__Impl12746);
                     rule__ReturnType__DocAssignment_0();
 
                     state._fsp--;
@@ -17624,21 +17712,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__ReturnType__Group__1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6313:1: rule__ReturnType__Group__1 : rule__ReturnType__Group__1__Impl rule__ReturnType__Group__2 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6344:1: rule__ReturnType__Group__1 : rule__ReturnType__Group__1__Impl rule__ReturnType__Group__2 ;
     public final void rule__ReturnType__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6317:1: ( rule__ReturnType__Group__1__Impl rule__ReturnType__Group__2 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6318:2: rule__ReturnType__Group__1__Impl rule__ReturnType__Group__2
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6348:1: ( rule__ReturnType__Group__1__Impl rule__ReturnType__Group__2 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6349:2: rule__ReturnType__Group__1__Impl rule__ReturnType__Group__2
             {
-            pushFollow(FOLLOW_rule__ReturnType__Group__1__Impl_in_rule__ReturnType__Group__112714);
+            pushFollow(FOLLOW_rule__ReturnType__Group__1__Impl_in_rule__ReturnType__Group__112777);
             rule__ReturnType__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ReturnType__Group__2_in_rule__ReturnType__Group__112717);
+            pushFollow(FOLLOW_rule__ReturnType__Group__2_in_rule__ReturnType__Group__112780);
             rule__ReturnType__Group__2();
 
             state._fsp--;
@@ -17662,20 +17750,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__ReturnType__Group__1__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6325:1: rule__ReturnType__Group__1__Impl : ( 'returns' ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6356:1: rule__ReturnType__Group__1__Impl : ( 'returns' ) ;
     public final void rule__ReturnType__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6329:1: ( ( 'returns' ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6330:1: ( 'returns' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6360:1: ( ( 'returns' ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6361:1: ( 'returns' )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6330:1: ( 'returns' )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6331:1: 'returns'
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6361:1: ( 'returns' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6362:1: 'returns'
             {
              before(grammarAccess.getReturnTypeAccess().getReturnsKeyword_1()); 
-            match(input,43,FOLLOW_43_in_rule__ReturnType__Group__1__Impl12745); 
+            match(input,43,FOLLOW_43_in_rule__ReturnType__Group__1__Impl12808); 
              after(grammarAccess.getReturnTypeAccess().getReturnsKeyword_1()); 
 
             }
@@ -17699,16 +17787,16 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__ReturnType__Group__2"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6344:1: rule__ReturnType__Group__2 : rule__ReturnType__Group__2__Impl ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6375:1: rule__ReturnType__Group__2 : rule__ReturnType__Group__2__Impl ;
     public final void rule__ReturnType__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6348:1: ( rule__ReturnType__Group__2__Impl )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6349:2: rule__ReturnType__Group__2__Impl
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6379:1: ( rule__ReturnType__Group__2__Impl )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6380:2: rule__ReturnType__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__ReturnType__Group__2__Impl_in_rule__ReturnType__Group__212776);
+            pushFollow(FOLLOW_rule__ReturnType__Group__2__Impl_in_rule__ReturnType__Group__212839);
             rule__ReturnType__Group__2__Impl();
 
             state._fsp--;
@@ -17732,23 +17820,23 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__ReturnType__Group__2__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6355:1: rule__ReturnType__Group__2__Impl : ( ( rule__ReturnType__TypeAssignment_2 ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6386:1: rule__ReturnType__Group__2__Impl : ( ( rule__ReturnType__TypeAssignment_2 ) ) ;
     public final void rule__ReturnType__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6359:1: ( ( ( rule__ReturnType__TypeAssignment_2 ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6360:1: ( ( rule__ReturnType__TypeAssignment_2 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6390:1: ( ( ( rule__ReturnType__TypeAssignment_2 ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6391:1: ( ( rule__ReturnType__TypeAssignment_2 ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6360:1: ( ( rule__ReturnType__TypeAssignment_2 ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6361:1: ( rule__ReturnType__TypeAssignment_2 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6391:1: ( ( rule__ReturnType__TypeAssignment_2 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6392:1: ( rule__ReturnType__TypeAssignment_2 )
             {
              before(grammarAccess.getReturnTypeAccess().getTypeAssignment_2()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6362:1: ( rule__ReturnType__TypeAssignment_2 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6362:2: rule__ReturnType__TypeAssignment_2
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6393:1: ( rule__ReturnType__TypeAssignment_2 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6393:2: rule__ReturnType__TypeAssignment_2
             {
-            pushFollow(FOLLOW_rule__ReturnType__TypeAssignment_2_in_rule__ReturnType__Group__2__Impl12803);
+            pushFollow(FOLLOW_rule__ReturnType__TypeAssignment_2_in_rule__ReturnType__Group__2__Impl12866);
             rule__ReturnType__TypeAssignment_2();
 
             state._fsp--;
@@ -17779,21 +17867,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Method__Group__0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6378:1: rule__Method__Group__0 : rule__Method__Group__0__Impl rule__Method__Group__1 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6409:1: rule__Method__Group__0 : rule__Method__Group__0__Impl rule__Method__Group__1 ;
     public final void rule__Method__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6382:1: ( rule__Method__Group__0__Impl rule__Method__Group__1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6383:2: rule__Method__Group__0__Impl rule__Method__Group__1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6413:1: ( rule__Method__Group__0__Impl rule__Method__Group__1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6414:2: rule__Method__Group__0__Impl rule__Method__Group__1
             {
-            pushFollow(FOLLOW_rule__Method__Group__0__Impl_in_rule__Method__Group__012839);
+            pushFollow(FOLLOW_rule__Method__Group__0__Impl_in_rule__Method__Group__012902);
             rule__Method__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Method__Group__1_in_rule__Method__Group__012842);
+            pushFollow(FOLLOW_rule__Method__Group__1_in_rule__Method__Group__012905);
             rule__Method__Group__1();
 
             state._fsp--;
@@ -17817,31 +17905,31 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Method__Group__0__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6390:1: rule__Method__Group__0__Impl : ( ( rule__Method__DocAssignment_0 )? ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6421:1: rule__Method__Group__0__Impl : ( ( rule__Method__DocAssignment_0 )? ) ;
     public final void rule__Method__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6394:1: ( ( ( rule__Method__DocAssignment_0 )? ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6395:1: ( ( rule__Method__DocAssignment_0 )? )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6425:1: ( ( ( rule__Method__DocAssignment_0 )? ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6426:1: ( ( rule__Method__DocAssignment_0 )? )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6395:1: ( ( rule__Method__DocAssignment_0 )? )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6396:1: ( rule__Method__DocAssignment_0 )?
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6426:1: ( ( rule__Method__DocAssignment_0 )? )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6427:1: ( rule__Method__DocAssignment_0 )?
             {
              before(grammarAccess.getMethodAccess().getDocAssignment_0()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6397:1: ( rule__Method__DocAssignment_0 )?
-            int alt68=2;
-            int LA68_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6428:1: ( rule__Method__DocAssignment_0 )?
+            int alt69=2;
+            int LA69_0 = input.LA(1);
 
-            if ( (LA68_0==RULE_DOC) ) {
-                alt68=1;
+            if ( (LA69_0==RULE_DOC) ) {
+                alt69=1;
             }
-            switch (alt68) {
+            switch (alt69) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6397:2: rule__Method__DocAssignment_0
+                    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6428:2: rule__Method__DocAssignment_0
                     {
-                    pushFollow(FOLLOW_rule__Method__DocAssignment_0_in_rule__Method__Group__0__Impl12869);
+                    pushFollow(FOLLOW_rule__Method__DocAssignment_0_in_rule__Method__Group__0__Impl12932);
                     rule__Method__DocAssignment_0();
 
                     state._fsp--;
@@ -17875,21 +17963,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Method__Group__1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6407:1: rule__Method__Group__1 : rule__Method__Group__1__Impl rule__Method__Group__2 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6438:1: rule__Method__Group__1 : rule__Method__Group__1__Impl rule__Method__Group__2 ;
     public final void rule__Method__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6411:1: ( rule__Method__Group__1__Impl rule__Method__Group__2 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6412:2: rule__Method__Group__1__Impl rule__Method__Group__2
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6442:1: ( rule__Method__Group__1__Impl rule__Method__Group__2 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6443:2: rule__Method__Group__1__Impl rule__Method__Group__2
             {
-            pushFollow(FOLLOW_rule__Method__Group__1__Impl_in_rule__Method__Group__112900);
+            pushFollow(FOLLOW_rule__Method__Group__1__Impl_in_rule__Method__Group__112963);
             rule__Method__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Method__Group__2_in_rule__Method__Group__112903);
+            pushFollow(FOLLOW_rule__Method__Group__2_in_rule__Method__Group__112966);
             rule__Method__Group__2();
 
             state._fsp--;
@@ -17913,20 +18001,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Method__Group__1__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6419:1: rule__Method__Group__1__Impl : ( 'method' ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6450:1: rule__Method__Group__1__Impl : ( 'method' ) ;
     public final void rule__Method__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6423:1: ( ( 'method' ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6424:1: ( 'method' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6454:1: ( ( 'method' ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6455:1: ( 'method' )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6424:1: ( 'method' )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6425:1: 'method'
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6455:1: ( 'method' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6456:1: 'method'
             {
              before(grammarAccess.getMethodAccess().getMethodKeyword_1()); 
-            match(input,44,FOLLOW_44_in_rule__Method__Group__1__Impl12931); 
+            match(input,44,FOLLOW_44_in_rule__Method__Group__1__Impl12994); 
              after(grammarAccess.getMethodAccess().getMethodKeyword_1()); 
 
             }
@@ -17950,21 +18038,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Method__Group__2"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6438:1: rule__Method__Group__2 : rule__Method__Group__2__Impl rule__Method__Group__3 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6469:1: rule__Method__Group__2 : rule__Method__Group__2__Impl rule__Method__Group__3 ;
     public final void rule__Method__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6442:1: ( rule__Method__Group__2__Impl rule__Method__Group__3 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6443:2: rule__Method__Group__2__Impl rule__Method__Group__3
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6473:1: ( rule__Method__Group__2__Impl rule__Method__Group__3 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6474:2: rule__Method__Group__2__Impl rule__Method__Group__3
             {
-            pushFollow(FOLLOW_rule__Method__Group__2__Impl_in_rule__Method__Group__212962);
+            pushFollow(FOLLOW_rule__Method__Group__2__Impl_in_rule__Method__Group__213025);
             rule__Method__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Method__Group__3_in_rule__Method__Group__212965);
+            pushFollow(FOLLOW_rule__Method__Group__3_in_rule__Method__Group__213028);
             rule__Method__Group__3();
 
             state._fsp--;
@@ -17988,23 +18076,23 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Method__Group__2__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6450:1: rule__Method__Group__2__Impl : ( ( rule__Method__NameAssignment_2 ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6481:1: rule__Method__Group__2__Impl : ( ( rule__Method__NameAssignment_2 ) ) ;
     public final void rule__Method__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6454:1: ( ( ( rule__Method__NameAssignment_2 ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6455:1: ( ( rule__Method__NameAssignment_2 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6485:1: ( ( ( rule__Method__NameAssignment_2 ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6486:1: ( ( rule__Method__NameAssignment_2 ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6455:1: ( ( rule__Method__NameAssignment_2 ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6456:1: ( rule__Method__NameAssignment_2 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6486:1: ( ( rule__Method__NameAssignment_2 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6487:1: ( rule__Method__NameAssignment_2 )
             {
              before(grammarAccess.getMethodAccess().getNameAssignment_2()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6457:1: ( rule__Method__NameAssignment_2 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6457:2: rule__Method__NameAssignment_2
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6488:1: ( rule__Method__NameAssignment_2 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6488:2: rule__Method__NameAssignment_2
             {
-            pushFollow(FOLLOW_rule__Method__NameAssignment_2_in_rule__Method__Group__2__Impl12992);
+            pushFollow(FOLLOW_rule__Method__NameAssignment_2_in_rule__Method__Group__2__Impl13055);
             rule__Method__NameAssignment_2();
 
             state._fsp--;
@@ -18035,21 +18123,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Method__Group__3"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6467:1: rule__Method__Group__3 : rule__Method__Group__3__Impl rule__Method__Group__4 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6498:1: rule__Method__Group__3 : rule__Method__Group__3__Impl rule__Method__Group__4 ;
     public final void rule__Method__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6471:1: ( rule__Method__Group__3__Impl rule__Method__Group__4 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6472:2: rule__Method__Group__3__Impl rule__Method__Group__4
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6502:1: ( rule__Method__Group__3__Impl rule__Method__Group__4 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6503:2: rule__Method__Group__3__Impl rule__Method__Group__4
             {
-            pushFollow(FOLLOW_rule__Method__Group__3__Impl_in_rule__Method__Group__313022);
+            pushFollow(FOLLOW_rule__Method__Group__3__Impl_in_rule__Method__Group__313085);
             rule__Method__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Method__Group__4_in_rule__Method__Group__313025);
+            pushFollow(FOLLOW_rule__Method__Group__4_in_rule__Method__Group__313088);
             rule__Method__Group__4();
 
             state._fsp--;
@@ -18073,31 +18161,31 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Method__Group__3__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6479:1: rule__Method__Group__3__Impl : ( ( rule__Method__Group_3__0 )? ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6510:1: rule__Method__Group__3__Impl : ( ( rule__Method__Group_3__0 )? ) ;
     public final void rule__Method__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6483:1: ( ( ( rule__Method__Group_3__0 )? ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6484:1: ( ( rule__Method__Group_3__0 )? )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6514:1: ( ( ( rule__Method__Group_3__0 )? ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6515:1: ( ( rule__Method__Group_3__0 )? )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6484:1: ( ( rule__Method__Group_3__0 )? )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6485:1: ( rule__Method__Group_3__0 )?
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6515:1: ( ( rule__Method__Group_3__0 )? )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6516:1: ( rule__Method__Group_3__0 )?
             {
              before(grammarAccess.getMethodAccess().getGroup_3()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6486:1: ( rule__Method__Group_3__0 )?
-            int alt69=2;
-            int LA69_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6517:1: ( rule__Method__Group_3__0 )?
+            int alt70=2;
+            int LA70_0 = input.LA(1);
 
-            if ( (LA69_0==45) ) {
-                alt69=1;
+            if ( (LA70_0==45) ) {
+                alt70=1;
             }
-            switch (alt69) {
+            switch (alt70) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6486:2: rule__Method__Group_3__0
+                    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6517:2: rule__Method__Group_3__0
                     {
-                    pushFollow(FOLLOW_rule__Method__Group_3__0_in_rule__Method__Group__3__Impl13052);
+                    pushFollow(FOLLOW_rule__Method__Group_3__0_in_rule__Method__Group__3__Impl13115);
                     rule__Method__Group_3__0();
 
                     state._fsp--;
@@ -18131,21 +18219,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Method__Group__4"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6496:1: rule__Method__Group__4 : rule__Method__Group__4__Impl rule__Method__Group__5 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6527:1: rule__Method__Group__4 : rule__Method__Group__4__Impl rule__Method__Group__5 ;
     public final void rule__Method__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6500:1: ( rule__Method__Group__4__Impl rule__Method__Group__5 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6501:2: rule__Method__Group__4__Impl rule__Method__Group__5
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6531:1: ( rule__Method__Group__4__Impl rule__Method__Group__5 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6532:2: rule__Method__Group__4__Impl rule__Method__Group__5
             {
-            pushFollow(FOLLOW_rule__Method__Group__4__Impl_in_rule__Method__Group__413083);
+            pushFollow(FOLLOW_rule__Method__Group__4__Impl_in_rule__Method__Group__413146);
             rule__Method__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Method__Group__5_in_rule__Method__Group__413086);
+            pushFollow(FOLLOW_rule__Method__Group__5_in_rule__Method__Group__413149);
             rule__Method__Group__5();
 
             state._fsp--;
@@ -18169,31 +18257,31 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Method__Group__4__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6508:1: rule__Method__Group__4__Impl : ( ( rule__Method__Group_4__0 )? ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6539:1: rule__Method__Group__4__Impl : ( ( rule__Method__Group_4__0 )? ) ;
     public final void rule__Method__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6512:1: ( ( ( rule__Method__Group_4__0 )? ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6513:1: ( ( rule__Method__Group_4__0 )? )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6543:1: ( ( ( rule__Method__Group_4__0 )? ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6544:1: ( ( rule__Method__Group_4__0 )? )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6513:1: ( ( rule__Method__Group_4__0 )? )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6514:1: ( rule__Method__Group_4__0 )?
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6544:1: ( ( rule__Method__Group_4__0 )? )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6545:1: ( rule__Method__Group_4__0 )?
             {
              before(grammarAccess.getMethodAccess().getGroup_4()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6515:1: ( rule__Method__Group_4__0 )?
-            int alt70=2;
-            int LA70_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6546:1: ( rule__Method__Group_4__0 )?
+            int alt71=2;
+            int LA71_0 = input.LA(1);
 
-            if ( (LA70_0==42) ) {
-                alt70=1;
+            if ( (LA71_0==42) ) {
+                alt71=1;
             }
-            switch (alt70) {
+            switch (alt71) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6515:2: rule__Method__Group_4__0
+                    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6546:2: rule__Method__Group_4__0
                     {
-                    pushFollow(FOLLOW_rule__Method__Group_4__0_in_rule__Method__Group__4__Impl13113);
+                    pushFollow(FOLLOW_rule__Method__Group_4__0_in_rule__Method__Group__4__Impl13176);
                     rule__Method__Group_4__0();
 
                     state._fsp--;
@@ -18227,21 +18315,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Method__Group__5"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6525:1: rule__Method__Group__5 : rule__Method__Group__5__Impl rule__Method__Group__6 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6556:1: rule__Method__Group__5 : rule__Method__Group__5__Impl rule__Method__Group__6 ;
     public final void rule__Method__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6529:1: ( rule__Method__Group__5__Impl rule__Method__Group__6 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6530:2: rule__Method__Group__5__Impl rule__Method__Group__6
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6560:1: ( rule__Method__Group__5__Impl rule__Method__Group__6 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6561:2: rule__Method__Group__5__Impl rule__Method__Group__6
             {
-            pushFollow(FOLLOW_rule__Method__Group__5__Impl_in_rule__Method__Group__513144);
+            pushFollow(FOLLOW_rule__Method__Group__5__Impl_in_rule__Method__Group__513207);
             rule__Method__Group__5__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Method__Group__6_in_rule__Method__Group__513147);
+            pushFollow(FOLLOW_rule__Method__Group__6_in_rule__Method__Group__513210);
             rule__Method__Group__6();
 
             state._fsp--;
@@ -18265,20 +18353,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Method__Group__5__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6537:1: rule__Method__Group__5__Impl : ( '{' ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6568:1: rule__Method__Group__5__Impl : ( '{' ) ;
     public final void rule__Method__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6541:1: ( ( '{' ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6542:1: ( '{' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6572:1: ( ( '{' ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6573:1: ( '{' )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6542:1: ( '{' )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6543:1: '{'
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6573:1: ( '{' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6574:1: '{'
             {
              before(grammarAccess.getMethodAccess().getLeftCurlyBracketKeyword_5()); 
-            match(input,16,FOLLOW_16_in_rule__Method__Group__5__Impl13175); 
+            match(input,16,FOLLOW_16_in_rule__Method__Group__5__Impl13238); 
              after(grammarAccess.getMethodAccess().getLeftCurlyBracketKeyword_5()); 
 
             }
@@ -18302,21 +18390,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Method__Group__6"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6556:1: rule__Method__Group__6 : rule__Method__Group__6__Impl rule__Method__Group__7 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6587:1: rule__Method__Group__6 : rule__Method__Group__6__Impl rule__Method__Group__7 ;
     public final void rule__Method__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6560:1: ( rule__Method__Group__6__Impl rule__Method__Group__7 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6561:2: rule__Method__Group__6__Impl rule__Method__Group__7
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6591:1: ( rule__Method__Group__6__Impl rule__Method__Group__7 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6592:2: rule__Method__Group__6__Impl rule__Method__Group__7
             {
-            pushFollow(FOLLOW_rule__Method__Group__6__Impl_in_rule__Method__Group__613206);
+            pushFollow(FOLLOW_rule__Method__Group__6__Impl_in_rule__Method__Group__613269);
             rule__Method__Group__6__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Method__Group__7_in_rule__Method__Group__613209);
+            pushFollow(FOLLOW_rule__Method__Group__7_in_rule__Method__Group__613272);
             rule__Method__Group__7();
 
             state._fsp--;
@@ -18340,59 +18428,29 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Method__Group__6__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6568:1: rule__Method__Group__6__Impl : ( ( rule__Method__VariablesAssignment_6 )* ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6599:1: rule__Method__Group__6__Impl : ( ( rule__Method__VariablesAssignment_6 )* ) ;
     public final void rule__Method__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6572:1: ( ( ( rule__Method__VariablesAssignment_6 )* ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6573:1: ( ( rule__Method__VariablesAssignment_6 )* )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6603:1: ( ( ( rule__Method__VariablesAssignment_6 )* ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6604:1: ( ( rule__Method__VariablesAssignment_6 )* )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6573:1: ( ( rule__Method__VariablesAssignment_6 )* )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6574:1: ( rule__Method__VariablesAssignment_6 )*
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6604:1: ( ( rule__Method__VariablesAssignment_6 )* )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6605:1: ( rule__Method__VariablesAssignment_6 )*
             {
              before(grammarAccess.getMethodAccess().getVariablesAssignment_6()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6575:1: ( rule__Method__VariablesAssignment_6 )*
-            loop71:
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6606:1: ( rule__Method__VariablesAssignment_6 )*
+            loop72:
             do {
-                int alt71=2;
-                switch ( input.LA(1) ) {
-                case RULE_ID:
-                    {
-                    int LA71_1 = input.LA(2);
-
-                    if ( (LA71_1==RULE_ID||LA71_1==55) ) {
-                        alt71=1;
-                    }
-
-
-                    }
-                    break;
-                case RULE_DOC:
-                    {
-                    int LA71_2 = input.LA(2);
-
-                    if ( (LA71_2==RULE_ID||LA71_2==56) ) {
-                        alt71=1;
-                    }
-
-
-                    }
-                    break;
-                case 56:
-                    {
-                    alt71=1;
-                    }
-                    break;
-
-                }
-
-                switch (alt71) {
+                int alt72=2;
+                alt72 = dfa72.predict(input);
+                switch (alt72) {
             	case 1 :
-            	    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6575:2: rule__Method__VariablesAssignment_6
+            	    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6606:2: rule__Method__VariablesAssignment_6
             	    {
-            	    pushFollow(FOLLOW_rule__Method__VariablesAssignment_6_in_rule__Method__Group__6__Impl13236);
+            	    pushFollow(FOLLOW_rule__Method__VariablesAssignment_6_in_rule__Method__Group__6__Impl13299);
             	    rule__Method__VariablesAssignment_6();
 
             	    state._fsp--;
@@ -18402,7 +18460,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
             	    break;
 
             	default :
-            	    break loop71;
+            	    break loop72;
                 }
             } while (true);
 
@@ -18429,21 +18487,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Method__Group__7"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6585:1: rule__Method__Group__7 : rule__Method__Group__7__Impl rule__Method__Group__8 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6616:1: rule__Method__Group__7 : rule__Method__Group__7__Impl rule__Method__Group__8 ;
     public final void rule__Method__Group__7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6589:1: ( rule__Method__Group__7__Impl rule__Method__Group__8 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6590:2: rule__Method__Group__7__Impl rule__Method__Group__8
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6620:1: ( rule__Method__Group__7__Impl rule__Method__Group__8 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6621:2: rule__Method__Group__7__Impl rule__Method__Group__8
             {
-            pushFollow(FOLLOW_rule__Method__Group__7__Impl_in_rule__Method__Group__713267);
+            pushFollow(FOLLOW_rule__Method__Group__7__Impl_in_rule__Method__Group__713330);
             rule__Method__Group__7__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Method__Group__8_in_rule__Method__Group__713270);
+            pushFollow(FOLLOW_rule__Method__Group__8_in_rule__Method__Group__713333);
             rule__Method__Group__8();
 
             state._fsp--;
@@ -18467,31 +18525,31 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Method__Group__7__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6597:1: rule__Method__Group__7__Impl : ( ( rule__Method__ServiceAssignment_7 )? ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6628:1: rule__Method__Group__7__Impl : ( ( rule__Method__ServiceAssignment_7 )? ) ;
     public final void rule__Method__Group__7__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6601:1: ( ( ( rule__Method__ServiceAssignment_7 )? ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6602:1: ( ( rule__Method__ServiceAssignment_7 )? )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6632:1: ( ( ( rule__Method__ServiceAssignment_7 )? ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6633:1: ( ( rule__Method__ServiceAssignment_7 )? )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6602:1: ( ( rule__Method__ServiceAssignment_7 )? )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6603:1: ( rule__Method__ServiceAssignment_7 )?
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6633:1: ( ( rule__Method__ServiceAssignment_7 )? )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6634:1: ( rule__Method__ServiceAssignment_7 )?
             {
              before(grammarAccess.getMethodAccess().getServiceAssignment_7()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6604:1: ( rule__Method__ServiceAssignment_7 )?
-            int alt72=2;
-            int LA72_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6635:1: ( rule__Method__ServiceAssignment_7 )?
+            int alt73=2;
+            int LA73_0 = input.LA(1);
 
-            if ( (LA72_0==RULE_ID) ) {
-                alt72=1;
+            if ( (LA73_0==RULE_ID) ) {
+                alt73=1;
             }
-            switch (alt72) {
+            switch (alt73) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6604:2: rule__Method__ServiceAssignment_7
+                    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6635:2: rule__Method__ServiceAssignment_7
                     {
-                    pushFollow(FOLLOW_rule__Method__ServiceAssignment_7_in_rule__Method__Group__7__Impl13297);
+                    pushFollow(FOLLOW_rule__Method__ServiceAssignment_7_in_rule__Method__Group__7__Impl13360);
                     rule__Method__ServiceAssignment_7();
 
                     state._fsp--;
@@ -18525,21 +18583,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Method__Group__8"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6614:1: rule__Method__Group__8 : rule__Method__Group__8__Impl rule__Method__Group__9 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6645:1: rule__Method__Group__8 : rule__Method__Group__8__Impl rule__Method__Group__9 ;
     public final void rule__Method__Group__8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6618:1: ( rule__Method__Group__8__Impl rule__Method__Group__9 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6619:2: rule__Method__Group__8__Impl rule__Method__Group__9
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6649:1: ( rule__Method__Group__8__Impl rule__Method__Group__9 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6650:2: rule__Method__Group__8__Impl rule__Method__Group__9
             {
-            pushFollow(FOLLOW_rule__Method__Group__8__Impl_in_rule__Method__Group__813328);
+            pushFollow(FOLLOW_rule__Method__Group__8__Impl_in_rule__Method__Group__813391);
             rule__Method__Group__8__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Method__Group__9_in_rule__Method__Group__813331);
+            pushFollow(FOLLOW_rule__Method__Group__9_in_rule__Method__Group__813394);
             rule__Method__Group__9();
 
             state._fsp--;
@@ -18563,31 +18621,38 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Method__Group__8__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6626:1: rule__Method__Group__8__Impl : ( ( rule__Method__ReturnTypeAssignment_8 )? ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6657:1: rule__Method__Group__8__Impl : ( ( rule__Method__ReturnTypeAssignment_8 )? ) ;
     public final void rule__Method__Group__8__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6630:1: ( ( ( rule__Method__ReturnTypeAssignment_8 )? ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6631:1: ( ( rule__Method__ReturnTypeAssignment_8 )? )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6661:1: ( ( ( rule__Method__ReturnTypeAssignment_8 )? ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6662:1: ( ( rule__Method__ReturnTypeAssignment_8 )? )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6631:1: ( ( rule__Method__ReturnTypeAssignment_8 )? )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6632:1: ( rule__Method__ReturnTypeAssignment_8 )?
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6662:1: ( ( rule__Method__ReturnTypeAssignment_8 )? )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6663:1: ( rule__Method__ReturnTypeAssignment_8 )?
             {
              before(grammarAccess.getMethodAccess().getReturnTypeAssignment_8()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6633:1: ( rule__Method__ReturnTypeAssignment_8 )?
-            int alt73=2;
-            int LA73_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6664:1: ( rule__Method__ReturnTypeAssignment_8 )?
+            int alt74=2;
+            int LA74_0 = input.LA(1);
 
-            if ( (LA73_0==RULE_DOC||LA73_0==43) ) {
-                alt73=1;
+            if ( (LA74_0==RULE_DOC) ) {
+                int LA74_1 = input.LA(2);
+
+                if ( (LA74_1==43) ) {
+                    alt74=1;
+                }
             }
-            switch (alt73) {
+            else if ( (LA74_0==43) ) {
+                alt74=1;
+            }
+            switch (alt74) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6633:2: rule__Method__ReturnTypeAssignment_8
+                    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6664:2: rule__Method__ReturnTypeAssignment_8
                     {
-                    pushFollow(FOLLOW_rule__Method__ReturnTypeAssignment_8_in_rule__Method__Group__8__Impl13358);
+                    pushFollow(FOLLOW_rule__Method__ReturnTypeAssignment_8_in_rule__Method__Group__8__Impl13421);
                     rule__Method__ReturnTypeAssignment_8();
 
                     state._fsp--;
@@ -18621,21 +18686,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Method__Group__9"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6643:1: rule__Method__Group__9 : rule__Method__Group__9__Impl rule__Method__Group__10 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6674:1: rule__Method__Group__9 : rule__Method__Group__9__Impl rule__Method__Group__10 ;
     public final void rule__Method__Group__9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6647:1: ( rule__Method__Group__9__Impl rule__Method__Group__10 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6648:2: rule__Method__Group__9__Impl rule__Method__Group__10
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6678:1: ( rule__Method__Group__9__Impl rule__Method__Group__10 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6679:2: rule__Method__Group__9__Impl rule__Method__Group__10
             {
-            pushFollow(FOLLOW_rule__Method__Group__9__Impl_in_rule__Method__Group__913389);
+            pushFollow(FOLLOW_rule__Method__Group__9__Impl_in_rule__Method__Group__913452);
             rule__Method__Group__9__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Method__Group__10_in_rule__Method__Group__913392);
+            pushFollow(FOLLOW_rule__Method__Group__10_in_rule__Method__Group__913455);
             rule__Method__Group__10();
 
             state._fsp--;
@@ -18659,31 +18724,31 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Method__Group__9__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6655:1: rule__Method__Group__9__Impl : ( ( rule__Method__ConstraintsAssignment_9 )? ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6686:1: rule__Method__Group__9__Impl : ( ( rule__Method__ConstraintsAssignment_9 )? ) ;
     public final void rule__Method__Group__9__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6659:1: ( ( ( rule__Method__ConstraintsAssignment_9 )? ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6660:1: ( ( rule__Method__ConstraintsAssignment_9 )? )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6690:1: ( ( ( rule__Method__ConstraintsAssignment_9 )? ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6691:1: ( ( rule__Method__ConstraintsAssignment_9 )? )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6660:1: ( ( rule__Method__ConstraintsAssignment_9 )? )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6661:1: ( rule__Method__ConstraintsAssignment_9 )?
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6691:1: ( ( rule__Method__ConstraintsAssignment_9 )? )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6692:1: ( rule__Method__ConstraintsAssignment_9 )?
             {
              before(grammarAccess.getMethodAccess().getConstraintsAssignment_9()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6662:1: ( rule__Method__ConstraintsAssignment_9 )?
-            int alt74=2;
-            int LA74_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6693:1: ( rule__Method__ConstraintsAssignment_9 )?
+            int alt75=2;
+            int LA75_0 = input.LA(1);
 
-            if ( (LA74_0==51) ) {
-                alt74=1;
+            if ( (LA75_0==51) ) {
+                alt75=1;
             }
-            switch (alt74) {
+            switch (alt75) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6662:2: rule__Method__ConstraintsAssignment_9
+                    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6693:2: rule__Method__ConstraintsAssignment_9
                     {
-                    pushFollow(FOLLOW_rule__Method__ConstraintsAssignment_9_in_rule__Method__Group__9__Impl13419);
+                    pushFollow(FOLLOW_rule__Method__ConstraintsAssignment_9_in_rule__Method__Group__9__Impl13482);
                     rule__Method__ConstraintsAssignment_9();
 
                     state._fsp--;
@@ -18717,17 +18782,22 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Method__Group__10"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6672:1: rule__Method__Group__10 : rule__Method__Group__10__Impl ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6703:1: rule__Method__Group__10 : rule__Method__Group__10__Impl rule__Method__Group__11 ;
     public final void rule__Method__Group__10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6676:1: ( rule__Method__Group__10__Impl )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6677:2: rule__Method__Group__10__Impl
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6707:1: ( rule__Method__Group__10__Impl rule__Method__Group__11 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6708:2: rule__Method__Group__10__Impl rule__Method__Group__11
             {
-            pushFollow(FOLLOW_rule__Method__Group__10__Impl_in_rule__Method__Group__1013450);
+            pushFollow(FOLLOW_rule__Method__Group__10__Impl_in_rule__Method__Group__1013513);
             rule__Method__Group__10__Impl();
+
+            state._fsp--;
+
+            pushFollow(FOLLOW_rule__Method__Group__11_in_rule__Method__Group__1013516);
+            rule__Method__Group__11();
 
             state._fsp--;
 
@@ -18750,21 +18820,49 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Method__Group__10__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6683:1: rule__Method__Group__10__Impl : ( '}' ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6715:1: rule__Method__Group__10__Impl : ( ( rule__Method__EventsAssignment_10 )* ) ;
     public final void rule__Method__Group__10__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6687:1: ( ( '}' ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6688:1: ( '}' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6719:1: ( ( ( rule__Method__EventsAssignment_10 )* ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6720:1: ( ( rule__Method__EventsAssignment_10 )* )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6688:1: ( '}' )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6689:1: '}'
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6720:1: ( ( rule__Method__EventsAssignment_10 )* )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6721:1: ( rule__Method__EventsAssignment_10 )*
             {
-             before(grammarAccess.getMethodAccess().getRightCurlyBracketKeyword_10()); 
-            match(input,17,FOLLOW_17_in_rule__Method__Group__10__Impl13478); 
-             after(grammarAccess.getMethodAccess().getRightCurlyBracketKeyword_10()); 
+             before(grammarAccess.getMethodAccess().getEventsAssignment_10()); 
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6722:1: ( rule__Method__EventsAssignment_10 )*
+            loop76:
+            do {
+                int alt76=2;
+                int LA76_0 = input.LA(1);
+
+                if ( (LA76_0==RULE_DOC||LA76_0==36) ) {
+                    alt76=1;
+                }
+
+
+                switch (alt76) {
+            	case 1 :
+            	    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6722:2: rule__Method__EventsAssignment_10
+            	    {
+            	    pushFollow(FOLLOW_rule__Method__EventsAssignment_10_in_rule__Method__Group__10__Impl13543);
+            	    rule__Method__EventsAssignment_10();
+
+            	    state._fsp--;
+
+
+            	    }
+            	    break;
+
+            	default :
+            	    break loop76;
+                }
+            } while (true);
+
+             after(grammarAccess.getMethodAccess().getEventsAssignment_10()); 
 
             }
 
@@ -18786,22 +18884,92 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
     // $ANTLR end "rule__Method__Group__10__Impl"
 
 
+    // $ANTLR start "rule__Method__Group__11"
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6732:1: rule__Method__Group__11 : rule__Method__Group__11__Impl ;
+    public final void rule__Method__Group__11() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6736:1: ( rule__Method__Group__11__Impl )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6737:2: rule__Method__Group__11__Impl
+            {
+            pushFollow(FOLLOW_rule__Method__Group__11__Impl_in_rule__Method__Group__1113574);
+            rule__Method__Group__11__Impl();
+
+            state._fsp--;
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Method__Group__11"
+
+
+    // $ANTLR start "rule__Method__Group__11__Impl"
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6743:1: rule__Method__Group__11__Impl : ( '}' ) ;
+    public final void rule__Method__Group__11__Impl() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6747:1: ( ( '}' ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6748:1: ( '}' )
+            {
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6748:1: ( '}' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6749:1: '}'
+            {
+             before(grammarAccess.getMethodAccess().getRightCurlyBracketKeyword_11()); 
+            match(input,17,FOLLOW_17_in_rule__Method__Group__11__Impl13602); 
+             after(grammarAccess.getMethodAccess().getRightCurlyBracketKeyword_11()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Method__Group__11__Impl"
+
+
     // $ANTLR start "rule__Method__Group_3__0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6724:1: rule__Method__Group_3__0 : rule__Method__Group_3__0__Impl rule__Method__Group_3__1 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6786:1: rule__Method__Group_3__0 : rule__Method__Group_3__0__Impl rule__Method__Group_3__1 ;
     public final void rule__Method__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6728:1: ( rule__Method__Group_3__0__Impl rule__Method__Group_3__1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6729:2: rule__Method__Group_3__0__Impl rule__Method__Group_3__1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6790:1: ( rule__Method__Group_3__0__Impl rule__Method__Group_3__1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6791:2: rule__Method__Group_3__0__Impl rule__Method__Group_3__1
             {
-            pushFollow(FOLLOW_rule__Method__Group_3__0__Impl_in_rule__Method__Group_3__013531);
+            pushFollow(FOLLOW_rule__Method__Group_3__0__Impl_in_rule__Method__Group_3__013657);
             rule__Method__Group_3__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Method__Group_3__1_in_rule__Method__Group_3__013534);
+            pushFollow(FOLLOW_rule__Method__Group_3__1_in_rule__Method__Group_3__013660);
             rule__Method__Group_3__1();
 
             state._fsp--;
@@ -18825,20 +18993,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Method__Group_3__0__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6736:1: rule__Method__Group_3__0__Impl : ( 'ref' ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6798:1: rule__Method__Group_3__0__Impl : ( 'ref' ) ;
     public final void rule__Method__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6740:1: ( ( 'ref' ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6741:1: ( 'ref' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6802:1: ( ( 'ref' ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6803:1: ( 'ref' )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6741:1: ( 'ref' )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6742:1: 'ref'
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6803:1: ( 'ref' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6804:1: 'ref'
             {
              before(grammarAccess.getMethodAccess().getRefKeyword_3_0()); 
-            match(input,45,FOLLOW_45_in_rule__Method__Group_3__0__Impl13562); 
+            match(input,45,FOLLOW_45_in_rule__Method__Group_3__0__Impl13688); 
              after(grammarAccess.getMethodAccess().getRefKeyword_3_0()); 
 
             }
@@ -18862,16 +19030,16 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Method__Group_3__1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6755:1: rule__Method__Group_3__1 : rule__Method__Group_3__1__Impl ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6817:1: rule__Method__Group_3__1 : rule__Method__Group_3__1__Impl ;
     public final void rule__Method__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6759:1: ( rule__Method__Group_3__1__Impl )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6760:2: rule__Method__Group_3__1__Impl
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6821:1: ( rule__Method__Group_3__1__Impl )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6822:2: rule__Method__Group_3__1__Impl
             {
-            pushFollow(FOLLOW_rule__Method__Group_3__1__Impl_in_rule__Method__Group_3__113593);
+            pushFollow(FOLLOW_rule__Method__Group_3__1__Impl_in_rule__Method__Group_3__113719);
             rule__Method__Group_3__1__Impl();
 
             state._fsp--;
@@ -18895,23 +19063,23 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Method__Group_3__1__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6766:1: rule__Method__Group_3__1__Impl : ( ( rule__Method__RefMethodAssignment_3_1 ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6828:1: rule__Method__Group_3__1__Impl : ( ( rule__Method__RefMethodAssignment_3_1 ) ) ;
     public final void rule__Method__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6770:1: ( ( ( rule__Method__RefMethodAssignment_3_1 ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6771:1: ( ( rule__Method__RefMethodAssignment_3_1 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6832:1: ( ( ( rule__Method__RefMethodAssignment_3_1 ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6833:1: ( ( rule__Method__RefMethodAssignment_3_1 ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6771:1: ( ( rule__Method__RefMethodAssignment_3_1 ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6772:1: ( rule__Method__RefMethodAssignment_3_1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6833:1: ( ( rule__Method__RefMethodAssignment_3_1 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6834:1: ( rule__Method__RefMethodAssignment_3_1 )
             {
              before(grammarAccess.getMethodAccess().getRefMethodAssignment_3_1()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6773:1: ( rule__Method__RefMethodAssignment_3_1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6773:2: rule__Method__RefMethodAssignment_3_1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6835:1: ( rule__Method__RefMethodAssignment_3_1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6835:2: rule__Method__RefMethodAssignment_3_1
             {
-            pushFollow(FOLLOW_rule__Method__RefMethodAssignment_3_1_in_rule__Method__Group_3__1__Impl13620);
+            pushFollow(FOLLOW_rule__Method__RefMethodAssignment_3_1_in_rule__Method__Group_3__1__Impl13746);
             rule__Method__RefMethodAssignment_3_1();
 
             state._fsp--;
@@ -18942,21 +19110,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Method__Group_4__0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6787:1: rule__Method__Group_4__0 : rule__Method__Group_4__0__Impl rule__Method__Group_4__1 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6849:1: rule__Method__Group_4__0 : rule__Method__Group_4__0__Impl rule__Method__Group_4__1 ;
     public final void rule__Method__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6791:1: ( rule__Method__Group_4__0__Impl rule__Method__Group_4__1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6792:2: rule__Method__Group_4__0__Impl rule__Method__Group_4__1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6853:1: ( rule__Method__Group_4__0__Impl rule__Method__Group_4__1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6854:2: rule__Method__Group_4__0__Impl rule__Method__Group_4__1
             {
-            pushFollow(FOLLOW_rule__Method__Group_4__0__Impl_in_rule__Method__Group_4__013654);
+            pushFollow(FOLLOW_rule__Method__Group_4__0__Impl_in_rule__Method__Group_4__013780);
             rule__Method__Group_4__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Method__Group_4__1_in_rule__Method__Group_4__013657);
+            pushFollow(FOLLOW_rule__Method__Group_4__1_in_rule__Method__Group_4__013783);
             rule__Method__Group_4__1();
 
             state._fsp--;
@@ -18980,20 +19148,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Method__Group_4__0__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6799:1: rule__Method__Group_4__0__Impl : ( 'fires' ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6861:1: rule__Method__Group_4__0__Impl : ( 'fires' ) ;
     public final void rule__Method__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6803:1: ( ( 'fires' ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6804:1: ( 'fires' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6865:1: ( ( 'fires' ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6866:1: ( 'fires' )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6804:1: ( 'fires' )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6805:1: 'fires'
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6866:1: ( 'fires' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6867:1: 'fires'
             {
              before(grammarAccess.getMethodAccess().getFiresKeyword_4_0()); 
-            match(input,42,FOLLOW_42_in_rule__Method__Group_4__0__Impl13685); 
+            match(input,42,FOLLOW_42_in_rule__Method__Group_4__0__Impl13811); 
              after(grammarAccess.getMethodAccess().getFiresKeyword_4_0()); 
 
             }
@@ -19017,21 +19185,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Method__Group_4__1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6818:1: rule__Method__Group_4__1 : rule__Method__Group_4__1__Impl rule__Method__Group_4__2 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6880:1: rule__Method__Group_4__1 : rule__Method__Group_4__1__Impl rule__Method__Group_4__2 ;
     public final void rule__Method__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6822:1: ( rule__Method__Group_4__1__Impl rule__Method__Group_4__2 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6823:2: rule__Method__Group_4__1__Impl rule__Method__Group_4__2
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6884:1: ( rule__Method__Group_4__1__Impl rule__Method__Group_4__2 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6885:2: rule__Method__Group_4__1__Impl rule__Method__Group_4__2
             {
-            pushFollow(FOLLOW_rule__Method__Group_4__1__Impl_in_rule__Method__Group_4__113716);
+            pushFollow(FOLLOW_rule__Method__Group_4__1__Impl_in_rule__Method__Group_4__113842);
             rule__Method__Group_4__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Method__Group_4__2_in_rule__Method__Group_4__113719);
+            pushFollow(FOLLOW_rule__Method__Group_4__2_in_rule__Method__Group_4__113845);
             rule__Method__Group_4__2();
 
             state._fsp--;
@@ -19055,23 +19223,23 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Method__Group_4__1__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6830:1: rule__Method__Group_4__1__Impl : ( ( rule__Method__FiredEventsAssignment_4_1 ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6892:1: rule__Method__Group_4__1__Impl : ( ( rule__Method__FiredEventsAssignment_4_1 ) ) ;
     public final void rule__Method__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6834:1: ( ( ( rule__Method__FiredEventsAssignment_4_1 ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6835:1: ( ( rule__Method__FiredEventsAssignment_4_1 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6896:1: ( ( ( rule__Method__FiredEventsAssignment_4_1 ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6897:1: ( ( rule__Method__FiredEventsAssignment_4_1 ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6835:1: ( ( rule__Method__FiredEventsAssignment_4_1 ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6836:1: ( rule__Method__FiredEventsAssignment_4_1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6897:1: ( ( rule__Method__FiredEventsAssignment_4_1 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6898:1: ( rule__Method__FiredEventsAssignment_4_1 )
             {
              before(grammarAccess.getMethodAccess().getFiredEventsAssignment_4_1()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6837:1: ( rule__Method__FiredEventsAssignment_4_1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6837:2: rule__Method__FiredEventsAssignment_4_1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6899:1: ( rule__Method__FiredEventsAssignment_4_1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6899:2: rule__Method__FiredEventsAssignment_4_1
             {
-            pushFollow(FOLLOW_rule__Method__FiredEventsAssignment_4_1_in_rule__Method__Group_4__1__Impl13746);
+            pushFollow(FOLLOW_rule__Method__FiredEventsAssignment_4_1_in_rule__Method__Group_4__1__Impl13872);
             rule__Method__FiredEventsAssignment_4_1();
 
             state._fsp--;
@@ -19102,16 +19270,16 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Method__Group_4__2"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6847:1: rule__Method__Group_4__2 : rule__Method__Group_4__2__Impl ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6909:1: rule__Method__Group_4__2 : rule__Method__Group_4__2__Impl ;
     public final void rule__Method__Group_4__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6851:1: ( rule__Method__Group_4__2__Impl )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6852:2: rule__Method__Group_4__2__Impl
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6913:1: ( rule__Method__Group_4__2__Impl )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6914:2: rule__Method__Group_4__2__Impl
             {
-            pushFollow(FOLLOW_rule__Method__Group_4__2__Impl_in_rule__Method__Group_4__213776);
+            pushFollow(FOLLOW_rule__Method__Group_4__2__Impl_in_rule__Method__Group_4__213902);
             rule__Method__Group_4__2__Impl();
 
             state._fsp--;
@@ -19135,35 +19303,35 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Method__Group_4__2__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6858:1: rule__Method__Group_4__2__Impl : ( ( rule__Method__Group_4_2__0 )* ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6920:1: rule__Method__Group_4__2__Impl : ( ( rule__Method__Group_4_2__0 )* ) ;
     public final void rule__Method__Group_4__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6862:1: ( ( ( rule__Method__Group_4_2__0 )* ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6863:1: ( ( rule__Method__Group_4_2__0 )* )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6924:1: ( ( ( rule__Method__Group_4_2__0 )* ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6925:1: ( ( rule__Method__Group_4_2__0 )* )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6863:1: ( ( rule__Method__Group_4_2__0 )* )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6864:1: ( rule__Method__Group_4_2__0 )*
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6925:1: ( ( rule__Method__Group_4_2__0 )* )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6926:1: ( rule__Method__Group_4_2__0 )*
             {
              before(grammarAccess.getMethodAccess().getGroup_4_2()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6865:1: ( rule__Method__Group_4_2__0 )*
-            loop75:
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6927:1: ( rule__Method__Group_4_2__0 )*
+            loop77:
             do {
-                int alt75=2;
-                int LA75_0 = input.LA(1);
+                int alt77=2;
+                int LA77_0 = input.LA(1);
 
-                if ( (LA75_0==35) ) {
-                    alt75=1;
+                if ( (LA77_0==35) ) {
+                    alt77=1;
                 }
 
 
-                switch (alt75) {
+                switch (alt77) {
             	case 1 :
-            	    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6865:2: rule__Method__Group_4_2__0
+            	    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6927:2: rule__Method__Group_4_2__0
             	    {
-            	    pushFollow(FOLLOW_rule__Method__Group_4_2__0_in_rule__Method__Group_4__2__Impl13803);
+            	    pushFollow(FOLLOW_rule__Method__Group_4_2__0_in_rule__Method__Group_4__2__Impl13929);
             	    rule__Method__Group_4_2__0();
 
             	    state._fsp--;
@@ -19173,7 +19341,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
             	    break;
 
             	default :
-            	    break loop75;
+            	    break loop77;
                 }
             } while (true);
 
@@ -19200,21 +19368,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Method__Group_4_2__0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6881:1: rule__Method__Group_4_2__0 : rule__Method__Group_4_2__0__Impl rule__Method__Group_4_2__1 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6943:1: rule__Method__Group_4_2__0 : rule__Method__Group_4_2__0__Impl rule__Method__Group_4_2__1 ;
     public final void rule__Method__Group_4_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6885:1: ( rule__Method__Group_4_2__0__Impl rule__Method__Group_4_2__1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6886:2: rule__Method__Group_4_2__0__Impl rule__Method__Group_4_2__1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6947:1: ( rule__Method__Group_4_2__0__Impl rule__Method__Group_4_2__1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6948:2: rule__Method__Group_4_2__0__Impl rule__Method__Group_4_2__1
             {
-            pushFollow(FOLLOW_rule__Method__Group_4_2__0__Impl_in_rule__Method__Group_4_2__013840);
+            pushFollow(FOLLOW_rule__Method__Group_4_2__0__Impl_in_rule__Method__Group_4_2__013966);
             rule__Method__Group_4_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Method__Group_4_2__1_in_rule__Method__Group_4_2__013843);
+            pushFollow(FOLLOW_rule__Method__Group_4_2__1_in_rule__Method__Group_4_2__013969);
             rule__Method__Group_4_2__1();
 
             state._fsp--;
@@ -19238,20 +19406,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Method__Group_4_2__0__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6893:1: rule__Method__Group_4_2__0__Impl : ( ',' ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6955:1: rule__Method__Group_4_2__0__Impl : ( ',' ) ;
     public final void rule__Method__Group_4_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6897:1: ( ( ',' ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6898:1: ( ',' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6959:1: ( ( ',' ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6960:1: ( ',' )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6898:1: ( ',' )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6899:1: ','
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6960:1: ( ',' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6961:1: ','
             {
              before(grammarAccess.getMethodAccess().getCommaKeyword_4_2_0()); 
-            match(input,35,FOLLOW_35_in_rule__Method__Group_4_2__0__Impl13871); 
+            match(input,35,FOLLOW_35_in_rule__Method__Group_4_2__0__Impl13997); 
              after(grammarAccess.getMethodAccess().getCommaKeyword_4_2_0()); 
 
             }
@@ -19275,16 +19443,16 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Method__Group_4_2__1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6912:1: rule__Method__Group_4_2__1 : rule__Method__Group_4_2__1__Impl ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6974:1: rule__Method__Group_4_2__1 : rule__Method__Group_4_2__1__Impl ;
     public final void rule__Method__Group_4_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6916:1: ( rule__Method__Group_4_2__1__Impl )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6917:2: rule__Method__Group_4_2__1__Impl
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6978:1: ( rule__Method__Group_4_2__1__Impl )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6979:2: rule__Method__Group_4_2__1__Impl
             {
-            pushFollow(FOLLOW_rule__Method__Group_4_2__1__Impl_in_rule__Method__Group_4_2__113902);
+            pushFollow(FOLLOW_rule__Method__Group_4_2__1__Impl_in_rule__Method__Group_4_2__114028);
             rule__Method__Group_4_2__1__Impl();
 
             state._fsp--;
@@ -19308,23 +19476,23 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Method__Group_4_2__1__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6923:1: rule__Method__Group_4_2__1__Impl : ( ( rule__Method__FiredEventsAssignment_4_2_1 ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6985:1: rule__Method__Group_4_2__1__Impl : ( ( rule__Method__FiredEventsAssignment_4_2_1 ) ) ;
     public final void rule__Method__Group_4_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6927:1: ( ( ( rule__Method__FiredEventsAssignment_4_2_1 ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6928:1: ( ( rule__Method__FiredEventsAssignment_4_2_1 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6989:1: ( ( ( rule__Method__FiredEventsAssignment_4_2_1 ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6990:1: ( ( rule__Method__FiredEventsAssignment_4_2_1 ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6928:1: ( ( rule__Method__FiredEventsAssignment_4_2_1 ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6929:1: ( rule__Method__FiredEventsAssignment_4_2_1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6990:1: ( ( rule__Method__FiredEventsAssignment_4_2_1 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6991:1: ( rule__Method__FiredEventsAssignment_4_2_1 )
             {
              before(grammarAccess.getMethodAccess().getFiredEventsAssignment_4_2_1()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6930:1: ( rule__Method__FiredEventsAssignment_4_2_1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6930:2: rule__Method__FiredEventsAssignment_4_2_1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6992:1: ( rule__Method__FiredEventsAssignment_4_2_1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6992:2: rule__Method__FiredEventsAssignment_4_2_1
             {
-            pushFollow(FOLLOW_rule__Method__FiredEventsAssignment_4_2_1_in_rule__Method__Group_4_2__1__Impl13929);
+            pushFollow(FOLLOW_rule__Method__FiredEventsAssignment_4_2_1_in_rule__Method__Group_4_2__1__Impl14055);
             rule__Method__FiredEventsAssignment_4_2_1();
 
             state._fsp--;
@@ -19355,21 +19523,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__TypeMetaInfo__Group__0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6944:1: rule__TypeMetaInfo__Group__0 : rule__TypeMetaInfo__Group__0__Impl rule__TypeMetaInfo__Group__1 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7006:1: rule__TypeMetaInfo__Group__0 : rule__TypeMetaInfo__Group__0__Impl rule__TypeMetaInfo__Group__1 ;
     public final void rule__TypeMetaInfo__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6948:1: ( rule__TypeMetaInfo__Group__0__Impl rule__TypeMetaInfo__Group__1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6949:2: rule__TypeMetaInfo__Group__0__Impl rule__TypeMetaInfo__Group__1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7010:1: ( rule__TypeMetaInfo__Group__0__Impl rule__TypeMetaInfo__Group__1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7011:2: rule__TypeMetaInfo__Group__0__Impl rule__TypeMetaInfo__Group__1
             {
-            pushFollow(FOLLOW_rule__TypeMetaInfo__Group__0__Impl_in_rule__TypeMetaInfo__Group__013963);
+            pushFollow(FOLLOW_rule__TypeMetaInfo__Group__0__Impl_in_rule__TypeMetaInfo__Group__014089);
             rule__TypeMetaInfo__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TypeMetaInfo__Group__1_in_rule__TypeMetaInfo__Group__013966);
+            pushFollow(FOLLOW_rule__TypeMetaInfo__Group__1_in_rule__TypeMetaInfo__Group__014092);
             rule__TypeMetaInfo__Group__1();
 
             state._fsp--;
@@ -19393,21 +19561,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__TypeMetaInfo__Group__0__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6956:1: rule__TypeMetaInfo__Group__0__Impl : ( () ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7018:1: rule__TypeMetaInfo__Group__0__Impl : ( () ) ;
     public final void rule__TypeMetaInfo__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6960:1: ( ( () ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6961:1: ( () )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7022:1: ( ( () ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7023:1: ( () )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6961:1: ( () )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6962:1: ()
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7023:1: ( () )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7024:1: ()
             {
              before(grammarAccess.getTypeMetaInfoAccess().getTypeMetaInfoAction_0()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6963:1: ()
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6965:1: 
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7025:1: ()
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7027:1: 
             {
             }
 
@@ -19430,21 +19598,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__TypeMetaInfo__Group__1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6975:1: rule__TypeMetaInfo__Group__1 : rule__TypeMetaInfo__Group__1__Impl rule__TypeMetaInfo__Group__2 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7037:1: rule__TypeMetaInfo__Group__1 : rule__TypeMetaInfo__Group__1__Impl rule__TypeMetaInfo__Group__2 ;
     public final void rule__TypeMetaInfo__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6979:1: ( rule__TypeMetaInfo__Group__1__Impl rule__TypeMetaInfo__Group__2 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6980:2: rule__TypeMetaInfo__Group__1__Impl rule__TypeMetaInfo__Group__2
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7041:1: ( rule__TypeMetaInfo__Group__1__Impl rule__TypeMetaInfo__Group__2 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7042:2: rule__TypeMetaInfo__Group__1__Impl rule__TypeMetaInfo__Group__2
             {
-            pushFollow(FOLLOW_rule__TypeMetaInfo__Group__1__Impl_in_rule__TypeMetaInfo__Group__114024);
+            pushFollow(FOLLOW_rule__TypeMetaInfo__Group__1__Impl_in_rule__TypeMetaInfo__Group__114150);
             rule__TypeMetaInfo__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TypeMetaInfo__Group__2_in_rule__TypeMetaInfo__Group__114027);
+            pushFollow(FOLLOW_rule__TypeMetaInfo__Group__2_in_rule__TypeMetaInfo__Group__114153);
             rule__TypeMetaInfo__Group__2();
 
             state._fsp--;
@@ -19468,31 +19636,31 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__TypeMetaInfo__Group__1__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6987:1: rule__TypeMetaInfo__Group__1__Impl : ( ( rule__TypeMetaInfo__Group_1__0 )? ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7049:1: rule__TypeMetaInfo__Group__1__Impl : ( ( rule__TypeMetaInfo__Group_1__0 )? ) ;
     public final void rule__TypeMetaInfo__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6991:1: ( ( ( rule__TypeMetaInfo__Group_1__0 )? ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6992:1: ( ( rule__TypeMetaInfo__Group_1__0 )? )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7053:1: ( ( ( rule__TypeMetaInfo__Group_1__0 )? ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7054:1: ( ( rule__TypeMetaInfo__Group_1__0 )? )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6992:1: ( ( rule__TypeMetaInfo__Group_1__0 )? )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6993:1: ( rule__TypeMetaInfo__Group_1__0 )?
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7054:1: ( ( rule__TypeMetaInfo__Group_1__0 )? )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7055:1: ( rule__TypeMetaInfo__Group_1__0 )?
             {
              before(grammarAccess.getTypeMetaInfoAccess().getGroup_1()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6994:1: ( rule__TypeMetaInfo__Group_1__0 )?
-            int alt76=2;
-            int LA76_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7056:1: ( rule__TypeMetaInfo__Group_1__0 )?
+            int alt78=2;
+            int LA78_0 = input.LA(1);
 
-            if ( (LA76_0==46) ) {
-                alt76=1;
+            if ( (LA78_0==46) ) {
+                alt78=1;
             }
-            switch (alt76) {
+            switch (alt78) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:6994:2: rule__TypeMetaInfo__Group_1__0
+                    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7056:2: rule__TypeMetaInfo__Group_1__0
                     {
-                    pushFollow(FOLLOW_rule__TypeMetaInfo__Group_1__0_in_rule__TypeMetaInfo__Group__1__Impl14054);
+                    pushFollow(FOLLOW_rule__TypeMetaInfo__Group_1__0_in_rule__TypeMetaInfo__Group__1__Impl14180);
                     rule__TypeMetaInfo__Group_1__0();
 
                     state._fsp--;
@@ -19526,21 +19694,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__TypeMetaInfo__Group__2"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7004:1: rule__TypeMetaInfo__Group__2 : rule__TypeMetaInfo__Group__2__Impl rule__TypeMetaInfo__Group__3 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7066:1: rule__TypeMetaInfo__Group__2 : rule__TypeMetaInfo__Group__2__Impl rule__TypeMetaInfo__Group__3 ;
     public final void rule__TypeMetaInfo__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7008:1: ( rule__TypeMetaInfo__Group__2__Impl rule__TypeMetaInfo__Group__3 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7009:2: rule__TypeMetaInfo__Group__2__Impl rule__TypeMetaInfo__Group__3
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7070:1: ( rule__TypeMetaInfo__Group__2__Impl rule__TypeMetaInfo__Group__3 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7071:2: rule__TypeMetaInfo__Group__2__Impl rule__TypeMetaInfo__Group__3
             {
-            pushFollow(FOLLOW_rule__TypeMetaInfo__Group__2__Impl_in_rule__TypeMetaInfo__Group__214085);
+            pushFollow(FOLLOW_rule__TypeMetaInfo__Group__2__Impl_in_rule__TypeMetaInfo__Group__214211);
             rule__TypeMetaInfo__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TypeMetaInfo__Group__3_in_rule__TypeMetaInfo__Group__214088);
+            pushFollow(FOLLOW_rule__TypeMetaInfo__Group__3_in_rule__TypeMetaInfo__Group__214214);
             rule__TypeMetaInfo__Group__3();
 
             state._fsp--;
@@ -19564,31 +19732,31 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__TypeMetaInfo__Group__2__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7016:1: rule__TypeMetaInfo__Group__2__Impl : ( ( rule__TypeMetaInfo__Group_2__0 )? ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7078:1: rule__TypeMetaInfo__Group__2__Impl : ( ( rule__TypeMetaInfo__Group_2__0 )? ) ;
     public final void rule__TypeMetaInfo__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7020:1: ( ( ( rule__TypeMetaInfo__Group_2__0 )? ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7021:1: ( ( rule__TypeMetaInfo__Group_2__0 )? )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7082:1: ( ( ( rule__TypeMetaInfo__Group_2__0 )? ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7083:1: ( ( rule__TypeMetaInfo__Group_2__0 )? )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7021:1: ( ( rule__TypeMetaInfo__Group_2__0 )? )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7022:1: ( rule__TypeMetaInfo__Group_2__0 )?
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7083:1: ( ( rule__TypeMetaInfo__Group_2__0 )? )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7084:1: ( rule__TypeMetaInfo__Group_2__0 )?
             {
              before(grammarAccess.getTypeMetaInfoAccess().getGroup_2()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7023:1: ( rule__TypeMetaInfo__Group_2__0 )?
-            int alt77=2;
-            int LA77_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7085:1: ( rule__TypeMetaInfo__Group_2__0 )?
+            int alt79=2;
+            int LA79_0 = input.LA(1);
 
-            if ( (LA77_0==47) ) {
-                alt77=1;
+            if ( (LA79_0==47) ) {
+                alt79=1;
             }
-            switch (alt77) {
+            switch (alt79) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7023:2: rule__TypeMetaInfo__Group_2__0
+                    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7085:2: rule__TypeMetaInfo__Group_2__0
                     {
-                    pushFollow(FOLLOW_rule__TypeMetaInfo__Group_2__0_in_rule__TypeMetaInfo__Group__2__Impl14115);
+                    pushFollow(FOLLOW_rule__TypeMetaInfo__Group_2__0_in_rule__TypeMetaInfo__Group__2__Impl14241);
                     rule__TypeMetaInfo__Group_2__0();
 
                     state._fsp--;
@@ -19622,21 +19790,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__TypeMetaInfo__Group__3"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7033:1: rule__TypeMetaInfo__Group__3 : rule__TypeMetaInfo__Group__3__Impl rule__TypeMetaInfo__Group__4 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7095:1: rule__TypeMetaInfo__Group__3 : rule__TypeMetaInfo__Group__3__Impl rule__TypeMetaInfo__Group__4 ;
     public final void rule__TypeMetaInfo__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7037:1: ( rule__TypeMetaInfo__Group__3__Impl rule__TypeMetaInfo__Group__4 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7038:2: rule__TypeMetaInfo__Group__3__Impl rule__TypeMetaInfo__Group__4
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7099:1: ( rule__TypeMetaInfo__Group__3__Impl rule__TypeMetaInfo__Group__4 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7100:2: rule__TypeMetaInfo__Group__3__Impl rule__TypeMetaInfo__Group__4
             {
-            pushFollow(FOLLOW_rule__TypeMetaInfo__Group__3__Impl_in_rule__TypeMetaInfo__Group__314146);
+            pushFollow(FOLLOW_rule__TypeMetaInfo__Group__3__Impl_in_rule__TypeMetaInfo__Group__314272);
             rule__TypeMetaInfo__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TypeMetaInfo__Group__4_in_rule__TypeMetaInfo__Group__314149);
+            pushFollow(FOLLOW_rule__TypeMetaInfo__Group__4_in_rule__TypeMetaInfo__Group__314275);
             rule__TypeMetaInfo__Group__4();
 
             state._fsp--;
@@ -19660,31 +19828,31 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__TypeMetaInfo__Group__3__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7045:1: rule__TypeMetaInfo__Group__3__Impl : ( ( rule__TypeMetaInfo__Group_3__0 )? ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7107:1: rule__TypeMetaInfo__Group__3__Impl : ( ( rule__TypeMetaInfo__Group_3__0 )? ) ;
     public final void rule__TypeMetaInfo__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7049:1: ( ( ( rule__TypeMetaInfo__Group_3__0 )? ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7050:1: ( ( rule__TypeMetaInfo__Group_3__0 )? )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7111:1: ( ( ( rule__TypeMetaInfo__Group_3__0 )? ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7112:1: ( ( rule__TypeMetaInfo__Group_3__0 )? )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7050:1: ( ( rule__TypeMetaInfo__Group_3__0 )? )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7051:1: ( rule__TypeMetaInfo__Group_3__0 )?
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7112:1: ( ( rule__TypeMetaInfo__Group_3__0 )? )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7113:1: ( rule__TypeMetaInfo__Group_3__0 )?
             {
              before(grammarAccess.getTypeMetaInfoAccess().getGroup_3()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7052:1: ( rule__TypeMetaInfo__Group_3__0 )?
-            int alt78=2;
-            int LA78_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7114:1: ( rule__TypeMetaInfo__Group_3__0 )?
+            int alt80=2;
+            int LA80_0 = input.LA(1);
 
-            if ( (LA78_0==48) ) {
-                alt78=1;
+            if ( (LA80_0==48) ) {
+                alt80=1;
             }
-            switch (alt78) {
+            switch (alt80) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7052:2: rule__TypeMetaInfo__Group_3__0
+                    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7114:2: rule__TypeMetaInfo__Group_3__0
                     {
-                    pushFollow(FOLLOW_rule__TypeMetaInfo__Group_3__0_in_rule__TypeMetaInfo__Group__3__Impl14176);
+                    pushFollow(FOLLOW_rule__TypeMetaInfo__Group_3__0_in_rule__TypeMetaInfo__Group__3__Impl14302);
                     rule__TypeMetaInfo__Group_3__0();
 
                     state._fsp--;
@@ -19718,21 +19886,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__TypeMetaInfo__Group__4"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7062:1: rule__TypeMetaInfo__Group__4 : rule__TypeMetaInfo__Group__4__Impl rule__TypeMetaInfo__Group__5 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7124:1: rule__TypeMetaInfo__Group__4 : rule__TypeMetaInfo__Group__4__Impl rule__TypeMetaInfo__Group__5 ;
     public final void rule__TypeMetaInfo__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7066:1: ( rule__TypeMetaInfo__Group__4__Impl rule__TypeMetaInfo__Group__5 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7067:2: rule__TypeMetaInfo__Group__4__Impl rule__TypeMetaInfo__Group__5
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7128:1: ( rule__TypeMetaInfo__Group__4__Impl rule__TypeMetaInfo__Group__5 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7129:2: rule__TypeMetaInfo__Group__4__Impl rule__TypeMetaInfo__Group__5
             {
-            pushFollow(FOLLOW_rule__TypeMetaInfo__Group__4__Impl_in_rule__TypeMetaInfo__Group__414207);
+            pushFollow(FOLLOW_rule__TypeMetaInfo__Group__4__Impl_in_rule__TypeMetaInfo__Group__414333);
             rule__TypeMetaInfo__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TypeMetaInfo__Group__5_in_rule__TypeMetaInfo__Group__414210);
+            pushFollow(FOLLOW_rule__TypeMetaInfo__Group__5_in_rule__TypeMetaInfo__Group__414336);
             rule__TypeMetaInfo__Group__5();
 
             state._fsp--;
@@ -19756,31 +19924,31 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__TypeMetaInfo__Group__4__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7074:1: rule__TypeMetaInfo__Group__4__Impl : ( ( rule__TypeMetaInfo__Group_4__0 )? ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7136:1: rule__TypeMetaInfo__Group__4__Impl : ( ( rule__TypeMetaInfo__Group_4__0 )? ) ;
     public final void rule__TypeMetaInfo__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7078:1: ( ( ( rule__TypeMetaInfo__Group_4__0 )? ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7079:1: ( ( rule__TypeMetaInfo__Group_4__0 )? )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7140:1: ( ( ( rule__TypeMetaInfo__Group_4__0 )? ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7141:1: ( ( rule__TypeMetaInfo__Group_4__0 )? )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7079:1: ( ( rule__TypeMetaInfo__Group_4__0 )? )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7080:1: ( rule__TypeMetaInfo__Group_4__0 )?
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7141:1: ( ( rule__TypeMetaInfo__Group_4__0 )? )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7142:1: ( rule__TypeMetaInfo__Group_4__0 )?
             {
              before(grammarAccess.getTypeMetaInfoAccess().getGroup_4()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7081:1: ( rule__TypeMetaInfo__Group_4__0 )?
-            int alt79=2;
-            int LA79_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7143:1: ( rule__TypeMetaInfo__Group_4__0 )?
+            int alt81=2;
+            int LA81_0 = input.LA(1);
 
-            if ( (LA79_0==49) ) {
-                alt79=1;
+            if ( (LA81_0==49) ) {
+                alt81=1;
             }
-            switch (alt79) {
+            switch (alt81) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7081:2: rule__TypeMetaInfo__Group_4__0
+                    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7143:2: rule__TypeMetaInfo__Group_4__0
                     {
-                    pushFollow(FOLLOW_rule__TypeMetaInfo__Group_4__0_in_rule__TypeMetaInfo__Group__4__Impl14237);
+                    pushFollow(FOLLOW_rule__TypeMetaInfo__Group_4__0_in_rule__TypeMetaInfo__Group__4__Impl14363);
                     rule__TypeMetaInfo__Group_4__0();
 
                     state._fsp--;
@@ -19814,16 +19982,16 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__TypeMetaInfo__Group__5"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7091:1: rule__TypeMetaInfo__Group__5 : rule__TypeMetaInfo__Group__5__Impl ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7153:1: rule__TypeMetaInfo__Group__5 : rule__TypeMetaInfo__Group__5__Impl ;
     public final void rule__TypeMetaInfo__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7095:1: ( rule__TypeMetaInfo__Group__5__Impl )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7096:2: rule__TypeMetaInfo__Group__5__Impl
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7157:1: ( rule__TypeMetaInfo__Group__5__Impl )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7158:2: rule__TypeMetaInfo__Group__5__Impl
             {
-            pushFollow(FOLLOW_rule__TypeMetaInfo__Group__5__Impl_in_rule__TypeMetaInfo__Group__514268);
+            pushFollow(FOLLOW_rule__TypeMetaInfo__Group__5__Impl_in_rule__TypeMetaInfo__Group__514394);
             rule__TypeMetaInfo__Group__5__Impl();
 
             state._fsp--;
@@ -19847,31 +20015,31 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__TypeMetaInfo__Group__5__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7102:1: rule__TypeMetaInfo__Group__5__Impl : ( ( rule__TypeMetaInfo__Group_5__0 )? ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7164:1: rule__TypeMetaInfo__Group__5__Impl : ( ( rule__TypeMetaInfo__Group_5__0 )? ) ;
     public final void rule__TypeMetaInfo__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7106:1: ( ( ( rule__TypeMetaInfo__Group_5__0 )? ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7107:1: ( ( rule__TypeMetaInfo__Group_5__0 )? )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7168:1: ( ( ( rule__TypeMetaInfo__Group_5__0 )? ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7169:1: ( ( rule__TypeMetaInfo__Group_5__0 )? )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7107:1: ( ( rule__TypeMetaInfo__Group_5__0 )? )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7108:1: ( rule__TypeMetaInfo__Group_5__0 )?
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7169:1: ( ( rule__TypeMetaInfo__Group_5__0 )? )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7170:1: ( rule__TypeMetaInfo__Group_5__0 )?
             {
              before(grammarAccess.getTypeMetaInfoAccess().getGroup_5()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7109:1: ( rule__TypeMetaInfo__Group_5__0 )?
-            int alt80=2;
-            int LA80_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7171:1: ( rule__TypeMetaInfo__Group_5__0 )?
+            int alt82=2;
+            int LA82_0 = input.LA(1);
 
-            if ( (LA80_0==50) ) {
-                alt80=1;
+            if ( (LA82_0==50) ) {
+                alt82=1;
             }
-            switch (alt80) {
+            switch (alt82) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7109:2: rule__TypeMetaInfo__Group_5__0
+                    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7171:2: rule__TypeMetaInfo__Group_5__0
                     {
-                    pushFollow(FOLLOW_rule__TypeMetaInfo__Group_5__0_in_rule__TypeMetaInfo__Group__5__Impl14295);
+                    pushFollow(FOLLOW_rule__TypeMetaInfo__Group_5__0_in_rule__TypeMetaInfo__Group__5__Impl14421);
                     rule__TypeMetaInfo__Group_5__0();
 
                     state._fsp--;
@@ -19905,21 +20073,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__TypeMetaInfo__Group_1__0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7131:1: rule__TypeMetaInfo__Group_1__0 : rule__TypeMetaInfo__Group_1__0__Impl rule__TypeMetaInfo__Group_1__1 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7193:1: rule__TypeMetaInfo__Group_1__0 : rule__TypeMetaInfo__Group_1__0__Impl rule__TypeMetaInfo__Group_1__1 ;
     public final void rule__TypeMetaInfo__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7135:1: ( rule__TypeMetaInfo__Group_1__0__Impl rule__TypeMetaInfo__Group_1__1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7136:2: rule__TypeMetaInfo__Group_1__0__Impl rule__TypeMetaInfo__Group_1__1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7197:1: ( rule__TypeMetaInfo__Group_1__0__Impl rule__TypeMetaInfo__Group_1__1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7198:2: rule__TypeMetaInfo__Group_1__0__Impl rule__TypeMetaInfo__Group_1__1
             {
-            pushFollow(FOLLOW_rule__TypeMetaInfo__Group_1__0__Impl_in_rule__TypeMetaInfo__Group_1__014338);
+            pushFollow(FOLLOW_rule__TypeMetaInfo__Group_1__0__Impl_in_rule__TypeMetaInfo__Group_1__014464);
             rule__TypeMetaInfo__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TypeMetaInfo__Group_1__1_in_rule__TypeMetaInfo__Group_1__014341);
+            pushFollow(FOLLOW_rule__TypeMetaInfo__Group_1__1_in_rule__TypeMetaInfo__Group_1__014467);
             rule__TypeMetaInfo__Group_1__1();
 
             state._fsp--;
@@ -19943,20 +20111,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__TypeMetaInfo__Group_1__0__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7143:1: rule__TypeMetaInfo__Group_1__0__Impl : ( 'slabel' ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7205:1: rule__TypeMetaInfo__Group_1__0__Impl : ( 'slabel' ) ;
     public final void rule__TypeMetaInfo__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7147:1: ( ( 'slabel' ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7148:1: ( 'slabel' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7209:1: ( ( 'slabel' ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7210:1: ( 'slabel' )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7148:1: ( 'slabel' )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7149:1: 'slabel'
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7210:1: ( 'slabel' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7211:1: 'slabel'
             {
              before(grammarAccess.getTypeMetaInfoAccess().getSlabelKeyword_1_0()); 
-            match(input,46,FOLLOW_46_in_rule__TypeMetaInfo__Group_1__0__Impl14369); 
+            match(input,46,FOLLOW_46_in_rule__TypeMetaInfo__Group_1__0__Impl14495); 
              after(grammarAccess.getTypeMetaInfoAccess().getSlabelKeyword_1_0()); 
 
             }
@@ -19980,16 +20148,16 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__TypeMetaInfo__Group_1__1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7162:1: rule__TypeMetaInfo__Group_1__1 : rule__TypeMetaInfo__Group_1__1__Impl ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7224:1: rule__TypeMetaInfo__Group_1__1 : rule__TypeMetaInfo__Group_1__1__Impl ;
     public final void rule__TypeMetaInfo__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7166:1: ( rule__TypeMetaInfo__Group_1__1__Impl )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7167:2: rule__TypeMetaInfo__Group_1__1__Impl
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7228:1: ( rule__TypeMetaInfo__Group_1__1__Impl )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7229:2: rule__TypeMetaInfo__Group_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__TypeMetaInfo__Group_1__1__Impl_in_rule__TypeMetaInfo__Group_1__114400);
+            pushFollow(FOLLOW_rule__TypeMetaInfo__Group_1__1__Impl_in_rule__TypeMetaInfo__Group_1__114526);
             rule__TypeMetaInfo__Group_1__1__Impl();
 
             state._fsp--;
@@ -20013,23 +20181,23 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__TypeMetaInfo__Group_1__1__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7173:1: rule__TypeMetaInfo__Group_1__1__Impl : ( ( rule__TypeMetaInfo__SlabelAssignment_1_1 ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7235:1: rule__TypeMetaInfo__Group_1__1__Impl : ( ( rule__TypeMetaInfo__SlabelAssignment_1_1 ) ) ;
     public final void rule__TypeMetaInfo__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7177:1: ( ( ( rule__TypeMetaInfo__SlabelAssignment_1_1 ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7178:1: ( ( rule__TypeMetaInfo__SlabelAssignment_1_1 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7239:1: ( ( ( rule__TypeMetaInfo__SlabelAssignment_1_1 ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7240:1: ( ( rule__TypeMetaInfo__SlabelAssignment_1_1 ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7178:1: ( ( rule__TypeMetaInfo__SlabelAssignment_1_1 ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7179:1: ( rule__TypeMetaInfo__SlabelAssignment_1_1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7240:1: ( ( rule__TypeMetaInfo__SlabelAssignment_1_1 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7241:1: ( rule__TypeMetaInfo__SlabelAssignment_1_1 )
             {
              before(grammarAccess.getTypeMetaInfoAccess().getSlabelAssignment_1_1()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7180:1: ( rule__TypeMetaInfo__SlabelAssignment_1_1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7180:2: rule__TypeMetaInfo__SlabelAssignment_1_1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7242:1: ( rule__TypeMetaInfo__SlabelAssignment_1_1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7242:2: rule__TypeMetaInfo__SlabelAssignment_1_1
             {
-            pushFollow(FOLLOW_rule__TypeMetaInfo__SlabelAssignment_1_1_in_rule__TypeMetaInfo__Group_1__1__Impl14427);
+            pushFollow(FOLLOW_rule__TypeMetaInfo__SlabelAssignment_1_1_in_rule__TypeMetaInfo__Group_1__1__Impl14553);
             rule__TypeMetaInfo__SlabelAssignment_1_1();
 
             state._fsp--;
@@ -20060,21 +20228,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__TypeMetaInfo__Group_2__0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7194:1: rule__TypeMetaInfo__Group_2__0 : rule__TypeMetaInfo__Group_2__0__Impl rule__TypeMetaInfo__Group_2__1 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7256:1: rule__TypeMetaInfo__Group_2__0 : rule__TypeMetaInfo__Group_2__0__Impl rule__TypeMetaInfo__Group_2__1 ;
     public final void rule__TypeMetaInfo__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7198:1: ( rule__TypeMetaInfo__Group_2__0__Impl rule__TypeMetaInfo__Group_2__1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7199:2: rule__TypeMetaInfo__Group_2__0__Impl rule__TypeMetaInfo__Group_2__1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7260:1: ( rule__TypeMetaInfo__Group_2__0__Impl rule__TypeMetaInfo__Group_2__1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7261:2: rule__TypeMetaInfo__Group_2__0__Impl rule__TypeMetaInfo__Group_2__1
             {
-            pushFollow(FOLLOW_rule__TypeMetaInfo__Group_2__0__Impl_in_rule__TypeMetaInfo__Group_2__014461);
+            pushFollow(FOLLOW_rule__TypeMetaInfo__Group_2__0__Impl_in_rule__TypeMetaInfo__Group_2__014587);
             rule__TypeMetaInfo__Group_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TypeMetaInfo__Group_2__1_in_rule__TypeMetaInfo__Group_2__014464);
+            pushFollow(FOLLOW_rule__TypeMetaInfo__Group_2__1_in_rule__TypeMetaInfo__Group_2__014590);
             rule__TypeMetaInfo__Group_2__1();
 
             state._fsp--;
@@ -20098,20 +20266,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__TypeMetaInfo__Group_2__0__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7206:1: rule__TypeMetaInfo__Group_2__0__Impl : ( 'label' ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7268:1: rule__TypeMetaInfo__Group_2__0__Impl : ( 'label' ) ;
     public final void rule__TypeMetaInfo__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7210:1: ( ( 'label' ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7211:1: ( 'label' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7272:1: ( ( 'label' ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7273:1: ( 'label' )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7211:1: ( 'label' )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7212:1: 'label'
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7273:1: ( 'label' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7274:1: 'label'
             {
              before(grammarAccess.getTypeMetaInfoAccess().getLabelKeyword_2_0()); 
-            match(input,47,FOLLOW_47_in_rule__TypeMetaInfo__Group_2__0__Impl14492); 
+            match(input,47,FOLLOW_47_in_rule__TypeMetaInfo__Group_2__0__Impl14618); 
              after(grammarAccess.getTypeMetaInfoAccess().getLabelKeyword_2_0()); 
 
             }
@@ -20135,16 +20303,16 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__TypeMetaInfo__Group_2__1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7225:1: rule__TypeMetaInfo__Group_2__1 : rule__TypeMetaInfo__Group_2__1__Impl ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7287:1: rule__TypeMetaInfo__Group_2__1 : rule__TypeMetaInfo__Group_2__1__Impl ;
     public final void rule__TypeMetaInfo__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7229:1: ( rule__TypeMetaInfo__Group_2__1__Impl )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7230:2: rule__TypeMetaInfo__Group_2__1__Impl
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7291:1: ( rule__TypeMetaInfo__Group_2__1__Impl )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7292:2: rule__TypeMetaInfo__Group_2__1__Impl
             {
-            pushFollow(FOLLOW_rule__TypeMetaInfo__Group_2__1__Impl_in_rule__TypeMetaInfo__Group_2__114523);
+            pushFollow(FOLLOW_rule__TypeMetaInfo__Group_2__1__Impl_in_rule__TypeMetaInfo__Group_2__114649);
             rule__TypeMetaInfo__Group_2__1__Impl();
 
             state._fsp--;
@@ -20168,23 +20336,23 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__TypeMetaInfo__Group_2__1__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7236:1: rule__TypeMetaInfo__Group_2__1__Impl : ( ( rule__TypeMetaInfo__LabelAssignment_2_1 ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7298:1: rule__TypeMetaInfo__Group_2__1__Impl : ( ( rule__TypeMetaInfo__LabelAssignment_2_1 ) ) ;
     public final void rule__TypeMetaInfo__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7240:1: ( ( ( rule__TypeMetaInfo__LabelAssignment_2_1 ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7241:1: ( ( rule__TypeMetaInfo__LabelAssignment_2_1 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7302:1: ( ( ( rule__TypeMetaInfo__LabelAssignment_2_1 ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7303:1: ( ( rule__TypeMetaInfo__LabelAssignment_2_1 ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7241:1: ( ( rule__TypeMetaInfo__LabelAssignment_2_1 ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7242:1: ( rule__TypeMetaInfo__LabelAssignment_2_1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7303:1: ( ( rule__TypeMetaInfo__LabelAssignment_2_1 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7304:1: ( rule__TypeMetaInfo__LabelAssignment_2_1 )
             {
              before(grammarAccess.getTypeMetaInfoAccess().getLabelAssignment_2_1()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7243:1: ( rule__TypeMetaInfo__LabelAssignment_2_1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7243:2: rule__TypeMetaInfo__LabelAssignment_2_1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7305:1: ( rule__TypeMetaInfo__LabelAssignment_2_1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7305:2: rule__TypeMetaInfo__LabelAssignment_2_1
             {
-            pushFollow(FOLLOW_rule__TypeMetaInfo__LabelAssignment_2_1_in_rule__TypeMetaInfo__Group_2__1__Impl14550);
+            pushFollow(FOLLOW_rule__TypeMetaInfo__LabelAssignment_2_1_in_rule__TypeMetaInfo__Group_2__1__Impl14676);
             rule__TypeMetaInfo__LabelAssignment_2_1();
 
             state._fsp--;
@@ -20215,21 +20383,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__TypeMetaInfo__Group_3__0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7257:1: rule__TypeMetaInfo__Group_3__0 : rule__TypeMetaInfo__Group_3__0__Impl rule__TypeMetaInfo__Group_3__1 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7319:1: rule__TypeMetaInfo__Group_3__0 : rule__TypeMetaInfo__Group_3__0__Impl rule__TypeMetaInfo__Group_3__1 ;
     public final void rule__TypeMetaInfo__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7261:1: ( rule__TypeMetaInfo__Group_3__0__Impl rule__TypeMetaInfo__Group_3__1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7262:2: rule__TypeMetaInfo__Group_3__0__Impl rule__TypeMetaInfo__Group_3__1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7323:1: ( rule__TypeMetaInfo__Group_3__0__Impl rule__TypeMetaInfo__Group_3__1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7324:2: rule__TypeMetaInfo__Group_3__0__Impl rule__TypeMetaInfo__Group_3__1
             {
-            pushFollow(FOLLOW_rule__TypeMetaInfo__Group_3__0__Impl_in_rule__TypeMetaInfo__Group_3__014584);
+            pushFollow(FOLLOW_rule__TypeMetaInfo__Group_3__0__Impl_in_rule__TypeMetaInfo__Group_3__014710);
             rule__TypeMetaInfo__Group_3__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TypeMetaInfo__Group_3__1_in_rule__TypeMetaInfo__Group_3__014587);
+            pushFollow(FOLLOW_rule__TypeMetaInfo__Group_3__1_in_rule__TypeMetaInfo__Group_3__014713);
             rule__TypeMetaInfo__Group_3__1();
 
             state._fsp--;
@@ -20253,20 +20421,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__TypeMetaInfo__Group_3__0__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7269:1: rule__TypeMetaInfo__Group_3__0__Impl : ( 'tooltip' ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7331:1: rule__TypeMetaInfo__Group_3__0__Impl : ( 'tooltip' ) ;
     public final void rule__TypeMetaInfo__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7273:1: ( ( 'tooltip' ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7274:1: ( 'tooltip' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7335:1: ( ( 'tooltip' ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7336:1: ( 'tooltip' )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7274:1: ( 'tooltip' )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7275:1: 'tooltip'
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7336:1: ( 'tooltip' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7337:1: 'tooltip'
             {
              before(grammarAccess.getTypeMetaInfoAccess().getTooltipKeyword_3_0()); 
-            match(input,48,FOLLOW_48_in_rule__TypeMetaInfo__Group_3__0__Impl14615); 
+            match(input,48,FOLLOW_48_in_rule__TypeMetaInfo__Group_3__0__Impl14741); 
              after(grammarAccess.getTypeMetaInfoAccess().getTooltipKeyword_3_0()); 
 
             }
@@ -20290,16 +20458,16 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__TypeMetaInfo__Group_3__1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7288:1: rule__TypeMetaInfo__Group_3__1 : rule__TypeMetaInfo__Group_3__1__Impl ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7350:1: rule__TypeMetaInfo__Group_3__1 : rule__TypeMetaInfo__Group_3__1__Impl ;
     public final void rule__TypeMetaInfo__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7292:1: ( rule__TypeMetaInfo__Group_3__1__Impl )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7293:2: rule__TypeMetaInfo__Group_3__1__Impl
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7354:1: ( rule__TypeMetaInfo__Group_3__1__Impl )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7355:2: rule__TypeMetaInfo__Group_3__1__Impl
             {
-            pushFollow(FOLLOW_rule__TypeMetaInfo__Group_3__1__Impl_in_rule__TypeMetaInfo__Group_3__114646);
+            pushFollow(FOLLOW_rule__TypeMetaInfo__Group_3__1__Impl_in_rule__TypeMetaInfo__Group_3__114772);
             rule__TypeMetaInfo__Group_3__1__Impl();
 
             state._fsp--;
@@ -20323,23 +20491,23 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__TypeMetaInfo__Group_3__1__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7299:1: rule__TypeMetaInfo__Group_3__1__Impl : ( ( rule__TypeMetaInfo__TooltipAssignment_3_1 ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7361:1: rule__TypeMetaInfo__Group_3__1__Impl : ( ( rule__TypeMetaInfo__TooltipAssignment_3_1 ) ) ;
     public final void rule__TypeMetaInfo__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7303:1: ( ( ( rule__TypeMetaInfo__TooltipAssignment_3_1 ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7304:1: ( ( rule__TypeMetaInfo__TooltipAssignment_3_1 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7365:1: ( ( ( rule__TypeMetaInfo__TooltipAssignment_3_1 ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7366:1: ( ( rule__TypeMetaInfo__TooltipAssignment_3_1 ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7304:1: ( ( rule__TypeMetaInfo__TooltipAssignment_3_1 ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7305:1: ( rule__TypeMetaInfo__TooltipAssignment_3_1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7366:1: ( ( rule__TypeMetaInfo__TooltipAssignment_3_1 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7367:1: ( rule__TypeMetaInfo__TooltipAssignment_3_1 )
             {
              before(grammarAccess.getTypeMetaInfoAccess().getTooltipAssignment_3_1()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7306:1: ( rule__TypeMetaInfo__TooltipAssignment_3_1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7306:2: rule__TypeMetaInfo__TooltipAssignment_3_1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7368:1: ( rule__TypeMetaInfo__TooltipAssignment_3_1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7368:2: rule__TypeMetaInfo__TooltipAssignment_3_1
             {
-            pushFollow(FOLLOW_rule__TypeMetaInfo__TooltipAssignment_3_1_in_rule__TypeMetaInfo__Group_3__1__Impl14673);
+            pushFollow(FOLLOW_rule__TypeMetaInfo__TooltipAssignment_3_1_in_rule__TypeMetaInfo__Group_3__1__Impl14799);
             rule__TypeMetaInfo__TooltipAssignment_3_1();
 
             state._fsp--;
@@ -20370,21 +20538,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__TypeMetaInfo__Group_4__0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7320:1: rule__TypeMetaInfo__Group_4__0 : rule__TypeMetaInfo__Group_4__0__Impl rule__TypeMetaInfo__Group_4__1 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7382:1: rule__TypeMetaInfo__Group_4__0 : rule__TypeMetaInfo__Group_4__0__Impl rule__TypeMetaInfo__Group_4__1 ;
     public final void rule__TypeMetaInfo__Group_4__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7324:1: ( rule__TypeMetaInfo__Group_4__0__Impl rule__TypeMetaInfo__Group_4__1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7325:2: rule__TypeMetaInfo__Group_4__0__Impl rule__TypeMetaInfo__Group_4__1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7386:1: ( rule__TypeMetaInfo__Group_4__0__Impl rule__TypeMetaInfo__Group_4__1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7387:2: rule__TypeMetaInfo__Group_4__0__Impl rule__TypeMetaInfo__Group_4__1
             {
-            pushFollow(FOLLOW_rule__TypeMetaInfo__Group_4__0__Impl_in_rule__TypeMetaInfo__Group_4__014707);
+            pushFollow(FOLLOW_rule__TypeMetaInfo__Group_4__0__Impl_in_rule__TypeMetaInfo__Group_4__014833);
             rule__TypeMetaInfo__Group_4__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TypeMetaInfo__Group_4__1_in_rule__TypeMetaInfo__Group_4__014710);
+            pushFollow(FOLLOW_rule__TypeMetaInfo__Group_4__1_in_rule__TypeMetaInfo__Group_4__014836);
             rule__TypeMetaInfo__Group_4__1();
 
             state._fsp--;
@@ -20408,20 +20576,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__TypeMetaInfo__Group_4__0__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7332:1: rule__TypeMetaInfo__Group_4__0__Impl : ( 'prompt' ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7394:1: rule__TypeMetaInfo__Group_4__0__Impl : ( 'prompt' ) ;
     public final void rule__TypeMetaInfo__Group_4__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7336:1: ( ( 'prompt' ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7337:1: ( 'prompt' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7398:1: ( ( 'prompt' ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7399:1: ( 'prompt' )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7337:1: ( 'prompt' )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7338:1: 'prompt'
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7399:1: ( 'prompt' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7400:1: 'prompt'
             {
              before(grammarAccess.getTypeMetaInfoAccess().getPromptKeyword_4_0()); 
-            match(input,49,FOLLOW_49_in_rule__TypeMetaInfo__Group_4__0__Impl14738); 
+            match(input,49,FOLLOW_49_in_rule__TypeMetaInfo__Group_4__0__Impl14864); 
              after(grammarAccess.getTypeMetaInfoAccess().getPromptKeyword_4_0()); 
 
             }
@@ -20445,16 +20613,16 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__TypeMetaInfo__Group_4__1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7351:1: rule__TypeMetaInfo__Group_4__1 : rule__TypeMetaInfo__Group_4__1__Impl ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7413:1: rule__TypeMetaInfo__Group_4__1 : rule__TypeMetaInfo__Group_4__1__Impl ;
     public final void rule__TypeMetaInfo__Group_4__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7355:1: ( rule__TypeMetaInfo__Group_4__1__Impl )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7356:2: rule__TypeMetaInfo__Group_4__1__Impl
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7417:1: ( rule__TypeMetaInfo__Group_4__1__Impl )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7418:2: rule__TypeMetaInfo__Group_4__1__Impl
             {
-            pushFollow(FOLLOW_rule__TypeMetaInfo__Group_4__1__Impl_in_rule__TypeMetaInfo__Group_4__114769);
+            pushFollow(FOLLOW_rule__TypeMetaInfo__Group_4__1__Impl_in_rule__TypeMetaInfo__Group_4__114895);
             rule__TypeMetaInfo__Group_4__1__Impl();
 
             state._fsp--;
@@ -20478,23 +20646,23 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__TypeMetaInfo__Group_4__1__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7362:1: rule__TypeMetaInfo__Group_4__1__Impl : ( ( rule__TypeMetaInfo__PromptAssignment_4_1 ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7424:1: rule__TypeMetaInfo__Group_4__1__Impl : ( ( rule__TypeMetaInfo__PromptAssignment_4_1 ) ) ;
     public final void rule__TypeMetaInfo__Group_4__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7366:1: ( ( ( rule__TypeMetaInfo__PromptAssignment_4_1 ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7367:1: ( ( rule__TypeMetaInfo__PromptAssignment_4_1 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7428:1: ( ( ( rule__TypeMetaInfo__PromptAssignment_4_1 ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7429:1: ( ( rule__TypeMetaInfo__PromptAssignment_4_1 ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7367:1: ( ( rule__TypeMetaInfo__PromptAssignment_4_1 ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7368:1: ( rule__TypeMetaInfo__PromptAssignment_4_1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7429:1: ( ( rule__TypeMetaInfo__PromptAssignment_4_1 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7430:1: ( rule__TypeMetaInfo__PromptAssignment_4_1 )
             {
              before(grammarAccess.getTypeMetaInfoAccess().getPromptAssignment_4_1()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7369:1: ( rule__TypeMetaInfo__PromptAssignment_4_1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7369:2: rule__TypeMetaInfo__PromptAssignment_4_1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7431:1: ( rule__TypeMetaInfo__PromptAssignment_4_1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7431:2: rule__TypeMetaInfo__PromptAssignment_4_1
             {
-            pushFollow(FOLLOW_rule__TypeMetaInfo__PromptAssignment_4_1_in_rule__TypeMetaInfo__Group_4__1__Impl14796);
+            pushFollow(FOLLOW_rule__TypeMetaInfo__PromptAssignment_4_1_in_rule__TypeMetaInfo__Group_4__1__Impl14922);
             rule__TypeMetaInfo__PromptAssignment_4_1();
 
             state._fsp--;
@@ -20525,21 +20693,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__TypeMetaInfo__Group_5__0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7383:1: rule__TypeMetaInfo__Group_5__0 : rule__TypeMetaInfo__Group_5__0__Impl rule__TypeMetaInfo__Group_5__1 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7445:1: rule__TypeMetaInfo__Group_5__0 : rule__TypeMetaInfo__Group_5__0__Impl rule__TypeMetaInfo__Group_5__1 ;
     public final void rule__TypeMetaInfo__Group_5__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7387:1: ( rule__TypeMetaInfo__Group_5__0__Impl rule__TypeMetaInfo__Group_5__1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7388:2: rule__TypeMetaInfo__Group_5__0__Impl rule__TypeMetaInfo__Group_5__1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7449:1: ( rule__TypeMetaInfo__Group_5__0__Impl rule__TypeMetaInfo__Group_5__1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7450:2: rule__TypeMetaInfo__Group_5__0__Impl rule__TypeMetaInfo__Group_5__1
             {
-            pushFollow(FOLLOW_rule__TypeMetaInfo__Group_5__0__Impl_in_rule__TypeMetaInfo__Group_5__014830);
+            pushFollow(FOLLOW_rule__TypeMetaInfo__Group_5__0__Impl_in_rule__TypeMetaInfo__Group_5__014956);
             rule__TypeMetaInfo__Group_5__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__TypeMetaInfo__Group_5__1_in_rule__TypeMetaInfo__Group_5__014833);
+            pushFollow(FOLLOW_rule__TypeMetaInfo__Group_5__1_in_rule__TypeMetaInfo__Group_5__014959);
             rule__TypeMetaInfo__Group_5__1();
 
             state._fsp--;
@@ -20563,20 +20731,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__TypeMetaInfo__Group_5__0__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7395:1: rule__TypeMetaInfo__Group_5__0__Impl : ( 'examples' ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7457:1: rule__TypeMetaInfo__Group_5__0__Impl : ( 'examples' ) ;
     public final void rule__TypeMetaInfo__Group_5__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7399:1: ( ( 'examples' ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7400:1: ( 'examples' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7461:1: ( ( 'examples' ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7462:1: ( 'examples' )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7400:1: ( 'examples' )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7401:1: 'examples'
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7462:1: ( 'examples' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7463:1: 'examples'
             {
              before(grammarAccess.getTypeMetaInfoAccess().getExamplesKeyword_5_0()); 
-            match(input,50,FOLLOW_50_in_rule__TypeMetaInfo__Group_5__0__Impl14861); 
+            match(input,50,FOLLOW_50_in_rule__TypeMetaInfo__Group_5__0__Impl14987); 
              after(grammarAccess.getTypeMetaInfoAccess().getExamplesKeyword_5_0()); 
 
             }
@@ -20600,16 +20768,16 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__TypeMetaInfo__Group_5__1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7414:1: rule__TypeMetaInfo__Group_5__1 : rule__TypeMetaInfo__Group_5__1__Impl ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7476:1: rule__TypeMetaInfo__Group_5__1 : rule__TypeMetaInfo__Group_5__1__Impl ;
     public final void rule__TypeMetaInfo__Group_5__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7418:1: ( rule__TypeMetaInfo__Group_5__1__Impl )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7419:2: rule__TypeMetaInfo__Group_5__1__Impl
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7480:1: ( rule__TypeMetaInfo__Group_5__1__Impl )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7481:2: rule__TypeMetaInfo__Group_5__1__Impl
             {
-            pushFollow(FOLLOW_rule__TypeMetaInfo__Group_5__1__Impl_in_rule__TypeMetaInfo__Group_5__114892);
+            pushFollow(FOLLOW_rule__TypeMetaInfo__Group_5__1__Impl_in_rule__TypeMetaInfo__Group_5__115018);
             rule__TypeMetaInfo__Group_5__1__Impl();
 
             state._fsp--;
@@ -20633,35 +20801,35 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__TypeMetaInfo__Group_5__1__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7425:1: rule__TypeMetaInfo__Group_5__1__Impl : ( ( rule__TypeMetaInfo__ExamplesAssignment_5_1 )* ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7487:1: rule__TypeMetaInfo__Group_5__1__Impl : ( ( rule__TypeMetaInfo__ExamplesAssignment_5_1 )* ) ;
     public final void rule__TypeMetaInfo__Group_5__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7429:1: ( ( ( rule__TypeMetaInfo__ExamplesAssignment_5_1 )* ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7430:1: ( ( rule__TypeMetaInfo__ExamplesAssignment_5_1 )* )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7491:1: ( ( ( rule__TypeMetaInfo__ExamplesAssignment_5_1 )* ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7492:1: ( ( rule__TypeMetaInfo__ExamplesAssignment_5_1 )* )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7430:1: ( ( rule__TypeMetaInfo__ExamplesAssignment_5_1 )* )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7431:1: ( rule__TypeMetaInfo__ExamplesAssignment_5_1 )*
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7492:1: ( ( rule__TypeMetaInfo__ExamplesAssignment_5_1 )* )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7493:1: ( rule__TypeMetaInfo__ExamplesAssignment_5_1 )*
             {
              before(grammarAccess.getTypeMetaInfoAccess().getExamplesAssignment_5_1()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7432:1: ( rule__TypeMetaInfo__ExamplesAssignment_5_1 )*
-            loop81:
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7494:1: ( rule__TypeMetaInfo__ExamplesAssignment_5_1 )*
+            loop83:
             do {
-                int alt81=2;
-                int LA81_0 = input.LA(1);
+                int alt83=2;
+                int LA83_0 = input.LA(1);
 
-                if ( (LA81_0==RULE_STRING) ) {
-                    alt81=1;
+                if ( (LA83_0==RULE_STRING) ) {
+                    alt83=1;
                 }
 
 
-                switch (alt81) {
+                switch (alt83) {
             	case 1 :
-            	    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7432:2: rule__TypeMetaInfo__ExamplesAssignment_5_1
+            	    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7494:2: rule__TypeMetaInfo__ExamplesAssignment_5_1
             	    {
-            	    pushFollow(FOLLOW_rule__TypeMetaInfo__ExamplesAssignment_5_1_in_rule__TypeMetaInfo__Group_5__1__Impl14919);
+            	    pushFollow(FOLLOW_rule__TypeMetaInfo__ExamplesAssignment_5_1_in_rule__TypeMetaInfo__Group_5__1__Impl15045);
             	    rule__TypeMetaInfo__ExamplesAssignment_5_1();
 
             	    state._fsp--;
@@ -20671,7 +20839,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
             	    break;
 
             	default :
-            	    break loop81;
+            	    break loop83;
                 }
             } while (true);
 
@@ -20698,21 +20866,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Variable__Group__0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7446:1: rule__Variable__Group__0 : rule__Variable__Group__0__Impl rule__Variable__Group__1 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7508:1: rule__Variable__Group__0 : rule__Variable__Group__0__Impl rule__Variable__Group__1 ;
     public final void rule__Variable__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7450:1: ( rule__Variable__Group__0__Impl rule__Variable__Group__1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7451:2: rule__Variable__Group__0__Impl rule__Variable__Group__1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7512:1: ( rule__Variable__Group__0__Impl rule__Variable__Group__1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7513:2: rule__Variable__Group__0__Impl rule__Variable__Group__1
             {
-            pushFollow(FOLLOW_rule__Variable__Group__0__Impl_in_rule__Variable__Group__014954);
+            pushFollow(FOLLOW_rule__Variable__Group__0__Impl_in_rule__Variable__Group__015080);
             rule__Variable__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Variable__Group__1_in_rule__Variable__Group__014957);
+            pushFollow(FOLLOW_rule__Variable__Group__1_in_rule__Variable__Group__015083);
             rule__Variable__Group__1();
 
             state._fsp--;
@@ -20736,31 +20904,31 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Variable__Group__0__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7458:1: rule__Variable__Group__0__Impl : ( ( rule__Variable__DocAssignment_0 )? ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7520:1: rule__Variable__Group__0__Impl : ( ( rule__Variable__DocAssignment_0 )? ) ;
     public final void rule__Variable__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7462:1: ( ( ( rule__Variable__DocAssignment_0 )? ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7463:1: ( ( rule__Variable__DocAssignment_0 )? )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7524:1: ( ( ( rule__Variable__DocAssignment_0 )? ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7525:1: ( ( rule__Variable__DocAssignment_0 )? )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7463:1: ( ( rule__Variable__DocAssignment_0 )? )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7464:1: ( rule__Variable__DocAssignment_0 )?
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7525:1: ( ( rule__Variable__DocAssignment_0 )? )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7526:1: ( rule__Variable__DocAssignment_0 )?
             {
              before(grammarAccess.getVariableAccess().getDocAssignment_0()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7465:1: ( rule__Variable__DocAssignment_0 )?
-            int alt82=2;
-            int LA82_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7527:1: ( rule__Variable__DocAssignment_0 )?
+            int alt84=2;
+            int LA84_0 = input.LA(1);
 
-            if ( (LA82_0==RULE_DOC) ) {
-                alt82=1;
+            if ( (LA84_0==RULE_DOC) ) {
+                alt84=1;
             }
-            switch (alt82) {
+            switch (alt84) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7465:2: rule__Variable__DocAssignment_0
+                    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7527:2: rule__Variable__DocAssignment_0
                     {
-                    pushFollow(FOLLOW_rule__Variable__DocAssignment_0_in_rule__Variable__Group__0__Impl14984);
+                    pushFollow(FOLLOW_rule__Variable__DocAssignment_0_in_rule__Variable__Group__0__Impl15110);
                     rule__Variable__DocAssignment_0();
 
                     state._fsp--;
@@ -20794,21 +20962,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Variable__Group__1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7475:1: rule__Variable__Group__1 : rule__Variable__Group__1__Impl rule__Variable__Group__2 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7537:1: rule__Variable__Group__1 : rule__Variable__Group__1__Impl rule__Variable__Group__2 ;
     public final void rule__Variable__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7479:1: ( rule__Variable__Group__1__Impl rule__Variable__Group__2 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7480:2: rule__Variable__Group__1__Impl rule__Variable__Group__2
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7541:1: ( rule__Variable__Group__1__Impl rule__Variable__Group__2 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7542:2: rule__Variable__Group__1__Impl rule__Variable__Group__2
             {
-            pushFollow(FOLLOW_rule__Variable__Group__1__Impl_in_rule__Variable__Group__115015);
+            pushFollow(FOLLOW_rule__Variable__Group__1__Impl_in_rule__Variable__Group__115141);
             rule__Variable__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Variable__Group__2_in_rule__Variable__Group__115018);
+            pushFollow(FOLLOW_rule__Variable__Group__2_in_rule__Variable__Group__115144);
             rule__Variable__Group__2();
 
             state._fsp--;
@@ -20832,31 +21000,31 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Variable__Group__1__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7487:1: rule__Variable__Group__1__Impl : ( ( rule__Variable__NullableAssignment_1 )? ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7549:1: rule__Variable__Group__1__Impl : ( ( rule__Variable__NullableAssignment_1 )? ) ;
     public final void rule__Variable__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7491:1: ( ( ( rule__Variable__NullableAssignment_1 )? ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7492:1: ( ( rule__Variable__NullableAssignment_1 )? )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7553:1: ( ( ( rule__Variable__NullableAssignment_1 )? ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7554:1: ( ( rule__Variable__NullableAssignment_1 )? )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7492:1: ( ( rule__Variable__NullableAssignment_1 )? )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7493:1: ( rule__Variable__NullableAssignment_1 )?
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7554:1: ( ( rule__Variable__NullableAssignment_1 )? )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7555:1: ( rule__Variable__NullableAssignment_1 )?
             {
              before(grammarAccess.getVariableAccess().getNullableAssignment_1()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7494:1: ( rule__Variable__NullableAssignment_1 )?
-            int alt83=2;
-            int LA83_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7556:1: ( rule__Variable__NullableAssignment_1 )?
+            int alt85=2;
+            int LA85_0 = input.LA(1);
 
-            if ( (LA83_0==56) ) {
-                alt83=1;
+            if ( (LA85_0==56) ) {
+                alt85=1;
             }
-            switch (alt83) {
+            switch (alt85) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7494:2: rule__Variable__NullableAssignment_1
+                    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7556:2: rule__Variable__NullableAssignment_1
                     {
-                    pushFollow(FOLLOW_rule__Variable__NullableAssignment_1_in_rule__Variable__Group__1__Impl15045);
+                    pushFollow(FOLLOW_rule__Variable__NullableAssignment_1_in_rule__Variable__Group__1__Impl15171);
                     rule__Variable__NullableAssignment_1();
 
                     state._fsp--;
@@ -20890,21 +21058,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Variable__Group__2"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7504:1: rule__Variable__Group__2 : rule__Variable__Group__2__Impl rule__Variable__Group__3 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7566:1: rule__Variable__Group__2 : rule__Variable__Group__2__Impl rule__Variable__Group__3 ;
     public final void rule__Variable__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7508:1: ( rule__Variable__Group__2__Impl rule__Variable__Group__3 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7509:2: rule__Variable__Group__2__Impl rule__Variable__Group__3
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7570:1: ( rule__Variable__Group__2__Impl rule__Variable__Group__3 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7571:2: rule__Variable__Group__2__Impl rule__Variable__Group__3
             {
-            pushFollow(FOLLOW_rule__Variable__Group__2__Impl_in_rule__Variable__Group__215076);
+            pushFollow(FOLLOW_rule__Variable__Group__2__Impl_in_rule__Variable__Group__215202);
             rule__Variable__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Variable__Group__3_in_rule__Variable__Group__215079);
+            pushFollow(FOLLOW_rule__Variable__Group__3_in_rule__Variable__Group__215205);
             rule__Variable__Group__3();
 
             state._fsp--;
@@ -20928,23 +21096,23 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Variable__Group__2__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7516:1: rule__Variable__Group__2__Impl : ( ( rule__Variable__TypeAssignment_2 ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7578:1: rule__Variable__Group__2__Impl : ( ( rule__Variable__TypeAssignment_2 ) ) ;
     public final void rule__Variable__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7520:1: ( ( ( rule__Variable__TypeAssignment_2 ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7521:1: ( ( rule__Variable__TypeAssignment_2 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7582:1: ( ( ( rule__Variable__TypeAssignment_2 ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7583:1: ( ( rule__Variable__TypeAssignment_2 ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7521:1: ( ( rule__Variable__TypeAssignment_2 ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7522:1: ( rule__Variable__TypeAssignment_2 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7583:1: ( ( rule__Variable__TypeAssignment_2 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7584:1: ( rule__Variable__TypeAssignment_2 )
             {
              before(grammarAccess.getVariableAccess().getTypeAssignment_2()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7523:1: ( rule__Variable__TypeAssignment_2 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7523:2: rule__Variable__TypeAssignment_2
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7585:1: ( rule__Variable__TypeAssignment_2 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7585:2: rule__Variable__TypeAssignment_2
             {
-            pushFollow(FOLLOW_rule__Variable__TypeAssignment_2_in_rule__Variable__Group__2__Impl15106);
+            pushFollow(FOLLOW_rule__Variable__TypeAssignment_2_in_rule__Variable__Group__2__Impl15232);
             rule__Variable__TypeAssignment_2();
 
             state._fsp--;
@@ -20975,21 +21143,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Variable__Group__3"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7533:1: rule__Variable__Group__3 : rule__Variable__Group__3__Impl rule__Variable__Group__4 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7595:1: rule__Variable__Group__3 : rule__Variable__Group__3__Impl rule__Variable__Group__4 ;
     public final void rule__Variable__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7537:1: ( rule__Variable__Group__3__Impl rule__Variable__Group__4 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7538:2: rule__Variable__Group__3__Impl rule__Variable__Group__4
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7599:1: ( rule__Variable__Group__3__Impl rule__Variable__Group__4 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7600:2: rule__Variable__Group__3__Impl rule__Variable__Group__4
             {
-            pushFollow(FOLLOW_rule__Variable__Group__3__Impl_in_rule__Variable__Group__315136);
+            pushFollow(FOLLOW_rule__Variable__Group__3__Impl_in_rule__Variable__Group__315262);
             rule__Variable__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Variable__Group__4_in_rule__Variable__Group__315139);
+            pushFollow(FOLLOW_rule__Variable__Group__4_in_rule__Variable__Group__315265);
             rule__Variable__Group__4();
 
             state._fsp--;
@@ -21013,31 +21181,31 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Variable__Group__3__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7545:1: rule__Variable__Group__3__Impl : ( ( rule__Variable__MultiplicityAssignment_3 )? ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7607:1: rule__Variable__Group__3__Impl : ( ( rule__Variable__MultiplicityAssignment_3 )? ) ;
     public final void rule__Variable__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7549:1: ( ( ( rule__Variable__MultiplicityAssignment_3 )? ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7550:1: ( ( rule__Variable__MultiplicityAssignment_3 )? )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7611:1: ( ( ( rule__Variable__MultiplicityAssignment_3 )? ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7612:1: ( ( rule__Variable__MultiplicityAssignment_3 )? )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7550:1: ( ( rule__Variable__MultiplicityAssignment_3 )? )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7551:1: ( rule__Variable__MultiplicityAssignment_3 )?
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7612:1: ( ( rule__Variable__MultiplicityAssignment_3 )? )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7613:1: ( rule__Variable__MultiplicityAssignment_3 )?
             {
              before(grammarAccess.getVariableAccess().getMultiplicityAssignment_3()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7552:1: ( rule__Variable__MultiplicityAssignment_3 )?
-            int alt84=2;
-            int LA84_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7614:1: ( rule__Variable__MultiplicityAssignment_3 )?
+            int alt86=2;
+            int LA86_0 = input.LA(1);
 
-            if ( (LA84_0==55) ) {
-                alt84=1;
+            if ( (LA86_0==55) ) {
+                alt86=1;
             }
-            switch (alt84) {
+            switch (alt86) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7552:2: rule__Variable__MultiplicityAssignment_3
+                    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7614:2: rule__Variable__MultiplicityAssignment_3
                     {
-                    pushFollow(FOLLOW_rule__Variable__MultiplicityAssignment_3_in_rule__Variable__Group__3__Impl15166);
+                    pushFollow(FOLLOW_rule__Variable__MultiplicityAssignment_3_in_rule__Variable__Group__3__Impl15292);
                     rule__Variable__MultiplicityAssignment_3();
 
                     state._fsp--;
@@ -21071,21 +21239,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Variable__Group__4"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7562:1: rule__Variable__Group__4 : rule__Variable__Group__4__Impl rule__Variable__Group__5 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7624:1: rule__Variable__Group__4 : rule__Variable__Group__4__Impl rule__Variable__Group__5 ;
     public final void rule__Variable__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7566:1: ( rule__Variable__Group__4__Impl rule__Variable__Group__5 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7567:2: rule__Variable__Group__4__Impl rule__Variable__Group__5
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7628:1: ( rule__Variable__Group__4__Impl rule__Variable__Group__5 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7629:2: rule__Variable__Group__4__Impl rule__Variable__Group__5
             {
-            pushFollow(FOLLOW_rule__Variable__Group__4__Impl_in_rule__Variable__Group__415197);
+            pushFollow(FOLLOW_rule__Variable__Group__4__Impl_in_rule__Variable__Group__415323);
             rule__Variable__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Variable__Group__5_in_rule__Variable__Group__415200);
+            pushFollow(FOLLOW_rule__Variable__Group__5_in_rule__Variable__Group__415326);
             rule__Variable__Group__5();
 
             state._fsp--;
@@ -21109,23 +21277,23 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Variable__Group__4__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7574:1: rule__Variable__Group__4__Impl : ( ( rule__Variable__NameAssignment_4 ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7636:1: rule__Variable__Group__4__Impl : ( ( rule__Variable__NameAssignment_4 ) ) ;
     public final void rule__Variable__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7578:1: ( ( ( rule__Variable__NameAssignment_4 ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7579:1: ( ( rule__Variable__NameAssignment_4 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7640:1: ( ( ( rule__Variable__NameAssignment_4 ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7641:1: ( ( rule__Variable__NameAssignment_4 ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7579:1: ( ( rule__Variable__NameAssignment_4 ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7580:1: ( rule__Variable__NameAssignment_4 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7641:1: ( ( rule__Variable__NameAssignment_4 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7642:1: ( rule__Variable__NameAssignment_4 )
             {
              before(grammarAccess.getVariableAccess().getNameAssignment_4()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7581:1: ( rule__Variable__NameAssignment_4 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7581:2: rule__Variable__NameAssignment_4
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7643:1: ( rule__Variable__NameAssignment_4 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7643:2: rule__Variable__NameAssignment_4
             {
-            pushFollow(FOLLOW_rule__Variable__NameAssignment_4_in_rule__Variable__Group__4__Impl15227);
+            pushFollow(FOLLOW_rule__Variable__NameAssignment_4_in_rule__Variable__Group__4__Impl15353);
             rule__Variable__NameAssignment_4();
 
             state._fsp--;
@@ -21156,21 +21324,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Variable__Group__5"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7591:1: rule__Variable__Group__5 : rule__Variable__Group__5__Impl rule__Variable__Group__6 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7653:1: rule__Variable__Group__5 : rule__Variable__Group__5__Impl rule__Variable__Group__6 ;
     public final void rule__Variable__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7595:1: ( rule__Variable__Group__5__Impl rule__Variable__Group__6 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7596:2: rule__Variable__Group__5__Impl rule__Variable__Group__6
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7657:1: ( rule__Variable__Group__5__Impl rule__Variable__Group__6 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7658:2: rule__Variable__Group__5__Impl rule__Variable__Group__6
             {
-            pushFollow(FOLLOW_rule__Variable__Group__5__Impl_in_rule__Variable__Group__515257);
+            pushFollow(FOLLOW_rule__Variable__Group__5__Impl_in_rule__Variable__Group__515383);
             rule__Variable__Group__5__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Variable__Group__6_in_rule__Variable__Group__515260);
+            pushFollow(FOLLOW_rule__Variable__Group__6_in_rule__Variable__Group__515386);
             rule__Variable__Group__6();
 
             state._fsp--;
@@ -21194,31 +21362,31 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Variable__Group__5__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7603:1: rule__Variable__Group__5__Impl : ( ( rule__Variable__InvariantsAssignment_5 )? ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7665:1: rule__Variable__Group__5__Impl : ( ( rule__Variable__InvariantsAssignment_5 )? ) ;
     public final void rule__Variable__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7607:1: ( ( ( rule__Variable__InvariantsAssignment_5 )? ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7608:1: ( ( rule__Variable__InvariantsAssignment_5 )? )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7669:1: ( ( ( rule__Variable__InvariantsAssignment_5 )? ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7670:1: ( ( rule__Variable__InvariantsAssignment_5 )? )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7608:1: ( ( rule__Variable__InvariantsAssignment_5 )? )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7609:1: ( rule__Variable__InvariantsAssignment_5 )?
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7670:1: ( ( rule__Variable__InvariantsAssignment_5 )? )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7671:1: ( rule__Variable__InvariantsAssignment_5 )?
             {
              before(grammarAccess.getVariableAccess().getInvariantsAssignment_5()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7610:1: ( rule__Variable__InvariantsAssignment_5 )?
-            int alt85=2;
-            int LA85_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7672:1: ( rule__Variable__InvariantsAssignment_5 )?
+            int alt87=2;
+            int LA87_0 = input.LA(1);
 
-            if ( (LA85_0==52) ) {
-                alt85=1;
+            if ( (LA87_0==52) ) {
+                alt87=1;
             }
-            switch (alt85) {
+            switch (alt87) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7610:2: rule__Variable__InvariantsAssignment_5
+                    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7672:2: rule__Variable__InvariantsAssignment_5
                     {
-                    pushFollow(FOLLOW_rule__Variable__InvariantsAssignment_5_in_rule__Variable__Group__5__Impl15287);
+                    pushFollow(FOLLOW_rule__Variable__InvariantsAssignment_5_in_rule__Variable__Group__5__Impl15413);
                     rule__Variable__InvariantsAssignment_5();
 
                     state._fsp--;
@@ -21252,16 +21420,16 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Variable__Group__6"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7620:1: rule__Variable__Group__6 : rule__Variable__Group__6__Impl ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7682:1: rule__Variable__Group__6 : rule__Variable__Group__6__Impl ;
     public final void rule__Variable__Group__6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7624:1: ( rule__Variable__Group__6__Impl )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7625:2: rule__Variable__Group__6__Impl
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7686:1: ( rule__Variable__Group__6__Impl )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7687:2: rule__Variable__Group__6__Impl
             {
-            pushFollow(FOLLOW_rule__Variable__Group__6__Impl_in_rule__Variable__Group__615318);
+            pushFollow(FOLLOW_rule__Variable__Group__6__Impl_in_rule__Variable__Group__615444);
             rule__Variable__Group__6__Impl();
 
             state._fsp--;
@@ -21285,31 +21453,31 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Variable__Group__6__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7631:1: rule__Variable__Group__6__Impl : ( ( rule__Variable__OverriddenAssignment_6 )? ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7693:1: rule__Variable__Group__6__Impl : ( ( rule__Variable__OverriddenAssignment_6 )? ) ;
     public final void rule__Variable__Group__6__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7635:1: ( ( ( rule__Variable__OverriddenAssignment_6 )? ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7636:1: ( ( rule__Variable__OverriddenAssignment_6 )? )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7697:1: ( ( ( rule__Variable__OverriddenAssignment_6 )? ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7698:1: ( ( rule__Variable__OverriddenAssignment_6 )? )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7636:1: ( ( rule__Variable__OverriddenAssignment_6 )? )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7637:1: ( rule__Variable__OverriddenAssignment_6 )?
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7698:1: ( ( rule__Variable__OverriddenAssignment_6 )? )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7699:1: ( rule__Variable__OverriddenAssignment_6 )?
             {
              before(grammarAccess.getVariableAccess().getOverriddenAssignment_6()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7638:1: ( rule__Variable__OverriddenAssignment_6 )?
-            int alt86=2;
-            int LA86_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7700:1: ( rule__Variable__OverriddenAssignment_6 )?
+            int alt88=2;
+            int LA88_0 = input.LA(1);
 
-            if ( (LA86_0==16) ) {
-                alt86=1;
+            if ( (LA88_0==16) ) {
+                alt88=1;
             }
-            switch (alt86) {
+            switch (alt88) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7638:2: rule__Variable__OverriddenAssignment_6
+                    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7700:2: rule__Variable__OverriddenAssignment_6
                     {
-                    pushFollow(FOLLOW_rule__Variable__OverriddenAssignment_6_in_rule__Variable__Group__6__Impl15345);
+                    pushFollow(FOLLOW_rule__Variable__OverriddenAssignment_6_in_rule__Variable__Group__6__Impl15471);
                     rule__Variable__OverriddenAssignment_6();
 
                     state._fsp--;
@@ -21343,21 +21511,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Constraints__Group__0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7662:1: rule__Constraints__Group__0 : rule__Constraints__Group__0__Impl rule__Constraints__Group__1 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7724:1: rule__Constraints__Group__0 : rule__Constraints__Group__0__Impl rule__Constraints__Group__1 ;
     public final void rule__Constraints__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7666:1: ( rule__Constraints__Group__0__Impl rule__Constraints__Group__1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7667:2: rule__Constraints__Group__0__Impl rule__Constraints__Group__1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7728:1: ( rule__Constraints__Group__0__Impl rule__Constraints__Group__1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7729:2: rule__Constraints__Group__0__Impl rule__Constraints__Group__1
             {
-            pushFollow(FOLLOW_rule__Constraints__Group__0__Impl_in_rule__Constraints__Group__015390);
+            pushFollow(FOLLOW_rule__Constraints__Group__0__Impl_in_rule__Constraints__Group__015516);
             rule__Constraints__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Constraints__Group__1_in_rule__Constraints__Group__015393);
+            pushFollow(FOLLOW_rule__Constraints__Group__1_in_rule__Constraints__Group__015519);
             rule__Constraints__Group__1();
 
             state._fsp--;
@@ -21381,20 +21549,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Constraints__Group__0__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7674:1: rule__Constraints__Group__0__Impl : ( 'constraints' ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7736:1: rule__Constraints__Group__0__Impl : ( 'constraints' ) ;
     public final void rule__Constraints__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7678:1: ( ( 'constraints' ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7679:1: ( 'constraints' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7740:1: ( ( 'constraints' ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7741:1: ( 'constraints' )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7679:1: ( 'constraints' )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7680:1: 'constraints'
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7741:1: ( 'constraints' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7742:1: 'constraints'
             {
              before(grammarAccess.getConstraintsAccess().getConstraintsKeyword_0()); 
-            match(input,51,FOLLOW_51_in_rule__Constraints__Group__0__Impl15421); 
+            match(input,51,FOLLOW_51_in_rule__Constraints__Group__0__Impl15547); 
              after(grammarAccess.getConstraintsAccess().getConstraintsKeyword_0()); 
 
             }
@@ -21418,21 +21586,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Constraints__Group__1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7693:1: rule__Constraints__Group__1 : rule__Constraints__Group__1__Impl rule__Constraints__Group__2 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7755:1: rule__Constraints__Group__1 : rule__Constraints__Group__1__Impl rule__Constraints__Group__2 ;
     public final void rule__Constraints__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7697:1: ( rule__Constraints__Group__1__Impl rule__Constraints__Group__2 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7698:2: rule__Constraints__Group__1__Impl rule__Constraints__Group__2
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7759:1: ( rule__Constraints__Group__1__Impl rule__Constraints__Group__2 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7760:2: rule__Constraints__Group__1__Impl rule__Constraints__Group__2
             {
-            pushFollow(FOLLOW_rule__Constraints__Group__1__Impl_in_rule__Constraints__Group__115452);
+            pushFollow(FOLLOW_rule__Constraints__Group__1__Impl_in_rule__Constraints__Group__115578);
             rule__Constraints__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Constraints__Group__2_in_rule__Constraints__Group__115455);
+            pushFollow(FOLLOW_rule__Constraints__Group__2_in_rule__Constraints__Group__115581);
             rule__Constraints__Group__2();
 
             state._fsp--;
@@ -21456,20 +21624,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Constraints__Group__1__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7705:1: rule__Constraints__Group__1__Impl : ( '{' ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7767:1: rule__Constraints__Group__1__Impl : ( '{' ) ;
     public final void rule__Constraints__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7709:1: ( ( '{' ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7710:1: ( '{' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7771:1: ( ( '{' ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7772:1: ( '{' )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7710:1: ( '{' )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7711:1: '{'
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7772:1: ( '{' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7773:1: '{'
             {
              before(grammarAccess.getConstraintsAccess().getLeftCurlyBracketKeyword_1()); 
-            match(input,16,FOLLOW_16_in_rule__Constraints__Group__1__Impl15483); 
+            match(input,16,FOLLOW_16_in_rule__Constraints__Group__1__Impl15609); 
              after(grammarAccess.getConstraintsAccess().getLeftCurlyBracketKeyword_1()); 
 
             }
@@ -21493,21 +21661,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Constraints__Group__2"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7724:1: rule__Constraints__Group__2 : rule__Constraints__Group__2__Impl rule__Constraints__Group__3 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7786:1: rule__Constraints__Group__2 : rule__Constraints__Group__2__Impl rule__Constraints__Group__3 ;
     public final void rule__Constraints__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7728:1: ( rule__Constraints__Group__2__Impl rule__Constraints__Group__3 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7729:2: rule__Constraints__Group__2__Impl rule__Constraints__Group__3
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7790:1: ( rule__Constraints__Group__2__Impl rule__Constraints__Group__3 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7791:2: rule__Constraints__Group__2__Impl rule__Constraints__Group__3
             {
-            pushFollow(FOLLOW_rule__Constraints__Group__2__Impl_in_rule__Constraints__Group__215514);
+            pushFollow(FOLLOW_rule__Constraints__Group__2__Impl_in_rule__Constraints__Group__215640);
             rule__Constraints__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Constraints__Group__3_in_rule__Constraints__Group__215517);
+            pushFollow(FOLLOW_rule__Constraints__Group__3_in_rule__Constraints__Group__215643);
             rule__Constraints__Group__3();
 
             state._fsp--;
@@ -21531,23 +21699,23 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Constraints__Group__2__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7736:1: rule__Constraints__Group__2__Impl : ( ( rule__Constraints__CallsAssignment_2 ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7798:1: rule__Constraints__Group__2__Impl : ( ( rule__Constraints__CallsAssignment_2 ) ) ;
     public final void rule__Constraints__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7740:1: ( ( ( rule__Constraints__CallsAssignment_2 ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7741:1: ( ( rule__Constraints__CallsAssignment_2 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7802:1: ( ( ( rule__Constraints__CallsAssignment_2 ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7803:1: ( ( rule__Constraints__CallsAssignment_2 ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7741:1: ( ( rule__Constraints__CallsAssignment_2 ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7742:1: ( rule__Constraints__CallsAssignment_2 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7803:1: ( ( rule__Constraints__CallsAssignment_2 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7804:1: ( rule__Constraints__CallsAssignment_2 )
             {
              before(grammarAccess.getConstraintsAccess().getCallsAssignment_2()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7743:1: ( rule__Constraints__CallsAssignment_2 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7743:2: rule__Constraints__CallsAssignment_2
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7805:1: ( rule__Constraints__CallsAssignment_2 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7805:2: rule__Constraints__CallsAssignment_2
             {
-            pushFollow(FOLLOW_rule__Constraints__CallsAssignment_2_in_rule__Constraints__Group__2__Impl15544);
+            pushFollow(FOLLOW_rule__Constraints__CallsAssignment_2_in_rule__Constraints__Group__2__Impl15670);
             rule__Constraints__CallsAssignment_2();
 
             state._fsp--;
@@ -21578,21 +21746,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Constraints__Group__3"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7753:1: rule__Constraints__Group__3 : rule__Constraints__Group__3__Impl rule__Constraints__Group__4 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7815:1: rule__Constraints__Group__3 : rule__Constraints__Group__3__Impl rule__Constraints__Group__4 ;
     public final void rule__Constraints__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7757:1: ( rule__Constraints__Group__3__Impl rule__Constraints__Group__4 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7758:2: rule__Constraints__Group__3__Impl rule__Constraints__Group__4
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7819:1: ( rule__Constraints__Group__3__Impl rule__Constraints__Group__4 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7820:2: rule__Constraints__Group__3__Impl rule__Constraints__Group__4
             {
-            pushFollow(FOLLOW_rule__Constraints__Group__3__Impl_in_rule__Constraints__Group__315574);
+            pushFollow(FOLLOW_rule__Constraints__Group__3__Impl_in_rule__Constraints__Group__315700);
             rule__Constraints__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Constraints__Group__4_in_rule__Constraints__Group__315577);
+            pushFollow(FOLLOW_rule__Constraints__Group__4_in_rule__Constraints__Group__315703);
             rule__Constraints__Group__4();
 
             state._fsp--;
@@ -21616,35 +21784,35 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Constraints__Group__3__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7765:1: rule__Constraints__Group__3__Impl : ( ( rule__Constraints__Group_3__0 )* ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7827:1: rule__Constraints__Group__3__Impl : ( ( rule__Constraints__Group_3__0 )* ) ;
     public final void rule__Constraints__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7769:1: ( ( ( rule__Constraints__Group_3__0 )* ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7770:1: ( ( rule__Constraints__Group_3__0 )* )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7831:1: ( ( ( rule__Constraints__Group_3__0 )* ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7832:1: ( ( rule__Constraints__Group_3__0 )* )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7770:1: ( ( rule__Constraints__Group_3__0 )* )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7771:1: ( rule__Constraints__Group_3__0 )*
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7832:1: ( ( rule__Constraints__Group_3__0 )* )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7833:1: ( rule__Constraints__Group_3__0 )*
             {
              before(grammarAccess.getConstraintsAccess().getGroup_3()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7772:1: ( rule__Constraints__Group_3__0 )*
-            loop87:
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7834:1: ( rule__Constraints__Group_3__0 )*
+            loop89:
             do {
-                int alt87=2;
-                int LA87_0 = input.LA(1);
+                int alt89=2;
+                int LA89_0 = input.LA(1);
 
-                if ( (LA87_0==35) ) {
-                    alt87=1;
+                if ( (LA89_0==35) ) {
+                    alt89=1;
                 }
 
 
-                switch (alt87) {
+                switch (alt89) {
             	case 1 :
-            	    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7772:2: rule__Constraints__Group_3__0
+            	    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7834:2: rule__Constraints__Group_3__0
             	    {
-            	    pushFollow(FOLLOW_rule__Constraints__Group_3__0_in_rule__Constraints__Group__3__Impl15604);
+            	    pushFollow(FOLLOW_rule__Constraints__Group_3__0_in_rule__Constraints__Group__3__Impl15730);
             	    rule__Constraints__Group_3__0();
 
             	    state._fsp--;
@@ -21654,7 +21822,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
             	    break;
 
             	default :
-            	    break loop87;
+            	    break loop89;
                 }
             } while (true);
 
@@ -21681,16 +21849,16 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Constraints__Group__4"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7782:1: rule__Constraints__Group__4 : rule__Constraints__Group__4__Impl ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7844:1: rule__Constraints__Group__4 : rule__Constraints__Group__4__Impl ;
     public final void rule__Constraints__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7786:1: ( rule__Constraints__Group__4__Impl )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7787:2: rule__Constraints__Group__4__Impl
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7848:1: ( rule__Constraints__Group__4__Impl )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7849:2: rule__Constraints__Group__4__Impl
             {
-            pushFollow(FOLLOW_rule__Constraints__Group__4__Impl_in_rule__Constraints__Group__415635);
+            pushFollow(FOLLOW_rule__Constraints__Group__4__Impl_in_rule__Constraints__Group__415761);
             rule__Constraints__Group__4__Impl();
 
             state._fsp--;
@@ -21714,20 +21882,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Constraints__Group__4__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7793:1: rule__Constraints__Group__4__Impl : ( '}' ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7855:1: rule__Constraints__Group__4__Impl : ( '}' ) ;
     public final void rule__Constraints__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7797:1: ( ( '}' ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7798:1: ( '}' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7859:1: ( ( '}' ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7860:1: ( '}' )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7798:1: ( '}' )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7799:1: '}'
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7860:1: ( '}' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7861:1: '}'
             {
              before(grammarAccess.getConstraintsAccess().getRightCurlyBracketKeyword_4()); 
-            match(input,17,FOLLOW_17_in_rule__Constraints__Group__4__Impl15663); 
+            match(input,17,FOLLOW_17_in_rule__Constraints__Group__4__Impl15789); 
              after(grammarAccess.getConstraintsAccess().getRightCurlyBracketKeyword_4()); 
 
             }
@@ -21751,21 +21919,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Constraints__Group_3__0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7822:1: rule__Constraints__Group_3__0 : rule__Constraints__Group_3__0__Impl rule__Constraints__Group_3__1 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7884:1: rule__Constraints__Group_3__0 : rule__Constraints__Group_3__0__Impl rule__Constraints__Group_3__1 ;
     public final void rule__Constraints__Group_3__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7826:1: ( rule__Constraints__Group_3__0__Impl rule__Constraints__Group_3__1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7827:2: rule__Constraints__Group_3__0__Impl rule__Constraints__Group_3__1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7888:1: ( rule__Constraints__Group_3__0__Impl rule__Constraints__Group_3__1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7889:2: rule__Constraints__Group_3__0__Impl rule__Constraints__Group_3__1
             {
-            pushFollow(FOLLOW_rule__Constraints__Group_3__0__Impl_in_rule__Constraints__Group_3__015704);
+            pushFollow(FOLLOW_rule__Constraints__Group_3__0__Impl_in_rule__Constraints__Group_3__015830);
             rule__Constraints__Group_3__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Constraints__Group_3__1_in_rule__Constraints__Group_3__015707);
+            pushFollow(FOLLOW_rule__Constraints__Group_3__1_in_rule__Constraints__Group_3__015833);
             rule__Constraints__Group_3__1();
 
             state._fsp--;
@@ -21789,20 +21957,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Constraints__Group_3__0__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7834:1: rule__Constraints__Group_3__0__Impl : ( ',' ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7896:1: rule__Constraints__Group_3__0__Impl : ( ',' ) ;
     public final void rule__Constraints__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7838:1: ( ( ',' ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7839:1: ( ',' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7900:1: ( ( ',' ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7901:1: ( ',' )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7839:1: ( ',' )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7840:1: ','
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7901:1: ( ',' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7902:1: ','
             {
              before(grammarAccess.getConstraintsAccess().getCommaKeyword_3_0()); 
-            match(input,35,FOLLOW_35_in_rule__Constraints__Group_3__0__Impl15735); 
+            match(input,35,FOLLOW_35_in_rule__Constraints__Group_3__0__Impl15861); 
              after(grammarAccess.getConstraintsAccess().getCommaKeyword_3_0()); 
 
             }
@@ -21826,16 +21994,16 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Constraints__Group_3__1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7853:1: rule__Constraints__Group_3__1 : rule__Constraints__Group_3__1__Impl ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7915:1: rule__Constraints__Group_3__1 : rule__Constraints__Group_3__1__Impl ;
     public final void rule__Constraints__Group_3__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7857:1: ( rule__Constraints__Group_3__1__Impl )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7858:2: rule__Constraints__Group_3__1__Impl
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7919:1: ( rule__Constraints__Group_3__1__Impl )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7920:2: rule__Constraints__Group_3__1__Impl
             {
-            pushFollow(FOLLOW_rule__Constraints__Group_3__1__Impl_in_rule__Constraints__Group_3__115766);
+            pushFollow(FOLLOW_rule__Constraints__Group_3__1__Impl_in_rule__Constraints__Group_3__115892);
             rule__Constraints__Group_3__1__Impl();
 
             state._fsp--;
@@ -21859,23 +22027,23 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Constraints__Group_3__1__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7864:1: rule__Constraints__Group_3__1__Impl : ( ( rule__Constraints__CallsAssignment_3_1 ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7926:1: rule__Constraints__Group_3__1__Impl : ( ( rule__Constraints__CallsAssignment_3_1 ) ) ;
     public final void rule__Constraints__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7868:1: ( ( ( rule__Constraints__CallsAssignment_3_1 ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7869:1: ( ( rule__Constraints__CallsAssignment_3_1 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7930:1: ( ( ( rule__Constraints__CallsAssignment_3_1 ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7931:1: ( ( rule__Constraints__CallsAssignment_3_1 ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7869:1: ( ( rule__Constraints__CallsAssignment_3_1 ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7870:1: ( rule__Constraints__CallsAssignment_3_1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7931:1: ( ( rule__Constraints__CallsAssignment_3_1 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7932:1: ( rule__Constraints__CallsAssignment_3_1 )
             {
              before(grammarAccess.getConstraintsAccess().getCallsAssignment_3_1()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7871:1: ( rule__Constraints__CallsAssignment_3_1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7871:2: rule__Constraints__CallsAssignment_3_1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7933:1: ( rule__Constraints__CallsAssignment_3_1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7933:2: rule__Constraints__CallsAssignment_3_1
             {
-            pushFollow(FOLLOW_rule__Constraints__CallsAssignment_3_1_in_rule__Constraints__Group_3__1__Impl15793);
+            pushFollow(FOLLOW_rule__Constraints__CallsAssignment_3_1_in_rule__Constraints__Group_3__1__Impl15919);
             rule__Constraints__CallsAssignment_3_1();
 
             state._fsp--;
@@ -21906,21 +22074,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Invariants__Group__0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7885:1: rule__Invariants__Group__0 : rule__Invariants__Group__0__Impl rule__Invariants__Group__1 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7947:1: rule__Invariants__Group__0 : rule__Invariants__Group__0__Impl rule__Invariants__Group__1 ;
     public final void rule__Invariants__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7889:1: ( rule__Invariants__Group__0__Impl rule__Invariants__Group__1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7890:2: rule__Invariants__Group__0__Impl rule__Invariants__Group__1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7951:1: ( rule__Invariants__Group__0__Impl rule__Invariants__Group__1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7952:2: rule__Invariants__Group__0__Impl rule__Invariants__Group__1
             {
-            pushFollow(FOLLOW_rule__Invariants__Group__0__Impl_in_rule__Invariants__Group__015827);
+            pushFollow(FOLLOW_rule__Invariants__Group__0__Impl_in_rule__Invariants__Group__015953);
             rule__Invariants__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Invariants__Group__1_in_rule__Invariants__Group__015830);
+            pushFollow(FOLLOW_rule__Invariants__Group__1_in_rule__Invariants__Group__015956);
             rule__Invariants__Group__1();
 
             state._fsp--;
@@ -21944,20 +22112,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Invariants__Group__0__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7897:1: rule__Invariants__Group__0__Impl : ( 'invariants' ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7959:1: rule__Invariants__Group__0__Impl : ( 'invariants' ) ;
     public final void rule__Invariants__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7901:1: ( ( 'invariants' ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7902:1: ( 'invariants' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7963:1: ( ( 'invariants' ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7964:1: ( 'invariants' )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7902:1: ( 'invariants' )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7903:1: 'invariants'
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7964:1: ( 'invariants' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7965:1: 'invariants'
             {
              before(grammarAccess.getInvariantsAccess().getInvariantsKeyword_0()); 
-            match(input,52,FOLLOW_52_in_rule__Invariants__Group__0__Impl15858); 
+            match(input,52,FOLLOW_52_in_rule__Invariants__Group__0__Impl15984); 
              after(grammarAccess.getInvariantsAccess().getInvariantsKeyword_0()); 
 
             }
@@ -21981,21 +22149,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Invariants__Group__1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7916:1: rule__Invariants__Group__1 : rule__Invariants__Group__1__Impl rule__Invariants__Group__2 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7978:1: rule__Invariants__Group__1 : rule__Invariants__Group__1__Impl rule__Invariants__Group__2 ;
     public final void rule__Invariants__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7920:1: ( rule__Invariants__Group__1__Impl rule__Invariants__Group__2 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7921:2: rule__Invariants__Group__1__Impl rule__Invariants__Group__2
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7982:1: ( rule__Invariants__Group__1__Impl rule__Invariants__Group__2 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7983:2: rule__Invariants__Group__1__Impl rule__Invariants__Group__2
             {
-            pushFollow(FOLLOW_rule__Invariants__Group__1__Impl_in_rule__Invariants__Group__115889);
+            pushFollow(FOLLOW_rule__Invariants__Group__1__Impl_in_rule__Invariants__Group__116015);
             rule__Invariants__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Invariants__Group__2_in_rule__Invariants__Group__115892);
+            pushFollow(FOLLOW_rule__Invariants__Group__2_in_rule__Invariants__Group__116018);
             rule__Invariants__Group__2();
 
             state._fsp--;
@@ -22019,23 +22187,23 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Invariants__Group__1__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7928:1: rule__Invariants__Group__1__Impl : ( ( rule__Invariants__CallsAssignment_1 ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7990:1: rule__Invariants__Group__1__Impl : ( ( rule__Invariants__CallsAssignment_1 ) ) ;
     public final void rule__Invariants__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7932:1: ( ( ( rule__Invariants__CallsAssignment_1 ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7933:1: ( ( rule__Invariants__CallsAssignment_1 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7994:1: ( ( ( rule__Invariants__CallsAssignment_1 ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7995:1: ( ( rule__Invariants__CallsAssignment_1 ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7933:1: ( ( rule__Invariants__CallsAssignment_1 ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7934:1: ( rule__Invariants__CallsAssignment_1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7995:1: ( ( rule__Invariants__CallsAssignment_1 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7996:1: ( rule__Invariants__CallsAssignment_1 )
             {
              before(grammarAccess.getInvariantsAccess().getCallsAssignment_1()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7935:1: ( rule__Invariants__CallsAssignment_1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7935:2: rule__Invariants__CallsAssignment_1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7997:1: ( rule__Invariants__CallsAssignment_1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7997:2: rule__Invariants__CallsAssignment_1
             {
-            pushFollow(FOLLOW_rule__Invariants__CallsAssignment_1_in_rule__Invariants__Group__1__Impl15919);
+            pushFollow(FOLLOW_rule__Invariants__CallsAssignment_1_in_rule__Invariants__Group__1__Impl16045);
             rule__Invariants__CallsAssignment_1();
 
             state._fsp--;
@@ -22066,16 +22234,16 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Invariants__Group__2"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7945:1: rule__Invariants__Group__2 : rule__Invariants__Group__2__Impl ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8007:1: rule__Invariants__Group__2 : rule__Invariants__Group__2__Impl ;
     public final void rule__Invariants__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7949:1: ( rule__Invariants__Group__2__Impl )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7950:2: rule__Invariants__Group__2__Impl
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8011:1: ( rule__Invariants__Group__2__Impl )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8012:2: rule__Invariants__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__Invariants__Group__2__Impl_in_rule__Invariants__Group__215949);
+            pushFollow(FOLLOW_rule__Invariants__Group__2__Impl_in_rule__Invariants__Group__216075);
             rule__Invariants__Group__2__Impl();
 
             state._fsp--;
@@ -22099,35 +22267,35 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Invariants__Group__2__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7956:1: rule__Invariants__Group__2__Impl : ( ( rule__Invariants__Group_2__0 )* ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8018:1: rule__Invariants__Group__2__Impl : ( ( rule__Invariants__Group_2__0 )* ) ;
     public final void rule__Invariants__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7960:1: ( ( ( rule__Invariants__Group_2__0 )* ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7961:1: ( ( rule__Invariants__Group_2__0 )* )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8022:1: ( ( ( rule__Invariants__Group_2__0 )* ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8023:1: ( ( rule__Invariants__Group_2__0 )* )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7961:1: ( ( rule__Invariants__Group_2__0 )* )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7962:1: ( rule__Invariants__Group_2__0 )*
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8023:1: ( ( rule__Invariants__Group_2__0 )* )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8024:1: ( rule__Invariants__Group_2__0 )*
             {
              before(grammarAccess.getInvariantsAccess().getGroup_2()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7963:1: ( rule__Invariants__Group_2__0 )*
-            loop88:
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8025:1: ( rule__Invariants__Group_2__0 )*
+            loop90:
             do {
-                int alt88=2;
-                int LA88_0 = input.LA(1);
+                int alt90=2;
+                int LA90_0 = input.LA(1);
 
-                if ( (LA88_0==35) ) {
-                    alt88=1;
+                if ( (LA90_0==35) ) {
+                    alt90=1;
                 }
 
 
-                switch (alt88) {
+                switch (alt90) {
             	case 1 :
-            	    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7963:2: rule__Invariants__Group_2__0
+            	    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8025:2: rule__Invariants__Group_2__0
             	    {
-            	    pushFollow(FOLLOW_rule__Invariants__Group_2__0_in_rule__Invariants__Group__2__Impl15976);
+            	    pushFollow(FOLLOW_rule__Invariants__Group_2__0_in_rule__Invariants__Group__2__Impl16102);
             	    rule__Invariants__Group_2__0();
 
             	    state._fsp--;
@@ -22137,7 +22305,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
             	    break;
 
             	default :
-            	    break loop88;
+            	    break loop90;
                 }
             } while (true);
 
@@ -22164,21 +22332,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Invariants__Group_2__0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7979:1: rule__Invariants__Group_2__0 : rule__Invariants__Group_2__0__Impl rule__Invariants__Group_2__1 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8041:1: rule__Invariants__Group_2__0 : rule__Invariants__Group_2__0__Impl rule__Invariants__Group_2__1 ;
     public final void rule__Invariants__Group_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7983:1: ( rule__Invariants__Group_2__0__Impl rule__Invariants__Group_2__1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7984:2: rule__Invariants__Group_2__0__Impl rule__Invariants__Group_2__1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8045:1: ( rule__Invariants__Group_2__0__Impl rule__Invariants__Group_2__1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8046:2: rule__Invariants__Group_2__0__Impl rule__Invariants__Group_2__1
             {
-            pushFollow(FOLLOW_rule__Invariants__Group_2__0__Impl_in_rule__Invariants__Group_2__016013);
+            pushFollow(FOLLOW_rule__Invariants__Group_2__0__Impl_in_rule__Invariants__Group_2__016139);
             rule__Invariants__Group_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Invariants__Group_2__1_in_rule__Invariants__Group_2__016016);
+            pushFollow(FOLLOW_rule__Invariants__Group_2__1_in_rule__Invariants__Group_2__016142);
             rule__Invariants__Group_2__1();
 
             state._fsp--;
@@ -22202,20 +22370,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Invariants__Group_2__0__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7991:1: rule__Invariants__Group_2__0__Impl : ( ',' ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8053:1: rule__Invariants__Group_2__0__Impl : ( ',' ) ;
     public final void rule__Invariants__Group_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7995:1: ( ( ',' ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7996:1: ( ',' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8057:1: ( ( ',' ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8058:1: ( ',' )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7996:1: ( ',' )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:7997:1: ','
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8058:1: ( ',' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8059:1: ','
             {
              before(grammarAccess.getInvariantsAccess().getCommaKeyword_2_0()); 
-            match(input,35,FOLLOW_35_in_rule__Invariants__Group_2__0__Impl16044); 
+            match(input,35,FOLLOW_35_in_rule__Invariants__Group_2__0__Impl16170); 
              after(grammarAccess.getInvariantsAccess().getCommaKeyword_2_0()); 
 
             }
@@ -22239,16 +22407,16 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Invariants__Group_2__1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8010:1: rule__Invariants__Group_2__1 : rule__Invariants__Group_2__1__Impl ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8072:1: rule__Invariants__Group_2__1 : rule__Invariants__Group_2__1__Impl ;
     public final void rule__Invariants__Group_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8014:1: ( rule__Invariants__Group_2__1__Impl )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8015:2: rule__Invariants__Group_2__1__Impl
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8076:1: ( rule__Invariants__Group_2__1__Impl )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8077:2: rule__Invariants__Group_2__1__Impl
             {
-            pushFollow(FOLLOW_rule__Invariants__Group_2__1__Impl_in_rule__Invariants__Group_2__116075);
+            pushFollow(FOLLOW_rule__Invariants__Group_2__1__Impl_in_rule__Invariants__Group_2__116201);
             rule__Invariants__Group_2__1__Impl();
 
             state._fsp--;
@@ -22272,23 +22440,23 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Invariants__Group_2__1__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8021:1: rule__Invariants__Group_2__1__Impl : ( ( rule__Invariants__CallsAssignment_2_1 ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8083:1: rule__Invariants__Group_2__1__Impl : ( ( rule__Invariants__CallsAssignment_2_1 ) ) ;
     public final void rule__Invariants__Group_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8025:1: ( ( ( rule__Invariants__CallsAssignment_2_1 ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8026:1: ( ( rule__Invariants__CallsAssignment_2_1 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8087:1: ( ( ( rule__Invariants__CallsAssignment_2_1 ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8088:1: ( ( rule__Invariants__CallsAssignment_2_1 ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8026:1: ( ( rule__Invariants__CallsAssignment_2_1 ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8027:1: ( rule__Invariants__CallsAssignment_2_1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8088:1: ( ( rule__Invariants__CallsAssignment_2_1 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8089:1: ( rule__Invariants__CallsAssignment_2_1 )
             {
              before(grammarAccess.getInvariantsAccess().getCallsAssignment_2_1()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8028:1: ( rule__Invariants__CallsAssignment_2_1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8028:2: rule__Invariants__CallsAssignment_2_1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8090:1: ( rule__Invariants__CallsAssignment_2_1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8090:2: rule__Invariants__CallsAssignment_2_1
             {
-            pushFollow(FOLLOW_rule__Invariants__CallsAssignment_2_1_in_rule__Invariants__Group_2__1__Impl16102);
+            pushFollow(FOLLOW_rule__Invariants__CallsAssignment_2_1_in_rule__Invariants__Group_2__1__Impl16228);
             rule__Invariants__CallsAssignment_2_1();
 
             state._fsp--;
@@ -22319,21 +22487,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__OverriddenTypeMetaInfo__Group__0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8042:1: rule__OverriddenTypeMetaInfo__Group__0 : rule__OverriddenTypeMetaInfo__Group__0__Impl rule__OverriddenTypeMetaInfo__Group__1 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8104:1: rule__OverriddenTypeMetaInfo__Group__0 : rule__OverriddenTypeMetaInfo__Group__0__Impl rule__OverriddenTypeMetaInfo__Group__1 ;
     public final void rule__OverriddenTypeMetaInfo__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8046:1: ( rule__OverriddenTypeMetaInfo__Group__0__Impl rule__OverriddenTypeMetaInfo__Group__1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8047:2: rule__OverriddenTypeMetaInfo__Group__0__Impl rule__OverriddenTypeMetaInfo__Group__1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8108:1: ( rule__OverriddenTypeMetaInfo__Group__0__Impl rule__OverriddenTypeMetaInfo__Group__1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8109:2: rule__OverriddenTypeMetaInfo__Group__0__Impl rule__OverriddenTypeMetaInfo__Group__1
             {
-            pushFollow(FOLLOW_rule__OverriddenTypeMetaInfo__Group__0__Impl_in_rule__OverriddenTypeMetaInfo__Group__016136);
+            pushFollow(FOLLOW_rule__OverriddenTypeMetaInfo__Group__0__Impl_in_rule__OverriddenTypeMetaInfo__Group__016262);
             rule__OverriddenTypeMetaInfo__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__OverriddenTypeMetaInfo__Group__1_in_rule__OverriddenTypeMetaInfo__Group__016139);
+            pushFollow(FOLLOW_rule__OverriddenTypeMetaInfo__Group__1_in_rule__OverriddenTypeMetaInfo__Group__016265);
             rule__OverriddenTypeMetaInfo__Group__1();
 
             state._fsp--;
@@ -22357,20 +22525,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__OverriddenTypeMetaInfo__Group__0__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8054:1: rule__OverriddenTypeMetaInfo__Group__0__Impl : ( '{' ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8116:1: rule__OverriddenTypeMetaInfo__Group__0__Impl : ( '{' ) ;
     public final void rule__OverriddenTypeMetaInfo__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8058:1: ( ( '{' ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8059:1: ( '{' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8120:1: ( ( '{' ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8121:1: ( '{' )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8059:1: ( '{' )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8060:1: '{'
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8121:1: ( '{' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8122:1: '{'
             {
              before(grammarAccess.getOverriddenTypeMetaInfoAccess().getLeftCurlyBracketKeyword_0()); 
-            match(input,16,FOLLOW_16_in_rule__OverriddenTypeMetaInfo__Group__0__Impl16167); 
+            match(input,16,FOLLOW_16_in_rule__OverriddenTypeMetaInfo__Group__0__Impl16293); 
              after(grammarAccess.getOverriddenTypeMetaInfoAccess().getLeftCurlyBracketKeyword_0()); 
 
             }
@@ -22394,21 +22562,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__OverriddenTypeMetaInfo__Group__1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8073:1: rule__OverriddenTypeMetaInfo__Group__1 : rule__OverriddenTypeMetaInfo__Group__1__Impl rule__OverriddenTypeMetaInfo__Group__2 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8135:1: rule__OverriddenTypeMetaInfo__Group__1 : rule__OverriddenTypeMetaInfo__Group__1__Impl rule__OverriddenTypeMetaInfo__Group__2 ;
     public final void rule__OverriddenTypeMetaInfo__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8077:1: ( rule__OverriddenTypeMetaInfo__Group__1__Impl rule__OverriddenTypeMetaInfo__Group__2 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8078:2: rule__OverriddenTypeMetaInfo__Group__1__Impl rule__OverriddenTypeMetaInfo__Group__2
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8139:1: ( rule__OverriddenTypeMetaInfo__Group__1__Impl rule__OverriddenTypeMetaInfo__Group__2 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8140:2: rule__OverriddenTypeMetaInfo__Group__1__Impl rule__OverriddenTypeMetaInfo__Group__2
             {
-            pushFollow(FOLLOW_rule__OverriddenTypeMetaInfo__Group__1__Impl_in_rule__OverriddenTypeMetaInfo__Group__116198);
+            pushFollow(FOLLOW_rule__OverriddenTypeMetaInfo__Group__1__Impl_in_rule__OverriddenTypeMetaInfo__Group__116324);
             rule__OverriddenTypeMetaInfo__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__OverriddenTypeMetaInfo__Group__2_in_rule__OverriddenTypeMetaInfo__Group__116201);
+            pushFollow(FOLLOW_rule__OverriddenTypeMetaInfo__Group__2_in_rule__OverriddenTypeMetaInfo__Group__116327);
             rule__OverriddenTypeMetaInfo__Group__2();
 
             state._fsp--;
@@ -22432,23 +22600,23 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__OverriddenTypeMetaInfo__Group__1__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8085:1: rule__OverriddenTypeMetaInfo__Group__1__Impl : ( ( rule__OverriddenTypeMetaInfo__MetaInfoAssignment_1 ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8147:1: rule__OverriddenTypeMetaInfo__Group__1__Impl : ( ( rule__OverriddenTypeMetaInfo__MetaInfoAssignment_1 ) ) ;
     public final void rule__OverriddenTypeMetaInfo__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8089:1: ( ( ( rule__OverriddenTypeMetaInfo__MetaInfoAssignment_1 ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8090:1: ( ( rule__OverriddenTypeMetaInfo__MetaInfoAssignment_1 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8151:1: ( ( ( rule__OverriddenTypeMetaInfo__MetaInfoAssignment_1 ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8152:1: ( ( rule__OverriddenTypeMetaInfo__MetaInfoAssignment_1 ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8090:1: ( ( rule__OverriddenTypeMetaInfo__MetaInfoAssignment_1 ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8091:1: ( rule__OverriddenTypeMetaInfo__MetaInfoAssignment_1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8152:1: ( ( rule__OverriddenTypeMetaInfo__MetaInfoAssignment_1 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8153:1: ( rule__OverriddenTypeMetaInfo__MetaInfoAssignment_1 )
             {
              before(grammarAccess.getOverriddenTypeMetaInfoAccess().getMetaInfoAssignment_1()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8092:1: ( rule__OverriddenTypeMetaInfo__MetaInfoAssignment_1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8092:2: rule__OverriddenTypeMetaInfo__MetaInfoAssignment_1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8154:1: ( rule__OverriddenTypeMetaInfo__MetaInfoAssignment_1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8154:2: rule__OverriddenTypeMetaInfo__MetaInfoAssignment_1
             {
-            pushFollow(FOLLOW_rule__OverriddenTypeMetaInfo__MetaInfoAssignment_1_in_rule__OverriddenTypeMetaInfo__Group__1__Impl16228);
+            pushFollow(FOLLOW_rule__OverriddenTypeMetaInfo__MetaInfoAssignment_1_in_rule__OverriddenTypeMetaInfo__Group__1__Impl16354);
             rule__OverriddenTypeMetaInfo__MetaInfoAssignment_1();
 
             state._fsp--;
@@ -22479,16 +22647,16 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__OverriddenTypeMetaInfo__Group__2"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8102:1: rule__OverriddenTypeMetaInfo__Group__2 : rule__OverriddenTypeMetaInfo__Group__2__Impl ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8164:1: rule__OverriddenTypeMetaInfo__Group__2 : rule__OverriddenTypeMetaInfo__Group__2__Impl ;
     public final void rule__OverriddenTypeMetaInfo__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8106:1: ( rule__OverriddenTypeMetaInfo__Group__2__Impl )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8107:2: rule__OverriddenTypeMetaInfo__Group__2__Impl
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8168:1: ( rule__OverriddenTypeMetaInfo__Group__2__Impl )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8169:2: rule__OverriddenTypeMetaInfo__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__OverriddenTypeMetaInfo__Group__2__Impl_in_rule__OverriddenTypeMetaInfo__Group__216258);
+            pushFollow(FOLLOW_rule__OverriddenTypeMetaInfo__Group__2__Impl_in_rule__OverriddenTypeMetaInfo__Group__216384);
             rule__OverriddenTypeMetaInfo__Group__2__Impl();
 
             state._fsp--;
@@ -22512,20 +22680,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__OverriddenTypeMetaInfo__Group__2__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8113:1: rule__OverriddenTypeMetaInfo__Group__2__Impl : ( '}' ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8175:1: rule__OverriddenTypeMetaInfo__Group__2__Impl : ( '}' ) ;
     public final void rule__OverriddenTypeMetaInfo__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8117:1: ( ( '}' ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8118:1: ( '}' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8179:1: ( ( '}' ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8180:1: ( '}' )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8118:1: ( '}' )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8119:1: '}'
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8180:1: ( '}' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8181:1: '}'
             {
              before(grammarAccess.getOverriddenTypeMetaInfoAccess().getRightCurlyBracketKeyword_2()); 
-            match(input,17,FOLLOW_17_in_rule__OverriddenTypeMetaInfo__Group__2__Impl16286); 
+            match(input,17,FOLLOW_17_in_rule__OverriddenTypeMetaInfo__Group__2__Impl16412); 
              after(grammarAccess.getOverriddenTypeMetaInfoAccess().getRightCurlyBracketKeyword_2()); 
 
             }
@@ -22549,21 +22717,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__ConstraintCall__Group__0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8138:1: rule__ConstraintCall__Group__0 : rule__ConstraintCall__Group__0__Impl rule__ConstraintCall__Group__1 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8200:1: rule__ConstraintCall__Group__0 : rule__ConstraintCall__Group__0__Impl rule__ConstraintCall__Group__1 ;
     public final void rule__ConstraintCall__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8142:1: ( rule__ConstraintCall__Group__0__Impl rule__ConstraintCall__Group__1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8143:2: rule__ConstraintCall__Group__0__Impl rule__ConstraintCall__Group__1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8204:1: ( rule__ConstraintCall__Group__0__Impl rule__ConstraintCall__Group__1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8205:2: rule__ConstraintCall__Group__0__Impl rule__ConstraintCall__Group__1
             {
-            pushFollow(FOLLOW_rule__ConstraintCall__Group__0__Impl_in_rule__ConstraintCall__Group__016323);
+            pushFollow(FOLLOW_rule__ConstraintCall__Group__0__Impl_in_rule__ConstraintCall__Group__016449);
             rule__ConstraintCall__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ConstraintCall__Group__1_in_rule__ConstraintCall__Group__016326);
+            pushFollow(FOLLOW_rule__ConstraintCall__Group__1_in_rule__ConstraintCall__Group__016452);
             rule__ConstraintCall__Group__1();
 
             state._fsp--;
@@ -22587,23 +22755,23 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__ConstraintCall__Group__0__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8150:1: rule__ConstraintCall__Group__0__Impl : ( ( rule__ConstraintCall__ConstraintAssignment_0 ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8212:1: rule__ConstraintCall__Group__0__Impl : ( ( rule__ConstraintCall__ConstraintAssignment_0 ) ) ;
     public final void rule__ConstraintCall__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8154:1: ( ( ( rule__ConstraintCall__ConstraintAssignment_0 ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8155:1: ( ( rule__ConstraintCall__ConstraintAssignment_0 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8216:1: ( ( ( rule__ConstraintCall__ConstraintAssignment_0 ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8217:1: ( ( rule__ConstraintCall__ConstraintAssignment_0 ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8155:1: ( ( rule__ConstraintCall__ConstraintAssignment_0 ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8156:1: ( rule__ConstraintCall__ConstraintAssignment_0 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8217:1: ( ( rule__ConstraintCall__ConstraintAssignment_0 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8218:1: ( rule__ConstraintCall__ConstraintAssignment_0 )
             {
              before(grammarAccess.getConstraintCallAccess().getConstraintAssignment_0()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8157:1: ( rule__ConstraintCall__ConstraintAssignment_0 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8157:2: rule__ConstraintCall__ConstraintAssignment_0
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8219:1: ( rule__ConstraintCall__ConstraintAssignment_0 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8219:2: rule__ConstraintCall__ConstraintAssignment_0
             {
-            pushFollow(FOLLOW_rule__ConstraintCall__ConstraintAssignment_0_in_rule__ConstraintCall__Group__0__Impl16353);
+            pushFollow(FOLLOW_rule__ConstraintCall__ConstraintAssignment_0_in_rule__ConstraintCall__Group__0__Impl16479);
             rule__ConstraintCall__ConstraintAssignment_0();
 
             state._fsp--;
@@ -22634,16 +22802,16 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__ConstraintCall__Group__1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8167:1: rule__ConstraintCall__Group__1 : rule__ConstraintCall__Group__1__Impl ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8229:1: rule__ConstraintCall__Group__1 : rule__ConstraintCall__Group__1__Impl ;
     public final void rule__ConstraintCall__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8171:1: ( rule__ConstraintCall__Group__1__Impl )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8172:2: rule__ConstraintCall__Group__1__Impl
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8233:1: ( rule__ConstraintCall__Group__1__Impl )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8234:2: rule__ConstraintCall__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__ConstraintCall__Group__1__Impl_in_rule__ConstraintCall__Group__116383);
+            pushFollow(FOLLOW_rule__ConstraintCall__Group__1__Impl_in_rule__ConstraintCall__Group__116509);
             rule__ConstraintCall__Group__1__Impl();
 
             state._fsp--;
@@ -22667,31 +22835,31 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__ConstraintCall__Group__1__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8178:1: rule__ConstraintCall__Group__1__Impl : ( ( rule__ConstraintCall__Group_1__0 )? ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8240:1: rule__ConstraintCall__Group__1__Impl : ( ( rule__ConstraintCall__Group_1__0 )? ) ;
     public final void rule__ConstraintCall__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8182:1: ( ( ( rule__ConstraintCall__Group_1__0 )? ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8183:1: ( ( rule__ConstraintCall__Group_1__0 )? )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8244:1: ( ( ( rule__ConstraintCall__Group_1__0 )? ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8245:1: ( ( rule__ConstraintCall__Group_1__0 )? )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8183:1: ( ( rule__ConstraintCall__Group_1__0 )? )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8184:1: ( rule__ConstraintCall__Group_1__0 )?
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8245:1: ( ( rule__ConstraintCall__Group_1__0 )? )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8246:1: ( rule__ConstraintCall__Group_1__0 )?
             {
              before(grammarAccess.getConstraintCallAccess().getGroup_1()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8185:1: ( rule__ConstraintCall__Group_1__0 )?
-            int alt89=2;
-            int LA89_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8247:1: ( rule__ConstraintCall__Group_1__0 )?
+            int alt91=2;
+            int LA91_0 = input.LA(1);
 
-            if ( (LA89_0==33) ) {
-                alt89=1;
+            if ( (LA91_0==33) ) {
+                alt91=1;
             }
-            switch (alt89) {
+            switch (alt91) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8185:2: rule__ConstraintCall__Group_1__0
+                    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8247:2: rule__ConstraintCall__Group_1__0
                     {
-                    pushFollow(FOLLOW_rule__ConstraintCall__Group_1__0_in_rule__ConstraintCall__Group__1__Impl16410);
+                    pushFollow(FOLLOW_rule__ConstraintCall__Group_1__0_in_rule__ConstraintCall__Group__1__Impl16536);
                     rule__ConstraintCall__Group_1__0();
 
                     state._fsp--;
@@ -22725,21 +22893,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__ConstraintCall__Group_1__0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8199:1: rule__ConstraintCall__Group_1__0 : rule__ConstraintCall__Group_1__0__Impl rule__ConstraintCall__Group_1__1 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8261:1: rule__ConstraintCall__Group_1__0 : rule__ConstraintCall__Group_1__0__Impl rule__ConstraintCall__Group_1__1 ;
     public final void rule__ConstraintCall__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8203:1: ( rule__ConstraintCall__Group_1__0__Impl rule__ConstraintCall__Group_1__1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8204:2: rule__ConstraintCall__Group_1__0__Impl rule__ConstraintCall__Group_1__1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8265:1: ( rule__ConstraintCall__Group_1__0__Impl rule__ConstraintCall__Group_1__1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8266:2: rule__ConstraintCall__Group_1__0__Impl rule__ConstraintCall__Group_1__1
             {
-            pushFollow(FOLLOW_rule__ConstraintCall__Group_1__0__Impl_in_rule__ConstraintCall__Group_1__016445);
+            pushFollow(FOLLOW_rule__ConstraintCall__Group_1__0__Impl_in_rule__ConstraintCall__Group_1__016571);
             rule__ConstraintCall__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ConstraintCall__Group_1__1_in_rule__ConstraintCall__Group_1__016448);
+            pushFollow(FOLLOW_rule__ConstraintCall__Group_1__1_in_rule__ConstraintCall__Group_1__016574);
             rule__ConstraintCall__Group_1__1();
 
             state._fsp--;
@@ -22763,20 +22931,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__ConstraintCall__Group_1__0__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8211:1: rule__ConstraintCall__Group_1__0__Impl : ( '(' ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8273:1: rule__ConstraintCall__Group_1__0__Impl : ( '(' ) ;
     public final void rule__ConstraintCall__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8215:1: ( ( '(' ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8216:1: ( '(' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8277:1: ( ( '(' ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8278:1: ( '(' )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8216:1: ( '(' )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8217:1: '('
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8278:1: ( '(' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8279:1: '('
             {
              before(grammarAccess.getConstraintCallAccess().getLeftParenthesisKeyword_1_0()); 
-            match(input,33,FOLLOW_33_in_rule__ConstraintCall__Group_1__0__Impl16476); 
+            match(input,33,FOLLOW_33_in_rule__ConstraintCall__Group_1__0__Impl16602); 
              after(grammarAccess.getConstraintCallAccess().getLeftParenthesisKeyword_1_0()); 
 
             }
@@ -22800,21 +22968,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__ConstraintCall__Group_1__1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8230:1: rule__ConstraintCall__Group_1__1 : rule__ConstraintCall__Group_1__1__Impl rule__ConstraintCall__Group_1__2 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8292:1: rule__ConstraintCall__Group_1__1 : rule__ConstraintCall__Group_1__1__Impl rule__ConstraintCall__Group_1__2 ;
     public final void rule__ConstraintCall__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8234:1: ( rule__ConstraintCall__Group_1__1__Impl rule__ConstraintCall__Group_1__2 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8235:2: rule__ConstraintCall__Group_1__1__Impl rule__ConstraintCall__Group_1__2
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8296:1: ( rule__ConstraintCall__Group_1__1__Impl rule__ConstraintCall__Group_1__2 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8297:2: rule__ConstraintCall__Group_1__1__Impl rule__ConstraintCall__Group_1__2
             {
-            pushFollow(FOLLOW_rule__ConstraintCall__Group_1__1__Impl_in_rule__ConstraintCall__Group_1__116507);
+            pushFollow(FOLLOW_rule__ConstraintCall__Group_1__1__Impl_in_rule__ConstraintCall__Group_1__116633);
             rule__ConstraintCall__Group_1__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ConstraintCall__Group_1__2_in_rule__ConstraintCall__Group_1__116510);
+            pushFollow(FOLLOW_rule__ConstraintCall__Group_1__2_in_rule__ConstraintCall__Group_1__116636);
             rule__ConstraintCall__Group_1__2();
 
             state._fsp--;
@@ -22838,23 +23006,23 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__ConstraintCall__Group_1__1__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8242:1: rule__ConstraintCall__Group_1__1__Impl : ( ( rule__ConstraintCall__ParamsAssignment_1_1 ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8304:1: rule__ConstraintCall__Group_1__1__Impl : ( ( rule__ConstraintCall__ParamsAssignment_1_1 ) ) ;
     public final void rule__ConstraintCall__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8246:1: ( ( ( rule__ConstraintCall__ParamsAssignment_1_1 ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8247:1: ( ( rule__ConstraintCall__ParamsAssignment_1_1 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8308:1: ( ( ( rule__ConstraintCall__ParamsAssignment_1_1 ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8309:1: ( ( rule__ConstraintCall__ParamsAssignment_1_1 ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8247:1: ( ( rule__ConstraintCall__ParamsAssignment_1_1 ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8248:1: ( rule__ConstraintCall__ParamsAssignment_1_1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8309:1: ( ( rule__ConstraintCall__ParamsAssignment_1_1 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8310:1: ( rule__ConstraintCall__ParamsAssignment_1_1 )
             {
              before(grammarAccess.getConstraintCallAccess().getParamsAssignment_1_1()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8249:1: ( rule__ConstraintCall__ParamsAssignment_1_1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8249:2: rule__ConstraintCall__ParamsAssignment_1_1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8311:1: ( rule__ConstraintCall__ParamsAssignment_1_1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8311:2: rule__ConstraintCall__ParamsAssignment_1_1
             {
-            pushFollow(FOLLOW_rule__ConstraintCall__ParamsAssignment_1_1_in_rule__ConstraintCall__Group_1__1__Impl16537);
+            pushFollow(FOLLOW_rule__ConstraintCall__ParamsAssignment_1_1_in_rule__ConstraintCall__Group_1__1__Impl16663);
             rule__ConstraintCall__ParamsAssignment_1_1();
 
             state._fsp--;
@@ -22885,21 +23053,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__ConstraintCall__Group_1__2"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8259:1: rule__ConstraintCall__Group_1__2 : rule__ConstraintCall__Group_1__2__Impl rule__ConstraintCall__Group_1__3 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8321:1: rule__ConstraintCall__Group_1__2 : rule__ConstraintCall__Group_1__2__Impl rule__ConstraintCall__Group_1__3 ;
     public final void rule__ConstraintCall__Group_1__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8263:1: ( rule__ConstraintCall__Group_1__2__Impl rule__ConstraintCall__Group_1__3 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8264:2: rule__ConstraintCall__Group_1__2__Impl rule__ConstraintCall__Group_1__3
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8325:1: ( rule__ConstraintCall__Group_1__2__Impl rule__ConstraintCall__Group_1__3 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8326:2: rule__ConstraintCall__Group_1__2__Impl rule__ConstraintCall__Group_1__3
             {
-            pushFollow(FOLLOW_rule__ConstraintCall__Group_1__2__Impl_in_rule__ConstraintCall__Group_1__216567);
+            pushFollow(FOLLOW_rule__ConstraintCall__Group_1__2__Impl_in_rule__ConstraintCall__Group_1__216693);
             rule__ConstraintCall__Group_1__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ConstraintCall__Group_1__3_in_rule__ConstraintCall__Group_1__216570);
+            pushFollow(FOLLOW_rule__ConstraintCall__Group_1__3_in_rule__ConstraintCall__Group_1__216696);
             rule__ConstraintCall__Group_1__3();
 
             state._fsp--;
@@ -22923,35 +23091,35 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__ConstraintCall__Group_1__2__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8271:1: rule__ConstraintCall__Group_1__2__Impl : ( ( rule__ConstraintCall__Group_1_2__0 )* ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8333:1: rule__ConstraintCall__Group_1__2__Impl : ( ( rule__ConstraintCall__Group_1_2__0 )* ) ;
     public final void rule__ConstraintCall__Group_1__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8275:1: ( ( ( rule__ConstraintCall__Group_1_2__0 )* ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8276:1: ( ( rule__ConstraintCall__Group_1_2__0 )* )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8337:1: ( ( ( rule__ConstraintCall__Group_1_2__0 )* ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8338:1: ( ( rule__ConstraintCall__Group_1_2__0 )* )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8276:1: ( ( rule__ConstraintCall__Group_1_2__0 )* )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8277:1: ( rule__ConstraintCall__Group_1_2__0 )*
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8338:1: ( ( rule__ConstraintCall__Group_1_2__0 )* )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8339:1: ( rule__ConstraintCall__Group_1_2__0 )*
             {
              before(grammarAccess.getConstraintCallAccess().getGroup_1_2()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8278:1: ( rule__ConstraintCall__Group_1_2__0 )*
-            loop90:
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8340:1: ( rule__ConstraintCall__Group_1_2__0 )*
+            loop92:
             do {
-                int alt90=2;
-                int LA90_0 = input.LA(1);
+                int alt92=2;
+                int LA92_0 = input.LA(1);
 
-                if ( (LA90_0==35) ) {
-                    alt90=1;
+                if ( (LA92_0==35) ) {
+                    alt92=1;
                 }
 
 
-                switch (alt90) {
+                switch (alt92) {
             	case 1 :
-            	    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8278:2: rule__ConstraintCall__Group_1_2__0
+            	    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8340:2: rule__ConstraintCall__Group_1_2__0
             	    {
-            	    pushFollow(FOLLOW_rule__ConstraintCall__Group_1_2__0_in_rule__ConstraintCall__Group_1__2__Impl16597);
+            	    pushFollow(FOLLOW_rule__ConstraintCall__Group_1_2__0_in_rule__ConstraintCall__Group_1__2__Impl16723);
             	    rule__ConstraintCall__Group_1_2__0();
 
             	    state._fsp--;
@@ -22961,7 +23129,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
             	    break;
 
             	default :
-            	    break loop90;
+            	    break loop92;
                 }
             } while (true);
 
@@ -22988,16 +23156,16 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__ConstraintCall__Group_1__3"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8288:1: rule__ConstraintCall__Group_1__3 : rule__ConstraintCall__Group_1__3__Impl ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8350:1: rule__ConstraintCall__Group_1__3 : rule__ConstraintCall__Group_1__3__Impl ;
     public final void rule__ConstraintCall__Group_1__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8292:1: ( rule__ConstraintCall__Group_1__3__Impl )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8293:2: rule__ConstraintCall__Group_1__3__Impl
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8354:1: ( rule__ConstraintCall__Group_1__3__Impl )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8355:2: rule__ConstraintCall__Group_1__3__Impl
             {
-            pushFollow(FOLLOW_rule__ConstraintCall__Group_1__3__Impl_in_rule__ConstraintCall__Group_1__316628);
+            pushFollow(FOLLOW_rule__ConstraintCall__Group_1__3__Impl_in_rule__ConstraintCall__Group_1__316754);
             rule__ConstraintCall__Group_1__3__Impl();
 
             state._fsp--;
@@ -23021,20 +23189,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__ConstraintCall__Group_1__3__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8299:1: rule__ConstraintCall__Group_1__3__Impl : ( ')' ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8361:1: rule__ConstraintCall__Group_1__3__Impl : ( ')' ) ;
     public final void rule__ConstraintCall__Group_1__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8303:1: ( ( ')' ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8304:1: ( ')' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8365:1: ( ( ')' ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8366:1: ( ')' )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8304:1: ( ')' )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8305:1: ')'
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8366:1: ( ')' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8367:1: ')'
             {
              before(grammarAccess.getConstraintCallAccess().getRightParenthesisKeyword_1_3()); 
-            match(input,34,FOLLOW_34_in_rule__ConstraintCall__Group_1__3__Impl16656); 
+            match(input,34,FOLLOW_34_in_rule__ConstraintCall__Group_1__3__Impl16782); 
              after(grammarAccess.getConstraintCallAccess().getRightParenthesisKeyword_1_3()); 
 
             }
@@ -23058,21 +23226,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__ConstraintCall__Group_1_2__0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8326:1: rule__ConstraintCall__Group_1_2__0 : rule__ConstraintCall__Group_1_2__0__Impl rule__ConstraintCall__Group_1_2__1 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8388:1: rule__ConstraintCall__Group_1_2__0 : rule__ConstraintCall__Group_1_2__0__Impl rule__ConstraintCall__Group_1_2__1 ;
     public final void rule__ConstraintCall__Group_1_2__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8330:1: ( rule__ConstraintCall__Group_1_2__0__Impl rule__ConstraintCall__Group_1_2__1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8331:2: rule__ConstraintCall__Group_1_2__0__Impl rule__ConstraintCall__Group_1_2__1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8392:1: ( rule__ConstraintCall__Group_1_2__0__Impl rule__ConstraintCall__Group_1_2__1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8393:2: rule__ConstraintCall__Group_1_2__0__Impl rule__ConstraintCall__Group_1_2__1
             {
-            pushFollow(FOLLOW_rule__ConstraintCall__Group_1_2__0__Impl_in_rule__ConstraintCall__Group_1_2__016695);
+            pushFollow(FOLLOW_rule__ConstraintCall__Group_1_2__0__Impl_in_rule__ConstraintCall__Group_1_2__016821);
             rule__ConstraintCall__Group_1_2__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__ConstraintCall__Group_1_2__1_in_rule__ConstraintCall__Group_1_2__016698);
+            pushFollow(FOLLOW_rule__ConstraintCall__Group_1_2__1_in_rule__ConstraintCall__Group_1_2__016824);
             rule__ConstraintCall__Group_1_2__1();
 
             state._fsp--;
@@ -23096,20 +23264,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__ConstraintCall__Group_1_2__0__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8338:1: rule__ConstraintCall__Group_1_2__0__Impl : ( ',' ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8400:1: rule__ConstraintCall__Group_1_2__0__Impl : ( ',' ) ;
     public final void rule__ConstraintCall__Group_1_2__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8342:1: ( ( ',' ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8343:1: ( ',' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8404:1: ( ( ',' ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8405:1: ( ',' )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8343:1: ( ',' )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8344:1: ','
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8405:1: ( ',' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8406:1: ','
             {
              before(grammarAccess.getConstraintCallAccess().getCommaKeyword_1_2_0()); 
-            match(input,35,FOLLOW_35_in_rule__ConstraintCall__Group_1_2__0__Impl16726); 
+            match(input,35,FOLLOW_35_in_rule__ConstraintCall__Group_1_2__0__Impl16852); 
              after(grammarAccess.getConstraintCallAccess().getCommaKeyword_1_2_0()); 
 
             }
@@ -23133,16 +23301,16 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__ConstraintCall__Group_1_2__1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8357:1: rule__ConstraintCall__Group_1_2__1 : rule__ConstraintCall__Group_1_2__1__Impl ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8419:1: rule__ConstraintCall__Group_1_2__1 : rule__ConstraintCall__Group_1_2__1__Impl ;
     public final void rule__ConstraintCall__Group_1_2__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8361:1: ( rule__ConstraintCall__Group_1_2__1__Impl )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8362:2: rule__ConstraintCall__Group_1_2__1__Impl
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8423:1: ( rule__ConstraintCall__Group_1_2__1__Impl )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8424:2: rule__ConstraintCall__Group_1_2__1__Impl
             {
-            pushFollow(FOLLOW_rule__ConstraintCall__Group_1_2__1__Impl_in_rule__ConstraintCall__Group_1_2__116757);
+            pushFollow(FOLLOW_rule__ConstraintCall__Group_1_2__1__Impl_in_rule__ConstraintCall__Group_1_2__116883);
             rule__ConstraintCall__Group_1_2__1__Impl();
 
             state._fsp--;
@@ -23166,23 +23334,23 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__ConstraintCall__Group_1_2__1__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8368:1: rule__ConstraintCall__Group_1_2__1__Impl : ( ( rule__ConstraintCall__ParamsAssignment_1_2_1 ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8430:1: rule__ConstraintCall__Group_1_2__1__Impl : ( ( rule__ConstraintCall__ParamsAssignment_1_2_1 ) ) ;
     public final void rule__ConstraintCall__Group_1_2__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8372:1: ( ( ( rule__ConstraintCall__ParamsAssignment_1_2_1 ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8373:1: ( ( rule__ConstraintCall__ParamsAssignment_1_2_1 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8434:1: ( ( ( rule__ConstraintCall__ParamsAssignment_1_2_1 ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8435:1: ( ( rule__ConstraintCall__ParamsAssignment_1_2_1 ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8373:1: ( ( rule__ConstraintCall__ParamsAssignment_1_2_1 ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8374:1: ( rule__ConstraintCall__ParamsAssignment_1_2_1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8435:1: ( ( rule__ConstraintCall__ParamsAssignment_1_2_1 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8436:1: ( rule__ConstraintCall__ParamsAssignment_1_2_1 )
             {
              before(grammarAccess.getConstraintCallAccess().getParamsAssignment_1_2_1()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8375:1: ( rule__ConstraintCall__ParamsAssignment_1_2_1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8375:2: rule__ConstraintCall__ParamsAssignment_1_2_1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8437:1: ( rule__ConstraintCall__ParamsAssignment_1_2_1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8437:2: rule__ConstraintCall__ParamsAssignment_1_2_1
             {
-            pushFollow(FOLLOW_rule__ConstraintCall__ParamsAssignment_1_2_1_in_rule__ConstraintCall__Group_1_2__1__Impl16784);
+            pushFollow(FOLLOW_rule__ConstraintCall__ParamsAssignment_1_2_1_in_rule__ConstraintCall__Group_1_2__1__Impl16910);
             rule__ConstraintCall__ParamsAssignment_1_2_1();
 
             state._fsp--;
@@ -23213,21 +23381,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Service__Group__0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8389:1: rule__Service__Group__0 : rule__Service__Group__0__Impl rule__Service__Group__1 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8451:1: rule__Service__Group__0 : rule__Service__Group__0__Impl rule__Service__Group__1 ;
     public final void rule__Service__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8393:1: ( rule__Service__Group__0__Impl rule__Service__Group__1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8394:2: rule__Service__Group__0__Impl rule__Service__Group__1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8455:1: ( rule__Service__Group__0__Impl rule__Service__Group__1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8456:2: rule__Service__Group__0__Impl rule__Service__Group__1
             {
-            pushFollow(FOLLOW_rule__Service__Group__0__Impl_in_rule__Service__Group__016818);
+            pushFollow(FOLLOW_rule__Service__Group__0__Impl_in_rule__Service__Group__016944);
             rule__Service__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Service__Group__1_in_rule__Service__Group__016821);
+            pushFollow(FOLLOW_rule__Service__Group__1_in_rule__Service__Group__016947);
             rule__Service__Group__1();
 
             state._fsp--;
@@ -23251,31 +23419,31 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Service__Group__0__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8401:1: rule__Service__Group__0__Impl : ( ( rule__Service__DocAssignment_0 )? ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8463:1: rule__Service__Group__0__Impl : ( ( rule__Service__DocAssignment_0 )? ) ;
     public final void rule__Service__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8405:1: ( ( ( rule__Service__DocAssignment_0 )? ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8406:1: ( ( rule__Service__DocAssignment_0 )? )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8467:1: ( ( ( rule__Service__DocAssignment_0 )? ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8468:1: ( ( rule__Service__DocAssignment_0 )? )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8406:1: ( ( rule__Service__DocAssignment_0 )? )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8407:1: ( rule__Service__DocAssignment_0 )?
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8468:1: ( ( rule__Service__DocAssignment_0 )? )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8469:1: ( rule__Service__DocAssignment_0 )?
             {
              before(grammarAccess.getServiceAccess().getDocAssignment_0()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8408:1: ( rule__Service__DocAssignment_0 )?
-            int alt91=2;
-            int LA91_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8470:1: ( rule__Service__DocAssignment_0 )?
+            int alt93=2;
+            int LA93_0 = input.LA(1);
 
-            if ( (LA91_0==RULE_DOC) ) {
-                alt91=1;
+            if ( (LA93_0==RULE_DOC) ) {
+                alt93=1;
             }
-            switch (alt91) {
+            switch (alt93) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8408:2: rule__Service__DocAssignment_0
+                    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8470:2: rule__Service__DocAssignment_0
                     {
-                    pushFollow(FOLLOW_rule__Service__DocAssignment_0_in_rule__Service__Group__0__Impl16848);
+                    pushFollow(FOLLOW_rule__Service__DocAssignment_0_in_rule__Service__Group__0__Impl16974);
                     rule__Service__DocAssignment_0();
 
                     state._fsp--;
@@ -23309,21 +23477,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Service__Group__1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8418:1: rule__Service__Group__1 : rule__Service__Group__1__Impl rule__Service__Group__2 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8480:1: rule__Service__Group__1 : rule__Service__Group__1__Impl rule__Service__Group__2 ;
     public final void rule__Service__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8422:1: ( rule__Service__Group__1__Impl rule__Service__Group__2 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8423:2: rule__Service__Group__1__Impl rule__Service__Group__2
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8484:1: ( rule__Service__Group__1__Impl rule__Service__Group__2 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8485:2: rule__Service__Group__1__Impl rule__Service__Group__2
             {
-            pushFollow(FOLLOW_rule__Service__Group__1__Impl_in_rule__Service__Group__116879);
+            pushFollow(FOLLOW_rule__Service__Group__1__Impl_in_rule__Service__Group__117005);
             rule__Service__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Service__Group__2_in_rule__Service__Group__116882);
+            pushFollow(FOLLOW_rule__Service__Group__2_in_rule__Service__Group__117008);
             rule__Service__Group__2();
 
             state._fsp--;
@@ -23347,20 +23515,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Service__Group__1__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8430:1: rule__Service__Group__1__Impl : ( 'service' ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8492:1: rule__Service__Group__1__Impl : ( 'service' ) ;
     public final void rule__Service__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8434:1: ( ( 'service' ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8435:1: ( 'service' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8496:1: ( ( 'service' ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8497:1: ( 'service' )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8435:1: ( 'service' )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8436:1: 'service'
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8497:1: ( 'service' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8498:1: 'service'
             {
              before(grammarAccess.getServiceAccess().getServiceKeyword_1()); 
-            match(input,53,FOLLOW_53_in_rule__Service__Group__1__Impl16910); 
+            match(input,53,FOLLOW_53_in_rule__Service__Group__1__Impl17036); 
              after(grammarAccess.getServiceAccess().getServiceKeyword_1()); 
 
             }
@@ -23384,21 +23552,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Service__Group__2"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8449:1: rule__Service__Group__2 : rule__Service__Group__2__Impl rule__Service__Group__3 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8511:1: rule__Service__Group__2 : rule__Service__Group__2__Impl rule__Service__Group__3 ;
     public final void rule__Service__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8453:1: ( rule__Service__Group__2__Impl rule__Service__Group__3 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8454:2: rule__Service__Group__2__Impl rule__Service__Group__3
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8515:1: ( rule__Service__Group__2__Impl rule__Service__Group__3 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8516:2: rule__Service__Group__2__Impl rule__Service__Group__3
             {
-            pushFollow(FOLLOW_rule__Service__Group__2__Impl_in_rule__Service__Group__216941);
+            pushFollow(FOLLOW_rule__Service__Group__2__Impl_in_rule__Service__Group__217067);
             rule__Service__Group__2__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Service__Group__3_in_rule__Service__Group__216944);
+            pushFollow(FOLLOW_rule__Service__Group__3_in_rule__Service__Group__217070);
             rule__Service__Group__3();
 
             state._fsp--;
@@ -23422,23 +23590,23 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Service__Group__2__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8461:1: rule__Service__Group__2__Impl : ( ( rule__Service__NameAssignment_2 ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8523:1: rule__Service__Group__2__Impl : ( ( rule__Service__NameAssignment_2 ) ) ;
     public final void rule__Service__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8465:1: ( ( ( rule__Service__NameAssignment_2 ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8466:1: ( ( rule__Service__NameAssignment_2 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8527:1: ( ( ( rule__Service__NameAssignment_2 ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8528:1: ( ( rule__Service__NameAssignment_2 ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8466:1: ( ( rule__Service__NameAssignment_2 ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8467:1: ( rule__Service__NameAssignment_2 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8528:1: ( ( rule__Service__NameAssignment_2 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8529:1: ( rule__Service__NameAssignment_2 )
             {
              before(grammarAccess.getServiceAccess().getNameAssignment_2()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8468:1: ( rule__Service__NameAssignment_2 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8468:2: rule__Service__NameAssignment_2
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8530:1: ( rule__Service__NameAssignment_2 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8530:2: rule__Service__NameAssignment_2
             {
-            pushFollow(FOLLOW_rule__Service__NameAssignment_2_in_rule__Service__Group__2__Impl16971);
+            pushFollow(FOLLOW_rule__Service__NameAssignment_2_in_rule__Service__Group__2__Impl17097);
             rule__Service__NameAssignment_2();
 
             state._fsp--;
@@ -23469,21 +23637,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Service__Group__3"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8478:1: rule__Service__Group__3 : rule__Service__Group__3__Impl rule__Service__Group__4 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8540:1: rule__Service__Group__3 : rule__Service__Group__3__Impl rule__Service__Group__4 ;
     public final void rule__Service__Group__3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8482:1: ( rule__Service__Group__3__Impl rule__Service__Group__4 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8483:2: rule__Service__Group__3__Impl rule__Service__Group__4
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8544:1: ( rule__Service__Group__3__Impl rule__Service__Group__4 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8545:2: rule__Service__Group__3__Impl rule__Service__Group__4
             {
-            pushFollow(FOLLOW_rule__Service__Group__3__Impl_in_rule__Service__Group__317001);
+            pushFollow(FOLLOW_rule__Service__Group__3__Impl_in_rule__Service__Group__317127);
             rule__Service__Group__3__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Service__Group__4_in_rule__Service__Group__317004);
+            pushFollow(FOLLOW_rule__Service__Group__4_in_rule__Service__Group__317130);
             rule__Service__Group__4();
 
             state._fsp--;
@@ -23507,20 +23675,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Service__Group__3__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8490:1: rule__Service__Group__3__Impl : ( '{' ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8552:1: rule__Service__Group__3__Impl : ( '{' ) ;
     public final void rule__Service__Group__3__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8494:1: ( ( '{' ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8495:1: ( '{' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8556:1: ( ( '{' ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8557:1: ( '{' )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8495:1: ( '{' )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8496:1: '{'
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8557:1: ( '{' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8558:1: '{'
             {
              before(grammarAccess.getServiceAccess().getLeftCurlyBracketKeyword_3()); 
-            match(input,16,FOLLOW_16_in_rule__Service__Group__3__Impl17032); 
+            match(input,16,FOLLOW_16_in_rule__Service__Group__3__Impl17158); 
              after(grammarAccess.getServiceAccess().getLeftCurlyBracketKeyword_3()); 
 
             }
@@ -23544,21 +23712,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Service__Group__4"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8509:1: rule__Service__Group__4 : rule__Service__Group__4__Impl rule__Service__Group__5 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8571:1: rule__Service__Group__4 : rule__Service__Group__4__Impl rule__Service__Group__5 ;
     public final void rule__Service__Group__4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8513:1: ( rule__Service__Group__4__Impl rule__Service__Group__5 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8514:2: rule__Service__Group__4__Impl rule__Service__Group__5
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8575:1: ( rule__Service__Group__4__Impl rule__Service__Group__5 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8576:2: rule__Service__Group__4__Impl rule__Service__Group__5
             {
-            pushFollow(FOLLOW_rule__Service__Group__4__Impl_in_rule__Service__Group__417063);
+            pushFollow(FOLLOW_rule__Service__Group__4__Impl_in_rule__Service__Group__417189);
             rule__Service__Group__4__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Service__Group__5_in_rule__Service__Group__417066);
+            pushFollow(FOLLOW_rule__Service__Group__5_in_rule__Service__Group__417192);
             rule__Service__Group__5();
 
             state._fsp--;
@@ -23582,35 +23750,35 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Service__Group__4__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8521:1: rule__Service__Group__4__Impl : ( ( rule__Service__MethodsAssignment_4 )* ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8583:1: rule__Service__Group__4__Impl : ( ( rule__Service__MethodsAssignment_4 )* ) ;
     public final void rule__Service__Group__4__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8525:1: ( ( ( rule__Service__MethodsAssignment_4 )* ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8526:1: ( ( rule__Service__MethodsAssignment_4 )* )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8587:1: ( ( ( rule__Service__MethodsAssignment_4 )* ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8588:1: ( ( rule__Service__MethodsAssignment_4 )* )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8526:1: ( ( rule__Service__MethodsAssignment_4 )* )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8527:1: ( rule__Service__MethodsAssignment_4 )*
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8588:1: ( ( rule__Service__MethodsAssignment_4 )* )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8589:1: ( rule__Service__MethodsAssignment_4 )*
             {
              before(grammarAccess.getServiceAccess().getMethodsAssignment_4()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8528:1: ( rule__Service__MethodsAssignment_4 )*
-            loop92:
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8590:1: ( rule__Service__MethodsAssignment_4 )*
+            loop94:
             do {
-                int alt92=2;
-                int LA92_0 = input.LA(1);
+                int alt94=2;
+                int LA94_0 = input.LA(1);
 
-                if ( (LA92_0==RULE_DOC||LA92_0==44) ) {
-                    alt92=1;
+                if ( (LA94_0==RULE_DOC||LA94_0==44) ) {
+                    alt94=1;
                 }
 
 
-                switch (alt92) {
+                switch (alt94) {
             	case 1 :
-            	    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8528:2: rule__Service__MethodsAssignment_4
+            	    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8590:2: rule__Service__MethodsAssignment_4
             	    {
-            	    pushFollow(FOLLOW_rule__Service__MethodsAssignment_4_in_rule__Service__Group__4__Impl17093);
+            	    pushFollow(FOLLOW_rule__Service__MethodsAssignment_4_in_rule__Service__Group__4__Impl17219);
             	    rule__Service__MethodsAssignment_4();
 
             	    state._fsp--;
@@ -23620,7 +23788,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
             	    break;
 
             	default :
-            	    break loop92;
+            	    break loop94;
                 }
             } while (true);
 
@@ -23647,16 +23815,16 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Service__Group__5"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8538:1: rule__Service__Group__5 : rule__Service__Group__5__Impl ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8600:1: rule__Service__Group__5 : rule__Service__Group__5__Impl ;
     public final void rule__Service__Group__5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8542:1: ( rule__Service__Group__5__Impl )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8543:2: rule__Service__Group__5__Impl
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8604:1: ( rule__Service__Group__5__Impl )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8605:2: rule__Service__Group__5__Impl
             {
-            pushFollow(FOLLOW_rule__Service__Group__5__Impl_in_rule__Service__Group__517124);
+            pushFollow(FOLLOW_rule__Service__Group__5__Impl_in_rule__Service__Group__517250);
             rule__Service__Group__5__Impl();
 
             state._fsp--;
@@ -23680,20 +23848,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Service__Group__5__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8549:1: rule__Service__Group__5__Impl : ( '}' ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8611:1: rule__Service__Group__5__Impl : ( '}' ) ;
     public final void rule__Service__Group__5__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8553:1: ( ( '}' ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8554:1: ( '}' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8615:1: ( ( '}' ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8616:1: ( '}' )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8554:1: ( '}' )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8555:1: '}'
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8616:1: ( '}' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8617:1: '}'
             {
              before(grammarAccess.getServiceAccess().getRightCurlyBracketKeyword_5()); 
-            match(input,17,FOLLOW_17_in_rule__Service__Group__5__Impl17152); 
+            match(input,17,FOLLOW_17_in_rule__Service__Group__5__Impl17278); 
              after(grammarAccess.getServiceAccess().getRightCurlyBracketKeyword_5()); 
 
             }
@@ -23717,21 +23885,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__FQN__Group__0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8580:1: rule__FQN__Group__0 : rule__FQN__Group__0__Impl rule__FQN__Group__1 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8642:1: rule__FQN__Group__0 : rule__FQN__Group__0__Impl rule__FQN__Group__1 ;
     public final void rule__FQN__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8584:1: ( rule__FQN__Group__0__Impl rule__FQN__Group__1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8585:2: rule__FQN__Group__0__Impl rule__FQN__Group__1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8646:1: ( rule__FQN__Group__0__Impl rule__FQN__Group__1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8647:2: rule__FQN__Group__0__Impl rule__FQN__Group__1
             {
-            pushFollow(FOLLOW_rule__FQN__Group__0__Impl_in_rule__FQN__Group__017195);
+            pushFollow(FOLLOW_rule__FQN__Group__0__Impl_in_rule__FQN__Group__017321);
             rule__FQN__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__FQN__Group__1_in_rule__FQN__Group__017198);
+            pushFollow(FOLLOW_rule__FQN__Group__1_in_rule__FQN__Group__017324);
             rule__FQN__Group__1();
 
             state._fsp--;
@@ -23755,20 +23923,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__FQN__Group__0__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8592:1: rule__FQN__Group__0__Impl : ( RULE_ID ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8654:1: rule__FQN__Group__0__Impl : ( RULE_ID ) ;
     public final void rule__FQN__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8596:1: ( ( RULE_ID ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8597:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8658:1: ( ( RULE_ID ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8659:1: ( RULE_ID )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8597:1: ( RULE_ID )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8598:1: RULE_ID
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8659:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8660:1: RULE_ID
             {
              before(grammarAccess.getFQNAccess().getIDTerminalRuleCall_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__FQN__Group__0__Impl17225); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__FQN__Group__0__Impl17351); 
              after(grammarAccess.getFQNAccess().getIDTerminalRuleCall_0()); 
 
             }
@@ -23792,16 +23960,16 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__FQN__Group__1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8609:1: rule__FQN__Group__1 : rule__FQN__Group__1__Impl ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8671:1: rule__FQN__Group__1 : rule__FQN__Group__1__Impl ;
     public final void rule__FQN__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8613:1: ( rule__FQN__Group__1__Impl )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8614:2: rule__FQN__Group__1__Impl
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8675:1: ( rule__FQN__Group__1__Impl )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8676:2: rule__FQN__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__FQN__Group__1__Impl_in_rule__FQN__Group__117254);
+            pushFollow(FOLLOW_rule__FQN__Group__1__Impl_in_rule__FQN__Group__117380);
             rule__FQN__Group__1__Impl();
 
             state._fsp--;
@@ -23825,41 +23993,41 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__FQN__Group__1__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8620:1: rule__FQN__Group__1__Impl : ( ( rule__FQN__Group_1__0 )* ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8682:1: rule__FQN__Group__1__Impl : ( ( rule__FQN__Group_1__0 )* ) ;
     public final void rule__FQN__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8624:1: ( ( ( rule__FQN__Group_1__0 )* ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8625:1: ( ( rule__FQN__Group_1__0 )* )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8686:1: ( ( ( rule__FQN__Group_1__0 )* ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8687:1: ( ( rule__FQN__Group_1__0 )* )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8625:1: ( ( rule__FQN__Group_1__0 )* )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8626:1: ( rule__FQN__Group_1__0 )*
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8687:1: ( ( rule__FQN__Group_1__0 )* )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8688:1: ( rule__FQN__Group_1__0 )*
             {
              before(grammarAccess.getFQNAccess().getGroup_1()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8627:1: ( rule__FQN__Group_1__0 )*
-            loop93:
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8689:1: ( rule__FQN__Group_1__0 )*
+            loop95:
             do {
-                int alt93=2;
-                int LA93_0 = input.LA(1);
+                int alt95=2;
+                int LA95_0 = input.LA(1);
 
-                if ( (LA93_0==54) ) {
-                    int LA93_2 = input.LA(2);
+                if ( (LA95_0==54) ) {
+                    int LA95_2 = input.LA(2);
 
-                    if ( (LA93_2==RULE_ID) ) {
-                        alt93=1;
+                    if ( (LA95_2==RULE_ID) ) {
+                        alt95=1;
                     }
 
 
                 }
 
 
-                switch (alt93) {
+                switch (alt95) {
             	case 1 :
-            	    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8627:2: rule__FQN__Group_1__0
+            	    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8689:2: rule__FQN__Group_1__0
             	    {
-            	    pushFollow(FOLLOW_rule__FQN__Group_1__0_in_rule__FQN__Group__1__Impl17281);
+            	    pushFollow(FOLLOW_rule__FQN__Group_1__0_in_rule__FQN__Group__1__Impl17407);
             	    rule__FQN__Group_1__0();
 
             	    state._fsp--;
@@ -23869,7 +24037,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
             	    break;
 
             	default :
-            	    break loop93;
+            	    break loop95;
                 }
             } while (true);
 
@@ -23896,21 +24064,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__FQN__Group_1__0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8641:1: rule__FQN__Group_1__0 : rule__FQN__Group_1__0__Impl rule__FQN__Group_1__1 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8703:1: rule__FQN__Group_1__0 : rule__FQN__Group_1__0__Impl rule__FQN__Group_1__1 ;
     public final void rule__FQN__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8645:1: ( rule__FQN__Group_1__0__Impl rule__FQN__Group_1__1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8646:2: rule__FQN__Group_1__0__Impl rule__FQN__Group_1__1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8707:1: ( rule__FQN__Group_1__0__Impl rule__FQN__Group_1__1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8708:2: rule__FQN__Group_1__0__Impl rule__FQN__Group_1__1
             {
-            pushFollow(FOLLOW_rule__FQN__Group_1__0__Impl_in_rule__FQN__Group_1__017316);
+            pushFollow(FOLLOW_rule__FQN__Group_1__0__Impl_in_rule__FQN__Group_1__017442);
             rule__FQN__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__FQN__Group_1__1_in_rule__FQN__Group_1__017319);
+            pushFollow(FOLLOW_rule__FQN__Group_1__1_in_rule__FQN__Group_1__017445);
             rule__FQN__Group_1__1();
 
             state._fsp--;
@@ -23934,20 +24102,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__FQN__Group_1__0__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8653:1: rule__FQN__Group_1__0__Impl : ( '.' ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8715:1: rule__FQN__Group_1__0__Impl : ( '.' ) ;
     public final void rule__FQN__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8657:1: ( ( '.' ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8658:1: ( '.' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8719:1: ( ( '.' ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8720:1: ( '.' )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8658:1: ( '.' )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8659:1: '.'
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8720:1: ( '.' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8721:1: '.'
             {
              before(grammarAccess.getFQNAccess().getFullStopKeyword_1_0()); 
-            match(input,54,FOLLOW_54_in_rule__FQN__Group_1__0__Impl17347); 
+            match(input,54,FOLLOW_54_in_rule__FQN__Group_1__0__Impl17473); 
              after(grammarAccess.getFQNAccess().getFullStopKeyword_1_0()); 
 
             }
@@ -23971,16 +24139,16 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__FQN__Group_1__1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8672:1: rule__FQN__Group_1__1 : rule__FQN__Group_1__1__Impl ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8734:1: rule__FQN__Group_1__1 : rule__FQN__Group_1__1__Impl ;
     public final void rule__FQN__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8676:1: ( rule__FQN__Group_1__1__Impl )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8677:2: rule__FQN__Group_1__1__Impl
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8738:1: ( rule__FQN__Group_1__1__Impl )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8739:2: rule__FQN__Group_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__FQN__Group_1__1__Impl_in_rule__FQN__Group_1__117378);
+            pushFollow(FOLLOW_rule__FQN__Group_1__1__Impl_in_rule__FQN__Group_1__117504);
             rule__FQN__Group_1__1__Impl();
 
             state._fsp--;
@@ -24004,20 +24172,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__FQN__Group_1__1__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8683:1: rule__FQN__Group_1__1__Impl : ( RULE_ID ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8745:1: rule__FQN__Group_1__1__Impl : ( RULE_ID ) ;
     public final void rule__FQN__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8687:1: ( ( RULE_ID ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8688:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8749:1: ( ( RULE_ID ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8750:1: ( RULE_ID )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8688:1: ( RULE_ID )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8689:1: RULE_ID
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8750:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8751:1: RULE_ID
             {
              before(grammarAccess.getFQNAccess().getIDTerminalRuleCall_1_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__FQN__Group_1__1__Impl17405); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__FQN__Group_1__1__Impl17531); 
              after(grammarAccess.getFQNAccess().getIDTerminalRuleCall_1_1()); 
 
             }
@@ -24041,21 +24209,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__FQNWithWildcard__Group__0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8704:1: rule__FQNWithWildcard__Group__0 : rule__FQNWithWildcard__Group__0__Impl rule__FQNWithWildcard__Group__1 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8766:1: rule__FQNWithWildcard__Group__0 : rule__FQNWithWildcard__Group__0__Impl rule__FQNWithWildcard__Group__1 ;
     public final void rule__FQNWithWildcard__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8708:1: ( rule__FQNWithWildcard__Group__0__Impl rule__FQNWithWildcard__Group__1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8709:2: rule__FQNWithWildcard__Group__0__Impl rule__FQNWithWildcard__Group__1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8770:1: ( rule__FQNWithWildcard__Group__0__Impl rule__FQNWithWildcard__Group__1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8771:2: rule__FQNWithWildcard__Group__0__Impl rule__FQNWithWildcard__Group__1
             {
-            pushFollow(FOLLOW_rule__FQNWithWildcard__Group__0__Impl_in_rule__FQNWithWildcard__Group__017438);
+            pushFollow(FOLLOW_rule__FQNWithWildcard__Group__0__Impl_in_rule__FQNWithWildcard__Group__017564);
             rule__FQNWithWildcard__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__FQNWithWildcard__Group__1_in_rule__FQNWithWildcard__Group__017441);
+            pushFollow(FOLLOW_rule__FQNWithWildcard__Group__1_in_rule__FQNWithWildcard__Group__017567);
             rule__FQNWithWildcard__Group__1();
 
             state._fsp--;
@@ -24079,20 +24247,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__FQNWithWildcard__Group__0__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8716:1: rule__FQNWithWildcard__Group__0__Impl : ( ruleFQN ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8778:1: rule__FQNWithWildcard__Group__0__Impl : ( ruleFQN ) ;
     public final void rule__FQNWithWildcard__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8720:1: ( ( ruleFQN ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8721:1: ( ruleFQN )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8782:1: ( ( ruleFQN ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8783:1: ( ruleFQN )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8721:1: ( ruleFQN )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8722:1: ruleFQN
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8783:1: ( ruleFQN )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8784:1: ruleFQN
             {
              before(grammarAccess.getFQNWithWildcardAccess().getFQNParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleFQN_in_rule__FQNWithWildcard__Group__0__Impl17468);
+            pushFollow(FOLLOW_ruleFQN_in_rule__FQNWithWildcard__Group__0__Impl17594);
             ruleFQN();
 
             state._fsp--;
@@ -24120,21 +24288,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__FQNWithWildcard__Group__1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8733:1: rule__FQNWithWildcard__Group__1 : rule__FQNWithWildcard__Group__1__Impl rule__FQNWithWildcard__Group__2 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8795:1: rule__FQNWithWildcard__Group__1 : rule__FQNWithWildcard__Group__1__Impl rule__FQNWithWildcard__Group__2 ;
     public final void rule__FQNWithWildcard__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8737:1: ( rule__FQNWithWildcard__Group__1__Impl rule__FQNWithWildcard__Group__2 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8738:2: rule__FQNWithWildcard__Group__1__Impl rule__FQNWithWildcard__Group__2
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8799:1: ( rule__FQNWithWildcard__Group__1__Impl rule__FQNWithWildcard__Group__2 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8800:2: rule__FQNWithWildcard__Group__1__Impl rule__FQNWithWildcard__Group__2
             {
-            pushFollow(FOLLOW_rule__FQNWithWildcard__Group__1__Impl_in_rule__FQNWithWildcard__Group__117497);
+            pushFollow(FOLLOW_rule__FQNWithWildcard__Group__1__Impl_in_rule__FQNWithWildcard__Group__117623);
             rule__FQNWithWildcard__Group__1__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__FQNWithWildcard__Group__2_in_rule__FQNWithWildcard__Group__117500);
+            pushFollow(FOLLOW_rule__FQNWithWildcard__Group__2_in_rule__FQNWithWildcard__Group__117626);
             rule__FQNWithWildcard__Group__2();
 
             state._fsp--;
@@ -24158,20 +24326,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__FQNWithWildcard__Group__1__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8745:1: rule__FQNWithWildcard__Group__1__Impl : ( '.' ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8807:1: rule__FQNWithWildcard__Group__1__Impl : ( '.' ) ;
     public final void rule__FQNWithWildcard__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8749:1: ( ( '.' ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8750:1: ( '.' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8811:1: ( ( '.' ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8812:1: ( '.' )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8750:1: ( '.' )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8751:1: '.'
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8812:1: ( '.' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8813:1: '.'
             {
              before(grammarAccess.getFQNWithWildcardAccess().getFullStopKeyword_1()); 
-            match(input,54,FOLLOW_54_in_rule__FQNWithWildcard__Group__1__Impl17528); 
+            match(input,54,FOLLOW_54_in_rule__FQNWithWildcard__Group__1__Impl17654); 
              after(grammarAccess.getFQNWithWildcardAccess().getFullStopKeyword_1()); 
 
             }
@@ -24195,16 +24363,16 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__FQNWithWildcard__Group__2"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8764:1: rule__FQNWithWildcard__Group__2 : rule__FQNWithWildcard__Group__2__Impl ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8826:1: rule__FQNWithWildcard__Group__2 : rule__FQNWithWildcard__Group__2__Impl ;
     public final void rule__FQNWithWildcard__Group__2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8768:1: ( rule__FQNWithWildcard__Group__2__Impl )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8769:2: rule__FQNWithWildcard__Group__2__Impl
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8830:1: ( rule__FQNWithWildcard__Group__2__Impl )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8831:2: rule__FQNWithWildcard__Group__2__Impl
             {
-            pushFollow(FOLLOW_rule__FQNWithWildcard__Group__2__Impl_in_rule__FQNWithWildcard__Group__217559);
+            pushFollow(FOLLOW_rule__FQNWithWildcard__Group__2__Impl_in_rule__FQNWithWildcard__Group__217685);
             rule__FQNWithWildcard__Group__2__Impl();
 
             state._fsp--;
@@ -24228,20 +24396,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__FQNWithWildcard__Group__2__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8775:1: rule__FQNWithWildcard__Group__2__Impl : ( '*' ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8837:1: rule__FQNWithWildcard__Group__2__Impl : ( '*' ) ;
     public final void rule__FQNWithWildcard__Group__2__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8779:1: ( ( '*' ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8780:1: ( '*' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8841:1: ( ( '*' ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8842:1: ( '*' )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8780:1: ( '*' )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8781:1: '*'
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8842:1: ( '*' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8843:1: '*'
             {
              before(grammarAccess.getFQNWithWildcardAccess().getAsteriskKeyword_2()); 
-            match(input,55,FOLLOW_55_in_rule__FQNWithWildcard__Group__2__Impl17587); 
+            match(input,55,FOLLOW_55_in_rule__FQNWithWildcard__Group__2__Impl17713); 
              after(grammarAccess.getFQNWithWildcardAccess().getAsteriskKeyword_2()); 
 
             }
@@ -24265,21 +24433,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__BooleanLiteral__Group__0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8800:1: rule__BooleanLiteral__Group__0 : rule__BooleanLiteral__Group__0__Impl rule__BooleanLiteral__Group__1 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8862:1: rule__BooleanLiteral__Group__0 : rule__BooleanLiteral__Group__0__Impl rule__BooleanLiteral__Group__1 ;
     public final void rule__BooleanLiteral__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8804:1: ( rule__BooleanLiteral__Group__0__Impl rule__BooleanLiteral__Group__1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8805:2: rule__BooleanLiteral__Group__0__Impl rule__BooleanLiteral__Group__1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8866:1: ( rule__BooleanLiteral__Group__0__Impl rule__BooleanLiteral__Group__1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8867:2: rule__BooleanLiteral__Group__0__Impl rule__BooleanLiteral__Group__1
             {
-            pushFollow(FOLLOW_rule__BooleanLiteral__Group__0__Impl_in_rule__BooleanLiteral__Group__017624);
+            pushFollow(FOLLOW_rule__BooleanLiteral__Group__0__Impl_in_rule__BooleanLiteral__Group__017750);
             rule__BooleanLiteral__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__BooleanLiteral__Group__1_in_rule__BooleanLiteral__Group__017627);
+            pushFollow(FOLLOW_rule__BooleanLiteral__Group__1_in_rule__BooleanLiteral__Group__017753);
             rule__BooleanLiteral__Group__1();
 
             state._fsp--;
@@ -24303,21 +24471,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__BooleanLiteral__Group__0__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8812:1: rule__BooleanLiteral__Group__0__Impl : ( () ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8874:1: rule__BooleanLiteral__Group__0__Impl : ( () ) ;
     public final void rule__BooleanLiteral__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8816:1: ( ( () ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8817:1: ( () )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8878:1: ( ( () ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8879:1: ( () )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8817:1: ( () )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8818:1: ()
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8879:1: ( () )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8880:1: ()
             {
              before(grammarAccess.getBooleanLiteralAccess().getBooleanLiteralAction_0()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8819:1: ()
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8821:1: 
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8881:1: ()
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8883:1: 
             {
             }
 
@@ -24340,16 +24508,16 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__BooleanLiteral__Group__1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8831:1: rule__BooleanLiteral__Group__1 : rule__BooleanLiteral__Group__1__Impl ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8893:1: rule__BooleanLiteral__Group__1 : rule__BooleanLiteral__Group__1__Impl ;
     public final void rule__BooleanLiteral__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8835:1: ( rule__BooleanLiteral__Group__1__Impl )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8836:2: rule__BooleanLiteral__Group__1__Impl
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8897:1: ( rule__BooleanLiteral__Group__1__Impl )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8898:2: rule__BooleanLiteral__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__BooleanLiteral__Group__1__Impl_in_rule__BooleanLiteral__Group__117685);
+            pushFollow(FOLLOW_rule__BooleanLiteral__Group__1__Impl_in_rule__BooleanLiteral__Group__117811);
             rule__BooleanLiteral__Group__1__Impl();
 
             state._fsp--;
@@ -24373,23 +24541,23 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__BooleanLiteral__Group__1__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8842:1: rule__BooleanLiteral__Group__1__Impl : ( ( rule__BooleanLiteral__ValueAssignment_1 ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8904:1: rule__BooleanLiteral__Group__1__Impl : ( ( rule__BooleanLiteral__ValueAssignment_1 ) ) ;
     public final void rule__BooleanLiteral__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8846:1: ( ( ( rule__BooleanLiteral__ValueAssignment_1 ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8847:1: ( ( rule__BooleanLiteral__ValueAssignment_1 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8908:1: ( ( ( rule__BooleanLiteral__ValueAssignment_1 ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8909:1: ( ( rule__BooleanLiteral__ValueAssignment_1 ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8847:1: ( ( rule__BooleanLiteral__ValueAssignment_1 ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8848:1: ( rule__BooleanLiteral__ValueAssignment_1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8909:1: ( ( rule__BooleanLiteral__ValueAssignment_1 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8910:1: ( rule__BooleanLiteral__ValueAssignment_1 )
             {
              before(grammarAccess.getBooleanLiteralAccess().getValueAssignment_1()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8849:1: ( rule__BooleanLiteral__ValueAssignment_1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8849:2: rule__BooleanLiteral__ValueAssignment_1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8911:1: ( rule__BooleanLiteral__ValueAssignment_1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8911:2: rule__BooleanLiteral__ValueAssignment_1
             {
-            pushFollow(FOLLOW_rule__BooleanLiteral__ValueAssignment_1_in_rule__BooleanLiteral__Group__1__Impl17712);
+            pushFollow(FOLLOW_rule__BooleanLiteral__ValueAssignment_1_in_rule__BooleanLiteral__Group__1__Impl17838);
             rule__BooleanLiteral__ValueAssignment_1();
 
             state._fsp--;
@@ -24420,21 +24588,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__NullLiteral__Group__0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8863:1: rule__NullLiteral__Group__0 : rule__NullLiteral__Group__0__Impl rule__NullLiteral__Group__1 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8925:1: rule__NullLiteral__Group__0 : rule__NullLiteral__Group__0__Impl rule__NullLiteral__Group__1 ;
     public final void rule__NullLiteral__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8867:1: ( rule__NullLiteral__Group__0__Impl rule__NullLiteral__Group__1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8868:2: rule__NullLiteral__Group__0__Impl rule__NullLiteral__Group__1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8929:1: ( rule__NullLiteral__Group__0__Impl rule__NullLiteral__Group__1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8930:2: rule__NullLiteral__Group__0__Impl rule__NullLiteral__Group__1
             {
-            pushFollow(FOLLOW_rule__NullLiteral__Group__0__Impl_in_rule__NullLiteral__Group__017746);
+            pushFollow(FOLLOW_rule__NullLiteral__Group__0__Impl_in_rule__NullLiteral__Group__017872);
             rule__NullLiteral__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__NullLiteral__Group__1_in_rule__NullLiteral__Group__017749);
+            pushFollow(FOLLOW_rule__NullLiteral__Group__1_in_rule__NullLiteral__Group__017875);
             rule__NullLiteral__Group__1();
 
             state._fsp--;
@@ -24458,21 +24626,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__NullLiteral__Group__0__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8875:1: rule__NullLiteral__Group__0__Impl : ( () ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8937:1: rule__NullLiteral__Group__0__Impl : ( () ) ;
     public final void rule__NullLiteral__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8879:1: ( ( () ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8880:1: ( () )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8941:1: ( ( () ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8942:1: ( () )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8880:1: ( () )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8881:1: ()
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8942:1: ( () )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8943:1: ()
             {
              before(grammarAccess.getNullLiteralAccess().getNullLiteralAction_0()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8882:1: ()
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8884:1: 
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8944:1: ()
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8946:1: 
             {
             }
 
@@ -24495,16 +24663,16 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__NullLiteral__Group__1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8894:1: rule__NullLiteral__Group__1 : rule__NullLiteral__Group__1__Impl ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8956:1: rule__NullLiteral__Group__1 : rule__NullLiteral__Group__1__Impl ;
     public final void rule__NullLiteral__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8898:1: ( rule__NullLiteral__Group__1__Impl )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8899:2: rule__NullLiteral__Group__1__Impl
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8960:1: ( rule__NullLiteral__Group__1__Impl )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8961:2: rule__NullLiteral__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__NullLiteral__Group__1__Impl_in_rule__NullLiteral__Group__117807);
+            pushFollow(FOLLOW_rule__NullLiteral__Group__1__Impl_in_rule__NullLiteral__Group__117933);
             rule__NullLiteral__Group__1__Impl();
 
             state._fsp--;
@@ -24528,23 +24696,23 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__NullLiteral__Group__1__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8905:1: rule__NullLiteral__Group__1__Impl : ( ( rule__NullLiteral__ValueAssignment_1 ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8967:1: rule__NullLiteral__Group__1__Impl : ( ( rule__NullLiteral__ValueAssignment_1 ) ) ;
     public final void rule__NullLiteral__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8909:1: ( ( ( rule__NullLiteral__ValueAssignment_1 ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8910:1: ( ( rule__NullLiteral__ValueAssignment_1 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8971:1: ( ( ( rule__NullLiteral__ValueAssignment_1 ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8972:1: ( ( rule__NullLiteral__ValueAssignment_1 ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8910:1: ( ( rule__NullLiteral__ValueAssignment_1 ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8911:1: ( rule__NullLiteral__ValueAssignment_1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8972:1: ( ( rule__NullLiteral__ValueAssignment_1 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8973:1: ( rule__NullLiteral__ValueAssignment_1 )
             {
              before(grammarAccess.getNullLiteralAccess().getValueAssignment_1()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8912:1: ( rule__NullLiteral__ValueAssignment_1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8912:2: rule__NullLiteral__ValueAssignment_1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8974:1: ( rule__NullLiteral__ValueAssignment_1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8974:2: rule__NullLiteral__ValueAssignment_1
             {
-            pushFollow(FOLLOW_rule__NullLiteral__ValueAssignment_1_in_rule__NullLiteral__Group__1__Impl17834);
+            pushFollow(FOLLOW_rule__NullLiteral__ValueAssignment_1_in_rule__NullLiteral__Group__1__Impl17960);
             rule__NullLiteral__ValueAssignment_1();
 
             state._fsp--;
@@ -24575,21 +24743,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__NumberLiteral__Group__0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8926:1: rule__NumberLiteral__Group__0 : rule__NumberLiteral__Group__0__Impl rule__NumberLiteral__Group__1 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8988:1: rule__NumberLiteral__Group__0 : rule__NumberLiteral__Group__0__Impl rule__NumberLiteral__Group__1 ;
     public final void rule__NumberLiteral__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8930:1: ( rule__NumberLiteral__Group__0__Impl rule__NumberLiteral__Group__1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8931:2: rule__NumberLiteral__Group__0__Impl rule__NumberLiteral__Group__1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8992:1: ( rule__NumberLiteral__Group__0__Impl rule__NumberLiteral__Group__1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8993:2: rule__NumberLiteral__Group__0__Impl rule__NumberLiteral__Group__1
             {
-            pushFollow(FOLLOW_rule__NumberLiteral__Group__0__Impl_in_rule__NumberLiteral__Group__017868);
+            pushFollow(FOLLOW_rule__NumberLiteral__Group__0__Impl_in_rule__NumberLiteral__Group__017994);
             rule__NumberLiteral__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__NumberLiteral__Group__1_in_rule__NumberLiteral__Group__017871);
+            pushFollow(FOLLOW_rule__NumberLiteral__Group__1_in_rule__NumberLiteral__Group__017997);
             rule__NumberLiteral__Group__1();
 
             state._fsp--;
@@ -24613,21 +24781,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__NumberLiteral__Group__0__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8938:1: rule__NumberLiteral__Group__0__Impl : ( () ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9000:1: rule__NumberLiteral__Group__0__Impl : ( () ) ;
     public final void rule__NumberLiteral__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8942:1: ( ( () ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8943:1: ( () )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9004:1: ( ( () ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9005:1: ( () )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8943:1: ( () )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8944:1: ()
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9005:1: ( () )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9006:1: ()
             {
              before(grammarAccess.getNumberLiteralAccess().getNumberLiteralAction_0()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8945:1: ()
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8947:1: 
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9007:1: ()
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9009:1: 
             {
             }
 
@@ -24650,16 +24818,16 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__NumberLiteral__Group__1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8957:1: rule__NumberLiteral__Group__1 : rule__NumberLiteral__Group__1__Impl ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9019:1: rule__NumberLiteral__Group__1 : rule__NumberLiteral__Group__1__Impl ;
     public final void rule__NumberLiteral__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8961:1: ( rule__NumberLiteral__Group__1__Impl )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8962:2: rule__NumberLiteral__Group__1__Impl
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9023:1: ( rule__NumberLiteral__Group__1__Impl )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9024:2: rule__NumberLiteral__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__NumberLiteral__Group__1__Impl_in_rule__NumberLiteral__Group__117929);
+            pushFollow(FOLLOW_rule__NumberLiteral__Group__1__Impl_in_rule__NumberLiteral__Group__118055);
             rule__NumberLiteral__Group__1__Impl();
 
             state._fsp--;
@@ -24683,23 +24851,23 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__NumberLiteral__Group__1__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8968:1: rule__NumberLiteral__Group__1__Impl : ( ( rule__NumberLiteral__ValueAssignment_1 ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9030:1: rule__NumberLiteral__Group__1__Impl : ( ( rule__NumberLiteral__ValueAssignment_1 ) ) ;
     public final void rule__NumberLiteral__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8972:1: ( ( ( rule__NumberLiteral__ValueAssignment_1 ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8973:1: ( ( rule__NumberLiteral__ValueAssignment_1 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9034:1: ( ( ( rule__NumberLiteral__ValueAssignment_1 ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9035:1: ( ( rule__NumberLiteral__ValueAssignment_1 ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8973:1: ( ( rule__NumberLiteral__ValueAssignment_1 ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8974:1: ( rule__NumberLiteral__ValueAssignment_1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9035:1: ( ( rule__NumberLiteral__ValueAssignment_1 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9036:1: ( rule__NumberLiteral__ValueAssignment_1 )
             {
              before(grammarAccess.getNumberLiteralAccess().getValueAssignment_1()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8975:1: ( rule__NumberLiteral__ValueAssignment_1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8975:2: rule__NumberLiteral__ValueAssignment_1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9037:1: ( rule__NumberLiteral__ValueAssignment_1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9037:2: rule__NumberLiteral__ValueAssignment_1
             {
-            pushFollow(FOLLOW_rule__NumberLiteral__ValueAssignment_1_in_rule__NumberLiteral__Group__1__Impl17956);
+            pushFollow(FOLLOW_rule__NumberLiteral__ValueAssignment_1_in_rule__NumberLiteral__Group__1__Impl18082);
             rule__NumberLiteral__ValueAssignment_1();
 
             state._fsp--;
@@ -24730,21 +24898,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__StringLiteral__Group__0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8989:1: rule__StringLiteral__Group__0 : rule__StringLiteral__Group__0__Impl rule__StringLiteral__Group__1 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9051:1: rule__StringLiteral__Group__0 : rule__StringLiteral__Group__0__Impl rule__StringLiteral__Group__1 ;
     public final void rule__StringLiteral__Group__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8993:1: ( rule__StringLiteral__Group__0__Impl rule__StringLiteral__Group__1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:8994:2: rule__StringLiteral__Group__0__Impl rule__StringLiteral__Group__1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9055:1: ( rule__StringLiteral__Group__0__Impl rule__StringLiteral__Group__1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9056:2: rule__StringLiteral__Group__0__Impl rule__StringLiteral__Group__1
             {
-            pushFollow(FOLLOW_rule__StringLiteral__Group__0__Impl_in_rule__StringLiteral__Group__017990);
+            pushFollow(FOLLOW_rule__StringLiteral__Group__0__Impl_in_rule__StringLiteral__Group__018116);
             rule__StringLiteral__Group__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__StringLiteral__Group__1_in_rule__StringLiteral__Group__017993);
+            pushFollow(FOLLOW_rule__StringLiteral__Group__1_in_rule__StringLiteral__Group__018119);
             rule__StringLiteral__Group__1();
 
             state._fsp--;
@@ -24768,21 +24936,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__StringLiteral__Group__0__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9001:1: rule__StringLiteral__Group__0__Impl : ( () ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9063:1: rule__StringLiteral__Group__0__Impl : ( () ) ;
     public final void rule__StringLiteral__Group__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9005:1: ( ( () ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9006:1: ( () )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9067:1: ( ( () ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9068:1: ( () )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9006:1: ( () )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9007:1: ()
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9068:1: ( () )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9069:1: ()
             {
              before(grammarAccess.getStringLiteralAccess().getStringLiteralAction_0()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9008:1: ()
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9010:1: 
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9070:1: ()
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9072:1: 
             {
             }
 
@@ -24805,16 +24973,16 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__StringLiteral__Group__1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9020:1: rule__StringLiteral__Group__1 : rule__StringLiteral__Group__1__Impl ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9082:1: rule__StringLiteral__Group__1 : rule__StringLiteral__Group__1__Impl ;
     public final void rule__StringLiteral__Group__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9024:1: ( rule__StringLiteral__Group__1__Impl )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9025:2: rule__StringLiteral__Group__1__Impl
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9086:1: ( rule__StringLiteral__Group__1__Impl )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9087:2: rule__StringLiteral__Group__1__Impl
             {
-            pushFollow(FOLLOW_rule__StringLiteral__Group__1__Impl_in_rule__StringLiteral__Group__118051);
+            pushFollow(FOLLOW_rule__StringLiteral__Group__1__Impl_in_rule__StringLiteral__Group__118177);
             rule__StringLiteral__Group__1__Impl();
 
             state._fsp--;
@@ -24838,23 +25006,23 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__StringLiteral__Group__1__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9031:1: rule__StringLiteral__Group__1__Impl : ( ( rule__StringLiteral__ValueAssignment_1 ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9093:1: rule__StringLiteral__Group__1__Impl : ( ( rule__StringLiteral__ValueAssignment_1 ) ) ;
     public final void rule__StringLiteral__Group__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9035:1: ( ( ( rule__StringLiteral__ValueAssignment_1 ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9036:1: ( ( rule__StringLiteral__ValueAssignment_1 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9097:1: ( ( ( rule__StringLiteral__ValueAssignment_1 ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9098:1: ( ( rule__StringLiteral__ValueAssignment_1 ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9036:1: ( ( rule__StringLiteral__ValueAssignment_1 ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9037:1: ( rule__StringLiteral__ValueAssignment_1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9098:1: ( ( rule__StringLiteral__ValueAssignment_1 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9099:1: ( rule__StringLiteral__ValueAssignment_1 )
             {
              before(grammarAccess.getStringLiteralAccess().getValueAssignment_1()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9038:1: ( rule__StringLiteral__ValueAssignment_1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9038:2: rule__StringLiteral__ValueAssignment_1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9100:1: ( rule__StringLiteral__ValueAssignment_1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9100:2: rule__StringLiteral__ValueAssignment_1
             {
-            pushFollow(FOLLOW_rule__StringLiteral__ValueAssignment_1_in_rule__StringLiteral__Group__1__Impl18078);
+            pushFollow(FOLLOW_rule__StringLiteral__ValueAssignment_1_in_rule__StringLiteral__Group__1__Impl18204);
             rule__StringLiteral__ValueAssignment_1();
 
             state._fsp--;
@@ -24885,21 +25053,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Number__Group_1__0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9052:1: rule__Number__Group_1__0 : rule__Number__Group_1__0__Impl rule__Number__Group_1__1 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9114:1: rule__Number__Group_1__0 : rule__Number__Group_1__0__Impl rule__Number__Group_1__1 ;
     public final void rule__Number__Group_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9056:1: ( rule__Number__Group_1__0__Impl rule__Number__Group_1__1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9057:2: rule__Number__Group_1__0__Impl rule__Number__Group_1__1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9118:1: ( rule__Number__Group_1__0__Impl rule__Number__Group_1__1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9119:2: rule__Number__Group_1__0__Impl rule__Number__Group_1__1
             {
-            pushFollow(FOLLOW_rule__Number__Group_1__0__Impl_in_rule__Number__Group_1__018112);
+            pushFollow(FOLLOW_rule__Number__Group_1__0__Impl_in_rule__Number__Group_1__018238);
             rule__Number__Group_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Number__Group_1__1_in_rule__Number__Group_1__018115);
+            pushFollow(FOLLOW_rule__Number__Group_1__1_in_rule__Number__Group_1__018241);
             rule__Number__Group_1__1();
 
             state._fsp--;
@@ -24923,23 +25091,23 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Number__Group_1__0__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9064:1: rule__Number__Group_1__0__Impl : ( ( rule__Number__Alternatives_1_0 ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9126:1: rule__Number__Group_1__0__Impl : ( ( rule__Number__Alternatives_1_0 ) ) ;
     public final void rule__Number__Group_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9068:1: ( ( ( rule__Number__Alternatives_1_0 ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9069:1: ( ( rule__Number__Alternatives_1_0 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9130:1: ( ( ( rule__Number__Alternatives_1_0 ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9131:1: ( ( rule__Number__Alternatives_1_0 ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9069:1: ( ( rule__Number__Alternatives_1_0 ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9070:1: ( rule__Number__Alternatives_1_0 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9131:1: ( ( rule__Number__Alternatives_1_0 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9132:1: ( rule__Number__Alternatives_1_0 )
             {
              before(grammarAccess.getNumberAccess().getAlternatives_1_0()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9071:1: ( rule__Number__Alternatives_1_0 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9071:2: rule__Number__Alternatives_1_0
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9133:1: ( rule__Number__Alternatives_1_0 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9133:2: rule__Number__Alternatives_1_0
             {
-            pushFollow(FOLLOW_rule__Number__Alternatives_1_0_in_rule__Number__Group_1__0__Impl18142);
+            pushFollow(FOLLOW_rule__Number__Alternatives_1_0_in_rule__Number__Group_1__0__Impl18268);
             rule__Number__Alternatives_1_0();
 
             state._fsp--;
@@ -24970,16 +25138,16 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Number__Group_1__1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9081:1: rule__Number__Group_1__1 : rule__Number__Group_1__1__Impl ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9143:1: rule__Number__Group_1__1 : rule__Number__Group_1__1__Impl ;
     public final void rule__Number__Group_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9085:1: ( rule__Number__Group_1__1__Impl )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9086:2: rule__Number__Group_1__1__Impl
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9147:1: ( rule__Number__Group_1__1__Impl )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9148:2: rule__Number__Group_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__Number__Group_1__1__Impl_in_rule__Number__Group_1__118172);
+            pushFollow(FOLLOW_rule__Number__Group_1__1__Impl_in_rule__Number__Group_1__118298);
             rule__Number__Group_1__1__Impl();
 
             state._fsp--;
@@ -25003,31 +25171,31 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Number__Group_1__1__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9092:1: rule__Number__Group_1__1__Impl : ( ( rule__Number__Group_1_1__0 )? ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9154:1: rule__Number__Group_1__1__Impl : ( ( rule__Number__Group_1_1__0 )? ) ;
     public final void rule__Number__Group_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9096:1: ( ( ( rule__Number__Group_1_1__0 )? ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9097:1: ( ( rule__Number__Group_1_1__0 )? )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9158:1: ( ( ( rule__Number__Group_1_1__0 )? ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9159:1: ( ( rule__Number__Group_1_1__0 )? )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9097:1: ( ( rule__Number__Group_1_1__0 )? )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9098:1: ( rule__Number__Group_1_1__0 )?
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9159:1: ( ( rule__Number__Group_1_1__0 )? )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9160:1: ( rule__Number__Group_1_1__0 )?
             {
              before(grammarAccess.getNumberAccess().getGroup_1_1()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9099:1: ( rule__Number__Group_1_1__0 )?
-            int alt94=2;
-            int LA94_0 = input.LA(1);
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9161:1: ( rule__Number__Group_1_1__0 )?
+            int alt96=2;
+            int LA96_0 = input.LA(1);
 
-            if ( (LA94_0==54) ) {
-                alt94=1;
+            if ( (LA96_0==54) ) {
+                alt96=1;
             }
-            switch (alt94) {
+            switch (alt96) {
                 case 1 :
-                    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9099:2: rule__Number__Group_1_1__0
+                    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9161:2: rule__Number__Group_1_1__0
                     {
-                    pushFollow(FOLLOW_rule__Number__Group_1_1__0_in_rule__Number__Group_1__1__Impl18199);
+                    pushFollow(FOLLOW_rule__Number__Group_1_1__0_in_rule__Number__Group_1__1__Impl18325);
                     rule__Number__Group_1_1__0();
 
                     state._fsp--;
@@ -25061,21 +25229,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Number__Group_1_1__0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9113:1: rule__Number__Group_1_1__0 : rule__Number__Group_1_1__0__Impl rule__Number__Group_1_1__1 ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9175:1: rule__Number__Group_1_1__0 : rule__Number__Group_1_1__0__Impl rule__Number__Group_1_1__1 ;
     public final void rule__Number__Group_1_1__0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9117:1: ( rule__Number__Group_1_1__0__Impl rule__Number__Group_1_1__1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9118:2: rule__Number__Group_1_1__0__Impl rule__Number__Group_1_1__1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9179:1: ( rule__Number__Group_1_1__0__Impl rule__Number__Group_1_1__1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9180:2: rule__Number__Group_1_1__0__Impl rule__Number__Group_1_1__1
             {
-            pushFollow(FOLLOW_rule__Number__Group_1_1__0__Impl_in_rule__Number__Group_1_1__018234);
+            pushFollow(FOLLOW_rule__Number__Group_1_1__0__Impl_in_rule__Number__Group_1_1__018360);
             rule__Number__Group_1_1__0__Impl();
 
             state._fsp--;
 
-            pushFollow(FOLLOW_rule__Number__Group_1_1__1_in_rule__Number__Group_1_1__018237);
+            pushFollow(FOLLOW_rule__Number__Group_1_1__1_in_rule__Number__Group_1_1__018363);
             rule__Number__Group_1_1__1();
 
             state._fsp--;
@@ -25099,20 +25267,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Number__Group_1_1__0__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9125:1: rule__Number__Group_1_1__0__Impl : ( '.' ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9187:1: rule__Number__Group_1_1__0__Impl : ( '.' ) ;
     public final void rule__Number__Group_1_1__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9129:1: ( ( '.' ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9130:1: ( '.' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9191:1: ( ( '.' ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9192:1: ( '.' )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9130:1: ( '.' )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9131:1: '.'
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9192:1: ( '.' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9193:1: '.'
             {
              before(grammarAccess.getNumberAccess().getFullStopKeyword_1_1_0()); 
-            match(input,54,FOLLOW_54_in_rule__Number__Group_1_1__0__Impl18265); 
+            match(input,54,FOLLOW_54_in_rule__Number__Group_1_1__0__Impl18391); 
              after(grammarAccess.getNumberAccess().getFullStopKeyword_1_1_0()); 
 
             }
@@ -25136,16 +25304,16 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Number__Group_1_1__1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9144:1: rule__Number__Group_1_1__1 : rule__Number__Group_1_1__1__Impl ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9206:1: rule__Number__Group_1_1__1 : rule__Number__Group_1_1__1__Impl ;
     public final void rule__Number__Group_1_1__1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9148:1: ( rule__Number__Group_1_1__1__Impl )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9149:2: rule__Number__Group_1_1__1__Impl
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9210:1: ( rule__Number__Group_1_1__1__Impl )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9211:2: rule__Number__Group_1_1__1__Impl
             {
-            pushFollow(FOLLOW_rule__Number__Group_1_1__1__Impl_in_rule__Number__Group_1_1__118296);
+            pushFollow(FOLLOW_rule__Number__Group_1_1__1__Impl_in_rule__Number__Group_1_1__118422);
             rule__Number__Group_1_1__1__Impl();
 
             state._fsp--;
@@ -25169,23 +25337,23 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Number__Group_1_1__1__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9155:1: rule__Number__Group_1_1__1__Impl : ( ( rule__Number__Alternatives_1_1_1 ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9217:1: rule__Number__Group_1_1__1__Impl : ( ( rule__Number__Alternatives_1_1_1 ) ) ;
     public final void rule__Number__Group_1_1__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9159:1: ( ( ( rule__Number__Alternatives_1_1_1 ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9160:1: ( ( rule__Number__Alternatives_1_1_1 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9221:1: ( ( ( rule__Number__Alternatives_1_1_1 ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9222:1: ( ( rule__Number__Alternatives_1_1_1 ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9160:1: ( ( rule__Number__Alternatives_1_1_1 ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9161:1: ( rule__Number__Alternatives_1_1_1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9222:1: ( ( rule__Number__Alternatives_1_1_1 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9223:1: ( rule__Number__Alternatives_1_1_1 )
             {
              before(grammarAccess.getNumberAccess().getAlternatives_1_1_1()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9162:1: ( rule__Number__Alternatives_1_1_1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9162:2: rule__Number__Alternatives_1_1_1
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9224:1: ( rule__Number__Alternatives_1_1_1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9224:2: rule__Number__Alternatives_1_1_1
             {
-            pushFollow(FOLLOW_rule__Number__Alternatives_1_1_1_in_rule__Number__Group_1_1__1__Impl18323);
+            pushFollow(FOLLOW_rule__Number__Alternatives_1_1_1_in_rule__Number__Group_1_1__1__Impl18449);
             rule__Number__Alternatives_1_1_1();
 
             state._fsp--;
@@ -25216,20 +25384,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__DomainModel__ContextsAssignment"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9177:1: rule__DomainModel__ContextsAssignment : ( ruleContext ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9239:1: rule__DomainModel__ContextsAssignment : ( ruleContext ) ;
     public final void rule__DomainModel__ContextsAssignment() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9181:1: ( ( ruleContext ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9182:1: ( ruleContext )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9243:1: ( ( ruleContext ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9244:1: ( ruleContext )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9182:1: ( ruleContext )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9183:1: ruleContext
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9244:1: ( ruleContext )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9245:1: ruleContext
             {
              before(grammarAccess.getDomainModelAccess().getContextsContextParserRuleCall_0()); 
-            pushFollow(FOLLOW_ruleContext_in_rule__DomainModel__ContextsAssignment18362);
+            pushFollow(FOLLOW_ruleContext_in_rule__DomainModel__ContextsAssignment18488);
             ruleContext();
 
             state._fsp--;
@@ -25257,20 +25425,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Context__NameAssignment_1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9192:1: rule__Context__NameAssignment_1 : ( RULE_ID ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9254:1: rule__Context__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__Context__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9196:1: ( ( RULE_ID ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9197:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9258:1: ( ( RULE_ID ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9259:1: ( RULE_ID )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9197:1: ( RULE_ID )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9198:1: RULE_ID
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9259:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9260:1: RULE_ID
             {
              before(grammarAccess.getContextAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Context__NameAssignment_118393); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Context__NameAssignment_118519); 
              after(grammarAccess.getContextAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -25294,20 +25462,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Context__NamespacesAssignment_3"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9207:1: rule__Context__NamespacesAssignment_3 : ( ruleNamespace ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9269:1: rule__Context__NamespacesAssignment_3 : ( ruleNamespace ) ;
     public final void rule__Context__NamespacesAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9211:1: ( ( ruleNamespace ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9212:1: ( ruleNamespace )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9273:1: ( ( ruleNamespace ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9274:1: ( ruleNamespace )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9212:1: ( ruleNamespace )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9213:1: ruleNamespace
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9274:1: ( ruleNamespace )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9275:1: ruleNamespace
             {
              before(grammarAccess.getContextAccess().getNamespacesNamespaceParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleNamespace_in_rule__Context__NamespacesAssignment_318424);
+            pushFollow(FOLLOW_ruleNamespace_in_rule__Context__NamespacesAssignment_318550);
             ruleNamespace();
 
             state._fsp--;
@@ -25335,20 +25503,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Namespace__NameAssignment_1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9222:1: rule__Namespace__NameAssignment_1 : ( ruleFQN ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9284:1: rule__Namespace__NameAssignment_1 : ( ruleFQN ) ;
     public final void rule__Namespace__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9226:1: ( ( ruleFQN ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9227:1: ( ruleFQN )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9288:1: ( ( ruleFQN ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9289:1: ( ruleFQN )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9227:1: ( ruleFQN )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9228:1: ruleFQN
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9289:1: ( ruleFQN )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9290:1: ruleFQN
             {
              before(grammarAccess.getNamespaceAccess().getNameFQNParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleFQN_in_rule__Namespace__NameAssignment_118455);
+            pushFollow(FOLLOW_ruleFQN_in_rule__Namespace__NameAssignment_118581);
             ruleFQN();
 
             state._fsp--;
@@ -25376,20 +25544,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Namespace__ImportsAssignment_3"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9237:1: rule__Namespace__ImportsAssignment_3 : ( ruleImport ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9299:1: rule__Namespace__ImportsAssignment_3 : ( ruleImport ) ;
     public final void rule__Namespace__ImportsAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9241:1: ( ( ruleImport ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9242:1: ( ruleImport )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9303:1: ( ( ruleImport ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9304:1: ( ruleImport )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9242:1: ( ruleImport )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9243:1: ruleImport
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9304:1: ( ruleImport )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9305:1: ruleImport
             {
              before(grammarAccess.getNamespaceAccess().getImportsImportParserRuleCall_3_0()); 
-            pushFollow(FOLLOW_ruleImport_in_rule__Namespace__ImportsAssignment_318486);
+            pushFollow(FOLLOW_ruleImport_in_rule__Namespace__ImportsAssignment_318612);
             ruleImport();
 
             state._fsp--;
@@ -25417,20 +25585,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Namespace__ElementsAssignment_4"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9252:1: rule__Namespace__ElementsAssignment_4 : ( ruleAbstractElement ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9314:1: rule__Namespace__ElementsAssignment_4 : ( ruleAbstractElement ) ;
     public final void rule__Namespace__ElementsAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9256:1: ( ( ruleAbstractElement ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9257:1: ( ruleAbstractElement )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9318:1: ( ( ruleAbstractElement ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9319:1: ( ruleAbstractElement )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9257:1: ( ruleAbstractElement )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9258:1: ruleAbstractElement
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9319:1: ( ruleAbstractElement )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9320:1: ruleAbstractElement
             {
              before(grammarAccess.getNamespaceAccess().getElementsAbstractElementParserRuleCall_4_0()); 
-            pushFollow(FOLLOW_ruleAbstractElement_in_rule__Namespace__ElementsAssignment_418517);
+            pushFollow(FOLLOW_ruleAbstractElement_in_rule__Namespace__ElementsAssignment_418643);
             ruleAbstractElement();
 
             state._fsp--;
@@ -25458,23 +25626,23 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Import__ImportedNamespaceAssignment_1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9267:1: rule__Import__ImportedNamespaceAssignment_1 : ( ( rule__Import__ImportedNamespaceAlternatives_1_0 ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9329:1: rule__Import__ImportedNamespaceAssignment_1 : ( ( rule__Import__ImportedNamespaceAlternatives_1_0 ) ) ;
     public final void rule__Import__ImportedNamespaceAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9271:1: ( ( ( rule__Import__ImportedNamespaceAlternatives_1_0 ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9272:1: ( ( rule__Import__ImportedNamespaceAlternatives_1_0 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9333:1: ( ( ( rule__Import__ImportedNamespaceAlternatives_1_0 ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9334:1: ( ( rule__Import__ImportedNamespaceAlternatives_1_0 ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9272:1: ( ( rule__Import__ImportedNamespaceAlternatives_1_0 ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9273:1: ( rule__Import__ImportedNamespaceAlternatives_1_0 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9334:1: ( ( rule__Import__ImportedNamespaceAlternatives_1_0 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9335:1: ( rule__Import__ImportedNamespaceAlternatives_1_0 )
             {
              before(grammarAccess.getImportAccess().getImportedNamespaceAlternatives_1_0()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9274:1: ( rule__Import__ImportedNamespaceAlternatives_1_0 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9274:2: rule__Import__ImportedNamespaceAlternatives_1_0
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9336:1: ( rule__Import__ImportedNamespaceAlternatives_1_0 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9336:2: rule__Import__ImportedNamespaceAlternatives_1_0
             {
-            pushFollow(FOLLOW_rule__Import__ImportedNamespaceAlternatives_1_0_in_rule__Import__ImportedNamespaceAssignment_118548);
+            pushFollow(FOLLOW_rule__Import__ImportedNamespaceAlternatives_1_0_in_rule__Import__ImportedNamespaceAssignment_118674);
             rule__Import__ImportedNamespaceAlternatives_1_0();
 
             state._fsp--;
@@ -25505,20 +25673,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__ExternalType__NameAssignment_1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9283:1: rule__ExternalType__NameAssignment_1 : ( RULE_ID ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9345:1: rule__ExternalType__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__ExternalType__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9287:1: ( ( RULE_ID ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9288:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9349:1: ( ( RULE_ID ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9350:1: ( RULE_ID )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9288:1: ( RULE_ID )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9289:1: RULE_ID
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9350:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9351:1: RULE_ID
             {
              before(grammarAccess.getExternalTypeAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ExternalType__NameAssignment_118581); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ExternalType__NameAssignment_118707); 
              after(grammarAccess.getExternalTypeAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -25542,20 +25710,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Constraint__DocAssignment_0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9298:1: rule__Constraint__DocAssignment_0 : ( RULE_DOC ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9360:1: rule__Constraint__DocAssignment_0 : ( RULE_DOC ) ;
     public final void rule__Constraint__DocAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9302:1: ( ( RULE_DOC ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9303:1: ( RULE_DOC )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9364:1: ( ( RULE_DOC ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9365:1: ( RULE_DOC )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9303:1: ( RULE_DOC )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9304:1: RULE_DOC
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9365:1: ( RULE_DOC )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9366:1: RULE_DOC
             {
              before(grammarAccess.getConstraintAccess().getDocDOCTerminalRuleCall_0_0()); 
-            match(input,RULE_DOC,FOLLOW_RULE_DOC_in_rule__Constraint__DocAssignment_018612); 
+            match(input,RULE_DOC,FOLLOW_RULE_DOC_in_rule__Constraint__DocAssignment_018738); 
              after(grammarAccess.getConstraintAccess().getDocDOCTerminalRuleCall_0_0()); 
 
             }
@@ -25579,20 +25747,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Constraint__NameAssignment_2"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9313:1: rule__Constraint__NameAssignment_2 : ( RULE_ID ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9375:1: rule__Constraint__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__Constraint__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9317:1: ( ( RULE_ID ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9318:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9379:1: ( ( RULE_ID ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9380:1: ( RULE_ID )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9318:1: ( RULE_ID )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9319:1: RULE_ID
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9380:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9381:1: RULE_ID
             {
              before(grammarAccess.getConstraintAccess().getNameIDTerminalRuleCall_2_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Constraint__NameAssignment_218643); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Constraint__NameAssignment_218769); 
              after(grammarAccess.getConstraintAccess().getNameIDTerminalRuleCall_2_0()); 
 
             }
@@ -25616,25 +25784,29 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Constraint__TargetAssignment_3_1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9328:1: rule__Constraint__TargetAssignment_3_1 : ( ( RULE_ID ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9390:1: rule__Constraint__TargetAssignment_3_1 : ( ( ruleFQN ) ) ;
     public final void rule__Constraint__TargetAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9332:1: ( ( ( RULE_ID ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9333:1: ( ( RULE_ID ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9394:1: ( ( ( ruleFQN ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9395:1: ( ( ruleFQN ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9333:1: ( ( RULE_ID ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9334:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9395:1: ( ( ruleFQN ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9396:1: ( ruleFQN )
             {
              before(grammarAccess.getConstraintAccess().getTargetConstraintTargetCrossReference_3_1_0()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9335:1: ( RULE_ID )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9336:1: RULE_ID
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9397:1: ( ruleFQN )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9398:1: ruleFQN
             {
-             before(grammarAccess.getConstraintAccess().getTargetConstraintTargetIDTerminalRuleCall_3_1_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Constraint__TargetAssignment_3_118678); 
-             after(grammarAccess.getConstraintAccess().getTargetConstraintTargetIDTerminalRuleCall_3_1_0_1()); 
+             before(grammarAccess.getConstraintAccess().getTargetConstraintTargetFQNParserRuleCall_3_1_0_1()); 
+            pushFollow(FOLLOW_ruleFQN_in_rule__Constraint__TargetAssignment_3_118804);
+            ruleFQN();
+
+            state._fsp--;
+
+             after(grammarAccess.getConstraintAccess().getTargetConstraintTargetFQNParserRuleCall_3_1_0_1()); 
 
             }
 
@@ -25661,25 +25833,29 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Constraint__ExceptionAssignment_4_1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9347:1: rule__Constraint__ExceptionAssignment_4_1 : ( ( RULE_ID ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9409:1: rule__Constraint__ExceptionAssignment_4_1 : ( ( ruleFQN ) ) ;
     public final void rule__Constraint__ExceptionAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9351:1: ( ( ( RULE_ID ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9352:1: ( ( RULE_ID ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9413:1: ( ( ( ruleFQN ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9414:1: ( ( ruleFQN ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9352:1: ( ( RULE_ID ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9353:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9414:1: ( ( ruleFQN ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9415:1: ( ruleFQN )
             {
              before(grammarAccess.getConstraintAccess().getExceptionExceptionCrossReference_4_1_0()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9354:1: ( RULE_ID )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9355:1: RULE_ID
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9416:1: ( ruleFQN )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9417:1: ruleFQN
             {
-             before(grammarAccess.getConstraintAccess().getExceptionExceptionIDTerminalRuleCall_4_1_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Constraint__ExceptionAssignment_4_118717); 
-             after(grammarAccess.getConstraintAccess().getExceptionExceptionIDTerminalRuleCall_4_1_0_1()); 
+             before(grammarAccess.getConstraintAccess().getExceptionExceptionFQNParserRuleCall_4_1_0_1()); 
+            pushFollow(FOLLOW_ruleFQN_in_rule__Constraint__ExceptionAssignment_4_118843);
+            ruleFQN();
+
+            state._fsp--;
+
+             after(grammarAccess.getConstraintAccess().getExceptionExceptionFQNParserRuleCall_4_1_0_1()); 
 
             }
 
@@ -25706,20 +25882,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Constraint__VariablesAssignment_6"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9366:1: rule__Constraint__VariablesAssignment_6 : ( ruleVariable ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9428:1: rule__Constraint__VariablesAssignment_6 : ( ruleVariable ) ;
     public final void rule__Constraint__VariablesAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9370:1: ( ( ruleVariable ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9371:1: ( ruleVariable )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9432:1: ( ( ruleVariable ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9433:1: ( ruleVariable )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9371:1: ( ruleVariable )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9372:1: ruleVariable
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9433:1: ( ruleVariable )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9434:1: ruleVariable
             {
              before(grammarAccess.getConstraintAccess().getVariablesVariableParserRuleCall_6_0()); 
-            pushFollow(FOLLOW_ruleVariable_in_rule__Constraint__VariablesAssignment_618752);
+            pushFollow(FOLLOW_ruleVariable_in_rule__Constraint__VariablesAssignment_618878);
             ruleVariable();
 
             state._fsp--;
@@ -25747,20 +25923,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Constraint__MessageAssignment_7_1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9381:1: rule__Constraint__MessageAssignment_7_1 : ( RULE_STRING ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9443:1: rule__Constraint__MessageAssignment_7_1 : ( RULE_STRING ) ;
     public final void rule__Constraint__MessageAssignment_7_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9385:1: ( ( RULE_STRING ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9386:1: ( RULE_STRING )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9447:1: ( ( RULE_STRING ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9448:1: ( RULE_STRING )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9386:1: ( RULE_STRING )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9387:1: RULE_STRING
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9448:1: ( RULE_STRING )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9449:1: RULE_STRING
             {
              before(grammarAccess.getConstraintAccess().getMessageSTRINGTerminalRuleCall_7_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Constraint__MessageAssignment_7_118783); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Constraint__MessageAssignment_7_118909); 
              after(grammarAccess.getConstraintAccess().getMessageSTRINGTerminalRuleCall_7_1_0()); 
 
             }
@@ -25784,20 +25960,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Exception__DocAssignment_0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9396:1: rule__Exception__DocAssignment_0 : ( RULE_DOC ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9458:1: rule__Exception__DocAssignment_0 : ( RULE_DOC ) ;
     public final void rule__Exception__DocAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9400:1: ( ( RULE_DOC ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9401:1: ( RULE_DOC )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9462:1: ( ( RULE_DOC ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9463:1: ( RULE_DOC )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9401:1: ( RULE_DOC )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9402:1: RULE_DOC
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9463:1: ( RULE_DOC )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9464:1: RULE_DOC
             {
              before(grammarAccess.getExceptionAccess().getDocDOCTerminalRuleCall_0_0()); 
-            match(input,RULE_DOC,FOLLOW_RULE_DOC_in_rule__Exception__DocAssignment_018814); 
+            match(input,RULE_DOC,FOLLOW_RULE_DOC_in_rule__Exception__DocAssignment_018940); 
              after(grammarAccess.getExceptionAccess().getDocDOCTerminalRuleCall_0_0()); 
 
             }
@@ -25821,20 +25997,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Exception__NameAssignment_2"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9411:1: rule__Exception__NameAssignment_2 : ( RULE_ID ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9473:1: rule__Exception__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__Exception__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9415:1: ( ( RULE_ID ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9416:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9477:1: ( ( RULE_ID ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9478:1: ( RULE_ID )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9416:1: ( RULE_ID )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9417:1: RULE_ID
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9478:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9479:1: RULE_ID
             {
              before(grammarAccess.getExceptionAccess().getNameIDTerminalRuleCall_2_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Exception__NameAssignment_218845); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Exception__NameAssignment_218971); 
              after(grammarAccess.getExceptionAccess().getNameIDTerminalRuleCall_2_0()); 
 
             }
@@ -25858,20 +26034,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Exception__CidAssignment_3_1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9426:1: rule__Exception__CidAssignment_3_1 : ( RULE_INT ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9488:1: rule__Exception__CidAssignment_3_1 : ( RULE_INT ) ;
     public final void rule__Exception__CidAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9430:1: ( ( RULE_INT ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9431:1: ( RULE_INT )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9492:1: ( ( RULE_INT ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9493:1: ( RULE_INT )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9431:1: ( RULE_INT )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9432:1: RULE_INT
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9493:1: ( RULE_INT )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9494:1: RULE_INT
             {
              before(grammarAccess.getExceptionAccess().getCidINTTerminalRuleCall_3_1_0()); 
-            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Exception__CidAssignment_3_118876); 
+            match(input,RULE_INT,FOLLOW_RULE_INT_in_rule__Exception__CidAssignment_3_119002); 
              after(grammarAccess.getExceptionAccess().getCidINTTerminalRuleCall_3_1_0()); 
 
             }
@@ -25895,20 +26071,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Exception__VariablesAssignment_5"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9441:1: rule__Exception__VariablesAssignment_5 : ( ruleVariable ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9503:1: rule__Exception__VariablesAssignment_5 : ( ruleVariable ) ;
     public final void rule__Exception__VariablesAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9445:1: ( ( ruleVariable ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9446:1: ( ruleVariable )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9507:1: ( ( ruleVariable ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9508:1: ( ruleVariable )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9446:1: ( ruleVariable )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9447:1: ruleVariable
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9508:1: ( ruleVariable )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9509:1: ruleVariable
             {
              before(grammarAccess.getExceptionAccess().getVariablesVariableParserRuleCall_5_0()); 
-            pushFollow(FOLLOW_ruleVariable_in_rule__Exception__VariablesAssignment_518907);
+            pushFollow(FOLLOW_ruleVariable_in_rule__Exception__VariablesAssignment_519033);
             ruleVariable();
 
             state._fsp--;
@@ -25936,20 +26112,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Exception__MessageAssignment_7"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9456:1: rule__Exception__MessageAssignment_7 : ( RULE_STRING ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9518:1: rule__Exception__MessageAssignment_7 : ( RULE_STRING ) ;
     public final void rule__Exception__MessageAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9460:1: ( ( RULE_STRING ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9461:1: ( RULE_STRING )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9522:1: ( ( RULE_STRING ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9523:1: ( RULE_STRING )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9461:1: ( RULE_STRING )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9462:1: RULE_STRING
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9523:1: ( RULE_STRING )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9524:1: RULE_STRING
             {
              before(grammarAccess.getExceptionAccess().getMessageSTRINGTerminalRuleCall_7_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Exception__MessageAssignment_718938); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Exception__MessageAssignment_719064); 
              after(grammarAccess.getExceptionAccess().getMessageSTRINGTerminalRuleCall_7_0()); 
 
             }
@@ -25973,20 +26149,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__ValueObject__DocAssignment_0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9471:1: rule__ValueObject__DocAssignment_0 : ( RULE_DOC ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9533:1: rule__ValueObject__DocAssignment_0 : ( RULE_DOC ) ;
     public final void rule__ValueObject__DocAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9475:1: ( ( RULE_DOC ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9476:1: ( RULE_DOC )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9537:1: ( ( RULE_DOC ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9538:1: ( RULE_DOC )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9476:1: ( RULE_DOC )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9477:1: RULE_DOC
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9538:1: ( RULE_DOC )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9539:1: RULE_DOC
             {
              before(grammarAccess.getValueObjectAccess().getDocDOCTerminalRuleCall_0_0()); 
-            match(input,RULE_DOC,FOLLOW_RULE_DOC_in_rule__ValueObject__DocAssignment_018969); 
+            match(input,RULE_DOC,FOLLOW_RULE_DOC_in_rule__ValueObject__DocAssignment_019095); 
              after(grammarAccess.getValueObjectAccess().getDocDOCTerminalRuleCall_0_0()); 
 
             }
@@ -26010,20 +26186,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__ValueObject__NameAssignment_2"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9486:1: rule__ValueObject__NameAssignment_2 : ( RULE_ID ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9548:1: rule__ValueObject__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__ValueObject__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9490:1: ( ( RULE_ID ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9491:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9552:1: ( ( RULE_ID ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9553:1: ( RULE_ID )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9491:1: ( RULE_ID )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9492:1: RULE_ID
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9553:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9554:1: RULE_ID
             {
              before(grammarAccess.getValueObjectAccess().getNameIDTerminalRuleCall_2_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ValueObject__NameAssignment_219000); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ValueObject__NameAssignment_219126); 
              after(grammarAccess.getValueObjectAccess().getNameIDTerminalRuleCall_2_0()); 
 
             }
@@ -26047,25 +26223,29 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__ValueObject__BaseAssignment_3_1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9501:1: rule__ValueObject__BaseAssignment_3_1 : ( ( RULE_ID ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9563:1: rule__ValueObject__BaseAssignment_3_1 : ( ( ruleFQN ) ) ;
     public final void rule__ValueObject__BaseAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9505:1: ( ( ( RULE_ID ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9506:1: ( ( RULE_ID ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9567:1: ( ( ( ruleFQN ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9568:1: ( ( ruleFQN ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9506:1: ( ( RULE_ID ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9507:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9568:1: ( ( ruleFQN ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9569:1: ( ruleFQN )
             {
              before(grammarAccess.getValueObjectAccess().getBaseExternalTypeCrossReference_3_1_0()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9508:1: ( RULE_ID )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9509:1: RULE_ID
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9570:1: ( ruleFQN )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9571:1: ruleFQN
             {
-             before(grammarAccess.getValueObjectAccess().getBaseExternalTypeIDTerminalRuleCall_3_1_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ValueObject__BaseAssignment_3_119035); 
-             after(grammarAccess.getValueObjectAccess().getBaseExternalTypeIDTerminalRuleCall_3_1_0_1()); 
+             before(grammarAccess.getValueObjectAccess().getBaseExternalTypeFQNParserRuleCall_3_1_0_1()); 
+            pushFollow(FOLLOW_ruleFQN_in_rule__ValueObject__BaseAssignment_3_119161);
+            ruleFQN();
+
+            state._fsp--;
+
+             after(grammarAccess.getValueObjectAccess().getBaseExternalTypeFQNParserRuleCall_3_1_0_1()); 
 
             }
 
@@ -26092,20 +26272,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__ValueObject__MetaInfoAssignment_5"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9520:1: rule__ValueObject__MetaInfoAssignment_5 : ( ruleTypeMetaInfo ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9582:1: rule__ValueObject__MetaInfoAssignment_5 : ( ruleTypeMetaInfo ) ;
     public final void rule__ValueObject__MetaInfoAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9524:1: ( ( ruleTypeMetaInfo ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9525:1: ( ruleTypeMetaInfo )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9586:1: ( ( ruleTypeMetaInfo ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9587:1: ( ruleTypeMetaInfo )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9525:1: ( ruleTypeMetaInfo )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9526:1: ruleTypeMetaInfo
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9587:1: ( ruleTypeMetaInfo )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9588:1: ruleTypeMetaInfo
             {
              before(grammarAccess.getValueObjectAccess().getMetaInfoTypeMetaInfoParserRuleCall_5_0()); 
-            pushFollow(FOLLOW_ruleTypeMetaInfo_in_rule__ValueObject__MetaInfoAssignment_519070);
+            pushFollow(FOLLOW_ruleTypeMetaInfo_in_rule__ValueObject__MetaInfoAssignment_519196);
             ruleTypeMetaInfo();
 
             state._fsp--;
@@ -26133,20 +26313,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__ValueObject__VariablesAssignment_6"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9535:1: rule__ValueObject__VariablesAssignment_6 : ( ruleVariable ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9597:1: rule__ValueObject__VariablesAssignment_6 : ( ruleVariable ) ;
     public final void rule__ValueObject__VariablesAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9539:1: ( ( ruleVariable ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9540:1: ( ruleVariable )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9601:1: ( ( ruleVariable ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9602:1: ( ruleVariable )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9540:1: ( ruleVariable )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9541:1: ruleVariable
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9602:1: ( ruleVariable )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9603:1: ruleVariable
             {
              before(grammarAccess.getValueObjectAccess().getVariablesVariableParserRuleCall_6_0()); 
-            pushFollow(FOLLOW_ruleVariable_in_rule__ValueObject__VariablesAssignment_619101);
+            pushFollow(FOLLOW_ruleVariable_in_rule__ValueObject__VariablesAssignment_619227);
             ruleVariable();
 
             state._fsp--;
@@ -26174,20 +26354,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__ValueObject__ConstructorsAssignment_7"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9550:1: rule__ValueObject__ConstructorsAssignment_7 : ( ruleConstructor ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9612:1: rule__ValueObject__ConstructorsAssignment_7 : ( ruleConstructor ) ;
     public final void rule__ValueObject__ConstructorsAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9554:1: ( ( ruleConstructor ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9555:1: ( ruleConstructor )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9616:1: ( ( ruleConstructor ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9617:1: ( ruleConstructor )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9555:1: ( ruleConstructor )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9556:1: ruleConstructor
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9617:1: ( ruleConstructor )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9618:1: ruleConstructor
             {
              before(grammarAccess.getValueObjectAccess().getConstructorsConstructorParserRuleCall_7_0()); 
-            pushFollow(FOLLOW_ruleConstructor_in_rule__ValueObject__ConstructorsAssignment_719132);
+            pushFollow(FOLLOW_ruleConstructor_in_rule__ValueObject__ConstructorsAssignment_719258);
             ruleConstructor();
 
             state._fsp--;
@@ -26215,20 +26395,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__ValueObject__MethodsAssignment_8"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9565:1: rule__ValueObject__MethodsAssignment_8 : ( ruleMethod ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9627:1: rule__ValueObject__MethodsAssignment_8 : ( ruleMethod ) ;
     public final void rule__ValueObject__MethodsAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9569:1: ( ( ruleMethod ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9570:1: ( ruleMethod )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9631:1: ( ( ruleMethod ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9632:1: ( ruleMethod )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9570:1: ( ruleMethod )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9571:1: ruleMethod
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9632:1: ( ruleMethod )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9633:1: ruleMethod
             {
              before(grammarAccess.getValueObjectAccess().getMethodsMethodParserRuleCall_8_0()); 
-            pushFollow(FOLLOW_ruleMethod_in_rule__ValueObject__MethodsAssignment_819163);
+            pushFollow(FOLLOW_ruleMethod_in_rule__ValueObject__MethodsAssignment_819289);
             ruleMethod();
 
             state._fsp--;
@@ -26256,20 +26436,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__EntityId__DocAssignment_0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9580:1: rule__EntityId__DocAssignment_0 : ( RULE_DOC ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9642:1: rule__EntityId__DocAssignment_0 : ( RULE_DOC ) ;
     public final void rule__EntityId__DocAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9584:1: ( ( RULE_DOC ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9585:1: ( RULE_DOC )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9646:1: ( ( RULE_DOC ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9647:1: ( RULE_DOC )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9585:1: ( RULE_DOC )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9586:1: RULE_DOC
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9647:1: ( RULE_DOC )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9648:1: RULE_DOC
             {
              before(grammarAccess.getEntityIdAccess().getDocDOCTerminalRuleCall_0_0()); 
-            match(input,RULE_DOC,FOLLOW_RULE_DOC_in_rule__EntityId__DocAssignment_019194); 
+            match(input,RULE_DOC,FOLLOW_RULE_DOC_in_rule__EntityId__DocAssignment_019320); 
              after(grammarAccess.getEntityIdAccess().getDocDOCTerminalRuleCall_0_0()); 
 
             }
@@ -26293,20 +26473,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__EntityId__NameAssignment_2"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9595:1: rule__EntityId__NameAssignment_2 : ( RULE_ID ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9657:1: rule__EntityId__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__EntityId__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9599:1: ( ( RULE_ID ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9600:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9661:1: ( ( RULE_ID ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9662:1: ( RULE_ID )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9600:1: ( RULE_ID )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9601:1: RULE_ID
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9662:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9663:1: RULE_ID
             {
              before(grammarAccess.getEntityIdAccess().getNameIDTerminalRuleCall_2_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__EntityId__NameAssignment_219225); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__EntityId__NameAssignment_219351); 
              after(grammarAccess.getEntityIdAccess().getNameIDTerminalRuleCall_2_0()); 
 
             }
@@ -26330,25 +26510,29 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__EntityId__EntityAssignment_4"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9610:1: rule__EntityId__EntityAssignment_4 : ( ( RULE_ID ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9672:1: rule__EntityId__EntityAssignment_4 : ( ( ruleFQN ) ) ;
     public final void rule__EntityId__EntityAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9614:1: ( ( ( RULE_ID ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9615:1: ( ( RULE_ID ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9676:1: ( ( ( ruleFQN ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9677:1: ( ( ruleFQN ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9615:1: ( ( RULE_ID ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9616:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9677:1: ( ( ruleFQN ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9678:1: ( ruleFQN )
             {
              before(grammarAccess.getEntityIdAccess().getEntityEntityCrossReference_4_0()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9617:1: ( RULE_ID )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9618:1: RULE_ID
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9679:1: ( ruleFQN )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9680:1: ruleFQN
             {
-             before(grammarAccess.getEntityIdAccess().getEntityEntityIDTerminalRuleCall_4_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__EntityId__EntityAssignment_419260); 
-             after(grammarAccess.getEntityIdAccess().getEntityEntityIDTerminalRuleCall_4_0_1()); 
+             before(grammarAccess.getEntityIdAccess().getEntityEntityFQNParserRuleCall_4_0_1()); 
+            pushFollow(FOLLOW_ruleFQN_in_rule__EntityId__EntityAssignment_419386);
+            ruleFQN();
+
+            state._fsp--;
+
+             after(grammarAccess.getEntityIdAccess().getEntityEntityFQNParserRuleCall_4_0_1()); 
 
             }
 
@@ -26375,25 +26559,29 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__EntityId__BaseAssignment_5_1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9629:1: rule__EntityId__BaseAssignment_5_1 : ( ( RULE_ID ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9691:1: rule__EntityId__BaseAssignment_5_1 : ( ( ruleFQN ) ) ;
     public final void rule__EntityId__BaseAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9633:1: ( ( ( RULE_ID ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9634:1: ( ( RULE_ID ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9695:1: ( ( ( ruleFQN ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9696:1: ( ( ruleFQN ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9634:1: ( ( RULE_ID ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9635:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9696:1: ( ( ruleFQN ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9697:1: ( ruleFQN )
             {
              before(grammarAccess.getEntityIdAccess().getBaseExternalTypeCrossReference_5_1_0()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9636:1: ( RULE_ID )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9637:1: RULE_ID
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9698:1: ( ruleFQN )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9699:1: ruleFQN
             {
-             before(grammarAccess.getEntityIdAccess().getBaseExternalTypeIDTerminalRuleCall_5_1_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__EntityId__BaseAssignment_5_119299); 
-             after(grammarAccess.getEntityIdAccess().getBaseExternalTypeIDTerminalRuleCall_5_1_0_1()); 
+             before(grammarAccess.getEntityIdAccess().getBaseExternalTypeFQNParserRuleCall_5_1_0_1()); 
+            pushFollow(FOLLOW_ruleFQN_in_rule__EntityId__BaseAssignment_5_119425);
+            ruleFQN();
+
+            state._fsp--;
+
+             after(grammarAccess.getEntityIdAccess().getBaseExternalTypeFQNParserRuleCall_5_1_0_1()); 
 
             }
 
@@ -26420,20 +26608,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__EntityId__MetaInfoAssignment_7"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9648:1: rule__EntityId__MetaInfoAssignment_7 : ( ruleTypeMetaInfo ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9710:1: rule__EntityId__MetaInfoAssignment_7 : ( ruleTypeMetaInfo ) ;
     public final void rule__EntityId__MetaInfoAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9652:1: ( ( ruleTypeMetaInfo ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9653:1: ( ruleTypeMetaInfo )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9714:1: ( ( ruleTypeMetaInfo ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9715:1: ( ruleTypeMetaInfo )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9653:1: ( ruleTypeMetaInfo )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9654:1: ruleTypeMetaInfo
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9715:1: ( ruleTypeMetaInfo )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9716:1: ruleTypeMetaInfo
             {
              before(grammarAccess.getEntityIdAccess().getMetaInfoTypeMetaInfoParserRuleCall_7_0()); 
-            pushFollow(FOLLOW_ruleTypeMetaInfo_in_rule__EntityId__MetaInfoAssignment_719334);
+            pushFollow(FOLLOW_ruleTypeMetaInfo_in_rule__EntityId__MetaInfoAssignment_719460);
             ruleTypeMetaInfo();
 
             state._fsp--;
@@ -26461,20 +26649,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__EntityId__VariablesAssignment_8"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9663:1: rule__EntityId__VariablesAssignment_8 : ( ruleVariable ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9725:1: rule__EntityId__VariablesAssignment_8 : ( ruleVariable ) ;
     public final void rule__EntityId__VariablesAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9667:1: ( ( ruleVariable ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9668:1: ( ruleVariable )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9729:1: ( ( ruleVariable ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9730:1: ( ruleVariable )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9668:1: ( ruleVariable )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9669:1: ruleVariable
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9730:1: ( ruleVariable )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9731:1: ruleVariable
             {
              before(grammarAccess.getEntityIdAccess().getVariablesVariableParserRuleCall_8_0()); 
-            pushFollow(FOLLOW_ruleVariable_in_rule__EntityId__VariablesAssignment_819365);
+            pushFollow(FOLLOW_ruleVariable_in_rule__EntityId__VariablesAssignment_819491);
             ruleVariable();
 
             state._fsp--;
@@ -26502,20 +26690,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__EntityId__ConstructorsAssignment_9"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9678:1: rule__EntityId__ConstructorsAssignment_9 : ( ruleConstructor ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9740:1: rule__EntityId__ConstructorsAssignment_9 : ( ruleConstructor ) ;
     public final void rule__EntityId__ConstructorsAssignment_9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9682:1: ( ( ruleConstructor ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9683:1: ( ruleConstructor )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9744:1: ( ( ruleConstructor ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9745:1: ( ruleConstructor )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9683:1: ( ruleConstructor )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9684:1: ruleConstructor
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9745:1: ( ruleConstructor )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9746:1: ruleConstructor
             {
              before(grammarAccess.getEntityIdAccess().getConstructorsConstructorParserRuleCall_9_0()); 
-            pushFollow(FOLLOW_ruleConstructor_in_rule__EntityId__ConstructorsAssignment_919396);
+            pushFollow(FOLLOW_ruleConstructor_in_rule__EntityId__ConstructorsAssignment_919522);
             ruleConstructor();
 
             state._fsp--;
@@ -26543,20 +26731,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__EntityId__MethodsAssignment_10"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9693:1: rule__EntityId__MethodsAssignment_10 : ( ruleMethod ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9755:1: rule__EntityId__MethodsAssignment_10 : ( ruleMethod ) ;
     public final void rule__EntityId__MethodsAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9697:1: ( ( ruleMethod ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9698:1: ( ruleMethod )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9759:1: ( ( ruleMethod ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9760:1: ( ruleMethod )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9698:1: ( ruleMethod )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9699:1: ruleMethod
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9760:1: ( ruleMethod )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9761:1: ruleMethod
             {
              before(grammarAccess.getEntityIdAccess().getMethodsMethodParserRuleCall_10_0()); 
-            pushFollow(FOLLOW_ruleMethod_in_rule__EntityId__MethodsAssignment_1019427);
+            pushFollow(FOLLOW_ruleMethod_in_rule__EntityId__MethodsAssignment_1019553);
             ruleMethod();
 
             state._fsp--;
@@ -26584,20 +26772,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__AggregateId__DocAssignment_0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9708:1: rule__AggregateId__DocAssignment_0 : ( RULE_DOC ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9770:1: rule__AggregateId__DocAssignment_0 : ( RULE_DOC ) ;
     public final void rule__AggregateId__DocAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9712:1: ( ( RULE_DOC ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9713:1: ( RULE_DOC )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9774:1: ( ( RULE_DOC ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9775:1: ( RULE_DOC )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9713:1: ( RULE_DOC )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9714:1: RULE_DOC
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9775:1: ( RULE_DOC )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9776:1: RULE_DOC
             {
              before(grammarAccess.getAggregateIdAccess().getDocDOCTerminalRuleCall_0_0()); 
-            match(input,RULE_DOC,FOLLOW_RULE_DOC_in_rule__AggregateId__DocAssignment_019458); 
+            match(input,RULE_DOC,FOLLOW_RULE_DOC_in_rule__AggregateId__DocAssignment_019584); 
              after(grammarAccess.getAggregateIdAccess().getDocDOCTerminalRuleCall_0_0()); 
 
             }
@@ -26621,20 +26809,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__AggregateId__NameAssignment_2"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9723:1: rule__AggregateId__NameAssignment_2 : ( RULE_ID ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9785:1: rule__AggregateId__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__AggregateId__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9727:1: ( ( RULE_ID ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9728:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9789:1: ( ( RULE_ID ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9790:1: ( RULE_ID )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9728:1: ( RULE_ID )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9729:1: RULE_ID
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9790:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9791:1: RULE_ID
             {
              before(grammarAccess.getAggregateIdAccess().getNameIDTerminalRuleCall_2_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__AggregateId__NameAssignment_219489); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__AggregateId__NameAssignment_219615); 
              after(grammarAccess.getAggregateIdAccess().getNameIDTerminalRuleCall_2_0()); 
 
             }
@@ -26658,25 +26846,29 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__AggregateId__EntityAssignment_4"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9738:1: rule__AggregateId__EntityAssignment_4 : ( ( RULE_ID ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9800:1: rule__AggregateId__EntityAssignment_4 : ( ( ruleFQN ) ) ;
     public final void rule__AggregateId__EntityAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9742:1: ( ( ( RULE_ID ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9743:1: ( ( RULE_ID ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9804:1: ( ( ( ruleFQN ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9805:1: ( ( ruleFQN ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9743:1: ( ( RULE_ID ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9744:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9805:1: ( ( ruleFQN ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9806:1: ( ruleFQN )
             {
              before(grammarAccess.getAggregateIdAccess().getEntityAggregateCrossReference_4_0()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9745:1: ( RULE_ID )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9746:1: RULE_ID
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9807:1: ( ruleFQN )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9808:1: ruleFQN
             {
-             before(grammarAccess.getAggregateIdAccess().getEntityAggregateIDTerminalRuleCall_4_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__AggregateId__EntityAssignment_419524); 
-             after(grammarAccess.getAggregateIdAccess().getEntityAggregateIDTerminalRuleCall_4_0_1()); 
+             before(grammarAccess.getAggregateIdAccess().getEntityAggregateFQNParserRuleCall_4_0_1()); 
+            pushFollow(FOLLOW_ruleFQN_in_rule__AggregateId__EntityAssignment_419650);
+            ruleFQN();
+
+            state._fsp--;
+
+             after(grammarAccess.getAggregateIdAccess().getEntityAggregateFQNParserRuleCall_4_0_1()); 
 
             }
 
@@ -26703,25 +26895,29 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__AggregateId__BaseAssignment_5_1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9757:1: rule__AggregateId__BaseAssignment_5_1 : ( ( RULE_ID ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9819:1: rule__AggregateId__BaseAssignment_5_1 : ( ( ruleFQN ) ) ;
     public final void rule__AggregateId__BaseAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9761:1: ( ( ( RULE_ID ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9762:1: ( ( RULE_ID ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9823:1: ( ( ( ruleFQN ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9824:1: ( ( ruleFQN ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9762:1: ( ( RULE_ID ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9763:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9824:1: ( ( ruleFQN ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9825:1: ( ruleFQN )
             {
              before(grammarAccess.getAggregateIdAccess().getBaseExternalTypeCrossReference_5_1_0()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9764:1: ( RULE_ID )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9765:1: RULE_ID
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9826:1: ( ruleFQN )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9827:1: ruleFQN
             {
-             before(grammarAccess.getAggregateIdAccess().getBaseExternalTypeIDTerminalRuleCall_5_1_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__AggregateId__BaseAssignment_5_119563); 
-             after(grammarAccess.getAggregateIdAccess().getBaseExternalTypeIDTerminalRuleCall_5_1_0_1()); 
+             before(grammarAccess.getAggregateIdAccess().getBaseExternalTypeFQNParserRuleCall_5_1_0_1()); 
+            pushFollow(FOLLOW_ruleFQN_in_rule__AggregateId__BaseAssignment_5_119689);
+            ruleFQN();
+
+            state._fsp--;
+
+             after(grammarAccess.getAggregateIdAccess().getBaseExternalTypeFQNParserRuleCall_5_1_0_1()); 
 
             }
 
@@ -26748,20 +26944,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__AggregateId__MetaInfoAssignment_7"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9776:1: rule__AggregateId__MetaInfoAssignment_7 : ( ruleTypeMetaInfo ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9838:1: rule__AggregateId__MetaInfoAssignment_7 : ( ruleTypeMetaInfo ) ;
     public final void rule__AggregateId__MetaInfoAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9780:1: ( ( ruleTypeMetaInfo ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9781:1: ( ruleTypeMetaInfo )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9842:1: ( ( ruleTypeMetaInfo ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9843:1: ( ruleTypeMetaInfo )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9781:1: ( ruleTypeMetaInfo )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9782:1: ruleTypeMetaInfo
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9843:1: ( ruleTypeMetaInfo )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9844:1: ruleTypeMetaInfo
             {
              before(grammarAccess.getAggregateIdAccess().getMetaInfoTypeMetaInfoParserRuleCall_7_0()); 
-            pushFollow(FOLLOW_ruleTypeMetaInfo_in_rule__AggregateId__MetaInfoAssignment_719598);
+            pushFollow(FOLLOW_ruleTypeMetaInfo_in_rule__AggregateId__MetaInfoAssignment_719724);
             ruleTypeMetaInfo();
 
             state._fsp--;
@@ -26789,20 +26985,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__AggregateId__VariablesAssignment_8"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9791:1: rule__AggregateId__VariablesAssignment_8 : ( ruleVariable ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9853:1: rule__AggregateId__VariablesAssignment_8 : ( ruleVariable ) ;
     public final void rule__AggregateId__VariablesAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9795:1: ( ( ruleVariable ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9796:1: ( ruleVariable )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9857:1: ( ( ruleVariable ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9858:1: ( ruleVariable )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9796:1: ( ruleVariable )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9797:1: ruleVariable
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9858:1: ( ruleVariable )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9859:1: ruleVariable
             {
              before(grammarAccess.getAggregateIdAccess().getVariablesVariableParserRuleCall_8_0()); 
-            pushFollow(FOLLOW_ruleVariable_in_rule__AggregateId__VariablesAssignment_819629);
+            pushFollow(FOLLOW_ruleVariable_in_rule__AggregateId__VariablesAssignment_819755);
             ruleVariable();
 
             state._fsp--;
@@ -26830,20 +27026,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__AggregateId__ConstructorsAssignment_9"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9806:1: rule__AggregateId__ConstructorsAssignment_9 : ( ruleConstructor ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9868:1: rule__AggregateId__ConstructorsAssignment_9 : ( ruleConstructor ) ;
     public final void rule__AggregateId__ConstructorsAssignment_9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9810:1: ( ( ruleConstructor ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9811:1: ( ruleConstructor )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9872:1: ( ( ruleConstructor ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9873:1: ( ruleConstructor )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9811:1: ( ruleConstructor )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9812:1: ruleConstructor
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9873:1: ( ruleConstructor )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9874:1: ruleConstructor
             {
              before(grammarAccess.getAggregateIdAccess().getConstructorsConstructorParserRuleCall_9_0()); 
-            pushFollow(FOLLOW_ruleConstructor_in_rule__AggregateId__ConstructorsAssignment_919660);
+            pushFollow(FOLLOW_ruleConstructor_in_rule__AggregateId__ConstructorsAssignment_919786);
             ruleConstructor();
 
             state._fsp--;
@@ -26871,20 +27067,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__AggregateId__MethodsAssignment_10"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9821:1: rule__AggregateId__MethodsAssignment_10 : ( ruleMethod ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9883:1: rule__AggregateId__MethodsAssignment_10 : ( ruleMethod ) ;
     public final void rule__AggregateId__MethodsAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9825:1: ( ( ruleMethod ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9826:1: ( ruleMethod )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9887:1: ( ( ruleMethod ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9888:1: ( ruleMethod )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9826:1: ( ruleMethod )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9827:1: ruleMethod
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9888:1: ( ruleMethod )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9889:1: ruleMethod
             {
              before(grammarAccess.getAggregateIdAccess().getMethodsMethodParserRuleCall_10_0()); 
-            pushFollow(FOLLOW_ruleMethod_in_rule__AggregateId__MethodsAssignment_1019691);
+            pushFollow(FOLLOW_ruleMethod_in_rule__AggregateId__MethodsAssignment_1019817);
             ruleMethod();
 
             state._fsp--;
@@ -26912,20 +27108,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__EnumObject__DocAssignment_0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9836:1: rule__EnumObject__DocAssignment_0 : ( RULE_DOC ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9898:1: rule__EnumObject__DocAssignment_0 : ( RULE_DOC ) ;
     public final void rule__EnumObject__DocAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9840:1: ( ( RULE_DOC ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9841:1: ( RULE_DOC )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9902:1: ( ( RULE_DOC ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9903:1: ( RULE_DOC )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9841:1: ( RULE_DOC )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9842:1: RULE_DOC
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9903:1: ( RULE_DOC )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9904:1: RULE_DOC
             {
              before(grammarAccess.getEnumObjectAccess().getDocDOCTerminalRuleCall_0_0()); 
-            match(input,RULE_DOC,FOLLOW_RULE_DOC_in_rule__EnumObject__DocAssignment_019722); 
+            match(input,RULE_DOC,FOLLOW_RULE_DOC_in_rule__EnumObject__DocAssignment_019848); 
              after(grammarAccess.getEnumObjectAccess().getDocDOCTerminalRuleCall_0_0()); 
 
             }
@@ -26949,20 +27145,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__EnumObject__NameAssignment_2"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9851:1: rule__EnumObject__NameAssignment_2 : ( RULE_ID ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9913:1: rule__EnumObject__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__EnumObject__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9855:1: ( ( RULE_ID ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9856:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9917:1: ( ( RULE_ID ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9918:1: ( RULE_ID )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9856:1: ( RULE_ID )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9857:1: RULE_ID
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9918:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9919:1: RULE_ID
             {
              before(grammarAccess.getEnumObjectAccess().getNameIDTerminalRuleCall_2_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__EnumObject__NameAssignment_219753); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__EnumObject__NameAssignment_219879); 
              after(grammarAccess.getEnumObjectAccess().getNameIDTerminalRuleCall_2_0()); 
 
             }
@@ -26986,20 +27182,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__EnumObject__MetaInfoAssignment_4"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9866:1: rule__EnumObject__MetaInfoAssignment_4 : ( ruleTypeMetaInfo ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9928:1: rule__EnumObject__MetaInfoAssignment_4 : ( ruleTypeMetaInfo ) ;
     public final void rule__EnumObject__MetaInfoAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9870:1: ( ( ruleTypeMetaInfo ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9871:1: ( ruleTypeMetaInfo )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9932:1: ( ( ruleTypeMetaInfo ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9933:1: ( ruleTypeMetaInfo )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9871:1: ( ruleTypeMetaInfo )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9872:1: ruleTypeMetaInfo
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9933:1: ( ruleTypeMetaInfo )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9934:1: ruleTypeMetaInfo
             {
              before(grammarAccess.getEnumObjectAccess().getMetaInfoTypeMetaInfoParserRuleCall_4_0()); 
-            pushFollow(FOLLOW_ruleTypeMetaInfo_in_rule__EnumObject__MetaInfoAssignment_419784);
+            pushFollow(FOLLOW_ruleTypeMetaInfo_in_rule__EnumObject__MetaInfoAssignment_419910);
             ruleTypeMetaInfo();
 
             state._fsp--;
@@ -27027,20 +27223,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__EnumObject__VariablesAssignment_5"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9881:1: rule__EnumObject__VariablesAssignment_5 : ( ruleVariable ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9943:1: rule__EnumObject__VariablesAssignment_5 : ( ruleVariable ) ;
     public final void rule__EnumObject__VariablesAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9885:1: ( ( ruleVariable ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9886:1: ( ruleVariable )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9947:1: ( ( ruleVariable ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9948:1: ( ruleVariable )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9886:1: ( ruleVariable )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9887:1: ruleVariable
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9948:1: ( ruleVariable )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9949:1: ruleVariable
             {
              before(grammarAccess.getEnumObjectAccess().getVariablesVariableParserRuleCall_5_0()); 
-            pushFollow(FOLLOW_ruleVariable_in_rule__EnumObject__VariablesAssignment_519815);
+            pushFollow(FOLLOW_ruleVariable_in_rule__EnumObject__VariablesAssignment_519941);
             ruleVariable();
 
             state._fsp--;
@@ -27068,20 +27264,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__EnumObject__ConstructorsAssignment_6"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9896:1: rule__EnumObject__ConstructorsAssignment_6 : ( ruleConstructor ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9958:1: rule__EnumObject__ConstructorsAssignment_6 : ( ruleConstructor ) ;
     public final void rule__EnumObject__ConstructorsAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9900:1: ( ( ruleConstructor ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9901:1: ( ruleConstructor )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9962:1: ( ( ruleConstructor ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9963:1: ( ruleConstructor )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9901:1: ( ruleConstructor )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9902:1: ruleConstructor
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9963:1: ( ruleConstructor )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9964:1: ruleConstructor
             {
              before(grammarAccess.getEnumObjectAccess().getConstructorsConstructorParserRuleCall_6_0()); 
-            pushFollow(FOLLOW_ruleConstructor_in_rule__EnumObject__ConstructorsAssignment_619846);
+            pushFollow(FOLLOW_ruleConstructor_in_rule__EnumObject__ConstructorsAssignment_619972);
             ruleConstructor();
 
             state._fsp--;
@@ -27109,20 +27305,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__EnumObject__MethodsAssignment_7"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9911:1: rule__EnumObject__MethodsAssignment_7 : ( ruleMethod ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9973:1: rule__EnumObject__MethodsAssignment_7 : ( ruleMethod ) ;
     public final void rule__EnumObject__MethodsAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9915:1: ( ( ruleMethod ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9916:1: ( ruleMethod )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9977:1: ( ( ruleMethod ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9978:1: ( ruleMethod )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9916:1: ( ruleMethod )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9917:1: ruleMethod
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9978:1: ( ruleMethod )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9979:1: ruleMethod
             {
              before(grammarAccess.getEnumObjectAccess().getMethodsMethodParserRuleCall_7_0()); 
-            pushFollow(FOLLOW_ruleMethod_in_rule__EnumObject__MethodsAssignment_719877);
+            pushFollow(FOLLOW_ruleMethod_in_rule__EnumObject__MethodsAssignment_720003);
             ruleMethod();
 
             state._fsp--;
@@ -27150,20 +27346,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__EnumObject__InstancesAssignment_10"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9926:1: rule__EnumObject__InstancesAssignment_10 : ( ruleEnumInstance ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9988:1: rule__EnumObject__InstancesAssignment_10 : ( ruleEnumInstance ) ;
     public final void rule__EnumObject__InstancesAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9930:1: ( ( ruleEnumInstance ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9931:1: ( ruleEnumInstance )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9992:1: ( ( ruleEnumInstance ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9993:1: ( ruleEnumInstance )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9931:1: ( ruleEnumInstance )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9932:1: ruleEnumInstance
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9993:1: ( ruleEnumInstance )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9994:1: ruleEnumInstance
             {
              before(grammarAccess.getEnumObjectAccess().getInstancesEnumInstanceParserRuleCall_10_0()); 
-            pushFollow(FOLLOW_ruleEnumInstance_in_rule__EnumObject__InstancesAssignment_1019908);
+            pushFollow(FOLLOW_ruleEnumInstance_in_rule__EnumObject__InstancesAssignment_1020034);
             ruleEnumInstance();
 
             state._fsp--;
@@ -27191,20 +27387,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__EnumInstance__DocAssignment_0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9941:1: rule__EnumInstance__DocAssignment_0 : ( RULE_DOC ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10003:1: rule__EnumInstance__DocAssignment_0 : ( RULE_DOC ) ;
     public final void rule__EnumInstance__DocAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9945:1: ( ( RULE_DOC ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9946:1: ( RULE_DOC )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10007:1: ( ( RULE_DOC ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10008:1: ( RULE_DOC )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9946:1: ( RULE_DOC )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9947:1: RULE_DOC
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10008:1: ( RULE_DOC )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10009:1: RULE_DOC
             {
              before(grammarAccess.getEnumInstanceAccess().getDocDOCTerminalRuleCall_0_0()); 
-            match(input,RULE_DOC,FOLLOW_RULE_DOC_in_rule__EnumInstance__DocAssignment_019939); 
+            match(input,RULE_DOC,FOLLOW_RULE_DOC_in_rule__EnumInstance__DocAssignment_020065); 
              after(grammarAccess.getEnumInstanceAccess().getDocDOCTerminalRuleCall_0_0()); 
 
             }
@@ -27228,20 +27424,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__EnumInstance__NameAssignment_1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9956:1: rule__EnumInstance__NameAssignment_1 : ( RULE_ID ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10018:1: rule__EnumInstance__NameAssignment_1 : ( RULE_ID ) ;
     public final void rule__EnumInstance__NameAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9960:1: ( ( RULE_ID ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9961:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10022:1: ( ( RULE_ID ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10023:1: ( RULE_ID )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9961:1: ( RULE_ID )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9962:1: RULE_ID
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10023:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10024:1: RULE_ID
             {
              before(grammarAccess.getEnumInstanceAccess().getNameIDTerminalRuleCall_1_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__EnumInstance__NameAssignment_119970); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__EnumInstance__NameAssignment_120096); 
              after(grammarAccess.getEnumInstanceAccess().getNameIDTerminalRuleCall_1_0()); 
 
             }
@@ -27265,20 +27461,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__EnumInstance__ParamsAssignment_2_1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9971:1: rule__EnumInstance__ParamsAssignment_2_1 : ( ruleLiteral ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10033:1: rule__EnumInstance__ParamsAssignment_2_1 : ( ruleLiteral ) ;
     public final void rule__EnumInstance__ParamsAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9975:1: ( ( ruleLiteral ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9976:1: ( ruleLiteral )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10037:1: ( ( ruleLiteral ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10038:1: ( ruleLiteral )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9976:1: ( ruleLiteral )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9977:1: ruleLiteral
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10038:1: ( ruleLiteral )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10039:1: ruleLiteral
             {
              before(grammarAccess.getEnumInstanceAccess().getParamsLiteralParserRuleCall_2_1_0()); 
-            pushFollow(FOLLOW_ruleLiteral_in_rule__EnumInstance__ParamsAssignment_2_120001);
+            pushFollow(FOLLOW_ruleLiteral_in_rule__EnumInstance__ParamsAssignment_2_120127);
             ruleLiteral();
 
             state._fsp--;
@@ -27306,20 +27502,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__EnumInstance__ParamsAssignment_2_2_1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9986:1: rule__EnumInstance__ParamsAssignment_2_2_1 : ( ruleLiteral ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10048:1: rule__EnumInstance__ParamsAssignment_2_2_1 : ( ruleLiteral ) ;
     public final void rule__EnumInstance__ParamsAssignment_2_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9990:1: ( ( ruleLiteral ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9991:1: ( ruleLiteral )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10052:1: ( ( ruleLiteral ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10053:1: ( ruleLiteral )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9991:1: ( ruleLiteral )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:9992:1: ruleLiteral
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10053:1: ( ruleLiteral )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10054:1: ruleLiteral
             {
              before(grammarAccess.getEnumInstanceAccess().getParamsLiteralParserRuleCall_2_2_1_0()); 
-            pushFollow(FOLLOW_ruleLiteral_in_rule__EnumInstance__ParamsAssignment_2_2_120032);
+            pushFollow(FOLLOW_ruleLiteral_in_rule__EnumInstance__ParamsAssignment_2_2_120158);
             ruleLiteral();
 
             state._fsp--;
@@ -27347,20 +27543,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Event__DocAssignment_0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10001:1: rule__Event__DocAssignment_0 : ( RULE_DOC ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10063:1: rule__Event__DocAssignment_0 : ( RULE_DOC ) ;
     public final void rule__Event__DocAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10005:1: ( ( RULE_DOC ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10006:1: ( RULE_DOC )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10067:1: ( ( RULE_DOC ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10068:1: ( RULE_DOC )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10006:1: ( RULE_DOC )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10007:1: RULE_DOC
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10068:1: ( RULE_DOC )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10069:1: RULE_DOC
             {
              before(grammarAccess.getEventAccess().getDocDOCTerminalRuleCall_0_0()); 
-            match(input,RULE_DOC,FOLLOW_RULE_DOC_in_rule__Event__DocAssignment_020063); 
+            match(input,RULE_DOC,FOLLOW_RULE_DOC_in_rule__Event__DocAssignment_020189); 
              after(grammarAccess.getEventAccess().getDocDOCTerminalRuleCall_0_0()); 
 
             }
@@ -27384,20 +27580,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Event__NameAssignment_2"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10016:1: rule__Event__NameAssignment_2 : ( RULE_ID ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10078:1: rule__Event__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__Event__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10020:1: ( ( RULE_ID ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10021:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10082:1: ( ( RULE_ID ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10083:1: ( RULE_ID )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10021:1: ( RULE_ID )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10022:1: RULE_ID
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10083:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10084:1: RULE_ID
             {
              before(grammarAccess.getEventAccess().getNameIDTerminalRuleCall_2_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Event__NameAssignment_220094); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Event__NameAssignment_220220); 
              after(grammarAccess.getEventAccess().getNameIDTerminalRuleCall_2_0()); 
 
             }
@@ -27421,20 +27617,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Event__VariablesAssignment_4"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10031:1: rule__Event__VariablesAssignment_4 : ( ruleVariable ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10093:1: rule__Event__VariablesAssignment_4 : ( ruleVariable ) ;
     public final void rule__Event__VariablesAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10035:1: ( ( ruleVariable ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10036:1: ( ruleVariable )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10097:1: ( ( ruleVariable ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10098:1: ( ruleVariable )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10036:1: ( ruleVariable )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10037:1: ruleVariable
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10098:1: ( ruleVariable )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10099:1: ruleVariable
             {
              before(grammarAccess.getEventAccess().getVariablesVariableParserRuleCall_4_0()); 
-            pushFollow(FOLLOW_ruleVariable_in_rule__Event__VariablesAssignment_420125);
+            pushFollow(FOLLOW_ruleVariable_in_rule__Event__VariablesAssignment_420251);
             ruleVariable();
 
             state._fsp--;
@@ -27462,20 +27658,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Event__MessageAssignment_5_1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10046:1: rule__Event__MessageAssignment_5_1 : ( RULE_STRING ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10108:1: rule__Event__MessageAssignment_5_1 : ( RULE_STRING ) ;
     public final void rule__Event__MessageAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10050:1: ( ( RULE_STRING ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10051:1: ( RULE_STRING )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10112:1: ( ( RULE_STRING ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10113:1: ( RULE_STRING )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10051:1: ( RULE_STRING )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10052:1: RULE_STRING
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10113:1: ( RULE_STRING )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10114:1: RULE_STRING
             {
              before(grammarAccess.getEventAccess().getMessageSTRINGTerminalRuleCall_5_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Event__MessageAssignment_5_120156); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__Event__MessageAssignment_5_120282); 
              after(grammarAccess.getEventAccess().getMessageSTRINGTerminalRuleCall_5_1_0()); 
 
             }
@@ -27499,20 +27695,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Entity__DocAssignment_0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10061:1: rule__Entity__DocAssignment_0 : ( RULE_DOC ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10123:1: rule__Entity__DocAssignment_0 : ( RULE_DOC ) ;
     public final void rule__Entity__DocAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10065:1: ( ( RULE_DOC ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10066:1: ( RULE_DOC )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10127:1: ( ( RULE_DOC ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10128:1: ( RULE_DOC )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10066:1: ( RULE_DOC )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10067:1: RULE_DOC
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10128:1: ( RULE_DOC )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10129:1: RULE_DOC
             {
              before(grammarAccess.getEntityAccess().getDocDOCTerminalRuleCall_0_0()); 
-            match(input,RULE_DOC,FOLLOW_RULE_DOC_in_rule__Entity__DocAssignment_020187); 
+            match(input,RULE_DOC,FOLLOW_RULE_DOC_in_rule__Entity__DocAssignment_020313); 
              after(grammarAccess.getEntityAccess().getDocDOCTerminalRuleCall_0_0()); 
 
             }
@@ -27536,20 +27732,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Entity__NameAssignment_2"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10076:1: rule__Entity__NameAssignment_2 : ( RULE_ID ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10138:1: rule__Entity__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__Entity__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10080:1: ( ( RULE_ID ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10081:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10142:1: ( ( RULE_ID ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10143:1: ( RULE_ID )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10081:1: ( RULE_ID )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10082:1: RULE_ID
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10143:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10144:1: RULE_ID
             {
              before(grammarAccess.getEntityAccess().getNameIDTerminalRuleCall_2_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Entity__NameAssignment_220218); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Entity__NameAssignment_220344); 
              after(grammarAccess.getEntityAccess().getNameIDTerminalRuleCall_2_0()); 
 
             }
@@ -27573,25 +27769,29 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Entity__IdTypeAssignment_4"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10091:1: rule__Entity__IdTypeAssignment_4 : ( ( RULE_ID ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10153:1: rule__Entity__IdTypeAssignment_4 : ( ( ruleFQN ) ) ;
     public final void rule__Entity__IdTypeAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10095:1: ( ( ( RULE_ID ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10096:1: ( ( RULE_ID ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10157:1: ( ( ( ruleFQN ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10158:1: ( ( ruleFQN ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10096:1: ( ( RULE_ID ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10097:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10158:1: ( ( ruleFQN ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10159:1: ( ruleFQN )
             {
              before(grammarAccess.getEntityAccess().getIdTypeEntityIdCrossReference_4_0()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10098:1: ( RULE_ID )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10099:1: RULE_ID
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10160:1: ( ruleFQN )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10161:1: ruleFQN
             {
-             before(grammarAccess.getEntityAccess().getIdTypeEntityIdIDTerminalRuleCall_4_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Entity__IdTypeAssignment_420253); 
-             after(grammarAccess.getEntityAccess().getIdTypeEntityIdIDTerminalRuleCall_4_0_1()); 
+             before(grammarAccess.getEntityAccess().getIdTypeEntityIdFQNParserRuleCall_4_0_1()); 
+            pushFollow(FOLLOW_ruleFQN_in_rule__Entity__IdTypeAssignment_420379);
+            ruleFQN();
+
+            state._fsp--;
+
+             after(grammarAccess.getEntityAccess().getIdTypeEntityIdFQNParserRuleCall_4_0_1()); 
 
             }
 
@@ -27618,25 +27818,29 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Entity__RootAssignment_6"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10110:1: rule__Entity__RootAssignment_6 : ( ( RULE_ID ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10172:1: rule__Entity__RootAssignment_6 : ( ( ruleFQN ) ) ;
     public final void rule__Entity__RootAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10114:1: ( ( ( RULE_ID ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10115:1: ( ( RULE_ID ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10176:1: ( ( ( ruleFQN ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10177:1: ( ( ruleFQN ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10115:1: ( ( RULE_ID ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10116:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10177:1: ( ( ruleFQN ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10178:1: ( ruleFQN )
             {
              before(grammarAccess.getEntityAccess().getRootAggregateCrossReference_6_0()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10117:1: ( RULE_ID )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10118:1: RULE_ID
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10179:1: ( ruleFQN )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10180:1: ruleFQN
             {
-             before(grammarAccess.getEntityAccess().getRootAggregateIDTerminalRuleCall_6_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Entity__RootAssignment_620292); 
-             after(grammarAccess.getEntityAccess().getRootAggregateIDTerminalRuleCall_6_0_1()); 
+             before(grammarAccess.getEntityAccess().getRootAggregateFQNParserRuleCall_6_0_1()); 
+            pushFollow(FOLLOW_ruleFQN_in_rule__Entity__RootAssignment_620418);
+            ruleFQN();
+
+            state._fsp--;
+
+             after(grammarAccess.getEntityAccess().getRootAggregateFQNParserRuleCall_6_0_1()); 
 
             }
 
@@ -27663,20 +27867,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Entity__MetaInfoAssignment_8"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10129:1: rule__Entity__MetaInfoAssignment_8 : ( ruleTypeMetaInfo ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10191:1: rule__Entity__MetaInfoAssignment_8 : ( ruleTypeMetaInfo ) ;
     public final void rule__Entity__MetaInfoAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10133:1: ( ( ruleTypeMetaInfo ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10134:1: ( ruleTypeMetaInfo )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10195:1: ( ( ruleTypeMetaInfo ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10196:1: ( ruleTypeMetaInfo )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10134:1: ( ruleTypeMetaInfo )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10135:1: ruleTypeMetaInfo
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10196:1: ( ruleTypeMetaInfo )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10197:1: ruleTypeMetaInfo
             {
              before(grammarAccess.getEntityAccess().getMetaInfoTypeMetaInfoParserRuleCall_8_0()); 
-            pushFollow(FOLLOW_ruleTypeMetaInfo_in_rule__Entity__MetaInfoAssignment_820327);
+            pushFollow(FOLLOW_ruleTypeMetaInfo_in_rule__Entity__MetaInfoAssignment_820453);
             ruleTypeMetaInfo();
 
             state._fsp--;
@@ -27704,20 +27908,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Entity__VariablesAssignment_9"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10144:1: rule__Entity__VariablesAssignment_9 : ( ruleVariable ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10206:1: rule__Entity__VariablesAssignment_9 : ( ruleVariable ) ;
     public final void rule__Entity__VariablesAssignment_9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10148:1: ( ( ruleVariable ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10149:1: ( ruleVariable )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10210:1: ( ( ruleVariable ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10211:1: ( ruleVariable )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10149:1: ( ruleVariable )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10150:1: ruleVariable
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10211:1: ( ruleVariable )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10212:1: ruleVariable
             {
              before(grammarAccess.getEntityAccess().getVariablesVariableParserRuleCall_9_0()); 
-            pushFollow(FOLLOW_ruleVariable_in_rule__Entity__VariablesAssignment_920358);
+            pushFollow(FOLLOW_ruleVariable_in_rule__Entity__VariablesAssignment_920484);
             ruleVariable();
 
             state._fsp--;
@@ -27745,20 +27949,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Entity__ConstructorsAssignment_10"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10159:1: rule__Entity__ConstructorsAssignment_10 : ( ruleConstructor ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10221:1: rule__Entity__ConstructorsAssignment_10 : ( ruleConstructor ) ;
     public final void rule__Entity__ConstructorsAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10163:1: ( ( ruleConstructor ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10164:1: ( ruleConstructor )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10225:1: ( ( ruleConstructor ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10226:1: ( ruleConstructor )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10164:1: ( ruleConstructor )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10165:1: ruleConstructor
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10226:1: ( ruleConstructor )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10227:1: ruleConstructor
             {
              before(grammarAccess.getEntityAccess().getConstructorsConstructorParserRuleCall_10_0()); 
-            pushFollow(FOLLOW_ruleConstructor_in_rule__Entity__ConstructorsAssignment_1020389);
+            pushFollow(FOLLOW_ruleConstructor_in_rule__Entity__ConstructorsAssignment_1020515);
             ruleConstructor();
 
             state._fsp--;
@@ -27786,20 +27990,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Entity__MethodsAssignment_11"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10174:1: rule__Entity__MethodsAssignment_11 : ( ruleMethod ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10236:1: rule__Entity__MethodsAssignment_11 : ( ruleMethod ) ;
     public final void rule__Entity__MethodsAssignment_11() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10178:1: ( ( ruleMethod ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10179:1: ( ruleMethod )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10240:1: ( ( ruleMethod ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10241:1: ( ruleMethod )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10179:1: ( ruleMethod )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10180:1: ruleMethod
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10241:1: ( ruleMethod )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10242:1: ruleMethod
             {
              before(grammarAccess.getEntityAccess().getMethodsMethodParserRuleCall_11_0()); 
-            pushFollow(FOLLOW_ruleMethod_in_rule__Entity__MethodsAssignment_1120420);
+            pushFollow(FOLLOW_ruleMethod_in_rule__Entity__MethodsAssignment_1120546);
             ruleMethod();
 
             state._fsp--;
@@ -27827,20 +28031,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Entity__EventsAssignment_12"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10189:1: rule__Entity__EventsAssignment_12 : ( ruleEvent ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10251:1: rule__Entity__EventsAssignment_12 : ( ruleEvent ) ;
     public final void rule__Entity__EventsAssignment_12() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10193:1: ( ( ruleEvent ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10194:1: ( ruleEvent )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10255:1: ( ( ruleEvent ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10256:1: ( ruleEvent )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10194:1: ( ruleEvent )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10195:1: ruleEvent
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10256:1: ( ruleEvent )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10257:1: ruleEvent
             {
              before(grammarAccess.getEntityAccess().getEventsEventParserRuleCall_12_0()); 
-            pushFollow(FOLLOW_ruleEvent_in_rule__Entity__EventsAssignment_1220451);
+            pushFollow(FOLLOW_ruleEvent_in_rule__Entity__EventsAssignment_1220577);
             ruleEvent();
 
             state._fsp--;
@@ -27868,20 +28072,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Aggregate__DocAssignment_0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10204:1: rule__Aggregate__DocAssignment_0 : ( RULE_DOC ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10266:1: rule__Aggregate__DocAssignment_0 : ( RULE_DOC ) ;
     public final void rule__Aggregate__DocAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10208:1: ( ( RULE_DOC ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10209:1: ( RULE_DOC )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10270:1: ( ( RULE_DOC ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10271:1: ( RULE_DOC )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10209:1: ( RULE_DOC )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10210:1: RULE_DOC
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10271:1: ( RULE_DOC )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10272:1: RULE_DOC
             {
              before(grammarAccess.getAggregateAccess().getDocDOCTerminalRuleCall_0_0()); 
-            match(input,RULE_DOC,FOLLOW_RULE_DOC_in_rule__Aggregate__DocAssignment_020482); 
+            match(input,RULE_DOC,FOLLOW_RULE_DOC_in_rule__Aggregate__DocAssignment_020608); 
              after(grammarAccess.getAggregateAccess().getDocDOCTerminalRuleCall_0_0()); 
 
             }
@@ -27905,20 +28109,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Aggregate__NameAssignment_2"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10219:1: rule__Aggregate__NameAssignment_2 : ( RULE_ID ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10281:1: rule__Aggregate__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__Aggregate__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10223:1: ( ( RULE_ID ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10224:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10285:1: ( ( RULE_ID ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10286:1: ( RULE_ID )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10224:1: ( RULE_ID )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10225:1: RULE_ID
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10286:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10287:1: RULE_ID
             {
              before(grammarAccess.getAggregateAccess().getNameIDTerminalRuleCall_2_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Aggregate__NameAssignment_220513); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Aggregate__NameAssignment_220639); 
              after(grammarAccess.getAggregateAccess().getNameIDTerminalRuleCall_2_0()); 
 
             }
@@ -27942,25 +28146,29 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Aggregate__IdTypeAssignment_4"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10234:1: rule__Aggregate__IdTypeAssignment_4 : ( ( RULE_ID ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10296:1: rule__Aggregate__IdTypeAssignment_4 : ( ( ruleFQN ) ) ;
     public final void rule__Aggregate__IdTypeAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10238:1: ( ( ( RULE_ID ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10239:1: ( ( RULE_ID ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10300:1: ( ( ( ruleFQN ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10301:1: ( ( ruleFQN ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10239:1: ( ( RULE_ID ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10240:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10301:1: ( ( ruleFQN ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10302:1: ( ruleFQN )
             {
              before(grammarAccess.getAggregateAccess().getIdTypeAggregateIdCrossReference_4_0()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10241:1: ( RULE_ID )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10242:1: RULE_ID
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10303:1: ( ruleFQN )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10304:1: ruleFQN
             {
-             before(grammarAccess.getAggregateAccess().getIdTypeAggregateIdIDTerminalRuleCall_4_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Aggregate__IdTypeAssignment_420548); 
-             after(grammarAccess.getAggregateAccess().getIdTypeAggregateIdIDTerminalRuleCall_4_0_1()); 
+             before(grammarAccess.getAggregateAccess().getIdTypeAggregateIdFQNParserRuleCall_4_0_1()); 
+            pushFollow(FOLLOW_ruleFQN_in_rule__Aggregate__IdTypeAssignment_420674);
+            ruleFQN();
+
+            state._fsp--;
+
+             after(grammarAccess.getAggregateAccess().getIdTypeAggregateIdFQNParserRuleCall_4_0_1()); 
 
             }
 
@@ -27987,20 +28195,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Aggregate__MetaInfoAssignment_6"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10253:1: rule__Aggregate__MetaInfoAssignment_6 : ( ruleTypeMetaInfo ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10315:1: rule__Aggregate__MetaInfoAssignment_6 : ( ruleTypeMetaInfo ) ;
     public final void rule__Aggregate__MetaInfoAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10257:1: ( ( ruleTypeMetaInfo ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10258:1: ( ruleTypeMetaInfo )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10319:1: ( ( ruleTypeMetaInfo ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10320:1: ( ruleTypeMetaInfo )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10258:1: ( ruleTypeMetaInfo )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10259:1: ruleTypeMetaInfo
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10320:1: ( ruleTypeMetaInfo )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10321:1: ruleTypeMetaInfo
             {
              before(grammarAccess.getAggregateAccess().getMetaInfoTypeMetaInfoParserRuleCall_6_0()); 
-            pushFollow(FOLLOW_ruleTypeMetaInfo_in_rule__Aggregate__MetaInfoAssignment_620583);
+            pushFollow(FOLLOW_ruleTypeMetaInfo_in_rule__Aggregate__MetaInfoAssignment_620709);
             ruleTypeMetaInfo();
 
             state._fsp--;
@@ -28028,20 +28236,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Aggregate__VariablesAssignment_7"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10268:1: rule__Aggregate__VariablesAssignment_7 : ( ruleVariable ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10330:1: rule__Aggregate__VariablesAssignment_7 : ( ruleVariable ) ;
     public final void rule__Aggregate__VariablesAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10272:1: ( ( ruleVariable ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10273:1: ( ruleVariable )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10334:1: ( ( ruleVariable ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10335:1: ( ruleVariable )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10273:1: ( ruleVariable )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10274:1: ruleVariable
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10335:1: ( ruleVariable )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10336:1: ruleVariable
             {
              before(grammarAccess.getAggregateAccess().getVariablesVariableParserRuleCall_7_0()); 
-            pushFollow(FOLLOW_ruleVariable_in_rule__Aggregate__VariablesAssignment_720614);
+            pushFollow(FOLLOW_ruleVariable_in_rule__Aggregate__VariablesAssignment_720740);
             ruleVariable();
 
             state._fsp--;
@@ -28069,20 +28277,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Aggregate__ConstructorsAssignment_8"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10283:1: rule__Aggregate__ConstructorsAssignment_8 : ( ruleConstructor ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10345:1: rule__Aggregate__ConstructorsAssignment_8 : ( ruleConstructor ) ;
     public final void rule__Aggregate__ConstructorsAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10287:1: ( ( ruleConstructor ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10288:1: ( ruleConstructor )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10349:1: ( ( ruleConstructor ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10350:1: ( ruleConstructor )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10288:1: ( ruleConstructor )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10289:1: ruleConstructor
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10350:1: ( ruleConstructor )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10351:1: ruleConstructor
             {
              before(grammarAccess.getAggregateAccess().getConstructorsConstructorParserRuleCall_8_0()); 
-            pushFollow(FOLLOW_ruleConstructor_in_rule__Aggregate__ConstructorsAssignment_820645);
+            pushFollow(FOLLOW_ruleConstructor_in_rule__Aggregate__ConstructorsAssignment_820771);
             ruleConstructor();
 
             state._fsp--;
@@ -28110,20 +28318,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Aggregate__MethodsAssignment_9"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10298:1: rule__Aggregate__MethodsAssignment_9 : ( ruleMethod ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10360:1: rule__Aggregate__MethodsAssignment_9 : ( ruleMethod ) ;
     public final void rule__Aggregate__MethodsAssignment_9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10302:1: ( ( ruleMethod ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10303:1: ( ruleMethod )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10364:1: ( ( ruleMethod ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10365:1: ( ruleMethod )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10303:1: ( ruleMethod )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10304:1: ruleMethod
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10365:1: ( ruleMethod )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10366:1: ruleMethod
             {
              before(grammarAccess.getAggregateAccess().getMethodsMethodParserRuleCall_9_0()); 
-            pushFollow(FOLLOW_ruleMethod_in_rule__Aggregate__MethodsAssignment_920676);
+            pushFollow(FOLLOW_ruleMethod_in_rule__Aggregate__MethodsAssignment_920802);
             ruleMethod();
 
             state._fsp--;
@@ -28151,20 +28359,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Aggregate__EventsAssignment_10"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10313:1: rule__Aggregate__EventsAssignment_10 : ( ruleEvent ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10375:1: rule__Aggregate__EventsAssignment_10 : ( ruleEvent ) ;
     public final void rule__Aggregate__EventsAssignment_10() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10317:1: ( ( ruleEvent ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10318:1: ( ruleEvent )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10379:1: ( ( ruleEvent ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10380:1: ( ruleEvent )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10318:1: ( ruleEvent )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10319:1: ruleEvent
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10380:1: ( ruleEvent )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10381:1: ruleEvent
             {
              before(grammarAccess.getAggregateAccess().getEventsEventParserRuleCall_10_0()); 
-            pushFollow(FOLLOW_ruleEvent_in_rule__Aggregate__EventsAssignment_1020707);
+            pushFollow(FOLLOW_ruleEvent_in_rule__Aggregate__EventsAssignment_1020833);
             ruleEvent();
 
             state._fsp--;
@@ -28192,20 +28400,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Constructor__DocAssignment_0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10328:1: rule__Constructor__DocAssignment_0 : ( RULE_DOC ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10390:1: rule__Constructor__DocAssignment_0 : ( RULE_DOC ) ;
     public final void rule__Constructor__DocAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10332:1: ( ( RULE_DOC ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10333:1: ( RULE_DOC )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10394:1: ( ( RULE_DOC ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10395:1: ( RULE_DOC )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10333:1: ( RULE_DOC )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10334:1: RULE_DOC
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10395:1: ( RULE_DOC )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10396:1: RULE_DOC
             {
              before(grammarAccess.getConstructorAccess().getDocDOCTerminalRuleCall_0_0()); 
-            match(input,RULE_DOC,FOLLOW_RULE_DOC_in_rule__Constructor__DocAssignment_020738); 
+            match(input,RULE_DOC,FOLLOW_RULE_DOC_in_rule__Constructor__DocAssignment_020864); 
              after(grammarAccess.getConstructorAccess().getDocDOCTerminalRuleCall_0_0()); 
 
             }
@@ -28229,20 +28437,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Constructor__NameAssignment_2"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10343:1: rule__Constructor__NameAssignment_2 : ( RULE_ID ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10405:1: rule__Constructor__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__Constructor__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10347:1: ( ( RULE_ID ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10348:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10409:1: ( ( RULE_ID ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10410:1: ( RULE_ID )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10348:1: ( RULE_ID )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10349:1: RULE_ID
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10410:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10411:1: RULE_ID
             {
              before(grammarAccess.getConstructorAccess().getNameIDTerminalRuleCall_2_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Constructor__NameAssignment_220769); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Constructor__NameAssignment_220895); 
              after(grammarAccess.getConstructorAccess().getNameIDTerminalRuleCall_2_0()); 
 
             }
@@ -28266,25 +28474,29 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Constructor__FiredEventsAssignment_3_1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10358:1: rule__Constructor__FiredEventsAssignment_3_1 : ( ( RULE_ID ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10420:1: rule__Constructor__FiredEventsAssignment_3_1 : ( ( ruleFQN ) ) ;
     public final void rule__Constructor__FiredEventsAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10362:1: ( ( ( RULE_ID ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10363:1: ( ( RULE_ID ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10424:1: ( ( ( ruleFQN ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10425:1: ( ( ruleFQN ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10363:1: ( ( RULE_ID ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10364:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10425:1: ( ( ruleFQN ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10426:1: ( ruleFQN )
             {
              before(grammarAccess.getConstructorAccess().getFiredEventsEventCrossReference_3_1_0()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10365:1: ( RULE_ID )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10366:1: RULE_ID
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10427:1: ( ruleFQN )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10428:1: ruleFQN
             {
-             before(grammarAccess.getConstructorAccess().getFiredEventsEventIDTerminalRuleCall_3_1_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Constructor__FiredEventsAssignment_3_120804); 
-             after(grammarAccess.getConstructorAccess().getFiredEventsEventIDTerminalRuleCall_3_1_0_1()); 
+             before(grammarAccess.getConstructorAccess().getFiredEventsEventFQNParserRuleCall_3_1_0_1()); 
+            pushFollow(FOLLOW_ruleFQN_in_rule__Constructor__FiredEventsAssignment_3_120930);
+            ruleFQN();
+
+            state._fsp--;
+
+             after(grammarAccess.getConstructorAccess().getFiredEventsEventFQNParserRuleCall_3_1_0_1()); 
 
             }
 
@@ -28311,25 +28523,29 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Constructor__FiredEventsAssignment_3_2_1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10377:1: rule__Constructor__FiredEventsAssignment_3_2_1 : ( ( RULE_ID ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10439:1: rule__Constructor__FiredEventsAssignment_3_2_1 : ( ( ruleFQN ) ) ;
     public final void rule__Constructor__FiredEventsAssignment_3_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10381:1: ( ( ( RULE_ID ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10382:1: ( ( RULE_ID ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10443:1: ( ( ( ruleFQN ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10444:1: ( ( ruleFQN ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10382:1: ( ( RULE_ID ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10383:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10444:1: ( ( ruleFQN ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10445:1: ( ruleFQN )
             {
              before(grammarAccess.getConstructorAccess().getFiredEventsEventCrossReference_3_2_1_0()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10384:1: ( RULE_ID )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10385:1: RULE_ID
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10446:1: ( ruleFQN )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10447:1: ruleFQN
             {
-             before(grammarAccess.getConstructorAccess().getFiredEventsEventIDTerminalRuleCall_3_2_1_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Constructor__FiredEventsAssignment_3_2_120843); 
-             after(grammarAccess.getConstructorAccess().getFiredEventsEventIDTerminalRuleCall_3_2_1_0_1()); 
+             before(grammarAccess.getConstructorAccess().getFiredEventsEventFQNParserRuleCall_3_2_1_0_1()); 
+            pushFollow(FOLLOW_ruleFQN_in_rule__Constructor__FiredEventsAssignment_3_2_120969);
+            ruleFQN();
+
+            state._fsp--;
+
+             after(grammarAccess.getConstructorAccess().getFiredEventsEventFQNParserRuleCall_3_2_1_0_1()); 
 
             }
 
@@ -28356,20 +28572,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Constructor__VariablesAssignment_5"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10396:1: rule__Constructor__VariablesAssignment_5 : ( ruleVariable ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10458:1: rule__Constructor__VariablesAssignment_5 : ( ruleVariable ) ;
     public final void rule__Constructor__VariablesAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10400:1: ( ( ruleVariable ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10401:1: ( ruleVariable )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10462:1: ( ( ruleVariable ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10463:1: ( ruleVariable )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10401:1: ( ruleVariable )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10402:1: ruleVariable
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10463:1: ( ruleVariable )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10464:1: ruleVariable
             {
              before(grammarAccess.getConstructorAccess().getVariablesVariableParserRuleCall_5_0()); 
-            pushFollow(FOLLOW_ruleVariable_in_rule__Constructor__VariablesAssignment_520878);
+            pushFollow(FOLLOW_ruleVariable_in_rule__Constructor__VariablesAssignment_521004);
             ruleVariable();
 
             state._fsp--;
@@ -28397,25 +28613,29 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Constructor__ServiceAssignment_6"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10411:1: rule__Constructor__ServiceAssignment_6 : ( ( RULE_ID ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10473:1: rule__Constructor__ServiceAssignment_6 : ( ( ruleFQN ) ) ;
     public final void rule__Constructor__ServiceAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10415:1: ( ( ( RULE_ID ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10416:1: ( ( RULE_ID ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10477:1: ( ( ( ruleFQN ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10478:1: ( ( ruleFQN ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10416:1: ( ( RULE_ID ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10417:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10478:1: ( ( ruleFQN ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10479:1: ( ruleFQN )
             {
              before(grammarAccess.getConstructorAccess().getServiceServiceCrossReference_6_0()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10418:1: ( RULE_ID )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10419:1: RULE_ID
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10480:1: ( ruleFQN )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10481:1: ruleFQN
             {
-             before(grammarAccess.getConstructorAccess().getServiceServiceIDTerminalRuleCall_6_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Constructor__ServiceAssignment_620913); 
-             after(grammarAccess.getConstructorAccess().getServiceServiceIDTerminalRuleCall_6_0_1()); 
+             before(grammarAccess.getConstructorAccess().getServiceServiceFQNParserRuleCall_6_0_1()); 
+            pushFollow(FOLLOW_ruleFQN_in_rule__Constructor__ServiceAssignment_621039);
+            ruleFQN();
+
+            state._fsp--;
+
+             after(grammarAccess.getConstructorAccess().getServiceServiceFQNParserRuleCall_6_0_1()); 
 
             }
 
@@ -28442,20 +28662,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Constructor__ConstraintsAssignment_7"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10430:1: rule__Constructor__ConstraintsAssignment_7 : ( ruleConstraints ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10492:1: rule__Constructor__ConstraintsAssignment_7 : ( ruleConstraints ) ;
     public final void rule__Constructor__ConstraintsAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10434:1: ( ( ruleConstraints ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10435:1: ( ruleConstraints )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10496:1: ( ( ruleConstraints ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10497:1: ( ruleConstraints )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10435:1: ( ruleConstraints )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10436:1: ruleConstraints
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10497:1: ( ruleConstraints )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10498:1: ruleConstraints
             {
              before(grammarAccess.getConstructorAccess().getConstraintsConstraintsParserRuleCall_7_0()); 
-            pushFollow(FOLLOW_ruleConstraints_in_rule__Constructor__ConstraintsAssignment_720948);
+            pushFollow(FOLLOW_ruleConstraints_in_rule__Constructor__ConstraintsAssignment_721074);
             ruleConstraints();
 
             state._fsp--;
@@ -28482,21 +28702,62 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
     // $ANTLR end "rule__Constructor__ConstraintsAssignment_7"
 
 
+    // $ANTLR start "rule__Constructor__EventsAssignment_8"
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10507:1: rule__Constructor__EventsAssignment_8 : ( ruleEvent ) ;
+    public final void rule__Constructor__EventsAssignment_8() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10511:1: ( ( ruleEvent ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10512:1: ( ruleEvent )
+            {
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10512:1: ( ruleEvent )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10513:1: ruleEvent
+            {
+             before(grammarAccess.getConstructorAccess().getEventsEventParserRuleCall_8_0()); 
+            pushFollow(FOLLOW_ruleEvent_in_rule__Constructor__EventsAssignment_821105);
+            ruleEvent();
+
+            state._fsp--;
+
+             after(grammarAccess.getConstructorAccess().getEventsEventParserRuleCall_8_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Constructor__EventsAssignment_8"
+
+
     // $ANTLR start "rule__ReturnType__DocAssignment_0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10445:1: rule__ReturnType__DocAssignment_0 : ( RULE_DOC ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10522:1: rule__ReturnType__DocAssignment_0 : ( RULE_DOC ) ;
     public final void rule__ReturnType__DocAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10449:1: ( ( RULE_DOC ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10450:1: ( RULE_DOC )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10526:1: ( ( RULE_DOC ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10527:1: ( RULE_DOC )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10450:1: ( RULE_DOC )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10451:1: RULE_DOC
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10527:1: ( RULE_DOC )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10528:1: RULE_DOC
             {
              before(grammarAccess.getReturnTypeAccess().getDocDOCTerminalRuleCall_0_0()); 
-            match(input,RULE_DOC,FOLLOW_RULE_DOC_in_rule__ReturnType__DocAssignment_020979); 
+            match(input,RULE_DOC,FOLLOW_RULE_DOC_in_rule__ReturnType__DocAssignment_021136); 
              after(grammarAccess.getReturnTypeAccess().getDocDOCTerminalRuleCall_0_0()); 
 
             }
@@ -28520,25 +28781,29 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__ReturnType__TypeAssignment_2"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10460:1: rule__ReturnType__TypeAssignment_2 : ( ( RULE_ID ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10537:1: rule__ReturnType__TypeAssignment_2 : ( ( ruleFQN ) ) ;
     public final void rule__ReturnType__TypeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10464:1: ( ( ( RULE_ID ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10465:1: ( ( RULE_ID ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10541:1: ( ( ( ruleFQN ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10542:1: ( ( ruleFQN ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10465:1: ( ( RULE_ID ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10466:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10542:1: ( ( ruleFQN ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10543:1: ( ruleFQN )
             {
              before(grammarAccess.getReturnTypeAccess().getTypeTypeCrossReference_2_0()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10467:1: ( RULE_ID )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10468:1: RULE_ID
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10544:1: ( ruleFQN )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10545:1: ruleFQN
             {
-             before(grammarAccess.getReturnTypeAccess().getTypeTypeIDTerminalRuleCall_2_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ReturnType__TypeAssignment_221014); 
-             after(grammarAccess.getReturnTypeAccess().getTypeTypeIDTerminalRuleCall_2_0_1()); 
+             before(grammarAccess.getReturnTypeAccess().getTypeTypeFQNParserRuleCall_2_0_1()); 
+            pushFollow(FOLLOW_ruleFQN_in_rule__ReturnType__TypeAssignment_221171);
+            ruleFQN();
+
+            state._fsp--;
+
+             after(grammarAccess.getReturnTypeAccess().getTypeTypeFQNParserRuleCall_2_0_1()); 
 
             }
 
@@ -28565,20 +28830,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Method__DocAssignment_0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10479:1: rule__Method__DocAssignment_0 : ( RULE_DOC ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10556:1: rule__Method__DocAssignment_0 : ( RULE_DOC ) ;
     public final void rule__Method__DocAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10483:1: ( ( RULE_DOC ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10484:1: ( RULE_DOC )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10560:1: ( ( RULE_DOC ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10561:1: ( RULE_DOC )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10484:1: ( RULE_DOC )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10485:1: RULE_DOC
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10561:1: ( RULE_DOC )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10562:1: RULE_DOC
             {
              before(grammarAccess.getMethodAccess().getDocDOCTerminalRuleCall_0_0()); 
-            match(input,RULE_DOC,FOLLOW_RULE_DOC_in_rule__Method__DocAssignment_021049); 
+            match(input,RULE_DOC,FOLLOW_RULE_DOC_in_rule__Method__DocAssignment_021206); 
              after(grammarAccess.getMethodAccess().getDocDOCTerminalRuleCall_0_0()); 
 
             }
@@ -28602,20 +28867,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Method__NameAssignment_2"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10494:1: rule__Method__NameAssignment_2 : ( RULE_ID ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10571:1: rule__Method__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__Method__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10498:1: ( ( RULE_ID ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10499:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10575:1: ( ( RULE_ID ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10576:1: ( RULE_ID )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10499:1: ( RULE_ID )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10500:1: RULE_ID
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10576:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10577:1: RULE_ID
             {
              before(grammarAccess.getMethodAccess().getNameIDTerminalRuleCall_2_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Method__NameAssignment_221080); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Method__NameAssignment_221237); 
              after(grammarAccess.getMethodAccess().getNameIDTerminalRuleCall_2_0()); 
 
             }
@@ -28639,24 +28904,24 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Method__RefMethodAssignment_3_1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10509:1: rule__Method__RefMethodAssignment_3_1 : ( ( ruleFQN ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10586:1: rule__Method__RefMethodAssignment_3_1 : ( ( ruleFQN ) ) ;
     public final void rule__Method__RefMethodAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10513:1: ( ( ( ruleFQN ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10514:1: ( ( ruleFQN ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10590:1: ( ( ( ruleFQN ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10591:1: ( ( ruleFQN ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10514:1: ( ( ruleFQN ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10515:1: ( ruleFQN )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10591:1: ( ( ruleFQN ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10592:1: ( ruleFQN )
             {
              before(grammarAccess.getMethodAccess().getRefMethodMethodCrossReference_3_1_0()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10516:1: ( ruleFQN )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10517:1: ruleFQN
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10593:1: ( ruleFQN )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10594:1: ruleFQN
             {
              before(grammarAccess.getMethodAccess().getRefMethodMethodFQNParserRuleCall_3_1_0_1()); 
-            pushFollow(FOLLOW_ruleFQN_in_rule__Method__RefMethodAssignment_3_121115);
+            pushFollow(FOLLOW_ruleFQN_in_rule__Method__RefMethodAssignment_3_121272);
             ruleFQN();
 
             state._fsp--;
@@ -28688,25 +28953,29 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Method__FiredEventsAssignment_4_1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10528:1: rule__Method__FiredEventsAssignment_4_1 : ( ( RULE_ID ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10605:1: rule__Method__FiredEventsAssignment_4_1 : ( ( ruleFQN ) ) ;
     public final void rule__Method__FiredEventsAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10532:1: ( ( ( RULE_ID ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10533:1: ( ( RULE_ID ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10609:1: ( ( ( ruleFQN ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10610:1: ( ( ruleFQN ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10533:1: ( ( RULE_ID ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10534:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10610:1: ( ( ruleFQN ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10611:1: ( ruleFQN )
             {
              before(grammarAccess.getMethodAccess().getFiredEventsEventCrossReference_4_1_0()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10535:1: ( RULE_ID )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10536:1: RULE_ID
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10612:1: ( ruleFQN )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10613:1: ruleFQN
             {
-             before(grammarAccess.getMethodAccess().getFiredEventsEventIDTerminalRuleCall_4_1_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Method__FiredEventsAssignment_4_121154); 
-             after(grammarAccess.getMethodAccess().getFiredEventsEventIDTerminalRuleCall_4_1_0_1()); 
+             before(grammarAccess.getMethodAccess().getFiredEventsEventFQNParserRuleCall_4_1_0_1()); 
+            pushFollow(FOLLOW_ruleFQN_in_rule__Method__FiredEventsAssignment_4_121311);
+            ruleFQN();
+
+            state._fsp--;
+
+             after(grammarAccess.getMethodAccess().getFiredEventsEventFQNParserRuleCall_4_1_0_1()); 
 
             }
 
@@ -28733,25 +29002,29 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Method__FiredEventsAssignment_4_2_1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10547:1: rule__Method__FiredEventsAssignment_4_2_1 : ( ( RULE_ID ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10624:1: rule__Method__FiredEventsAssignment_4_2_1 : ( ( ruleFQN ) ) ;
     public final void rule__Method__FiredEventsAssignment_4_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10551:1: ( ( ( RULE_ID ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10552:1: ( ( RULE_ID ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10628:1: ( ( ( ruleFQN ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10629:1: ( ( ruleFQN ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10552:1: ( ( RULE_ID ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10553:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10629:1: ( ( ruleFQN ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10630:1: ( ruleFQN )
             {
              before(grammarAccess.getMethodAccess().getFiredEventsEventCrossReference_4_2_1_0()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10554:1: ( RULE_ID )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10555:1: RULE_ID
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10631:1: ( ruleFQN )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10632:1: ruleFQN
             {
-             before(grammarAccess.getMethodAccess().getFiredEventsEventIDTerminalRuleCall_4_2_1_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Method__FiredEventsAssignment_4_2_121193); 
-             after(grammarAccess.getMethodAccess().getFiredEventsEventIDTerminalRuleCall_4_2_1_0_1()); 
+             before(grammarAccess.getMethodAccess().getFiredEventsEventFQNParserRuleCall_4_2_1_0_1()); 
+            pushFollow(FOLLOW_ruleFQN_in_rule__Method__FiredEventsAssignment_4_2_121350);
+            ruleFQN();
+
+            state._fsp--;
+
+             after(grammarAccess.getMethodAccess().getFiredEventsEventFQNParserRuleCall_4_2_1_0_1()); 
 
             }
 
@@ -28778,20 +29051,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Method__VariablesAssignment_6"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10566:1: rule__Method__VariablesAssignment_6 : ( ruleVariable ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10643:1: rule__Method__VariablesAssignment_6 : ( ruleVariable ) ;
     public final void rule__Method__VariablesAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10570:1: ( ( ruleVariable ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10571:1: ( ruleVariable )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10647:1: ( ( ruleVariable ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10648:1: ( ruleVariable )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10571:1: ( ruleVariable )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10572:1: ruleVariable
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10648:1: ( ruleVariable )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10649:1: ruleVariable
             {
              before(grammarAccess.getMethodAccess().getVariablesVariableParserRuleCall_6_0()); 
-            pushFollow(FOLLOW_ruleVariable_in_rule__Method__VariablesAssignment_621228);
+            pushFollow(FOLLOW_ruleVariable_in_rule__Method__VariablesAssignment_621385);
             ruleVariable();
 
             state._fsp--;
@@ -28819,25 +29092,29 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Method__ServiceAssignment_7"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10581:1: rule__Method__ServiceAssignment_7 : ( ( RULE_ID ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10658:1: rule__Method__ServiceAssignment_7 : ( ( ruleFQN ) ) ;
     public final void rule__Method__ServiceAssignment_7() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10585:1: ( ( ( RULE_ID ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10586:1: ( ( RULE_ID ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10662:1: ( ( ( ruleFQN ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10663:1: ( ( ruleFQN ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10586:1: ( ( RULE_ID ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10587:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10663:1: ( ( ruleFQN ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10664:1: ( ruleFQN )
             {
              before(grammarAccess.getMethodAccess().getServiceServiceCrossReference_7_0()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10588:1: ( RULE_ID )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10589:1: RULE_ID
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10665:1: ( ruleFQN )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10666:1: ruleFQN
             {
-             before(grammarAccess.getMethodAccess().getServiceServiceIDTerminalRuleCall_7_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Method__ServiceAssignment_721263); 
-             after(grammarAccess.getMethodAccess().getServiceServiceIDTerminalRuleCall_7_0_1()); 
+             before(grammarAccess.getMethodAccess().getServiceServiceFQNParserRuleCall_7_0_1()); 
+            pushFollow(FOLLOW_ruleFQN_in_rule__Method__ServiceAssignment_721420);
+            ruleFQN();
+
+            state._fsp--;
+
+             after(grammarAccess.getMethodAccess().getServiceServiceFQNParserRuleCall_7_0_1()); 
 
             }
 
@@ -28864,20 +29141,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Method__ReturnTypeAssignment_8"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10600:1: rule__Method__ReturnTypeAssignment_8 : ( ruleReturnType ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10677:1: rule__Method__ReturnTypeAssignment_8 : ( ruleReturnType ) ;
     public final void rule__Method__ReturnTypeAssignment_8() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10604:1: ( ( ruleReturnType ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10605:1: ( ruleReturnType )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10681:1: ( ( ruleReturnType ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10682:1: ( ruleReturnType )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10605:1: ( ruleReturnType )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10606:1: ruleReturnType
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10682:1: ( ruleReturnType )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10683:1: ruleReturnType
             {
              before(grammarAccess.getMethodAccess().getReturnTypeReturnTypeParserRuleCall_8_0()); 
-            pushFollow(FOLLOW_ruleReturnType_in_rule__Method__ReturnTypeAssignment_821298);
+            pushFollow(FOLLOW_ruleReturnType_in_rule__Method__ReturnTypeAssignment_821455);
             ruleReturnType();
 
             state._fsp--;
@@ -28905,20 +29182,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Method__ConstraintsAssignment_9"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10615:1: rule__Method__ConstraintsAssignment_9 : ( ruleConstraints ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10692:1: rule__Method__ConstraintsAssignment_9 : ( ruleConstraints ) ;
     public final void rule__Method__ConstraintsAssignment_9() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10619:1: ( ( ruleConstraints ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10620:1: ( ruleConstraints )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10696:1: ( ( ruleConstraints ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10697:1: ( ruleConstraints )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10620:1: ( ruleConstraints )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10621:1: ruleConstraints
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10697:1: ( ruleConstraints )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10698:1: ruleConstraints
             {
              before(grammarAccess.getMethodAccess().getConstraintsConstraintsParserRuleCall_9_0()); 
-            pushFollow(FOLLOW_ruleConstraints_in_rule__Method__ConstraintsAssignment_921329);
+            pushFollow(FOLLOW_ruleConstraints_in_rule__Method__ConstraintsAssignment_921486);
             ruleConstraints();
 
             state._fsp--;
@@ -28945,21 +29222,62 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
     // $ANTLR end "rule__Method__ConstraintsAssignment_9"
 
 
+    // $ANTLR start "rule__Method__EventsAssignment_10"
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10707:1: rule__Method__EventsAssignment_10 : ( ruleEvent ) ;
+    public final void rule__Method__EventsAssignment_10() throws RecognitionException {
+
+        		int stackSize = keepStackSize();
+            
+        try {
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10711:1: ( ( ruleEvent ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10712:1: ( ruleEvent )
+            {
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10712:1: ( ruleEvent )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10713:1: ruleEvent
+            {
+             before(grammarAccess.getMethodAccess().getEventsEventParserRuleCall_10_0()); 
+            pushFollow(FOLLOW_ruleEvent_in_rule__Method__EventsAssignment_1021517);
+            ruleEvent();
+
+            state._fsp--;
+
+             after(grammarAccess.getMethodAccess().getEventsEventParserRuleCall_10_0()); 
+
+            }
+
+
+            }
+
+        }
+        catch (RecognitionException re) {
+            reportError(re);
+            recover(input,re);
+        }
+        finally {
+
+            	restoreStackSize(stackSize);
+
+        }
+        return ;
+    }
+    // $ANTLR end "rule__Method__EventsAssignment_10"
+
+
     // $ANTLR start "rule__TypeMetaInfo__SlabelAssignment_1_1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10630:1: rule__TypeMetaInfo__SlabelAssignment_1_1 : ( RULE_STRING ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10722:1: rule__TypeMetaInfo__SlabelAssignment_1_1 : ( RULE_STRING ) ;
     public final void rule__TypeMetaInfo__SlabelAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10634:1: ( ( RULE_STRING ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10635:1: ( RULE_STRING )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10726:1: ( ( RULE_STRING ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10727:1: ( RULE_STRING )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10635:1: ( RULE_STRING )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10636:1: RULE_STRING
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10727:1: ( RULE_STRING )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10728:1: RULE_STRING
             {
              before(grammarAccess.getTypeMetaInfoAccess().getSlabelSTRINGTerminalRuleCall_1_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__TypeMetaInfo__SlabelAssignment_1_121360); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__TypeMetaInfo__SlabelAssignment_1_121548); 
              after(grammarAccess.getTypeMetaInfoAccess().getSlabelSTRINGTerminalRuleCall_1_1_0()); 
 
             }
@@ -28983,20 +29301,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__TypeMetaInfo__LabelAssignment_2_1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10645:1: rule__TypeMetaInfo__LabelAssignment_2_1 : ( RULE_STRING ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10737:1: rule__TypeMetaInfo__LabelAssignment_2_1 : ( RULE_STRING ) ;
     public final void rule__TypeMetaInfo__LabelAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10649:1: ( ( RULE_STRING ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10650:1: ( RULE_STRING )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10741:1: ( ( RULE_STRING ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10742:1: ( RULE_STRING )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10650:1: ( RULE_STRING )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10651:1: RULE_STRING
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10742:1: ( RULE_STRING )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10743:1: RULE_STRING
             {
              before(grammarAccess.getTypeMetaInfoAccess().getLabelSTRINGTerminalRuleCall_2_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__TypeMetaInfo__LabelAssignment_2_121391); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__TypeMetaInfo__LabelAssignment_2_121579); 
              after(grammarAccess.getTypeMetaInfoAccess().getLabelSTRINGTerminalRuleCall_2_1_0()); 
 
             }
@@ -29020,20 +29338,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__TypeMetaInfo__TooltipAssignment_3_1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10660:1: rule__TypeMetaInfo__TooltipAssignment_3_1 : ( RULE_STRING ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10752:1: rule__TypeMetaInfo__TooltipAssignment_3_1 : ( RULE_STRING ) ;
     public final void rule__TypeMetaInfo__TooltipAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10664:1: ( ( RULE_STRING ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10665:1: ( RULE_STRING )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10756:1: ( ( RULE_STRING ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10757:1: ( RULE_STRING )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10665:1: ( RULE_STRING )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10666:1: RULE_STRING
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10757:1: ( RULE_STRING )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10758:1: RULE_STRING
             {
              before(grammarAccess.getTypeMetaInfoAccess().getTooltipSTRINGTerminalRuleCall_3_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__TypeMetaInfo__TooltipAssignment_3_121422); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__TypeMetaInfo__TooltipAssignment_3_121610); 
              after(grammarAccess.getTypeMetaInfoAccess().getTooltipSTRINGTerminalRuleCall_3_1_0()); 
 
             }
@@ -29057,20 +29375,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__TypeMetaInfo__PromptAssignment_4_1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10675:1: rule__TypeMetaInfo__PromptAssignment_4_1 : ( RULE_STRING ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10767:1: rule__TypeMetaInfo__PromptAssignment_4_1 : ( RULE_STRING ) ;
     public final void rule__TypeMetaInfo__PromptAssignment_4_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10679:1: ( ( RULE_STRING ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10680:1: ( RULE_STRING )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10771:1: ( ( RULE_STRING ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10772:1: ( RULE_STRING )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10680:1: ( RULE_STRING )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10681:1: RULE_STRING
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10772:1: ( RULE_STRING )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10773:1: RULE_STRING
             {
              before(grammarAccess.getTypeMetaInfoAccess().getPromptSTRINGTerminalRuleCall_4_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__TypeMetaInfo__PromptAssignment_4_121453); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__TypeMetaInfo__PromptAssignment_4_121641); 
              after(grammarAccess.getTypeMetaInfoAccess().getPromptSTRINGTerminalRuleCall_4_1_0()); 
 
             }
@@ -29094,20 +29412,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__TypeMetaInfo__ExamplesAssignment_5_1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10690:1: rule__TypeMetaInfo__ExamplesAssignment_5_1 : ( RULE_STRING ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10782:1: rule__TypeMetaInfo__ExamplesAssignment_5_1 : ( RULE_STRING ) ;
     public final void rule__TypeMetaInfo__ExamplesAssignment_5_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10694:1: ( ( RULE_STRING ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10695:1: ( RULE_STRING )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10786:1: ( ( RULE_STRING ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10787:1: ( RULE_STRING )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10695:1: ( RULE_STRING )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10696:1: RULE_STRING
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10787:1: ( RULE_STRING )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10788:1: RULE_STRING
             {
              before(grammarAccess.getTypeMetaInfoAccess().getExamplesSTRINGTerminalRuleCall_5_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__TypeMetaInfo__ExamplesAssignment_5_121484); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__TypeMetaInfo__ExamplesAssignment_5_121672); 
              after(grammarAccess.getTypeMetaInfoAccess().getExamplesSTRINGTerminalRuleCall_5_1_0()); 
 
             }
@@ -29131,20 +29449,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Variable__DocAssignment_0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10705:1: rule__Variable__DocAssignment_0 : ( RULE_DOC ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10797:1: rule__Variable__DocAssignment_0 : ( RULE_DOC ) ;
     public final void rule__Variable__DocAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10709:1: ( ( RULE_DOC ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10710:1: ( RULE_DOC )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10801:1: ( ( RULE_DOC ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10802:1: ( RULE_DOC )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10710:1: ( RULE_DOC )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10711:1: RULE_DOC
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10802:1: ( RULE_DOC )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10803:1: RULE_DOC
             {
              before(grammarAccess.getVariableAccess().getDocDOCTerminalRuleCall_0_0()); 
-            match(input,RULE_DOC,FOLLOW_RULE_DOC_in_rule__Variable__DocAssignment_021515); 
+            match(input,RULE_DOC,FOLLOW_RULE_DOC_in_rule__Variable__DocAssignment_021703); 
              after(grammarAccess.getVariableAccess().getDocDOCTerminalRuleCall_0_0()); 
 
             }
@@ -29168,24 +29486,24 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Variable__NullableAssignment_1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10720:1: rule__Variable__NullableAssignment_1 : ( ( 'nullable' ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10812:1: rule__Variable__NullableAssignment_1 : ( ( 'nullable' ) ) ;
     public final void rule__Variable__NullableAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10724:1: ( ( ( 'nullable' ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10725:1: ( ( 'nullable' ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10816:1: ( ( ( 'nullable' ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10817:1: ( ( 'nullable' ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10725:1: ( ( 'nullable' ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10726:1: ( 'nullable' )
-            {
-             before(grammarAccess.getVariableAccess().getNullableNullableKeyword_1_0()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10727:1: ( 'nullable' )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10728:1: 'nullable'
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10817:1: ( ( 'nullable' ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10818:1: ( 'nullable' )
             {
              before(grammarAccess.getVariableAccess().getNullableNullableKeyword_1_0()); 
-            match(input,56,FOLLOW_56_in_rule__Variable__NullableAssignment_121551); 
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10819:1: ( 'nullable' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10820:1: 'nullable'
+            {
+             before(grammarAccess.getVariableAccess().getNullableNullableKeyword_1_0()); 
+            match(input,56,FOLLOW_56_in_rule__Variable__NullableAssignment_121739); 
              after(grammarAccess.getVariableAccess().getNullableNullableKeyword_1_0()); 
 
             }
@@ -29213,25 +29531,29 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Variable__TypeAssignment_2"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10743:1: rule__Variable__TypeAssignment_2 : ( ( RULE_ID ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10835:1: rule__Variable__TypeAssignment_2 : ( ( ruleFQN ) ) ;
     public final void rule__Variable__TypeAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10747:1: ( ( ( RULE_ID ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10748:1: ( ( RULE_ID ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10839:1: ( ( ( ruleFQN ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10840:1: ( ( ruleFQN ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10748:1: ( ( RULE_ID ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10749:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10840:1: ( ( ruleFQN ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10841:1: ( ruleFQN )
             {
              before(grammarAccess.getVariableAccess().getTypeTypeCrossReference_2_0()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10750:1: ( RULE_ID )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10751:1: RULE_ID
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10842:1: ( ruleFQN )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10843:1: ruleFQN
             {
-             before(grammarAccess.getVariableAccess().getTypeTypeIDTerminalRuleCall_2_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Variable__TypeAssignment_221594); 
-             after(grammarAccess.getVariableAccess().getTypeTypeIDTerminalRuleCall_2_0_1()); 
+             before(grammarAccess.getVariableAccess().getTypeTypeFQNParserRuleCall_2_0_1()); 
+            pushFollow(FOLLOW_ruleFQN_in_rule__Variable__TypeAssignment_221782);
+            ruleFQN();
+
+            state._fsp--;
+
+             after(grammarAccess.getVariableAccess().getTypeTypeFQNParserRuleCall_2_0_1()); 
 
             }
 
@@ -29258,24 +29580,24 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Variable__MultiplicityAssignment_3"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10762:1: rule__Variable__MultiplicityAssignment_3 : ( ( '*' ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10854:1: rule__Variable__MultiplicityAssignment_3 : ( ( '*' ) ) ;
     public final void rule__Variable__MultiplicityAssignment_3() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10766:1: ( ( ( '*' ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10767:1: ( ( '*' ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10858:1: ( ( ( '*' ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10859:1: ( ( '*' ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10767:1: ( ( '*' ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10768:1: ( '*' )
-            {
-             before(grammarAccess.getVariableAccess().getMultiplicityAsteriskKeyword_3_0()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10769:1: ( '*' )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10770:1: '*'
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10859:1: ( ( '*' ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10860:1: ( '*' )
             {
              before(grammarAccess.getVariableAccess().getMultiplicityAsteriskKeyword_3_0()); 
-            match(input,55,FOLLOW_55_in_rule__Variable__MultiplicityAssignment_321634); 
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10861:1: ( '*' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10862:1: '*'
+            {
+             before(grammarAccess.getVariableAccess().getMultiplicityAsteriskKeyword_3_0()); 
+            match(input,55,FOLLOW_55_in_rule__Variable__MultiplicityAssignment_321822); 
              after(grammarAccess.getVariableAccess().getMultiplicityAsteriskKeyword_3_0()); 
 
             }
@@ -29303,20 +29625,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Variable__NameAssignment_4"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10785:1: rule__Variable__NameAssignment_4 : ( RULE_ID ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10877:1: rule__Variable__NameAssignment_4 : ( RULE_ID ) ;
     public final void rule__Variable__NameAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10789:1: ( ( RULE_ID ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10790:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10881:1: ( ( RULE_ID ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10882:1: ( RULE_ID )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10790:1: ( RULE_ID )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10791:1: RULE_ID
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10882:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10883:1: RULE_ID
             {
              before(grammarAccess.getVariableAccess().getNameIDTerminalRuleCall_4_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Variable__NameAssignment_421673); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Variable__NameAssignment_421861); 
              after(grammarAccess.getVariableAccess().getNameIDTerminalRuleCall_4_0()); 
 
             }
@@ -29340,20 +29662,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Variable__InvariantsAssignment_5"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10800:1: rule__Variable__InvariantsAssignment_5 : ( ruleInvariants ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10892:1: rule__Variable__InvariantsAssignment_5 : ( ruleInvariants ) ;
     public final void rule__Variable__InvariantsAssignment_5() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10804:1: ( ( ruleInvariants ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10805:1: ( ruleInvariants )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10896:1: ( ( ruleInvariants ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10897:1: ( ruleInvariants )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10805:1: ( ruleInvariants )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10806:1: ruleInvariants
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10897:1: ( ruleInvariants )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10898:1: ruleInvariants
             {
              before(grammarAccess.getVariableAccess().getInvariantsInvariantsParserRuleCall_5_0()); 
-            pushFollow(FOLLOW_ruleInvariants_in_rule__Variable__InvariantsAssignment_521704);
+            pushFollow(FOLLOW_ruleInvariants_in_rule__Variable__InvariantsAssignment_521892);
             ruleInvariants();
 
             state._fsp--;
@@ -29381,20 +29703,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Variable__OverriddenAssignment_6"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10815:1: rule__Variable__OverriddenAssignment_6 : ( ruleOverriddenTypeMetaInfo ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10907:1: rule__Variable__OverriddenAssignment_6 : ( ruleOverriddenTypeMetaInfo ) ;
     public final void rule__Variable__OverriddenAssignment_6() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10819:1: ( ( ruleOverriddenTypeMetaInfo ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10820:1: ( ruleOverriddenTypeMetaInfo )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10911:1: ( ( ruleOverriddenTypeMetaInfo ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10912:1: ( ruleOverriddenTypeMetaInfo )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10820:1: ( ruleOverriddenTypeMetaInfo )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10821:1: ruleOverriddenTypeMetaInfo
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10912:1: ( ruleOverriddenTypeMetaInfo )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10913:1: ruleOverriddenTypeMetaInfo
             {
              before(grammarAccess.getVariableAccess().getOverriddenOverriddenTypeMetaInfoParserRuleCall_6_0()); 
-            pushFollow(FOLLOW_ruleOverriddenTypeMetaInfo_in_rule__Variable__OverriddenAssignment_621735);
+            pushFollow(FOLLOW_ruleOverriddenTypeMetaInfo_in_rule__Variable__OverriddenAssignment_621923);
             ruleOverriddenTypeMetaInfo();
 
             state._fsp--;
@@ -29422,20 +29744,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Constraints__CallsAssignment_2"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10830:1: rule__Constraints__CallsAssignment_2 : ( ruleConstraintCall ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10922:1: rule__Constraints__CallsAssignment_2 : ( ruleConstraintCall ) ;
     public final void rule__Constraints__CallsAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10834:1: ( ( ruleConstraintCall ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10835:1: ( ruleConstraintCall )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10926:1: ( ( ruleConstraintCall ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10927:1: ( ruleConstraintCall )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10835:1: ( ruleConstraintCall )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10836:1: ruleConstraintCall
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10927:1: ( ruleConstraintCall )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10928:1: ruleConstraintCall
             {
              before(grammarAccess.getConstraintsAccess().getCallsConstraintCallParserRuleCall_2_0()); 
-            pushFollow(FOLLOW_ruleConstraintCall_in_rule__Constraints__CallsAssignment_221766);
+            pushFollow(FOLLOW_ruleConstraintCall_in_rule__Constraints__CallsAssignment_221954);
             ruleConstraintCall();
 
             state._fsp--;
@@ -29463,20 +29785,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Constraints__CallsAssignment_3_1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10845:1: rule__Constraints__CallsAssignment_3_1 : ( ruleConstraintCall ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10937:1: rule__Constraints__CallsAssignment_3_1 : ( ruleConstraintCall ) ;
     public final void rule__Constraints__CallsAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10849:1: ( ( ruleConstraintCall ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10850:1: ( ruleConstraintCall )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10941:1: ( ( ruleConstraintCall ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10942:1: ( ruleConstraintCall )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10850:1: ( ruleConstraintCall )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10851:1: ruleConstraintCall
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10942:1: ( ruleConstraintCall )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10943:1: ruleConstraintCall
             {
              before(grammarAccess.getConstraintsAccess().getCallsConstraintCallParserRuleCall_3_1_0()); 
-            pushFollow(FOLLOW_ruleConstraintCall_in_rule__Constraints__CallsAssignment_3_121797);
+            pushFollow(FOLLOW_ruleConstraintCall_in_rule__Constraints__CallsAssignment_3_121985);
             ruleConstraintCall();
 
             state._fsp--;
@@ -29504,20 +29826,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Invariants__CallsAssignment_1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10860:1: rule__Invariants__CallsAssignment_1 : ( ruleConstraintCall ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10952:1: rule__Invariants__CallsAssignment_1 : ( ruleConstraintCall ) ;
     public final void rule__Invariants__CallsAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10864:1: ( ( ruleConstraintCall ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10865:1: ( ruleConstraintCall )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10956:1: ( ( ruleConstraintCall ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10957:1: ( ruleConstraintCall )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10865:1: ( ruleConstraintCall )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10866:1: ruleConstraintCall
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10957:1: ( ruleConstraintCall )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10958:1: ruleConstraintCall
             {
              before(grammarAccess.getInvariantsAccess().getCallsConstraintCallParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleConstraintCall_in_rule__Invariants__CallsAssignment_121828);
+            pushFollow(FOLLOW_ruleConstraintCall_in_rule__Invariants__CallsAssignment_122016);
             ruleConstraintCall();
 
             state._fsp--;
@@ -29545,20 +29867,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Invariants__CallsAssignment_2_1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10875:1: rule__Invariants__CallsAssignment_2_1 : ( ruleConstraintCall ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10967:1: rule__Invariants__CallsAssignment_2_1 : ( ruleConstraintCall ) ;
     public final void rule__Invariants__CallsAssignment_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10879:1: ( ( ruleConstraintCall ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10880:1: ( ruleConstraintCall )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10971:1: ( ( ruleConstraintCall ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10972:1: ( ruleConstraintCall )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10880:1: ( ruleConstraintCall )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10881:1: ruleConstraintCall
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10972:1: ( ruleConstraintCall )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10973:1: ruleConstraintCall
             {
              before(grammarAccess.getInvariantsAccess().getCallsConstraintCallParserRuleCall_2_1_0()); 
-            pushFollow(FOLLOW_ruleConstraintCall_in_rule__Invariants__CallsAssignment_2_121859);
+            pushFollow(FOLLOW_ruleConstraintCall_in_rule__Invariants__CallsAssignment_2_122047);
             ruleConstraintCall();
 
             state._fsp--;
@@ -29586,20 +29908,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__OverriddenTypeMetaInfo__MetaInfoAssignment_1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10890:1: rule__OverriddenTypeMetaInfo__MetaInfoAssignment_1 : ( ruleTypeMetaInfo ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10982:1: rule__OverriddenTypeMetaInfo__MetaInfoAssignment_1 : ( ruleTypeMetaInfo ) ;
     public final void rule__OverriddenTypeMetaInfo__MetaInfoAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10894:1: ( ( ruleTypeMetaInfo ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10895:1: ( ruleTypeMetaInfo )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10986:1: ( ( ruleTypeMetaInfo ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10987:1: ( ruleTypeMetaInfo )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10895:1: ( ruleTypeMetaInfo )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10896:1: ruleTypeMetaInfo
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10987:1: ( ruleTypeMetaInfo )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10988:1: ruleTypeMetaInfo
             {
              before(grammarAccess.getOverriddenTypeMetaInfoAccess().getMetaInfoTypeMetaInfoParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleTypeMetaInfo_in_rule__OverriddenTypeMetaInfo__MetaInfoAssignment_121890);
+            pushFollow(FOLLOW_ruleTypeMetaInfo_in_rule__OverriddenTypeMetaInfo__MetaInfoAssignment_122078);
             ruleTypeMetaInfo();
 
             state._fsp--;
@@ -29627,25 +29949,29 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__ConstraintCall__ConstraintAssignment_0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10905:1: rule__ConstraintCall__ConstraintAssignment_0 : ( ( RULE_ID ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10997:1: rule__ConstraintCall__ConstraintAssignment_0 : ( ( ruleFQN ) ) ;
     public final void rule__ConstraintCall__ConstraintAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10909:1: ( ( ( RULE_ID ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10910:1: ( ( RULE_ID ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11001:1: ( ( ( ruleFQN ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11002:1: ( ( ruleFQN ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10910:1: ( ( RULE_ID ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10911:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11002:1: ( ( ruleFQN ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11003:1: ( ruleFQN )
             {
              before(grammarAccess.getConstraintCallAccess().getConstraintConstraintCrossReference_0_0()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10912:1: ( RULE_ID )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10913:1: RULE_ID
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11004:1: ( ruleFQN )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11005:1: ruleFQN
             {
-             before(grammarAccess.getConstraintCallAccess().getConstraintConstraintIDTerminalRuleCall_0_0_1()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__ConstraintCall__ConstraintAssignment_021925); 
-             after(grammarAccess.getConstraintCallAccess().getConstraintConstraintIDTerminalRuleCall_0_0_1()); 
+             before(grammarAccess.getConstraintCallAccess().getConstraintConstraintFQNParserRuleCall_0_0_1()); 
+            pushFollow(FOLLOW_ruleFQN_in_rule__ConstraintCall__ConstraintAssignment_022113);
+            ruleFQN();
+
+            state._fsp--;
+
+             after(grammarAccess.getConstraintCallAccess().getConstraintConstraintFQNParserRuleCall_0_0_1()); 
 
             }
 
@@ -29672,20 +29998,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__ConstraintCall__ParamsAssignment_1_1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10924:1: rule__ConstraintCall__ParamsAssignment_1_1 : ( ruleLiteral ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11016:1: rule__ConstraintCall__ParamsAssignment_1_1 : ( ruleLiteral ) ;
     public final void rule__ConstraintCall__ParamsAssignment_1_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10928:1: ( ( ruleLiteral ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10929:1: ( ruleLiteral )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11020:1: ( ( ruleLiteral ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11021:1: ( ruleLiteral )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10929:1: ( ruleLiteral )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10930:1: ruleLiteral
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11021:1: ( ruleLiteral )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11022:1: ruleLiteral
             {
              before(grammarAccess.getConstraintCallAccess().getParamsLiteralParserRuleCall_1_1_0()); 
-            pushFollow(FOLLOW_ruleLiteral_in_rule__ConstraintCall__ParamsAssignment_1_121960);
+            pushFollow(FOLLOW_ruleLiteral_in_rule__ConstraintCall__ParamsAssignment_1_122148);
             ruleLiteral();
 
             state._fsp--;
@@ -29713,20 +30039,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__ConstraintCall__ParamsAssignment_1_2_1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10939:1: rule__ConstraintCall__ParamsAssignment_1_2_1 : ( ruleLiteral ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11031:1: rule__ConstraintCall__ParamsAssignment_1_2_1 : ( ruleLiteral ) ;
     public final void rule__ConstraintCall__ParamsAssignment_1_2_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10943:1: ( ( ruleLiteral ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10944:1: ( ruleLiteral )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11035:1: ( ( ruleLiteral ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11036:1: ( ruleLiteral )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10944:1: ( ruleLiteral )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10945:1: ruleLiteral
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11036:1: ( ruleLiteral )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11037:1: ruleLiteral
             {
              before(grammarAccess.getConstraintCallAccess().getParamsLiteralParserRuleCall_1_2_1_0()); 
-            pushFollow(FOLLOW_ruleLiteral_in_rule__ConstraintCall__ParamsAssignment_1_2_121991);
+            pushFollow(FOLLOW_ruleLiteral_in_rule__ConstraintCall__ParamsAssignment_1_2_122179);
             ruleLiteral();
 
             state._fsp--;
@@ -29754,20 +30080,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Service__DocAssignment_0"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10954:1: rule__Service__DocAssignment_0 : ( RULE_DOC ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11046:1: rule__Service__DocAssignment_0 : ( RULE_DOC ) ;
     public final void rule__Service__DocAssignment_0() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10958:1: ( ( RULE_DOC ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10959:1: ( RULE_DOC )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11050:1: ( ( RULE_DOC ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11051:1: ( RULE_DOC )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10959:1: ( RULE_DOC )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10960:1: RULE_DOC
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11051:1: ( RULE_DOC )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11052:1: RULE_DOC
             {
              before(grammarAccess.getServiceAccess().getDocDOCTerminalRuleCall_0_0()); 
-            match(input,RULE_DOC,FOLLOW_RULE_DOC_in_rule__Service__DocAssignment_022022); 
+            match(input,RULE_DOC,FOLLOW_RULE_DOC_in_rule__Service__DocAssignment_022210); 
              after(grammarAccess.getServiceAccess().getDocDOCTerminalRuleCall_0_0()); 
 
             }
@@ -29791,20 +30117,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Service__NameAssignment_2"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10969:1: rule__Service__NameAssignment_2 : ( RULE_ID ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11061:1: rule__Service__NameAssignment_2 : ( RULE_ID ) ;
     public final void rule__Service__NameAssignment_2() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10973:1: ( ( RULE_ID ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10974:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11065:1: ( ( RULE_ID ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11066:1: ( RULE_ID )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10974:1: ( RULE_ID )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10975:1: RULE_ID
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11066:1: ( RULE_ID )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11067:1: RULE_ID
             {
              before(grammarAccess.getServiceAccess().getNameIDTerminalRuleCall_2_0()); 
-            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Service__NameAssignment_222053); 
+            match(input,RULE_ID,FOLLOW_RULE_ID_in_rule__Service__NameAssignment_222241); 
              after(grammarAccess.getServiceAccess().getNameIDTerminalRuleCall_2_0()); 
 
             }
@@ -29828,20 +30154,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Service__MethodsAssignment_4"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10984:1: rule__Service__MethodsAssignment_4 : ( ruleMethod ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11076:1: rule__Service__MethodsAssignment_4 : ( ruleMethod ) ;
     public final void rule__Service__MethodsAssignment_4() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10988:1: ( ( ruleMethod ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10989:1: ( ruleMethod )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11080:1: ( ( ruleMethod ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11081:1: ( ruleMethod )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10989:1: ( ruleMethod )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10990:1: ruleMethod
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11081:1: ( ruleMethod )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11082:1: ruleMethod
             {
              before(grammarAccess.getServiceAccess().getMethodsMethodParserRuleCall_4_0()); 
-            pushFollow(FOLLOW_ruleMethod_in_rule__Service__MethodsAssignment_422084);
+            pushFollow(FOLLOW_ruleMethod_in_rule__Service__MethodsAssignment_422272);
             ruleMethod();
 
             state._fsp--;
@@ -29869,23 +30195,23 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__BooleanLiteral__ValueAssignment_1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10999:1: rule__BooleanLiteral__ValueAssignment_1 : ( ( rule__BooleanLiteral__ValueAlternatives_1_0 ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11091:1: rule__BooleanLiteral__ValueAssignment_1 : ( ( rule__BooleanLiteral__ValueAlternatives_1_0 ) ) ;
     public final void rule__BooleanLiteral__ValueAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11003:1: ( ( ( rule__BooleanLiteral__ValueAlternatives_1_0 ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11004:1: ( ( rule__BooleanLiteral__ValueAlternatives_1_0 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11095:1: ( ( ( rule__BooleanLiteral__ValueAlternatives_1_0 ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11096:1: ( ( rule__BooleanLiteral__ValueAlternatives_1_0 ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11004:1: ( ( rule__BooleanLiteral__ValueAlternatives_1_0 ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11005:1: ( rule__BooleanLiteral__ValueAlternatives_1_0 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11096:1: ( ( rule__BooleanLiteral__ValueAlternatives_1_0 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11097:1: ( rule__BooleanLiteral__ValueAlternatives_1_0 )
             {
              before(grammarAccess.getBooleanLiteralAccess().getValueAlternatives_1_0()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11006:1: ( rule__BooleanLiteral__ValueAlternatives_1_0 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11006:2: rule__BooleanLiteral__ValueAlternatives_1_0
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11098:1: ( rule__BooleanLiteral__ValueAlternatives_1_0 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11098:2: rule__BooleanLiteral__ValueAlternatives_1_0
             {
-            pushFollow(FOLLOW_rule__BooleanLiteral__ValueAlternatives_1_0_in_rule__BooleanLiteral__ValueAssignment_122115);
+            pushFollow(FOLLOW_rule__BooleanLiteral__ValueAlternatives_1_0_in_rule__BooleanLiteral__ValueAssignment_122303);
             rule__BooleanLiteral__ValueAlternatives_1_0();
 
             state._fsp--;
@@ -29916,24 +30242,24 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__NullLiteral__ValueAssignment_1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11015:1: rule__NullLiteral__ValueAssignment_1 : ( ( 'null' ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11107:1: rule__NullLiteral__ValueAssignment_1 : ( ( 'null' ) ) ;
     public final void rule__NullLiteral__ValueAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11019:1: ( ( ( 'null' ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11020:1: ( ( 'null' ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11111:1: ( ( ( 'null' ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11112:1: ( ( 'null' ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11020:1: ( ( 'null' ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11021:1: ( 'null' )
-            {
-             before(grammarAccess.getNullLiteralAccess().getValueNullKeyword_1_0()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11022:1: ( 'null' )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11023:1: 'null'
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11112:1: ( ( 'null' ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11113:1: ( 'null' )
             {
              before(grammarAccess.getNullLiteralAccess().getValueNullKeyword_1_0()); 
-            match(input,57,FOLLOW_57_in_rule__NullLiteral__ValueAssignment_122153); 
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11114:1: ( 'null' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11115:1: 'null'
+            {
+             before(grammarAccess.getNullLiteralAccess().getValueNullKeyword_1_0()); 
+            match(input,57,FOLLOW_57_in_rule__NullLiteral__ValueAssignment_122341); 
              after(grammarAccess.getNullLiteralAccess().getValueNullKeyword_1_0()); 
 
             }
@@ -29961,20 +30287,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__NumberLiteral__ValueAssignment_1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11038:1: rule__NumberLiteral__ValueAssignment_1 : ( ruleNumber ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11130:1: rule__NumberLiteral__ValueAssignment_1 : ( ruleNumber ) ;
     public final void rule__NumberLiteral__ValueAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11042:1: ( ( ruleNumber ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11043:1: ( ruleNumber )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11134:1: ( ( ruleNumber ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11135:1: ( ruleNumber )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11043:1: ( ruleNumber )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11044:1: ruleNumber
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11135:1: ( ruleNumber )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11136:1: ruleNumber
             {
              before(grammarAccess.getNumberLiteralAccess().getValueNumberParserRuleCall_1_0()); 
-            pushFollow(FOLLOW_ruleNumber_in_rule__NumberLiteral__ValueAssignment_122192);
+            pushFollow(FOLLOW_ruleNumber_in_rule__NumberLiteral__ValueAssignment_122380);
             ruleNumber();
 
             state._fsp--;
@@ -30002,20 +30328,20 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__StringLiteral__ValueAssignment_1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11053:1: rule__StringLiteral__ValueAssignment_1 : ( RULE_STRING ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11145:1: rule__StringLiteral__ValueAssignment_1 : ( RULE_STRING ) ;
     public final void rule__StringLiteral__ValueAssignment_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11057:1: ( ( RULE_STRING ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11058:1: ( RULE_STRING )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11149:1: ( ( RULE_STRING ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11150:1: ( RULE_STRING )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11058:1: ( RULE_STRING )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11059:1: RULE_STRING
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11150:1: ( RULE_STRING )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:11151:1: RULE_STRING
             {
              before(grammarAccess.getStringLiteralAccess().getValueSTRINGTerminalRuleCall_1_0()); 
-            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__StringLiteral__ValueAssignment_122223); 
+            match(input,RULE_STRING,FOLLOW_RULE_STRING_in_rule__StringLiteral__ValueAssignment_122411); 
              after(grammarAccess.getStringLiteralAccess().getValueSTRINGTerminalRuleCall_1_0()); 
 
             }
@@ -30041,25 +30367,27 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     protected DFA2 dfa2 = new DFA2(this);
+    protected DFA63 dfa63 = new DFA63(this);
+    protected DFA72 dfa72 = new DFA72(this);
     static final String DFA2_eotS =
         "\6\uffff";
     static final String DFA2_eofS =
-        "\1\uffff\1\3\2\uffff\1\3\1\uffff";
+        "\1\uffff\1\3\3\uffff\1\3";
     static final String DFA2_minS =
-        "\1\7\1\10\1\7\1\uffff\1\10\1\uffff";
+        "\1\7\1\10\1\7\2\uffff\1\10";
     static final String DFA2_maxS =
-        "\1\7\1\66\1\67\1\uffff\1\66\1\uffff";
+        "\1\7\1\66\1\67\2\uffff\1\66";
     static final String DFA2_acceptS =
-        "\3\uffff\1\1\1\uffff\1\2";
+        "\3\uffff\1\1\1\2\1\uffff";
     static final String DFA2_specialS =
         "\6\uffff}>";
     static final String[] DFA2_transitionS = {
             "\1\1",
             "\1\3\10\uffff\1\3\1\uffff\3\3\1\uffff\1\3\2\uffff\1\3\1\uffff\1\3\1\uffff\2\3\4\uffff\2\3\2\uffff\1\3\14\uffff\1\3\1\2",
-            "\1\4\57\uffff\1\5",
+            "\1\5\57\uffff\1\4",
             "",
-            "\1\3\10\uffff\1\3\1\uffff\3\3\1\uffff\1\3\2\uffff\1\3\1\uffff\1\3\1\uffff\2\3\4\uffff\2\3\2\uffff\1\3\14\uffff\1\3\1\2",
-            ""
+            "",
+            "\1\3\10\uffff\1\3\1\uffff\3\3\1\uffff\1\3\2\uffff\1\3\1\uffff\1\3\1\uffff\2\3\4\uffff\2\3\2\uffff\1\3\14\uffff\1\3\1\2"
     };
 
     static final short[] DFA2_eot = DFA.unpackEncodedString(DFA2_eotS);
@@ -30093,6 +30421,116 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
         }
         public String getDescription() {
             return "1164:1: rule__Import__ImportedNamespaceAlternatives_1_0 : ( ( ruleFQN ) | ( ruleFQNWithWildcard ) );";
+        }
+    }
+    static final String DFA63_eotS =
+        "\7\uffff";
+    static final String DFA63_eofS =
+        "\7\uffff";
+    static final String DFA63_minS =
+        "\2\7\1\uffff\1\7\1\uffff\2\7";
+    static final String DFA63_maxS =
+        "\1\70\1\67\1\uffff\1\70\1\uffff\1\7\1\67";
+    static final String DFA63_acceptS =
+        "\2\uffff\1\2\1\uffff\1\1\2\uffff";
+    static final String DFA63_specialS =
+        "\7\uffff}>";
+    static final String[] DFA63_transitionS = {
+            "\1\1\1\3\10\uffff\1\2\22\uffff\1\2\16\uffff\1\2\4\uffff\1\4",
+            "\1\4\1\2\10\uffff\1\2\22\uffff\1\2\16\uffff\1\2\2\uffff\1\5\1\4",
+            "",
+            "\1\4\34\uffff\1\2\23\uffff\1\4",
+            "",
+            "\1\6",
+            "\1\4\1\2\10\uffff\1\2\22\uffff\1\2\16\uffff\1\2\2\uffff\1\5\1\4"
+    };
+
+    static final short[] DFA63_eot = DFA.unpackEncodedString(DFA63_eotS);
+    static final short[] DFA63_eof = DFA.unpackEncodedString(DFA63_eofS);
+    static final char[] DFA63_min = DFA.unpackEncodedStringToUnsignedChars(DFA63_minS);
+    static final char[] DFA63_max = DFA.unpackEncodedStringToUnsignedChars(DFA63_maxS);
+    static final short[] DFA63_accept = DFA.unpackEncodedString(DFA63_acceptS);
+    static final short[] DFA63_special = DFA.unpackEncodedString(DFA63_specialS);
+    static final short[][] DFA63_transition;
+
+    static {
+        int numStates = DFA63_transitionS.length;
+        DFA63_transition = new short[numStates][];
+        for (int i=0; i<numStates; i++) {
+            DFA63_transition[i] = DFA.unpackEncodedString(DFA63_transitionS[i]);
+        }
+    }
+
+    class DFA63 extends DFA {
+
+        public DFA63(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 63;
+            this.eot = DFA63_eot;
+            this.eof = DFA63_eof;
+            this.min = DFA63_min;
+            this.max = DFA63_max;
+            this.accept = DFA63_accept;
+            this.special = DFA63_special;
+            this.transition = DFA63_transition;
+        }
+        public String getDescription() {
+            return "()* loopback of 6011:1: ( rule__Constructor__VariablesAssignment_5 )*";
+        }
+    }
+    static final String DFA72_eotS =
+        "\7\uffff";
+    static final String DFA72_eofS =
+        "\7\uffff";
+    static final String DFA72_minS =
+        "\3\7\2\uffff\2\7";
+    static final String DFA72_maxS =
+        "\1\70\1\67\1\70\2\uffff\1\7\1\67";
+    static final String DFA72_acceptS =
+        "\3\uffff\1\2\1\1\2\uffff";
+    static final String DFA72_specialS =
+        "\7\uffff}>";
+    static final String[] DFA72_transitionS = {
+            "\1\1\1\2\10\uffff\1\3\22\uffff\1\3\6\uffff\1\3\7\uffff\1\3\4\uffff\1\4",
+            "\1\4\1\3\10\uffff\1\3\22\uffff\1\3\6\uffff\1\3\7\uffff\1\3\2\uffff\1\5\1\4",
+            "\1\4\34\uffff\1\3\6\uffff\1\3\14\uffff\1\4",
+            "",
+            "",
+            "\1\6",
+            "\1\4\1\3\10\uffff\1\3\22\uffff\1\3\6\uffff\1\3\7\uffff\1\3\2\uffff\1\5\1\4"
+    };
+
+    static final short[] DFA72_eot = DFA.unpackEncodedString(DFA72_eotS);
+    static final short[] DFA72_eof = DFA.unpackEncodedString(DFA72_eofS);
+    static final char[] DFA72_min = DFA.unpackEncodedStringToUnsignedChars(DFA72_minS);
+    static final char[] DFA72_max = DFA.unpackEncodedStringToUnsignedChars(DFA72_maxS);
+    static final short[] DFA72_accept = DFA.unpackEncodedString(DFA72_acceptS);
+    static final short[] DFA72_special = DFA.unpackEncodedString(DFA72_specialS);
+    static final short[][] DFA72_transition;
+
+    static {
+        int numStates = DFA72_transitionS.length;
+        DFA72_transition = new short[numStates][];
+        for (int i=0; i<numStates; i++) {
+            DFA72_transition[i] = DFA.unpackEncodedString(DFA72_transitionS[i]);
+        }
+    }
+
+    class DFA72 extends DFA {
+
+        public DFA72(BaseRecognizer recognizer) {
+            this.recognizer = recognizer;
+            this.decisionNumber = 72;
+            this.eot = DFA72_eot;
+            this.eof = DFA72_eof;
+            this.min = DFA72_min;
+            this.max = DFA72_max;
+            this.accept = DFA72_accept;
+            this.special = DFA72_special;
+            this.transition = DFA72_transition;
+        }
+        public String getDescription() {
+            return "()* loopback of 6606:1: ( rule__Method__VariablesAssignment_6 )*";
         }
     }
  
@@ -30647,392 +31085,400 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
     public static final BitSet FOLLOW_rule__Constructor__Group__3__Impl_in_rule__Constructor__Group__311961 = new BitSet(new long[]{0x0000040000010000L});
     public static final BitSet FOLLOW_rule__Constructor__Group__4_in_rule__Constructor__Group__311964 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Constructor__Group_3__0_in_rule__Constructor__Group__3__Impl11991 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Constructor__Group__4__Impl_in_rule__Constructor__Group__412022 = new BitSet(new long[]{0x0108000000020180L});
+    public static final BitSet FOLLOW_rule__Constructor__Group__4__Impl_in_rule__Constructor__Group__412022 = new BitSet(new long[]{0x01280130D4B20180L});
     public static final BitSet FOLLOW_rule__Constructor__Group__5_in_rule__Constructor__Group__412025 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_16_in_rule__Constructor__Group__4__Impl12053 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Constructor__Group__5__Impl_in_rule__Constructor__Group__512084 = new BitSet(new long[]{0x0108000000020180L});
+    public static final BitSet FOLLOW_rule__Constructor__Group__5__Impl_in_rule__Constructor__Group__512084 = new BitSet(new long[]{0x01280130D4B20180L});
     public static final BitSet FOLLOW_rule__Constructor__Group__6_in_rule__Constructor__Group__512087 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Constructor__VariablesAssignment_5_in_rule__Constructor__Group__5__Impl12114 = new BitSet(new long[]{0x0100000000000182L});
-    public static final BitSet FOLLOW_rule__Constructor__Group__6__Impl_in_rule__Constructor__Group__612145 = new BitSet(new long[]{0x0108000000020180L});
+    public static final BitSet FOLLOW_rule__Constructor__Group__6__Impl_in_rule__Constructor__Group__612145 = new BitSet(new long[]{0x01280130D4B20180L});
     public static final BitSet FOLLOW_rule__Constructor__Group__7_in_rule__Constructor__Group__612148 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Constructor__ServiceAssignment_6_in_rule__Constructor__Group__6__Impl12175 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Constructor__Group__7__Impl_in_rule__Constructor__Group__712206 = new BitSet(new long[]{0x0108000000020180L});
+    public static final BitSet FOLLOW_rule__Constructor__Group__7__Impl_in_rule__Constructor__Group__712206 = new BitSet(new long[]{0x01280130D4B20180L});
     public static final BitSet FOLLOW_rule__Constructor__Group__8_in_rule__Constructor__Group__712209 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Constructor__ConstraintsAssignment_7_in_rule__Constructor__Group__7__Impl12236 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Constructor__Group__8__Impl_in_rule__Constructor__Group__812267 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_rule__Constructor__Group__8__Impl12295 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Constructor__Group_3__0__Impl_in_rule__Constructor__Group_3__012344 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_rule__Constructor__Group_3__1_in_rule__Constructor__Group_3__012347 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_42_in_rule__Constructor__Group_3__0__Impl12375 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Constructor__Group_3__1__Impl_in_rule__Constructor__Group_3__112406 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_rule__Constructor__Group_3__2_in_rule__Constructor__Group_3__112409 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Constructor__FiredEventsAssignment_3_1_in_rule__Constructor__Group_3__1__Impl12436 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Constructor__Group_3__2__Impl_in_rule__Constructor__Group_3__212466 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Constructor__Group_3_2__0_in_rule__Constructor__Group_3__2__Impl12493 = new BitSet(new long[]{0x0000000800000002L});
-    public static final BitSet FOLLOW_rule__Constructor__Group_3_2__0__Impl_in_rule__Constructor__Group_3_2__012530 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_rule__Constructor__Group_3_2__1_in_rule__Constructor__Group_3_2__012533 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_rule__Constructor__Group_3_2__0__Impl12561 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Constructor__Group_3_2__1__Impl_in_rule__Constructor__Group_3_2__112592 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Constructor__FiredEventsAssignment_3_2_1_in_rule__Constructor__Group_3_2__1__Impl12619 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ReturnType__Group__0__Impl_in_rule__ReturnType__Group__012653 = new BitSet(new long[]{0x0000080000000000L});
-    public static final BitSet FOLLOW_rule__ReturnType__Group__1_in_rule__ReturnType__Group__012656 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ReturnType__DocAssignment_0_in_rule__ReturnType__Group__0__Impl12683 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ReturnType__Group__1__Impl_in_rule__ReturnType__Group__112714 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_rule__ReturnType__Group__2_in_rule__ReturnType__Group__112717 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_43_in_rule__ReturnType__Group__1__Impl12745 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ReturnType__Group__2__Impl_in_rule__ReturnType__Group__212776 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ReturnType__TypeAssignment_2_in_rule__ReturnType__Group__2__Impl12803 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Method__Group__0__Impl_in_rule__Method__Group__012839 = new BitSet(new long[]{0x0000100000000100L});
-    public static final BitSet FOLLOW_rule__Method__Group__1_in_rule__Method__Group__012842 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Method__DocAssignment_0_in_rule__Method__Group__0__Impl12869 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Method__Group__1__Impl_in_rule__Method__Group__112900 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_rule__Method__Group__2_in_rule__Method__Group__112903 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_44_in_rule__Method__Group__1__Impl12931 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Method__Group__2__Impl_in_rule__Method__Group__212962 = new BitSet(new long[]{0x0000240000010000L});
-    public static final BitSet FOLLOW_rule__Method__Group__3_in_rule__Method__Group__212965 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Method__NameAssignment_2_in_rule__Method__Group__2__Impl12992 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Method__Group__3__Impl_in_rule__Method__Group__313022 = new BitSet(new long[]{0x0000240000010000L});
-    public static final BitSet FOLLOW_rule__Method__Group__4_in_rule__Method__Group__313025 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Method__Group_3__0_in_rule__Method__Group__3__Impl13052 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Method__Group__4__Impl_in_rule__Method__Group__413083 = new BitSet(new long[]{0x0000240000010000L});
-    public static final BitSet FOLLOW_rule__Method__Group__5_in_rule__Method__Group__413086 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Method__Group_4__0_in_rule__Method__Group__4__Impl13113 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Method__Group__5__Impl_in_rule__Method__Group__513144 = new BitSet(new long[]{0x0108080000020180L});
-    public static final BitSet FOLLOW_rule__Method__Group__6_in_rule__Method__Group__513147 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_rule__Method__Group__5__Impl13175 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Method__Group__6__Impl_in_rule__Method__Group__613206 = new BitSet(new long[]{0x0108080000020180L});
-    public static final BitSet FOLLOW_rule__Method__Group__7_in_rule__Method__Group__613209 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Method__VariablesAssignment_6_in_rule__Method__Group__6__Impl13236 = new BitSet(new long[]{0x0100000000000182L});
-    public static final BitSet FOLLOW_rule__Method__Group__7__Impl_in_rule__Method__Group__713267 = new BitSet(new long[]{0x0108080000020180L});
-    public static final BitSet FOLLOW_rule__Method__Group__8_in_rule__Method__Group__713270 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Method__ServiceAssignment_7_in_rule__Method__Group__7__Impl13297 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Method__Group__8__Impl_in_rule__Method__Group__813328 = new BitSet(new long[]{0x0108080000020180L});
-    public static final BitSet FOLLOW_rule__Method__Group__9_in_rule__Method__Group__813331 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Method__ReturnTypeAssignment_8_in_rule__Method__Group__8__Impl13358 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Method__Group__9__Impl_in_rule__Method__Group__913389 = new BitSet(new long[]{0x0108080000020180L});
-    public static final BitSet FOLLOW_rule__Method__Group__10_in_rule__Method__Group__913392 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Method__ConstraintsAssignment_9_in_rule__Method__Group__9__Impl13419 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Method__Group__10__Impl_in_rule__Method__Group__1013450 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_rule__Method__Group__10__Impl13478 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Method__Group_3__0__Impl_in_rule__Method__Group_3__013531 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_rule__Method__Group_3__1_in_rule__Method__Group_3__013534 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_45_in_rule__Method__Group_3__0__Impl13562 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Method__Group_3__1__Impl_in_rule__Method__Group_3__113593 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Method__RefMethodAssignment_3_1_in_rule__Method__Group_3__1__Impl13620 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Method__Group_4__0__Impl_in_rule__Method__Group_4__013654 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_rule__Method__Group_4__1_in_rule__Method__Group_4__013657 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_42_in_rule__Method__Group_4__0__Impl13685 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Method__Group_4__1__Impl_in_rule__Method__Group_4__113716 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_rule__Method__Group_4__2_in_rule__Method__Group_4__113719 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Method__FiredEventsAssignment_4_1_in_rule__Method__Group_4__1__Impl13746 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Method__Group_4__2__Impl_in_rule__Method__Group_4__213776 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Method__Group_4_2__0_in_rule__Method__Group_4__2__Impl13803 = new BitSet(new long[]{0x0000000800000002L});
-    public static final BitSet FOLLOW_rule__Method__Group_4_2__0__Impl_in_rule__Method__Group_4_2__013840 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_rule__Method__Group_4_2__1_in_rule__Method__Group_4_2__013843 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_rule__Method__Group_4_2__0__Impl13871 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Method__Group_4_2__1__Impl_in_rule__Method__Group_4_2__113902 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Method__FiredEventsAssignment_4_2_1_in_rule__Method__Group_4_2__1__Impl13929 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group__0__Impl_in_rule__TypeMetaInfo__Group__013963 = new BitSet(new long[]{0x0007C00000000000L});
-    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group__1_in_rule__TypeMetaInfo__Group__013966 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group__1__Impl_in_rule__TypeMetaInfo__Group__114024 = new BitSet(new long[]{0x0007C00000000000L});
-    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group__2_in_rule__TypeMetaInfo__Group__114027 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_1__0_in_rule__TypeMetaInfo__Group__1__Impl14054 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group__2__Impl_in_rule__TypeMetaInfo__Group__214085 = new BitSet(new long[]{0x0007C00000000000L});
-    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group__3_in_rule__TypeMetaInfo__Group__214088 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_2__0_in_rule__TypeMetaInfo__Group__2__Impl14115 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group__3__Impl_in_rule__TypeMetaInfo__Group__314146 = new BitSet(new long[]{0x0007C00000000000L});
-    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group__4_in_rule__TypeMetaInfo__Group__314149 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_3__0_in_rule__TypeMetaInfo__Group__3__Impl14176 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group__4__Impl_in_rule__TypeMetaInfo__Group__414207 = new BitSet(new long[]{0x0007C00000000000L});
-    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group__5_in_rule__TypeMetaInfo__Group__414210 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_4__0_in_rule__TypeMetaInfo__Group__4__Impl14237 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group__5__Impl_in_rule__TypeMetaInfo__Group__514268 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_5__0_in_rule__TypeMetaInfo__Group__5__Impl14295 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_1__0__Impl_in_rule__TypeMetaInfo__Group_1__014338 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_1__1_in_rule__TypeMetaInfo__Group_1__014341 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_46_in_rule__TypeMetaInfo__Group_1__0__Impl14369 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_1__1__Impl_in_rule__TypeMetaInfo__Group_1__114400 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TypeMetaInfo__SlabelAssignment_1_1_in_rule__TypeMetaInfo__Group_1__1__Impl14427 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_2__0__Impl_in_rule__TypeMetaInfo__Group_2__014461 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_2__1_in_rule__TypeMetaInfo__Group_2__014464 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_47_in_rule__TypeMetaInfo__Group_2__0__Impl14492 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_2__1__Impl_in_rule__TypeMetaInfo__Group_2__114523 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TypeMetaInfo__LabelAssignment_2_1_in_rule__TypeMetaInfo__Group_2__1__Impl14550 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_3__0__Impl_in_rule__TypeMetaInfo__Group_3__014584 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_3__1_in_rule__TypeMetaInfo__Group_3__014587 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_48_in_rule__TypeMetaInfo__Group_3__0__Impl14615 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_3__1__Impl_in_rule__TypeMetaInfo__Group_3__114646 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TypeMetaInfo__TooltipAssignment_3_1_in_rule__TypeMetaInfo__Group_3__1__Impl14673 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_4__0__Impl_in_rule__TypeMetaInfo__Group_4__014707 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_4__1_in_rule__TypeMetaInfo__Group_4__014710 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_49_in_rule__TypeMetaInfo__Group_4__0__Impl14738 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_4__1__Impl_in_rule__TypeMetaInfo__Group_4__114769 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TypeMetaInfo__PromptAssignment_4_1_in_rule__TypeMetaInfo__Group_4__1__Impl14796 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_5__0__Impl_in_rule__TypeMetaInfo__Group_5__014830 = new BitSet(new long[]{0x0000000000000200L});
-    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_5__1_in_rule__TypeMetaInfo__Group_5__014833 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_50_in_rule__TypeMetaInfo__Group_5__0__Impl14861 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_5__1__Impl_in_rule__TypeMetaInfo__Group_5__114892 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__TypeMetaInfo__ExamplesAssignment_5_1_in_rule__TypeMetaInfo__Group_5__1__Impl14919 = new BitSet(new long[]{0x0000000000000202L});
-    public static final BitSet FOLLOW_rule__Variable__Group__0__Impl_in_rule__Variable__Group__014954 = new BitSet(new long[]{0x0100000000000180L});
-    public static final BitSet FOLLOW_rule__Variable__Group__1_in_rule__Variable__Group__014957 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Variable__DocAssignment_0_in_rule__Variable__Group__0__Impl14984 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Variable__Group__1__Impl_in_rule__Variable__Group__115015 = new BitSet(new long[]{0x0100000000000180L});
-    public static final BitSet FOLLOW_rule__Variable__Group__2_in_rule__Variable__Group__115018 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Variable__NullableAssignment_1_in_rule__Variable__Group__1__Impl15045 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Variable__Group__2__Impl_in_rule__Variable__Group__215076 = new BitSet(new long[]{0x0080000000000080L});
-    public static final BitSet FOLLOW_rule__Variable__Group__3_in_rule__Variable__Group__215079 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Variable__TypeAssignment_2_in_rule__Variable__Group__2__Impl15106 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Variable__Group__3__Impl_in_rule__Variable__Group__315136 = new BitSet(new long[]{0x0080000000000080L});
-    public static final BitSet FOLLOW_rule__Variable__Group__4_in_rule__Variable__Group__315139 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Variable__MultiplicityAssignment_3_in_rule__Variable__Group__3__Impl15166 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Variable__Group__4__Impl_in_rule__Variable__Group__415197 = new BitSet(new long[]{0x0010000000010000L});
-    public static final BitSet FOLLOW_rule__Variable__Group__5_in_rule__Variable__Group__415200 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Variable__NameAssignment_4_in_rule__Variable__Group__4__Impl15227 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Variable__Group__5__Impl_in_rule__Variable__Group__515257 = new BitSet(new long[]{0x0010000000010000L});
-    public static final BitSet FOLLOW_rule__Variable__Group__6_in_rule__Variable__Group__515260 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Variable__InvariantsAssignment_5_in_rule__Variable__Group__5__Impl15287 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Variable__Group__6__Impl_in_rule__Variable__Group__615318 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Variable__OverriddenAssignment_6_in_rule__Variable__Group__6__Impl15345 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Constraints__Group__0__Impl_in_rule__Constraints__Group__015390 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_rule__Constraints__Group__1_in_rule__Constraints__Group__015393 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_51_in_rule__Constraints__Group__0__Impl15421 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Constraints__Group__1__Impl_in_rule__Constraints__Group__115452 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_rule__Constraints__Group__2_in_rule__Constraints__Group__115455 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_rule__Constraints__Group__1__Impl15483 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Constraints__Group__2__Impl_in_rule__Constraints__Group__215514 = new BitSet(new long[]{0x0000000800020000L});
-    public static final BitSet FOLLOW_rule__Constraints__Group__3_in_rule__Constraints__Group__215517 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Constraints__CallsAssignment_2_in_rule__Constraints__Group__2__Impl15544 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Constraints__Group__3__Impl_in_rule__Constraints__Group__315574 = new BitSet(new long[]{0x0000000800020000L});
-    public static final BitSet FOLLOW_rule__Constraints__Group__4_in_rule__Constraints__Group__315577 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Constraints__Group_3__0_in_rule__Constraints__Group__3__Impl15604 = new BitSet(new long[]{0x0000000800000002L});
-    public static final BitSet FOLLOW_rule__Constraints__Group__4__Impl_in_rule__Constraints__Group__415635 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_rule__Constraints__Group__4__Impl15663 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Constraints__Group_3__0__Impl_in_rule__Constraints__Group_3__015704 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_rule__Constraints__Group_3__1_in_rule__Constraints__Group_3__015707 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_rule__Constraints__Group_3__0__Impl15735 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Constraints__Group_3__1__Impl_in_rule__Constraints__Group_3__115766 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Constraints__CallsAssignment_3_1_in_rule__Constraints__Group_3__1__Impl15793 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Invariants__Group__0__Impl_in_rule__Invariants__Group__015827 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_rule__Invariants__Group__1_in_rule__Invariants__Group__015830 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_52_in_rule__Invariants__Group__0__Impl15858 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Invariants__Group__1__Impl_in_rule__Invariants__Group__115889 = new BitSet(new long[]{0x0000000800000000L});
-    public static final BitSet FOLLOW_rule__Invariants__Group__2_in_rule__Invariants__Group__115892 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Invariants__CallsAssignment_1_in_rule__Invariants__Group__1__Impl15919 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Invariants__Group__2__Impl_in_rule__Invariants__Group__215949 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Invariants__Group_2__0_in_rule__Invariants__Group__2__Impl15976 = new BitSet(new long[]{0x0000000800000002L});
-    public static final BitSet FOLLOW_rule__Invariants__Group_2__0__Impl_in_rule__Invariants__Group_2__016013 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_rule__Invariants__Group_2__1_in_rule__Invariants__Group_2__016016 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_rule__Invariants__Group_2__0__Impl16044 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Invariants__Group_2__1__Impl_in_rule__Invariants__Group_2__116075 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Invariants__CallsAssignment_2_1_in_rule__Invariants__Group_2__1__Impl16102 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OverriddenTypeMetaInfo__Group__0__Impl_in_rule__OverriddenTypeMetaInfo__Group__016136 = new BitSet(new long[]{0x0007C00000000000L});
-    public static final BitSet FOLLOW_rule__OverriddenTypeMetaInfo__Group__1_in_rule__OverriddenTypeMetaInfo__Group__016139 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_rule__OverriddenTypeMetaInfo__Group__0__Impl16167 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OverriddenTypeMetaInfo__Group__1__Impl_in_rule__OverriddenTypeMetaInfo__Group__116198 = new BitSet(new long[]{0x0000000000020000L});
-    public static final BitSet FOLLOW_rule__OverriddenTypeMetaInfo__Group__2_in_rule__OverriddenTypeMetaInfo__Group__116201 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OverriddenTypeMetaInfo__MetaInfoAssignment_1_in_rule__OverriddenTypeMetaInfo__Group__1__Impl16228 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__OverriddenTypeMetaInfo__Group__2__Impl_in_rule__OverriddenTypeMetaInfo__Group__216258 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_rule__OverriddenTypeMetaInfo__Group__2__Impl16286 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ConstraintCall__Group__0__Impl_in_rule__ConstraintCall__Group__016323 = new BitSet(new long[]{0x0000000200000000L});
-    public static final BitSet FOLLOW_rule__ConstraintCall__Group__1_in_rule__ConstraintCall__Group__016326 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ConstraintCall__ConstraintAssignment_0_in_rule__ConstraintCall__Group__0__Impl16353 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ConstraintCall__Group__1__Impl_in_rule__ConstraintCall__Group__116383 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ConstraintCall__Group_1__0_in_rule__ConstraintCall__Group__1__Impl16410 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ConstraintCall__Group_1__0__Impl_in_rule__ConstraintCall__Group_1__016445 = new BitSet(new long[]{0x0200000000006270L});
-    public static final BitSet FOLLOW_rule__ConstraintCall__Group_1__1_in_rule__ConstraintCall__Group_1__016448 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_33_in_rule__ConstraintCall__Group_1__0__Impl16476 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ConstraintCall__Group_1__1__Impl_in_rule__ConstraintCall__Group_1__116507 = new BitSet(new long[]{0x0000000C00000000L});
-    public static final BitSet FOLLOW_rule__ConstraintCall__Group_1__2_in_rule__ConstraintCall__Group_1__116510 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ConstraintCall__ParamsAssignment_1_1_in_rule__ConstraintCall__Group_1__1__Impl16537 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ConstraintCall__Group_1__2__Impl_in_rule__ConstraintCall__Group_1__216567 = new BitSet(new long[]{0x0000000C00000000L});
-    public static final BitSet FOLLOW_rule__ConstraintCall__Group_1__3_in_rule__ConstraintCall__Group_1__216570 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ConstraintCall__Group_1_2__0_in_rule__ConstraintCall__Group_1__2__Impl16597 = new BitSet(new long[]{0x0000000800000002L});
-    public static final BitSet FOLLOW_rule__ConstraintCall__Group_1__3__Impl_in_rule__ConstraintCall__Group_1__316628 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_34_in_rule__ConstraintCall__Group_1__3__Impl16656 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ConstraintCall__Group_1_2__0__Impl_in_rule__ConstraintCall__Group_1_2__016695 = new BitSet(new long[]{0x0200000000006270L});
-    public static final BitSet FOLLOW_rule__ConstraintCall__Group_1_2__1_in_rule__ConstraintCall__Group_1_2__016698 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_35_in_rule__ConstraintCall__Group_1_2__0__Impl16726 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ConstraintCall__Group_1_2__1__Impl_in_rule__ConstraintCall__Group_1_2__116757 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__ConstraintCall__ParamsAssignment_1_2_1_in_rule__ConstraintCall__Group_1_2__1__Impl16784 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Service__Group__0__Impl_in_rule__Service__Group__016818 = new BitSet(new long[]{0x00200120D4100100L});
-    public static final BitSet FOLLOW_rule__Service__Group__1_in_rule__Service__Group__016821 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Service__DocAssignment_0_in_rule__Service__Group__0__Impl16848 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Service__Group__1__Impl_in_rule__Service__Group__116879 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_rule__Service__Group__2_in_rule__Service__Group__116882 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_53_in_rule__Service__Group__1__Impl16910 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Service__Group__2__Impl_in_rule__Service__Group__216941 = new BitSet(new long[]{0x0000000000010000L});
-    public static final BitSet FOLLOW_rule__Service__Group__3_in_rule__Service__Group__216944 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Service__NameAssignment_2_in_rule__Service__Group__2__Impl16971 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Service__Group__3__Impl_in_rule__Service__Group__317001 = new BitSet(new long[]{0x0000100000020100L});
-    public static final BitSet FOLLOW_rule__Service__Group__4_in_rule__Service__Group__317004 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_16_in_rule__Service__Group__3__Impl17032 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Service__Group__4__Impl_in_rule__Service__Group__417063 = new BitSet(new long[]{0x0000100000020100L});
-    public static final BitSet FOLLOW_rule__Service__Group__5_in_rule__Service__Group__417066 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Service__MethodsAssignment_4_in_rule__Service__Group__4__Impl17093 = new BitSet(new long[]{0x0000100000000102L});
-    public static final BitSet FOLLOW_rule__Service__Group__5__Impl_in_rule__Service__Group__517124 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_17_in_rule__Service__Group__5__Impl17152 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FQN__Group__0__Impl_in_rule__FQN__Group__017195 = new BitSet(new long[]{0x0040000000000000L});
-    public static final BitSet FOLLOW_rule__FQN__Group__1_in_rule__FQN__Group__017198 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__FQN__Group__0__Impl17225 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FQN__Group__1__Impl_in_rule__FQN__Group__117254 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FQN__Group_1__0_in_rule__FQN__Group__1__Impl17281 = new BitSet(new long[]{0x0040000000000002L});
-    public static final BitSet FOLLOW_rule__FQN__Group_1__0__Impl_in_rule__FQN__Group_1__017316 = new BitSet(new long[]{0x0000000000000080L});
-    public static final BitSet FOLLOW_rule__FQN__Group_1__1_in_rule__FQN__Group_1__017319 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_54_in_rule__FQN__Group_1__0__Impl17347 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FQN__Group_1__1__Impl_in_rule__FQN__Group_1__117378 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__FQN__Group_1__1__Impl17405 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FQNWithWildcard__Group__0__Impl_in_rule__FQNWithWildcard__Group__017438 = new BitSet(new long[]{0x0040000000000000L});
-    public static final BitSet FOLLOW_rule__FQNWithWildcard__Group__1_in_rule__FQNWithWildcard__Group__017441 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFQN_in_rule__FQNWithWildcard__Group__0__Impl17468 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FQNWithWildcard__Group__1__Impl_in_rule__FQNWithWildcard__Group__117497 = new BitSet(new long[]{0x0080000000000000L});
-    public static final BitSet FOLLOW_rule__FQNWithWildcard__Group__2_in_rule__FQNWithWildcard__Group__117500 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_54_in_rule__FQNWithWildcard__Group__1__Impl17528 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__FQNWithWildcard__Group__2__Impl_in_rule__FQNWithWildcard__Group__217559 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_55_in_rule__FQNWithWildcard__Group__2__Impl17587 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BooleanLiteral__Group__0__Impl_in_rule__BooleanLiteral__Group__017624 = new BitSet(new long[]{0x0000000000006000L});
-    public static final BitSet FOLLOW_rule__BooleanLiteral__Group__1_in_rule__BooleanLiteral__Group__017627 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BooleanLiteral__Group__1__Impl_in_rule__BooleanLiteral__Group__117685 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BooleanLiteral__ValueAssignment_1_in_rule__BooleanLiteral__Group__1__Impl17712 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NullLiteral__Group__0__Impl_in_rule__NullLiteral__Group__017746 = new BitSet(new long[]{0x0200000000000000L});
-    public static final BitSet FOLLOW_rule__NullLiteral__Group__1_in_rule__NullLiteral__Group__017749 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NullLiteral__Group__1__Impl_in_rule__NullLiteral__Group__117807 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NullLiteral__ValueAssignment_1_in_rule__NullLiteral__Group__1__Impl17834 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NumberLiteral__Group__0__Impl_in_rule__NumberLiteral__Group__017868 = new BitSet(new long[]{0x0000000000000070L});
-    public static final BitSet FOLLOW_rule__NumberLiteral__Group__1_in_rule__NumberLiteral__Group__017871 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NumberLiteral__Group__1__Impl_in_rule__NumberLiteral__Group__117929 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__NumberLiteral__ValueAssignment_1_in_rule__NumberLiteral__Group__1__Impl17956 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StringLiteral__Group__0__Impl_in_rule__StringLiteral__Group__017990 = new BitSet(new long[]{0x0200000000006270L});
-    public static final BitSet FOLLOW_rule__StringLiteral__Group__1_in_rule__StringLiteral__Group__017993 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StringLiteral__Group__1__Impl_in_rule__StringLiteral__Group__118051 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__StringLiteral__ValueAssignment_1_in_rule__StringLiteral__Group__1__Impl18078 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Number__Group_1__0__Impl_in_rule__Number__Group_1__018112 = new BitSet(new long[]{0x0040000000000000L});
-    public static final BitSet FOLLOW_rule__Number__Group_1__1_in_rule__Number__Group_1__018115 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Number__Alternatives_1_0_in_rule__Number__Group_1__0__Impl18142 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Number__Group_1__1__Impl_in_rule__Number__Group_1__118172 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Number__Group_1_1__0_in_rule__Number__Group_1__1__Impl18199 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Number__Group_1_1__0__Impl_in_rule__Number__Group_1_1__018234 = new BitSet(new long[]{0x0000000000000060L});
-    public static final BitSet FOLLOW_rule__Number__Group_1_1__1_in_rule__Number__Group_1_1__018237 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_54_in_rule__Number__Group_1_1__0__Impl18265 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Number__Group_1_1__1__Impl_in_rule__Number__Group_1_1__118296 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Number__Alternatives_1_1_1_in_rule__Number__Group_1_1__1__Impl18323 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleContext_in_rule__DomainModel__ContextsAssignment18362 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Context__NameAssignment_118393 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNamespace_in_rule__Context__NamespacesAssignment_318424 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFQN_in_rule__Namespace__NameAssignment_118455 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleImport_in_rule__Namespace__ImportsAssignment_318486 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleAbstractElement_in_rule__Namespace__ElementsAssignment_418517 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Import__ImportedNamespaceAlternatives_1_0_in_rule__Import__ImportedNamespaceAssignment_118548 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__ExternalType__NameAssignment_118581 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DOC_in_rule__Constraint__DocAssignment_018612 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Constraint__NameAssignment_218643 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Constraint__TargetAssignment_3_118678 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Constraint__ExceptionAssignment_4_118717 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVariable_in_rule__Constraint__VariablesAssignment_618752 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Constraint__MessageAssignment_7_118783 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DOC_in_rule__Exception__DocAssignment_018814 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Exception__NameAssignment_218845 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_INT_in_rule__Exception__CidAssignment_3_118876 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVariable_in_rule__Exception__VariablesAssignment_518907 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Exception__MessageAssignment_718938 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DOC_in_rule__ValueObject__DocAssignment_018969 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__ValueObject__NameAssignment_219000 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__ValueObject__BaseAssignment_3_119035 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTypeMetaInfo_in_rule__ValueObject__MetaInfoAssignment_519070 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVariable_in_rule__ValueObject__VariablesAssignment_619101 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConstructor_in_rule__ValueObject__ConstructorsAssignment_719132 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMethod_in_rule__ValueObject__MethodsAssignment_819163 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DOC_in_rule__EntityId__DocAssignment_019194 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__EntityId__NameAssignment_219225 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__EntityId__EntityAssignment_419260 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__EntityId__BaseAssignment_5_119299 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTypeMetaInfo_in_rule__EntityId__MetaInfoAssignment_719334 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVariable_in_rule__EntityId__VariablesAssignment_819365 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConstructor_in_rule__EntityId__ConstructorsAssignment_919396 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMethod_in_rule__EntityId__MethodsAssignment_1019427 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DOC_in_rule__AggregateId__DocAssignment_019458 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__AggregateId__NameAssignment_219489 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__AggregateId__EntityAssignment_419524 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__AggregateId__BaseAssignment_5_119563 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTypeMetaInfo_in_rule__AggregateId__MetaInfoAssignment_719598 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVariable_in_rule__AggregateId__VariablesAssignment_819629 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConstructor_in_rule__AggregateId__ConstructorsAssignment_919660 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMethod_in_rule__AggregateId__MethodsAssignment_1019691 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DOC_in_rule__EnumObject__DocAssignment_019722 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__EnumObject__NameAssignment_219753 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTypeMetaInfo_in_rule__EnumObject__MetaInfoAssignment_419784 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVariable_in_rule__EnumObject__VariablesAssignment_519815 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConstructor_in_rule__EnumObject__ConstructorsAssignment_619846 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMethod_in_rule__EnumObject__MethodsAssignment_719877 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEnumInstance_in_rule__EnumObject__InstancesAssignment_1019908 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DOC_in_rule__EnumInstance__DocAssignment_019939 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__EnumInstance__NameAssignment_119970 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLiteral_in_rule__EnumInstance__ParamsAssignment_2_120001 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLiteral_in_rule__EnumInstance__ParamsAssignment_2_2_120032 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DOC_in_rule__Event__DocAssignment_020063 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Event__NameAssignment_220094 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVariable_in_rule__Event__VariablesAssignment_420125 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__Event__MessageAssignment_5_120156 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DOC_in_rule__Entity__DocAssignment_020187 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Entity__NameAssignment_220218 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Entity__IdTypeAssignment_420253 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Entity__RootAssignment_620292 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTypeMetaInfo_in_rule__Entity__MetaInfoAssignment_820327 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVariable_in_rule__Entity__VariablesAssignment_920358 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConstructor_in_rule__Entity__ConstructorsAssignment_1020389 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMethod_in_rule__Entity__MethodsAssignment_1120420 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEvent_in_rule__Entity__EventsAssignment_1220451 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DOC_in_rule__Aggregate__DocAssignment_020482 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Aggregate__NameAssignment_220513 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Aggregate__IdTypeAssignment_420548 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTypeMetaInfo_in_rule__Aggregate__MetaInfoAssignment_620583 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVariable_in_rule__Aggregate__VariablesAssignment_720614 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConstructor_in_rule__Aggregate__ConstructorsAssignment_820645 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMethod_in_rule__Aggregate__MethodsAssignment_920676 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleEvent_in_rule__Aggregate__EventsAssignment_1020707 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DOC_in_rule__Constructor__DocAssignment_020738 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Constructor__NameAssignment_220769 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Constructor__FiredEventsAssignment_3_120804 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Constructor__FiredEventsAssignment_3_2_120843 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVariable_in_rule__Constructor__VariablesAssignment_520878 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Constructor__ServiceAssignment_620913 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConstraints_in_rule__Constructor__ConstraintsAssignment_720948 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DOC_in_rule__ReturnType__DocAssignment_020979 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__ReturnType__TypeAssignment_221014 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DOC_in_rule__Method__DocAssignment_021049 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Method__NameAssignment_221080 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFQN_in_rule__Method__RefMethodAssignment_3_121115 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Method__FiredEventsAssignment_4_121154 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Method__FiredEventsAssignment_4_2_121193 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleVariable_in_rule__Method__VariablesAssignment_621228 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Method__ServiceAssignment_721263 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleReturnType_in_rule__Method__ReturnTypeAssignment_821298 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConstraints_in_rule__Method__ConstraintsAssignment_921329 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__TypeMetaInfo__SlabelAssignment_1_121360 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__TypeMetaInfo__LabelAssignment_2_121391 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__TypeMetaInfo__TooltipAssignment_3_121422 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__TypeMetaInfo__PromptAssignment_4_121453 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__TypeMetaInfo__ExamplesAssignment_5_121484 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DOC_in_rule__Variable__DocAssignment_021515 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_56_in_rule__Variable__NullableAssignment_121551 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Variable__TypeAssignment_221594 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_55_in_rule__Variable__MultiplicityAssignment_321634 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Variable__NameAssignment_421673 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleInvariants_in_rule__Variable__InvariantsAssignment_521704 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleOverriddenTypeMetaInfo_in_rule__Variable__OverriddenAssignment_621735 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConstraintCall_in_rule__Constraints__CallsAssignment_221766 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConstraintCall_in_rule__Constraints__CallsAssignment_3_121797 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConstraintCall_in_rule__Invariants__CallsAssignment_121828 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleConstraintCall_in_rule__Invariants__CallsAssignment_2_121859 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleTypeMetaInfo_in_rule__OverriddenTypeMetaInfo__MetaInfoAssignment_121890 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__ConstraintCall__ConstraintAssignment_021925 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLiteral_in_rule__ConstraintCall__ParamsAssignment_1_121960 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleLiteral_in_rule__ConstraintCall__ParamsAssignment_1_2_121991 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_DOC_in_rule__Service__DocAssignment_022022 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_ID_in_rule__Service__NameAssignment_222053 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleMethod_in_rule__Service__MethodsAssignment_422084 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__BooleanLiteral__ValueAlternatives_1_0_in_rule__BooleanLiteral__ValueAssignment_122115 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_57_in_rule__NullLiteral__ValueAssignment_122153 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleNumber_in_rule__NumberLiteral__ValueAssignment_122192 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_RULE_STRING_in_rule__StringLiteral__ValueAssignment_122223 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Constructor__Group__8__Impl_in_rule__Constructor__Group__812267 = new BitSet(new long[]{0x01280130D4B20180L});
+    public static final BitSet FOLLOW_rule__Constructor__Group__9_in_rule__Constructor__Group__812270 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Constructor__EventsAssignment_8_in_rule__Constructor__Group__8__Impl12297 = new BitSet(new long[]{0x00200130D4B00102L});
+    public static final BitSet FOLLOW_rule__Constructor__Group__9__Impl_in_rule__Constructor__Group__912328 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_rule__Constructor__Group__9__Impl12356 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Constructor__Group_3__0__Impl_in_rule__Constructor__Group_3__012407 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_rule__Constructor__Group_3__1_in_rule__Constructor__Group_3__012410 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_42_in_rule__Constructor__Group_3__0__Impl12438 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Constructor__Group_3__1__Impl_in_rule__Constructor__Group_3__112469 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_rule__Constructor__Group_3__2_in_rule__Constructor__Group_3__112472 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Constructor__FiredEventsAssignment_3_1_in_rule__Constructor__Group_3__1__Impl12499 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Constructor__Group_3__2__Impl_in_rule__Constructor__Group_3__212529 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Constructor__Group_3_2__0_in_rule__Constructor__Group_3__2__Impl12556 = new BitSet(new long[]{0x0000000800000002L});
+    public static final BitSet FOLLOW_rule__Constructor__Group_3_2__0__Impl_in_rule__Constructor__Group_3_2__012593 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_rule__Constructor__Group_3_2__1_in_rule__Constructor__Group_3_2__012596 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_rule__Constructor__Group_3_2__0__Impl12624 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Constructor__Group_3_2__1__Impl_in_rule__Constructor__Group_3_2__112655 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Constructor__FiredEventsAssignment_3_2_1_in_rule__Constructor__Group_3_2__1__Impl12682 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ReturnType__Group__0__Impl_in_rule__ReturnType__Group__012716 = new BitSet(new long[]{0x0000080000000000L});
+    public static final BitSet FOLLOW_rule__ReturnType__Group__1_in_rule__ReturnType__Group__012719 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ReturnType__DocAssignment_0_in_rule__ReturnType__Group__0__Impl12746 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ReturnType__Group__1__Impl_in_rule__ReturnType__Group__112777 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_rule__ReturnType__Group__2_in_rule__ReturnType__Group__112780 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_43_in_rule__ReturnType__Group__1__Impl12808 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ReturnType__Group__2__Impl_in_rule__ReturnType__Group__212839 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ReturnType__TypeAssignment_2_in_rule__ReturnType__Group__2__Impl12866 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Method__Group__0__Impl_in_rule__Method__Group__012902 = new BitSet(new long[]{0x0000100000000100L});
+    public static final BitSet FOLLOW_rule__Method__Group__1_in_rule__Method__Group__012905 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Method__DocAssignment_0_in_rule__Method__Group__0__Impl12932 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Method__Group__1__Impl_in_rule__Method__Group__112963 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_rule__Method__Group__2_in_rule__Method__Group__112966 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_44_in_rule__Method__Group__1__Impl12994 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Method__Group__2__Impl_in_rule__Method__Group__213025 = new BitSet(new long[]{0x0000240000010000L});
+    public static final BitSet FOLLOW_rule__Method__Group__3_in_rule__Method__Group__213028 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Method__NameAssignment_2_in_rule__Method__Group__2__Impl13055 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Method__Group__3__Impl_in_rule__Method__Group__313085 = new BitSet(new long[]{0x0000240000010000L});
+    public static final BitSet FOLLOW_rule__Method__Group__4_in_rule__Method__Group__313088 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Method__Group_3__0_in_rule__Method__Group__3__Impl13115 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Method__Group__4__Impl_in_rule__Method__Group__413146 = new BitSet(new long[]{0x0000240000010000L});
+    public static final BitSet FOLLOW_rule__Method__Group__5_in_rule__Method__Group__413149 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Method__Group_4__0_in_rule__Method__Group__4__Impl13176 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Method__Group__5__Impl_in_rule__Method__Group__513207 = new BitSet(new long[]{0x01280930D4B20180L});
+    public static final BitSet FOLLOW_rule__Method__Group__6_in_rule__Method__Group__513210 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_rule__Method__Group__5__Impl13238 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Method__Group__6__Impl_in_rule__Method__Group__613269 = new BitSet(new long[]{0x01280930D4B20180L});
+    public static final BitSet FOLLOW_rule__Method__Group__7_in_rule__Method__Group__613272 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Method__VariablesAssignment_6_in_rule__Method__Group__6__Impl13299 = new BitSet(new long[]{0x0100000000000182L});
+    public static final BitSet FOLLOW_rule__Method__Group__7__Impl_in_rule__Method__Group__713330 = new BitSet(new long[]{0x01280930D4B20180L});
+    public static final BitSet FOLLOW_rule__Method__Group__8_in_rule__Method__Group__713333 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Method__ServiceAssignment_7_in_rule__Method__Group__7__Impl13360 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Method__Group__8__Impl_in_rule__Method__Group__813391 = new BitSet(new long[]{0x01280930D4B20180L});
+    public static final BitSet FOLLOW_rule__Method__Group__9_in_rule__Method__Group__813394 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Method__ReturnTypeAssignment_8_in_rule__Method__Group__8__Impl13421 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Method__Group__9__Impl_in_rule__Method__Group__913452 = new BitSet(new long[]{0x01280930D4B20180L});
+    public static final BitSet FOLLOW_rule__Method__Group__10_in_rule__Method__Group__913455 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Method__ConstraintsAssignment_9_in_rule__Method__Group__9__Impl13482 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Method__Group__10__Impl_in_rule__Method__Group__1013513 = new BitSet(new long[]{0x01280930D4B20180L});
+    public static final BitSet FOLLOW_rule__Method__Group__11_in_rule__Method__Group__1013516 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Method__EventsAssignment_10_in_rule__Method__Group__10__Impl13543 = new BitSet(new long[]{0x00200130D4B00102L});
+    public static final BitSet FOLLOW_rule__Method__Group__11__Impl_in_rule__Method__Group__1113574 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_rule__Method__Group__11__Impl13602 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Method__Group_3__0__Impl_in_rule__Method__Group_3__013657 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_rule__Method__Group_3__1_in_rule__Method__Group_3__013660 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_45_in_rule__Method__Group_3__0__Impl13688 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Method__Group_3__1__Impl_in_rule__Method__Group_3__113719 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Method__RefMethodAssignment_3_1_in_rule__Method__Group_3__1__Impl13746 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Method__Group_4__0__Impl_in_rule__Method__Group_4__013780 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_rule__Method__Group_4__1_in_rule__Method__Group_4__013783 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_42_in_rule__Method__Group_4__0__Impl13811 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Method__Group_4__1__Impl_in_rule__Method__Group_4__113842 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_rule__Method__Group_4__2_in_rule__Method__Group_4__113845 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Method__FiredEventsAssignment_4_1_in_rule__Method__Group_4__1__Impl13872 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Method__Group_4__2__Impl_in_rule__Method__Group_4__213902 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Method__Group_4_2__0_in_rule__Method__Group_4__2__Impl13929 = new BitSet(new long[]{0x0000000800000002L});
+    public static final BitSet FOLLOW_rule__Method__Group_4_2__0__Impl_in_rule__Method__Group_4_2__013966 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_rule__Method__Group_4_2__1_in_rule__Method__Group_4_2__013969 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_rule__Method__Group_4_2__0__Impl13997 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Method__Group_4_2__1__Impl_in_rule__Method__Group_4_2__114028 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Method__FiredEventsAssignment_4_2_1_in_rule__Method__Group_4_2__1__Impl14055 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group__0__Impl_in_rule__TypeMetaInfo__Group__014089 = new BitSet(new long[]{0x0007C00000000000L});
+    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group__1_in_rule__TypeMetaInfo__Group__014092 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group__1__Impl_in_rule__TypeMetaInfo__Group__114150 = new BitSet(new long[]{0x0007C00000000000L});
+    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group__2_in_rule__TypeMetaInfo__Group__114153 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_1__0_in_rule__TypeMetaInfo__Group__1__Impl14180 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group__2__Impl_in_rule__TypeMetaInfo__Group__214211 = new BitSet(new long[]{0x0007C00000000000L});
+    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group__3_in_rule__TypeMetaInfo__Group__214214 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_2__0_in_rule__TypeMetaInfo__Group__2__Impl14241 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group__3__Impl_in_rule__TypeMetaInfo__Group__314272 = new BitSet(new long[]{0x0007C00000000000L});
+    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group__4_in_rule__TypeMetaInfo__Group__314275 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_3__0_in_rule__TypeMetaInfo__Group__3__Impl14302 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group__4__Impl_in_rule__TypeMetaInfo__Group__414333 = new BitSet(new long[]{0x0007C00000000000L});
+    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group__5_in_rule__TypeMetaInfo__Group__414336 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_4__0_in_rule__TypeMetaInfo__Group__4__Impl14363 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group__5__Impl_in_rule__TypeMetaInfo__Group__514394 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_5__0_in_rule__TypeMetaInfo__Group__5__Impl14421 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_1__0__Impl_in_rule__TypeMetaInfo__Group_1__014464 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_1__1_in_rule__TypeMetaInfo__Group_1__014467 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_46_in_rule__TypeMetaInfo__Group_1__0__Impl14495 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_1__1__Impl_in_rule__TypeMetaInfo__Group_1__114526 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TypeMetaInfo__SlabelAssignment_1_1_in_rule__TypeMetaInfo__Group_1__1__Impl14553 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_2__0__Impl_in_rule__TypeMetaInfo__Group_2__014587 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_2__1_in_rule__TypeMetaInfo__Group_2__014590 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_47_in_rule__TypeMetaInfo__Group_2__0__Impl14618 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_2__1__Impl_in_rule__TypeMetaInfo__Group_2__114649 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TypeMetaInfo__LabelAssignment_2_1_in_rule__TypeMetaInfo__Group_2__1__Impl14676 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_3__0__Impl_in_rule__TypeMetaInfo__Group_3__014710 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_3__1_in_rule__TypeMetaInfo__Group_3__014713 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_48_in_rule__TypeMetaInfo__Group_3__0__Impl14741 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_3__1__Impl_in_rule__TypeMetaInfo__Group_3__114772 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TypeMetaInfo__TooltipAssignment_3_1_in_rule__TypeMetaInfo__Group_3__1__Impl14799 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_4__0__Impl_in_rule__TypeMetaInfo__Group_4__014833 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_4__1_in_rule__TypeMetaInfo__Group_4__014836 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_49_in_rule__TypeMetaInfo__Group_4__0__Impl14864 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_4__1__Impl_in_rule__TypeMetaInfo__Group_4__114895 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TypeMetaInfo__PromptAssignment_4_1_in_rule__TypeMetaInfo__Group_4__1__Impl14922 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_5__0__Impl_in_rule__TypeMetaInfo__Group_5__014956 = new BitSet(new long[]{0x0000000000000200L});
+    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_5__1_in_rule__TypeMetaInfo__Group_5__014959 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_50_in_rule__TypeMetaInfo__Group_5__0__Impl14987 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TypeMetaInfo__Group_5__1__Impl_in_rule__TypeMetaInfo__Group_5__115018 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__TypeMetaInfo__ExamplesAssignment_5_1_in_rule__TypeMetaInfo__Group_5__1__Impl15045 = new BitSet(new long[]{0x0000000000000202L});
+    public static final BitSet FOLLOW_rule__Variable__Group__0__Impl_in_rule__Variable__Group__015080 = new BitSet(new long[]{0x0100000000000180L});
+    public static final BitSet FOLLOW_rule__Variable__Group__1_in_rule__Variable__Group__015083 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Variable__DocAssignment_0_in_rule__Variable__Group__0__Impl15110 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Variable__Group__1__Impl_in_rule__Variable__Group__115141 = new BitSet(new long[]{0x0100000000000180L});
+    public static final BitSet FOLLOW_rule__Variable__Group__2_in_rule__Variable__Group__115144 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Variable__NullableAssignment_1_in_rule__Variable__Group__1__Impl15171 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Variable__Group__2__Impl_in_rule__Variable__Group__215202 = new BitSet(new long[]{0x0080000000000080L});
+    public static final BitSet FOLLOW_rule__Variable__Group__3_in_rule__Variable__Group__215205 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Variable__TypeAssignment_2_in_rule__Variable__Group__2__Impl15232 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Variable__Group__3__Impl_in_rule__Variable__Group__315262 = new BitSet(new long[]{0x0080000000000080L});
+    public static final BitSet FOLLOW_rule__Variable__Group__4_in_rule__Variable__Group__315265 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Variable__MultiplicityAssignment_3_in_rule__Variable__Group__3__Impl15292 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Variable__Group__4__Impl_in_rule__Variable__Group__415323 = new BitSet(new long[]{0x0010000000010000L});
+    public static final BitSet FOLLOW_rule__Variable__Group__5_in_rule__Variable__Group__415326 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Variable__NameAssignment_4_in_rule__Variable__Group__4__Impl15353 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Variable__Group__5__Impl_in_rule__Variable__Group__515383 = new BitSet(new long[]{0x0010000000010000L});
+    public static final BitSet FOLLOW_rule__Variable__Group__6_in_rule__Variable__Group__515386 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Variable__InvariantsAssignment_5_in_rule__Variable__Group__5__Impl15413 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Variable__Group__6__Impl_in_rule__Variable__Group__615444 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Variable__OverriddenAssignment_6_in_rule__Variable__Group__6__Impl15471 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Constraints__Group__0__Impl_in_rule__Constraints__Group__015516 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_rule__Constraints__Group__1_in_rule__Constraints__Group__015519 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_51_in_rule__Constraints__Group__0__Impl15547 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Constraints__Group__1__Impl_in_rule__Constraints__Group__115578 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_rule__Constraints__Group__2_in_rule__Constraints__Group__115581 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_rule__Constraints__Group__1__Impl15609 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Constraints__Group__2__Impl_in_rule__Constraints__Group__215640 = new BitSet(new long[]{0x0000000800020000L});
+    public static final BitSet FOLLOW_rule__Constraints__Group__3_in_rule__Constraints__Group__215643 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Constraints__CallsAssignment_2_in_rule__Constraints__Group__2__Impl15670 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Constraints__Group__3__Impl_in_rule__Constraints__Group__315700 = new BitSet(new long[]{0x0000000800020000L});
+    public static final BitSet FOLLOW_rule__Constraints__Group__4_in_rule__Constraints__Group__315703 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Constraints__Group_3__0_in_rule__Constraints__Group__3__Impl15730 = new BitSet(new long[]{0x0000000800000002L});
+    public static final BitSet FOLLOW_rule__Constraints__Group__4__Impl_in_rule__Constraints__Group__415761 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_rule__Constraints__Group__4__Impl15789 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Constraints__Group_3__0__Impl_in_rule__Constraints__Group_3__015830 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_rule__Constraints__Group_3__1_in_rule__Constraints__Group_3__015833 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_rule__Constraints__Group_3__0__Impl15861 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Constraints__Group_3__1__Impl_in_rule__Constraints__Group_3__115892 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Constraints__CallsAssignment_3_1_in_rule__Constraints__Group_3__1__Impl15919 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Invariants__Group__0__Impl_in_rule__Invariants__Group__015953 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_rule__Invariants__Group__1_in_rule__Invariants__Group__015956 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_52_in_rule__Invariants__Group__0__Impl15984 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Invariants__Group__1__Impl_in_rule__Invariants__Group__116015 = new BitSet(new long[]{0x0000000800000000L});
+    public static final BitSet FOLLOW_rule__Invariants__Group__2_in_rule__Invariants__Group__116018 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Invariants__CallsAssignment_1_in_rule__Invariants__Group__1__Impl16045 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Invariants__Group__2__Impl_in_rule__Invariants__Group__216075 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Invariants__Group_2__0_in_rule__Invariants__Group__2__Impl16102 = new BitSet(new long[]{0x0000000800000002L});
+    public static final BitSet FOLLOW_rule__Invariants__Group_2__0__Impl_in_rule__Invariants__Group_2__016139 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_rule__Invariants__Group_2__1_in_rule__Invariants__Group_2__016142 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_rule__Invariants__Group_2__0__Impl16170 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Invariants__Group_2__1__Impl_in_rule__Invariants__Group_2__116201 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Invariants__CallsAssignment_2_1_in_rule__Invariants__Group_2__1__Impl16228 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__OverriddenTypeMetaInfo__Group__0__Impl_in_rule__OverriddenTypeMetaInfo__Group__016262 = new BitSet(new long[]{0x0007C00000000000L});
+    public static final BitSet FOLLOW_rule__OverriddenTypeMetaInfo__Group__1_in_rule__OverriddenTypeMetaInfo__Group__016265 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_rule__OverriddenTypeMetaInfo__Group__0__Impl16293 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__OverriddenTypeMetaInfo__Group__1__Impl_in_rule__OverriddenTypeMetaInfo__Group__116324 = new BitSet(new long[]{0x0000000000020000L});
+    public static final BitSet FOLLOW_rule__OverriddenTypeMetaInfo__Group__2_in_rule__OverriddenTypeMetaInfo__Group__116327 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__OverriddenTypeMetaInfo__MetaInfoAssignment_1_in_rule__OverriddenTypeMetaInfo__Group__1__Impl16354 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__OverriddenTypeMetaInfo__Group__2__Impl_in_rule__OverriddenTypeMetaInfo__Group__216384 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_rule__OverriddenTypeMetaInfo__Group__2__Impl16412 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConstraintCall__Group__0__Impl_in_rule__ConstraintCall__Group__016449 = new BitSet(new long[]{0x0000000200000000L});
+    public static final BitSet FOLLOW_rule__ConstraintCall__Group__1_in_rule__ConstraintCall__Group__016452 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConstraintCall__ConstraintAssignment_0_in_rule__ConstraintCall__Group__0__Impl16479 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConstraintCall__Group__1__Impl_in_rule__ConstraintCall__Group__116509 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConstraintCall__Group_1__0_in_rule__ConstraintCall__Group__1__Impl16536 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConstraintCall__Group_1__0__Impl_in_rule__ConstraintCall__Group_1__016571 = new BitSet(new long[]{0x0200000000006270L});
+    public static final BitSet FOLLOW_rule__ConstraintCall__Group_1__1_in_rule__ConstraintCall__Group_1__016574 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_33_in_rule__ConstraintCall__Group_1__0__Impl16602 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConstraintCall__Group_1__1__Impl_in_rule__ConstraintCall__Group_1__116633 = new BitSet(new long[]{0x0000000C00000000L});
+    public static final BitSet FOLLOW_rule__ConstraintCall__Group_1__2_in_rule__ConstraintCall__Group_1__116636 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConstraintCall__ParamsAssignment_1_1_in_rule__ConstraintCall__Group_1__1__Impl16663 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConstraintCall__Group_1__2__Impl_in_rule__ConstraintCall__Group_1__216693 = new BitSet(new long[]{0x0000000C00000000L});
+    public static final BitSet FOLLOW_rule__ConstraintCall__Group_1__3_in_rule__ConstraintCall__Group_1__216696 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConstraintCall__Group_1_2__0_in_rule__ConstraintCall__Group_1__2__Impl16723 = new BitSet(new long[]{0x0000000800000002L});
+    public static final BitSet FOLLOW_rule__ConstraintCall__Group_1__3__Impl_in_rule__ConstraintCall__Group_1__316754 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_34_in_rule__ConstraintCall__Group_1__3__Impl16782 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConstraintCall__Group_1_2__0__Impl_in_rule__ConstraintCall__Group_1_2__016821 = new BitSet(new long[]{0x0200000000006270L});
+    public static final BitSet FOLLOW_rule__ConstraintCall__Group_1_2__1_in_rule__ConstraintCall__Group_1_2__016824 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_35_in_rule__ConstraintCall__Group_1_2__0__Impl16852 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConstraintCall__Group_1_2__1__Impl_in_rule__ConstraintCall__Group_1_2__116883 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__ConstraintCall__ParamsAssignment_1_2_1_in_rule__ConstraintCall__Group_1_2__1__Impl16910 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Service__Group__0__Impl_in_rule__Service__Group__016944 = new BitSet(new long[]{0x00200120D4100100L});
+    public static final BitSet FOLLOW_rule__Service__Group__1_in_rule__Service__Group__016947 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Service__DocAssignment_0_in_rule__Service__Group__0__Impl16974 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Service__Group__1__Impl_in_rule__Service__Group__117005 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_rule__Service__Group__2_in_rule__Service__Group__117008 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_53_in_rule__Service__Group__1__Impl17036 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Service__Group__2__Impl_in_rule__Service__Group__217067 = new BitSet(new long[]{0x0000000000010000L});
+    public static final BitSet FOLLOW_rule__Service__Group__3_in_rule__Service__Group__217070 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Service__NameAssignment_2_in_rule__Service__Group__2__Impl17097 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Service__Group__3__Impl_in_rule__Service__Group__317127 = new BitSet(new long[]{0x0000100000020100L});
+    public static final BitSet FOLLOW_rule__Service__Group__4_in_rule__Service__Group__317130 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_16_in_rule__Service__Group__3__Impl17158 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Service__Group__4__Impl_in_rule__Service__Group__417189 = new BitSet(new long[]{0x0000100000020100L});
+    public static final BitSet FOLLOW_rule__Service__Group__5_in_rule__Service__Group__417192 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Service__MethodsAssignment_4_in_rule__Service__Group__4__Impl17219 = new BitSet(new long[]{0x0000100000000102L});
+    public static final BitSet FOLLOW_rule__Service__Group__5__Impl_in_rule__Service__Group__517250 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_17_in_rule__Service__Group__5__Impl17278 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FQN__Group__0__Impl_in_rule__FQN__Group__017321 = new BitSet(new long[]{0x0040000000000000L});
+    public static final BitSet FOLLOW_rule__FQN__Group__1_in_rule__FQN__Group__017324 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__FQN__Group__0__Impl17351 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FQN__Group__1__Impl_in_rule__FQN__Group__117380 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FQN__Group_1__0_in_rule__FQN__Group__1__Impl17407 = new BitSet(new long[]{0x0040000000000002L});
+    public static final BitSet FOLLOW_rule__FQN__Group_1__0__Impl_in_rule__FQN__Group_1__017442 = new BitSet(new long[]{0x0000000000000080L});
+    public static final BitSet FOLLOW_rule__FQN__Group_1__1_in_rule__FQN__Group_1__017445 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_54_in_rule__FQN__Group_1__0__Impl17473 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FQN__Group_1__1__Impl_in_rule__FQN__Group_1__117504 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__FQN__Group_1__1__Impl17531 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FQNWithWildcard__Group__0__Impl_in_rule__FQNWithWildcard__Group__017564 = new BitSet(new long[]{0x0040000000000000L});
+    public static final BitSet FOLLOW_rule__FQNWithWildcard__Group__1_in_rule__FQNWithWildcard__Group__017567 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFQN_in_rule__FQNWithWildcard__Group__0__Impl17594 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FQNWithWildcard__Group__1__Impl_in_rule__FQNWithWildcard__Group__117623 = new BitSet(new long[]{0x0080000000000000L});
+    public static final BitSet FOLLOW_rule__FQNWithWildcard__Group__2_in_rule__FQNWithWildcard__Group__117626 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_54_in_rule__FQNWithWildcard__Group__1__Impl17654 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__FQNWithWildcard__Group__2__Impl_in_rule__FQNWithWildcard__Group__217685 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_55_in_rule__FQNWithWildcard__Group__2__Impl17713 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__BooleanLiteral__Group__0__Impl_in_rule__BooleanLiteral__Group__017750 = new BitSet(new long[]{0x0000000000006000L});
+    public static final BitSet FOLLOW_rule__BooleanLiteral__Group__1_in_rule__BooleanLiteral__Group__017753 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__BooleanLiteral__Group__1__Impl_in_rule__BooleanLiteral__Group__117811 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__BooleanLiteral__ValueAssignment_1_in_rule__BooleanLiteral__Group__1__Impl17838 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NullLiteral__Group__0__Impl_in_rule__NullLiteral__Group__017872 = new BitSet(new long[]{0x0200000000000000L});
+    public static final BitSet FOLLOW_rule__NullLiteral__Group__1_in_rule__NullLiteral__Group__017875 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NullLiteral__Group__1__Impl_in_rule__NullLiteral__Group__117933 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NullLiteral__ValueAssignment_1_in_rule__NullLiteral__Group__1__Impl17960 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NumberLiteral__Group__0__Impl_in_rule__NumberLiteral__Group__017994 = new BitSet(new long[]{0x0000000000000070L});
+    public static final BitSet FOLLOW_rule__NumberLiteral__Group__1_in_rule__NumberLiteral__Group__017997 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NumberLiteral__Group__1__Impl_in_rule__NumberLiteral__Group__118055 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__NumberLiteral__ValueAssignment_1_in_rule__NumberLiteral__Group__1__Impl18082 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__StringLiteral__Group__0__Impl_in_rule__StringLiteral__Group__018116 = new BitSet(new long[]{0x0200000000006270L});
+    public static final BitSet FOLLOW_rule__StringLiteral__Group__1_in_rule__StringLiteral__Group__018119 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__StringLiteral__Group__1__Impl_in_rule__StringLiteral__Group__118177 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__StringLiteral__ValueAssignment_1_in_rule__StringLiteral__Group__1__Impl18204 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Number__Group_1__0__Impl_in_rule__Number__Group_1__018238 = new BitSet(new long[]{0x0040000000000000L});
+    public static final BitSet FOLLOW_rule__Number__Group_1__1_in_rule__Number__Group_1__018241 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Number__Alternatives_1_0_in_rule__Number__Group_1__0__Impl18268 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Number__Group_1__1__Impl_in_rule__Number__Group_1__118298 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Number__Group_1_1__0_in_rule__Number__Group_1__1__Impl18325 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Number__Group_1_1__0__Impl_in_rule__Number__Group_1_1__018360 = new BitSet(new long[]{0x0000000000000060L});
+    public static final BitSet FOLLOW_rule__Number__Group_1_1__1_in_rule__Number__Group_1_1__018363 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_54_in_rule__Number__Group_1_1__0__Impl18391 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Number__Group_1_1__1__Impl_in_rule__Number__Group_1_1__118422 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Number__Alternatives_1_1_1_in_rule__Number__Group_1_1__1__Impl18449 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleContext_in_rule__DomainModel__ContextsAssignment18488 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Context__NameAssignment_118519 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNamespace_in_rule__Context__NamespacesAssignment_318550 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFQN_in_rule__Namespace__NameAssignment_118581 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleImport_in_rule__Namespace__ImportsAssignment_318612 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleAbstractElement_in_rule__Namespace__ElementsAssignment_418643 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Import__ImportedNamespaceAlternatives_1_0_in_rule__Import__ImportedNamespaceAssignment_118674 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__ExternalType__NameAssignment_118707 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DOC_in_rule__Constraint__DocAssignment_018738 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Constraint__NameAssignment_218769 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFQN_in_rule__Constraint__TargetAssignment_3_118804 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFQN_in_rule__Constraint__ExceptionAssignment_4_118843 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVariable_in_rule__Constraint__VariablesAssignment_618878 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Constraint__MessageAssignment_7_118909 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DOC_in_rule__Exception__DocAssignment_018940 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Exception__NameAssignment_218971 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_INT_in_rule__Exception__CidAssignment_3_119002 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVariable_in_rule__Exception__VariablesAssignment_519033 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Exception__MessageAssignment_719064 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DOC_in_rule__ValueObject__DocAssignment_019095 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__ValueObject__NameAssignment_219126 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFQN_in_rule__ValueObject__BaseAssignment_3_119161 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTypeMetaInfo_in_rule__ValueObject__MetaInfoAssignment_519196 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVariable_in_rule__ValueObject__VariablesAssignment_619227 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConstructor_in_rule__ValueObject__ConstructorsAssignment_719258 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMethod_in_rule__ValueObject__MethodsAssignment_819289 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DOC_in_rule__EntityId__DocAssignment_019320 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__EntityId__NameAssignment_219351 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFQN_in_rule__EntityId__EntityAssignment_419386 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFQN_in_rule__EntityId__BaseAssignment_5_119425 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTypeMetaInfo_in_rule__EntityId__MetaInfoAssignment_719460 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVariable_in_rule__EntityId__VariablesAssignment_819491 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConstructor_in_rule__EntityId__ConstructorsAssignment_919522 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMethod_in_rule__EntityId__MethodsAssignment_1019553 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DOC_in_rule__AggregateId__DocAssignment_019584 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__AggregateId__NameAssignment_219615 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFQN_in_rule__AggregateId__EntityAssignment_419650 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFQN_in_rule__AggregateId__BaseAssignment_5_119689 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTypeMetaInfo_in_rule__AggregateId__MetaInfoAssignment_719724 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVariable_in_rule__AggregateId__VariablesAssignment_819755 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConstructor_in_rule__AggregateId__ConstructorsAssignment_919786 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMethod_in_rule__AggregateId__MethodsAssignment_1019817 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DOC_in_rule__EnumObject__DocAssignment_019848 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__EnumObject__NameAssignment_219879 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTypeMetaInfo_in_rule__EnumObject__MetaInfoAssignment_419910 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVariable_in_rule__EnumObject__VariablesAssignment_519941 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConstructor_in_rule__EnumObject__ConstructorsAssignment_619972 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMethod_in_rule__EnumObject__MethodsAssignment_720003 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEnumInstance_in_rule__EnumObject__InstancesAssignment_1020034 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DOC_in_rule__EnumInstance__DocAssignment_020065 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__EnumInstance__NameAssignment_120096 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLiteral_in_rule__EnumInstance__ParamsAssignment_2_120127 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLiteral_in_rule__EnumInstance__ParamsAssignment_2_2_120158 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DOC_in_rule__Event__DocAssignment_020189 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Event__NameAssignment_220220 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVariable_in_rule__Event__VariablesAssignment_420251 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__Event__MessageAssignment_5_120282 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DOC_in_rule__Entity__DocAssignment_020313 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Entity__NameAssignment_220344 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFQN_in_rule__Entity__IdTypeAssignment_420379 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFQN_in_rule__Entity__RootAssignment_620418 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTypeMetaInfo_in_rule__Entity__MetaInfoAssignment_820453 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVariable_in_rule__Entity__VariablesAssignment_920484 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConstructor_in_rule__Entity__ConstructorsAssignment_1020515 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMethod_in_rule__Entity__MethodsAssignment_1120546 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEvent_in_rule__Entity__EventsAssignment_1220577 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DOC_in_rule__Aggregate__DocAssignment_020608 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Aggregate__NameAssignment_220639 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFQN_in_rule__Aggregate__IdTypeAssignment_420674 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTypeMetaInfo_in_rule__Aggregate__MetaInfoAssignment_620709 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVariable_in_rule__Aggregate__VariablesAssignment_720740 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConstructor_in_rule__Aggregate__ConstructorsAssignment_820771 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMethod_in_rule__Aggregate__MethodsAssignment_920802 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEvent_in_rule__Aggregate__EventsAssignment_1020833 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DOC_in_rule__Constructor__DocAssignment_020864 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Constructor__NameAssignment_220895 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFQN_in_rule__Constructor__FiredEventsAssignment_3_120930 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFQN_in_rule__Constructor__FiredEventsAssignment_3_2_120969 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVariable_in_rule__Constructor__VariablesAssignment_521004 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFQN_in_rule__Constructor__ServiceAssignment_621039 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConstraints_in_rule__Constructor__ConstraintsAssignment_721074 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEvent_in_rule__Constructor__EventsAssignment_821105 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DOC_in_rule__ReturnType__DocAssignment_021136 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFQN_in_rule__ReturnType__TypeAssignment_221171 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DOC_in_rule__Method__DocAssignment_021206 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Method__NameAssignment_221237 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFQN_in_rule__Method__RefMethodAssignment_3_121272 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFQN_in_rule__Method__FiredEventsAssignment_4_121311 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFQN_in_rule__Method__FiredEventsAssignment_4_2_121350 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleVariable_in_rule__Method__VariablesAssignment_621385 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFQN_in_rule__Method__ServiceAssignment_721420 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleReturnType_in_rule__Method__ReturnTypeAssignment_821455 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConstraints_in_rule__Method__ConstraintsAssignment_921486 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleEvent_in_rule__Method__EventsAssignment_1021517 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__TypeMetaInfo__SlabelAssignment_1_121548 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__TypeMetaInfo__LabelAssignment_2_121579 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__TypeMetaInfo__TooltipAssignment_3_121610 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__TypeMetaInfo__PromptAssignment_4_121641 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__TypeMetaInfo__ExamplesAssignment_5_121672 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DOC_in_rule__Variable__DocAssignment_021703 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_56_in_rule__Variable__NullableAssignment_121739 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFQN_in_rule__Variable__TypeAssignment_221782 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_55_in_rule__Variable__MultiplicityAssignment_321822 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Variable__NameAssignment_421861 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleInvariants_in_rule__Variable__InvariantsAssignment_521892 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleOverriddenTypeMetaInfo_in_rule__Variable__OverriddenAssignment_621923 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConstraintCall_in_rule__Constraints__CallsAssignment_221954 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConstraintCall_in_rule__Constraints__CallsAssignment_3_121985 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConstraintCall_in_rule__Invariants__CallsAssignment_122016 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleConstraintCall_in_rule__Invariants__CallsAssignment_2_122047 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleTypeMetaInfo_in_rule__OverriddenTypeMetaInfo__MetaInfoAssignment_122078 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFQN_in_rule__ConstraintCall__ConstraintAssignment_022113 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLiteral_in_rule__ConstraintCall__ParamsAssignment_1_122148 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleLiteral_in_rule__ConstraintCall__ParamsAssignment_1_2_122179 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_DOC_in_rule__Service__DocAssignment_022210 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_ID_in_rule__Service__NameAssignment_222241 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleMethod_in_rule__Service__MethodsAssignment_422272 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__BooleanLiteral__ValueAlternatives_1_0_in_rule__BooleanLiteral__ValueAssignment_122303 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_57_in_rule__NullLiteral__ValueAssignment_122341 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleNumber_in_rule__NumberLiteral__ValueAssignment_122380 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_RULE_STRING_in_rule__StringLiteral__ValueAssignment_122411 = new BitSet(new long[]{0x0000000000000002L});
 
 }

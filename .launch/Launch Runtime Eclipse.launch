@@ -24,7 +24,7 @@
 <stringAttribute key="org.eclipse.jdt.launching.JRE_CONTAINER" value="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
 <stringAttribute key="org.eclipse.jdt.launching.PROGRAM_ARGUMENTS" value="-os ${target.os} -ws ${target.ws} -arch ${target.arch} -nl ${target.nl}"/>
 <stringAttribute key="org.eclipse.jdt.launching.SOURCE_PATH_PROVIDER" value="org.eclipse.pde.ui.workbenchClasspathProvider"/>
-<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Xms128m -Xmx1024m -XX:MaxPermSize=512M"/>
+<stringAttribute key="org.eclipse.jdt.launching.VM_ARGUMENTS" value="-Xms128m -Xmx1024m -XX:MaxPermSize=256m"/>
 <stringAttribute key="pde.version" value="3.3"/>
 <stringAttribute key="product" value="org.eclipse.platform.ide"/>
 <setAttribute key="selected_features">
@@ -85,12 +85,13 @@
 <setEntry value="org.eclipse.xtext.xbase:default"/>
 <setEntry value="org.eclipse.xtext.xtext.ui.source:default"/>
 <setEntry value="org.eclipse.xtext.xtext.ui:default"/>
+<setEntry value="org.fuin.dsl.cqrs.sdk:default"/>
 <setEntry value="org.fuin.dsl.ddd.sdk:default"/>
 <setEntry value="org.sonatype.m2e.buildhelper.feature:default"/>
 <setEntry value="org.sonatype.m2e.mavenarchiver.feature:default"/>
 <setEntry value="org.sonatype.tycho.m2e.feature:default"/>
 </setAttribute>
-<stringAttribute key="selected_workspace_plugins" value="org.fuin.dsl.ddd.dsl@default:default,org.fuin.dsl.ddd.templates@default:default,org.fuin.dsl.ddd.tests@default:default,org.fuin.dsl.ddd.ui@default:default"/>
+<stringAttribute key="selected_workspace_plugins" value="org.fuin.dsl.cqrs.dsl@default:default,org.fuin.dsl.cqrs.tests@default:default,org.fuin.dsl.cqrs.ui@default:default,org.fuin.dsl.ddd.dsl@default:default,org.fuin.dsl.ddd.tests@default:default,org.fuin.dsl.ddd.ui@default:default"/>
 <booleanAttribute key="show_selected_only" value="false"/>
 <stringAttribute key="templateConfig" value="${target_home}/configuration/config.ini"/>
 <booleanAttribute key="tracing" value="false"/>

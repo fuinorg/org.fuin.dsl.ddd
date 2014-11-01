@@ -189,6 +189,7 @@ public class DomainDrivenDesignDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getConstructorAccess().getVariablesAssignment_5(), "rule__Constructor__VariablesAssignment_5");
 					put(grammarAccess.getConstructorAccess().getServiceAssignment_6(), "rule__Constructor__ServiceAssignment_6");
 					put(grammarAccess.getConstructorAccess().getConstraintsAssignment_7(), "rule__Constructor__ConstraintsAssignment_7");
+					put(grammarAccess.getConstructorAccess().getEventsAssignment_8(), "rule__Constructor__EventsAssignment_8");
 					put(grammarAccess.getReturnTypeAccess().getDocAssignment_0(), "rule__ReturnType__DocAssignment_0");
 					put(grammarAccess.getReturnTypeAccess().getTypeAssignment_2(), "rule__ReturnType__TypeAssignment_2");
 					put(grammarAccess.getMethodAccess().getDocAssignment_0(), "rule__Method__DocAssignment_0");
@@ -200,6 +201,7 @@ public class DomainDrivenDesignDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getMethodAccess().getServiceAssignment_7(), "rule__Method__ServiceAssignment_7");
 					put(grammarAccess.getMethodAccess().getReturnTypeAssignment_8(), "rule__Method__ReturnTypeAssignment_8");
 					put(grammarAccess.getMethodAccess().getConstraintsAssignment_9(), "rule__Method__ConstraintsAssignment_9");
+					put(grammarAccess.getMethodAccess().getEventsAssignment_10(), "rule__Method__EventsAssignment_10");
 					put(grammarAccess.getTypeMetaInfoAccess().getSlabelAssignment_1_1(), "rule__TypeMetaInfo__SlabelAssignment_1_1");
 					put(grammarAccess.getTypeMetaInfoAccess().getLabelAssignment_2_1(), "rule__TypeMetaInfo__LabelAssignment_2_1");
 					put(grammarAccess.getTypeMetaInfoAccess().getTooltipAssignment_3_1(), "rule__TypeMetaInfo__TooltipAssignment_3_1");

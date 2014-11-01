@@ -47,7 +47,7 @@ ExternalType:
 
 Constraint:
 	doc=DOC? 
-	'constraint' name=ID ('on' target=[ConstraintTarget])? ('exception' exception=[Exception])? '{'
+	'constraint' name=ID ('on' target=[ConstraintTarget|FQN])? ('exception' exception=[Exception|FQN])? '{'
 		variables+=Variable* 
 		('message' message=STRING)?
 	'}';
@@ -61,7 +61,7 @@ Exception:
 
 ValueObject:
 	doc=DOC? 
-	'value-object' name=ID ('base' base=[ExternalType])? '{'
+	'value-object' name=ID ('base' base=[ExternalType|FQN])? '{'
 		metaInfo=TypeMetaInfo
 		variables+=Variable*
 		constructors+=Constructor*
@@ -70,7 +70,7 @@ ValueObject:
 
 EntityId:
 	doc=DOC?
-	'entity-id' name=ID 'identifies' entity=[Entity] ('base' base=[ExternalType])? '{'
+	'entity-id' name=ID 'identifies' entity=[Entity|FQN] ('base' base=[ExternalType|FQN])? '{'
 		metaInfo=TypeMetaInfo
 		variables+=Variable*
 		constructors+=Constructor*
@@ -79,7 +79,7 @@ EntityId:
 
 AggregateId:
 	doc=DOC?
-	'aggregate-id' name=ID 'identifies' entity=[Aggregate] ('base' base=[ExternalType])? '{'
+	'aggregate-id' name=ID 'identifies' entity=[Aggregate|FQN] ('base' base=[ExternalType|FQN])? '{'
 		metaInfo=TypeMetaInfo
 		variables+=Variable*
 		constructors+=Constructor*
@@ -109,7 +109,7 @@ Event:
 
 Entity:
 	doc=DOC?
-	'entity' name=ID 'identifier' idType=[EntityId] 'root' root=[Aggregate] '{'
+	'entity' name=ID 'identifier' idType=[EntityId|FQN] 'root' root=[Aggregate|FQN] '{'
 		metaInfo=TypeMetaInfo
 		variables+=Variable*
 		constructors+=Constructor*
@@ -119,7 +119,7 @@ Entity:
 
 Aggregate:
 	doc=DOC?
-	'aggregate' name=ID 'identifier' idType=[AggregateId] '{'
+	'aggregate' name=ID 'identifier' idType=[AggregateId|FQN] '{'
 		metaInfo=TypeMetaInfo
 		variables+=Variable*
 		constructors+=Constructor*
@@ -132,23 +132,25 @@ AbstractMethod:
 	
 Constructor:
 	doc=DOC? 
-	'constructor' name=ID ('fires' firedEvents+=[Event] (',' firedEvents+=[Event])*)? '{'
+	'constructor' name=ID ('fires' firedEvents+=[Event|FQN] (',' firedEvents+=[Event|FQN])*)? '{'
 		variables+=Variable*
-		service=[Service]?
+		service=[Service|FQN]?
 		constraints=Constraints?		
+		events+=Event*
 	'}';
 
 ReturnType:
 	doc=DOC? 
-	'returns' type=[Type];
+	'returns' type=[Type|FQN];
 
 Method:
 	doc=DOC? 
-	'method' name=ID ('ref' refMethod=[Method|FQN])? ('fires' firedEvents+=[Event] (',' firedEvents+=[Event])*)? '{'
+	'method' name=ID ('ref' refMethod=[Method|FQN])? ('fires' firedEvents+=[Event|FQN] (',' firedEvents+=[Event|FQN])*)? '{'
 		variables+=Variable*
-		service=[Service]?
+		service=[Service|FQN]?
 		returnType=ReturnType?
 		constraints=Constraints?
+		events+=Event*
 	'}';
 
 TypeMetaInfo:
@@ -162,7 +164,7 @@ TypeMetaInfo:
 Variable:
 	doc=DOC? 
 	(nullable='nullable')? 
-	type=[Type] (multiplicity='*')? name=ID (invariants=Invariants)? (overridden=OverriddenTypeMetaInfo)?;
+	type=[Type|FQN] (multiplicity='*')? name=ID (invariants=Invariants)? (overridden=OverriddenTypeMetaInfo)?;
 
 Constraints:
 	'constraints' '{' calls+=ConstraintCall (',' calls+=ConstraintCall)* '}';
@@ -174,7 +176,7 @@ OverriddenTypeMetaInfo:
 	'{' metaInfo=TypeMetaInfo '}';
 
 ConstraintCall:
-	constraint=[Constraint] ('(' params+=Literal (',' params+=Literal)* ')')?;
+	constraint=[Constraint|FQN] ('(' params+=Literal (',' params+=Literal)* ')')?;
 
 Service:
 	doc=DOC? 

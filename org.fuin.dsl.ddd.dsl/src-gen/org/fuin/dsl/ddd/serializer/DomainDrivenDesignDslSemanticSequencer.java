@@ -276,8 +276,8 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *     (
 	 *         doc=DOC? 
 	 *         name=ID 
-	 *         entity=[Aggregate|ID] 
-	 *         base=[ExternalType|ID]? 
+	 *         entity=[Aggregate|FQN] 
+	 *         base=[ExternalType|FQN]? 
 	 *         metaInfo=TypeMetaInfo 
 	 *         variables+=Variable* 
 	 *         constructors+=Constructor* 
@@ -294,7 +294,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *     (
 	 *         doc=DOC? 
 	 *         name=ID 
-	 *         idType=[AggregateId|ID] 
+	 *         idType=[AggregateId|FQN] 
 	 *         metaInfo=TypeMetaInfo 
 	 *         variables+=Variable* 
 	 *         constructors+=Constructor* 
@@ -318,7 +318,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	
 	/**
 	 * Constraint:
-	 *     (constraint=[Constraint|ID] (params+=Literal params+=Literal*)?)
+	 *     (constraint=[Constraint|FQN] (params+=Literal params+=Literal*)?)
 	 */
 	protected void sequence_ConstraintCall(EObject context, ConstraintCall semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -330,8 +330,8 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *     (
 	 *         doc=DOC? 
 	 *         name=ID 
-	 *         target=[ConstraintTarget|ID]? 
-	 *         exception=[Exception|ID]? 
+	 *         target=[ConstraintTarget|FQN]? 
+	 *         exception=[Exception|FQN]? 
 	 *         variables+=Variable* 
 	 *         message=STRING?
 	 *     )
@@ -355,10 +355,11 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *     (
 	 *         doc=DOC? 
 	 *         name=ID 
-	 *         (firedEvents+=[Event|ID] firedEvents+=[Event|ID]*)? 
+	 *         (firedEvents+=[Event|FQN] firedEvents+=[Event|FQN]*)? 
 	 *         variables+=Variable* 
-	 *         service=[Service|ID]? 
-	 *         constraints=Constraints?
+	 *         service=[Service|FQN]? 
+	 *         constraints=Constraints? 
+	 *         events+=Event*
 	 *     )
 	 */
 	protected void sequence_Constructor(EObject context, Constructor semanticObject) {
@@ -389,8 +390,8 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *     (
 	 *         doc=DOC? 
 	 *         name=ID 
-	 *         entity=[Entity|ID] 
-	 *         base=[ExternalType|ID]? 
+	 *         entity=[Entity|FQN] 
+	 *         base=[ExternalType|FQN]? 
 	 *         metaInfo=TypeMetaInfo 
 	 *         variables+=Variable* 
 	 *         constructors+=Constructor* 
@@ -407,8 +408,8 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *     (
 	 *         doc=DOC? 
 	 *         name=ID 
-	 *         idType=[EntityId|ID] 
-	 *         root=[Aggregate|ID] 
+	 *         idType=[EntityId|FQN] 
+	 *         root=[Aggregate|FQN] 
 	 *         metaInfo=TypeMetaInfo 
 	 *         variables+=Variable* 
 	 *         constructors+=Constructor* 
@@ -505,11 +506,12 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *         doc=DOC? 
 	 *         name=ID 
 	 *         refMethod=[Method|FQN]? 
-	 *         (firedEvents+=[Event|ID] firedEvents+=[Event|ID]*)? 
+	 *         (firedEvents+=[Event|FQN] firedEvents+=[Event|FQN]*)? 
 	 *         variables+=Variable* 
-	 *         service=[Service|ID]? 
+	 *         service=[Service|FQN]? 
 	 *         returnType=ReturnType? 
-	 *         constraints=Constraints?
+	 *         constraints=Constraints? 
+	 *         events+=Event*
 	 *     )
 	 */
 	protected void sequence_Method(EObject context, Method semanticObject) {
@@ -576,7 +578,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	
 	/**
 	 * Constraint:
-	 *     (doc=DOC? type=[Type|ID])
+	 *     (doc=DOC? type=[Type|FQN])
 	 */
 	protected void sequence_ReturnType(EObject context, ReturnType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -622,7 +624,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *     (
 	 *         doc=DOC? 
 	 *         name=ID 
-	 *         base=[ExternalType|ID]? 
+	 *         base=[ExternalType|FQN]? 
 	 *         metaInfo=TypeMetaInfo 
 	 *         variables+=Variable* 
 	 *         constructors+=Constructor* 
@@ -639,7 +641,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *     (
 	 *         doc=DOC? 
 	 *         nullable='nullable'? 
-	 *         type=[Type|ID] 
+	 *         type=[Type|FQN] 
 	 *         multiplicity='*'? 
 	 *         name=ID 
 	 *         invariants=Invariants? 
