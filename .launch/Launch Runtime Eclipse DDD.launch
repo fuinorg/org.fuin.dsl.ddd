@@ -11,7 +11,7 @@
 <booleanAttribute key="clearConfig" value="false"/>
 <booleanAttribute key="clearws" value="false"/>
 <booleanAttribute key="clearwslog" value="false"/>
-<stringAttribute key="configLocation" value="${workspace_loc}/.metadata/.plugins/org.eclipse.pde.core/Launch Runtime Eclipse"/>
+<stringAttribute key="configLocation" value="${workspace_loc}/.metadata/.plugins/org.eclipse.pde.core/Launch Runtime Eclipse DDD"/>
 <booleanAttribute key="default" value="false"/>
 <stringAttribute key="featureDefaultLocation" value="workspace"/>
 <stringAttribute key="featurePluginResolution" value="workspace"/>
