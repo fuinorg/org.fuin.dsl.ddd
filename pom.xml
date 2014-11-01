@@ -12,7 +12,7 @@
 
 	<groupId>org.fuin.dsl.ddd</groupId>
 	<artifactId>org.fuin.dsl.ddd</artifactId>
-	<version>0.2.1</version>
+	<version>0.2.2-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>DDD DSL / Parent</name>
 	<description>Xtext based DSL supporting Domain-driven design (DDD)</description>
@@ -90,7 +90,7 @@
 		<module>org.fuin.dsl.ddd.sdk</module>
 		<module>org.fuin.dsl.ddd.ui</module>
 		<module>org.fuin.dsl.ddd.tests</module>
-		<!-- Check why this does not work in Jenkins... <module>org.fuin.dsl.ddd.repository</module> -->
+		<module>org.fuin.dsl.ddd.repository</module>
 		<module>org.fuin.dsl.ddd.doc</module>
 	</modules>
 

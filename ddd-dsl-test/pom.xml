@@ -12,7 +12,7 @@
 	<groupId>org.fuin.ddd</groupId>
 	<artifactId>ddd-dsl-test</artifactId>
 	<packaging>jar</packaging>
-	<version>0.2.1</version>
+	<version>0.2.2-SNAPSHOT</version>
 	<name>TestModel</name>
 
 	<dependencies>
@@ -101,12 +101,12 @@
 					<dependency>
 						<groupId>org.fuin.dsl.ddd</groupId>
 						<artifactId>org.fuin.dsl.ddd.dsl</artifactId>
-						<version>0.2.1</version>
+						<version>0.2.2-SNAPSHOT</version>
 					</dependency>
 					<!-- dependency>
 						<groupId>org.fuin.dsl.ddd</groupId>
 						<artifactId>ddd-templates</artifactId>
-						<version>0.2.1</version>
+						<version>0.2.2-SNAPSHOT</version>
 					</dependency-->
 
 					<!-- EMF Ecore -->

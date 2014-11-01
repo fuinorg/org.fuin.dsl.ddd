@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature id="org.fuin.dsl.ddd.sdk"
          label="DDD DSL Feature"
-         version="0.2.1"
+         version="0.2.2.qualifier"
          provider-name="Future Invent Informationsmanagement GmbH">
     
    <description>
@@ -20,14 +20,14 @@
             id="org.fuin.dsl.ddd.dsl"
             download-size="0"
             install-size="0"
-            version="0.2.1"
+            version="0.2.2.qualifier"
             unpack="false"/>
     
     <plugin
             id="org.fuin.dsl.ddd.ui"
             download-size="0"
             install-size="0"
-            version="0.2.1"
+            version="0.2.2.qualifier"
             unpack="false"/>
             
 </feature>

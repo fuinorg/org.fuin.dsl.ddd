@@ -7,11 +7,11 @@
 	<parent>
 		<groupId>org.fuin.dsl.ddd</groupId>
 		<artifactId>org.fuin.dsl.ddd</artifactId>
-		<version>0.2.1</version>
+		<version>0.2.2-SNAPSHOT</version>
 	</parent>
 
 	<artifactId>org.fuin.dsl.ddd.doc</artifactId>
-	<version>0.2.1</version>
+	<version>0.2.2-SNAPSHOT</version>
 	<name>DDD DSL / Documentation</name>
 	<packaging>pom</packaging>
 
