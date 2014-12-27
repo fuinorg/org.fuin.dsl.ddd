@@ -12,6 +12,7 @@ import org.eclipse.xtext.resource.impl.ResourceDescriptionsProvider
 import org.eclipse.xtext.validation.Check
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractElement
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntity
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractVO
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget
@@ -23,8 +24,8 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Method
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Namespace
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.ValueObject
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Service
 
 /**
  * Custom validation rules. 
@@ -54,6 +55,10 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 	public static val EVENT_MSG_UNKNOWN_VAR = 'eventMsgUnknownVar'
 
 	public static val EXCEPTION_DUPLICATE_CID = 'exceptionDuplicateCID'
+
+	public static val SERVICE_METHOD_CANNOT_FIRE_EVENTS = "serviceMethodCannotFireEvents"
+
+	public static val SERVICE_METHOD_CANNOT_DECLARE_EVENTS = "serviceMethodCannotDeclareEvents"
 
 	@Inject
 	private IContainer.Manager containerManager
@@ -132,7 +137,7 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 	def checkNoRefToAggregate(Method method) {
 
 		if (method.returnType.type instanceof Aggregate) {
-			
+
 			val Aggregate aggregate = (method.returnType.type as Aggregate);
 			val Entity parentEntity = getParent(Entity, method)
 			if ((parentEntity == null) || !same(aggregate, parentEntity.root)) {
@@ -144,9 +149,9 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 					aggregate.idType.name
 				)
 			}
-			
+
 		} else if (method.returnType.type instanceof Entity) {
-			
+
 			val Entity entity = (method.returnType.type as Entity);
 			val Entity parentEntity = getParent(Entity, method)
 			if ((parentEntity == null) || !same(entity.root, parentEntity.root)) {
@@ -158,10 +163,39 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 					entity.idType.name
 				)
 			}
-			
+
 		}
 
 	}
+	
+	@Check
+	def checkNoEventsInService(Method method) {
+		
+		if (method.eContainer instanceof Service) {
+			
+			// No fired events
+			if ((method.firedEvents != null) && (method.firedEvents.size() > 0)) {			
+				error(
+					"A service method cannot fire events",
+					method,
+					DomainDrivenDesignDslPackage.Literals::ABSTRACT_METHOD__FIRED_EVENTS,
+					SERVICE_METHOD_CANNOT_FIRE_EVENTS
+				)
+			}
+
+			// No declared events
+			if ((method.events != null) && (method.events.size() > 0)) {			
+				error(
+					"A service method cannot declare events",
+					method,
+					DomainDrivenDesignDslPackage.Literals::ABSTRACT_METHOD__EVENTS,
+					SERVICE_METHOD_CANNOT_DECLARE_EVENTS
+				)
+			}
+			
+		}
+		
+	}	
 
 	@Check
 	def checkVariablesInEventMessage(Event event) {
@@ -287,10 +321,9 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 		var ConstraintTarget target = constraint.target;
 		if (target instanceof ExternalType) {
 			vars.add("vv");
-		} else if (target instanceof ValueObject) {
-			var ValueObject vo = (target as ValueObject);
-			if (vo.variables != null) {
-				for (v : vo.variables) {
+		} else if (target instanceof AbstractVO) {
+			if (target.variables != null) {
+				for (v : target.variables) {
 					vars.add("vv_" + v.name);
 				}
 			}
@@ -369,12 +402,12 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 			if (a2 == null) {
 				return true
 			}
-			return false			
+			return false
 		} else {
 			if (a2 == null) {
 				return false
 			}
-			return a1.uniqueName.equals(a2.uniqueName)	
+			return a1.uniqueName.equals(a2.uniqueName)
 		}
 	}
 

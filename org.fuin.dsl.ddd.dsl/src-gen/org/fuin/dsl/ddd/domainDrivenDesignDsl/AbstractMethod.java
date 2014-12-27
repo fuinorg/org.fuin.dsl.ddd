@@ -16,10 +16,11 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getDoc <em>Doc</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getName <em>Name</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getConstraintCalls <em>Constraint Calls</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getFiredEvents <em>Fired Events</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getVariables <em>Variables</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getService <em>Service</em>}</li>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getConstraints <em>Constraints</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getServices <em>Services</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getEvents <em>Events</em>}</li>
  * </ul>
  * </p>
@@ -83,6 +84,22 @@ public interface AbstractMethod extends EObject
   void setName(String value);
 
   /**
+   * Returns the value of the '<em><b>Constraint Calls</b></em>' containment reference list.
+   * The list contents are of type {@link org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintCall}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Constraint Calls</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Constraint Calls</em>' containment reference list.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getAbstractMethod_ConstraintCalls()
+   * @model containment="true"
+   * @generated
+   */
+  EList<ConstraintCall> getConstraintCalls();
+
+  /**
    * Returns the value of the '<em><b>Fired Events</b></em>' reference list.
    * The list contents are of type {@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Event}.
    * <!-- begin-user-doc -->
@@ -141,30 +158,20 @@ public interface AbstractMethod extends EObject
   void setService(Service value);
 
   /**
-   * Returns the value of the '<em><b>Constraints</b></em>' containment reference.
+   * Returns the value of the '<em><b>Services</b></em>' containment reference list.
+   * The list contents are of type {@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Service}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Constraints</em>' containment reference isn't clear,
+   * If the meaning of the '<em>Services</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Constraints</em>' containment reference.
-   * @see #setConstraints(Constraints)
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getAbstractMethod_Constraints()
+   * @return the value of the '<em>Services</em>' containment reference list.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getAbstractMethod_Services()
    * @model containment="true"
    * @generated
    */
-  Constraints getConstraints();
-
-  /**
-   * Sets the value of the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getConstraints <em>Constraints</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Constraints</em>' containment reference.
-   * @see #getConstraints()
-   * @generated
-   */
-  void setConstraints(Constraints value);
+  EList<Service> getServices();
 
   /**
    * Returns the value of the '<em><b>Events</b></em>' containment reference list.

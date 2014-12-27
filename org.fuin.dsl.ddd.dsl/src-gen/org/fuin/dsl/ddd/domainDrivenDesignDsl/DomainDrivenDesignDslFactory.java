@@ -275,15 +275,6 @@ public interface DomainDrivenDesignDslFactory extends EFactory
   Variable createVariable();
 
   /**
-   * Returns a new object of class '<em>Constraints</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Constraints</em>'.
-   * @generated
-   */
-  Constraints createConstraints();
-
-  /**
    * Returns a new object of class '<em>Invariants</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

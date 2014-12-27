@@ -13,6 +13,6 @@ package org.fuin.dsl.ddd.domainDrivenDesignDsl;
  * @model
  * @generated
  */
-public interface AbstractVO extends InternalType
+public interface AbstractVO extends InternalType, ConstraintTarget
 {
 } // AbstractVO

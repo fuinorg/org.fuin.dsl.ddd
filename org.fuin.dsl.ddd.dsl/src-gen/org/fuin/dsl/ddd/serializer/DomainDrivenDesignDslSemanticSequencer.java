@@ -18,7 +18,6 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.BooleanLiteral;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintCall;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraints;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constructor;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Context;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
@@ -67,6 +66,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 				   context == grammarAccess.getAbstractEntityIdRule() ||
 				   context == grammarAccess.getAbstractVORule() ||
 				   context == grammarAccess.getAggregateIdRule() ||
+				   context == grammarAccess.getConstraintTargetRule() ||
 				   context == grammarAccess.getInternalTypeRule() ||
 				   context == grammarAccess.getTypeRule()) {
 					sequence_AggregateId(context, (AggregateId) semanticObject); 
@@ -90,12 +90,6 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 			case DomainDrivenDesignDslPackage.CONSTRAINT_CALL:
 				if(context == grammarAccess.getConstraintCallRule()) {
 					sequence_ConstraintCall(context, (ConstraintCall) semanticObject); 
-					return; 
-				}
-				else break;
-			case DomainDrivenDesignDslPackage.CONSTRAINTS:
-				if(context == grammarAccess.getConstraintsRule()) {
-					sequence_Constraints(context, (Constraints) semanticObject); 
 					return; 
 				}
 				else break;
@@ -132,6 +126,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 				if(context == grammarAccess.getAbstractElementRule() ||
 				   context == grammarAccess.getAbstractEntityIdRule() ||
 				   context == grammarAccess.getAbstractVORule() ||
+				   context == grammarAccess.getConstraintTargetRule() ||
 				   context == grammarAccess.getEntityIdRule() ||
 				   context == grammarAccess.getInternalTypeRule() ||
 				   context == grammarAccess.getTypeRule()) {
@@ -148,6 +143,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 			case DomainDrivenDesignDslPackage.ENUM_OBJECT:
 				if(context == grammarAccess.getAbstractElementRule() ||
 				   context == grammarAccess.getAbstractVORule() ||
+				   context == grammarAccess.getConstraintTargetRule() ||
 				   context == grammarAccess.getEnumObjectRule() ||
 				   context == grammarAccess.getInternalTypeRule() ||
 				   context == grammarAccess.getTypeRule()) {
@@ -343,22 +339,14 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	
 	/**
 	 * Constraint:
-	 *     (calls+=ConstraintCall calls+=ConstraintCall*)
-	 */
-	protected void sequence_Constraints(EObject context, Constraints semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
 	 *     (
 	 *         doc=DOC? 
 	 *         name=ID 
+	 *         (constraintCalls+=ConstraintCall constraintCalls+=ConstraintCall*)? 
 	 *         (firedEvents+=[Event|FQN] firedEvents+=[Event|FQN]*)? 
 	 *         variables+=Variable* 
 	 *         service=[Service|FQN]? 
-	 *         constraints=Constraints? 
+	 *         services+=Service* 
 	 *         events+=Event*
 	 *     )
 	 */
@@ -506,11 +494,12 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *         doc=DOC? 
 	 *         name=ID 
 	 *         refMethod=[Method|FQN]? 
+	 *         (constraintCalls+=ConstraintCall constraintCalls+=ConstraintCall*)? 
 	 *         (firedEvents+=[Event|FQN] firedEvents+=[Event|FQN]*)? 
 	 *         variables+=Variable* 
 	 *         service=[Service|FQN]? 
 	 *         returnType=ReturnType? 
-	 *         constraints=Constraints? 
+	 *         services+=Service* 
 	 *         events+=Event*
 	 *     )
 	 */

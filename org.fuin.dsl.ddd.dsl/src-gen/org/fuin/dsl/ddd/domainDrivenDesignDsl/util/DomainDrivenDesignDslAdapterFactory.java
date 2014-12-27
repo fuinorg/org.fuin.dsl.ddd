@@ -20,7 +20,6 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.BooleanLiteral;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintCall;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraints;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constructor;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Context;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
@@ -250,11 +249,6 @@ public class DomainDrivenDesignDslAdapterFactory extends AdapterFactoryImpl
       public Adapter caseVariable(Variable object)
       {
         return createVariableAdapter();
-      }
-      @Override
-      public Adapter caseConstraints(Constraints object)
-      {
-        return createConstraintsAdapter();
       }
       @Override
       public Adapter caseInvariants(Invariants object)
@@ -739,21 +733,6 @@ public class DomainDrivenDesignDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createVariableAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraints <em>Constraints</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraints
-   * @generated
-   */
-  public Adapter createConstraintsAdapter()
   {
     return null;
   }

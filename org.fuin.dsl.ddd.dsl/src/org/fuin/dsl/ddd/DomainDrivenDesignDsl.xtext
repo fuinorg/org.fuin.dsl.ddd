@@ -40,7 +40,7 @@ AbstractEntity:
 	Entity | Aggregate;
 
 ConstraintTarget:
-	ExternalType | ValueObject;
+	ExternalType | AbstractVO;
 
 ExternalType:
 	'type' name=ID;
@@ -132,10 +132,10 @@ AbstractMethod:
 	
 Constructor:
 	doc=DOC? 
-	'constructor' name=ID ('fires' firedEvents+=[Event|FQN] (',' firedEvents+=[Event|FQN])*)? '{'
+	'constructor' name=ID ('constraints' constraintCalls+=ConstraintCall (',' constraintCalls+=ConstraintCall)*)? ('fires' firedEvents+=[Event|FQN] (',' firedEvents+=[Event|FQN])*)? '{'
 		variables+=Variable*
 		service=[Service|FQN]?
-		constraints=Constraints?		
+		services+=Service*
 		events+=Event*
 	'}';
 
@@ -145,11 +145,11 @@ ReturnType:
 
 Method:
 	doc=DOC? 
-	'method' name=ID ('ref' refMethod=[Method|FQN])? ('fires' firedEvents+=[Event|FQN] (',' firedEvents+=[Event|FQN])*)? '{'
+	'method' name=ID ('ref' refMethod=[Method|FQN])? ('constraints' constraintCalls+=ConstraintCall (',' constraintCalls+=ConstraintCall)*)? ('fires' firedEvents+=[Event|FQN] (',' firedEvents+=[Event|FQN])*)? '{'
 		variables+=Variable*
 		service=[Service|FQN]?
 		returnType=ReturnType?
-		constraints=Constraints?
+		services+=Service*
 		events+=Event*
 	'}';
 
@@ -166,9 +166,6 @@ Variable:
 	(nullable='nullable')? 
 	type=[Type|FQN] (multiplicity='*')? name=ID (invariants=Invariants)? (overridden=OverriddenTypeMetaInfo)?;
 
-Constraints:
-	'constraints' '{' calls+=ConstraintCall (',' calls+=ConstraintCall)* '}';
-	
 Invariants:
 	'invariants' calls+=ConstraintCall (',' calls+=ConstraintCall)*;
 

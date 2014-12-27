@@ -19,6 +19,7 @@ import org.eclipse.xtext.resource.impl.ResourceDescriptionsProvider;
 import org.eclipse.xtext.validation.Check;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractElement;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntity;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractVO;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
@@ -32,8 +33,8 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Method;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Namespace;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ReturnType;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Service;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Type;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.ValueObject;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
 import org.fuin.dsl.ddd.validation.AbstractDomainDrivenDesignDslValidator;
 
@@ -65,6 +66,10 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
   public final static String EVENT_MSG_UNKNOWN_VAR = "eventMsgUnknownVar";
   
   public final static String EXCEPTION_DUPLICATE_CID = "exceptionDuplicateCID";
+  
+  public final static String SERVICE_METHOD_CANNOT_FIRE_EVENTS = "serviceMethodCannotFireEvents";
+  
+  public final static String SERVICE_METHOD_CANNOT_DECLARE_EVENTS = "serviceMethodCannotDeclareEvents";
   
   @Inject
   private IContainer.Manager containerManager;
@@ -218,6 +223,47 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
             DomainDrivenDesignDslPackage.Literals.METHOD__RETURN_TYPE, 
             DomainDrivenDesignDslValidator.REF_TO_ENTITY_NOT_ALLOWED, _name_1);
         }
+      }
+    }
+  }
+  
+  @Check
+  public void checkNoEventsInService(final Method method) {
+    EObject _eContainer = method.eContainer();
+    if ((_eContainer instanceof Service)) {
+      boolean _and = false;
+      EList<Event> _firedEvents = method.getFiredEvents();
+      boolean _notEquals = (!Objects.equal(_firedEvents, null));
+      if (!_notEquals) {
+        _and = false;
+      } else {
+        EList<Event> _firedEvents_1 = method.getFiredEvents();
+        int _size = _firedEvents_1.size();
+        boolean _greaterThan = (_size > 0);
+        _and = _greaterThan;
+      }
+      if (_and) {
+        this.error(
+          "A service method cannot fire events", method, 
+          DomainDrivenDesignDslPackage.Literals.ABSTRACT_METHOD__FIRED_EVENTS, 
+          DomainDrivenDesignDslValidator.SERVICE_METHOD_CANNOT_FIRE_EVENTS);
+      }
+      boolean _and_1 = false;
+      EList<Event> _events = method.getEvents();
+      boolean _notEquals_1 = (!Objects.equal(_events, null));
+      if (!_notEquals_1) {
+        _and_1 = false;
+      } else {
+        EList<Event> _events_1 = method.getEvents();
+        int _size_1 = _events_1.size();
+        boolean _greaterThan_1 = (_size_1 > 0);
+        _and_1 = _greaterThan_1;
+      }
+      if (_and_1) {
+        this.error(
+          "A service method cannot declare events", method, 
+          DomainDrivenDesignDslPackage.Literals.ABSTRACT_METHOD__EVENTS, 
+          DomainDrivenDesignDslValidator.SERVICE_METHOD_CANNOT_DECLARE_EVENTS);
       }
     }
   }
@@ -428,12 +474,11 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
     if ((target instanceof ExternalType)) {
       vars.add("vv");
     } else {
-      if ((target instanceof ValueObject)) {
-        ValueObject vo = ((ValueObject) target);
-        EList<Variable> _variables_2 = vo.getVariables();
+      if ((target instanceof AbstractVO)) {
+        EList<Variable> _variables_2 = ((AbstractVO)target).getVariables();
         boolean _notEquals_1 = (!Objects.equal(_variables_2, null));
         if (_notEquals_1) {
-          EList<Variable> _variables_3 = vo.getVariables();
+          EList<Variable> _variables_3 = ((AbstractVO)target).getVariables();
           for (final Variable v_1 : _variables_3) {
             String _name_1 = v_1.getName();
             String _plus = ("vv_" + _name_1);

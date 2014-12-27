@@ -21,7 +21,6 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.BooleanLiteral;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintCall;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraints;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constructor;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Context;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslFactory;
@@ -130,7 +129,6 @@ public class DomainDrivenDesignDslFactoryImpl extends EFactoryImpl implements Do
       case DomainDrivenDesignDslPackage.METHOD: return createMethod();
       case DomainDrivenDesignDslPackage.TYPE_META_INFO: return createTypeMetaInfo();
       case DomainDrivenDesignDslPackage.VARIABLE: return createVariable();
-      case DomainDrivenDesignDslPackage.CONSTRAINTS: return createConstraints();
       case DomainDrivenDesignDslPackage.INVARIANTS: return createInvariants();
       case DomainDrivenDesignDslPackage.OVERRIDDEN_TYPE_META_INFO: return createOverriddenTypeMetaInfo();
       case DomainDrivenDesignDslPackage.CONSTRAINT_CALL: return createConstraintCall();
@@ -451,17 +449,6 @@ public class DomainDrivenDesignDslFactoryImpl extends EFactoryImpl implements Do
   {
     VariableImpl variable = new VariableImpl();
     return variable;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public Constraints createConstraints()
-  {
-    ConstraintsImpl constraints = new ConstraintsImpl();
-    return constraints;
   }
 
   /**

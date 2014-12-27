@@ -1412,13 +1412,22 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int ABSTRACT_METHOD__NAME = 1;
 
   /**
+   * The feature id for the '<em><b>Constraint Calls</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ABSTRACT_METHOD__CONSTRAINT_CALLS = 2;
+
+  /**
    * The feature id for the '<em><b>Fired Events</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ABSTRACT_METHOD__FIRED_EVENTS = 2;
+  int ABSTRACT_METHOD__FIRED_EVENTS = 3;
 
   /**
    * The feature id for the '<em><b>Variables</b></em>' containment reference list.
@@ -1427,7 +1436,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ABSTRACT_METHOD__VARIABLES = 3;
+  int ABSTRACT_METHOD__VARIABLES = 4;
 
   /**
    * The feature id for the '<em><b>Service</b></em>' reference.
@@ -1436,16 +1445,16 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ABSTRACT_METHOD__SERVICE = 4;
+  int ABSTRACT_METHOD__SERVICE = 5;
 
   /**
-   * The feature id for the '<em><b>Constraints</b></em>' containment reference.
+   * The feature id for the '<em><b>Services</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ABSTRACT_METHOD__CONSTRAINTS = 5;
+  int ABSTRACT_METHOD__SERVICES = 6;
 
   /**
    * The feature id for the '<em><b>Events</b></em>' containment reference list.
@@ -1454,7 +1463,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ABSTRACT_METHOD__EVENTS = 6;
+  int ABSTRACT_METHOD__EVENTS = 7;
 
   /**
    * The number of structural features of the '<em>Abstract Method</em>' class.
@@ -1463,7 +1472,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ABSTRACT_METHOD_FEATURE_COUNT = 7;
+  int ABSTRACT_METHOD_FEATURE_COUNT = 8;
 
   /**
    * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConstructorImpl <em>Constructor</em>}' class.
@@ -1494,6 +1503,15 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int CONSTRUCTOR__NAME = ABSTRACT_METHOD__NAME;
 
   /**
+   * The feature id for the '<em><b>Constraint Calls</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSTRUCTOR__CONSTRAINT_CALLS = ABSTRACT_METHOD__CONSTRAINT_CALLS;
+
+  /**
    * The feature id for the '<em><b>Fired Events</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1521,13 +1539,13 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int CONSTRUCTOR__SERVICE = ABSTRACT_METHOD__SERVICE;
 
   /**
-   * The feature id for the '<em><b>Constraints</b></em>' containment reference.
+   * The feature id for the '<em><b>Services</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONSTRUCTOR__CONSTRAINTS = ABSTRACT_METHOD__CONSTRAINTS;
+  int CONSTRUCTOR__SERVICES = ABSTRACT_METHOD__SERVICES;
 
   /**
    * The feature id for the '<em><b>Events</b></em>' containment reference list.
@@ -1613,6 +1631,15 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int METHOD__NAME = ABSTRACT_METHOD__NAME;
 
   /**
+   * The feature id for the '<em><b>Constraint Calls</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int METHOD__CONSTRAINT_CALLS = ABSTRACT_METHOD__CONSTRAINT_CALLS;
+
+  /**
    * The feature id for the '<em><b>Fired Events</b></em>' reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1640,13 +1667,13 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int METHOD__SERVICE = ABSTRACT_METHOD__SERVICE;
 
   /**
-   * The feature id for the '<em><b>Constraints</b></em>' containment reference.
+   * The feature id for the '<em><b>Services</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int METHOD__CONSTRAINTS = ABSTRACT_METHOD__CONSTRAINTS;
+  int METHOD__SERVICES = ABSTRACT_METHOD__SERVICES;
 
   /**
    * The feature id for the '<em><b>Events</b></em>' containment reference list.
@@ -1831,34 +1858,6 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int VARIABLE_FEATURE_COUNT = 7;
 
   /**
-   * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConstraintsImpl <em>Constraints</em>}' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConstraintsImpl
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getConstraints()
-   * @generated
-   */
-  int CONSTRAINTS = 28;
-
-  /**
-   * The feature id for the '<em><b>Calls</b></em>' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONSTRAINTS__CALLS = 0;
-
-  /**
-   * The number of structural features of the '<em>Constraints</em>' class.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONSTRAINTS_FEATURE_COUNT = 1;
-
-  /**
    * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.InvariantsImpl <em>Invariants</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1866,7 +1865,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getInvariants()
    * @generated
    */
-  int INVARIANTS = 29;
+  int INVARIANTS = 28;
 
   /**
    * The feature id for the '<em><b>Calls</b></em>' containment reference list.
@@ -1894,7 +1893,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getOverriddenTypeMetaInfo()
    * @generated
    */
-  int OVERRIDDEN_TYPE_META_INFO = 30;
+  int OVERRIDDEN_TYPE_META_INFO = 29;
 
   /**
    * The feature id for the '<em><b>Meta Info</b></em>' containment reference.
@@ -1922,7 +1921,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getConstraintCall()
    * @generated
    */
-  int CONSTRAINT_CALL = 31;
+  int CONSTRAINT_CALL = 30;
 
   /**
    * The feature id for the '<em><b>Constraint</b></em>' reference.
@@ -1959,7 +1958,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getService()
    * @generated
    */
-  int SERVICE = 32;
+  int SERVICE = 31;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2005,7 +2004,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getLiteral()
    * @generated
    */
-  int LITERAL = 33;
+  int LITERAL = 32;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2033,7 +2032,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getBooleanLiteral()
    * @generated
    */
-  int BOOLEAN_LITERAL = 34;
+  int BOOLEAN_LITERAL = 33;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2061,7 +2060,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getNullLiteral()
    * @generated
    */
-  int NULL_LITERAL = 35;
+  int NULL_LITERAL = 34;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2089,7 +2088,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getNumberLiteral()
    * @generated
    */
-  int NUMBER_LITERAL = 36;
+  int NUMBER_LITERAL = 35;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2117,7 +2116,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getStringLiteral()
    * @generated
    */
-  int STRING_LITERAL = 37;
+  int STRING_LITERAL = 36;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2798,6 +2797,17 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   EAttribute getAbstractMethod_Name();
 
   /**
+   * Returns the meta object for the containment reference list '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getConstraintCalls <em>Constraint Calls</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Constraint Calls</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getConstraintCalls()
+   * @see #getAbstractMethod()
+   * @generated
+   */
+  EReference getAbstractMethod_ConstraintCalls();
+
+  /**
    * Returns the meta object for the reference list '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getFiredEvents <em>Fired Events</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2831,15 +2841,15 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   EReference getAbstractMethod_Service();
 
   /**
-   * Returns the meta object for the containment reference '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getConstraints <em>Constraints</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getServices <em>Services</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference '<em>Constraints</em>'.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getConstraints()
+   * @return the meta object for the containment reference list '<em>Services</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getServices()
    * @see #getAbstractMethod()
    * @generated
    */
-  EReference getAbstractMethod_Constraints();
+  EReference getAbstractMethod_Services();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getEvents <em>Events</em>}'.
@@ -3077,27 +3087,6 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @generated
    */
   EReference getVariable_Overridden();
-
-  /**
-   * Returns the meta object for class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraints <em>Constraints</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Constraints</em>'.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraints
-   * @generated
-   */
-  EClass getConstraints();
-
-  /**
-   * Returns the meta object for the containment reference list '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraints#getCalls <em>Calls</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Calls</em>'.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraints#getCalls()
-   * @see #getConstraints()
-   * @generated
-   */
-  EReference getConstraints_Calls();
 
   /**
    * Returns the meta object for class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Invariants <em>Invariants</em>}'.
@@ -3832,6 +3821,14 @@ public interface DomainDrivenDesignDslPackage extends EPackage
     EAttribute ABSTRACT_METHOD__NAME = eINSTANCE.getAbstractMethod_Name();
 
     /**
+     * The meta object literal for the '<em><b>Constraint Calls</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ABSTRACT_METHOD__CONSTRAINT_CALLS = eINSTANCE.getAbstractMethod_ConstraintCalls();
+
+    /**
      * The meta object literal for the '<em><b>Fired Events</b></em>' reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3856,12 +3853,12 @@ public interface DomainDrivenDesignDslPackage extends EPackage
     EReference ABSTRACT_METHOD__SERVICE = eINSTANCE.getAbstractMethod_Service();
 
     /**
-     * The meta object literal for the '<em><b>Constraints</b></em>' containment reference feature.
+     * The meta object literal for the '<em><b>Services</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference ABSTRACT_METHOD__CONSTRAINTS = eINSTANCE.getAbstractMethod_Constraints();
+    EReference ABSTRACT_METHOD__SERVICES = eINSTANCE.getAbstractMethod_Services();
 
     /**
      * The meta object literal for the '<em><b>Events</b></em>' containment reference list feature.
@@ -4048,24 +4045,6 @@ public interface DomainDrivenDesignDslPackage extends EPackage
      * @generated
      */
     EReference VARIABLE__OVERRIDDEN = eINSTANCE.getVariable_Overridden();
-
-    /**
-     * The meta object literal for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConstraintsImpl <em>Constraints</em>}' class.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConstraintsImpl
-     * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getConstraints()
-     * @generated
-     */
-    EClass CONSTRAINTS = eINSTANCE.getConstraints();
-
-    /**
-     * The meta object literal for the '<em><b>Calls</b></em>' containment reference list feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EReference CONSTRAINTS__CALLS = eINSTANCE.getConstraints_Calls();
 
     /**
      * The meta object literal for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.InvariantsImpl <em>Invariants</em>}' class.

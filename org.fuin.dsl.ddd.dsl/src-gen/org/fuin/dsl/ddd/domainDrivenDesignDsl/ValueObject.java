@@ -19,7 +19,7 @@ package org.fuin.dsl.ddd.domainDrivenDesignDsl;
  * @model
  * @generated
  */
-public interface ValueObject extends AbstractVO, ConstraintTarget
+public interface ValueObject extends AbstractVO
 {
   /**
    * Returns the value of the '<em><b>Base</b></em>' reference.

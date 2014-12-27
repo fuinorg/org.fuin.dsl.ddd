@@ -20,130 +20,142 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumInstance;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.InternalType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ReturnType;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Service;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.util.DomainDrivenDesignDslSwitch;
 
 public class DddDslHighlightCalculator implements
-		ISemanticHighlightingCalculator {
+        ISemanticHighlightingCalculator {
 
-	@Override
-	public void provideHighlightingFor(XtextResource resource,
-			IHighlightedPositionAcceptor acceptor) {
+    @Override
+    public void provideHighlightingFor(XtextResource resource,
+            IHighlightedPositionAcceptor acceptor) {
 
-		if (resource == null) {
-			return;
-		}
+        if (resource == null) {
+            return;
+        }
 
-		HighlightingSwitch switcher = new HighlightingSwitch(acceptor);
+        HighlightingSwitch switcher = new HighlightingSwitch(acceptor);
 
-		Iterator<EObject> iter = EcoreUtil.getAllContents(resource, true);
-		while (iter.hasNext()) {
-			EObject current = iter.next();
-			switcher.doSwitch(current);
-		}
+        Iterator<EObject> iter = EcoreUtil.getAllContents(resource, true);
+        while (iter.hasNext()) {
+            EObject current = iter.next();
+            switcher.doSwitch(current);
+        }
 
-	}
+    }
 
-	private class HighlightingSwitch extends DomainDrivenDesignDslSwitch<Void> {
+    private class HighlightingSwitch extends DomainDrivenDesignDslSwitch<Void> {
 
-		private final IHighlightedPositionAcceptor acceptor;
+        private final IHighlightedPositionAcceptor acceptor;
 
-		public HighlightingSwitch(IHighlightedPositionAcceptor acceptor) {
-			this.acceptor = acceptor;
-		}
+        public HighlightingSwitch(IHighlightedPositionAcceptor acceptor) {
+            this.acceptor = acceptor;
+        }
 
-		@Override
-		public Void caseConstraint(Constraint constraint) {
-			return highlightFirst(constraint,
-					DomainDrivenDesignDslPackage.eINSTANCE.getConstraint_Doc(),
-					DddDslHighlightConfig.COMMENT_ID);
-		}
-		
-		@Override
-		public Void caseInternalType(InternalType internalType) {
-			return highlightFirst(internalType,
-					DomainDrivenDesignDslPackage.eINSTANCE.getInternalType_Doc(),
-					DddDslHighlightConfig.COMMENT_ID);
-		}
+        @Override
+        public Void caseConstraint(Constraint constraint) {
+            return highlightFirst(constraint,
+                    DomainDrivenDesignDslPackage.eINSTANCE.getConstraint_Doc(),
+                    DddDslHighlightConfig.COMMENT_ID);
+        }
 
-		@Override
-		public Void caseException(org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception exception) {
-			return highlightFirst(exception,
-					DomainDrivenDesignDslPackage.eINSTANCE.getException_Doc(),
-					DddDslHighlightConfig.COMMENT_ID);
-		}
-		
-		@Override
-		public Void caseEnumInstance(EnumInstance enumInstance) {
-			return highlightFirst(enumInstance,
-					DomainDrivenDesignDslPackage.eINSTANCE.getEnumInstance_Name(),
-					DddDslHighlightConfig.ENUM_INSTANCE_ID);
-		}
-		
-		@Override
-		public Void caseVariable(Variable variable) {
-			return highlightFirst(variable,
-					DomainDrivenDesignDslPackage.eINSTANCE.getVariable_Doc(),
-					DddDslHighlightConfig.COMMENT_ID);
-		}
+        @Override
+        public Void caseInternalType(InternalType internalType) {
+            return highlightFirst(internalType,
+                    DomainDrivenDesignDslPackage.eINSTANCE
+                            .getInternalType_Doc(),
+                    DddDslHighlightConfig.COMMENT_ID);
+        }
 
-		@Override
-		public Void caseAbstractMethod(AbstractMethod constr) {
-			return highlightFirst(constr,
-					DomainDrivenDesignDslPackage.eINSTANCE.getAbstractMethod_Doc(),
-					DddDslHighlightConfig.COMMENT_ID);
-		}
-		
-		@Override
-		public Void caseEvent(Event event) {
-			return highlightFirst(event,
-					DomainDrivenDesignDslPackage.eINSTANCE.getEvent_Doc(),
-					DddDslHighlightConfig.COMMENT_ID);
-		}
+        @Override
+        public Void caseException(
+                org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception exception) {
+            return highlightFirst(exception,
+                    DomainDrivenDesignDslPackage.eINSTANCE.getException_Doc(),
+                    DddDslHighlightConfig.COMMENT_ID);
+        }
 
-		@Override
-		public Void caseReturnType(ReturnType returnType) {
-			return highlightFirst(returnType,
-					DomainDrivenDesignDslPackage.eINSTANCE.getReturnType_Doc(),
-					DddDslHighlightConfig.COMMENT_ID);
-		}
-		
-		private Void highlightFirst(EObject eObj, EAttribute eAttr, String id) {
-			INode node = getFirstFeatureNode(eObj, eAttr);
-			if (node != null) {
-				highlightNode(node, id);
-			}
-			return null;
-		}
+        @Override
+        public Void caseEnumInstance(EnumInstance enumInstance) {
+            return highlightFirst(enumInstance,
+                    DomainDrivenDesignDslPackage.eINSTANCE
+                            .getEnumInstance_Name(),
+                    DddDslHighlightConfig.ENUM_INSTANCE_ID);
+        }
 
-		private void highlightNode(INode node, String id) {
-			if (node == null) {
-				return;
-			}
-			if (node instanceof ILeafNode) {
-				acceptor.addPosition(node.getOffset(), node.getLength(), id);
-			} else {
-				for (ILeafNode leaf : node.getLeafNodes()) {
-					if (!leaf.isHidden()) {
-						acceptor.addPosition(leaf.getOffset(),
-								leaf.getLength(), id);
-					}
-				}
-			}
-		}
-	}
+        @Override
+        public Void caseVariable(Variable variable) {
+            return highlightFirst(variable,
+                    DomainDrivenDesignDslPackage.eINSTANCE.getVariable_Doc(),
+                    DddDslHighlightConfig.COMMENT_ID);
+        }
 
-	public INode getFirstFeatureNode(EObject semantic,
-			EStructuralFeature feature) {
-		if (feature == null) {
-			return NodeModelUtils.findActualNodeFor(semantic);
-		}
-		List<INode> nodes = NodeModelUtils.findNodesForFeature(semantic,
-				feature);
-		if (!nodes.isEmpty()) {
-			return nodes.get(0);
-		}
-		return null;
-	}
-	
+        @Override
+        public Void caseAbstractMethod(AbstractMethod constr) {
+            return highlightFirst(constr,
+                    DomainDrivenDesignDslPackage.eINSTANCE
+                            .getAbstractMethod_Doc(),
+                    DddDslHighlightConfig.COMMENT_ID);
+        }
+
+        @Override
+        public Void caseEvent(Event event) {
+            return highlightFirst(event,
+                    DomainDrivenDesignDslPackage.eINSTANCE.getEvent_Doc(),
+                    DddDslHighlightConfig.COMMENT_ID);
+        }
+
+        @Override
+        public Void caseReturnType(ReturnType returnType) {
+            return highlightFirst(returnType,
+                    DomainDrivenDesignDslPackage.eINSTANCE.getReturnType_Doc(),
+                    DddDslHighlightConfig.COMMENT_ID);
+        }
+
+        @Override
+        public Void caseService(Service service) {
+            return highlightFirst(service,
+                    DomainDrivenDesignDslPackage.eINSTANCE.getReturnType_Doc(),
+                    DddDslHighlightConfig.COMMENT_ID);
+        }
+
+        private Void highlightFirst(EObject eObj, EAttribute eAttr, String id) {
+            INode node = getFirstFeatureNode(eObj, eAttr);
+            if (node != null) {
+                highlightNode(node, id);
+            }
+            return null;
+        }
+
+        private void highlightNode(INode node, String id) {
+            if (node == null) {
+                return;
+            }
+            if (node instanceof ILeafNode) {
+                acceptor.addPosition(node.getOffset(), node.getLength(), id);
+            } else {
+                for (ILeafNode leaf : node.getLeafNodes()) {
+                    if (!leaf.isHidden()) {
+                        acceptor.addPosition(leaf.getOffset(),
+                                leaf.getLength(), id);
+                    }
+                }
+            }
+        }
+    }
+
+    public INode getFirstFeatureNode(EObject semantic,
+            EStructuralFeature feature) {
+        if (feature == null) {
+            return NodeModelUtils.findActualNodeFor(semantic);
+        }
+        List<INode> nodes = NodeModelUtils.findNodesForFeature(semantic,
+                feature);
+        if (!nodes.isEmpty()) {
+            return nodes.get(0);
+        }
+        return null;
+    }
+
 }

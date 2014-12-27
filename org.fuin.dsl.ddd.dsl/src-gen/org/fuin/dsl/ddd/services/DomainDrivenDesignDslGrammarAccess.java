@@ -293,20 +293,20 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ConstraintTarget");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cExternalTypeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cValueObjectParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cAbstractVOParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//ConstraintTarget:
-		//	ExternalType | ValueObject;
+		//	ExternalType | AbstractVO;
 		public ParserRule getRule() { return rule; }
 
-		//ExternalType | ValueObject
+		//ExternalType | AbstractVO
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//ExternalType
 		public RuleCall getExternalTypeParserRuleCall_0() { return cExternalTypeParserRuleCall_0; }
 
-		//ValueObject
-		public RuleCall getValueObjectParserRuleCall_1() { return cValueObjectParserRuleCall_1; }
+		//AbstractVO
+		public RuleCall getAbstractVOParserRuleCall_1() { return cAbstractVOParserRuleCall_1; }
 	}
 
 	public class ExternalTypeElements extends AbstractParserRuleElementFinder {
@@ -1292,34 +1292,44 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cFiresKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cFiredEventsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final CrossReference cFiredEventsEventCrossReference_3_1_0 = (CrossReference)cFiredEventsAssignment_3_1.eContents().get(0);
-		private final RuleCall cFiredEventsEventFQNParserRuleCall_3_1_0_1 = (RuleCall)cFiredEventsEventCrossReference_3_1_0.eContents().get(1);
+		private final Keyword cConstraintsKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cConstraintCallsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cConstraintCallsConstraintCallParserRuleCall_3_1_0 = (RuleCall)cConstraintCallsAssignment_3_1.eContents().get(0);
 		private final Group cGroup_3_2 = (Group)cGroup_3.eContents().get(2);
 		private final Keyword cCommaKeyword_3_2_0 = (Keyword)cGroup_3_2.eContents().get(0);
-		private final Assignment cFiredEventsAssignment_3_2_1 = (Assignment)cGroup_3_2.eContents().get(1);
-		private final CrossReference cFiredEventsEventCrossReference_3_2_1_0 = (CrossReference)cFiredEventsAssignment_3_2_1.eContents().get(0);
-		private final RuleCall cFiredEventsEventFQNParserRuleCall_3_2_1_0_1 = (RuleCall)cFiredEventsEventCrossReference_3_2_1_0.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		private final Assignment cVariablesAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cVariablesVariableParserRuleCall_5_0 = (RuleCall)cVariablesAssignment_5.eContents().get(0);
-		private final Assignment cServiceAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final CrossReference cServiceServiceCrossReference_6_0 = (CrossReference)cServiceAssignment_6.eContents().get(0);
-		private final RuleCall cServiceServiceFQNParserRuleCall_6_0_1 = (RuleCall)cServiceServiceCrossReference_6_0.eContents().get(1);
-		private final Assignment cConstraintsAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cConstraintsConstraintsParserRuleCall_7_0 = (RuleCall)cConstraintsAssignment_7.eContents().get(0);
-		private final Assignment cEventsAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final RuleCall cEventsEventParserRuleCall_8_0 = (RuleCall)cEventsAssignment_8.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
+		private final Assignment cConstraintCallsAssignment_3_2_1 = (Assignment)cGroup_3_2.eContents().get(1);
+		private final RuleCall cConstraintCallsConstraintCallParserRuleCall_3_2_1_0 = (RuleCall)cConstraintCallsAssignment_3_2_1.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cFiresKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cFiredEventsAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final CrossReference cFiredEventsEventCrossReference_4_1_0 = (CrossReference)cFiredEventsAssignment_4_1.eContents().get(0);
+		private final RuleCall cFiredEventsEventFQNParserRuleCall_4_1_0_1 = (RuleCall)cFiredEventsEventCrossReference_4_1_0.eContents().get(1);
+		private final Group cGroup_4_2 = (Group)cGroup_4.eContents().get(2);
+		private final Keyword cCommaKeyword_4_2_0 = (Keyword)cGroup_4_2.eContents().get(0);
+		private final Assignment cFiredEventsAssignment_4_2_1 = (Assignment)cGroup_4_2.eContents().get(1);
+		private final CrossReference cFiredEventsEventCrossReference_4_2_1_0 = (CrossReference)cFiredEventsAssignment_4_2_1.eContents().get(0);
+		private final RuleCall cFiredEventsEventFQNParserRuleCall_4_2_1_0_1 = (RuleCall)cFiredEventsEventCrossReference_4_2_1_0.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cVariablesAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cVariablesVariableParserRuleCall_6_0 = (RuleCall)cVariablesAssignment_6.eContents().get(0);
+		private final Assignment cServiceAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final CrossReference cServiceServiceCrossReference_7_0 = (CrossReference)cServiceAssignment_7.eContents().get(0);
+		private final RuleCall cServiceServiceFQNParserRuleCall_7_0_1 = (RuleCall)cServiceServiceCrossReference_7_0.eContents().get(1);
+		private final Assignment cServicesAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cServicesServiceParserRuleCall_8_0 = (RuleCall)cServicesAssignment_8.eContents().get(0);
+		private final Assignment cEventsAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cEventsEventParserRuleCall_9_0 = (RuleCall)cEventsAssignment_9.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		
 		//Constructor:
-		//	doc=DOC? "constructor" name=ID ("fires" firedEvents+=[Event|FQN] ("," firedEvents+=[Event|FQN])*)? "{"
-		//	variables+=Variable* service=[Service|FQN]? constraints=Constraints? events+=Event* "}";
+		//	doc=DOC? "constructor" name=ID ("constraints" constraintCalls+=ConstraintCall ("," constraintCalls+=ConstraintCall)*)?
+		//	("fires" firedEvents+=[Event|FQN] ("," firedEvents+=[Event|FQN])*)? "{" variables+=Variable* service=[Service|FQN]?
+		//	services+=Service* events+=Event* "}";
 		public ParserRule getRule() { return rule; }
 
-		//doc=DOC? "constructor" name=ID ("fires" firedEvents+=[Event|FQN] ("," firedEvents+=[Event|FQN])*)? "{"
-		//variables+=Variable* service=[Service|FQN]? constraints=Constraints? events+=Event* "}"
+		//doc=DOC? "constructor" name=ID ("constraints" constraintCalls+=ConstraintCall ("," constraintCalls+=ConstraintCall)*)?
+		//("fires" firedEvents+=[Event|FQN] ("," firedEvents+=[Event|FQN])*)? "{" variables+=Variable* service=[Service|FQN]?
+		//services+=Service* events+=Event* "}"
 		public Group getGroup() { return cGroup; }
 
 		//doc=DOC?
@@ -1337,68 +1347,92 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 
-		//("fires" firedEvents+=[Event|FQN] ("," firedEvents+=[Event|FQN])*)?
+		//("constraints" constraintCalls+=ConstraintCall ("," constraintCalls+=ConstraintCall)*)?
 		public Group getGroup_3() { return cGroup_3; }
 
-		//"fires"
-		public Keyword getFiresKeyword_3_0() { return cFiresKeyword_3_0; }
+		//"constraints"
+		public Keyword getConstraintsKeyword_3_0() { return cConstraintsKeyword_3_0; }
 
-		//firedEvents+=[Event|FQN]
-		public Assignment getFiredEventsAssignment_3_1() { return cFiredEventsAssignment_3_1; }
+		//constraintCalls+=ConstraintCall
+		public Assignment getConstraintCallsAssignment_3_1() { return cConstraintCallsAssignment_3_1; }
 
-		//[Event|FQN]
-		public CrossReference getFiredEventsEventCrossReference_3_1_0() { return cFiredEventsEventCrossReference_3_1_0; }
+		//ConstraintCall
+		public RuleCall getConstraintCallsConstraintCallParserRuleCall_3_1_0() { return cConstraintCallsConstraintCallParserRuleCall_3_1_0; }
 
-		//FQN
-		public RuleCall getFiredEventsEventFQNParserRuleCall_3_1_0_1() { return cFiredEventsEventFQNParserRuleCall_3_1_0_1; }
-
-		//("," firedEvents+=[Event|FQN])*
+		//("," constraintCalls+=ConstraintCall)*
 		public Group getGroup_3_2() { return cGroup_3_2; }
 
 		//","
 		public Keyword getCommaKeyword_3_2_0() { return cCommaKeyword_3_2_0; }
 
+		//constraintCalls+=ConstraintCall
+		public Assignment getConstraintCallsAssignment_3_2_1() { return cConstraintCallsAssignment_3_2_1; }
+
+		//ConstraintCall
+		public RuleCall getConstraintCallsConstraintCallParserRuleCall_3_2_1_0() { return cConstraintCallsConstraintCallParserRuleCall_3_2_1_0; }
+
+		//("fires" firedEvents+=[Event|FQN] ("," firedEvents+=[Event|FQN])*)?
+		public Group getGroup_4() { return cGroup_4; }
+
+		//"fires"
+		public Keyword getFiresKeyword_4_0() { return cFiresKeyword_4_0; }
+
 		//firedEvents+=[Event|FQN]
-		public Assignment getFiredEventsAssignment_3_2_1() { return cFiredEventsAssignment_3_2_1; }
+		public Assignment getFiredEventsAssignment_4_1() { return cFiredEventsAssignment_4_1; }
 
 		//[Event|FQN]
-		public CrossReference getFiredEventsEventCrossReference_3_2_1_0() { return cFiredEventsEventCrossReference_3_2_1_0; }
+		public CrossReference getFiredEventsEventCrossReference_4_1_0() { return cFiredEventsEventCrossReference_4_1_0; }
 
 		//FQN
-		public RuleCall getFiredEventsEventFQNParserRuleCall_3_2_1_0_1() { return cFiredEventsEventFQNParserRuleCall_3_2_1_0_1; }
+		public RuleCall getFiredEventsEventFQNParserRuleCall_4_1_0_1() { return cFiredEventsEventFQNParserRuleCall_4_1_0_1; }
+
+		//("," firedEvents+=[Event|FQN])*
+		public Group getGroup_4_2() { return cGroup_4_2; }
+
+		//","
+		public Keyword getCommaKeyword_4_2_0() { return cCommaKeyword_4_2_0; }
+
+		//firedEvents+=[Event|FQN]
+		public Assignment getFiredEventsAssignment_4_2_1() { return cFiredEventsAssignment_4_2_1; }
+
+		//[Event|FQN]
+		public CrossReference getFiredEventsEventCrossReference_4_2_1_0() { return cFiredEventsEventCrossReference_4_2_1_0; }
+
+		//FQN
+		public RuleCall getFiredEventsEventFQNParserRuleCall_4_2_1_0_1() { return cFiredEventsEventFQNParserRuleCall_4_2_1_0_1; }
 
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
+		public Keyword getLeftCurlyBracketKeyword_5() { return cLeftCurlyBracketKeyword_5; }
 
 		//variables+=Variable*
-		public Assignment getVariablesAssignment_5() { return cVariablesAssignment_5; }
+		public Assignment getVariablesAssignment_6() { return cVariablesAssignment_6; }
 
 		//Variable
-		public RuleCall getVariablesVariableParserRuleCall_5_0() { return cVariablesVariableParserRuleCall_5_0; }
+		public RuleCall getVariablesVariableParserRuleCall_6_0() { return cVariablesVariableParserRuleCall_6_0; }
 
 		//service=[Service|FQN]?
-		public Assignment getServiceAssignment_6() { return cServiceAssignment_6; }
+		public Assignment getServiceAssignment_7() { return cServiceAssignment_7; }
 
 		//[Service|FQN]
-		public CrossReference getServiceServiceCrossReference_6_0() { return cServiceServiceCrossReference_6_0; }
+		public CrossReference getServiceServiceCrossReference_7_0() { return cServiceServiceCrossReference_7_0; }
 
 		//FQN
-		public RuleCall getServiceServiceFQNParserRuleCall_6_0_1() { return cServiceServiceFQNParserRuleCall_6_0_1; }
+		public RuleCall getServiceServiceFQNParserRuleCall_7_0_1() { return cServiceServiceFQNParserRuleCall_7_0_1; }
 
-		//constraints=Constraints?
-		public Assignment getConstraintsAssignment_7() { return cConstraintsAssignment_7; }
+		//services+=Service*
+		public Assignment getServicesAssignment_8() { return cServicesAssignment_8; }
 
-		//Constraints
-		public RuleCall getConstraintsConstraintsParserRuleCall_7_0() { return cConstraintsConstraintsParserRuleCall_7_0; }
+		//Service
+		public RuleCall getServicesServiceParserRuleCall_8_0() { return cServicesServiceParserRuleCall_8_0; }
 
 		//events+=Event*
-		public Assignment getEventsAssignment_8() { return cEventsAssignment_8; }
+		public Assignment getEventsAssignment_9() { return cEventsAssignment_9; }
 
 		//Event
-		public RuleCall getEventsEventParserRuleCall_8_0() { return cEventsEventParserRuleCall_8_0; }
+		public RuleCall getEventsEventParserRuleCall_9_0() { return cEventsEventParserRuleCall_9_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
+		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
 	}
 
 	public class ReturnTypeElements extends AbstractParserRuleElementFinder {
@@ -1451,38 +1485,46 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final CrossReference cRefMethodMethodCrossReference_3_1_0 = (CrossReference)cRefMethodAssignment_3_1.eContents().get(0);
 		private final RuleCall cRefMethodMethodFQNParserRuleCall_3_1_0_1 = (RuleCall)cRefMethodMethodCrossReference_3_1_0.eContents().get(1);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
-		private final Keyword cFiresKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
-		private final Assignment cFiredEventsAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final CrossReference cFiredEventsEventCrossReference_4_1_0 = (CrossReference)cFiredEventsAssignment_4_1.eContents().get(0);
-		private final RuleCall cFiredEventsEventFQNParserRuleCall_4_1_0_1 = (RuleCall)cFiredEventsEventCrossReference_4_1_0.eContents().get(1);
+		private final Keyword cConstraintsKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cConstraintCallsAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cConstraintCallsConstraintCallParserRuleCall_4_1_0 = (RuleCall)cConstraintCallsAssignment_4_1.eContents().get(0);
 		private final Group cGroup_4_2 = (Group)cGroup_4.eContents().get(2);
 		private final Keyword cCommaKeyword_4_2_0 = (Keyword)cGroup_4_2.eContents().get(0);
-		private final Assignment cFiredEventsAssignment_4_2_1 = (Assignment)cGroup_4_2.eContents().get(1);
-		private final CrossReference cFiredEventsEventCrossReference_4_2_1_0 = (CrossReference)cFiredEventsAssignment_4_2_1.eContents().get(0);
-		private final RuleCall cFiredEventsEventFQNParserRuleCall_4_2_1_0_1 = (RuleCall)cFiredEventsEventCrossReference_4_2_1_0.eContents().get(1);
-		private final Keyword cLeftCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cVariablesAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cVariablesVariableParserRuleCall_6_0 = (RuleCall)cVariablesAssignment_6.eContents().get(0);
-		private final Assignment cServiceAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final CrossReference cServiceServiceCrossReference_7_0 = (CrossReference)cServiceAssignment_7.eContents().get(0);
-		private final RuleCall cServiceServiceFQNParserRuleCall_7_0_1 = (RuleCall)cServiceServiceCrossReference_7_0.eContents().get(1);
-		private final Assignment cReturnTypeAssignment_8 = (Assignment)cGroup.eContents().get(8);
-		private final RuleCall cReturnTypeReturnTypeParserRuleCall_8_0 = (RuleCall)cReturnTypeAssignment_8.eContents().get(0);
-		private final Assignment cConstraintsAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cConstraintsConstraintsParserRuleCall_9_0 = (RuleCall)cConstraintsAssignment_9.eContents().get(0);
-		private final Assignment cEventsAssignment_10 = (Assignment)cGroup.eContents().get(10);
-		private final RuleCall cEventsEventParserRuleCall_10_0 = (RuleCall)cEventsAssignment_10.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
+		private final Assignment cConstraintCallsAssignment_4_2_1 = (Assignment)cGroup_4_2.eContents().get(1);
+		private final RuleCall cConstraintCallsConstraintCallParserRuleCall_4_2_1_0 = (RuleCall)cConstraintCallsAssignment_4_2_1.eContents().get(0);
+		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
+		private final Keyword cFiresKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
+		private final Assignment cFiredEventsAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
+		private final CrossReference cFiredEventsEventCrossReference_5_1_0 = (CrossReference)cFiredEventsAssignment_5_1.eContents().get(0);
+		private final RuleCall cFiredEventsEventFQNParserRuleCall_5_1_0_1 = (RuleCall)cFiredEventsEventCrossReference_5_1_0.eContents().get(1);
+		private final Group cGroup_5_2 = (Group)cGroup_5.eContents().get(2);
+		private final Keyword cCommaKeyword_5_2_0 = (Keyword)cGroup_5_2.eContents().get(0);
+		private final Assignment cFiredEventsAssignment_5_2_1 = (Assignment)cGroup_5_2.eContents().get(1);
+		private final CrossReference cFiredEventsEventCrossReference_5_2_1_0 = (CrossReference)cFiredEventsAssignment_5_2_1.eContents().get(0);
+		private final RuleCall cFiredEventsEventFQNParserRuleCall_5_2_1_0_1 = (RuleCall)cFiredEventsEventCrossReference_5_2_1_0.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_6 = (Keyword)cGroup.eContents().get(6);
+		private final Assignment cVariablesAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cVariablesVariableParserRuleCall_7_0 = (RuleCall)cVariablesAssignment_7.eContents().get(0);
+		private final Assignment cServiceAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final CrossReference cServiceServiceCrossReference_8_0 = (CrossReference)cServiceAssignment_8.eContents().get(0);
+		private final RuleCall cServiceServiceFQNParserRuleCall_8_0_1 = (RuleCall)cServiceServiceCrossReference_8_0.eContents().get(1);
+		private final Assignment cReturnTypeAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cReturnTypeReturnTypeParserRuleCall_9_0 = (RuleCall)cReturnTypeAssignment_9.eContents().get(0);
+		private final Assignment cServicesAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final RuleCall cServicesServiceParserRuleCall_10_0 = (RuleCall)cServicesAssignment_10.eContents().get(0);
+		private final Assignment cEventsAssignment_11 = (Assignment)cGroup.eContents().get(11);
+		private final RuleCall cEventsEventParserRuleCall_11_0 = (RuleCall)cEventsAssignment_11.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
 		
 		//Method:
-		//	doc=DOC? "method" name=ID ("ref" refMethod=[Method|FQN])? ("fires" firedEvents+=[Event|FQN] (","
-		//	firedEvents+=[Event|FQN])*)? "{" variables+=Variable* service=[Service|FQN]? returnType=ReturnType?
-		//	constraints=Constraints? events+=Event* "}";
+		//	doc=DOC? "method" name=ID ("ref" refMethod=[Method|FQN])? ("constraints" constraintCalls+=ConstraintCall (","
+		//	constraintCalls+=ConstraintCall)*)? ("fires" firedEvents+=[Event|FQN] ("," firedEvents+=[Event|FQN])*)? "{"
+		//	variables+=Variable* service=[Service|FQN]? returnType=ReturnType? services+=Service* events+=Event* "}";
 		public ParserRule getRule() { return rule; }
 
-		//doc=DOC? "method" name=ID ("ref" refMethod=[Method|FQN])? ("fires" firedEvents+=[Event|FQN] (","
-		//firedEvents+=[Event|FQN])*)? "{" variables+=Variable* service=[Service|FQN]? returnType=ReturnType?
-		//constraints=Constraints? events+=Event* "}"
+		//doc=DOC? "method" name=ID ("ref" refMethod=[Method|FQN])? ("constraints" constraintCalls+=ConstraintCall (","
+		//constraintCalls+=ConstraintCall)*)? ("fires" firedEvents+=[Event|FQN] ("," firedEvents+=[Event|FQN])*)? "{"
+		//variables+=Variable* service=[Service|FQN]? returnType=ReturnType? services+=Service* events+=Event* "}"
 		public Group getGroup() { return cGroup; }
 
 		//doc=DOC?
@@ -1515,74 +1557,98 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		//FQN
 		public RuleCall getRefMethodMethodFQNParserRuleCall_3_1_0_1() { return cRefMethodMethodFQNParserRuleCall_3_1_0_1; }
 
-		//("fires" firedEvents+=[Event|FQN] ("," firedEvents+=[Event|FQN])*)?
+		//("constraints" constraintCalls+=ConstraintCall ("," constraintCalls+=ConstraintCall)*)?
 		public Group getGroup_4() { return cGroup_4; }
 
-		//"fires"
-		public Keyword getFiresKeyword_4_0() { return cFiresKeyword_4_0; }
+		//"constraints"
+		public Keyword getConstraintsKeyword_4_0() { return cConstraintsKeyword_4_0; }
 
-		//firedEvents+=[Event|FQN]
-		public Assignment getFiredEventsAssignment_4_1() { return cFiredEventsAssignment_4_1; }
+		//constraintCalls+=ConstraintCall
+		public Assignment getConstraintCallsAssignment_4_1() { return cConstraintCallsAssignment_4_1; }
 
-		//[Event|FQN]
-		public CrossReference getFiredEventsEventCrossReference_4_1_0() { return cFiredEventsEventCrossReference_4_1_0; }
+		//ConstraintCall
+		public RuleCall getConstraintCallsConstraintCallParserRuleCall_4_1_0() { return cConstraintCallsConstraintCallParserRuleCall_4_1_0; }
 
-		//FQN
-		public RuleCall getFiredEventsEventFQNParserRuleCall_4_1_0_1() { return cFiredEventsEventFQNParserRuleCall_4_1_0_1; }
-
-		//("," firedEvents+=[Event|FQN])*
+		//("," constraintCalls+=ConstraintCall)*
 		public Group getGroup_4_2() { return cGroup_4_2; }
 
 		//","
 		public Keyword getCommaKeyword_4_2_0() { return cCommaKeyword_4_2_0; }
 
+		//constraintCalls+=ConstraintCall
+		public Assignment getConstraintCallsAssignment_4_2_1() { return cConstraintCallsAssignment_4_2_1; }
+
+		//ConstraintCall
+		public RuleCall getConstraintCallsConstraintCallParserRuleCall_4_2_1_0() { return cConstraintCallsConstraintCallParserRuleCall_4_2_1_0; }
+
+		//("fires" firedEvents+=[Event|FQN] ("," firedEvents+=[Event|FQN])*)?
+		public Group getGroup_5() { return cGroup_5; }
+
+		//"fires"
+		public Keyword getFiresKeyword_5_0() { return cFiresKeyword_5_0; }
+
 		//firedEvents+=[Event|FQN]
-		public Assignment getFiredEventsAssignment_4_2_1() { return cFiredEventsAssignment_4_2_1; }
+		public Assignment getFiredEventsAssignment_5_1() { return cFiredEventsAssignment_5_1; }
 
 		//[Event|FQN]
-		public CrossReference getFiredEventsEventCrossReference_4_2_1_0() { return cFiredEventsEventCrossReference_4_2_1_0; }
+		public CrossReference getFiredEventsEventCrossReference_5_1_0() { return cFiredEventsEventCrossReference_5_1_0; }
 
 		//FQN
-		public RuleCall getFiredEventsEventFQNParserRuleCall_4_2_1_0_1() { return cFiredEventsEventFQNParserRuleCall_4_2_1_0_1; }
+		public RuleCall getFiredEventsEventFQNParserRuleCall_5_1_0_1() { return cFiredEventsEventFQNParserRuleCall_5_1_0_1; }
+
+		//("," firedEvents+=[Event|FQN])*
+		public Group getGroup_5_2() { return cGroup_5_2; }
+
+		//","
+		public Keyword getCommaKeyword_5_2_0() { return cCommaKeyword_5_2_0; }
+
+		//firedEvents+=[Event|FQN]
+		public Assignment getFiredEventsAssignment_5_2_1() { return cFiredEventsAssignment_5_2_1; }
+
+		//[Event|FQN]
+		public CrossReference getFiredEventsEventCrossReference_5_2_1_0() { return cFiredEventsEventCrossReference_5_2_1_0; }
+
+		//FQN
+		public RuleCall getFiredEventsEventFQNParserRuleCall_5_2_1_0_1() { return cFiredEventsEventFQNParserRuleCall_5_2_1_0_1; }
 
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_5() { return cLeftCurlyBracketKeyword_5; }
+		public Keyword getLeftCurlyBracketKeyword_6() { return cLeftCurlyBracketKeyword_6; }
 
 		//variables+=Variable*
-		public Assignment getVariablesAssignment_6() { return cVariablesAssignment_6; }
+		public Assignment getVariablesAssignment_7() { return cVariablesAssignment_7; }
 
 		//Variable
-		public RuleCall getVariablesVariableParserRuleCall_6_0() { return cVariablesVariableParserRuleCall_6_0; }
+		public RuleCall getVariablesVariableParserRuleCall_7_0() { return cVariablesVariableParserRuleCall_7_0; }
 
 		//service=[Service|FQN]?
-		public Assignment getServiceAssignment_7() { return cServiceAssignment_7; }
+		public Assignment getServiceAssignment_8() { return cServiceAssignment_8; }
 
 		//[Service|FQN]
-		public CrossReference getServiceServiceCrossReference_7_0() { return cServiceServiceCrossReference_7_0; }
+		public CrossReference getServiceServiceCrossReference_8_0() { return cServiceServiceCrossReference_8_0; }
 
 		//FQN
-		public RuleCall getServiceServiceFQNParserRuleCall_7_0_1() { return cServiceServiceFQNParserRuleCall_7_0_1; }
+		public RuleCall getServiceServiceFQNParserRuleCall_8_0_1() { return cServiceServiceFQNParserRuleCall_8_0_1; }
 
 		//returnType=ReturnType?
-		public Assignment getReturnTypeAssignment_8() { return cReturnTypeAssignment_8; }
+		public Assignment getReturnTypeAssignment_9() { return cReturnTypeAssignment_9; }
 
 		//ReturnType
-		public RuleCall getReturnTypeReturnTypeParserRuleCall_8_0() { return cReturnTypeReturnTypeParserRuleCall_8_0; }
+		public RuleCall getReturnTypeReturnTypeParserRuleCall_9_0() { return cReturnTypeReturnTypeParserRuleCall_9_0; }
 
-		//constraints=Constraints?
-		public Assignment getConstraintsAssignment_9() { return cConstraintsAssignment_9; }
+		//services+=Service*
+		public Assignment getServicesAssignment_10() { return cServicesAssignment_10; }
 
-		//Constraints
-		public RuleCall getConstraintsConstraintsParserRuleCall_9_0() { return cConstraintsConstraintsParserRuleCall_9_0; }
+		//Service
+		public RuleCall getServicesServiceParserRuleCall_10_0() { return cServicesServiceParserRuleCall_10_0; }
 
 		//events+=Event*
-		public Assignment getEventsAssignment_10() { return cEventsAssignment_10; }
+		public Assignment getEventsAssignment_11() { return cEventsAssignment_11; }
 
 		//Event
-		public RuleCall getEventsEventParserRuleCall_10_0() { return cEventsEventParserRuleCall_10_0; }
+		public RuleCall getEventsEventParserRuleCall_11_0() { return cEventsEventParserRuleCall_11_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
+		public Keyword getRightCurlyBracketKeyword_12() { return cRightCurlyBracketKeyword_12; }
 	}
 
 	public class TypeMetaInfoElements extends AbstractParserRuleElementFinder {
@@ -1755,54 +1821,6 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 
 		//OverriddenTypeMetaInfo
 		public RuleCall getOverriddenOverriddenTypeMetaInfoParserRuleCall_6_0() { return cOverriddenOverriddenTypeMetaInfoParserRuleCall_6_0; }
-	}
-
-	public class ConstraintsElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Constraints");
-		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cConstraintsKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cCallsAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cCallsConstraintCallParserRuleCall_2_0 = (RuleCall)cCallsAssignment_2.eContents().get(0);
-		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cCommaKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
-		private final Assignment cCallsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cCallsConstraintCallParserRuleCall_3_1_0 = (RuleCall)cCallsAssignment_3_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
-		
-		//Constraints:
-		//	"constraints" "{" calls+=ConstraintCall ("," calls+=ConstraintCall)* "}";
-		public ParserRule getRule() { return rule; }
-
-		//"constraints" "{" calls+=ConstraintCall ("," calls+=ConstraintCall)* "}"
-		public Group getGroup() { return cGroup; }
-
-		//"constraints"
-		public Keyword getConstraintsKeyword_0() { return cConstraintsKeyword_0; }
-
-		//"{"
-		public Keyword getLeftCurlyBracketKeyword_1() { return cLeftCurlyBracketKeyword_1; }
-
-		//calls+=ConstraintCall
-		public Assignment getCallsAssignment_2() { return cCallsAssignment_2; }
-
-		//ConstraintCall
-		public RuleCall getCallsConstraintCallParserRuleCall_2_0() { return cCallsConstraintCallParserRuleCall_2_0; }
-
-		//("," calls+=ConstraintCall)*
-		public Group getGroup_3() { return cGroup_3; }
-
-		//","
-		public Keyword getCommaKeyword_3_0() { return cCommaKeyword_3_0; }
-
-		//calls+=ConstraintCall
-		public Assignment getCallsAssignment_3_1() { return cCallsAssignment_3_1; }
-
-		//ConstraintCall
-		public RuleCall getCallsConstraintCallParserRuleCall_3_1_0() { return cCallsConstraintCallParserRuleCall_3_1_0; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_4() { return cRightCurlyBracketKeyword_4; }
 	}
 
 	public class InvariantsElements extends AbstractParserRuleElementFinder {
@@ -2246,7 +2264,6 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	private final MethodElements pMethod;
 	private final TypeMetaInfoElements pTypeMetaInfo;
 	private final VariableElements pVariable;
-	private final ConstraintsElements pConstraints;
 	private final InvariantsElements pInvariants;
 	private final OverriddenTypeMetaInfoElements pOverriddenTypeMetaInfo;
 	private final ConstraintCallElements pConstraintCall;
@@ -2302,7 +2319,6 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		this.pMethod = new MethodElements();
 		this.pTypeMetaInfo = new TypeMetaInfoElements();
 		this.pVariable = new VariableElements();
-		this.pConstraints = new ConstraintsElements();
 		this.pInvariants = new InvariantsElements();
 		this.pOverriddenTypeMetaInfo = new OverriddenTypeMetaInfoElements();
 		this.pConstraintCall = new ConstraintCallElements();
@@ -2450,7 +2466,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//ConstraintTarget:
-	//	ExternalType | ValueObject;
+	//	ExternalType | AbstractVO;
 	public ConstraintTargetElements getConstraintTargetAccess() {
 		return pConstraintTarget;
 	}
@@ -2587,8 +2603,9 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//Constructor:
-	//	doc=DOC? "constructor" name=ID ("fires" firedEvents+=[Event|FQN] ("," firedEvents+=[Event|FQN])*)? "{"
-	//	variables+=Variable* service=[Service|FQN]? constraints=Constraints? events+=Event* "}";
+	//	doc=DOC? "constructor" name=ID ("constraints" constraintCalls+=ConstraintCall ("," constraintCalls+=ConstraintCall)*)?
+	//	("fires" firedEvents+=[Event|FQN] ("," firedEvents+=[Event|FQN])*)? "{" variables+=Variable* service=[Service|FQN]?
+	//	services+=Service* events+=Event* "}";
 	public ConstructorElements getConstructorAccess() {
 		return pConstructor;
 	}
@@ -2608,9 +2625,9 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//Method:
-	//	doc=DOC? "method" name=ID ("ref" refMethod=[Method|FQN])? ("fires" firedEvents+=[Event|FQN] (","
-	//	firedEvents+=[Event|FQN])*)? "{" variables+=Variable* service=[Service|FQN]? returnType=ReturnType?
-	//	constraints=Constraints? events+=Event* "}";
+	//	doc=DOC? "method" name=ID ("ref" refMethod=[Method|FQN])? ("constraints" constraintCalls+=ConstraintCall (","
+	//	constraintCalls+=ConstraintCall)*)? ("fires" firedEvents+=[Event|FQN] ("," firedEvents+=[Event|FQN])*)? "{"
+	//	variables+=Variable* service=[Service|FQN]? returnType=ReturnType? services+=Service* events+=Event* "}";
 	public MethodElements getMethodAccess() {
 		return pMethod;
 	}
@@ -2639,16 +2656,6 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	
 	public ParserRule getVariableRule() {
 		return getVariableAccess().getRule();
-	}
-
-	//Constraints:
-	//	"constraints" "{" calls+=ConstraintCall ("," calls+=ConstraintCall)* "}";
-	public ConstraintsElements getConstraintsAccess() {
-		return pConstraints;
-	}
-	
-	public ParserRule getConstraintsRule() {
-		return getConstraintsAccess().getRule();
 	}
 
 	//Invariants:
