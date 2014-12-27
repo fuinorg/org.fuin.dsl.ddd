@@ -29,7 +29,6 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.EntityId;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Method;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Namespace;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ReturnType;
@@ -470,20 +469,17 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
         vars.add(_name);
       }
     }
+    vars.add("vv");
     ConstraintTarget target = constraint.getTarget();
-    if ((target instanceof ExternalType)) {
-      vars.add("vv");
-    } else {
-      if ((target instanceof AbstractVO)) {
-        EList<Variable> _variables_2 = ((AbstractVO)target).getVariables();
-        boolean _notEquals_1 = (!Objects.equal(_variables_2, null));
-        if (_notEquals_1) {
-          EList<Variable> _variables_3 = ((AbstractVO)target).getVariables();
-          for (final Variable v_1 : _variables_3) {
-            String _name_1 = v_1.getName();
-            String _plus = ("vv_" + _name_1);
-            vars.add(_plus);
-          }
+    if ((target instanceof AbstractVO)) {
+      EList<Variable> _variables_2 = ((AbstractVO)target).getVariables();
+      boolean _notEquals_1 = (!Objects.equal(_variables_2, null));
+      if (_notEquals_1) {
+        EList<Variable> _variables_3 = ((AbstractVO)target).getVariables();
+        for (final Variable v_1 : _variables_3) {
+          String _name_1 = v_1.getName();
+          String _plus = ("vv_" + _name_1);
+          vars.add(_plus);
         }
       }
     }
