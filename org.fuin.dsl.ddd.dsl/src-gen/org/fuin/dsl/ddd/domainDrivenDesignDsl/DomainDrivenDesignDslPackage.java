@@ -1093,13 +1093,22 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int ENUM_INSTANCE__DOC = 0;
 
   /**
+   * The feature id for the '<em><b>Deprecated</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENUM_INSTANCE__DEPRECATED = 1;
+
+  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ENUM_INSTANCE__NAME = 1;
+  int ENUM_INSTANCE__NAME = 2;
 
   /**
    * The feature id for the '<em><b>Params</b></em>' containment reference list.
@@ -1108,7 +1117,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENUM_INSTANCE__PARAMS = 2;
+  int ENUM_INSTANCE__PARAMS = 3;
 
   /**
    * The number of structural features of the '<em>Enum Instance</em>' class.
@@ -1117,7 +1126,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ENUM_INSTANCE_FEATURE_COUNT = 3;
+  int ENUM_INSTANCE_FEATURE_COUNT = 4;
 
   /**
    * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.EventImpl <em>Event</em>}' class.
@@ -2651,6 +2660,17 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   EAttribute getEnumInstance_Doc();
 
   /**
+   * Returns the meta object for the attribute '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumInstance#getDeprecated <em>Deprecated</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Deprecated</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumInstance#getDeprecated()
+   * @see #getEnumInstance()
+   * @generated
+   */
+  EAttribute getEnumInstance_Deprecated();
+
+  /**
    * Returns the meta object for the attribute '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumInstance#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3719,6 +3739,14 @@ public interface DomainDrivenDesignDslPackage extends EPackage
      * @generated
      */
     EAttribute ENUM_INSTANCE__DOC = eINSTANCE.getEnumInstance_Doc();
+
+    /**
+     * The meta object literal for the '<em><b>Deprecated</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ENUM_INSTANCE__DEPRECATED = eINSTANCE.getEnumInstance_Deprecated();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.

@@ -15,6 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumInstance#getDoc <em>Doc</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumInstance#getDeprecated <em>Deprecated</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumInstance#getName <em>Name</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumInstance#getParams <em>Params</em>}</li>
  * </ul>
@@ -51,6 +52,32 @@ public interface EnumInstance extends EObject
    * @generated
    */
   void setDoc(String value);
+
+  /**
+   * Returns the value of the '<em><b>Deprecated</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Deprecated</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Deprecated</em>' attribute.
+   * @see #setDeprecated(String)
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getEnumInstance_Deprecated()
+   * @model
+   * @generated
+   */
+  String getDeprecated();
+
+  /**
+   * Sets the value of the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumInstance#getDeprecated <em>Deprecated</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Deprecated</em>' attribute.
+   * @see #getDeprecated()
+   * @generated
+   */
+  void setDeprecated(String value);
 
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.

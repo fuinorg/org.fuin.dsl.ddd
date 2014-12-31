@@ -410,7 +410,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	
 	/**
 	 * Constraint:
-	 *     (doc=DOC? name=ID (params+=Literal params+=Literal*)?)
+	 *     (doc=DOC? deprecated='deprecated'? name=ID (params+=Literal params+=Literal*)?)
 	 */
 	protected void sequence_EnumInstance(EObject context, EnumInstance semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

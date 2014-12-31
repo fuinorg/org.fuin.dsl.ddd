@@ -70,8 +70,8 @@ public class DomainDrivenDesignDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEnumObjectAccess().getGroup(), "rule__EnumObject__Group__0");
 					put(grammarAccess.getEnumObjectAccess().getGroup_3(), "rule__EnumObject__Group_3__0");
 					put(grammarAccess.getEnumInstanceAccess().getGroup(), "rule__EnumInstance__Group__0");
-					put(grammarAccess.getEnumInstanceAccess().getGroup_2(), "rule__EnumInstance__Group_2__0");
-					put(grammarAccess.getEnumInstanceAccess().getGroup_2_2(), "rule__EnumInstance__Group_2_2__0");
+					put(grammarAccess.getEnumInstanceAccess().getGroup_3(), "rule__EnumInstance__Group_3__0");
+					put(grammarAccess.getEnumInstanceAccess().getGroup_3_2(), "rule__EnumInstance__Group_3_2__0");
 					put(grammarAccess.getEventAccess().getGroup(), "rule__Event__Group__0");
 					put(grammarAccess.getEventAccess().getGroup_5(), "rule__Event__Group_5__0");
 					put(grammarAccess.getEntityAccess().getGroup(), "rule__Entity__Group__0");
@@ -160,9 +160,10 @@ public class DomainDrivenDesignDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEnumObjectAccess().getVariablesAssignment_6(), "rule__EnumObject__VariablesAssignment_6");
 					put(grammarAccess.getEnumObjectAccess().getInstancesAssignment_9(), "rule__EnumObject__InstancesAssignment_9");
 					put(grammarAccess.getEnumInstanceAccess().getDocAssignment_0(), "rule__EnumInstance__DocAssignment_0");
-					put(grammarAccess.getEnumInstanceAccess().getNameAssignment_1(), "rule__EnumInstance__NameAssignment_1");
-					put(grammarAccess.getEnumInstanceAccess().getParamsAssignment_2_1(), "rule__EnumInstance__ParamsAssignment_2_1");
-					put(grammarAccess.getEnumInstanceAccess().getParamsAssignment_2_2_1(), "rule__EnumInstance__ParamsAssignment_2_2_1");
+					put(grammarAccess.getEnumInstanceAccess().getDeprecatedAssignment_1(), "rule__EnumInstance__DeprecatedAssignment_1");
+					put(grammarAccess.getEnumInstanceAccess().getNameAssignment_2(), "rule__EnumInstance__NameAssignment_2");
+					put(grammarAccess.getEnumInstanceAccess().getParamsAssignment_3_1(), "rule__EnumInstance__ParamsAssignment_3_1");
+					put(grammarAccess.getEnumInstanceAccess().getParamsAssignment_3_2_1(), "rule__EnumInstance__ParamsAssignment_3_2_1");
 					put(grammarAccess.getEventAccess().getDocAssignment_0(), "rule__Event__DocAssignment_0");
 					put(grammarAccess.getEventAccess().getNameAssignment_2(), "rule__Event__NameAssignment_2");
 					put(grammarAccess.getEventAccess().getVariablesAssignment_4(), "rule__Event__VariablesAssignment_4");

@@ -883,7 +883,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getEnumInstance_Name()
+  public EAttribute getEnumInstance_Deprecated()
   {
     return (EAttribute)enumInstanceEClass.getEStructuralFeatures().get(1);
   }
@@ -893,9 +893,19 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getEnumInstance_Name()
+  {
+    return (EAttribute)enumInstanceEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EReference getEnumInstance_Params()
   {
-    return (EReference)enumInstanceEClass.getEStructuralFeatures().get(2);
+    return (EReference)enumInstanceEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -1546,6 +1556,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
 
     enumInstanceEClass = createEClass(ENUM_INSTANCE);
     createEAttribute(enumInstanceEClass, ENUM_INSTANCE__DOC);
+    createEAttribute(enumInstanceEClass, ENUM_INSTANCE__DEPRECATED);
     createEAttribute(enumInstanceEClass, ENUM_INSTANCE__NAME);
     createEReference(enumInstanceEClass, ENUM_INSTANCE__PARAMS);
 
@@ -1748,6 +1759,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
 
     initEClass(enumInstanceEClass, EnumInstance.class, "EnumInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getEnumInstance_Doc(), ecorePackage.getEString(), "doc", null, 0, 1, EnumInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getEnumInstance_Deprecated(), ecorePackage.getEString(), "deprecated", null, 0, 1, EnumInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getEnumInstance_Name(), ecorePackage.getEString(), "name", null, 0, 1, EnumInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getEnumInstance_Params(), this.getLiteral(), null, "params", null, 0, -1, EnumInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 

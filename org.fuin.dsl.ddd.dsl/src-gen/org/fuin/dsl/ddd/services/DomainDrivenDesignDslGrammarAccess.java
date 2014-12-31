@@ -932,23 +932,25 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cDocAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cDocDOCTerminalRuleCall_0_0 = (RuleCall)cDocAssignment_0.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
-		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
-		private final Keyword cLeftParenthesisKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cParamsAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cParamsLiteralParserRuleCall_2_1_0 = (RuleCall)cParamsAssignment_2_1.eContents().get(0);
-		private final Group cGroup_2_2 = (Group)cGroup_2.eContents().get(2);
-		private final Keyword cCommaKeyword_2_2_0 = (Keyword)cGroup_2_2.eContents().get(0);
-		private final Assignment cParamsAssignment_2_2_1 = (Assignment)cGroup_2_2.eContents().get(1);
-		private final RuleCall cParamsLiteralParserRuleCall_2_2_1_0 = (RuleCall)cParamsAssignment_2_2_1.eContents().get(0);
-		private final Keyword cRightParenthesisKeyword_2_3 = (Keyword)cGroup_2.eContents().get(3);
+		private final Assignment cDeprecatedAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cDeprecatedDeprecatedKeyword_1_0 = (Keyword)cDeprecatedAssignment_1.eContents().get(0);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cLeftParenthesisKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cParamsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cParamsLiteralParserRuleCall_3_1_0 = (RuleCall)cParamsAssignment_3_1.eContents().get(0);
+		private final Group cGroup_3_2 = (Group)cGroup_3.eContents().get(2);
+		private final Keyword cCommaKeyword_3_2_0 = (Keyword)cGroup_3_2.eContents().get(0);
+		private final Assignment cParamsAssignment_3_2_1 = (Assignment)cGroup_3_2.eContents().get(1);
+		private final RuleCall cParamsLiteralParserRuleCall_3_2_1_0 = (RuleCall)cParamsAssignment_3_2_1.eContents().get(0);
+		private final Keyword cRightParenthesisKeyword_3_3 = (Keyword)cGroup_3.eContents().get(3);
 		
 		//EnumInstance:
-		//	doc=DOC? name=ID ("(" params+=Literal ("," params+=Literal)* ")")?;
+		//	doc=DOC? deprecated="deprecated"? name=ID ("(" params+=Literal ("," params+=Literal)* ")")?;
 		public ParserRule getRule() { return rule; }
 
-		//doc=DOC? name=ID ("(" params+=Literal ("," params+=Literal)* ")")?
+		//doc=DOC? deprecated="deprecated"? name=ID ("(" params+=Literal ("," params+=Literal)* ")")?
 		public Group getGroup() { return cGroup; }
 
 		//doc=DOC?
@@ -957,38 +959,44 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		//DOC
 		public RuleCall getDocDOCTerminalRuleCall_0_0() { return cDocDOCTerminalRuleCall_0_0; }
 
+		//deprecated="deprecated"?
+		public Assignment getDeprecatedAssignment_1() { return cDeprecatedAssignment_1; }
+
+		//"deprecated"
+		public Keyword getDeprecatedDeprecatedKeyword_1_0() { return cDeprecatedDeprecatedKeyword_1_0; }
+
 		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 
 		//("(" params+=Literal ("," params+=Literal)* ")")?
-		public Group getGroup_2() { return cGroup_2; }
+		public Group getGroup_3() { return cGroup_3; }
 
 		//"("
-		public Keyword getLeftParenthesisKeyword_2_0() { return cLeftParenthesisKeyword_2_0; }
+		public Keyword getLeftParenthesisKeyword_3_0() { return cLeftParenthesisKeyword_3_0; }
 
 		//params+=Literal
-		public Assignment getParamsAssignment_2_1() { return cParamsAssignment_2_1; }
+		public Assignment getParamsAssignment_3_1() { return cParamsAssignment_3_1; }
 
 		//Literal
-		public RuleCall getParamsLiteralParserRuleCall_2_1_0() { return cParamsLiteralParserRuleCall_2_1_0; }
+		public RuleCall getParamsLiteralParserRuleCall_3_1_0() { return cParamsLiteralParserRuleCall_3_1_0; }
 
 		//("," params+=Literal)*
-		public Group getGroup_2_2() { return cGroup_2_2; }
+		public Group getGroup_3_2() { return cGroup_3_2; }
 
 		//","
-		public Keyword getCommaKeyword_2_2_0() { return cCommaKeyword_2_2_0; }
+		public Keyword getCommaKeyword_3_2_0() { return cCommaKeyword_3_2_0; }
 
 		//params+=Literal
-		public Assignment getParamsAssignment_2_2_1() { return cParamsAssignment_2_2_1; }
+		public Assignment getParamsAssignment_3_2_1() { return cParamsAssignment_3_2_1; }
 
 		//Literal
-		public RuleCall getParamsLiteralParserRuleCall_2_2_1_0() { return cParamsLiteralParserRuleCall_2_2_1_0; }
+		public RuleCall getParamsLiteralParserRuleCall_3_2_1_0() { return cParamsLiteralParserRuleCall_3_2_1_0; }
 
 		//")"
-		public Keyword getRightParenthesisKeyword_2_3() { return cRightParenthesisKeyword_2_3; }
+		public Keyword getRightParenthesisKeyword_3_3() { return cRightParenthesisKeyword_3_3; }
 	}
 
 	public class EventElements extends AbstractParserRuleElementFinder {
@@ -2555,7 +2563,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//EnumInstance:
-	//	doc=DOC? name=ID ("(" params+=Literal ("," params+=Literal)* ")")?;
+	//	doc=DOC? deprecated="deprecated"? name=ID ("(" params+=Literal ("," params+=Literal)* ")")?;
 	public EnumInstanceElements getEnumInstanceAccess() {
 		return pEnumInstance;
 	}

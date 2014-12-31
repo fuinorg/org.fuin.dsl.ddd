@@ -96,7 +96,7 @@ EnumObject:
 	
 EnumInstance:
 	doc=DOC?
-	name=ID ('(' params+=Literal (',' params+=Literal)* ')')?;	
+	(deprecated='deprecated')? name=ID ('(' params+=Literal (',' params+=Literal)* ')')?;	
 	
 Event:
 	doc=DOC? 

@@ -30,6 +30,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Literal;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.EnumInstanceImpl#getDoc <em>Doc</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.EnumInstanceImpl#getDeprecated <em>Deprecated</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.EnumInstanceImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.EnumInstanceImpl#getParams <em>Params</em>}</li>
  * </ul>
@@ -58,6 +59,26 @@ public class EnumInstanceImpl extends MinimalEObjectImpl.Container implements En
    * @ordered
    */
   protected String doc = DOC_EDEFAULT;
+
+  /**
+   * The default value of the '{@link #getDeprecated() <em>Deprecated</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeprecated()
+   * @generated
+   * @ordered
+   */
+  protected static final String DEPRECATED_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDeprecated() <em>Deprecated</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDeprecated()
+   * @generated
+   * @ordered
+   */
+  protected String deprecated = DEPRECATED_EDEFAULT;
 
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -138,6 +159,29 @@ public class EnumInstanceImpl extends MinimalEObjectImpl.Container implements En
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getDeprecated()
+  {
+    return deprecated;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setDeprecated(String newDeprecated)
+  {
+    String oldDeprecated = deprecated;
+    deprecated = newDeprecated;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.ENUM_INSTANCE__DEPRECATED, oldDeprecated, deprecated));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getName()
   {
     return name;
@@ -198,6 +242,8 @@ public class EnumInstanceImpl extends MinimalEObjectImpl.Container implements En
     {
       case DomainDrivenDesignDslPackage.ENUM_INSTANCE__DOC:
         return getDoc();
+      case DomainDrivenDesignDslPackage.ENUM_INSTANCE__DEPRECATED:
+        return getDeprecated();
       case DomainDrivenDesignDslPackage.ENUM_INSTANCE__NAME:
         return getName();
       case DomainDrivenDesignDslPackage.ENUM_INSTANCE__PARAMS:
@@ -219,6 +265,9 @@ public class EnumInstanceImpl extends MinimalEObjectImpl.Container implements En
     {
       case DomainDrivenDesignDslPackage.ENUM_INSTANCE__DOC:
         setDoc((String)newValue);
+        return;
+      case DomainDrivenDesignDslPackage.ENUM_INSTANCE__DEPRECATED:
+        setDeprecated((String)newValue);
         return;
       case DomainDrivenDesignDslPackage.ENUM_INSTANCE__NAME:
         setName((String)newValue);
@@ -244,6 +293,9 @@ public class EnumInstanceImpl extends MinimalEObjectImpl.Container implements En
       case DomainDrivenDesignDslPackage.ENUM_INSTANCE__DOC:
         setDoc(DOC_EDEFAULT);
         return;
+      case DomainDrivenDesignDslPackage.ENUM_INSTANCE__DEPRECATED:
+        setDeprecated(DEPRECATED_EDEFAULT);
+        return;
       case DomainDrivenDesignDslPackage.ENUM_INSTANCE__NAME:
         setName(NAME_EDEFAULT);
         return;
@@ -266,6 +318,8 @@ public class EnumInstanceImpl extends MinimalEObjectImpl.Container implements En
     {
       case DomainDrivenDesignDslPackage.ENUM_INSTANCE__DOC:
         return DOC_EDEFAULT == null ? doc != null : !DOC_EDEFAULT.equals(doc);
+      case DomainDrivenDesignDslPackage.ENUM_INSTANCE__DEPRECATED:
+        return DEPRECATED_EDEFAULT == null ? deprecated != null : !DEPRECATED_EDEFAULT.equals(deprecated);
       case DomainDrivenDesignDslPackage.ENUM_INSTANCE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case DomainDrivenDesignDslPackage.ENUM_INSTANCE__PARAMS:
@@ -287,6 +341,8 @@ public class EnumInstanceImpl extends MinimalEObjectImpl.Container implements En
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (doc: ");
     result.append(doc);
+    result.append(", deprecated: ");
+    result.append(deprecated);
     result.append(", name: ");
     result.append(name);
     result.append(')');
