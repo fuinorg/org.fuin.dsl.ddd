@@ -462,6 +462,16 @@ ruleInternalType returns [EObject current=null]
         $current = $this_AbstractEntity_1.current; 
         afterParserOrEnumRuleCall();
     }
+
+    |
+    { 
+        newCompositeNode(grammarAccess.getInternalTypeAccess().getEnumObjectParserRuleCall_2()); 
+    }
+    this_EnumObject_2=ruleEnumObject
+    { 
+        $current = $this_EnumObject_2.current; 
+        afterParserOrEnumRuleCall();
+    }
 )
 ;
 
@@ -495,21 +505,11 @@ ruleAbstractVO returns [EObject current=null]
 
     |
     { 
-        newCompositeNode(grammarAccess.getAbstractVOAccess().getEnumObjectParserRuleCall_1()); 
+        newCompositeNode(grammarAccess.getAbstractVOAccess().getAbstractEntityIdParserRuleCall_1()); 
     }
-    this_EnumObject_1=ruleEnumObject
+    this_AbstractEntityId_1=ruleAbstractEntityId
     { 
-        $current = $this_EnumObject_1.current; 
-        afterParserOrEnumRuleCall();
-    }
-
-    |
-    { 
-        newCompositeNode(grammarAccess.getAbstractVOAccess().getAbstractEntityIdParserRuleCall_2()); 
-    }
-    this_AbstractEntityId_2=ruleAbstractEntityId
-    { 
-        $current = $this_AbstractEntityId_2.current; 
+        $current = $this_AbstractEntityId_1.current; 
         afterParserOrEnumRuleCall();
     }
 )
@@ -1494,23 +1494,42 @@ ruleEnumObject returns [EObject current=null]
 	    }
 
 )
-)	otherlv_3='{' 
+)(	otherlv_3='base' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getEnumObjectAccess().getLeftCurlyBracketKeyword_3());
+    	newLeafNode(otherlv_3, grammarAccess.getEnumObjectAccess().getBaseKeyword_3_0());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getEnumObjectRule());
+	        }
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getEnumObjectAccess().getBaseExternalTypeCrossReference_3_1_0()); 
+	    }
+		ruleFQN		{ 
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))?	otherlv_5='{' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getEnumObjectAccess().getLeftCurlyBracketKeyword_4());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getEnumObjectAccess().getMetaInfoTypeMetaInfoParserRuleCall_4_0()); 
+	        newCompositeNode(grammarAccess.getEnumObjectAccess().getMetaInfoTypeMetaInfoParserRuleCall_5_0()); 
 	    }
-		lv_metaInfo_4_0=ruleTypeMetaInfo		{
+		lv_metaInfo_6_0=ruleTypeMetaInfo		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getEnumObjectRule());
 	        }
        		set(
        			$current, 
        			"metaInfo",
-        		lv_metaInfo_4_0, 
+        		lv_metaInfo_6_0, 
         		"TypeMetaInfo");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -1519,69 +1538,33 @@ ruleEnumObject returns [EObject current=null]
 )(
 (
 		{ 
-	        newCompositeNode(grammarAccess.getEnumObjectAccess().getVariablesVariableParserRuleCall_5_0()); 
+	        newCompositeNode(grammarAccess.getEnumObjectAccess().getVariablesVariableParserRuleCall_6_0()); 
 	    }
-		lv_variables_5_0=ruleVariable		{
+		lv_variables_7_0=ruleVariable		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getEnumObjectRule());
 	        }
        		add(
        			$current, 
        			"variables",
-        		lv_variables_5_0, 
+        		lv_variables_7_0, 
         		"Variable");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)*(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getEnumObjectAccess().getConstructorsConstructorParserRuleCall_6_0()); 
-	    }
-		lv_constructors_6_0=ruleConstructor		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getEnumObjectRule());
-	        }
-       		add(
-       			$current, 
-       			"constructors",
-        		lv_constructors_6_0, 
-        		"Constructor");
-	        afterParserOrEnumRuleCall();
-	    }
-
-)
-)*(
-(
-		{ 
-	        newCompositeNode(grammarAccess.getEnumObjectAccess().getMethodsMethodParserRuleCall_7_0()); 
-	    }
-		lv_methods_7_0=ruleMethod		{
-	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getEnumObjectRule());
-	        }
-       		add(
-       			$current, 
-       			"methods",
-        		lv_methods_7_0, 
-        		"Method");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
 )*	otherlv_8='instances' 
     {
-    	newLeafNode(otherlv_8, grammarAccess.getEnumObjectAccess().getInstancesKeyword_8());
+    	newLeafNode(otherlv_8, grammarAccess.getEnumObjectAccess().getInstancesKeyword_7());
     }
 	otherlv_9='{' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getEnumObjectAccess().getLeftCurlyBracketKeyword_9());
+    	newLeafNode(otherlv_9, grammarAccess.getEnumObjectAccess().getLeftCurlyBracketKeyword_8());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getEnumObjectAccess().getInstancesEnumInstanceParserRuleCall_10_0()); 
+	        newCompositeNode(grammarAccess.getEnumObjectAccess().getInstancesEnumInstanceParserRuleCall_9_0()); 
 	    }
 		lv_instances_10_0=ruleEnumInstance		{
 	        if ($current==null) {
@@ -1598,11 +1581,11 @@ ruleEnumObject returns [EObject current=null]
 )
 )+	otherlv_11='}' 
     {
-    	newLeafNode(otherlv_11, grammarAccess.getEnumObjectAccess().getRightCurlyBracketKeyword_11());
+    	newLeafNode(otherlv_11, grammarAccess.getEnumObjectAccess().getRightCurlyBracketKeyword_10());
     }
 	otherlv_12='}' 
     {
-    	newLeafNode(otherlv_12, grammarAccess.getEnumObjectAccess().getRightCurlyBracketKeyword_12());
+    	newLeafNode(otherlv_12, grammarAccess.getEnumObjectAccess().getRightCurlyBracketKeyword_11());
     }
 )
 ;

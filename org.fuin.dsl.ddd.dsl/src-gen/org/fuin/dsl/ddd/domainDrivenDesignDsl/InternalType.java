@@ -15,8 +15,6 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.InternalType#getDoc <em>Doc</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.InternalType#getMetaInfo <em>Meta Info</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.InternalType#getVariables <em>Variables</em>}</li>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.InternalType#getConstructors <em>Constructors</em>}</li>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.InternalType#getMethods <em>Methods</em>}</li>
  * </ul>
  * </p>
  *
@@ -93,37 +91,5 @@ public interface InternalType extends Type
    * @generated
    */
   EList<Variable> getVariables();
-
-  /**
-   * Returns the value of the '<em><b>Constructors</b></em>' containment reference list.
-   * The list contents are of type {@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Constructor}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Constructors</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Constructors</em>' containment reference list.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getInternalType_Constructors()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Constructor> getConstructors();
-
-  /**
-   * Returns the value of the '<em><b>Methods</b></em>' containment reference list.
-   * The list contents are of type {@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Method}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Methods</em>' containment reference list isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Methods</em>' containment reference list.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getInternalType_Methods()
-   * @model containment="true"
-   * @generated
-   */
-  EList<Method> getMethods();
 
 } // InternalType

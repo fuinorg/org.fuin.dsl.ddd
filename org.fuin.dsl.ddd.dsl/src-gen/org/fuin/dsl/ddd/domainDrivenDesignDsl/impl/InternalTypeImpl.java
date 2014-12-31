@@ -17,10 +17,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constructor;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.InternalType;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Method;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.TypeMetaInfo;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
 
@@ -34,8 +32,6 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.InternalTypeImpl#getDoc <em>Doc</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.InternalTypeImpl#getMetaInfo <em>Meta Info</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.InternalTypeImpl#getVariables <em>Variables</em>}</li>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.InternalTypeImpl#getConstructors <em>Constructors</em>}</li>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.InternalTypeImpl#getMethods <em>Methods</em>}</li>
  * </ul>
  * </p>
  *
@@ -82,26 +78,6 @@ public class InternalTypeImpl extends TypeImpl implements InternalType
    * @ordered
    */
   protected EList<Variable> variables;
-
-  /**
-   * The cached value of the '{@link #getConstructors() <em>Constructors</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getConstructors()
-   * @generated
-   * @ordered
-   */
-  protected EList<Constructor> constructors;
-
-  /**
-   * The cached value of the '{@link #getMethods() <em>Methods</em>}' containment reference list.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMethods()
-   * @generated
-   * @ordered
-   */
-  protected EList<Method> methods;
 
   /**
    * <!-- begin-user-doc -->
@@ -214,34 +190,6 @@ public class InternalTypeImpl extends TypeImpl implements InternalType
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Constructor> getConstructors()
-  {
-    if (constructors == null)
-    {
-      constructors = new EObjectContainmentEList<Constructor>(Constructor.class, this, DomainDrivenDesignDslPackage.INTERNAL_TYPE__CONSTRUCTORS);
-    }
-    return constructors;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EList<Method> getMethods()
-  {
-    if (methods == null)
-    {
-      methods = new EObjectContainmentEList<Method>(Method.class, this, DomainDrivenDesignDslPackage.INTERNAL_TYPE__METHODS);
-    }
-    return methods;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -251,10 +199,6 @@ public class InternalTypeImpl extends TypeImpl implements InternalType
         return basicSetMetaInfo(null, msgs);
       case DomainDrivenDesignDslPackage.INTERNAL_TYPE__VARIABLES:
         return ((InternalEList<?>)getVariables()).basicRemove(otherEnd, msgs);
-      case DomainDrivenDesignDslPackage.INTERNAL_TYPE__CONSTRUCTORS:
-        return ((InternalEList<?>)getConstructors()).basicRemove(otherEnd, msgs);
-      case DomainDrivenDesignDslPackage.INTERNAL_TYPE__METHODS:
-        return ((InternalEList<?>)getMethods()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -275,10 +219,6 @@ public class InternalTypeImpl extends TypeImpl implements InternalType
         return getMetaInfo();
       case DomainDrivenDesignDslPackage.INTERNAL_TYPE__VARIABLES:
         return getVariables();
-      case DomainDrivenDesignDslPackage.INTERNAL_TYPE__CONSTRUCTORS:
-        return getConstructors();
-      case DomainDrivenDesignDslPackage.INTERNAL_TYPE__METHODS:
-        return getMethods();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -304,14 +244,6 @@ public class InternalTypeImpl extends TypeImpl implements InternalType
         getVariables().clear();
         getVariables().addAll((Collection<? extends Variable>)newValue);
         return;
-      case DomainDrivenDesignDslPackage.INTERNAL_TYPE__CONSTRUCTORS:
-        getConstructors().clear();
-        getConstructors().addAll((Collection<? extends Constructor>)newValue);
-        return;
-      case DomainDrivenDesignDslPackage.INTERNAL_TYPE__METHODS:
-        getMethods().clear();
-        getMethods().addAll((Collection<? extends Method>)newValue);
-        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -335,12 +267,6 @@ public class InternalTypeImpl extends TypeImpl implements InternalType
       case DomainDrivenDesignDslPackage.INTERNAL_TYPE__VARIABLES:
         getVariables().clear();
         return;
-      case DomainDrivenDesignDslPackage.INTERNAL_TYPE__CONSTRUCTORS:
-        getConstructors().clear();
-        return;
-      case DomainDrivenDesignDslPackage.INTERNAL_TYPE__METHODS:
-        getMethods().clear();
-        return;
     }
     super.eUnset(featureID);
   }
@@ -361,10 +287,6 @@ public class InternalTypeImpl extends TypeImpl implements InternalType
         return metaInfo != null;
       case DomainDrivenDesignDslPackage.INTERNAL_TYPE__VARIABLES:
         return variables != null && !variables.isEmpty();
-      case DomainDrivenDesignDslPackage.INTERNAL_TYPE__CONSTRUCTORS:
-        return constructors != null && !constructors.isEmpty();
-      case DomainDrivenDesignDslPackage.INTERNAL_TYPE__METHODS:
-        return methods != null && !methods.isEmpty();
     }
     return super.eIsSet(featureID);
   }

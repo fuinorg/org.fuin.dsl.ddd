@@ -28,10 +28,10 @@ Type:
 	ExternalType | InternalType | Service;
 
 InternalType:
-	AbstractVO | AbstractEntity;
+	AbstractVO | AbstractEntity | EnumObject;
 
 AbstractVO:
-	ValueObject | EnumObject | AbstractEntityId;
+	ValueObject | AbstractEntityId;
 
 AbstractEntityId:
 	EntityId | AggregateId;
@@ -88,11 +88,9 @@ AggregateId:
 
 EnumObject:
 	doc=DOC?
-	'enum' name=ID '{'
+	'enum' name=ID ('base' base=[ExternalType|FQN])? '{'
 		metaInfo=TypeMetaInfo
 		variables+=Variable*
-		constructors+=Constructor*
-		methods+=Method*
 		'instances' '{' instances+=EnumInstance+ '}'
 	'}';
 	

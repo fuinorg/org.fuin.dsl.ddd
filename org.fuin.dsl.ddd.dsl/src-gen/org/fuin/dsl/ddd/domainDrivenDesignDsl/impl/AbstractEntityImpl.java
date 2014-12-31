@@ -16,8 +16,10 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntity;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntityId;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constructor;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Method;
 
 /**
  * <!-- begin-user-doc -->
@@ -26,6 +28,8 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AbstractEntityImpl#getConstructors <em>Constructors</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AbstractEntityImpl#getMethods <em>Methods</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AbstractEntityImpl#getEvents <em>Events</em>}</li>
  * </ul>
  * </p>
@@ -34,6 +38,26 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event;
  */
 public class AbstractEntityImpl extends InternalTypeImpl implements AbstractEntity
 {
+  /**
+   * The cached value of the '{@link #getConstructors() <em>Constructors</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getConstructors()
+   * @generated
+   * @ordered
+   */
+  protected EList<Constructor> constructors;
+
+  /**
+   * The cached value of the '{@link #getMethods() <em>Methods</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getMethods()
+   * @generated
+   * @ordered
+   */
+  protected EList<Method> methods;
+
   /**
    * The cached value of the '{@link #getEvents() <em>Events</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -63,6 +87,34 @@ public class AbstractEntityImpl extends InternalTypeImpl implements AbstractEnti
   protected EClass eStaticClass()
   {
     return DomainDrivenDesignDslPackage.Literals.ABSTRACT_ENTITY;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Constructor> getConstructors()
+  {
+    if (constructors == null)
+    {
+      constructors = new EObjectContainmentEList<Constructor>(Constructor.class, this, DomainDrivenDesignDslPackage.ABSTRACT_ENTITY__CONSTRUCTORS);
+    }
+    return constructors;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EList<Method> getMethods()
+  {
+    if (methods == null)
+    {
+      methods = new EObjectContainmentEList<Method>(Method.class, this, DomainDrivenDesignDslPackage.ABSTRACT_ENTITY__METHODS);
+    }
+    return methods;
   }
 
   /**
@@ -101,6 +153,10 @@ public class AbstractEntityImpl extends InternalTypeImpl implements AbstractEnti
   {
     switch (featureID)
     {
+      case DomainDrivenDesignDslPackage.ABSTRACT_ENTITY__CONSTRUCTORS:
+        return ((InternalEList<?>)getConstructors()).basicRemove(otherEnd, msgs);
+      case DomainDrivenDesignDslPackage.ABSTRACT_ENTITY__METHODS:
+        return ((InternalEList<?>)getMethods()).basicRemove(otherEnd, msgs);
       case DomainDrivenDesignDslPackage.ABSTRACT_ENTITY__EVENTS:
         return ((InternalEList<?>)getEvents()).basicRemove(otherEnd, msgs);
     }
@@ -117,6 +173,10 @@ public class AbstractEntityImpl extends InternalTypeImpl implements AbstractEnti
   {
     switch (featureID)
     {
+      case DomainDrivenDesignDslPackage.ABSTRACT_ENTITY__CONSTRUCTORS:
+        return getConstructors();
+      case DomainDrivenDesignDslPackage.ABSTRACT_ENTITY__METHODS:
+        return getMethods();
       case DomainDrivenDesignDslPackage.ABSTRACT_ENTITY__EVENTS:
         return getEvents();
     }
@@ -134,6 +194,14 @@ public class AbstractEntityImpl extends InternalTypeImpl implements AbstractEnti
   {
     switch (featureID)
     {
+      case DomainDrivenDesignDslPackage.ABSTRACT_ENTITY__CONSTRUCTORS:
+        getConstructors().clear();
+        getConstructors().addAll((Collection<? extends Constructor>)newValue);
+        return;
+      case DomainDrivenDesignDslPackage.ABSTRACT_ENTITY__METHODS:
+        getMethods().clear();
+        getMethods().addAll((Collection<? extends Method>)newValue);
+        return;
       case DomainDrivenDesignDslPackage.ABSTRACT_ENTITY__EVENTS:
         getEvents().clear();
         getEvents().addAll((Collection<? extends Event>)newValue);
@@ -152,6 +220,12 @@ public class AbstractEntityImpl extends InternalTypeImpl implements AbstractEnti
   {
     switch (featureID)
     {
+      case DomainDrivenDesignDslPackage.ABSTRACT_ENTITY__CONSTRUCTORS:
+        getConstructors().clear();
+        return;
+      case DomainDrivenDesignDslPackage.ABSTRACT_ENTITY__METHODS:
+        getMethods().clear();
+        return;
       case DomainDrivenDesignDslPackage.ABSTRACT_ENTITY__EVENTS:
         getEvents().clear();
         return;
@@ -169,6 +243,10 @@ public class AbstractEntityImpl extends InternalTypeImpl implements AbstractEnti
   {
     switch (featureID)
     {
+      case DomainDrivenDesignDslPackage.ABSTRACT_ENTITY__CONSTRUCTORS:
+        return constructors != null && !constructors.isEmpty();
+      case DomainDrivenDesignDslPackage.ABSTRACT_ENTITY__METHODS:
+        return methods != null && !methods.isEmpty();
       case DomainDrivenDesignDslPackage.ABSTRACT_ENTITY__EVENTS:
         return events != null && !events.isEmpty();
     }

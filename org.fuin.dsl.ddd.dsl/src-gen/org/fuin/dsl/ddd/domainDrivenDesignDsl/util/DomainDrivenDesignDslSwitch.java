@@ -268,9 +268,7 @@ public class DomainDrivenDesignDslSwitch<T> extends Switch<T>
       {
         EnumObject enumObject = (EnumObject)theEObject;
         T result = caseEnumObject(enumObject);
-        if (result == null) result = caseAbstractVO(enumObject);
         if (result == null) result = caseInternalType(enumObject);
-        if (result == null) result = caseConstraintTarget(enumObject);
         if (result == null) result = caseType(enumObject);
         if (result == null) result = caseAbstractElement(enumObject);
         if (result == null) result = defaultCase(theEObject);

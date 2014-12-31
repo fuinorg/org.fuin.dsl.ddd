@@ -142,8 +142,6 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 				else break;
 			case DomainDrivenDesignDslPackage.ENUM_OBJECT:
 				if(context == grammarAccess.getAbstractElementRule() ||
-				   context == grammarAccess.getAbstractVORule() ||
-				   context == grammarAccess.getConstraintTargetRule() ||
 				   context == grammarAccess.getEnumObjectRule() ||
 				   context == grammarAccess.getInternalTypeRule() ||
 				   context == grammarAccess.getTypeRule()) {
@@ -424,10 +422,9 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *     (
 	 *         doc=DOC? 
 	 *         name=ID 
+	 *         base=[ExternalType|FQN]? 
 	 *         metaInfo=TypeMetaInfo 
 	 *         variables+=Variable* 
-	 *         constructors+=Constructor* 
-	 *         methods+=Method* 
 	 *         instances+=EnumInstance+
 	 *     )
 	 */

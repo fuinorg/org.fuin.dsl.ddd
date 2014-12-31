@@ -210,12 +210,13 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cAbstractVOParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
 		private final RuleCall cAbstractEntityParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
+		private final RuleCall cEnumObjectParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
 		
 		//InternalType:
-		//	AbstractVO | AbstractEntity;
+		//	AbstractVO | AbstractEntity | EnumObject;
 		public ParserRule getRule() { return rule; }
 
-		//AbstractVO | AbstractEntity
+		//AbstractVO | AbstractEntity | EnumObject
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//AbstractVO
@@ -223,30 +224,29 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 
 		//AbstractEntity
 		public RuleCall getAbstractEntityParserRuleCall_1() { return cAbstractEntityParserRuleCall_1; }
+
+		//EnumObject
+		public RuleCall getEnumObjectParserRuleCall_2() { return cEnumObjectParserRuleCall_2; }
 	}
 
 	public class AbstractVOElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "AbstractVO");
 		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
 		private final RuleCall cValueObjectParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cEnumObjectParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		private final RuleCall cAbstractEntityIdParserRuleCall_2 = (RuleCall)cAlternatives.eContents().get(2);
+		private final RuleCall cAbstractEntityIdParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
 		
 		//AbstractVO:
-		//	ValueObject | EnumObject | AbstractEntityId;
+		//	ValueObject | AbstractEntityId;
 		public ParserRule getRule() { return rule; }
 
-		//ValueObject | EnumObject | AbstractEntityId
+		//ValueObject | AbstractEntityId
 		public Alternatives getAlternatives() { return cAlternatives; }
 
 		//ValueObject
 		public RuleCall getValueObjectParserRuleCall_0() { return cValueObjectParserRuleCall_0; }
 
-		//EnumObject
-		public RuleCall getEnumObjectParserRuleCall_1() { return cEnumObjectParserRuleCall_1; }
-
 		//AbstractEntityId
-		public RuleCall getAbstractEntityIdParserRuleCall_2() { return cAbstractEntityIdParserRuleCall_2; }
+		public RuleCall getAbstractEntityIdParserRuleCall_1() { return cAbstractEntityIdParserRuleCall_1; }
 	}
 
 	public class AbstractEntityIdElements extends AbstractParserRuleElementFinder {
@@ -837,29 +837,30 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final Keyword cEnumKeyword_1 = (Keyword)cGroup.eContents().get(1);
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
-		private final Keyword cLeftCurlyBracketKeyword_3 = (Keyword)cGroup.eContents().get(3);
-		private final Assignment cMetaInfoAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cMetaInfoTypeMetaInfoParserRuleCall_4_0 = (RuleCall)cMetaInfoAssignment_4.eContents().get(0);
-		private final Assignment cVariablesAssignment_5 = (Assignment)cGroup.eContents().get(5);
-		private final RuleCall cVariablesVariableParserRuleCall_5_0 = (RuleCall)cVariablesAssignment_5.eContents().get(0);
-		private final Assignment cConstructorsAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cConstructorsConstructorParserRuleCall_6_0 = (RuleCall)cConstructorsAssignment_6.eContents().get(0);
-		private final Assignment cMethodsAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cMethodsMethodParserRuleCall_7_0 = (RuleCall)cMethodsAssignment_7.eContents().get(0);
-		private final Keyword cInstancesKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Keyword cLeftCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
-		private final Assignment cInstancesAssignment_10 = (Assignment)cGroup.eContents().get(10);
-		private final RuleCall cInstancesEnumInstanceParserRuleCall_10_0 = (RuleCall)cInstancesAssignment_10.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cBaseKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cBaseAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final CrossReference cBaseExternalTypeCrossReference_3_1_0 = (CrossReference)cBaseAssignment_3_1.eContents().get(0);
+		private final RuleCall cBaseExternalTypeFQNParserRuleCall_3_1_0_1 = (RuleCall)cBaseExternalTypeCrossReference_3_1_0.eContents().get(1);
+		private final Keyword cLeftCurlyBracketKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cMetaInfoAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cMetaInfoTypeMetaInfoParserRuleCall_5_0 = (RuleCall)cMetaInfoAssignment_5.eContents().get(0);
+		private final Assignment cVariablesAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cVariablesVariableParserRuleCall_6_0 = (RuleCall)cVariablesAssignment_6.eContents().get(0);
+		private final Keyword cInstancesKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Keyword cLeftCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Assignment cInstancesAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cInstancesEnumInstanceParserRuleCall_9_0 = (RuleCall)cInstancesAssignment_9.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
-		private final Keyword cRightCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
 		
 		//EnumObject:
-		//	doc=DOC? "enum" name=ID "{" metaInfo=TypeMetaInfo variables+=Variable* constructors+=Constructor* methods+=Method*
-		//	"instances" "{" instances+=EnumInstance+ "}" "}";
+		//	doc=DOC? "enum" name=ID ("base" base=[ExternalType|FQN])? "{" metaInfo=TypeMetaInfo variables+=Variable* "instances"
+		//	"{" instances+=EnumInstance+ "}" "}";
 		public ParserRule getRule() { return rule; }
 
-		//doc=DOC? "enum" name=ID "{" metaInfo=TypeMetaInfo variables+=Variable* constructors+=Constructor* methods+=Method*
-		//"instances" "{" instances+=EnumInstance+ "}" "}"
+		//doc=DOC? "enum" name=ID ("base" base=[ExternalType|FQN])? "{" metaInfo=TypeMetaInfo variables+=Variable* "instances" "{"
+		//instances+=EnumInstance+ "}" "}"
 		public Group getGroup() { return cGroup; }
 
 		//doc=DOC?
@@ -877,50 +878,53 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 
+		//("base" base=[ExternalType|FQN])?
+		public Group getGroup_3() { return cGroup_3; }
+
+		//"base"
+		public Keyword getBaseKeyword_3_0() { return cBaseKeyword_3_0; }
+
+		//base=[ExternalType|FQN]
+		public Assignment getBaseAssignment_3_1() { return cBaseAssignment_3_1; }
+
+		//[ExternalType|FQN]
+		public CrossReference getBaseExternalTypeCrossReference_3_1_0() { return cBaseExternalTypeCrossReference_3_1_0; }
+
+		//FQN
+		public RuleCall getBaseExternalTypeFQNParserRuleCall_3_1_0_1() { return cBaseExternalTypeFQNParserRuleCall_3_1_0_1; }
+
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_3() { return cLeftCurlyBracketKeyword_3; }
+		public Keyword getLeftCurlyBracketKeyword_4() { return cLeftCurlyBracketKeyword_4; }
 
 		//metaInfo=TypeMetaInfo
-		public Assignment getMetaInfoAssignment_4() { return cMetaInfoAssignment_4; }
+		public Assignment getMetaInfoAssignment_5() { return cMetaInfoAssignment_5; }
 
 		//TypeMetaInfo
-		public RuleCall getMetaInfoTypeMetaInfoParserRuleCall_4_0() { return cMetaInfoTypeMetaInfoParserRuleCall_4_0; }
+		public RuleCall getMetaInfoTypeMetaInfoParserRuleCall_5_0() { return cMetaInfoTypeMetaInfoParserRuleCall_5_0; }
 
 		//variables+=Variable*
-		public Assignment getVariablesAssignment_5() { return cVariablesAssignment_5; }
+		public Assignment getVariablesAssignment_6() { return cVariablesAssignment_6; }
 
 		//Variable
-		public RuleCall getVariablesVariableParserRuleCall_5_0() { return cVariablesVariableParserRuleCall_5_0; }
-
-		//constructors+=Constructor*
-		public Assignment getConstructorsAssignment_6() { return cConstructorsAssignment_6; }
-
-		//Constructor
-		public RuleCall getConstructorsConstructorParserRuleCall_6_0() { return cConstructorsConstructorParserRuleCall_6_0; }
-
-		//methods+=Method*
-		public Assignment getMethodsAssignment_7() { return cMethodsAssignment_7; }
-
-		//Method
-		public RuleCall getMethodsMethodParserRuleCall_7_0() { return cMethodsMethodParserRuleCall_7_0; }
+		public RuleCall getVariablesVariableParserRuleCall_6_0() { return cVariablesVariableParserRuleCall_6_0; }
 
 		//"instances"
-		public Keyword getInstancesKeyword_8() { return cInstancesKeyword_8; }
+		public Keyword getInstancesKeyword_7() { return cInstancesKeyword_7; }
 
 		//"{"
-		public Keyword getLeftCurlyBracketKeyword_9() { return cLeftCurlyBracketKeyword_9; }
+		public Keyword getLeftCurlyBracketKeyword_8() { return cLeftCurlyBracketKeyword_8; }
 
 		//instances+=EnumInstance+
-		public Assignment getInstancesAssignment_10() { return cInstancesAssignment_10; }
+		public Assignment getInstancesAssignment_9() { return cInstancesAssignment_9; }
 
 		//EnumInstance
-		public RuleCall getInstancesEnumInstanceParserRuleCall_10_0() { return cInstancesEnumInstanceParserRuleCall_10_0; }
+		public RuleCall getInstancesEnumInstanceParserRuleCall_9_0() { return cInstancesEnumInstanceParserRuleCall_9_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_10() { return cRightCurlyBracketKeyword_10; }
 
 		//"}"
 		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
-
-		//"}"
-		public Keyword getRightCurlyBracketKeyword_12() { return cRightCurlyBracketKeyword_12; }
 	}
 
 	public class EnumInstanceElements extends AbstractParserRuleElementFinder {
@@ -2426,7 +2430,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//InternalType:
-	//	AbstractVO | AbstractEntity;
+	//	AbstractVO | AbstractEntity | EnumObject;
 	public InternalTypeElements getInternalTypeAccess() {
 		return pInternalType;
 	}
@@ -2436,7 +2440,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//AbstractVO:
-	//	ValueObject | EnumObject | AbstractEntityId;
+	//	ValueObject | AbstractEntityId;
 	public AbstractVOElements getAbstractVOAccess() {
 		return pAbstractVO;
 	}
@@ -2540,8 +2544,8 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//EnumObject:
-	//	doc=DOC? "enum" name=ID "{" metaInfo=TypeMetaInfo variables+=Variable* constructors+=Constructor* methods+=Method*
-	//	"instances" "{" instances+=EnumInstance+ "}" "}";
+	//	doc=DOC? "enum" name=ID ("base" base=[ExternalType|FQN])? "{" metaInfo=TypeMetaInfo variables+=Variable* "instances"
+	//	"{" instances+=EnumInstance+ "}" "}";
 	public EnumObjectElements getEnumObjectAccess() {
 		return pEnumObject;
 	}
