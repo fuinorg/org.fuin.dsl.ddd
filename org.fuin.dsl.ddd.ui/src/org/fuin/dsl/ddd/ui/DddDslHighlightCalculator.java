@@ -78,6 +78,11 @@ public class DddDslHighlightCalculator implements
 
         @Override
         public Void caseEnumInstance(EnumInstance enumInstance) {
+            
+            highlightFirst(enumInstance,
+                    DomainDrivenDesignDslPackage.eINSTANCE.getEnumInstance_Doc(),
+                    DddDslHighlightConfig.COMMENT_ID);
+            
             return highlightFirst(enumInstance,
                     DomainDrivenDesignDslPackage.eINSTANCE
                             .getEnumInstance_Name(),
