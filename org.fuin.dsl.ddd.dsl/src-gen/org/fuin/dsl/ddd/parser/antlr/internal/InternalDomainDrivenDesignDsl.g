@@ -621,9 +621,24 @@ ruleExternalType returns [EObject current=null]
     }
 (
 (
-		lv_name_1_0=RULE_ID
+		lv_element_1_0=	'element' 
+    {
+        newLeafNode(lv_element_1_0, grammarAccess.getExternalTypeAccess().getElementElementKeyword_1_0());
+    }
+ 
+	    {
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getExternalTypeRule());
+	        }
+       		setWithLastConsumed($current, "element", lv_element_1_0, "element");
+	    }
+
+)
+)?(
+(
+		lv_name_2_0=RULE_ID
 		{
-			newLeafNode(lv_name_1_0, grammarAccess.getExternalTypeAccess().getNameIDTerminalRuleCall_1_0()); 
+			newLeafNode(lv_name_2_0, grammarAccess.getExternalTypeAccess().getNameIDTerminalRuleCall_2_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -632,7 +647,7 @@ ruleExternalType returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"name",
-        		lv_name_1_0, 
+        		lv_name_2_0, 
         		"ID");
 	    }
 

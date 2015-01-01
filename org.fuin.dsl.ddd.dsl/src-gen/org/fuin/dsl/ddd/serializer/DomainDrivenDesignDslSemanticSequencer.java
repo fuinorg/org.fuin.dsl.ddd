@@ -453,17 +453,10 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	
 	/**
 	 * Constraint:
-	 *     name=ID
+	 *     (element='element'? name=ID)
 	 */
 	protected void sequence_ExternalType(EObject context, ExternalType semanticObject) {
-		if(errorAcceptor != null) {
-			if(transientValues.isValueTransient(semanticObject, DomainDrivenDesignDslPackage.Literals.ABSTRACT_ELEMENT__NAME) == ValueTransient.YES)
-				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DomainDrivenDesignDslPackage.Literals.ABSTRACT_ELEMENT__NAME));
-		}
-		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
-		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
-		feeder.accept(grammarAccess.getExternalTypeAccess().getNameIDTerminalRuleCall_1_0(), semanticObject.getName());
-		feeder.finish();
+		genericSequencer.createSequence(context, semanticObject);
 	}
 	
 	

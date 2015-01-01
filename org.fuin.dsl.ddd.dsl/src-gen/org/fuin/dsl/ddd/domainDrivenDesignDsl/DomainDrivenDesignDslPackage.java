@@ -591,13 +591,22 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int EXTERNAL_TYPE__NAME = TYPE__NAME;
 
   /**
+   * The feature id for the '<em><b>Element</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXTERNAL_TYPE__ELEMENT = TYPE_FEATURE_COUNT + 0;
+
+  /**
    * The number of structural features of the '<em>External Type</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXTERNAL_TYPE_FEATURE_COUNT = TYPE_FEATURE_COUNT + 0;
+  int EXTERNAL_TYPE_FEATURE_COUNT = TYPE_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConstraintImpl <em>Constraint</em>}' class.
@@ -2436,6 +2445,17 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   EClass getExternalType();
 
   /**
+   * Returns the meta object for the attribute '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType#getElement <em>Element</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Element</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType#getElement()
+   * @see #getExternalType()
+   * @generated
+   */
+  EAttribute getExternalType_Element();
+
+  /**
    * Returns the meta object for class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint <em>Constraint</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3557,6 +3577,14 @@ public interface DomainDrivenDesignDslPackage extends EPackage
      * @generated
      */
     EClass EXTERNAL_TYPE = eINSTANCE.getExternalType();
+
+    /**
+     * The meta object literal for the '<em><b>Element</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXTERNAL_TYPE__ELEMENT = eINSTANCE.getExternalType_Element();
 
     /**
      * The meta object literal for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConstraintImpl <em>Constraint</em>}' class.

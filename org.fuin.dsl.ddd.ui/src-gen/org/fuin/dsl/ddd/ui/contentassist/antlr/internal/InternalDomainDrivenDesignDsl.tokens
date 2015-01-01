@@ -11,7 +11,8 @@
 'constraints'=42
 'constructor'=41
 'context'=15
-'deprecated'=56
+'deprecated'=57
+'element'=56
 'entity'=37
 'entity-id'=28
 'enum'=31
@@ -29,8 +30,8 @@
 'message'=24
 'method'=45
 'namespace'=18
-'null'=58
-'nullable'=57
+'null'=59
+'nullable'=58
 'on'=22
 'prompt'=50
 'ref'=46
@@ -99,3 +100,4 @@ T__55=55
 T__56=56
 T__57=57
 T__58=58
+T__59=59

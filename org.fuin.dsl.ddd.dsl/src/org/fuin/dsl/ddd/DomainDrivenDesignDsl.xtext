@@ -43,7 +43,7 @@ ConstraintTarget:
 	ExternalType | AbstractVO;
 
 ExternalType:
-	'type' name=ID;
+	'type' (element='element')? name=ID;
 
 Constraint:
 	doc=DOC? 

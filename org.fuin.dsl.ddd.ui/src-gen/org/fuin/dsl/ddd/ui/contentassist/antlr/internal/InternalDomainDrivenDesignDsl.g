@@ -1892,6 +1892,7 @@ rule__ExternalType__Group__1
     }
 :
 	rule__ExternalType__Group__1__Impl
+	rule__ExternalType__Group__2
 ;
 finally {
 	restoreStackSize(stackSize);
@@ -1903,15 +1904,45 @@ rule__ExternalType__Group__1__Impl
     }
 :
 (
-{ before(grammarAccess.getExternalTypeAccess().getNameAssignment_1()); }
-(rule__ExternalType__NameAssignment_1)
-{ after(grammarAccess.getExternalTypeAccess().getNameAssignment_1()); }
+{ before(grammarAccess.getExternalTypeAccess().getElementAssignment_1()); }
+(rule__ExternalType__ElementAssignment_1)?
+{ after(grammarAccess.getExternalTypeAccess().getElementAssignment_1()); }
 )
 
 ;
 finally {
 	restoreStackSize(stackSize);
 }
+
+
+rule__ExternalType__Group__2
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+	rule__ExternalType__Group__2__Impl
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__ExternalType__Group__2__Impl
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getExternalTypeAccess().getNameAssignment_2()); }
+(rule__ExternalType__NameAssignment_2)
+{ after(grammarAccess.getExternalTypeAccess().getNameAssignment_2()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+
 
 
 
@@ -9530,14 +9561,37 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__ExternalType__NameAssignment_1
+rule__ExternalType__ElementAssignment_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getExternalTypeAccess().getNameIDTerminalRuleCall_1_0()); }
-	RULE_ID{ after(grammarAccess.getExternalTypeAccess().getNameIDTerminalRuleCall_1_0()); }
+{ before(grammarAccess.getExternalTypeAccess().getElementElementKeyword_1_0()); }
+(
+{ before(grammarAccess.getExternalTypeAccess().getElementElementKeyword_1_0()); }
+
+	'element' 
+
+{ after(grammarAccess.getExternalTypeAccess().getElementElementKeyword_1_0()); }
+)
+
+{ after(grammarAccess.getExternalTypeAccess().getElementElementKeyword_1_0()); }
+)
+
+;
+finally {
+	restoreStackSize(stackSize);
+}
+
+rule__ExternalType__NameAssignment_2
+    @init {
+		int stackSize = keepStackSize();
+    }
+:
+(
+{ before(grammarAccess.getExternalTypeAccess().getNameIDTerminalRuleCall_2_0()); }
+	RULE_ID{ after(grammarAccess.getExternalTypeAccess().getNameIDTerminalRuleCall_2_0()); }
 )
 
 ;

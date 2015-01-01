@@ -673,6 +673,16 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
+  public EAttribute getExternalType_Element()
+  {
+    return (EAttribute)externalTypeEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getConstraint()
   {
     return constraintEClass;
@@ -1528,6 +1538,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     constraintTargetEClass = createEClass(CONSTRAINT_TARGET);
 
     externalTypeEClass = createEClass(EXTERNAL_TYPE);
+    createEAttribute(externalTypeEClass, EXTERNAL_TYPE__ELEMENT);
 
     constraintEClass = createEClass(CONSTRAINT);
     createEAttribute(constraintEClass, CONSTRAINT__DOC);
@@ -1731,6 +1742,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     initEClass(constraintTargetEClass, ConstraintTarget.class, "ConstraintTarget", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(externalTypeEClass, ExternalType.class, "ExternalType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getExternalType_Element(), ecorePackage.getEString(), "element", null, 0, 1, ExternalType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(constraintEClass, Constraint.class, "Constraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getConstraint_Doc(), ecorePackage.getEString(), "doc", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -313,24 +313,32 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ExternalType");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cTypeKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cNameAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cNameIDTerminalRuleCall_1_0 = (RuleCall)cNameAssignment_1.eContents().get(0);
+		private final Assignment cElementAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final Keyword cElementElementKeyword_1_0 = (Keyword)cElementAssignment_1.eContents().get(0);
+		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		
 		//ExternalType:
-		//	"type" name=ID;
+		//	"type" element="element"? name=ID;
 		public ParserRule getRule() { return rule; }
 
-		//"type" name=ID
+		//"type" element="element"? name=ID
 		public Group getGroup() { return cGroup; }
 
 		//"type"
 		public Keyword getTypeKeyword_0() { return cTypeKeyword_0; }
 
+		//element="element"?
+		public Assignment getElementAssignment_1() { return cElementAssignment_1; }
+
+		//"element"
+		public Keyword getElementElementKeyword_1_0() { return cElementElementKeyword_1_0; }
+
 		//name=ID
-		public Assignment getNameAssignment_1() { return cNameAssignment_1; }
+		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
 
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_1_0() { return cNameIDTerminalRuleCall_1_0; }
+		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 	}
 
 	public class ConstraintElements extends AbstractParserRuleElementFinder {
@@ -2488,7 +2496,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//ExternalType:
-	//	"type" name=ID;
+	//	"type" element="element"? name=ID;
 	public ExternalTypeElements getExternalTypeAccess() {
 		return pExternalType;
 	}
