@@ -1758,7 +1758,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int TYPE_META_INFO__PROMPT = 3;
 
   /**
-   * The feature id for the '<em><b>Examples</b></em>' attribute list.
+   * The feature id for the '<em><b>Examples</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
@@ -3035,15 +3035,15 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   EAttribute getTypeMetaInfo_Prompt();
 
   /**
-   * Returns the meta object for the attribute list '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.TypeMetaInfo#getExamples <em>Examples</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.TypeMetaInfo#getExamples <em>Examples</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute list '<em>Examples</em>'.
+   * @return the meta object for the containment reference list '<em>Examples</em>'.
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.TypeMetaInfo#getExamples()
    * @see #getTypeMetaInfo()
    * @generated
    */
-  EAttribute getTypeMetaInfo_Examples();
+  EReference getTypeMetaInfo_Examples();
 
   /**
    * Returns the meta object for class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable <em>Variable</em>}'.
@@ -4049,12 +4049,12 @@ public interface DomainDrivenDesignDslPackage extends EPackage
     EAttribute TYPE_META_INFO__PROMPT = eINSTANCE.getTypeMetaInfo_Prompt();
 
     /**
-     * The meta object literal for the '<em><b>Examples</b></em>' attribute list feature.
+     * The meta object literal for the '<em><b>Examples</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute TYPE_META_INFO__EXAMPLES = eINSTANCE.getTypeMetaInfo_Examples();
+    EReference TYPE_META_INFO__EXAMPLES = eINSTANCE.getTypeMetaInfo_Examples();
 
     /**
      * The meta object literal for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.VariableImpl <em>Variable</em>}' class.

@@ -2864,19 +2864,19 @@ ruleTypeMetaInfo returns [EObject current=null]
     }
 (
 (
-		lv_examples_10_0=RULE_STRING
-		{
-			newLeafNode(lv_examples_10_0, grammarAccess.getTypeMetaInfoAccess().getExamplesSTRINGTerminalRuleCall_5_1_0()); 
-		}
-		{
+		{ 
+	        newCompositeNode(grammarAccess.getTypeMetaInfoAccess().getExamplesLiteralParserRuleCall_5_1_0()); 
+	    }
+		lv_examples_10_0=ruleLiteral		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getTypeMetaInfoRule());
+	            $current = createModelElementForParent(grammarAccess.getTypeMetaInfoRule());
 	        }
-       		addWithLastConsumed(
+       		add(
        			$current, 
        			"examples",
         		lv_examples_10_0, 
-        		"STRING");
+        		"Literal");
+	        afterParserOrEnumRuleCall();
 	    }
 
 )

@@ -1223,9 +1223,9 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getTypeMetaInfo_Examples()
+  public EReference getTypeMetaInfo_Examples()
   {
-    return (EAttribute)typeMetaInfoEClass.getEStructuralFeatures().get(4);
+    return (EReference)typeMetaInfoEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -1608,7 +1608,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     createEAttribute(typeMetaInfoEClass, TYPE_META_INFO__LABEL);
     createEAttribute(typeMetaInfoEClass, TYPE_META_INFO__TOOLTIP);
     createEAttribute(typeMetaInfoEClass, TYPE_META_INFO__PROMPT);
-    createEAttribute(typeMetaInfoEClass, TYPE_META_INFO__EXAMPLES);
+    createEReference(typeMetaInfoEClass, TYPE_META_INFO__EXAMPLES);
 
     variableEClass = createEClass(VARIABLE);
     createEAttribute(variableEClass, VARIABLE__DOC);
@@ -1812,7 +1812,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     initEAttribute(getTypeMetaInfo_Label(), ecorePackage.getEString(), "label", null, 0, 1, TypeMetaInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTypeMetaInfo_Tooltip(), ecorePackage.getEString(), "tooltip", null, 0, 1, TypeMetaInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getTypeMetaInfo_Prompt(), ecorePackage.getEString(), "prompt", null, 0, 1, TypeMetaInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getTypeMetaInfo_Examples(), ecorePackage.getEString(), "examples", null, 0, -1, TypeMetaInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getTypeMetaInfo_Examples(), this.getLiteral(), null, "examples", null, 0, -1, TypeMetaInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(variableEClass, Variable.class, "Variable", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getVariable_Doc(), ecorePackage.getEString(), "doc", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

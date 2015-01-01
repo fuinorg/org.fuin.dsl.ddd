@@ -5,17 +5,21 @@ package org.fuin.dsl.ddd.domainDrivenDesignDsl.impl;
 import java.util.Collection;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
-import org.eclipse.emf.ecore.util.EDataTypeEList;
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Literal;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.TypeMetaInfo;
 
 /**
@@ -118,14 +122,14 @@ public class TypeMetaInfoImpl extends MinimalEObjectImpl.Container implements Ty
   protected String prompt = PROMPT_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getExamples() <em>Examples</em>}' attribute list.
+   * The cached value of the '{@link #getExamples() <em>Examples</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @see #getExamples()
    * @generated
    * @ordered
    */
-  protected EList<String> examples;
+  protected EList<Literal> examples;
 
   /**
    * <!-- begin-user-doc -->
@@ -245,13 +249,29 @@ public class TypeMetaInfoImpl extends MinimalEObjectImpl.Container implements Ty
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<String> getExamples()
+  public EList<Literal> getExamples()
   {
     if (examples == null)
     {
-      examples = new EDataTypeEList<String>(String.class, this, DomainDrivenDesignDslPackage.TYPE_META_INFO__EXAMPLES);
+      examples = new EObjectContainmentEList<Literal>(Literal.class, this, DomainDrivenDesignDslPackage.TYPE_META_INFO__EXAMPLES);
     }
     return examples;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case DomainDrivenDesignDslPackage.TYPE_META_INFO__EXAMPLES:
+        return ((InternalEList<?>)getExamples()).basicRemove(otherEnd, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
   }
 
   /**
@@ -303,7 +323,7 @@ public class TypeMetaInfoImpl extends MinimalEObjectImpl.Container implements Ty
         return;
       case DomainDrivenDesignDslPackage.TYPE_META_INFO__EXAMPLES:
         getExamples().clear();
-        getExamples().addAll((Collection<? extends String>)newValue);
+        getExamples().addAll((Collection<? extends Literal>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -381,8 +401,6 @@ public class TypeMetaInfoImpl extends MinimalEObjectImpl.Container implements Ty
     result.append(tooltip);
     result.append(", prompt: ");
     result.append(prompt);
-    result.append(", examples: ");
-    result.append(examples);
     result.append(')');
     return result.toString();
   }
