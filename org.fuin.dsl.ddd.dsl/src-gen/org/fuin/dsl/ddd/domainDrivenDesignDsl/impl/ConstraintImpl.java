@@ -29,7 +29,6 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConstraintImpl#getDoc <em>Doc</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConstraintImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConstraintImpl#getException <em>Exception</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConstraintImpl#getVariables <em>Variables</em>}</li>
@@ -41,26 +40,6 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
  */
 public class ConstraintImpl extends AbstractElementImpl implements Constraint
 {
-  /**
-   * The default value of the '{@link #getDoc() <em>Doc</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDoc()
-   * @generated
-   * @ordered
-   */
-  protected static final String DOC_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getDoc() <em>Doc</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDoc()
-   * @generated
-   * @ordered
-   */
-  protected String doc = DOC_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getTarget() <em>Target</em>}' reference.
    * <!-- begin-user-doc -->
@@ -130,29 +109,6 @@ public class ConstraintImpl extends AbstractElementImpl implements Constraint
   protected EClass eStaticClass()
   {
     return DomainDrivenDesignDslPackage.Literals.CONSTRAINT;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getDoc()
-  {
-    return doc;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setDoc(String newDoc)
-  {
-    String oldDoc = doc;
-    doc = newDoc;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.CONSTRAINT__DOC, oldDoc, doc));
   }
 
   /**
@@ -304,8 +260,6 @@ public class ConstraintImpl extends AbstractElementImpl implements Constraint
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.CONSTRAINT__DOC:
-        return getDoc();
       case DomainDrivenDesignDslPackage.CONSTRAINT__TARGET:
         if (resolve) return getTarget();
         return basicGetTarget();
@@ -331,9 +285,6 @@ public class ConstraintImpl extends AbstractElementImpl implements Constraint
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.CONSTRAINT__DOC:
-        setDoc((String)newValue);
-        return;
       case DomainDrivenDesignDslPackage.CONSTRAINT__TARGET:
         setTarget((ConstraintTarget)newValue);
         return;
@@ -361,9 +312,6 @@ public class ConstraintImpl extends AbstractElementImpl implements Constraint
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.CONSTRAINT__DOC:
-        setDoc(DOC_EDEFAULT);
-        return;
       case DomainDrivenDesignDslPackage.CONSTRAINT__TARGET:
         setTarget((ConstraintTarget)null);
         return;
@@ -390,8 +338,6 @@ public class ConstraintImpl extends AbstractElementImpl implements Constraint
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.CONSTRAINT__DOC:
-        return DOC_EDEFAULT == null ? doc != null : !DOC_EDEFAULT.equals(doc);
       case DomainDrivenDesignDslPackage.CONSTRAINT__TARGET:
         return target != null;
       case DomainDrivenDesignDslPackage.CONSTRAINT__EXCEPTION:
@@ -415,9 +361,7 @@ public class ConstraintImpl extends AbstractElementImpl implements Constraint
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (doc: ");
-    result.append(doc);
-    result.append(", message: ");
+    result.append(" (message: ");
     result.append(message);
     result.append(')');
     return result.toString();

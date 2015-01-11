@@ -206,13 +206,22 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int ABSTRACT_ELEMENT = 4;
 
   /**
+   * The feature id for the '<em><b>Doc</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ABSTRACT_ELEMENT__DOC = 0;
+
+  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ABSTRACT_ELEMENT__NAME = 0;
+  int ABSTRACT_ELEMENT__NAME = 1;
 
   /**
    * The number of structural features of the '<em>Abstract Element</em>' class.
@@ -221,7 +230,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int ABSTRACT_ELEMENT_FEATURE_COUNT = 1;
+  int ABSTRACT_ELEMENT_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.TypeImpl <em>Type</em>}' class.
@@ -232,6 +241,15 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @generated
    */
   int TYPE = 5;
+
+  /**
+   * The feature id for the '<em><b>Doc</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int TYPE__DOC = ABSTRACT_ELEMENT__DOC;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -262,6 +280,15 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int INTERNAL_TYPE = 6;
 
   /**
+   * The feature id for the '<em><b>Doc</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int INTERNAL_TYPE__DOC = TYPE__DOC;
+
+  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -271,22 +298,13 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int INTERNAL_TYPE__NAME = TYPE__NAME;
 
   /**
-   * The feature id for the '<em><b>Doc</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int INTERNAL_TYPE__DOC = TYPE_FEATURE_COUNT + 0;
-
-  /**
    * The feature id for the '<em><b>Meta Info</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INTERNAL_TYPE__META_INFO = TYPE_FEATURE_COUNT + 1;
+  int INTERNAL_TYPE__META_INFO = TYPE_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Variables</b></em>' containment reference list.
@@ -295,7 +313,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERNAL_TYPE__VARIABLES = TYPE_FEATURE_COUNT + 2;
+  int INTERNAL_TYPE__VARIABLES = TYPE_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Internal Type</em>' class.
@@ -304,7 +322,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int INTERNAL_TYPE_FEATURE_COUNT = TYPE_FEATURE_COUNT + 3;
+  int INTERNAL_TYPE_FEATURE_COUNT = TYPE_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AbstractVOImpl <em>Abstract VO</em>}' class.
@@ -317,15 +335,6 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int ABSTRACT_VO = 7;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ABSTRACT_VO__NAME = INTERNAL_TYPE__NAME;
-
-  /**
    * The feature id for the '<em><b>Doc</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -333,6 +342,15 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @ordered
    */
   int ABSTRACT_VO__DOC = INTERNAL_TYPE__DOC;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ABSTRACT_VO__NAME = INTERNAL_TYPE__NAME;
 
   /**
    * The feature id for the '<em><b>Meta Info</b></em>' containment reference.
@@ -399,15 +417,6 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int ABSTRACT_ENTITY_ID = 8;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ABSTRACT_ENTITY_ID__NAME = ABSTRACT_VO__NAME;
-
-  /**
    * The feature id for the '<em><b>Doc</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -415,6 +424,15 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @ordered
    */
   int ABSTRACT_ENTITY_ID__DOC = ABSTRACT_VO__DOC;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ABSTRACT_ENTITY_ID__NAME = ABSTRACT_VO__NAME;
 
   /**
    * The feature id for the '<em><b>Meta Info</b></em>' containment reference.
@@ -481,15 +499,6 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int ABSTRACT_ENTITY = 9;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ABSTRACT_ENTITY__NAME = INTERNAL_TYPE__NAME;
-
-  /**
    * The feature id for the '<em><b>Doc</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -497,6 +506,15 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @ordered
    */
   int ABSTRACT_ENTITY__DOC = INTERNAL_TYPE__DOC;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ABSTRACT_ENTITY__NAME = INTERNAL_TYPE__NAME;
 
   /**
    * The feature id for the '<em><b>Meta Info</b></em>' containment reference.
@@ -582,6 +600,15 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int EXTERNAL_TYPE = 11;
 
   /**
+   * The feature id for the '<em><b>Doc</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXTERNAL_TYPE__DOC = TYPE__DOC;
+
+  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -619,6 +646,15 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int CONSTRAINT = 12;
 
   /**
+   * The feature id for the '<em><b>Doc</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSTRAINT__DOC = ABSTRACT_ELEMENT__DOC;
+
+  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -628,22 +664,13 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int CONSTRAINT__NAME = ABSTRACT_ELEMENT__NAME;
 
   /**
-   * The feature id for the '<em><b>Doc</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONSTRAINT__DOC = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
-
-  /**
    * The feature id for the '<em><b>Target</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONSTRAINT__TARGET = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
+  int CONSTRAINT__TARGET = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Exception</b></em>' reference.
@@ -652,7 +679,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT__EXCEPTION = ABSTRACT_ELEMENT_FEATURE_COUNT + 2;
+  int CONSTRAINT__EXCEPTION = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Variables</b></em>' containment reference list.
@@ -661,7 +688,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT__VARIABLES = ABSTRACT_ELEMENT_FEATURE_COUNT + 3;
+  int CONSTRAINT__VARIABLES = ABSTRACT_ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The feature id for the '<em><b>Message</b></em>' attribute.
@@ -670,7 +697,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT__MESSAGE = ABSTRACT_ELEMENT_FEATURE_COUNT + 4;
+  int CONSTRAINT__MESSAGE = ABSTRACT_ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The number of structural features of the '<em>Constraint</em>' class.
@@ -679,7 +706,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 5;
+  int CONSTRAINT_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 4;
 
   /**
    * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ExceptionImpl <em>Exception</em>}' class.
@@ -692,6 +719,15 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int EXCEPTION = 13;
 
   /**
+   * The feature id for the '<em><b>Doc</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXCEPTION__DOC = ABSTRACT_ELEMENT__DOC;
+
+  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -701,22 +737,13 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int EXCEPTION__NAME = ABSTRACT_ELEMENT__NAME;
 
   /**
-   * The feature id for the '<em><b>Doc</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EXCEPTION__DOC = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
-
-  /**
    * The feature id for the '<em><b>Cid</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXCEPTION__CID = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
+  int EXCEPTION__CID = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Variables</b></em>' containment reference list.
@@ -725,7 +752,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXCEPTION__VARIABLES = ABSTRACT_ELEMENT_FEATURE_COUNT + 2;
+  int EXCEPTION__VARIABLES = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The feature id for the '<em><b>Message</b></em>' attribute.
@@ -734,7 +761,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXCEPTION__MESSAGE = ABSTRACT_ELEMENT_FEATURE_COUNT + 3;
+  int EXCEPTION__MESSAGE = ABSTRACT_ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The number of structural features of the '<em>Exception</em>' class.
@@ -743,7 +770,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EXCEPTION_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 4;
+  int EXCEPTION_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ValueObjectImpl <em>Value Object</em>}' class.
@@ -756,15 +783,6 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int VALUE_OBJECT = 14;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int VALUE_OBJECT__NAME = ABSTRACT_VO__NAME;
-
-  /**
    * The feature id for the '<em><b>Doc</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -772,6 +790,15 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @ordered
    */
   int VALUE_OBJECT__DOC = ABSTRACT_VO__DOC;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int VALUE_OBJECT__NAME = ABSTRACT_VO__NAME;
 
   /**
    * The feature id for the '<em><b>Meta Info</b></em>' containment reference.
@@ -838,15 +865,6 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int ENTITY_ID = 15;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ENTITY_ID__NAME = ABSTRACT_ENTITY_ID__NAME;
-
-  /**
    * The feature id for the '<em><b>Doc</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -854,6 +872,15 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @ordered
    */
   int ENTITY_ID__DOC = ABSTRACT_ENTITY_ID__DOC;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENTITY_ID__NAME = ABSTRACT_ENTITY_ID__NAME;
 
   /**
    * The feature id for the '<em><b>Meta Info</b></em>' containment reference.
@@ -929,15 +956,6 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int AGGREGATE_ID = 16;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AGGREGATE_ID__NAME = ABSTRACT_ENTITY_ID__NAME;
-
-  /**
    * The feature id for the '<em><b>Doc</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -945,6 +963,15 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @ordered
    */
   int AGGREGATE_ID__DOC = ABSTRACT_ENTITY_ID__DOC;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AGGREGATE_ID__NAME = ABSTRACT_ENTITY_ID__NAME;
 
   /**
    * The feature id for the '<em><b>Meta Info</b></em>' containment reference.
@@ -1020,15 +1047,6 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int ENUM_OBJECT = 17;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ENUM_OBJECT__NAME = INTERNAL_TYPE__NAME;
-
-  /**
    * The feature id for the '<em><b>Doc</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1036,6 +1054,15 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @ordered
    */
   int ENUM_OBJECT__DOC = INTERNAL_TYPE__DOC;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENUM_OBJECT__NAME = INTERNAL_TYPE__NAME;
 
   /**
    * The feature id for the '<em><b>Meta Info</b></em>' containment reference.
@@ -1148,6 +1175,15 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int EVENT = 19;
 
   /**
+   * The feature id for the '<em><b>Doc</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EVENT__DOC = ABSTRACT_ELEMENT__DOC;
+
+  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1157,22 +1193,13 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int EVENT__NAME = ABSTRACT_ELEMENT__NAME;
 
   /**
-   * The feature id for the '<em><b>Doc</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int EVENT__DOC = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
-
-  /**
    * The feature id for the '<em><b>Variables</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EVENT__VARIABLES = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
+  int EVENT__VARIABLES = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Message</b></em>' attribute.
@@ -1181,7 +1208,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EVENT__MESSAGE = ABSTRACT_ELEMENT_FEATURE_COUNT + 2;
+  int EVENT__MESSAGE = ABSTRACT_ELEMENT_FEATURE_COUNT + 1;
 
   /**
    * The number of structural features of the '<em>Event</em>' class.
@@ -1190,7 +1217,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int EVENT_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 3;
+  int EVENT_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.EntityImpl <em>Entity</em>}' class.
@@ -1203,15 +1230,6 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int ENTITY = 20;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ENTITY__NAME = ABSTRACT_ENTITY__NAME;
-
-  /**
    * The feature id for the '<em><b>Doc</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1219,6 +1237,15 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @ordered
    */
   int ENTITY__DOC = ABSTRACT_ENTITY__DOC;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENTITY__NAME = ABSTRACT_ENTITY__NAME;
 
   /**
    * The feature id for the '<em><b>Meta Info</b></em>' containment reference.
@@ -1303,15 +1330,6 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int AGGREGATE = 21;
 
   /**
-   * The feature id for the '<em><b>Name</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int AGGREGATE__NAME = ABSTRACT_ENTITY__NAME;
-
-  /**
    * The feature id for the '<em><b>Doc</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1319,6 +1337,15 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @ordered
    */
   int AGGREGATE__DOC = ABSTRACT_ENTITY__DOC;
+
+  /**
+   * The feature id for the '<em><b>Name</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AGGREGATE__NAME = ABSTRACT_ENTITY__NAME;
 
   /**
    * The feature id for the '<em><b>Meta Info</b></em>' containment reference.
@@ -1961,6 +1988,15 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int SERVICE = 31;
 
   /**
+   * The feature id for the '<em><b>Doc</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int SERVICE__DOC = TYPE__DOC;
+
+  /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -1970,22 +2006,13 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int SERVICE__NAME = TYPE__NAME;
 
   /**
-   * The feature id for the '<em><b>Doc</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int SERVICE__DOC = TYPE_FEATURE_COUNT + 0;
-
-  /**
    * The feature id for the '<em><b>Methods</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int SERVICE__METHODS = TYPE_FEATURE_COUNT + 1;
+  int SERVICE__METHODS = TYPE_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Service</em>' class.
@@ -1994,7 +2021,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int SERVICE_FEATURE_COUNT = TYPE_FEATURE_COUNT + 2;
+  int SERVICE_FEATURE_COUNT = TYPE_FEATURE_COUNT + 1;
 
   /**
    * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.LiteralImpl <em>Literal</em>}' class.
@@ -2265,6 +2292,17 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   EClass getAbstractElement();
 
   /**
+   * Returns the meta object for the attribute '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractElement#getDoc <em>Doc</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Doc</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractElement#getDoc()
+   * @see #getAbstractElement()
+   * @generated
+   */
+  EAttribute getAbstractElement_Doc();
+
+  /**
    * Returns the meta object for the attribute '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractElement#getName <em>Name</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2294,17 +2332,6 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @generated
    */
   EClass getInternalType();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.InternalType#getDoc <em>Doc</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Doc</em>'.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.InternalType#getDoc()
-   * @see #getInternalType()
-   * @generated
-   */
-  EAttribute getInternalType_Doc();
 
   /**
    * Returns the meta object for the containment reference '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.InternalType#getMetaInfo <em>Meta Info</em>}'.
@@ -2466,17 +2493,6 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   EClass getConstraint();
 
   /**
-   * Returns the meta object for the attribute '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint#getDoc <em>Doc</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Doc</em>'.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint#getDoc()
-   * @see #getConstraint()
-   * @generated
-   */
-  EAttribute getConstraint_Doc();
-
-  /**
    * Returns the meta object for the reference '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint#getTarget <em>Target</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2529,17 +2545,6 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @generated
    */
   EClass getException();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception#getDoc <em>Doc</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Doc</em>'.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception#getDoc()
-   * @see #getException()
-   * @generated
-   */
-  EAttribute getException_Doc();
 
   /**
    * Returns the meta object for the attribute '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception#getCid <em>Cid</em>}'.
@@ -2721,17 +2726,6 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @generated
    */
   EClass getEvent();
-
-  /**
-   * Returns the meta object for the attribute '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Event#getDoc <em>Doc</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Doc</em>'.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Event#getDoc()
-   * @see #getEvent()
-   * @generated
-   */
-  EAttribute getEvent_Doc();
 
   /**
    * Returns the meta object for the containment reference list '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Event#getVariables <em>Variables</em>}'.
@@ -3217,17 +3211,6 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   EClass getService();
 
   /**
-   * Returns the meta object for the attribute '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Service#getDoc <em>Doc</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Doc</em>'.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Service#getDoc()
-   * @see #getService()
-   * @generated
-   */
-  EAttribute getService_Doc();
-
-  /**
    * Returns the meta object for the containment reference list '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Service#getMethods <em>Methods</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3429,6 +3412,14 @@ public interface DomainDrivenDesignDslPackage extends EPackage
     EClass ABSTRACT_ELEMENT = eINSTANCE.getAbstractElement();
 
     /**
+     * The meta object literal for the '<em><b>Doc</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute ABSTRACT_ELEMENT__DOC = eINSTANCE.getAbstractElement_Doc();
+
+    /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3455,14 +3446,6 @@ public interface DomainDrivenDesignDslPackage extends EPackage
      * @generated
      */
     EClass INTERNAL_TYPE = eINSTANCE.getInternalType();
-
-    /**
-     * The meta object literal for the '<em><b>Doc</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute INTERNAL_TYPE__DOC = eINSTANCE.getInternalType_Doc();
 
     /**
      * The meta object literal for the '<em><b>Meta Info</b></em>' containment reference feature.
@@ -3597,14 +3580,6 @@ public interface DomainDrivenDesignDslPackage extends EPackage
     EClass CONSTRAINT = eINSTANCE.getConstraint();
 
     /**
-     * The meta object literal for the '<em><b>Doc</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute CONSTRAINT__DOC = eINSTANCE.getConstraint_Doc();
-
-    /**
      * The meta object literal for the '<em><b>Target</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -3645,14 +3620,6 @@ public interface DomainDrivenDesignDslPackage extends EPackage
      * @generated
      */
     EClass EXCEPTION = eINSTANCE.getException();
-
-    /**
-     * The meta object literal for the '<em><b>Doc</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute EXCEPTION__DOC = eINSTANCE.getException_Doc();
 
     /**
      * The meta object literal for the '<em><b>Cid</b></em>' attribute feature.
@@ -3801,14 +3768,6 @@ public interface DomainDrivenDesignDslPackage extends EPackage
      * @generated
      */
     EClass EVENT = eINSTANCE.getEvent();
-
-    /**
-     * The meta object literal for the '<em><b>Doc</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute EVENT__DOC = eINSTANCE.getEvent_Doc();
 
     /**
      * The meta object literal for the '<em><b>Variables</b></em>' containment reference list feature.
@@ -4193,14 +4152,6 @@ public interface DomainDrivenDesignDslPackage extends EPackage
      * @generated
      */
     EClass SERVICE = eINSTANCE.getService();
-
-    /**
-     * The meta object literal for the '<em><b>Doc</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute SERVICE__DOC = eINSTANCE.getService_Doc();
 
     /**
      * The meta object literal for the '<em><b>Methods</b></em>' containment reference list feature.

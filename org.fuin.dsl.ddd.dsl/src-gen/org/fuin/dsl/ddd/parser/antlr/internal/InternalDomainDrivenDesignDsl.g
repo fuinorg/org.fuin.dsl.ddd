@@ -615,30 +615,48 @@ ruleExternalType returns [EObject current=null]
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
-(	otherlv_0='type' 
+((
+(
+		lv_doc_0_0=RULE_DOC
+		{
+			newLeafNode(lv_doc_0_0, grammarAccess.getExternalTypeAccess().getDocDOCTerminalRuleCall_0_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getExternalTypeRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"doc",
+        		lv_doc_0_0, 
+        		"DOC");
+	    }
+
+)
+)?	otherlv_1='type' 
     {
-    	newLeafNode(otherlv_0, grammarAccess.getExternalTypeAccess().getTypeKeyword_0());
+    	newLeafNode(otherlv_1, grammarAccess.getExternalTypeAccess().getTypeKeyword_1());
     }
 (
 (
-		lv_element_1_0=	'element' 
+		lv_element_2_0=	'element' 
     {
-        newLeafNode(lv_element_1_0, grammarAccess.getExternalTypeAccess().getElementElementKeyword_1_0());
+        newLeafNode(lv_element_2_0, grammarAccess.getExternalTypeAccess().getElementElementKeyword_2_0());
     }
  
 	    {
 	        if ($current==null) {
 	            $current = createModelElement(grammarAccess.getExternalTypeRule());
 	        }
-       		setWithLastConsumed($current, "element", lv_element_1_0, "element");
+       		setWithLastConsumed($current, "element", lv_element_2_0, "element");
 	    }
 
 )
 )?(
 (
-		lv_name_2_0=RULE_ID
+		lv_name_3_0=RULE_ID
 		{
-			newLeafNode(lv_name_2_0, grammarAccess.getExternalTypeAccess().getNameIDTerminalRuleCall_2_0()); 
+			newLeafNode(lv_name_3_0, grammarAccess.getExternalTypeAccess().getNameIDTerminalRuleCall_3_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -647,7 +665,7 @@ ruleExternalType returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"name",
-        		lv_name_2_0, 
+        		lv_name_3_0, 
         		"ID");
 	    }
 

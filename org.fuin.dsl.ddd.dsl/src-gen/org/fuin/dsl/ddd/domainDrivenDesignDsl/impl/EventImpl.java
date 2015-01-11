@@ -28,7 +28,6 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.EventImpl#getDoc <em>Doc</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.EventImpl#getVariables <em>Variables</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.EventImpl#getMessage <em>Message</em>}</li>
  * </ul>
@@ -38,26 +37,6 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
  */
 public class EventImpl extends AbstractElementImpl implements Event
 {
-  /**
-   * The default value of the '{@link #getDoc() <em>Doc</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDoc()
-   * @generated
-   * @ordered
-   */
-  protected static final String DOC_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getDoc() <em>Doc</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDoc()
-   * @generated
-   * @ordered
-   */
-  protected String doc = DOC_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getVariables() <em>Variables</em>}' containment reference list.
    * <!-- begin-user-doc -->
@@ -107,29 +86,6 @@ public class EventImpl extends AbstractElementImpl implements Event
   protected EClass eStaticClass()
   {
     return DomainDrivenDesignDslPackage.Literals.EVENT;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getDoc()
-  {
-    return doc;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setDoc(String newDoc)
-  {
-    String oldDoc = doc;
-    doc = newDoc;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.EVENT__DOC, oldDoc, doc));
   }
 
   /**
@@ -195,8 +151,6 @@ public class EventImpl extends AbstractElementImpl implements Event
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.EVENT__DOC:
-        return getDoc();
       case DomainDrivenDesignDslPackage.EVENT__VARIABLES:
         return getVariables();
       case DomainDrivenDesignDslPackage.EVENT__MESSAGE:
@@ -216,9 +170,6 @@ public class EventImpl extends AbstractElementImpl implements Event
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.EVENT__DOC:
-        setDoc((String)newValue);
-        return;
       case DomainDrivenDesignDslPackage.EVENT__VARIABLES:
         getVariables().clear();
         getVariables().addAll((Collection<? extends Variable>)newValue);
@@ -240,9 +191,6 @@ public class EventImpl extends AbstractElementImpl implements Event
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.EVENT__DOC:
-        setDoc(DOC_EDEFAULT);
-        return;
       case DomainDrivenDesignDslPackage.EVENT__VARIABLES:
         getVariables().clear();
         return;
@@ -263,8 +211,6 @@ public class EventImpl extends AbstractElementImpl implements Event
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.EVENT__DOC:
-        return DOC_EDEFAULT == null ? doc != null : !DOC_EDEFAULT.equals(doc);
       case DomainDrivenDesignDslPackage.EVENT__VARIABLES:
         return variables != null && !variables.isEmpty();
       case DomainDrivenDesignDslPackage.EVENT__MESSAGE:
@@ -284,9 +230,7 @@ public class EventImpl extends AbstractElementImpl implements Event
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (doc: ");
-    result.append(doc);
-    result.append(", message: ");
+    result.append(" (message: ");
     result.append(message);
     result.append(')');
     return result.toString();

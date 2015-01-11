@@ -12,7 +12,6 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.InternalType#getDoc <em>Doc</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.InternalType#getMetaInfo <em>Meta Info</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.InternalType#getVariables <em>Variables</em>}</li>
  * </ul>
@@ -24,32 +23,6 @@ import org.eclipse.emf.common.util.EList;
  */
 public interface InternalType extends Type
 {
-  /**
-   * Returns the value of the '<em><b>Doc</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Doc</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Doc</em>' attribute.
-   * @see #setDoc(String)
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getInternalType_Doc()
-   * @model
-   * @generated
-   */
-  String getDoc();
-
-  /**
-   * Sets the value of the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.InternalType#getDoc <em>Doc</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Doc</em>' attribute.
-   * @see #getDoc()
-   * @generated
-   */
-  void setDoc(String value);
-
   /**
    * Returns the value of the '<em><b>Meta Info</b></em>' containment reference.
    * <!-- begin-user-doc -->

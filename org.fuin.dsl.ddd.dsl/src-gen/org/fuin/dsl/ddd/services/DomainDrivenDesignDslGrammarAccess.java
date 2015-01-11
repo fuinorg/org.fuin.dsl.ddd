@@ -312,33 +312,41 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	public class ExternalTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ExternalType");
 		private final Group cGroup = (Group)rule.eContents().get(1);
-		private final Keyword cTypeKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cElementAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final Keyword cElementElementKeyword_1_0 = (Keyword)cElementAssignment_1.eContents().get(0);
-		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
+		private final Assignment cDocAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cDocDOCTerminalRuleCall_0_0 = (RuleCall)cDocAssignment_0.eContents().get(0);
+		private final Keyword cTypeKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cElementAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final Keyword cElementElementKeyword_2_0 = (Keyword)cElementAssignment_2.eContents().get(0);
+		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cNameIDTerminalRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
 		
 		//ExternalType:
-		//	"type" element="element"? name=ID;
+		//	doc=DOC? "type" element="element"? name=ID;
 		public ParserRule getRule() { return rule; }
 
-		//"type" element="element"? name=ID
+		//doc=DOC? "type" element="element"? name=ID
 		public Group getGroup() { return cGroup; }
 
+		//doc=DOC?
+		public Assignment getDocAssignment_0() { return cDocAssignment_0; }
+
+		//DOC
+		public RuleCall getDocDOCTerminalRuleCall_0_0() { return cDocDOCTerminalRuleCall_0_0; }
+
 		//"type"
-		public Keyword getTypeKeyword_0() { return cTypeKeyword_0; }
+		public Keyword getTypeKeyword_1() { return cTypeKeyword_1; }
 
 		//element="element"?
-		public Assignment getElementAssignment_1() { return cElementAssignment_1; }
+		public Assignment getElementAssignment_2() { return cElementAssignment_2; }
 
 		//"element"
-		public Keyword getElementElementKeyword_1_0() { return cElementElementKeyword_1_0; }
+		public Keyword getElementElementKeyword_2_0() { return cElementElementKeyword_2_0; }
 
 		//name=ID
-		public Assignment getNameAssignment_2() { return cNameAssignment_2; }
+		public Assignment getNameAssignment_3() { return cNameAssignment_3; }
 
 		//ID
-		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
+		public RuleCall getNameIDTerminalRuleCall_3_0() { return cNameIDTerminalRuleCall_3_0; }
 	}
 
 	public class ConstraintElements extends AbstractParserRuleElementFinder {
@@ -2496,7 +2504,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//ExternalType:
-	//	"type" element="element"? name=ID;
+	//	doc=DOC? "type" element="element"? name=ID;
 	public ExternalTypeElements getExternalTypeAccess() {
 		return pExternalType;
 	}

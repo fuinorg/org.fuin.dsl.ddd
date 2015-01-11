@@ -4,25 +4,37 @@
 package org.fuin.dsl.ddd.ui;
 
 import org.eclipse.ui.plugin.AbstractUIPlugin;
+import org.eclipse.xtext.documentation.IEObjectDocumentationProvider;
+import org.eclipse.xtext.ui.editor.hover.IEObjectHoverProvider;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightingConfiguration;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.ISemanticHighlightingCalculator;
+import org.fuin.dsl.ddd.ui.documentation.DddDslEObjectDocumentationProvider;
+import org.fuin.dsl.ddd.ui.hover.DddDslEObjectHoverProvider;
 
 /**
  * Use this class to register components to be used within the IDE.
  */
 public class DomainDrivenDesignDslUiModule extends
-		org.fuin.dsl.ddd.ui.AbstractDomainDrivenDesignDslUiModule {
+        org.fuin.dsl.ddd.ui.AbstractDomainDrivenDesignDslUiModule {
 
-	public DomainDrivenDesignDslUiModule(AbstractUIPlugin plugin) {
-		super(plugin);
-	}
+    public DomainDrivenDesignDslUiModule(AbstractUIPlugin plugin) {
+        super(plugin);
+    }
 
-	public Class<? extends IHighlightingConfiguration> bindIHighlightingConfiguration() {
-		return DddDslHighlightConfig.class;
-	}
+    public Class<? extends IHighlightingConfiguration> bindIHighlightingConfiguration() {
+        return DddDslHighlightConfig.class;
+    }
 
-	public Class<? extends ISemanticHighlightingCalculator> bindISemanticHighlightingCalculator() {
-		return DddDslHighlightCalculator.class;
-	}
+    public Class<? extends ISemanticHighlightingCalculator> bindISemanticHighlightingCalculator() {
+        return DddDslHighlightCalculator.class;
+    }
+
+    public Class<? extends IEObjectHoverProvider> bindIEObjectHoverProvider() {
+        return DddDslEObjectHoverProvider.class;
+    }
+
+    public Class<? extends IEObjectDocumentationProvider> bindIEObjectDocumentationProviderr() {
+        return DddDslEObjectDocumentationProvider.class;
+    }
 
 }

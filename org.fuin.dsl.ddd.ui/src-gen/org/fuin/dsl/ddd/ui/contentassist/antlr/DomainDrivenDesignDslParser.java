@@ -118,8 +118,9 @@ public class DomainDrivenDesignDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getNamespaceAccess().getImportsAssignment_3(), "rule__Namespace__ImportsAssignment_3");
 					put(grammarAccess.getNamespaceAccess().getElementsAssignment_4(), "rule__Namespace__ElementsAssignment_4");
 					put(grammarAccess.getImportAccess().getImportedNamespaceAssignment_1(), "rule__Import__ImportedNamespaceAssignment_1");
-					put(grammarAccess.getExternalTypeAccess().getElementAssignment_1(), "rule__ExternalType__ElementAssignment_1");
-					put(grammarAccess.getExternalTypeAccess().getNameAssignment_2(), "rule__ExternalType__NameAssignment_2");
+					put(grammarAccess.getExternalTypeAccess().getDocAssignment_0(), "rule__ExternalType__DocAssignment_0");
+					put(grammarAccess.getExternalTypeAccess().getElementAssignment_2(), "rule__ExternalType__ElementAssignment_2");
+					put(grammarAccess.getExternalTypeAccess().getNameAssignment_3(), "rule__ExternalType__NameAssignment_3");
 					put(grammarAccess.getConstraintAccess().getDocAssignment_0(), "rule__Constraint__DocAssignment_0");
 					put(grammarAccess.getConstraintAccess().getNameAssignment_2(), "rule__Constraint__NameAssignment_2");
 					put(grammarAccess.getConstraintAccess().getTargetAssignment_3_1(), "rule__Constraint__TargetAssignment_3_1");

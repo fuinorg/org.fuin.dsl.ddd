@@ -453,7 +453,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	
 	/**
 	 * Constraint:
-	 *     (element='element'? name=ID)
+	 *     (doc=DOC? element='element'? name=ID)
 	 */
 	protected void sequence_ExternalType(EObject context, ExternalType semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);

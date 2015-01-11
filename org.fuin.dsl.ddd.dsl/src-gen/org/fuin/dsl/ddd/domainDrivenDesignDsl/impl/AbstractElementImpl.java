@@ -19,6 +19,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AbstractElementImpl#getDoc <em>Doc</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AbstractElementImpl#getName <em>Name</em>}</li>
  * </ul>
  * </p>
@@ -27,6 +28,26 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
  */
 public class AbstractElementImpl extends MinimalEObjectImpl.Container implements AbstractElement
 {
+  /**
+   * The default value of the '{@link #getDoc() <em>Doc</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDoc()
+   * @generated
+   * @ordered
+   */
+  protected static final String DOC_EDEFAULT = null;
+
+  /**
+   * The cached value of the '{@link #getDoc() <em>Doc</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getDoc()
+   * @generated
+   * @ordered
+   */
+  protected String doc = DOC_EDEFAULT;
+
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -73,6 +94,29 @@ public class AbstractElementImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
+  public String getDoc()
+  {
+    return doc;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setDoc(String newDoc)
+  {
+    String oldDoc = doc;
+    doc = newDoc;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.ABSTRACT_ELEMENT__DOC, oldDoc, doc));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getName()
   {
     return name;
@@ -101,6 +145,8 @@ public class AbstractElementImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
+      case DomainDrivenDesignDslPackage.ABSTRACT_ELEMENT__DOC:
+        return getDoc();
       case DomainDrivenDesignDslPackage.ABSTRACT_ELEMENT__NAME:
         return getName();
     }
@@ -117,6 +163,9 @@ public class AbstractElementImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
+      case DomainDrivenDesignDslPackage.ABSTRACT_ELEMENT__DOC:
+        setDoc((String)newValue);
+        return;
       case DomainDrivenDesignDslPackage.ABSTRACT_ELEMENT__NAME:
         setName((String)newValue);
         return;
@@ -134,6 +183,9 @@ public class AbstractElementImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
+      case DomainDrivenDesignDslPackage.ABSTRACT_ELEMENT__DOC:
+        setDoc(DOC_EDEFAULT);
+        return;
       case DomainDrivenDesignDslPackage.ABSTRACT_ELEMENT__NAME:
         setName(NAME_EDEFAULT);
         return;
@@ -151,6 +203,8 @@ public class AbstractElementImpl extends MinimalEObjectImpl.Container implements
   {
     switch (featureID)
     {
+      case DomainDrivenDesignDslPackage.ABSTRACT_ELEMENT__DOC:
+        return DOC_EDEFAULT == null ? doc != null : !DOC_EDEFAULT.equals(doc);
       case DomainDrivenDesignDslPackage.ABSTRACT_ELEMENT__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
     }
@@ -168,7 +222,9 @@ public class AbstractElementImpl extends MinimalEObjectImpl.Container implements
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (name: ");
+    result.append(" (doc: ");
+    result.append(doc);
+    result.append(", name: ");
     result.append(name);
     result.append(')');
     return result.toString();

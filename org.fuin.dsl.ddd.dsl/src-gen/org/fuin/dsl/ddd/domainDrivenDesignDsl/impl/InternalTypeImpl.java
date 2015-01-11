@@ -29,7 +29,6 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.InternalTypeImpl#getDoc <em>Doc</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.InternalTypeImpl#getMetaInfo <em>Meta Info</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.InternalTypeImpl#getVariables <em>Variables</em>}</li>
  * </ul>
@@ -39,26 +38,6 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
  */
 public class InternalTypeImpl extends TypeImpl implements InternalType
 {
-  /**
-   * The default value of the '{@link #getDoc() <em>Doc</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDoc()
-   * @generated
-   * @ordered
-   */
-  protected static final String DOC_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getDoc() <em>Doc</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDoc()
-   * @generated
-   * @ordered
-   */
-  protected String doc = DOC_EDEFAULT;
-
   /**
    * The cached value of the '{@link #getMetaInfo() <em>Meta Info</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -98,29 +77,6 @@ public class InternalTypeImpl extends TypeImpl implements InternalType
   protected EClass eStaticClass()
   {
     return DomainDrivenDesignDslPackage.Literals.INTERNAL_TYPE;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getDoc()
-  {
-    return doc;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setDoc(String newDoc)
-  {
-    String oldDoc = doc;
-    doc = newDoc;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.INTERNAL_TYPE__DOC, oldDoc, doc));
   }
 
   /**
@@ -213,8 +169,6 @@ public class InternalTypeImpl extends TypeImpl implements InternalType
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.INTERNAL_TYPE__DOC:
-        return getDoc();
       case DomainDrivenDesignDslPackage.INTERNAL_TYPE__META_INFO:
         return getMetaInfo();
       case DomainDrivenDesignDslPackage.INTERNAL_TYPE__VARIABLES:
@@ -234,9 +188,6 @@ public class InternalTypeImpl extends TypeImpl implements InternalType
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.INTERNAL_TYPE__DOC:
-        setDoc((String)newValue);
-        return;
       case DomainDrivenDesignDslPackage.INTERNAL_TYPE__META_INFO:
         setMetaInfo((TypeMetaInfo)newValue);
         return;
@@ -258,9 +209,6 @@ public class InternalTypeImpl extends TypeImpl implements InternalType
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.INTERNAL_TYPE__DOC:
-        setDoc(DOC_EDEFAULT);
-        return;
       case DomainDrivenDesignDslPackage.INTERNAL_TYPE__META_INFO:
         setMetaInfo((TypeMetaInfo)null);
         return;
@@ -281,31 +229,12 @@ public class InternalTypeImpl extends TypeImpl implements InternalType
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.INTERNAL_TYPE__DOC:
-        return DOC_EDEFAULT == null ? doc != null : !DOC_EDEFAULT.equals(doc);
       case DomainDrivenDesignDslPackage.INTERNAL_TYPE__META_INFO:
         return metaInfo != null;
       case DomainDrivenDesignDslPackage.INTERNAL_TYPE__VARIABLES:
         return variables != null && !variables.isEmpty();
     }
     return super.eIsSet(featureID);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  @Override
-  public String toString()
-  {
-    if (eIsProxy()) return super.toString();
-
-    StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (doc: ");
-    result.append(doc);
-    result.append(')');
-    return result.toString();
   }
 
 } //InternalTypeImpl

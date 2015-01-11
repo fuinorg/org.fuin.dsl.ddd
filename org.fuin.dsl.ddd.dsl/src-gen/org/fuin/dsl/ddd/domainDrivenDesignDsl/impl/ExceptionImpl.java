@@ -27,7 +27,6 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ExceptionImpl#getDoc <em>Doc</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ExceptionImpl#getCid <em>Cid</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ExceptionImpl#getVariables <em>Variables</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ExceptionImpl#getMessage <em>Message</em>}</li>
@@ -38,26 +37,6 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
  */
 public class ExceptionImpl extends AbstractElementImpl implements org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception
 {
-  /**
-   * The default value of the '{@link #getDoc() <em>Doc</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDoc()
-   * @generated
-   * @ordered
-   */
-  protected static final String DOC_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getDoc() <em>Doc</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getDoc()
-   * @generated
-   * @ordered
-   */
-  protected String doc = DOC_EDEFAULT;
-
   /**
    * The default value of the '{@link #getCid() <em>Cid</em>}' attribute.
    * <!-- begin-user-doc -->
@@ -127,29 +106,6 @@ public class ExceptionImpl extends AbstractElementImpl implements org.fuin.dsl.d
   protected EClass eStaticClass()
   {
     return DomainDrivenDesignDslPackage.Literals.EXCEPTION;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public String getDoc()
-  {
-    return doc;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setDoc(String newDoc)
-  {
-    String oldDoc = doc;
-    doc = newDoc;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.EXCEPTION__DOC, oldDoc, doc));
   }
 
   /**
@@ -238,8 +194,6 @@ public class ExceptionImpl extends AbstractElementImpl implements org.fuin.dsl.d
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.EXCEPTION__DOC:
-        return getDoc();
       case DomainDrivenDesignDslPackage.EXCEPTION__CID:
         return getCid();
       case DomainDrivenDesignDslPackage.EXCEPTION__VARIABLES:
@@ -261,9 +215,6 @@ public class ExceptionImpl extends AbstractElementImpl implements org.fuin.dsl.d
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.EXCEPTION__DOC:
-        setDoc((String)newValue);
-        return;
       case DomainDrivenDesignDslPackage.EXCEPTION__CID:
         setCid((Integer)newValue);
         return;
@@ -288,9 +239,6 @@ public class ExceptionImpl extends AbstractElementImpl implements org.fuin.dsl.d
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.EXCEPTION__DOC:
-        setDoc(DOC_EDEFAULT);
-        return;
       case DomainDrivenDesignDslPackage.EXCEPTION__CID:
         setCid(CID_EDEFAULT);
         return;
@@ -314,8 +262,6 @@ public class ExceptionImpl extends AbstractElementImpl implements org.fuin.dsl.d
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.EXCEPTION__DOC:
-        return DOC_EDEFAULT == null ? doc != null : !DOC_EDEFAULT.equals(doc);
       case DomainDrivenDesignDslPackage.EXCEPTION__CID:
         return cid != CID_EDEFAULT;
       case DomainDrivenDesignDslPackage.EXCEPTION__VARIABLES:
@@ -337,9 +283,7 @@ public class ExceptionImpl extends AbstractElementImpl implements org.fuin.dsl.d
     if (eIsProxy()) return super.toString();
 
     StringBuffer result = new StringBuffer(super.toString());
-    result.append(" (doc: ");
-    result.append(doc);
-    result.append(", cid: ");
+    result.append(" (cid: ");
     result.append(cid);
     result.append(", message: ");
     result.append(message);

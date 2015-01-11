@@ -33,4 +33,5 @@ Export-Package: org.fuin.dsl.ddd,
  org.fuin.dsl.ddd.validation,
  org.fuin.dsl.ddd.scoping,
  org.fuin.dsl.ddd.generator,
- org.fuin.dsl.ddd.formatting
+ org.fuin.dsl.ddd.formatting,
+ org.fuin.dsl.ddd.extensions

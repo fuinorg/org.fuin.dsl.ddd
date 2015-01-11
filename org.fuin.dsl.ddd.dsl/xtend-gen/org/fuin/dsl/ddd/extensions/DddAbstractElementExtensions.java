@@ -1,0 +1,94 @@
+package org.fuin.dsl.ddd.extensions;
+
+import com.google.common.base.Objects;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractElement;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Context;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Namespace;
+import org.fuin.dsl.ddd.extensions.DddEObjectExtensions;
+import org.fuin.dsl.ddd.extensions.DddExtensionUtils;
+
+/**
+ * Provides extension methods for AbstractElement.
+ */
+@SuppressWarnings("all")
+public class DddAbstractElementExtensions {
+  /**
+   * Returns the unique name .
+   * 
+   * @param el Element to return a unique name for.
+   * 
+   * @return Unique name in the context/namespace.
+   */
+  public static String uniqueName(final AbstractElement el) {
+    boolean _equals = Objects.equal(el, null);
+    if (_equals) {
+      throw new IllegalArgumentException("argument \'el\' cannot be null");
+    }
+    Context _context = DddEObjectExtensions.getContext(el);
+    boolean _equals_1 = Objects.equal(_context, null);
+    if (_equals_1) {
+      String _path = DddEObjectExtensions.getPath(el);
+      String _plus = ("argument \'el.context\' cannot be null: " + _path);
+      throw new IllegalArgumentException(_plus);
+    }
+    Namespace _namespace = DddEObjectExtensions.getNamespace(el);
+    boolean _equals_2 = Objects.equal(_namespace, null);
+    if (_equals_2) {
+      String _path_1 = DddEObjectExtensions.getPath(el);
+      String _plus_1 = ("argument \'el.namespace\' cannot be null: " + _path_1);
+      throw new IllegalArgumentException(_plus_1);
+    }
+    Context _context_1 = DddEObjectExtensions.getContext(el);
+    String _name = _context_1.getName();
+    Namespace _namespace_1 = DddEObjectExtensions.getNamespace(el);
+    String _name_1 = _namespace_1.getName();
+    String _name_2 = el.getName();
+    return DddExtensionUtils.separated(".", _name, _name_1, _name_2);
+  }
+  
+  /**
+   * Returns the abstract unique name.
+   * 
+   * @param el Element to return an abstract unique name for.
+   * 
+   * @return Abstract unique name in the context/namespace.
+   */
+  public static String uniqueAbstractName(final AbstractElement el) {
+    boolean _equals = Objects.equal(el, null);
+    if (_equals) {
+      throw new IllegalArgumentException("argument \'el\' cannot be null");
+    }
+    Context _context = DddEObjectExtensions.getContext(el);
+    boolean _equals_1 = Objects.equal(_context, null);
+    if (_equals_1) {
+      throw new IllegalArgumentException("argument \'el.context\' cannot be null");
+    }
+    Namespace _namespace = DddEObjectExtensions.getNamespace(el);
+    boolean _equals_2 = Objects.equal(_namespace, null);
+    if (_equals_2) {
+      throw new IllegalArgumentException("argument \'el.namespace\' cannot be null");
+    }
+    Context _context_1 = DddEObjectExtensions.getContext(el);
+    String _name = _context_1.getName();
+    Namespace _namespace_1 = DddEObjectExtensions.getNamespace(el);
+    String _name_1 = _namespace_1.getName();
+    String _abstractName = DddAbstractElementExtensions.abstractName(el);
+    return DddExtensionUtils.separated(".", _name, _name_1, _abstractName);
+  }
+  
+  /**
+   * Returns the unique name .
+   * 
+   * @param el Element to return a unique name for.
+   * 
+   * @return Unique name in the context/namespace.
+   */
+  public static String abstractName(final AbstractElement el) {
+    boolean _equals = Objects.equal(el, null);
+    if (_equals) {
+      throw new IllegalArgumentException("argument \'el\' cannot be null");
+    }
+    String _name = el.getName();
+    return ("Abstract" + _name);
+  }
+}

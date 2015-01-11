@@ -13,12 +13,10 @@ import org.eclipse.xtext.nodemodel.util.NodeModelUtils;
 import org.eclipse.xtext.resource.XtextResource;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightedPositionAcceptor;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.ISemanticHighlightingCalculator;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractElement;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumInstance;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.InternalType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ReturnType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Service;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
@@ -54,25 +52,9 @@ public class DddDslHighlightCalculator implements
         }
 
         @Override
-        public Void caseConstraint(Constraint constraint) {
-            return highlightFirst(constraint,
-                    DomainDrivenDesignDslPackage.eINSTANCE.getConstraint_Doc(),
-                    DddDslHighlightConfig.COMMENT_ID);
-        }
-
-        @Override
-        public Void caseInternalType(InternalType internalType) {
-            return highlightFirst(internalType,
-                    DomainDrivenDesignDslPackage.eINSTANCE
-                            .getInternalType_Doc(),
-                    DddDslHighlightConfig.COMMENT_ID);
-        }
-
-        @Override
-        public Void caseException(
-                org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception exception) {
-            return highlightFirst(exception,
-                    DomainDrivenDesignDslPackage.eINSTANCE.getException_Doc(),
+        public Void caseAbstractElement(AbstractElement ae) {
+            return highlightFirst(ae,
+                    DomainDrivenDesignDslPackage.eINSTANCE.getAbstractElement_Doc(),
                     DddDslHighlightConfig.COMMENT_ID);
         }
 
@@ -101,13 +83,6 @@ public class DddDslHighlightCalculator implements
             return highlightFirst(constr,
                     DomainDrivenDesignDslPackage.eINSTANCE
                             .getAbstractMethod_Doc(),
-                    DddDslHighlightConfig.COMMENT_ID);
-        }
-
-        @Override
-        public Void caseEvent(Event event) {
-            return highlightFirst(event,
-                    DomainDrivenDesignDslPackage.eINSTANCE.getEvent_Doc(),
                     DddDslHighlightConfig.COMMENT_ID);
         }
 
