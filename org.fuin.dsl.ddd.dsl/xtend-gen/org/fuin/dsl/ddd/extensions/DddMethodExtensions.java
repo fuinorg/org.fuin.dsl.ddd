@@ -5,7 +5,7 @@ import java.util.ArrayList;
 import java.util.List;
 import org.eclipse.emf.common.util.EList;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintCall;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Method;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
 import org.fuin.dsl.ddd.extensions.DddCollectionExtensions;
@@ -32,10 +32,10 @@ public class DddMethodExtensions {
       List<Constraint> _allConstraints = DddMethodExtensions.allConstraints(_refMethod_2);
       list.addAll(_allConstraints);
     }
-    EList<ConstraintCall> _constraintCalls = method.getConstraintCalls();
-    List<ConstraintCall> _nullSafe = DddCollectionExtensions.<ConstraintCall>nullSafe(_constraintCalls);
-    for (final ConstraintCall cc : _nullSafe) {
-      Constraint _constraint = cc.getConstraint();
+    EList<ConstraintInstance> _constraintCalls = method.getConstraintCalls();
+    List<ConstraintInstance> _nullSafe = DddCollectionExtensions.<ConstraintInstance>nullSafe(_constraintCalls);
+    for (final ConstraintInstance ci : _nullSafe) {
+      Constraint _constraint = ci.getConstraint();
       list.add(_constraint);
     }
     return list;
@@ -58,10 +58,10 @@ public class DddMethodExtensions {
       List<org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception> _allExceptions = DddMethodExtensions.allExceptions(_refMethod_2);
       list.addAll(_allExceptions);
     }
-    EList<ConstraintCall> _constraintCalls = method.getConstraintCalls();
-    List<ConstraintCall> _nullSafe = DddCollectionExtensions.<ConstraintCall>nullSafe(_constraintCalls);
-    for (final ConstraintCall cc : _nullSafe) {
-      Constraint _constraint = cc.getConstraint();
+    EList<ConstraintInstance> _constraintCalls = method.getConstraintCalls();
+    List<ConstraintInstance> _nullSafe = DddCollectionExtensions.<ConstraintInstance>nullSafe(_constraintCalls);
+    for (final ConstraintInstance ci : _nullSafe) {
+      Constraint _constraint = ci.getConstraint();
       org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception _exception = _constraint.getException();
       list.add(_exception);
     }

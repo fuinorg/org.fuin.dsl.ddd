@@ -19,25 +19,25 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintCall;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Literal;
 
 /**
  * <!-- begin-user-doc -->
- * An implementation of the model object '<em><b>Constraint Call</b></em>'.
+ * An implementation of the model object '<em><b>Constraint Instance</b></em>'.
  * <!-- end-user-doc -->
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConstraintCallImpl#getConstraint <em>Constraint</em>}</li>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConstraintCallImpl#getParams <em>Params</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConstraintInstanceImpl#getConstraint <em>Constraint</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConstraintInstanceImpl#getParams <em>Params</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class ConstraintCallImpl extends MinimalEObjectImpl.Container implements ConstraintCall
+public class ConstraintInstanceImpl extends MinimalEObjectImpl.Container implements ConstraintInstance
 {
   /**
    * The cached value of the '{@link #getConstraint() <em>Constraint</em>}' reference.
@@ -64,7 +64,7 @@ public class ConstraintCallImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  protected ConstraintCallImpl()
+  protected ConstraintInstanceImpl()
   {
     super();
   }
@@ -77,7 +77,7 @@ public class ConstraintCallImpl extends MinimalEObjectImpl.Container implements 
   @Override
   protected EClass eStaticClass()
   {
-    return DomainDrivenDesignDslPackage.Literals.CONSTRAINT_CALL;
+    return DomainDrivenDesignDslPackage.Literals.CONSTRAINT_INSTANCE;
   }
 
   /**
@@ -94,7 +94,7 @@ public class ConstraintCallImpl extends MinimalEObjectImpl.Container implements 
       if (constraint != oldConstraint)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, DomainDrivenDesignDslPackage.CONSTRAINT_CALL__CONSTRAINT, oldConstraint, constraint));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, DomainDrivenDesignDslPackage.CONSTRAINT_INSTANCE__CONSTRAINT, oldConstraint, constraint));
       }
     }
     return constraint;
@@ -120,7 +120,7 @@ public class ConstraintCallImpl extends MinimalEObjectImpl.Container implements 
     Constraint oldConstraint = constraint;
     constraint = newConstraint;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.CONSTRAINT_CALL__CONSTRAINT, oldConstraint, constraint));
+      eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.CONSTRAINT_INSTANCE__CONSTRAINT, oldConstraint, constraint));
   }
 
   /**
@@ -132,7 +132,7 @@ public class ConstraintCallImpl extends MinimalEObjectImpl.Container implements 
   {
     if (params == null)
     {
-      params = new EObjectContainmentEList<Literal>(Literal.class, this, DomainDrivenDesignDslPackage.CONSTRAINT_CALL__PARAMS);
+      params = new EObjectContainmentEList<Literal>(Literal.class, this, DomainDrivenDesignDslPackage.CONSTRAINT_INSTANCE__PARAMS);
     }
     return params;
   }
@@ -147,7 +147,7 @@ public class ConstraintCallImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.CONSTRAINT_CALL__PARAMS:
+      case DomainDrivenDesignDslPackage.CONSTRAINT_INSTANCE__PARAMS:
         return ((InternalEList<?>)getParams()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -163,10 +163,10 @@ public class ConstraintCallImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.CONSTRAINT_CALL__CONSTRAINT:
+      case DomainDrivenDesignDslPackage.CONSTRAINT_INSTANCE__CONSTRAINT:
         if (resolve) return getConstraint();
         return basicGetConstraint();
-      case DomainDrivenDesignDslPackage.CONSTRAINT_CALL__PARAMS:
+      case DomainDrivenDesignDslPackage.CONSTRAINT_INSTANCE__PARAMS:
         return getParams();
     }
     return super.eGet(featureID, resolve, coreType);
@@ -183,10 +183,10 @@ public class ConstraintCallImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.CONSTRAINT_CALL__CONSTRAINT:
+      case DomainDrivenDesignDslPackage.CONSTRAINT_INSTANCE__CONSTRAINT:
         setConstraint((Constraint)newValue);
         return;
-      case DomainDrivenDesignDslPackage.CONSTRAINT_CALL__PARAMS:
+      case DomainDrivenDesignDslPackage.CONSTRAINT_INSTANCE__PARAMS:
         getParams().clear();
         getParams().addAll((Collection<? extends Literal>)newValue);
         return;
@@ -204,10 +204,10 @@ public class ConstraintCallImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.CONSTRAINT_CALL__CONSTRAINT:
+      case DomainDrivenDesignDslPackage.CONSTRAINT_INSTANCE__CONSTRAINT:
         setConstraint((Constraint)null);
         return;
-      case DomainDrivenDesignDslPackage.CONSTRAINT_CALL__PARAMS:
+      case DomainDrivenDesignDslPackage.CONSTRAINT_INSTANCE__PARAMS:
         getParams().clear();
         return;
     }
@@ -224,12 +224,12 @@ public class ConstraintCallImpl extends MinimalEObjectImpl.Container implements 
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.CONSTRAINT_CALL__CONSTRAINT:
+      case DomainDrivenDesignDslPackage.CONSTRAINT_INSTANCE__CONSTRAINT:
         return constraint != null;
-      case DomainDrivenDesignDslPackage.CONSTRAINT_CALL__PARAMS:
+      case DomainDrivenDesignDslPackage.CONSTRAINT_INSTANCE__PARAMS:
         return params != null && !params.isEmpty();
     }
     return super.eIsSet(featureID);
   }
 
-} //ConstraintCallImpl
+} //ConstraintInstanceImpl

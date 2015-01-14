@@ -18,7 +18,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.BooleanLiteral;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintCall;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constructor;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Context;
@@ -261,9 +261,9 @@ public class DomainDrivenDesignDslAdapterFactory extends AdapterFactoryImpl
         return createOverriddenTypeMetaInfoAdapter();
       }
       @Override
-      public Adapter caseConstraintCall(ConstraintCall object)
+      public Adapter caseConstraintInstance(ConstraintInstance object)
       {
-        return createConstraintCallAdapter();
+        return createConstraintInstanceAdapter();
       }
       @Override
       public Adapter caseService(Service object)
@@ -768,16 +768,16 @@ public class DomainDrivenDesignDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
-   * Creates a new adapter for an object of class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintCall <em>Constraint Call</em>}'.
+   * Creates a new adapter for an object of class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance <em>Constraint Instance</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
    * it's useful to ignore a case when inheritance will catch all the cases anyway.
    * <!-- end-user-doc -->
    * @return the new adapter.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintCall
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance
    * @generated
    */
-  public Adapter createConstraintCallAdapter()
+  public Adapter createConstraintInstanceAdapter()
   {
     return null;
   }

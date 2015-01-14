@@ -19,7 +19,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.BooleanLiteral;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintCall;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constructor;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Context;
@@ -131,7 +131,7 @@ public class DomainDrivenDesignDslFactoryImpl extends EFactoryImpl implements Do
       case DomainDrivenDesignDslPackage.VARIABLE: return createVariable();
       case DomainDrivenDesignDslPackage.INVARIANTS: return createInvariants();
       case DomainDrivenDesignDslPackage.OVERRIDDEN_TYPE_META_INFO: return createOverriddenTypeMetaInfo();
-      case DomainDrivenDesignDslPackage.CONSTRAINT_CALL: return createConstraintCall();
+      case DomainDrivenDesignDslPackage.CONSTRAINT_INSTANCE: return createConstraintInstance();
       case DomainDrivenDesignDslPackage.SERVICE: return createService();
       case DomainDrivenDesignDslPackage.LITERAL: return createLiteral();
       case DomainDrivenDesignDslPackage.BOOLEAN_LITERAL: return createBooleanLiteral();
@@ -478,10 +478,10 @@ public class DomainDrivenDesignDslFactoryImpl extends EFactoryImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
-  public ConstraintCall createConstraintCall()
+  public ConstraintInstance createConstraintInstance()
   {
-    ConstraintCallImpl constraintCall = new ConstraintCallImpl();
-    return constraintCall;
+    ConstraintInstanceImpl constraintInstance = new ConstraintInstanceImpl();
+    return constraintInstance;
   }
 
   /**

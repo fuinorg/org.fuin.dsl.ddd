@@ -1895,13 +1895,13 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int INVARIANTS = 28;
 
   /**
-   * The feature id for the '<em><b>Calls</b></em>' containment reference list.
+   * The feature id for the '<em><b>Instances</b></em>' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int INVARIANTS__CALLS = 0;
+  int INVARIANTS__INSTANCES = 0;
 
   /**
    * The number of structural features of the '<em>Invariants</em>' class.
@@ -1941,14 +1941,14 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int OVERRIDDEN_TYPE_META_INFO_FEATURE_COUNT = 1;
 
   /**
-   * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConstraintCallImpl <em>Constraint Call</em>}' class.
+   * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConstraintInstanceImpl <em>Constraint Instance</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConstraintCallImpl
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getConstraintCall()
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConstraintInstanceImpl
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getConstraintInstance()
    * @generated
    */
-  int CONSTRAINT_CALL = 30;
+  int CONSTRAINT_INSTANCE = 30;
 
   /**
    * The feature id for the '<em><b>Constraint</b></em>' reference.
@@ -1957,7 +1957,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_CALL__CONSTRAINT = 0;
+  int CONSTRAINT_INSTANCE__CONSTRAINT = 0;
 
   /**
    * The feature id for the '<em><b>Params</b></em>' containment reference list.
@@ -1966,16 +1966,16 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_CALL__PARAMS = 1;
+  int CONSTRAINT_INSTANCE__PARAMS = 1;
 
   /**
-   * The number of structural features of the '<em>Constraint Call</em>' class.
+   * The number of structural features of the '<em>Constraint Instance</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONSTRAINT_CALL_FEATURE_COUNT = 2;
+  int CONSTRAINT_INSTANCE_FEATURE_COUNT = 2;
 
   /**
    * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ServiceImpl <em>Service</em>}' class.
@@ -3137,15 +3137,15 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   EClass getInvariants();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Invariants#getCalls <em>Calls</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Invariants#getInstances <em>Instances</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the containment reference list '<em>Calls</em>'.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Invariants#getCalls()
+   * @return the meta object for the containment reference list '<em>Instances</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Invariants#getInstances()
    * @see #getInvariants()
    * @generated
    */
-  EReference getInvariants_Calls();
+  EReference getInvariants_Instances();
 
   /**
    * Returns the meta object for class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.OverriddenTypeMetaInfo <em>Overridden Type Meta Info</em>}'.
@@ -3169,36 +3169,36 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   EReference getOverriddenTypeMetaInfo_MetaInfo();
 
   /**
-   * Returns the meta object for class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintCall <em>Constraint Call</em>}'.
+   * Returns the meta object for class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance <em>Constraint Instance</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for class '<em>Constraint Call</em>'.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintCall
+   * @return the meta object for class '<em>Constraint Instance</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance
    * @generated
    */
-  EClass getConstraintCall();
+  EClass getConstraintInstance();
 
   /**
-   * Returns the meta object for the reference '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintCall#getConstraint <em>Constraint</em>}'.
+   * Returns the meta object for the reference '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance#getConstraint <em>Constraint</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the reference '<em>Constraint</em>'.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintCall#getConstraint()
-   * @see #getConstraintCall()
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance#getConstraint()
+   * @see #getConstraintInstance()
    * @generated
    */
-  EReference getConstraintCall_Constraint();
+  EReference getConstraintInstance_Constraint();
 
   /**
-   * Returns the meta object for the containment reference list '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintCall#getParams <em>Params</em>}'.
+   * Returns the meta object for the containment reference list '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance#getParams <em>Params</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @return the meta object for the containment reference list '<em>Params</em>'.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintCall#getParams()
-   * @see #getConstraintCall()
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance#getParams()
+   * @see #getConstraintInstance()
    * @generated
    */
-  EReference getConstraintCall_Params();
+  EReference getConstraintInstance_Params();
 
   /**
    * Returns the meta object for class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Service <em>Service</em>}'.
@@ -4092,12 +4092,12 @@ public interface DomainDrivenDesignDslPackage extends EPackage
     EClass INVARIANTS = eINSTANCE.getInvariants();
 
     /**
-     * The meta object literal for the '<em><b>Calls</b></em>' containment reference list feature.
+     * The meta object literal for the '<em><b>Instances</b></em>' containment reference list feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference INVARIANTS__CALLS = eINSTANCE.getInvariants_Calls();
+    EReference INVARIANTS__INSTANCES = eINSTANCE.getInvariants_Instances();
 
     /**
      * The meta object literal for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.OverriddenTypeMetaInfoImpl <em>Overridden Type Meta Info</em>}' class.
@@ -4118,14 +4118,14 @@ public interface DomainDrivenDesignDslPackage extends EPackage
     EReference OVERRIDDEN_TYPE_META_INFO__META_INFO = eINSTANCE.getOverriddenTypeMetaInfo_MetaInfo();
 
     /**
-     * The meta object literal for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConstraintCallImpl <em>Constraint Call</em>}' class.
+     * The meta object literal for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConstraintInstanceImpl <em>Constraint Instance</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
-     * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConstraintCallImpl
-     * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getConstraintCall()
+     * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConstraintInstanceImpl
+     * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getConstraintInstance()
      * @generated
      */
-    EClass CONSTRAINT_CALL = eINSTANCE.getConstraintCall();
+    EClass CONSTRAINT_INSTANCE = eINSTANCE.getConstraintInstance();
 
     /**
      * The meta object literal for the '<em><b>Constraint</b></em>' reference feature.
@@ -4133,7 +4133,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CONSTRAINT_CALL__CONSTRAINT = eINSTANCE.getConstraintCall_Constraint();
+    EReference CONSTRAINT_INSTANCE__CONSTRAINT = eINSTANCE.getConstraintInstance_Constraint();
 
     /**
      * The meta object literal for the '<em><b>Params</b></em>' containment reference list feature.
@@ -4141,7 +4141,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CONSTRAINT_CALL__PARAMS = eINSTANCE.getConstraintCall_Params();
+    EReference CONSTRAINT_INSTANCE__PARAMS = eINSTANCE.getConstraintInstance_Params();
 
     /**
      * The meta object literal for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ServiceImpl <em>Service</em>}' class.

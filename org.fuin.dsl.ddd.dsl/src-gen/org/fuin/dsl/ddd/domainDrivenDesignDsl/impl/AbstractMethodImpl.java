@@ -20,7 +20,7 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintCall;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Service;
@@ -96,7 +96,7 @@ public class AbstractMethodImpl extends MinimalEObjectImpl.Container implements 
    * @generated
    * @ordered
    */
-  protected EList<ConstraintCall> constraintCalls;
+  protected EList<ConstraintInstance> constraintCalls;
 
   /**
    * The cached value of the '{@link #getFiredEvents() <em>Fired Events</em>}' reference list.
@@ -220,11 +220,11 @@ public class AbstractMethodImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ConstraintCall> getConstraintCalls()
+  public EList<ConstraintInstance> getConstraintCalls()
   {
     if (constraintCalls == null)
     {
-      constraintCalls = new EObjectContainmentEList<ConstraintCall>(ConstraintCall.class, this, DomainDrivenDesignDslPackage.ABSTRACT_METHOD__CONSTRAINT_CALLS);
+      constraintCalls = new EObjectContainmentEList<ConstraintInstance>(ConstraintInstance.class, this, DomainDrivenDesignDslPackage.ABSTRACT_METHOD__CONSTRAINT_CALLS);
     }
     return constraintCalls;
   }
@@ -400,7 +400,7 @@ public class AbstractMethodImpl extends MinimalEObjectImpl.Container implements 
         return;
       case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__CONSTRAINT_CALLS:
         getConstraintCalls().clear();
-        getConstraintCalls().addAll((Collection<? extends ConstraintCall>)newValue);
+        getConstraintCalls().addAll((Collection<? extends ConstraintInstance>)newValue);
         return;
       case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__FIRED_EVENTS:
         getFiredEvents().clear();

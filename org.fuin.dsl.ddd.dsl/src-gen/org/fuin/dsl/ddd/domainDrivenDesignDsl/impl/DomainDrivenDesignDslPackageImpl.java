@@ -18,7 +18,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.BooleanLiteral;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintCall;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constructor;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Context;
@@ -271,7 +271,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
-  private EClass constraintCallEClass = null;
+  private EClass constraintInstanceEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -1293,7 +1293,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getInvariants_Calls()
+  public EReference getInvariants_Instances()
   {
     return (EReference)invariantsEClass.getEStructuralFeatures().get(0);
   }
@@ -1323,9 +1323,9 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
-  public EClass getConstraintCall()
+  public EClass getConstraintInstance()
   {
-    return constraintCallEClass;
+    return constraintInstanceEClass;
   }
 
   /**
@@ -1333,9 +1333,9 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getConstraintCall_Constraint()
+  public EReference getConstraintInstance_Constraint()
   {
-    return (EReference)constraintCallEClass.getEStructuralFeatures().get(0);
+    return (EReference)constraintInstanceEClass.getEStructuralFeatures().get(0);
   }
 
   /**
@@ -1343,9 +1343,9 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getConstraintCall_Params()
+  public EReference getConstraintInstance_Params()
   {
-    return (EReference)constraintCallEClass.getEStructuralFeatures().get(1);
+    return (EReference)constraintInstanceEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -1577,14 +1577,14 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     createEReference(variableEClass, VARIABLE__OVERRIDDEN);
 
     invariantsEClass = createEClass(INVARIANTS);
-    createEReference(invariantsEClass, INVARIANTS__CALLS);
+    createEReference(invariantsEClass, INVARIANTS__INSTANCES);
 
     overriddenTypeMetaInfoEClass = createEClass(OVERRIDDEN_TYPE_META_INFO);
     createEReference(overriddenTypeMetaInfoEClass, OVERRIDDEN_TYPE_META_INFO__META_INFO);
 
-    constraintCallEClass = createEClass(CONSTRAINT_CALL);
-    createEReference(constraintCallEClass, CONSTRAINT_CALL__CONSTRAINT);
-    createEReference(constraintCallEClass, CONSTRAINT_CALL__PARAMS);
+    constraintInstanceEClass = createEClass(CONSTRAINT_INSTANCE);
+    createEReference(constraintInstanceEClass, CONSTRAINT_INSTANCE__CONSTRAINT);
+    createEReference(constraintInstanceEClass, CONSTRAINT_INSTANCE__PARAMS);
 
     serviceEClass = createEClass(SERVICE);
     createEReference(serviceEClass, SERVICE__METHODS);
@@ -1743,7 +1743,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     initEClass(abstractMethodEClass, AbstractMethod.class, "AbstractMethod", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAbstractMethod_Doc(), ecorePackage.getEString(), "doc", null, 0, 1, AbstractMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getAbstractMethod_Name(), ecorePackage.getEString(), "name", null, 0, 1, AbstractMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAbstractMethod_ConstraintCalls(), this.getConstraintCall(), null, "constraintCalls", null, 0, -1, AbstractMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAbstractMethod_ConstraintCalls(), this.getConstraintInstance(), null, "constraintCalls", null, 0, -1, AbstractMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAbstractMethod_FiredEvents(), this.getEvent(), null, "firedEvents", null, 0, -1, AbstractMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAbstractMethod_Variables(), this.getVariable(), null, "variables", null, 0, -1, AbstractMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAbstractMethod_Service(), this.getService(), null, "service", null, 0, 1, AbstractMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1777,14 +1777,14 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     initEReference(getVariable_Overridden(), this.getOverriddenTypeMetaInfo(), null, "overridden", null, 0, 1, Variable.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(invariantsEClass, Invariants.class, "Invariants", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getInvariants_Calls(), this.getConstraintCall(), null, "calls", null, 0, -1, Invariants.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getInvariants_Instances(), this.getConstraintInstance(), null, "instances", null, 0, -1, Invariants.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(overriddenTypeMetaInfoEClass, OverriddenTypeMetaInfo.class, "OverriddenTypeMetaInfo", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getOverriddenTypeMetaInfo_MetaInfo(), this.getTypeMetaInfo(), null, "metaInfo", null, 0, 1, OverriddenTypeMetaInfo.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-    initEClass(constraintCallEClass, ConstraintCall.class, "ConstraintCall", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getConstraintCall_Constraint(), this.getConstraint(), null, "constraint", null, 0, 1, ConstraintCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getConstraintCall_Params(), this.getLiteral(), null, "params", null, 0, -1, ConstraintCall.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEClass(constraintInstanceEClass, ConstraintInstance.class, "ConstraintInstance", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEReference(getConstraintInstance_Constraint(), this.getConstraint(), null, "constraint", null, 0, 1, ConstraintInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getConstraintInstance_Params(), this.getLiteral(), null, "params", null, 0, -1, ConstraintInstance.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(serviceEClass, Service.class, "Service", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getService_Methods(), this.getMethod(), null, "methods", null, 0, -1, Service.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

@@ -293,13 +293,13 @@ public interface DomainDrivenDesignDslFactory extends EFactory
   OverriddenTypeMetaInfo createOverriddenTypeMetaInfo();
 
   /**
-   * Returns a new object of class '<em>Constraint Call</em>'.
+   * Returns a new object of class '<em>Constraint Instance</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return a new object of class '<em>Constraint Call</em>'.
+   * @return a new object of class '<em>Constraint Instance</em>'.
    * @generated
    */
-  ConstraintCall createConstraintCall();
+  ConstraintInstance createConstraintInstance();
 
   /**
    * Returns a new object of class '<em>Service</em>'.

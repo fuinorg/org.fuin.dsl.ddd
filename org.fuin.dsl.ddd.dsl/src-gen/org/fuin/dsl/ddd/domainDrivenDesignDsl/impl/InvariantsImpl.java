@@ -16,7 +16,7 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintCall;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Invariants;
 
@@ -27,7 +27,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Invariants;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.InvariantsImpl#getCalls <em>Calls</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.InvariantsImpl#getInstances <em>Instances</em>}</li>
  * </ul>
  * </p>
  *
@@ -36,14 +36,14 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Invariants;
 public class InvariantsImpl extends MinimalEObjectImpl.Container implements Invariants
 {
   /**
-   * The cached value of the '{@link #getCalls() <em>Calls</em>}' containment reference list.
+   * The cached value of the '{@link #getInstances() <em>Instances</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getCalls()
+   * @see #getInstances()
    * @generated
    * @ordered
    */
-  protected EList<ConstraintCall> calls;
+  protected EList<ConstraintInstance> instances;
 
   /**
    * <!-- begin-user-doc -->
@@ -71,13 +71,13 @@ public class InvariantsImpl extends MinimalEObjectImpl.Container implements Inva
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ConstraintCall> getCalls()
+  public EList<ConstraintInstance> getInstances()
   {
-    if (calls == null)
+    if (instances == null)
     {
-      calls = new EObjectContainmentEList<ConstraintCall>(ConstraintCall.class, this, DomainDrivenDesignDslPackage.INVARIANTS__CALLS);
+      instances = new EObjectContainmentEList<ConstraintInstance>(ConstraintInstance.class, this, DomainDrivenDesignDslPackage.INVARIANTS__INSTANCES);
     }
-    return calls;
+    return instances;
   }
 
   /**
@@ -90,8 +90,8 @@ public class InvariantsImpl extends MinimalEObjectImpl.Container implements Inva
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.INVARIANTS__CALLS:
-        return ((InternalEList<?>)getCalls()).basicRemove(otherEnd, msgs);
+      case DomainDrivenDesignDslPackage.INVARIANTS__INSTANCES:
+        return ((InternalEList<?>)getInstances()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -106,8 +106,8 @@ public class InvariantsImpl extends MinimalEObjectImpl.Container implements Inva
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.INVARIANTS__CALLS:
-        return getCalls();
+      case DomainDrivenDesignDslPackage.INVARIANTS__INSTANCES:
+        return getInstances();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -123,9 +123,9 @@ public class InvariantsImpl extends MinimalEObjectImpl.Container implements Inva
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.INVARIANTS__CALLS:
-        getCalls().clear();
-        getCalls().addAll((Collection<? extends ConstraintCall>)newValue);
+      case DomainDrivenDesignDslPackage.INVARIANTS__INSTANCES:
+        getInstances().clear();
+        getInstances().addAll((Collection<? extends ConstraintInstance>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -141,8 +141,8 @@ public class InvariantsImpl extends MinimalEObjectImpl.Container implements Inva
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.INVARIANTS__CALLS:
-        getCalls().clear();
+      case DomainDrivenDesignDslPackage.INVARIANTS__INSTANCES:
+        getInstances().clear();
         return;
     }
     super.eUnset(featureID);
@@ -158,8 +158,8 @@ public class InvariantsImpl extends MinimalEObjectImpl.Container implements Inva
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.INVARIANTS__CALLS:
-        return calls != null && !calls.isEmpty();
+      case DomainDrivenDesignDslPackage.INVARIANTS__INSTANCES:
+        return instances != null && !instances.isEmpty();
     }
     return super.eIsSet(featureID);
   }

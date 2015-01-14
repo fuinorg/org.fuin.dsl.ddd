@@ -16,7 +16,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.BooleanLiteral;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintCall;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constructor;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Context;
@@ -369,10 +369,10 @@ public class DomainDrivenDesignDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
-      case DomainDrivenDesignDslPackage.CONSTRAINT_CALL:
+      case DomainDrivenDesignDslPackage.CONSTRAINT_INSTANCE:
       {
-        ConstraintCall constraintCall = (ConstraintCall)theEObject;
-        T result = caseConstraintCall(constraintCall);
+        ConstraintInstance constraintInstance = (ConstraintInstance)theEObject;
+        T result = caseConstraintInstance(constraintInstance);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -909,17 +909,17 @@ public class DomainDrivenDesignDslSwitch<T> extends Switch<T>
   }
 
   /**
-   * Returns the result of interpreting the object as an instance of '<em>Constraint Call</em>'.
+   * Returns the result of interpreting the object as an instance of '<em>Constraint Instance</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
    * returning a non-null result will terminate the switch.
    * <!-- end-user-doc -->
    * @param object the target of the switch.
-   * @return the result of interpreting the object as an instance of '<em>Constraint Call</em>'.
+   * @return the result of interpreting the object as an instance of '<em>Constraint Instance</em>'.
    * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
    * @generated
    */
-  public T caseConstraintCall(ConstraintCall object)
+  public T caseConstraintInstance(ConstraintInstance object)
   {
     return null;
   }

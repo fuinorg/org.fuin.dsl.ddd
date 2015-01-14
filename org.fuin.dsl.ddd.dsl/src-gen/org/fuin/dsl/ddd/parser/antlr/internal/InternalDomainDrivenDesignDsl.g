@@ -2294,9 +2294,9 @@ ruleConstructor returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getConstructorAccess().getConstraintCallsConstraintCallParserRuleCall_3_1_0()); 
+	        newCompositeNode(grammarAccess.getConstructorAccess().getConstraintCallsConstraintInstanceParserRuleCall_3_1_0()); 
 	    }
-		lv_constraintCalls_4_0=ruleConstraintCall		{
+		lv_constraintCalls_4_0=ruleConstraintInstance		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getConstructorRule());
 	        }
@@ -2304,7 +2304,7 @@ ruleConstructor returns [EObject current=null]
        			$current, 
        			"constraintCalls",
         		lv_constraintCalls_4_0, 
-        		"ConstraintCall");
+        		"ConstraintInstance");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2316,9 +2316,9 @@ ruleConstructor returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getConstructorAccess().getConstraintCallsConstraintCallParserRuleCall_3_2_1_0()); 
+	        newCompositeNode(grammarAccess.getConstructorAccess().getConstraintCallsConstraintInstanceParserRuleCall_3_2_1_0()); 
 	    }
-		lv_constraintCalls_6_0=ruleConstraintCall		{
+		lv_constraintCalls_6_0=ruleConstraintInstance		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getConstructorRule());
 	        }
@@ -2326,7 +2326,7 @@ ruleConstructor returns [EObject current=null]
        			$current, 
        			"constraintCalls",
         		lv_constraintCalls_6_0, 
-        		"ConstraintCall");
+        		"ConstraintInstance");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2591,9 +2591,9 @@ ruleMethod returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getMethodAccess().getConstraintCallsConstraintCallParserRuleCall_4_1_0()); 
+	        newCompositeNode(grammarAccess.getMethodAccess().getConstraintCallsConstraintInstanceParserRuleCall_4_1_0()); 
 	    }
-		lv_constraintCalls_6_0=ruleConstraintCall		{
+		lv_constraintCalls_6_0=ruleConstraintInstance		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getMethodRule());
 	        }
@@ -2601,7 +2601,7 @@ ruleMethod returns [EObject current=null]
        			$current, 
        			"constraintCalls",
         		lv_constraintCalls_6_0, 
-        		"ConstraintCall");
+        		"ConstraintInstance");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -2613,9 +2613,9 @@ ruleMethod returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getMethodAccess().getConstraintCallsConstraintCallParserRuleCall_4_2_1_0()); 
+	        newCompositeNode(grammarAccess.getMethodAccess().getConstraintCallsConstraintInstanceParserRuleCall_4_2_1_0()); 
 	    }
-		lv_constraintCalls_8_0=ruleConstraintCall		{
+		lv_constraintCalls_8_0=ruleConstraintInstance		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getMethodRule());
 	        }
@@ -2623,7 +2623,7 @@ ruleMethod returns [EObject current=null]
        			$current, 
        			"constraintCalls",
         		lv_constraintCalls_8_0, 
-        		"ConstraintCall");
+        		"ConstraintInstance");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3064,17 +3064,17 @@ ruleInvariants returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getInvariantsAccess().getCallsConstraintCallParserRuleCall_1_0()); 
+	        newCompositeNode(grammarAccess.getInvariantsAccess().getInstancesConstraintInstanceParserRuleCall_1_0()); 
 	    }
-		lv_calls_1_0=ruleConstraintCall		{
+		lv_instances_1_0=ruleConstraintInstance		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getInvariantsRule());
 	        }
        		add(
        			$current, 
-       			"calls",
-        		lv_calls_1_0, 
-        		"ConstraintCall");
+       			"instances",
+        		lv_instances_1_0, 
+        		"ConstraintInstance");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3086,17 +3086,17 @@ ruleInvariants returns [EObject current=null]
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getInvariantsAccess().getCallsConstraintCallParserRuleCall_2_1_0()); 
+	        newCompositeNode(grammarAccess.getInvariantsAccess().getInstancesConstraintInstanceParserRuleCall_2_1_0()); 
 	    }
-		lv_calls_3_0=ruleConstraintCall		{
+		lv_instances_3_0=ruleConstraintInstance		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getInvariantsRule());
 	        }
        		add(
        			$current, 
-       			"calls",
-        		lv_calls_3_0, 
-        		"ConstraintCall");
+       			"instances",
+        		lv_instances_3_0, 
+        		"ConstraintInstance");
 	        afterParserOrEnumRuleCall();
 	    }
 
@@ -3155,17 +3155,17 @@ ruleOverriddenTypeMetaInfo returns [EObject current=null]
 
 
 
-// Entry rule entryRuleConstraintCall
-entryRuleConstraintCall returns [EObject current=null] 
+// Entry rule entryRuleConstraintInstance
+entryRuleConstraintInstance returns [EObject current=null] 
 	:
-	{ newCompositeNode(grammarAccess.getConstraintCallRule()); }
-	 iv_ruleConstraintCall=ruleConstraintCall 
-	 { $current=$iv_ruleConstraintCall.current; } 
+	{ newCompositeNode(grammarAccess.getConstraintInstanceRule()); }
+	 iv_ruleConstraintInstance=ruleConstraintInstance 
+	 { $current=$iv_ruleConstraintInstance.current; } 
 	 EOF 
 ;
 
-// Rule ConstraintCall
-ruleConstraintCall returns [EObject current=null] 
+// Rule ConstraintInstance
+ruleConstraintInstance returns [EObject current=null] 
     @init { enterRule(); 
     }
     @after { leaveRule(); }:
@@ -3173,11 +3173,11 @@ ruleConstraintCall returns [EObject current=null]
 (
 		{
 			if ($current==null) {
-	            $current = createModelElement(grammarAccess.getConstraintCallRule());
+	            $current = createModelElement(grammarAccess.getConstraintInstanceRule());
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getConstraintCallAccess().getConstraintConstraintCrossReference_0_0()); 
+	        newCompositeNode(grammarAccess.getConstraintInstanceAccess().getConstraintConstraintCrossReference_0_0()); 
 	    }
 		ruleFQN		{ 
 	        afterParserOrEnumRuleCall();
@@ -3186,16 +3186,16 @@ ruleConstraintCall returns [EObject current=null]
 )
 )(	otherlv_1='(' 
     {
-    	newLeafNode(otherlv_1, grammarAccess.getConstraintCallAccess().getLeftParenthesisKeyword_1_0());
+    	newLeafNode(otherlv_1, grammarAccess.getConstraintInstanceAccess().getLeftParenthesisKeyword_1_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getConstraintCallAccess().getParamsLiteralParserRuleCall_1_1_0()); 
+	        newCompositeNode(grammarAccess.getConstraintInstanceAccess().getParamsLiteralParserRuleCall_1_1_0()); 
 	    }
 		lv_params_2_0=ruleLiteral		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getConstraintCallRule());
+	            $current = createModelElementForParent(grammarAccess.getConstraintInstanceRule());
 	        }
        		add(
        			$current, 
@@ -3208,16 +3208,16 @@ ruleConstraintCall returns [EObject current=null]
 )
 )(	otherlv_3=',' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getConstraintCallAccess().getCommaKeyword_1_2_0());
+    	newLeafNode(otherlv_3, grammarAccess.getConstraintInstanceAccess().getCommaKeyword_1_2_0());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getConstraintCallAccess().getParamsLiteralParserRuleCall_1_2_1_0()); 
+	        newCompositeNode(grammarAccess.getConstraintInstanceAccess().getParamsLiteralParserRuleCall_1_2_1_0()); 
 	    }
 		lv_params_4_0=ruleLiteral		{
 	        if ($current==null) {
-	            $current = createModelElementForParent(grammarAccess.getConstraintCallRule());
+	            $current = createModelElementForParent(grammarAccess.getConstraintInstanceRule());
 	        }
        		add(
        			$current, 
@@ -3230,7 +3230,7 @@ ruleConstraintCall returns [EObject current=null]
 )
 ))*	otherlv_5=')' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getConstraintCallAccess().getRightParenthesisKeyword_1_3());
+    	newLeafNode(otherlv_5, grammarAccess.getConstraintInstanceAccess().getRightParenthesisKeyword_1_3());
     }
 )?)
 ;

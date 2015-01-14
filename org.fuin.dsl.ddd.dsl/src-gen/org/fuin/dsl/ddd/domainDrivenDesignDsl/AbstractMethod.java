@@ -85,7 +85,7 @@ public interface AbstractMethod extends EObject
 
   /**
    * Returns the value of the '<em><b>Constraint Calls</b></em>' containment reference list.
-   * The list contents are of type {@link org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintCall}.
+   * The list contents are of type {@link org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance}.
    * <!-- begin-user-doc -->
    * <p>
    * If the meaning of the '<em>Constraint Calls</em>' containment reference list isn't clear,
@@ -97,7 +97,7 @@ public interface AbstractMethod extends EObject
    * @model containment="true"
    * @generated
    */
-  EList<ConstraintCall> getConstraintCalls();
+  EList<ConstraintInstance> getConstraintCalls();
 
   /**
    * Returns the value of the '<em><b>Fired Events</b></em>' reference list.

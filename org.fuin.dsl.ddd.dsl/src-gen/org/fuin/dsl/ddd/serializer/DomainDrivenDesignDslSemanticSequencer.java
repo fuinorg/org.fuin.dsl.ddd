@@ -17,7 +17,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.BooleanLiteral;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintCall;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constructor;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Context;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
@@ -87,9 +87,9 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 					return; 
 				}
 				else break;
-			case DomainDrivenDesignDslPackage.CONSTRAINT_CALL:
-				if(context == grammarAccess.getConstraintCallRule()) {
-					sequence_ConstraintCall(context, (ConstraintCall) semanticObject); 
+			case DomainDrivenDesignDslPackage.CONSTRAINT_INSTANCE:
+				if(context == grammarAccess.getConstraintInstanceRule()) {
+					sequence_ConstraintInstance(context, (ConstraintInstance) semanticObject); 
 					return; 
 				}
 				else break;
@@ -314,7 +314,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 * Constraint:
 	 *     (constraint=[Constraint|FQN] (params+=Literal params+=Literal*)?)
 	 */
-	protected void sequence_ConstraintCall(EObject context, ConstraintCall semanticObject) {
+	protected void sequence_ConstraintInstance(EObject context, ConstraintInstance semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -340,7 +340,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *     (
 	 *         doc=DOC? 
 	 *         name=ID 
-	 *         (constraintCalls+=ConstraintCall constraintCalls+=ConstraintCall*)? 
+	 *         (constraintCalls+=ConstraintInstance constraintCalls+=ConstraintInstance*)? 
 	 *         (firedEvents+=[Event|FQN] firedEvents+=[Event|FQN]*)? 
 	 *         variables+=Variable* 
 	 *         service=[Service|FQN]? 
@@ -471,7 +471,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	
 	/**
 	 * Constraint:
-	 *     (calls+=ConstraintCall calls+=ConstraintCall*)
+	 *     (instances+=ConstraintInstance instances+=ConstraintInstance*)
 	 */
 	protected void sequence_Invariants(EObject context, Invariants semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -484,7 +484,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *         doc=DOC? 
 	 *         name=ID 
 	 *         refMethod=[Method|FQN]? 
-	 *         (constraintCalls+=ConstraintCall constraintCalls+=ConstraintCall*)? 
+	 *         (constraintCalls+=ConstraintInstance constraintCalls+=ConstraintInstance*)? 
 	 *         (firedEvents+=[Event|FQN] firedEvents+=[Event|FQN]*)? 
 	 *         variables+=Variable* 
 	 *         service=[Service|FQN]? 

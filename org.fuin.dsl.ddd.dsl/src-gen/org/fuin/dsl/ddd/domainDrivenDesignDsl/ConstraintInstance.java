@@ -8,22 +8,22 @@ import org.eclipse.emf.ecore.EObject;
 
 /**
  * <!-- begin-user-doc -->
- * A representation of the model object '<em><b>Constraint Call</b></em>'.
+ * A representation of the model object '<em><b>Constraint Instance</b></em>'.
  * <!-- end-user-doc -->
  *
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintCall#getConstraint <em>Constraint</em>}</li>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintCall#getParams <em>Params</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance#getConstraint <em>Constraint</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance#getParams <em>Params</em>}</li>
  * </ul>
  * </p>
  *
- * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getConstraintCall()
+ * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getConstraintInstance()
  * @model
  * @generated
  */
-public interface ConstraintCall extends EObject
+public interface ConstraintInstance extends EObject
 {
   /**
    * Returns the value of the '<em><b>Constraint</b></em>' reference.
@@ -35,14 +35,14 @@ public interface ConstraintCall extends EObject
    * <!-- end-user-doc -->
    * @return the value of the '<em>Constraint</em>' reference.
    * @see #setConstraint(Constraint)
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getConstraintCall_Constraint()
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getConstraintInstance_Constraint()
    * @model
    * @generated
    */
   Constraint getConstraint();
 
   /**
-   * Sets the value of the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintCall#getConstraint <em>Constraint</em>}' reference.
+   * Sets the value of the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance#getConstraint <em>Constraint</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @param value the new value of the '<em>Constraint</em>' reference.
@@ -61,10 +61,10 @@ public interface ConstraintCall extends EObject
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Params</em>' containment reference list.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getConstraintCall_Params()
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getConstraintInstance_Params()
    * @model containment="true"
    * @generated
    */
   EList<Literal> getParams();
 
-} // ConstraintCall
+} // ConstraintInstance

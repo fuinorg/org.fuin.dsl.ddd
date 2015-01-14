@@ -3,7 +3,7 @@ package org.fuin.dsl.ddd.extensions
 import java.util.ArrayList
 import java.util.List
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintCall
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Method
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception
@@ -21,8 +21,8 @@ class DddMethodExtensions {
 		if ((method.refMethod != null) && (method != method.refMethod)) {
 			list.addAll(method.refMethod.allConstraints);
 		}
-		for (ConstraintCall cc : method.constraintCalls.nullSafe) {
-			list.add(cc.constraint);
+		for (ConstraintInstance ci : method.constraintCalls.nullSafe) {
+			list.add(ci.constraint);
 		}
 		return list;
 	}
@@ -32,8 +32,8 @@ class DddMethodExtensions {
 		if ((method.refMethod != null) && (method != method.refMethod)) {
 			list.addAll(method.refMethod.allExceptions);
 		}
-		for (ConstraintCall cc : method.constraintCalls.nullSafe) {
-			list.add(cc.constraint.exception);		
+		for (ConstraintInstance ci : method.constraintCalls.nullSafe) {
+			list.add(ci.constraint.exception);		
 		}
 		return list;
 	}

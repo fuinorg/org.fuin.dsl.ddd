@@ -1322,11 +1322,11 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Keyword cConstraintsKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Assignment cConstraintCallsAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final RuleCall cConstraintCallsConstraintCallParserRuleCall_3_1_0 = (RuleCall)cConstraintCallsAssignment_3_1.eContents().get(0);
+		private final RuleCall cConstraintCallsConstraintInstanceParserRuleCall_3_1_0 = (RuleCall)cConstraintCallsAssignment_3_1.eContents().get(0);
 		private final Group cGroup_3_2 = (Group)cGroup_3.eContents().get(2);
 		private final Keyword cCommaKeyword_3_2_0 = (Keyword)cGroup_3_2.eContents().get(0);
 		private final Assignment cConstraintCallsAssignment_3_2_1 = (Assignment)cGroup_3_2.eContents().get(1);
-		private final RuleCall cConstraintCallsConstraintCallParserRuleCall_3_2_1_0 = (RuleCall)cConstraintCallsAssignment_3_2_1.eContents().get(0);
+		private final RuleCall cConstraintCallsConstraintInstanceParserRuleCall_3_2_1_0 = (RuleCall)cConstraintCallsAssignment_3_2_1.eContents().get(0);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
 		private final Keyword cFiresKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Assignment cFiredEventsAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
@@ -1350,14 +1350,14 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final Keyword cRightCurlyBracketKeyword_10 = (Keyword)cGroup.eContents().get(10);
 		
 		//Constructor:
-		//	doc=DOC? "constructor" name=ID ("constraints" constraintCalls+=ConstraintCall ("," constraintCalls+=ConstraintCall)*)?
-		//	("fires" firedEvents+=[Event|FQN] ("," firedEvents+=[Event|FQN])*)? "{" variables+=Variable* service=[Service|FQN]?
-		//	services+=Service* events+=Event* "}";
+		//	doc=DOC? "constructor" name=ID ("constraints" constraintCalls+=ConstraintInstance (","
+		//	constraintCalls+=ConstraintInstance)*)? ("fires" firedEvents+=[Event|FQN] ("," firedEvents+=[Event|FQN])*)? "{"
+		//	variables+=Variable* service=[Service|FQN]? services+=Service* events+=Event* "}";
 		public ParserRule getRule() { return rule; }
 
-		//doc=DOC? "constructor" name=ID ("constraints" constraintCalls+=ConstraintCall ("," constraintCalls+=ConstraintCall)*)?
-		//("fires" firedEvents+=[Event|FQN] ("," firedEvents+=[Event|FQN])*)? "{" variables+=Variable* service=[Service|FQN]?
-		//services+=Service* events+=Event* "}"
+		//doc=DOC? "constructor" name=ID ("constraints" constraintCalls+=ConstraintInstance (","
+		//constraintCalls+=ConstraintInstance)*)? ("fires" firedEvents+=[Event|FQN] ("," firedEvents+=[Event|FQN])*)? "{"
+		//variables+=Variable* service=[Service|FQN]? services+=Service* events+=Event* "}"
 		public Group getGroup() { return cGroup; }
 
 		//doc=DOC?
@@ -1375,29 +1375,29 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 
-		//("constraints" constraintCalls+=ConstraintCall ("," constraintCalls+=ConstraintCall)*)?
+		//("constraints" constraintCalls+=ConstraintInstance ("," constraintCalls+=ConstraintInstance)*)?
 		public Group getGroup_3() { return cGroup_3; }
 
 		//"constraints"
 		public Keyword getConstraintsKeyword_3_0() { return cConstraintsKeyword_3_0; }
 
-		//constraintCalls+=ConstraintCall
+		//constraintCalls+=ConstraintInstance
 		public Assignment getConstraintCallsAssignment_3_1() { return cConstraintCallsAssignment_3_1; }
 
-		//ConstraintCall
-		public RuleCall getConstraintCallsConstraintCallParserRuleCall_3_1_0() { return cConstraintCallsConstraintCallParserRuleCall_3_1_0; }
+		//ConstraintInstance
+		public RuleCall getConstraintCallsConstraintInstanceParserRuleCall_3_1_0() { return cConstraintCallsConstraintInstanceParserRuleCall_3_1_0; }
 
-		//("," constraintCalls+=ConstraintCall)*
+		//("," constraintCalls+=ConstraintInstance)*
 		public Group getGroup_3_2() { return cGroup_3_2; }
 
 		//","
 		public Keyword getCommaKeyword_3_2_0() { return cCommaKeyword_3_2_0; }
 
-		//constraintCalls+=ConstraintCall
+		//constraintCalls+=ConstraintInstance
 		public Assignment getConstraintCallsAssignment_3_2_1() { return cConstraintCallsAssignment_3_2_1; }
 
-		//ConstraintCall
-		public RuleCall getConstraintCallsConstraintCallParserRuleCall_3_2_1_0() { return cConstraintCallsConstraintCallParserRuleCall_3_2_1_0; }
+		//ConstraintInstance
+		public RuleCall getConstraintCallsConstraintInstanceParserRuleCall_3_2_1_0() { return cConstraintCallsConstraintInstanceParserRuleCall_3_2_1_0; }
 
 		//("fires" firedEvents+=[Event|FQN] ("," firedEvents+=[Event|FQN])*)?
 		public Group getGroup_4() { return cGroup_4; }
@@ -1515,11 +1515,11 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
 		private final Keyword cConstraintsKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Assignment cConstraintCallsAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
-		private final RuleCall cConstraintCallsConstraintCallParserRuleCall_4_1_0 = (RuleCall)cConstraintCallsAssignment_4_1.eContents().get(0);
+		private final RuleCall cConstraintCallsConstraintInstanceParserRuleCall_4_1_0 = (RuleCall)cConstraintCallsAssignment_4_1.eContents().get(0);
 		private final Group cGroup_4_2 = (Group)cGroup_4.eContents().get(2);
 		private final Keyword cCommaKeyword_4_2_0 = (Keyword)cGroup_4_2.eContents().get(0);
 		private final Assignment cConstraintCallsAssignment_4_2_1 = (Assignment)cGroup_4_2.eContents().get(1);
-		private final RuleCall cConstraintCallsConstraintCallParserRuleCall_4_2_1_0 = (RuleCall)cConstraintCallsAssignment_4_2_1.eContents().get(0);
+		private final RuleCall cConstraintCallsConstraintInstanceParserRuleCall_4_2_1_0 = (RuleCall)cConstraintCallsAssignment_4_2_1.eContents().get(0);
 		private final Group cGroup_5 = (Group)cGroup.eContents().get(5);
 		private final Keyword cFiresKeyword_5_0 = (Keyword)cGroup_5.eContents().get(0);
 		private final Assignment cFiredEventsAssignment_5_1 = (Assignment)cGroup_5.eContents().get(1);
@@ -1545,13 +1545,13 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final Keyword cRightCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
 		
 		//Method:
-		//	doc=DOC? "method" name=ID ("ref" refMethod=[Method|FQN])? ("constraints" constraintCalls+=ConstraintCall (","
-		//	constraintCalls+=ConstraintCall)*)? ("fires" firedEvents+=[Event|FQN] ("," firedEvents+=[Event|FQN])*)? "{"
+		//	doc=DOC? "method" name=ID ("ref" refMethod=[Method|FQN])? ("constraints" constraintCalls+=ConstraintInstance (","
+		//	constraintCalls+=ConstraintInstance)*)? ("fires" firedEvents+=[Event|FQN] ("," firedEvents+=[Event|FQN])*)? "{"
 		//	variables+=Variable* service=[Service|FQN]? returnType=ReturnType? services+=Service* events+=Event* "}";
 		public ParserRule getRule() { return rule; }
 
-		//doc=DOC? "method" name=ID ("ref" refMethod=[Method|FQN])? ("constraints" constraintCalls+=ConstraintCall (","
-		//constraintCalls+=ConstraintCall)*)? ("fires" firedEvents+=[Event|FQN] ("," firedEvents+=[Event|FQN])*)? "{"
+		//doc=DOC? "method" name=ID ("ref" refMethod=[Method|FQN])? ("constraints" constraintCalls+=ConstraintInstance (","
+		//constraintCalls+=ConstraintInstance)*)? ("fires" firedEvents+=[Event|FQN] ("," firedEvents+=[Event|FQN])*)? "{"
 		//variables+=Variable* service=[Service|FQN]? returnType=ReturnType? services+=Service* events+=Event* "}"
 		public Group getGroup() { return cGroup; }
 
@@ -1585,29 +1585,29 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		//FQN
 		public RuleCall getRefMethodMethodFQNParserRuleCall_3_1_0_1() { return cRefMethodMethodFQNParserRuleCall_3_1_0_1; }
 
-		//("constraints" constraintCalls+=ConstraintCall ("," constraintCalls+=ConstraintCall)*)?
+		//("constraints" constraintCalls+=ConstraintInstance ("," constraintCalls+=ConstraintInstance)*)?
 		public Group getGroup_4() { return cGroup_4; }
 
 		//"constraints"
 		public Keyword getConstraintsKeyword_4_0() { return cConstraintsKeyword_4_0; }
 
-		//constraintCalls+=ConstraintCall
+		//constraintCalls+=ConstraintInstance
 		public Assignment getConstraintCallsAssignment_4_1() { return cConstraintCallsAssignment_4_1; }
 
-		//ConstraintCall
-		public RuleCall getConstraintCallsConstraintCallParserRuleCall_4_1_0() { return cConstraintCallsConstraintCallParserRuleCall_4_1_0; }
+		//ConstraintInstance
+		public RuleCall getConstraintCallsConstraintInstanceParserRuleCall_4_1_0() { return cConstraintCallsConstraintInstanceParserRuleCall_4_1_0; }
 
-		//("," constraintCalls+=ConstraintCall)*
+		//("," constraintCalls+=ConstraintInstance)*
 		public Group getGroup_4_2() { return cGroup_4_2; }
 
 		//","
 		public Keyword getCommaKeyword_4_2_0() { return cCommaKeyword_4_2_0; }
 
-		//constraintCalls+=ConstraintCall
+		//constraintCalls+=ConstraintInstance
 		public Assignment getConstraintCallsAssignment_4_2_1() { return cConstraintCallsAssignment_4_2_1; }
 
-		//ConstraintCall
-		public RuleCall getConstraintCallsConstraintCallParserRuleCall_4_2_1_0() { return cConstraintCallsConstraintCallParserRuleCall_4_2_1_0; }
+		//ConstraintInstance
+		public RuleCall getConstraintCallsConstraintInstanceParserRuleCall_4_2_1_0() { return cConstraintCallsConstraintInstanceParserRuleCall_4_2_1_0; }
 
 		//("fires" firedEvents+=[Event|FQN] ("," firedEvents+=[Event|FQN])*)?
 		public Group getGroup_5() { return cGroup_5; }
@@ -1855,40 +1855,40 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Invariants");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Keyword cInvariantsKeyword_0 = (Keyword)cGroup.eContents().get(0);
-		private final Assignment cCallsAssignment_1 = (Assignment)cGroup.eContents().get(1);
-		private final RuleCall cCallsConstraintCallParserRuleCall_1_0 = (RuleCall)cCallsAssignment_1.eContents().get(0);
+		private final Assignment cInstancesAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cInstancesConstraintInstanceParserRuleCall_1_0 = (RuleCall)cInstancesAssignment_1.eContents().get(0);
 		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
 		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
-		private final Assignment cCallsAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
-		private final RuleCall cCallsConstraintCallParserRuleCall_2_1_0 = (RuleCall)cCallsAssignment_2_1.eContents().get(0);
+		private final Assignment cInstancesAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final RuleCall cInstancesConstraintInstanceParserRuleCall_2_1_0 = (RuleCall)cInstancesAssignment_2_1.eContents().get(0);
 		
 		//Invariants:
-		//	"invariants" calls+=ConstraintCall ("," calls+=ConstraintCall)*;
+		//	"invariants" instances+=ConstraintInstance ("," instances+=ConstraintInstance)*;
 		public ParserRule getRule() { return rule; }
 
-		//"invariants" calls+=ConstraintCall ("," calls+=ConstraintCall)*
+		//"invariants" instances+=ConstraintInstance ("," instances+=ConstraintInstance)*
 		public Group getGroup() { return cGroup; }
 
 		//"invariants"
 		public Keyword getInvariantsKeyword_0() { return cInvariantsKeyword_0; }
 
-		//calls+=ConstraintCall
-		public Assignment getCallsAssignment_1() { return cCallsAssignment_1; }
+		//instances+=ConstraintInstance
+		public Assignment getInstancesAssignment_1() { return cInstancesAssignment_1; }
 
-		//ConstraintCall
-		public RuleCall getCallsConstraintCallParserRuleCall_1_0() { return cCallsConstraintCallParserRuleCall_1_0; }
+		//ConstraintInstance
+		public RuleCall getInstancesConstraintInstanceParserRuleCall_1_0() { return cInstancesConstraintInstanceParserRuleCall_1_0; }
 
-		//("," calls+=ConstraintCall)*
+		//("," instances+=ConstraintInstance)*
 		public Group getGroup_2() { return cGroup_2; }
 
 		//","
 		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
 
-		//calls+=ConstraintCall
-		public Assignment getCallsAssignment_2_1() { return cCallsAssignment_2_1; }
+		//instances+=ConstraintInstance
+		public Assignment getInstancesAssignment_2_1() { return cInstancesAssignment_2_1; }
 
-		//ConstraintCall
-		public RuleCall getCallsConstraintCallParserRuleCall_2_1_0() { return cCallsConstraintCallParserRuleCall_2_1_0; }
+		//ConstraintInstance
+		public RuleCall getInstancesConstraintInstanceParserRuleCall_2_1_0() { return cInstancesConstraintInstanceParserRuleCall_2_1_0; }
 	}
 
 	public class OverriddenTypeMetaInfoElements extends AbstractParserRuleElementFinder {
@@ -1919,8 +1919,8 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		public Keyword getRightCurlyBracketKeyword_2() { return cRightCurlyBracketKeyword_2; }
 	}
 
-	public class ConstraintCallElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ConstraintCall");
+	public class ConstraintInstanceElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ConstraintInstance");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cConstraintAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final CrossReference cConstraintConstraintCrossReference_0_0 = (CrossReference)cConstraintAssignment_0.eContents().get(0);
@@ -1935,7 +1935,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final RuleCall cParamsLiteralParserRuleCall_1_2_1_0 = (RuleCall)cParamsAssignment_1_2_1.eContents().get(0);
 		private final Keyword cRightParenthesisKeyword_1_3 = (Keyword)cGroup_1.eContents().get(3);
 		
-		//ConstraintCall:
+		//ConstraintInstance:
 		//	constraint=[Constraint|FQN] ("(" params+=Literal ("," params+=Literal)* ")")?;
 		public ParserRule getRule() { return rule; }
 
@@ -2294,7 +2294,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	private final VariableElements pVariable;
 	private final InvariantsElements pInvariants;
 	private final OverriddenTypeMetaInfoElements pOverriddenTypeMetaInfo;
-	private final ConstraintCallElements pConstraintCall;
+	private final ConstraintInstanceElements pConstraintInstance;
 	private final ServiceElements pService;
 	private final LiteralElements pLiteral;
 	private final FQNElements pFQN;
@@ -2349,7 +2349,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		this.pVariable = new VariableElements();
 		this.pInvariants = new InvariantsElements();
 		this.pOverriddenTypeMetaInfo = new OverriddenTypeMetaInfoElements();
-		this.pConstraintCall = new ConstraintCallElements();
+		this.pConstraintInstance = new ConstraintInstanceElements();
 		this.pService = new ServiceElements();
 		this.pLiteral = new LiteralElements();
 		this.pFQN = new FQNElements();
@@ -2631,9 +2631,9 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//Constructor:
-	//	doc=DOC? "constructor" name=ID ("constraints" constraintCalls+=ConstraintCall ("," constraintCalls+=ConstraintCall)*)?
-	//	("fires" firedEvents+=[Event|FQN] ("," firedEvents+=[Event|FQN])*)? "{" variables+=Variable* service=[Service|FQN]?
-	//	services+=Service* events+=Event* "}";
+	//	doc=DOC? "constructor" name=ID ("constraints" constraintCalls+=ConstraintInstance (","
+	//	constraintCalls+=ConstraintInstance)*)? ("fires" firedEvents+=[Event|FQN] ("," firedEvents+=[Event|FQN])*)? "{"
+	//	variables+=Variable* service=[Service|FQN]? services+=Service* events+=Event* "}";
 	public ConstructorElements getConstructorAccess() {
 		return pConstructor;
 	}
@@ -2653,8 +2653,8 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//Method:
-	//	doc=DOC? "method" name=ID ("ref" refMethod=[Method|FQN])? ("constraints" constraintCalls+=ConstraintCall (","
-	//	constraintCalls+=ConstraintCall)*)? ("fires" firedEvents+=[Event|FQN] ("," firedEvents+=[Event|FQN])*)? "{"
+	//	doc=DOC? "method" name=ID ("ref" refMethod=[Method|FQN])? ("constraints" constraintCalls+=ConstraintInstance (","
+	//	constraintCalls+=ConstraintInstance)*)? ("fires" firedEvents+=[Event|FQN] ("," firedEvents+=[Event|FQN])*)? "{"
 	//	variables+=Variable* service=[Service|FQN]? returnType=ReturnType? services+=Service* events+=Event* "}";
 	public MethodElements getMethodAccess() {
 		return pMethod;
@@ -2687,7 +2687,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//Invariants:
-	//	"invariants" calls+=ConstraintCall ("," calls+=ConstraintCall)*;
+	//	"invariants" instances+=ConstraintInstance ("," instances+=ConstraintInstance)*;
 	public InvariantsElements getInvariantsAccess() {
 		return pInvariants;
 	}
@@ -2706,14 +2706,14 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		return getOverriddenTypeMetaInfoAccess().getRule();
 	}
 
-	//ConstraintCall:
+	//ConstraintInstance:
 	//	constraint=[Constraint|FQN] ("(" params+=Literal ("," params+=Literal)* ")")?;
-	public ConstraintCallElements getConstraintCallAccess() {
-		return pConstraintCall;
+	public ConstraintInstanceElements getConstraintInstanceAccess() {
+		return pConstraintInstance;
 	}
 	
-	public ParserRule getConstraintCallRule() {
-		return getConstraintCallAccess().getRule();
+	public ParserRule getConstraintInstanceRule() {
+		return getConstraintInstanceAccess().getRule();
 	}
 
 	//Service:
