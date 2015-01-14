@@ -2282,11 +2282,11 @@ rule__Constraint__Group_3__0__Impl
     }
 :
 (
-{ before(grammarAccess.getConstraintAccess().getOnKeyword_3_0()); }
+{ before(grammarAccess.getConstraintAccess().getInputKeyword_3_0()); }
 
-	'on' 
+	'input' 
 
-{ after(grammarAccess.getConstraintAccess().getOnKeyword_3_0()); }
+{ after(grammarAccess.getConstraintAccess().getInputKeyword_3_0()); }
 )
 
 ;

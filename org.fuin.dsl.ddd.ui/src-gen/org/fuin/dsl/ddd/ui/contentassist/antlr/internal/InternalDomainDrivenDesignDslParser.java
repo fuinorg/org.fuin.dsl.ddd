@@ -22,7 +22,7 @@ import java.util.ArrayList;
 @SuppressWarnings("all")
 public class InternalDomainDrivenDesignDslParser extends AbstractInternalContentAssistParser {
     public static final String[] tokenNames = new String[] {
-        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_HEX", "RULE_INT", "RULE_DECIMAL", "RULE_ID", "RULE_DOC", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "'false'", "'true'", "'context'", "'{'", "'}'", "'namespace'", "'import'", "'type'", "'constraint'", "'on'", "'exception'", "'message'", "'cid'", "'value-object'", "'base'", "'entity-id'", "'identifies'", "'aggregate-id'", "'enum'", "'instances'", "'('", "')'", "','", "'event'", "'entity'", "'identifier'", "'root'", "'aggregate'", "'constructor'", "'constraints'", "'fires'", "'returns'", "'method'", "'ref'", "'slabel'", "'label'", "'tooltip'", "'prompt'", "'examples'", "'invariants'", "'service'", "'.'", "'*'", "'element'", "'deprecated'", "'nullable'", "'null'"
+        "<invalid>", "<EOR>", "<DOWN>", "<UP>", "RULE_HEX", "RULE_INT", "RULE_DECIMAL", "RULE_ID", "RULE_DOC", "RULE_STRING", "RULE_ML_COMMENT", "RULE_SL_COMMENT", "RULE_WS", "'false'", "'true'", "'context'", "'{'", "'}'", "'namespace'", "'import'", "'type'", "'constraint'", "'input'", "'exception'", "'message'", "'cid'", "'value-object'", "'base'", "'entity-id'", "'identifies'", "'aggregate-id'", "'enum'", "'instances'", "'('", "')'", "','", "'event'", "'entity'", "'identifier'", "'root'", "'aggregate'", "'constructor'", "'constraints'", "'fires'", "'returns'", "'method'", "'ref'", "'slabel'", "'label'", "'tooltip'", "'prompt'", "'examples'", "'invariants'", "'service'", "'.'", "'*'", "'element'", "'deprecated'", "'nullable'", "'null'"
     };
     public static final int RULE_ID=7;
     public static final int T__29=29;
@@ -6582,21 +6582,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Constraint__Group_3__0__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:2279:1: rule__Constraint__Group_3__0__Impl : ( 'on' ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:2279:1: rule__Constraint__Group_3__0__Impl : ( 'input' ) ;
     public final void rule__Constraint__Group_3__0__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:2283:1: ( ( 'on' ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:2284:1: ( 'on' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:2283:1: ( ( 'input' ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:2284:1: ( 'input' )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:2284:1: ( 'on' )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:2285:1: 'on'
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:2284:1: ( 'input' )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:2285:1: 'input'
             {
-             before(grammarAccess.getConstraintAccess().getOnKeyword_3_0()); 
+             before(grammarAccess.getConstraintAccess().getInputKeyword_3_0()); 
             match(input,22,FOLLOW_22_in_rule__Constraint__Group_3__0__Impl4721); 
-             after(grammarAccess.getConstraintAccess().getOnKeyword_3_0()); 
+             after(grammarAccess.getConstraintAccess().getInputKeyword_3_0()); 
 
             }
 

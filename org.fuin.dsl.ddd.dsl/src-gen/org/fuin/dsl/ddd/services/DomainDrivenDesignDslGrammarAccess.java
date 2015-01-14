@@ -358,7 +358,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final Assignment cNameAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final RuleCall cNameIDTerminalRuleCall_2_0 = (RuleCall)cNameAssignment_2.eContents().get(0);
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
-		private final Keyword cOnKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Keyword cInputKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Assignment cTargetAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
 		private final CrossReference cTargetConstraintTargetCrossReference_3_1_0 = (CrossReference)cTargetAssignment_3_1.eContents().get(0);
 		private final RuleCall cTargetConstraintTargetFQNParserRuleCall_3_1_0_1 = (RuleCall)cTargetConstraintTargetCrossReference_3_1_0.eContents().get(1);
@@ -377,11 +377,11 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//Constraint:
-		//	doc=DOC? "constraint" name=ID ("on" target=[ConstraintTarget|FQN])? ("exception" exception=[Exception|FQN])? "{"
+		//	doc=DOC? "constraint" name=ID ("input" target=[ConstraintTarget|FQN])? ("exception" exception=[Exception|FQN])? "{"
 		//	variables+=Variable* ("message" message=STRING)? "}";
 		public ParserRule getRule() { return rule; }
 
-		//doc=DOC? "constraint" name=ID ("on" target=[ConstraintTarget|FQN])? ("exception" exception=[Exception|FQN])? "{"
+		//doc=DOC? "constraint" name=ID ("input" target=[ConstraintTarget|FQN])? ("exception" exception=[Exception|FQN])? "{"
 		//variables+=Variable* ("message" message=STRING)? "}"
 		public Group getGroup() { return cGroup; }
 
@@ -400,11 +400,11 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 
-		//("on" target=[ConstraintTarget|FQN])?
+		//("input" target=[ConstraintTarget|FQN])?
 		public Group getGroup_3() { return cGroup_3; }
 
-		//"on"
-		public Keyword getOnKeyword_3_0() { return cOnKeyword_3_0; }
+		//"input"
+		public Keyword getInputKeyword_3_0() { return cInputKeyword_3_0; }
 
 		//target=[ConstraintTarget|FQN]
 		public Assignment getTargetAssignment_3_1() { return cTargetAssignment_3_1; }
@@ -2514,7 +2514,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//Constraint:
-	//	doc=DOC? "constraint" name=ID ("on" target=[ConstraintTarget|FQN])? ("exception" exception=[Exception|FQN])? "{"
+	//	doc=DOC? "constraint" name=ID ("input" target=[ConstraintTarget|FQN])? ("exception" exception=[Exception|FQN])? "{"
 	//	variables+=Variable* ("message" message=STRING)? "}";
 	public ConstraintElements getConstraintAccess() {
 		return pConstraint;

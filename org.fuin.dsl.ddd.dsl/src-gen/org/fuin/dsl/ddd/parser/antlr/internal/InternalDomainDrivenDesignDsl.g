@@ -731,9 +731,9 @@ ruleConstraint returns [EObject current=null]
 	    }
 
 )
-)(	otherlv_3='on' 
+)(	otherlv_3='input' 
     {
-    	newLeafNode(otherlv_3, grammarAccess.getConstraintAccess().getOnKeyword_3_0());
+    	newLeafNode(otherlv_3, grammarAccess.getConstraintAccess().getInputKeyword_3_0());
     }
 (
 (

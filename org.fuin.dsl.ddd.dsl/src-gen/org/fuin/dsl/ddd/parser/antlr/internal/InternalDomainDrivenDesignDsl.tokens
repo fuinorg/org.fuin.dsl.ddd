@@ -24,6 +24,7 @@
 'identifier'=38
 'identifies'=28
 'import'=17
+'input'=21
 'instances'=31
 'invariants'=54
 'label'=48
@@ -32,7 +33,6 @@
 'namespace'=16
 'null'=59
 'nullable'=52
-'on'=21
 'prompt'=50
 'ref'=46
 'returns'=44
