@@ -28,21 +28,21 @@ public class DddAttributeExtensions {
    * @return Attribute copy with new name.
    */
   public static Attribute copyWithNewName(final Attribute attr, final String name) {
-    Attribute vv = DomainDrivenDesignDslFactory.eINSTANCE.createAttribute();
-    vv.setName(name);
+    Attribute newAttr = DomainDrivenDesignDslFactory.eINSTANCE.createAttribute();
+    newAttr.setName(name);
     String _doc = attr.getDoc();
-    vv.setDoc(_doc);
+    newAttr.setDoc(_doc);
     String _nullable = attr.getNullable();
-    vv.setNullable(_nullable);
+    newAttr.setNullable(_nullable);
     Type _type = attr.getType();
-    vv.setType(_type);
+    newAttr.setType(_type);
     String _multiplicity = attr.getMultiplicity();
-    vv.setMultiplicity(_multiplicity);
+    newAttr.setMultiplicity(_multiplicity);
     Invariants _invariants = attr.getInvariants();
-    vv.setInvariants(_invariants);
+    newAttr.setInvariants(_invariants);
     OverriddenTypeMetaInfo _overridden = attr.getOverridden();
-    vv.setOverridden(_overridden);
-    return vv;
+    newAttr.setOverridden(_overridden);
+    return newAttr;
   }
   
   /**

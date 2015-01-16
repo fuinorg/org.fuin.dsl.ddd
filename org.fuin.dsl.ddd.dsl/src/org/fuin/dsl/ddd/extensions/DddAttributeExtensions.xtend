@@ -22,15 +22,15 @@ class DddAttributeExtensions {
 	 * @return Attribute copy with new name.
 	 */
 	public static def Attribute copyWithNewName(Attribute attr, String name) {
-		var Attribute vv = DomainDrivenDesignDslFactory.eINSTANCE.createAttribute();
-		vv.name = name;
-		vv.doc = attr.doc;
-		vv.nullable = attr.nullable;
-		vv.type = attr.type;
-		vv.multiplicity = attr.multiplicity;
-		vv.invariants = attr.invariants;
-		vv.overridden = attr.overridden;
-		return vv;
+		var Attribute newAttr = DomainDrivenDesignDslFactory.eINSTANCE.createAttribute();
+		newAttr.name = name;
+		newAttr.doc = attr.doc;
+		newAttr.nullable = attr.nullable;
+		newAttr.type = attr.type;
+		newAttr.multiplicity = attr.multiplicity;
+		newAttr.invariants = attr.invariants;
+		newAttr.overridden = attr.overridden;
+		return newAttr;
 	}
 	
 	/**
