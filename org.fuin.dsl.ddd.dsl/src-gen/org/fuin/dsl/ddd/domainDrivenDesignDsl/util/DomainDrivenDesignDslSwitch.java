@@ -14,7 +14,9 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractVO;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.BooleanLiteral;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.BusinessRules;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget;
@@ -37,6 +39,8 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Namespace;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.NullLiteral;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.NumberLiteral;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.OverriddenTypeMetaInfo;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Parameter;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Preconditions;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ReturnType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Service;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.StringLiteral;
@@ -355,10 +359,40 @@ public class DomainDrivenDesignDslSwitch<T> extends Switch<T>
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
+      case DomainDrivenDesignDslPackage.ATTRIBUTE:
+      {
+        Attribute attribute = (Attribute)theEObject;
+        T result = caseAttribute(attribute);
+        if (result == null) result = caseVariable(attribute);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DomainDrivenDesignDslPackage.PARAMETER:
+      {
+        Parameter parameter = (Parameter)theEObject;
+        T result = caseParameter(parameter);
+        if (result == null) result = caseVariable(parameter);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
       case DomainDrivenDesignDslPackage.INVARIANTS:
       {
         Invariants invariants = (Invariants)theEObject;
         T result = caseInvariants(invariants);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DomainDrivenDesignDslPackage.PRECONDITIONS:
+      {
+        Preconditions preconditions = (Preconditions)theEObject;
+        T result = casePreconditions(preconditions);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DomainDrivenDesignDslPackage.BUSINESS_RULES:
+      {
+        BusinessRules businessRules = (BusinessRules)theEObject;
+        T result = caseBusinessRules(businessRules);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -877,6 +911,38 @@ public class DomainDrivenDesignDslSwitch<T> extends Switch<T>
   }
 
   /**
+   * Returns the result of interpreting the object as an instance of '<em>Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Attribute</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseAttribute(Attribute object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Parameter</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseParameter(Parameter object)
+  {
+    return null;
+  }
+
+  /**
    * Returns the result of interpreting the object as an instance of '<em>Invariants</em>'.
    * <!-- begin-user-doc -->
    * This implementation returns null;
@@ -888,6 +954,38 @@ public class DomainDrivenDesignDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseInvariants(Invariants object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Preconditions</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Preconditions</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T casePreconditions(Preconditions object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Business Rules</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Business Rules</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseBusinessRules(BusinessRules object)
   {
     return null;
   }

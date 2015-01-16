@@ -2,10 +2,10 @@ package org.fuin.dsl.ddd.extensions;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractVO;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.InternalType;
 
 /**
  * Provides extension methods for ConstraintTarget.
@@ -20,8 +20,8 @@ public class DddConstraintTargetExtensions {
    * @return Name.
    */
   public static String getName(final ConstraintTarget target) {
-    if ((target instanceof AbstractVO)) {
-      return ((AbstractVO)target).getName();
+    if ((target instanceof InternalType)) {
+      return ((InternalType)target).getName();
     } else {
       if ((target instanceof ExternalType)) {
         return ((ExternalType)target).getName();
@@ -38,18 +38,18 @@ public class DddConstraintTargetExtensions {
   }
   
   /**
-   * Returns the variables of a constraint target.
+   * Returns the attributes of a constraint target.
    * 
-   * @param target Target to return a list of variables for.
+   * @param target Target to return a list of attributes for.
    * 
-   * @return Variables - Never null.
+   * @return Attributes - Never null.
    */
-  public static List<Variable> getVariables(final ConstraintTarget target) {
-    if ((target instanceof AbstractVO)) {
-      return ((AbstractVO)target).getVariables();
+  public static List<Attribute> getAttributes(final ConstraintTarget target) {
+    if ((target instanceof InternalType)) {
+      return ((InternalType)target).getAttributes();
     } else {
       if ((target instanceof ExternalType)) {
-        return new ArrayList<Variable>();
+        return new ArrayList<Attribute>();
       }
     }
     String _name = DddConstraintTargetExtensions.getName(target);

@@ -2,10 +2,10 @@ package org.fuin.dsl.ddd.extensions
 
 import java.util.ArrayList
 import java.util.List
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractVO
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.InternalType
 
 /**
  * Provides extension methods for ConstraintTarget.
@@ -20,7 +20,7 @@ class DddConstraintTargetExtensions {
 	 * @return Name.
 	 */
 	def static String getName(ConstraintTarget target) {
-		if (target instanceof AbstractVO) {
+		if (target instanceof InternalType) {
 			return target.name;
 		} else if (target instanceof ExternalType) {
 			return target.name;
@@ -29,17 +29,17 @@ class DddConstraintTargetExtensions {
 	}
 
 	/**
-	 * Returns the variables of a constraint target.
+	 * Returns the attributes of a constraint target.
 	 * 
-	 * @param target Target to return a list of variables for.
+	 * @param target Target to return a list of attributes for.
 	 * 
-	 * @return Variables - Never null.
+	 * @return Attributes - Never null.
 	 */
-	def static List<Variable> getVariables(ConstraintTarget target) {
-		if (target instanceof AbstractVO) {
-			return target.variables;
+	def static List<Attribute> getAttributes(ConstraintTarget target) {
+		if (target instanceof InternalType) {
+			return target.attributes;
 		} else if (target instanceof ExternalType) {
-			return new ArrayList<Variable>();
+			return new ArrayList<Attribute>();
 		}
 		throw new IllegalStateException("Unknown constraint target type: " + target.name + " [" + target.class.name + "]");
 	}

@@ -12,7 +12,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Event#getVariables <em>Variables</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Event#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Event#getMessage <em>Message</em>}</li>
  * </ul>
  * </p>
@@ -24,20 +24,20 @@ import org.eclipse.emf.common.util.EList;
 public interface Event extends AbstractElement
 {
   /**
-   * Returns the value of the '<em><b>Variables</b></em>' containment reference list.
-   * The list contents are of type {@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable}.
+   * Returns the value of the '<em><b>Attributes</b></em>' containment reference list.
+   * The list contents are of type {@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Variables</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Attributes</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Variables</em>' containment reference list.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getEvent_Variables()
+   * @return the value of the '<em>Attributes</em>' containment reference list.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getEvent_Attributes()
    * @model containment="true"
    * @generated
    */
-  EList<Variable> getVariables();
+  EList<Attribute> getAttributes();
 
   /**
    * Returns the value of the '<em><b>Message</b></em>' attribute.

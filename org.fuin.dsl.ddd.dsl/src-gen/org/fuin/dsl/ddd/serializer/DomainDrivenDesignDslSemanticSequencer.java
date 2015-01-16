@@ -15,7 +15,9 @@ import org.eclipse.xtext.serializer.sequencer.ITransientValueService;
 import org.eclipse.xtext.serializer.sequencer.ITransientValueService.ValueTransient;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.BooleanLiteral;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.BusinessRules;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constructor;
@@ -35,12 +37,13 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Namespace;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.NullLiteral;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.NumberLiteral;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.OverriddenTypeMetaInfo;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Parameter;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Preconditions;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ReturnType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Service;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.StringLiteral;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.TypeMetaInfo;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ValueObject;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
 import org.fuin.dsl.ddd.services.DomainDrivenDesignDslGrammarAccess;
 
 @SuppressWarnings("all")
@@ -73,10 +76,23 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 					return; 
 				}
 				else break;
+			case DomainDrivenDesignDslPackage.ATTRIBUTE:
+				if(context == grammarAccess.getAttributeRule() ||
+				   context == grammarAccess.getVariableRule()) {
+					sequence_Attribute(context, (Attribute) semanticObject); 
+					return; 
+				}
+				else break;
 			case DomainDrivenDesignDslPackage.BOOLEAN_LITERAL:
 				if(context == grammarAccess.getBooleanLiteralRule() ||
 				   context == grammarAccess.getLiteralRule()) {
 					sequence_BooleanLiteral(context, (BooleanLiteral) semanticObject); 
+					return; 
+				}
+				else break;
+			case DomainDrivenDesignDslPackage.BUSINESS_RULES:
+				if(context == grammarAccess.getBusinessRulesRule()) {
+					sequence_BusinessRules(context, (BusinessRules) semanticObject); 
 					return; 
 				}
 				else break;
@@ -217,6 +233,19 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 					return; 
 				}
 				else break;
+			case DomainDrivenDesignDslPackage.PARAMETER:
+				if(context == grammarAccess.getParameterRule() ||
+				   context == grammarAccess.getVariableRule()) {
+					sequence_Parameter(context, (Parameter) semanticObject); 
+					return; 
+				}
+				else break;
+			case DomainDrivenDesignDslPackage.PRECONDITIONS:
+				if(context == grammarAccess.getPreconditionsRule()) {
+					sequence_Preconditions(context, (Preconditions) semanticObject); 
+					return; 
+				}
+				else break;
 			case DomainDrivenDesignDslPackage.RETURN_TYPE:
 				if(context == grammarAccess.getReturnTypeRule()) {
 					sequence_ReturnType(context, (ReturnType) semanticObject); 
@@ -255,12 +284,6 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 					return; 
 				}
 				else break;
-			case DomainDrivenDesignDslPackage.VARIABLE:
-				if(context == grammarAccess.getVariableRule()) {
-					sequence_Variable(context, (Variable) semanticObject); 
-					return; 
-				}
-				else break;
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
@@ -272,8 +295,9 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *         name=ID 
 	 *         entity=[Aggregate|FQN] 
 	 *         base=[ExternalType|FQN]? 
+	 *         invariants=Invariants? 
 	 *         metaInfo=TypeMetaInfo 
-	 *         variables+=Variable* 
+	 *         attributes+=Attribute* 
 	 *         constructors+=Constructor* 
 	 *         methods+=Method*
 	 *     )
@@ -289,8 +313,9 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *         doc=DOC? 
 	 *         name=ID 
 	 *         idType=[AggregateId|FQN] 
+	 *         invariants=Invariants? 
 	 *         metaInfo=TypeMetaInfo 
-	 *         variables+=Variable* 
+	 *         attributes+=Attribute* 
 	 *         constructors+=Constructor* 
 	 *         methods+=Method* 
 	 *         events+=Event*
@@ -303,9 +328,35 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	
 	/**
 	 * Constraint:
+	 *     (
+	 *         doc=DOC? 
+	 *         nullable='nullable'? 
+	 *         type=[Type|FQN] 
+	 *         multiplicity='*'? 
+	 *         name=ID 
+	 *         invariants=Invariants? 
+	 *         overridden=OverriddenTypeMetaInfo?
+	 *     )
+	 */
+	protected void sequence_Attribute(EObject context, Attribute semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (value='false' | value='true')
 	 */
 	protected void sequence_BooleanLiteral(EObject context, BooleanLiteral semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (constraintInstances+=ConstraintInstance constraintInstances+=ConstraintInstance*)
+	 */
+	protected void sequence_BusinessRules(EObject context, BusinessRules semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -326,7 +377,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *         name=ID 
 	 *         target=[ConstraintTarget|FQN]? 
 	 *         exception=[Exception|FQN]? 
-	 *         variables+=Variable* 
+	 *         attributes+=Attribute* 
 	 *         message=STRING?
 	 *     )
 	 */
@@ -340,9 +391,10 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *     (
 	 *         doc=DOC? 
 	 *         name=ID 
-	 *         (constraintCalls+=ConstraintInstance constraintCalls+=ConstraintInstance*)? 
+	 *         preconditions=Preconditions? 
+	 *         businessRules=BusinessRules? 
 	 *         (firedEvents+=[Event|FQN] firedEvents+=[Event|FQN]*)? 
-	 *         variables+=Variable* 
+	 *         parameters+=Parameter* 
 	 *         service=[Service|FQN]? 
 	 *         services+=Service* 
 	 *         events+=Event*
@@ -378,8 +430,9 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *         name=ID 
 	 *         entity=[Entity|FQN] 
 	 *         base=[ExternalType|FQN]? 
+	 *         invariants=Invariants? 
 	 *         metaInfo=TypeMetaInfo 
-	 *         variables+=Variable* 
+	 *         attributes+=Attribute* 
 	 *         constructors+=Constructor* 
 	 *         methods+=Method*
 	 *     )
@@ -396,8 +449,9 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *         name=ID 
 	 *         idType=[EntityId|FQN] 
 	 *         root=[Aggregate|FQN] 
+	 *         invariants=Invariants? 
 	 *         metaInfo=TypeMetaInfo 
-	 *         variables+=Variable* 
+	 *         attributes+=Attribute* 
 	 *         constructors+=Constructor* 
 	 *         methods+=Method* 
 	 *         events+=Event*
@@ -423,8 +477,9 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *         doc=DOC? 
 	 *         name=ID 
 	 *         base=[ExternalType|FQN]? 
+	 *         invariants=Invariants? 
 	 *         metaInfo=TypeMetaInfo 
-	 *         variables+=Variable* 
+	 *         attributes+=Attribute* 
 	 *         instances+=EnumInstance+
 	 *     )
 	 */
@@ -435,7 +490,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	
 	/**
 	 * Constraint:
-	 *     (doc=DOC? name=ID variables+=Variable* message=STRING?)
+	 *     (doc=DOC? name=ID attributes+=Attribute* message=STRING?)
 	 */
 	protected void sequence_Event(EObject context, Event semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -444,7 +499,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	
 	/**
 	 * Constraint:
-	 *     (doc=DOC? name=ID cid=INT? variables+=Variable* message=STRING)
+	 *     (doc=DOC? name=ID cid=INT? attributes+=Attribute* message=STRING)
 	 */
 	protected void sequence_Exception(EObject context, org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -471,7 +526,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	
 	/**
 	 * Constraint:
-	 *     (instances+=ConstraintInstance instances+=ConstraintInstance*)
+	 *     (constraintInstances+=ConstraintInstance constraintInstances+=ConstraintInstance*)
 	 */
 	protected void sequence_Invariants(EObject context, Invariants semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
@@ -484,9 +539,10 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *         doc=DOC? 
 	 *         name=ID 
 	 *         refMethod=[Method|FQN]? 
-	 *         (constraintCalls+=ConstraintInstance constraintCalls+=ConstraintInstance*)? 
+	 *         preconditions=Preconditions? 
+	 *         businessRules=BusinessRules? 
 	 *         (firedEvents+=[Event|FQN] firedEvents+=[Event|FQN]*)? 
-	 *         variables+=Variable* 
+	 *         parameters+=Parameter* 
 	 *         service=[Service|FQN]? 
 	 *         returnType=ReturnType? 
 	 *         services+=Service* 
@@ -557,6 +613,33 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	
 	/**
 	 * Constraint:
+	 *     (
+	 *         doc=DOC? 
+	 *         nullable='nullable'? 
+	 *         type=[Type|FQN] 
+	 *         multiplicity='*'? 
+	 *         name=ID 
+	 *         preconditions=Preconditions? 
+	 *         businessRules=BusinessRules? 
+	 *         overridden=OverriddenTypeMetaInfo?
+	 *     )
+	 */
+	protected void sequence_Parameter(EObject context, Parameter semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (constraintInstances+=ConstraintInstance constraintInstances+=ConstraintInstance*)
+	 */
+	protected void sequence_Preconditions(EObject context, Preconditions semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (doc=DOC? type=[Type|FQN])
 	 */
 	protected void sequence_ReturnType(EObject context, ReturnType semanticObject) {
@@ -604,30 +687,14 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *         doc=DOC? 
 	 *         name=ID 
 	 *         base=[ExternalType|FQN]? 
+	 *         invariants=Invariants? 
 	 *         metaInfo=TypeMetaInfo 
-	 *         variables+=Variable* 
+	 *         attributes+=Attribute* 
 	 *         constructors+=Constructor* 
 	 *         methods+=Method*
 	 *     )
 	 */
 	protected void sequence_ValueObject(EObject context, ValueObject semanticObject) {
-		genericSequencer.createSequence(context, semanticObject);
-	}
-	
-	
-	/**
-	 * Constraint:
-	 *     (
-	 *         doc=DOC? 
-	 *         nullable='nullable'? 
-	 *         type=[Type|FQN] 
-	 *         multiplicity='*'? 
-	 *         name=ID 
-	 *         invariants=Invariants? 
-	 *         overridden=OverriddenTypeMetaInfo?
-	 *     )
-	 */
-	protected void sequence_Variable(EObject context, Variable semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 }

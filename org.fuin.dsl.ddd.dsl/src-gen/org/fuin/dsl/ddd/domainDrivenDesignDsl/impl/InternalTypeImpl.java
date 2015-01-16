@@ -17,10 +17,11 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.InternalType;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Invariants;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.TypeMetaInfo;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
 
 /**
  * <!-- begin-user-doc -->
@@ -29,8 +30,9 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
  * <p>
  * The following features are implemented:
  * <ul>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.InternalTypeImpl#getInvariants <em>Invariants</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.InternalTypeImpl#getMetaInfo <em>Meta Info</em>}</li>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.InternalTypeImpl#getVariables <em>Variables</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.InternalTypeImpl#getAttributes <em>Attributes</em>}</li>
  * </ul>
  * </p>
  *
@@ -38,6 +40,16 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
  */
 public class InternalTypeImpl extends TypeImpl implements InternalType
 {
+  /**
+   * The cached value of the '{@link #getInvariants() <em>Invariants</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getInvariants()
+   * @generated
+   * @ordered
+   */
+  protected Invariants invariants;
+
   /**
    * The cached value of the '{@link #getMetaInfo() <em>Meta Info</em>}' containment reference.
    * <!-- begin-user-doc -->
@@ -49,14 +61,14 @@ public class InternalTypeImpl extends TypeImpl implements InternalType
   protected TypeMetaInfo metaInfo;
 
   /**
-   * The cached value of the '{@link #getVariables() <em>Variables</em>}' containment reference list.
+   * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVariables()
+   * @see #getAttributes()
    * @generated
    * @ordered
    */
-  protected EList<Variable> variables;
+  protected EList<Attribute> attributes;
 
   /**
    * <!-- begin-user-doc -->
@@ -77,6 +89,54 @@ public class InternalTypeImpl extends TypeImpl implements InternalType
   protected EClass eStaticClass()
   {
     return DomainDrivenDesignDslPackage.Literals.INTERNAL_TYPE;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Invariants getInvariants()
+  {
+    return invariants;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetInvariants(Invariants newInvariants, NotificationChain msgs)
+  {
+    Invariants oldInvariants = invariants;
+    invariants = newInvariants;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.INTERNAL_TYPE__INVARIANTS, oldInvariants, newInvariants);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setInvariants(Invariants newInvariants)
+  {
+    if (newInvariants != invariants)
+    {
+      NotificationChain msgs = null;
+      if (invariants != null)
+        msgs = ((InternalEObject)invariants).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DomainDrivenDesignDslPackage.INTERNAL_TYPE__INVARIANTS, null, msgs);
+      if (newInvariants != null)
+        msgs = ((InternalEObject)newInvariants).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DomainDrivenDesignDslPackage.INTERNAL_TYPE__INVARIANTS, null, msgs);
+      msgs = basicSetInvariants(newInvariants, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.INTERNAL_TYPE__INVARIANTS, newInvariants, newInvariants));
   }
 
   /**
@@ -132,13 +192,13 @@ public class InternalTypeImpl extends TypeImpl implements InternalType
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Variable> getVariables()
+  public EList<Attribute> getAttributes()
   {
-    if (variables == null)
+    if (attributes == null)
     {
-      variables = new EObjectContainmentEList<Variable>(Variable.class, this, DomainDrivenDesignDslPackage.INTERNAL_TYPE__VARIABLES);
+      attributes = new EObjectContainmentEList<Attribute>(Attribute.class, this, DomainDrivenDesignDslPackage.INTERNAL_TYPE__ATTRIBUTES);
     }
-    return variables;
+    return attributes;
   }
 
   /**
@@ -151,10 +211,12 @@ public class InternalTypeImpl extends TypeImpl implements InternalType
   {
     switch (featureID)
     {
+      case DomainDrivenDesignDslPackage.INTERNAL_TYPE__INVARIANTS:
+        return basicSetInvariants(null, msgs);
       case DomainDrivenDesignDslPackage.INTERNAL_TYPE__META_INFO:
         return basicSetMetaInfo(null, msgs);
-      case DomainDrivenDesignDslPackage.INTERNAL_TYPE__VARIABLES:
-        return ((InternalEList<?>)getVariables()).basicRemove(otherEnd, msgs);
+      case DomainDrivenDesignDslPackage.INTERNAL_TYPE__ATTRIBUTES:
+        return ((InternalEList<?>)getAttributes()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -169,10 +231,12 @@ public class InternalTypeImpl extends TypeImpl implements InternalType
   {
     switch (featureID)
     {
+      case DomainDrivenDesignDslPackage.INTERNAL_TYPE__INVARIANTS:
+        return getInvariants();
       case DomainDrivenDesignDslPackage.INTERNAL_TYPE__META_INFO:
         return getMetaInfo();
-      case DomainDrivenDesignDslPackage.INTERNAL_TYPE__VARIABLES:
-        return getVariables();
+      case DomainDrivenDesignDslPackage.INTERNAL_TYPE__ATTRIBUTES:
+        return getAttributes();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -188,12 +252,15 @@ public class InternalTypeImpl extends TypeImpl implements InternalType
   {
     switch (featureID)
     {
+      case DomainDrivenDesignDslPackage.INTERNAL_TYPE__INVARIANTS:
+        setInvariants((Invariants)newValue);
+        return;
       case DomainDrivenDesignDslPackage.INTERNAL_TYPE__META_INFO:
         setMetaInfo((TypeMetaInfo)newValue);
         return;
-      case DomainDrivenDesignDslPackage.INTERNAL_TYPE__VARIABLES:
-        getVariables().clear();
-        getVariables().addAll((Collection<? extends Variable>)newValue);
+      case DomainDrivenDesignDslPackage.INTERNAL_TYPE__ATTRIBUTES:
+        getAttributes().clear();
+        getAttributes().addAll((Collection<? extends Attribute>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -209,11 +276,14 @@ public class InternalTypeImpl extends TypeImpl implements InternalType
   {
     switch (featureID)
     {
+      case DomainDrivenDesignDslPackage.INTERNAL_TYPE__INVARIANTS:
+        setInvariants((Invariants)null);
+        return;
       case DomainDrivenDesignDslPackage.INTERNAL_TYPE__META_INFO:
         setMetaInfo((TypeMetaInfo)null);
         return;
-      case DomainDrivenDesignDslPackage.INTERNAL_TYPE__VARIABLES:
-        getVariables().clear();
+      case DomainDrivenDesignDslPackage.INTERNAL_TYPE__ATTRIBUTES:
+        getAttributes().clear();
         return;
     }
     super.eUnset(featureID);
@@ -229,10 +299,12 @@ public class InternalTypeImpl extends TypeImpl implements InternalType
   {
     switch (featureID)
     {
+      case DomainDrivenDesignDslPackage.INTERNAL_TYPE__INVARIANTS:
+        return invariants != null;
       case DomainDrivenDesignDslPackage.INTERNAL_TYPE__META_INFO:
         return metaInfo != null;
-      case DomainDrivenDesignDslPackage.INTERNAL_TYPE__VARIABLES:
-        return variables != null && !variables.isEmpty();
+      case DomainDrivenDesignDslPackage.INTERNAL_TYPE__ATTRIBUTES:
+        return attributes != null && !attributes.isEmpty();
     }
     return super.eIsSet(featureID);
   }

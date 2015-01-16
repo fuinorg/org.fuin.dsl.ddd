@@ -1,11 +1,9 @@
 package org.fuin.dsl.ddd.extensions
 
-import java.util.Collections
+import java.util.ArrayList
 import java.util.List
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Invariants
-
-import static extension org.fuin.dsl.ddd.extensions.DddCollectionExtensions.*
 
 /**
  * Provides extension methods for Invariants.
@@ -13,17 +11,17 @@ import static extension org.fuin.dsl.ddd.extensions.DddCollectionExtensions.*
 class DddInvariantsExtensions {
 
 	/**
-	 * Returns a list of invariants instances in a null safe way.
+	 * Returns a non-null constraint list.
 	 * 
-	 * @param invariants List of invariants or <code>null</code>.
+	 * @param invariants Container with constraints.
 	 * 
-	 * @return List or <code>null</code>.
+	 * @return List of constraints that is never <code<null</code>.
 	 */
-	def static List<ConstraintInstance> nullSafeInstances(Invariants invariants) {
-		if (invariants == null) {
-			return Collections.EMPTY_LIST
+	public static def List<ConstraintInstance> nullSafe(Invariants invariants) {
+		if ((invariants == null) || (invariants.constraintInstances == null)) {
+			return new ArrayList<ConstraintInstance>()
 		}
-		return invariants.instances.nullSafe
+		return invariants.constraintInstances
 	}
 
 }

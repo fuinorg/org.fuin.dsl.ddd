@@ -2,6 +2,8 @@
  */
 package org.fuin.dsl.ddd.domainDrivenDesignDsl;
 
+import java.util.Map;
+
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -16,12 +18,14 @@ import org.eclipse.emf.ecore.EObject;
  * <ul>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getDoc <em>Doc</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getName <em>Name</em>}</li>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getConstraintCalls <em>Constraint Calls</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getPreconditions <em>Preconditions</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getBusinessRules <em>Business Rules</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getFiredEvents <em>Fired Events</em>}</li>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getVariables <em>Variables</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getParameters <em>Parameters</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getService <em>Service</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getServices <em>Services</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getEvents <em>Events</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getUserContent <em>User Content</em>}</li>
  * </ul>
  * </p>
  *
@@ -84,20 +88,56 @@ public interface AbstractMethod extends EObject
   void setName(String value);
 
   /**
-   * Returns the value of the '<em><b>Constraint Calls</b></em>' containment reference list.
-   * The list contents are of type {@link org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance}.
+   * Returns the value of the '<em><b>Preconditions</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Constraint Calls</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Preconditions</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Constraint Calls</em>' containment reference list.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getAbstractMethod_ConstraintCalls()
+   * @return the value of the '<em>Preconditions</em>' containment reference.
+   * @see #setPreconditions(Preconditions)
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getAbstractMethod_Preconditions()
    * @model containment="true"
    * @generated
    */
-  EList<ConstraintInstance> getConstraintCalls();
+  Preconditions getPreconditions();
+
+  /**
+   * Sets the value of the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getPreconditions <em>Preconditions</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Preconditions</em>' containment reference.
+   * @see #getPreconditions()
+   * @generated
+   */
+  void setPreconditions(Preconditions value);
+
+  /**
+   * Returns the value of the '<em><b>Business Rules</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Business Rules</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Business Rules</em>' containment reference.
+   * @see #setBusinessRules(BusinessRules)
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getAbstractMethod_BusinessRules()
+   * @model containment="true"
+   * @generated
+   */
+  BusinessRules getBusinessRules();
+
+  /**
+   * Sets the value of the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getBusinessRules <em>Business Rules</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Business Rules</em>' containment reference.
+   * @see #getBusinessRules()
+   * @generated
+   */
+  void setBusinessRules(BusinessRules value);
 
   /**
    * Returns the value of the '<em><b>Fired Events</b></em>' reference list.
@@ -116,20 +156,20 @@ public interface AbstractMethod extends EObject
   EList<Event> getFiredEvents();
 
   /**
-   * Returns the value of the '<em><b>Variables</b></em>' containment reference list.
-   * The list contents are of type {@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable}.
+   * Returns the value of the '<em><b>Parameters</b></em>' containment reference list.
+   * The list contents are of type {@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Parameter}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Variables</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Parameters</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Variables</em>' containment reference list.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getAbstractMethod_Variables()
+   * @return the value of the '<em>Parameters</em>' containment reference list.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getAbstractMethod_Parameters()
    * @model containment="true"
    * @generated
    */
-  EList<Variable> getVariables();
+  EList<Parameter> getParameters();
 
   /**
    * Returns the value of the '<em><b>Service</b></em>' reference.
@@ -188,5 +228,31 @@ public interface AbstractMethod extends EObject
    * @generated
    */
   EList<Event> getEvents();
+
+  /**
+   * Returns the value of the '<em><b>User Content</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>User Content</em>' attribute isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>User Content</em>' attribute.
+   * @see #setUserContent(Map)
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getAbstractMethod_UserContent()
+   * @model transient="true"
+   * @generated
+   */
+  Map getUserContent();
+
+  /**
+   * Sets the value of the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getUserContent <em>User Content</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>User Content</em>' attribute.
+   * @see #getUserContent()
+   * @generated
+   */
+  void setUserContent(Map value);
 
 } // AbstractMethod

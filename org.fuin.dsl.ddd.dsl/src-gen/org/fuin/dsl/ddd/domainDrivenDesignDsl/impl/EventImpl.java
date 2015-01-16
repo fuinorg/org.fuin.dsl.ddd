@@ -17,9 +17,9 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +28,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.EventImpl#getVariables <em>Variables</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.EventImpl#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.EventImpl#getMessage <em>Message</em>}</li>
  * </ul>
  * </p>
@@ -38,14 +38,14 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
 public class EventImpl extends AbstractElementImpl implements Event
 {
   /**
-   * The cached value of the '{@link #getVariables() <em>Variables</em>}' containment reference list.
+   * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVariables()
+   * @see #getAttributes()
    * @generated
    * @ordered
    */
-  protected EList<Variable> variables;
+  protected EList<Attribute> attributes;
 
   /**
    * The default value of the '{@link #getMessage() <em>Message</em>}' attribute.
@@ -93,13 +93,13 @@ public class EventImpl extends AbstractElementImpl implements Event
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Variable> getVariables()
+  public EList<Attribute> getAttributes()
   {
-    if (variables == null)
+    if (attributes == null)
     {
-      variables = new EObjectContainmentEList<Variable>(Variable.class, this, DomainDrivenDesignDslPackage.EVENT__VARIABLES);
+      attributes = new EObjectContainmentEList<Attribute>(Attribute.class, this, DomainDrivenDesignDslPackage.EVENT__ATTRIBUTES);
     }
-    return variables;
+    return attributes;
   }
 
   /**
@@ -135,8 +135,8 @@ public class EventImpl extends AbstractElementImpl implements Event
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.EVENT__VARIABLES:
-        return ((InternalEList<?>)getVariables()).basicRemove(otherEnd, msgs);
+      case DomainDrivenDesignDslPackage.EVENT__ATTRIBUTES:
+        return ((InternalEList<?>)getAttributes()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -151,8 +151,8 @@ public class EventImpl extends AbstractElementImpl implements Event
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.EVENT__VARIABLES:
-        return getVariables();
+      case DomainDrivenDesignDslPackage.EVENT__ATTRIBUTES:
+        return getAttributes();
       case DomainDrivenDesignDslPackage.EVENT__MESSAGE:
         return getMessage();
     }
@@ -170,9 +170,9 @@ public class EventImpl extends AbstractElementImpl implements Event
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.EVENT__VARIABLES:
-        getVariables().clear();
-        getVariables().addAll((Collection<? extends Variable>)newValue);
+      case DomainDrivenDesignDslPackage.EVENT__ATTRIBUTES:
+        getAttributes().clear();
+        getAttributes().addAll((Collection<? extends Attribute>)newValue);
         return;
       case DomainDrivenDesignDslPackage.EVENT__MESSAGE:
         setMessage((String)newValue);
@@ -191,8 +191,8 @@ public class EventImpl extends AbstractElementImpl implements Event
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.EVENT__VARIABLES:
-        getVariables().clear();
+      case DomainDrivenDesignDslPackage.EVENT__ATTRIBUTES:
+        getAttributes().clear();
         return;
       case DomainDrivenDesignDslPackage.EVENT__MESSAGE:
         setMessage(MESSAGE_EDEFAULT);
@@ -211,8 +211,8 @@ public class EventImpl extends AbstractElementImpl implements Event
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.EVENT__VARIABLES:
-        return variables != null && !variables.isEmpty();
+      case DomainDrivenDesignDslPackage.EVENT__ATTRIBUTES:
+        return attributes != null && !attributes.isEmpty();
       case DomainDrivenDesignDslPackage.EVENT__MESSAGE:
         return MESSAGE_EDEFAULT == null ? message != null : !MESSAGE_EDEFAULT.equals(message);
     }

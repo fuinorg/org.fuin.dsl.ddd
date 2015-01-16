@@ -275,6 +275,24 @@ public interface DomainDrivenDesignDslFactory extends EFactory
   Variable createVariable();
 
   /**
+   * Returns a new object of class '<em>Attribute</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Attribute</em>'.
+   * @generated
+   */
+  Attribute createAttribute();
+
+  /**
+   * Returns a new object of class '<em>Parameter</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Parameter</em>'.
+   * @generated
+   */
+  Parameter createParameter();
+
+  /**
    * Returns a new object of class '<em>Invariants</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -282,6 +300,24 @@ public interface DomainDrivenDesignDslFactory extends EFactory
    * @generated
    */
   Invariants createInvariants();
+
+  /**
+   * Returns a new object of class '<em>Preconditions</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Preconditions</em>'.
+   * @generated
+   */
+  Preconditions createPreconditions();
+
+  /**
+   * Returns a new object of class '<em>Business Rules</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Business Rules</em>'.
+   * @generated
+   */
+  BusinessRules createBusinessRules();
 
   /**
    * Returns a new object of class '<em>Overridden Type Meta Info</em>'.

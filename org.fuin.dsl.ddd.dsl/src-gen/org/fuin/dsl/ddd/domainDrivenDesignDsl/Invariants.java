@@ -14,7 +14,7 @@ import org.eclipse.emf.ecore.EObject;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Invariants#getInstances <em>Instances</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Invariants#getConstraintInstances <em>Constraint Instances</em>}</li>
  * </ul>
  * </p>
  *
@@ -25,19 +25,19 @@ import org.eclipse.emf.ecore.EObject;
 public interface Invariants extends EObject
 {
   /**
-   * Returns the value of the '<em><b>Instances</b></em>' containment reference list.
+   * Returns the value of the '<em><b>Constraint Instances</b></em>' containment reference list.
    * The list contents are of type {@link org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Instances</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Constraint Instances</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Instances</em>' containment reference list.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getInvariants_Instances()
+   * @return the value of the '<em>Constraint Instances</em>' containment reference list.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getInvariants_ConstraintInstances()
    * @model containment="true"
    * @generated
    */
-  EList<ConstraintInstance> getInstances();
+  EList<ConstraintInstance> getConstraintInstances();
 
 } // Invariants

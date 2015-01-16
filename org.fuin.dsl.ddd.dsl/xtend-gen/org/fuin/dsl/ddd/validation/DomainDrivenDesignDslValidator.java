@@ -19,9 +19,9 @@ import org.eclipse.xtext.resource.impl.ResourceDescriptionsProvider;
 import org.eclipse.xtext.validation.Check;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractElement;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntity;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractVO;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Context;
@@ -29,6 +29,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.EntityId;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.InternalType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Method;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Namespace;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ReturnType;
@@ -90,9 +91,9 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
   
   @Check
   public void checkVariablesInConstraintMessage(final Constraint constraint) {
-    Set<String> _allVariables = DomainDrivenDesignDslValidator.allVariables(constraint);
+    Set<String> _allAttributeNames = DomainDrivenDesignDslValidator.allAttributeNames(constraint);
     String _message = constraint.getMessage();
-    final String name = DomainDrivenDesignDslValidator.findUnknownVar(_allVariables, _message);
+    final String name = DomainDrivenDesignDslValidator.findUnknownVar(_allAttributeNames, _message);
     boolean _notEquals = (!Objects.equal(name, null));
     if (_notEquals) {
       this.error(
@@ -104,9 +105,9 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
   
   @Check
   public void checkVariablesInExceptionMessage(final org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception ex) {
-    Set<String> _allVariables = DomainDrivenDesignDslValidator.allVariables(ex);
+    Set<String> _attributeNames = DomainDrivenDesignDslValidator.attributeNames(ex);
     String _message = ex.getMessage();
-    final String name = DomainDrivenDesignDslValidator.findUnknownVar(_allVariables, _message);
+    final String name = DomainDrivenDesignDslValidator.findUnknownVar(_attributeNames, _message);
     boolean _notEquals = (!Objects.equal(name, null));
     if (_notEquals) {
       this.error(
@@ -272,9 +273,9 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
     String _message = event.getMessage();
     boolean _notEquals = (!Objects.equal(_message, null));
     if (_notEquals) {
-      Set<String> _allVariables = DomainDrivenDesignDslValidator.allVariables(event);
+      Set<String> _attributeNames = DomainDrivenDesignDslValidator.attributeNames(event);
       String _message_1 = event.getMessage();
-      final String name = DomainDrivenDesignDslValidator.findUnknownVar(_allVariables, _message_1);
+      final String name = DomainDrivenDesignDslValidator.findUnknownVar(_attributeNames, _message_1);
       boolean _notEquals_1 = (!Objects.equal(name, null));
       if (_notEquals_1) {
         this.error(
@@ -430,13 +431,13 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
     return null;
   }
   
-  private static Set<String> allVariables(final Event event) {
+  private static Set<String> attributeNames(final Event event) {
     Set<String> vars = new HashSet<String>();
-    EList<Variable> _variables = event.getVariables();
-    boolean _notEquals = (!Objects.equal(_variables, null));
+    EList<Attribute> _attributes = event.getAttributes();
+    boolean _notEquals = (!Objects.equal(_attributes, null));
     if (_notEquals) {
-      EList<Variable> _variables_1 = event.getVariables();
-      for (final Variable v : _variables_1) {
+      EList<Attribute> _attributes_1 = event.getAttributes();
+      for (final Attribute v : _attributes_1) {
         String _name = v.getName();
         vars.add(_name);
       }
@@ -444,13 +445,13 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
     return vars;
   }
   
-  private static Set<String> allVariables(final org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception ex) {
+  private static Set<String> attributeNames(final org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception ex) {
     Set<String> vars = new HashSet<String>();
-    EList<Variable> _variables = ex.getVariables();
-    boolean _notEquals = (!Objects.equal(_variables, null));
+    EList<Attribute> _attributes = ex.getAttributes();
+    boolean _notEquals = (!Objects.equal(_attributes, null));
     if (_notEquals) {
-      EList<Variable> _variables_1 = ex.getVariables();
-      for (final Variable v : _variables_1) {
+      EList<Attribute> _attributes_1 = ex.getAttributes();
+      for (final Attribute v : _attributes_1) {
         String _name = v.getName();
         vars.add(_name);
       }
@@ -458,25 +459,25 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
     return vars;
   }
   
-  private static Set<String> allVariables(final Constraint constraint) {
+  private static Set<String> allAttributeNames(final Constraint constraint) {
     Set<String> vars = new HashSet<String>();
-    EList<Variable> _variables = constraint.getVariables();
-    boolean _notEquals = (!Objects.equal(_variables, null));
+    EList<Attribute> _attributes = constraint.getAttributes();
+    boolean _notEquals = (!Objects.equal(_attributes, null));
     if (_notEquals) {
-      EList<Variable> _variables_1 = constraint.getVariables();
-      for (final Variable v : _variables_1) {
+      EList<Attribute> _attributes_1 = constraint.getAttributes();
+      for (final Attribute v : _attributes_1) {
         String _name = v.getName();
         vars.add(_name);
       }
     }
     vars.add("vv");
     ConstraintTarget target = constraint.getTarget();
-    if ((target instanceof AbstractVO)) {
-      EList<Variable> _variables_2 = ((AbstractVO)target).getVariables();
-      boolean _notEquals_1 = (!Objects.equal(_variables_2, null));
+    if ((target instanceof InternalType)) {
+      EList<Attribute> _attributes_2 = ((InternalType)target).getAttributes();
+      boolean _notEquals_1 = (!Objects.equal(_attributes_2, null));
       if (_notEquals_1) {
-        EList<Variable> _variables_3 = ((AbstractVO)target).getVariables();
-        for (final Variable v_1 : _variables_3) {
+        EList<Attribute> _attributes_3 = ((InternalType)target).getAttributes();
+        for (final Attribute v_1 : _attributes_3) {
           String _name_1 = v_1.getName();
           String _plus = ("vv_" + _name_1);
           vars.add(_plus);

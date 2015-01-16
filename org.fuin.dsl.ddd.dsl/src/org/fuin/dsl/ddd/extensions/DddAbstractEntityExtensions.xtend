@@ -56,7 +56,7 @@ class DddAbstractEntityExtensions {
 	 */
 	def static Set<Entity> childEntities(AbstractEntity parent) {
 		var Set<Entity> childs = new HashSet<Entity>();
-		for (v : parent.variables) {
+		for (v : parent.attributes) {
 			if (v.type instanceof Entity) {
 				childs.add(v.type as Entity);
 			}

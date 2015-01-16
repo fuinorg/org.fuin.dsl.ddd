@@ -12,7 +12,6 @@ import org.eclipse.xtext.resource.impl.ResourceDescriptionsProvider
 import org.eclipse.xtext.validation.Check
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractElement
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntity
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractVO
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget
@@ -21,11 +20,11 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.InternalType
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Method
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Namespace
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Service
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable
 
 /**
  * Custom validation rules. 
@@ -76,7 +75,7 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 
 	@Check
 	def checkVariablesInConstraintMessage(Constraint constraint) {
-		val name = findUnknownVar(constraint.allVariables, constraint.message);
+		val name = findUnknownVar(constraint.allAttributeNames, constraint.message);
 		if (name != null) {
 			error(
 				"A variable with the name '" + name + "' is unknown",
@@ -89,7 +88,7 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 
 	@Check
 	def checkVariablesInExceptionMessage(Exception ex) {
-		val name = findUnknownVar(ex.allVariables, ex.message);
+		val name = findUnknownVar(ex.attributeNames, ex.message);
 		if (name != null) {
 			error(
 				"A variable '" + name + "' is not defined in the exception",
@@ -200,7 +199,7 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 	@Check
 	def checkVariablesInEventMessage(Event event) {
 		if (event.message != null) {
-			val name = findUnknownVar(event.allVariables, event.message);
+			val name = findUnknownVar(event.attributeNames, event.message);
 			if (name != null) {
 				error(
 					"A variable with the name '" + name + "' is unknown",
@@ -291,38 +290,38 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 		return null
 	}
 
-	private static def Set<String> allVariables(Event event) {
+	private static def Set<String> attributeNames(Event event) {
 		var Set<String> vars = new HashSet<String>();
-		if (event.variables != null) {
-			for (v : event.variables) {
+		if (event.attributes != null) {
+			for (v : event.attributes) {
 				vars.add(v.name);
 			}
 		}
 		return vars;
 	}
 
-	private static def Set<String> allVariables(Exception ex) {
+	private static def Set<String> attributeNames(Exception ex) {
 		var Set<String> vars = new HashSet<String>();
-		if (ex.variables != null) {
-			for (v : ex.variables) {
+		if (ex.attributes != null) {
+			for (v : ex.attributes) {
 				vars.add(v.name);
 			}
 		}
 		return vars;
 	}
 
-	private static def Set<String> allVariables(Constraint constraint) {
+	private static def Set<String> allAttributeNames(Constraint constraint) {
 		var Set<String> vars = new HashSet<String>();
-		if (constraint.variables != null) {
-			for (v : constraint.variables) {
+		if (constraint.attributes != null) {
+			for (v : constraint.attributes) {
 				vars.add(v.name);
 			}
 		}
 		vars.add("vv");
 		var ConstraintTarget target = constraint.target;
-		if (target instanceof AbstractVO) {
-			if (target.variables != null) {
-				for (v : target.variables) {
+		if (target instanceof InternalType) {
+			if (target.attributes != null) {
+				for (v : target.attributes) {
 					vars.add("vv_" + v.name);
 				}
 			}

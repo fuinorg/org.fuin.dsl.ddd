@@ -17,8 +17,8 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
 
 /**
  * <!-- begin-user-doc -->
@@ -28,7 +28,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ExceptionImpl#getCid <em>Cid</em>}</li>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ExceptionImpl#getVariables <em>Variables</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ExceptionImpl#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ExceptionImpl#getMessage <em>Message</em>}</li>
  * </ul>
  * </p>
@@ -58,14 +58,14 @@ public class ExceptionImpl extends AbstractElementImpl implements org.fuin.dsl.d
   protected int cid = CID_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getVariables() <em>Variables</em>}' containment reference list.
+   * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVariables()
+   * @see #getAttributes()
    * @generated
    * @ordered
    */
-  protected EList<Variable> variables;
+  protected EList<Attribute> attributes;
 
   /**
    * The default value of the '{@link #getMessage() <em>Message</em>}' attribute.
@@ -136,13 +136,13 @@ public class ExceptionImpl extends AbstractElementImpl implements org.fuin.dsl.d
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Variable> getVariables()
+  public EList<Attribute> getAttributes()
   {
-    if (variables == null)
+    if (attributes == null)
     {
-      variables = new EObjectContainmentEList<Variable>(Variable.class, this, DomainDrivenDesignDslPackage.EXCEPTION__VARIABLES);
+      attributes = new EObjectContainmentEList<Attribute>(Attribute.class, this, DomainDrivenDesignDslPackage.EXCEPTION__ATTRIBUTES);
     }
-    return variables;
+    return attributes;
   }
 
   /**
@@ -178,8 +178,8 @@ public class ExceptionImpl extends AbstractElementImpl implements org.fuin.dsl.d
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.EXCEPTION__VARIABLES:
-        return ((InternalEList<?>)getVariables()).basicRemove(otherEnd, msgs);
+      case DomainDrivenDesignDslPackage.EXCEPTION__ATTRIBUTES:
+        return ((InternalEList<?>)getAttributes()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -196,8 +196,8 @@ public class ExceptionImpl extends AbstractElementImpl implements org.fuin.dsl.d
     {
       case DomainDrivenDesignDslPackage.EXCEPTION__CID:
         return getCid();
-      case DomainDrivenDesignDslPackage.EXCEPTION__VARIABLES:
-        return getVariables();
+      case DomainDrivenDesignDslPackage.EXCEPTION__ATTRIBUTES:
+        return getAttributes();
       case DomainDrivenDesignDslPackage.EXCEPTION__MESSAGE:
         return getMessage();
     }
@@ -218,9 +218,9 @@ public class ExceptionImpl extends AbstractElementImpl implements org.fuin.dsl.d
       case DomainDrivenDesignDslPackage.EXCEPTION__CID:
         setCid((Integer)newValue);
         return;
-      case DomainDrivenDesignDslPackage.EXCEPTION__VARIABLES:
-        getVariables().clear();
-        getVariables().addAll((Collection<? extends Variable>)newValue);
+      case DomainDrivenDesignDslPackage.EXCEPTION__ATTRIBUTES:
+        getAttributes().clear();
+        getAttributes().addAll((Collection<? extends Attribute>)newValue);
         return;
       case DomainDrivenDesignDslPackage.EXCEPTION__MESSAGE:
         setMessage((String)newValue);
@@ -242,8 +242,8 @@ public class ExceptionImpl extends AbstractElementImpl implements org.fuin.dsl.d
       case DomainDrivenDesignDslPackage.EXCEPTION__CID:
         setCid(CID_EDEFAULT);
         return;
-      case DomainDrivenDesignDslPackage.EXCEPTION__VARIABLES:
-        getVariables().clear();
+      case DomainDrivenDesignDslPackage.EXCEPTION__ATTRIBUTES:
+        getAttributes().clear();
         return;
       case DomainDrivenDesignDslPackage.EXCEPTION__MESSAGE:
         setMessage(MESSAGE_EDEFAULT);
@@ -264,8 +264,8 @@ public class ExceptionImpl extends AbstractElementImpl implements org.fuin.dsl.d
     {
       case DomainDrivenDesignDslPackage.EXCEPTION__CID:
         return cid != CID_EDEFAULT;
-      case DomainDrivenDesignDslPackage.EXCEPTION__VARIABLES:
-        return variables != null && !variables.isEmpty();
+      case DomainDrivenDesignDslPackage.EXCEPTION__ATTRIBUTES:
+        return attributes != null && !attributes.isEmpty();
       case DomainDrivenDesignDslPackage.EXCEPTION__MESSAGE:
         return MESSAGE_EDEFAULT == null ? message != null : !MESSAGE_EDEFAULT.equals(message);
     }

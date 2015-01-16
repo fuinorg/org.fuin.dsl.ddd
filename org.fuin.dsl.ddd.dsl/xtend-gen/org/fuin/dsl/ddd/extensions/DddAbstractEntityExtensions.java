@@ -7,13 +7,13 @@ import java.util.Set;
 import org.eclipse.emf.common.util.EList;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntity;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constructor;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Method;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Service;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Type;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
 import org.fuin.dsl.ddd.extensions.DddCollectionExtensions;
 
 /**
@@ -64,8 +64,8 @@ public class DddAbstractEntityExtensions {
    */
   public static Set<Entity> childEntities(final AbstractEntity parent) {
     Set<Entity> childs = new HashSet<Entity>();
-    EList<Variable> _variables = parent.getVariables();
-    for (final Variable v : _variables) {
+    EList<Attribute> _attributes = parent.getAttributes();
+    for (final Attribute v : _attributes) {
       Type _type = v.getType();
       if ((_type instanceof Entity)) {
         Type _type_1 = v.getType();

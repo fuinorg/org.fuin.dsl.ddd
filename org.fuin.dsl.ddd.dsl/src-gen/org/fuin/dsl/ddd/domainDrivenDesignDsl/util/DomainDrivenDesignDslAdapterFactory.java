@@ -16,7 +16,9 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractVO;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.BooleanLiteral;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.BusinessRules;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget;
@@ -39,6 +41,8 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Namespace;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.NullLiteral;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.NumberLiteral;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.OverriddenTypeMetaInfo;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Parameter;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Preconditions;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ReturnType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Service;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.StringLiteral;
@@ -251,9 +255,29 @@ public class DomainDrivenDesignDslAdapterFactory extends AdapterFactoryImpl
         return createVariableAdapter();
       }
       @Override
+      public Adapter caseAttribute(Attribute object)
+      {
+        return createAttributeAdapter();
+      }
+      @Override
+      public Adapter caseParameter(Parameter object)
+      {
+        return createParameterAdapter();
+      }
+      @Override
       public Adapter caseInvariants(Invariants object)
       {
         return createInvariantsAdapter();
+      }
+      @Override
+      public Adapter casePreconditions(Preconditions object)
+      {
+        return createPreconditionsAdapter();
+      }
+      @Override
+      public Adapter caseBusinessRules(BusinessRules object)
+      {
+        return createBusinessRulesAdapter();
       }
       @Override
       public Adapter caseOverriddenTypeMetaInfo(OverriddenTypeMetaInfo object)
@@ -738,6 +762,36 @@ public class DomainDrivenDesignDslAdapterFactory extends AdapterFactoryImpl
   }
 
   /**
+   * Creates a new adapter for an object of class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute <em>Attribute</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute
+   * @generated
+   */
+  public Adapter createAttributeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Parameter <em>Parameter</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Parameter
+   * @generated
+   */
+  public Adapter createParameterAdapter()
+  {
+    return null;
+  }
+
+  /**
    * Creates a new adapter for an object of class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Invariants <em>Invariants</em>}'.
    * <!-- begin-user-doc -->
    * This default implementation returns null so that we can easily ignore cases;
@@ -748,6 +802,36 @@ public class DomainDrivenDesignDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createInvariantsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Preconditions <em>Preconditions</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Preconditions
+   * @generated
+   */
+  public Adapter createPreconditionsAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.BusinessRules <em>Business Rules</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.BusinessRules
+   * @generated
+   */
+  public Adapter createBusinessRulesAdapter()
   {
     return null;
   }

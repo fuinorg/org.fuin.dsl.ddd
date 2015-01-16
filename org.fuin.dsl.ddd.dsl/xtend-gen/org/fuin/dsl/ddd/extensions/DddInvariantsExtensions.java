@@ -1,12 +1,11 @@
 package org.fuin.dsl.ddd.extensions;
 
 import com.google.common.base.Objects;
-import java.util.Collections;
+import java.util.ArrayList;
 import java.util.List;
 import org.eclipse.emf.common.util.EList;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Invariants;
-import org.fuin.dsl.ddd.extensions.DddCollectionExtensions;
 
 /**
  * Provides extension methods for Invariants.
@@ -14,18 +13,25 @@ import org.fuin.dsl.ddd.extensions.DddCollectionExtensions;
 @SuppressWarnings("all")
 public class DddInvariantsExtensions {
   /**
-   * Returns a list of invariants instances in a null safe way.
+   * Returns a non-null constraint list.
    * 
-   * @param invariants List of invariants or <code>null</code>.
+   * @param invariants Container with constraints.
    * 
-   * @return List or <code>null</code>.
+   * @return List of constraints that is never <code<null</code>.
    */
-  public static List<ConstraintInstance> nullSafeInstances(final Invariants invariants) {
+  public static List<ConstraintInstance> nullSafe(final Invariants invariants) {
+    boolean _or = false;
     boolean _equals = Objects.equal(invariants, null);
     if (_equals) {
-      return Collections.EMPTY_LIST;
+      _or = true;
+    } else {
+      EList<ConstraintInstance> _constraintInstances = invariants.getConstraintInstances();
+      boolean _equals_1 = Objects.equal(_constraintInstances, null);
+      _or = _equals_1;
     }
-    EList<ConstraintInstance> _instances = invariants.getInstances();
-    return DddCollectionExtensions.<ConstraintInstance>nullSafe(_instances);
+    if (_or) {
+      return new ArrayList<ConstraintInstance>();
+    }
+    return invariants.getConstraintInstances();
   }
 }

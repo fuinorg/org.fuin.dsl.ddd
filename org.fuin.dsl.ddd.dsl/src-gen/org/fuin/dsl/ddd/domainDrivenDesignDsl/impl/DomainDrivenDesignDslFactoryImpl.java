@@ -17,7 +17,9 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractVO;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.BooleanLiteral;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.BusinessRules;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget;
@@ -41,6 +43,8 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Namespace;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.NullLiteral;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.NumberLiteral;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.OverriddenTypeMetaInfo;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Parameter;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Preconditions;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ReturnType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Service;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.StringLiteral;
@@ -129,7 +133,11 @@ public class DomainDrivenDesignDslFactoryImpl extends EFactoryImpl implements Do
       case DomainDrivenDesignDslPackage.METHOD: return createMethod();
       case DomainDrivenDesignDslPackage.TYPE_META_INFO: return createTypeMetaInfo();
       case DomainDrivenDesignDslPackage.VARIABLE: return createVariable();
+      case DomainDrivenDesignDslPackage.ATTRIBUTE: return createAttribute();
+      case DomainDrivenDesignDslPackage.PARAMETER: return createParameter();
       case DomainDrivenDesignDslPackage.INVARIANTS: return createInvariants();
+      case DomainDrivenDesignDslPackage.PRECONDITIONS: return createPreconditions();
+      case DomainDrivenDesignDslPackage.BUSINESS_RULES: return createBusinessRules();
       case DomainDrivenDesignDslPackage.OVERRIDDEN_TYPE_META_INFO: return createOverriddenTypeMetaInfo();
       case DomainDrivenDesignDslPackage.CONSTRAINT_INSTANCE: return createConstraintInstance();
       case DomainDrivenDesignDslPackage.SERVICE: return createService();
@@ -456,10 +464,54 @@ public class DomainDrivenDesignDslFactoryImpl extends EFactoryImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
+  public Attribute createAttribute()
+  {
+    AttributeImpl attribute = new AttributeImpl();
+    return attribute;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Parameter createParameter()
+  {
+    ParameterImpl parameter = new ParameterImpl();
+    return parameter;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public Invariants createInvariants()
   {
     InvariantsImpl invariants = new InvariantsImpl();
     return invariants;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Preconditions createPreconditions()
+  {
+    PreconditionsImpl preconditions = new PreconditionsImpl();
+    return preconditions;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BusinessRules createBusinessRules()
+  {
+    BusinessRulesImpl businessRules = new BusinessRulesImpl();
+    return businessRules;
   }
 
   /**

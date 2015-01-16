@@ -14,7 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint#getTarget <em>Target</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint#getException <em>Exception</em>}</li>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint#getVariables <em>Variables</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint#getMessage <em>Message</em>}</li>
  * </ul>
  * </p>
@@ -78,20 +78,20 @@ public interface Constraint extends AbstractElement
   void setException(org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception value);
 
   /**
-   * Returns the value of the '<em><b>Variables</b></em>' containment reference list.
-   * The list contents are of type {@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable}.
+   * Returns the value of the '<em><b>Attributes</b></em>' containment reference list.
+   * The list contents are of type {@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Variables</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Attributes</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Variables</em>' containment reference list.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getConstraint_Variables()
+   * @return the value of the '<em>Attributes</em>' containment reference list.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getConstraint_Attributes()
    * @model containment="true"
    * @generated
    */
-  EList<Variable> getVariables();
+  EList<Attribute> getAttributes();
 
   /**
    * Returns the value of the '<em><b>Message</b></em>' attribute.

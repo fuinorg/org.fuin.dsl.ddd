@@ -3,6 +3,7 @@
 package org.fuin.dsl.ddd.domainDrivenDesignDsl.impl;
 
 import java.util.Collection;
+import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -20,11 +21,12 @@ import org.eclipse.emf.ecore.util.EObjectResolvingEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.BusinessRules;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Parameter;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Preconditions;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Service;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
 
 /**
  * <!-- begin-user-doc -->
@@ -35,12 +37,14 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
  * <ul>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AbstractMethodImpl#getDoc <em>Doc</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AbstractMethodImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AbstractMethodImpl#getConstraintCalls <em>Constraint Calls</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AbstractMethodImpl#getPreconditions <em>Preconditions</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AbstractMethodImpl#getBusinessRules <em>Business Rules</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AbstractMethodImpl#getFiredEvents <em>Fired Events</em>}</li>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AbstractMethodImpl#getVariables <em>Variables</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AbstractMethodImpl#getParameters <em>Parameters</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AbstractMethodImpl#getService <em>Service</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AbstractMethodImpl#getServices <em>Services</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AbstractMethodImpl#getEvents <em>Events</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AbstractMethodImpl#getUserContent <em>User Content</em>}</li>
  * </ul>
  * </p>
  *
@@ -89,14 +93,24 @@ public class AbstractMethodImpl extends MinimalEObjectImpl.Container implements 
   protected String name = NAME_EDEFAULT;
 
   /**
-   * The cached value of the '{@link #getConstraintCalls() <em>Constraint Calls</em>}' containment reference list.
+   * The cached value of the '{@link #getPreconditions() <em>Preconditions</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getConstraintCalls()
+   * @see #getPreconditions()
    * @generated
    * @ordered
    */
-  protected EList<ConstraintInstance> constraintCalls;
+  protected Preconditions preconditions;
+
+  /**
+   * The cached value of the '{@link #getBusinessRules() <em>Business Rules</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getBusinessRules()
+   * @generated
+   * @ordered
+   */
+  protected BusinessRules businessRules;
 
   /**
    * The cached value of the '{@link #getFiredEvents() <em>Fired Events</em>}' reference list.
@@ -109,14 +123,14 @@ public class AbstractMethodImpl extends MinimalEObjectImpl.Container implements 
   protected EList<Event> firedEvents;
 
   /**
-   * The cached value of the '{@link #getVariables() <em>Variables</em>}' containment reference list.
+   * The cached value of the '{@link #getParameters() <em>Parameters</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVariables()
+   * @see #getParameters()
    * @generated
    * @ordered
    */
-  protected EList<Variable> variables;
+  protected EList<Parameter> parameters;
 
   /**
    * The cached value of the '{@link #getService() <em>Service</em>}' reference.
@@ -147,6 +161,16 @@ public class AbstractMethodImpl extends MinimalEObjectImpl.Container implements 
    * @ordered
    */
   protected EList<Event> events;
+
+  /**
+   * The cached value of the '{@link #getUserContent() <em>User Content</em>}' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getUserContent()
+   * @generated
+   * @ordered
+   */
+  protected Map userContent;
 
   /**
    * <!-- begin-user-doc -->
@@ -220,13 +244,95 @@ public class AbstractMethodImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<ConstraintInstance> getConstraintCalls()
+  public Preconditions getPreconditions()
   {
-    if (constraintCalls == null)
+    return preconditions;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetPreconditions(Preconditions newPreconditions, NotificationChain msgs)
+  {
+    Preconditions oldPreconditions = preconditions;
+    preconditions = newPreconditions;
+    if (eNotificationRequired())
     {
-      constraintCalls = new EObjectContainmentEList<ConstraintInstance>(ConstraintInstance.class, this, DomainDrivenDesignDslPackage.ABSTRACT_METHOD__CONSTRAINT_CALLS);
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.ABSTRACT_METHOD__PRECONDITIONS, oldPreconditions, newPreconditions);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
     }
-    return constraintCalls;
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setPreconditions(Preconditions newPreconditions)
+  {
+    if (newPreconditions != preconditions)
+    {
+      NotificationChain msgs = null;
+      if (preconditions != null)
+        msgs = ((InternalEObject)preconditions).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DomainDrivenDesignDslPackage.ABSTRACT_METHOD__PRECONDITIONS, null, msgs);
+      if (newPreconditions != null)
+        msgs = ((InternalEObject)newPreconditions).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DomainDrivenDesignDslPackage.ABSTRACT_METHOD__PRECONDITIONS, null, msgs);
+      msgs = basicSetPreconditions(newPreconditions, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.ABSTRACT_METHOD__PRECONDITIONS, newPreconditions, newPreconditions));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public BusinessRules getBusinessRules()
+  {
+    return businessRules;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetBusinessRules(BusinessRules newBusinessRules, NotificationChain msgs)
+  {
+    BusinessRules oldBusinessRules = businessRules;
+    businessRules = newBusinessRules;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.ABSTRACT_METHOD__BUSINESS_RULES, oldBusinessRules, newBusinessRules);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setBusinessRules(BusinessRules newBusinessRules)
+  {
+    if (newBusinessRules != businessRules)
+    {
+      NotificationChain msgs = null;
+      if (businessRules != null)
+        msgs = ((InternalEObject)businessRules).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DomainDrivenDesignDslPackage.ABSTRACT_METHOD__BUSINESS_RULES, null, msgs);
+      if (newBusinessRules != null)
+        msgs = ((InternalEObject)newBusinessRules).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DomainDrivenDesignDslPackage.ABSTRACT_METHOD__BUSINESS_RULES, null, msgs);
+      msgs = basicSetBusinessRules(newBusinessRules, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.ABSTRACT_METHOD__BUSINESS_RULES, newBusinessRules, newBusinessRules));
   }
 
   /**
@@ -248,13 +354,13 @@ public class AbstractMethodImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Variable> getVariables()
+  public EList<Parameter> getParameters()
   {
-    if (variables == null)
+    if (parameters == null)
     {
-      variables = new EObjectContainmentEList<Variable>(Variable.class, this, DomainDrivenDesignDslPackage.ABSTRACT_METHOD__VARIABLES);
+      parameters = new EObjectContainmentEList<Parameter>(Parameter.class, this, DomainDrivenDesignDslPackage.ABSTRACT_METHOD__PARAMETERS);
     }
-    return variables;
+    return parameters;
   }
 
   /**
@@ -333,15 +439,40 @@ public class AbstractMethodImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
+  public Map getUserContent()
+  {
+    return userContent;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setUserContent(Map newUserContent)
+  {
+    Map oldUserContent = userContent;
+    userContent = newUserContent;
+    if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.ABSTRACT_METHOD__USER_CONTENT, oldUserContent, userContent));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__CONSTRAINT_CALLS:
-        return ((InternalEList<?>)getConstraintCalls()).basicRemove(otherEnd, msgs);
-      case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__VARIABLES:
-        return ((InternalEList<?>)getVariables()).basicRemove(otherEnd, msgs);
+      case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__PRECONDITIONS:
+        return basicSetPreconditions(null, msgs);
+      case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__BUSINESS_RULES:
+        return basicSetBusinessRules(null, msgs);
+      case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__PARAMETERS:
+        return ((InternalEList<?>)getParameters()).basicRemove(otherEnd, msgs);
       case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__SERVICES:
         return ((InternalEList<?>)getServices()).basicRemove(otherEnd, msgs);
       case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__EVENTS:
@@ -364,12 +495,14 @@ public class AbstractMethodImpl extends MinimalEObjectImpl.Container implements 
         return getDoc();
       case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__NAME:
         return getName();
-      case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__CONSTRAINT_CALLS:
-        return getConstraintCalls();
+      case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__PRECONDITIONS:
+        return getPreconditions();
+      case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__BUSINESS_RULES:
+        return getBusinessRules();
       case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__FIRED_EVENTS:
         return getFiredEvents();
-      case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__VARIABLES:
-        return getVariables();
+      case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__PARAMETERS:
+        return getParameters();
       case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__SERVICE:
         if (resolve) return getService();
         return basicGetService();
@@ -377,6 +510,8 @@ public class AbstractMethodImpl extends MinimalEObjectImpl.Container implements 
         return getServices();
       case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__EVENTS:
         return getEvents();
+      case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__USER_CONTENT:
+        return getUserContent();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -398,17 +533,19 @@ public class AbstractMethodImpl extends MinimalEObjectImpl.Container implements 
       case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__NAME:
         setName((String)newValue);
         return;
-      case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__CONSTRAINT_CALLS:
-        getConstraintCalls().clear();
-        getConstraintCalls().addAll((Collection<? extends ConstraintInstance>)newValue);
+      case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__PRECONDITIONS:
+        setPreconditions((Preconditions)newValue);
+        return;
+      case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__BUSINESS_RULES:
+        setBusinessRules((BusinessRules)newValue);
         return;
       case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__FIRED_EVENTS:
         getFiredEvents().clear();
         getFiredEvents().addAll((Collection<? extends Event>)newValue);
         return;
-      case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__VARIABLES:
-        getVariables().clear();
-        getVariables().addAll((Collection<? extends Variable>)newValue);
+      case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__PARAMETERS:
+        getParameters().clear();
+        getParameters().addAll((Collection<? extends Parameter>)newValue);
         return;
       case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__SERVICE:
         setService((Service)newValue);
@@ -420,6 +557,9 @@ public class AbstractMethodImpl extends MinimalEObjectImpl.Container implements 
       case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__EVENTS:
         getEvents().clear();
         getEvents().addAll((Collection<? extends Event>)newValue);
+        return;
+      case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__USER_CONTENT:
+        setUserContent((Map)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -441,14 +581,17 @@ public class AbstractMethodImpl extends MinimalEObjectImpl.Container implements 
       case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__CONSTRAINT_CALLS:
-        getConstraintCalls().clear();
+      case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__PRECONDITIONS:
+        setPreconditions((Preconditions)null);
+        return;
+      case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__BUSINESS_RULES:
+        setBusinessRules((BusinessRules)null);
         return;
       case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__FIRED_EVENTS:
         getFiredEvents().clear();
         return;
-      case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__VARIABLES:
-        getVariables().clear();
+      case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__PARAMETERS:
+        getParameters().clear();
         return;
       case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__SERVICE:
         setService((Service)null);
@@ -458,6 +601,9 @@ public class AbstractMethodImpl extends MinimalEObjectImpl.Container implements 
         return;
       case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__EVENTS:
         getEvents().clear();
+        return;
+      case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__USER_CONTENT:
+        setUserContent((Map)null);
         return;
     }
     super.eUnset(featureID);
@@ -477,18 +623,22 @@ public class AbstractMethodImpl extends MinimalEObjectImpl.Container implements 
         return DOC_EDEFAULT == null ? doc != null : !DOC_EDEFAULT.equals(doc);
       case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__CONSTRAINT_CALLS:
-        return constraintCalls != null && !constraintCalls.isEmpty();
+      case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__PRECONDITIONS:
+        return preconditions != null;
+      case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__BUSINESS_RULES:
+        return businessRules != null;
       case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__FIRED_EVENTS:
         return firedEvents != null && !firedEvents.isEmpty();
-      case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__VARIABLES:
-        return variables != null && !variables.isEmpty();
+      case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__PARAMETERS:
+        return parameters != null && !parameters.isEmpty();
       case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__SERVICE:
         return service != null;
       case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__SERVICES:
         return services != null && !services.isEmpty();
       case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__EVENTS:
         return events != null && !events.isEmpty();
+      case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__USER_CONTENT:
+        return userContent != null;
     }
     return super.eIsSet(featureID);
   }
@@ -508,6 +658,8 @@ public class AbstractMethodImpl extends MinimalEObjectImpl.Container implements 
     result.append(doc);
     result.append(", name: ");
     result.append(name);
+    result.append(", userContent: ");
+    result.append(userContent);
     result.append(')');
     return result.toString();
   }

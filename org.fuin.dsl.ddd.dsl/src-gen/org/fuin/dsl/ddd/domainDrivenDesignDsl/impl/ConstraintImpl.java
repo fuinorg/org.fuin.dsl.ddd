@@ -17,10 +17,10 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
 
 /**
  * <!-- begin-user-doc -->
@@ -31,7 +31,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
  * <ul>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConstraintImpl#getTarget <em>Target</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConstraintImpl#getException <em>Exception</em>}</li>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConstraintImpl#getVariables <em>Variables</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConstraintImpl#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConstraintImpl#getMessage <em>Message</em>}</li>
  * </ul>
  * </p>
@@ -61,14 +61,14 @@ public class ConstraintImpl extends AbstractElementImpl implements Constraint
   protected org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception exception;
 
   /**
-   * The cached value of the '{@link #getVariables() <em>Variables</em>}' containment reference list.
+   * The cached value of the '{@link #getAttributes() <em>Attributes</em>}' containment reference list.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getVariables()
+   * @see #getAttributes()
    * @generated
    * @ordered
    */
-  protected EList<Variable> variables;
+  protected EList<Attribute> attributes;
 
   /**
    * The default value of the '{@link #getMessage() <em>Message</em>}' attribute.
@@ -202,13 +202,13 @@ public class ConstraintImpl extends AbstractElementImpl implements Constraint
    * <!-- end-user-doc -->
    * @generated
    */
-  public EList<Variable> getVariables()
+  public EList<Attribute> getAttributes()
   {
-    if (variables == null)
+    if (attributes == null)
     {
-      variables = new EObjectContainmentEList<Variable>(Variable.class, this, DomainDrivenDesignDslPackage.CONSTRAINT__VARIABLES);
+      attributes = new EObjectContainmentEList<Attribute>(Attribute.class, this, DomainDrivenDesignDslPackage.CONSTRAINT__ATTRIBUTES);
     }
-    return variables;
+    return attributes;
   }
 
   /**
@@ -244,8 +244,8 @@ public class ConstraintImpl extends AbstractElementImpl implements Constraint
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.CONSTRAINT__VARIABLES:
-        return ((InternalEList<?>)getVariables()).basicRemove(otherEnd, msgs);
+      case DomainDrivenDesignDslPackage.CONSTRAINT__ATTRIBUTES:
+        return ((InternalEList<?>)getAttributes()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -266,8 +266,8 @@ public class ConstraintImpl extends AbstractElementImpl implements Constraint
       case DomainDrivenDesignDslPackage.CONSTRAINT__EXCEPTION:
         if (resolve) return getException();
         return basicGetException();
-      case DomainDrivenDesignDslPackage.CONSTRAINT__VARIABLES:
-        return getVariables();
+      case DomainDrivenDesignDslPackage.CONSTRAINT__ATTRIBUTES:
+        return getAttributes();
       case DomainDrivenDesignDslPackage.CONSTRAINT__MESSAGE:
         return getMessage();
     }
@@ -291,9 +291,9 @@ public class ConstraintImpl extends AbstractElementImpl implements Constraint
       case DomainDrivenDesignDslPackage.CONSTRAINT__EXCEPTION:
         setException((org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception)newValue);
         return;
-      case DomainDrivenDesignDslPackage.CONSTRAINT__VARIABLES:
-        getVariables().clear();
-        getVariables().addAll((Collection<? extends Variable>)newValue);
+      case DomainDrivenDesignDslPackage.CONSTRAINT__ATTRIBUTES:
+        getAttributes().clear();
+        getAttributes().addAll((Collection<? extends Attribute>)newValue);
         return;
       case DomainDrivenDesignDslPackage.CONSTRAINT__MESSAGE:
         setMessage((String)newValue);
@@ -318,8 +318,8 @@ public class ConstraintImpl extends AbstractElementImpl implements Constraint
       case DomainDrivenDesignDslPackage.CONSTRAINT__EXCEPTION:
         setException((org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception)null);
         return;
-      case DomainDrivenDesignDslPackage.CONSTRAINT__VARIABLES:
-        getVariables().clear();
+      case DomainDrivenDesignDslPackage.CONSTRAINT__ATTRIBUTES:
+        getAttributes().clear();
         return;
       case DomainDrivenDesignDslPackage.CONSTRAINT__MESSAGE:
         setMessage(MESSAGE_EDEFAULT);
@@ -342,8 +342,8 @@ public class ConstraintImpl extends AbstractElementImpl implements Constraint
         return target != null;
       case DomainDrivenDesignDslPackage.CONSTRAINT__EXCEPTION:
         return exception != null;
-      case DomainDrivenDesignDslPackage.CONSTRAINT__VARIABLES:
-        return variables != null && !variables.isEmpty();
+      case DomainDrivenDesignDslPackage.CONSTRAINT__ATTRIBUTES:
+        return attributes != null && !attributes.isEmpty();
       case DomainDrivenDesignDslPackage.CONSTRAINT__MESSAGE:
         return MESSAGE_EDEFAULT == null ? message != null : !MESSAGE_EDEFAULT.equals(message);
     }

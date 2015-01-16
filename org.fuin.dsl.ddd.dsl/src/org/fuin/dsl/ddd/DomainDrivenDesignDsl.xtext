@@ -49,49 +49,49 @@ ExternalType:
 Constraint:
 	doc=DOC? 
 	'constraint' name=ID ('input' target=[ConstraintTarget|FQN])? ('exception' exception=[Exception|FQN])? '{'
-		variables+=Variable* 
+		attributes+=Attribute* 
 		('message' message=STRING)?
 	'}';
 	
 Exception:
 	doc=DOC?
 	'exception' name=ID ('cid' cid=INT)? '{'
-		variables+=Variable* 
+		attributes+=Attribute* 
 		'message' message=STRING
 	'}';
 
 ValueObject:
 	doc=DOC? 
-	'value-object' name=ID ('base' base=[ExternalType|FQN])? '{'
+	'value-object' name=ID ('base' base=[ExternalType|FQN])? (invariants=Invariants)? '{'
 		metaInfo=TypeMetaInfo
-		variables+=Variable*
+		attributes+=Attribute*
 		constructors+=Constructor*
 		methods+=Method*
 	'}';
 
 EntityId:
 	doc=DOC?
-	'entity-id' name=ID 'identifies' entity=[Entity|FQN] ('base' base=[ExternalType|FQN])? '{'
+	'entity-id' name=ID 'identifies' entity=[Entity|FQN] ('base' base=[ExternalType|FQN])? (invariants=Invariants)? '{'
 		metaInfo=TypeMetaInfo
-		variables+=Variable*
+		attributes+=Attribute*
 		constructors+=Constructor*
 		methods+=Method*
 	'}';
 
 AggregateId:
 	doc=DOC?
-	'aggregate-id' name=ID 'identifies' entity=[Aggregate|FQN] ('base' base=[ExternalType|FQN])? '{'
+	'aggregate-id' name=ID 'identifies' entity=[Aggregate|FQN] ('base' base=[ExternalType|FQN])? (invariants=Invariants)? '{'
 		metaInfo=TypeMetaInfo
-		variables+=Variable*
+		attributes+=Attribute*
 		constructors+=Constructor*
 		methods+=Method*
 	'}';
 
 EnumObject:
 	doc=DOC?
-	'enum' name=ID ('base' base=[ExternalType|FQN])? '{'
+	'enum' name=ID ('base' base=[ExternalType|FQN])? (invariants=Invariants)? '{'
 		metaInfo=TypeMetaInfo
-		variables+=Variable*
+		attributes+=Attribute*
 		'instances' '{' instances+=EnumInstance+ '}'
 	'}';
 	
@@ -102,15 +102,15 @@ EnumInstance:
 Event:
 	doc=DOC? 
 	'event' name=ID '{'
-		variables+=Variable*
+		attributes+=Attribute*
 		('message' message=STRING)?
 	'}';
 
 Entity:
 	doc=DOC?
-	'entity' name=ID 'identifier' idType=[EntityId|FQN] 'root' root=[Aggregate|FQN] '{'
+	'entity' name=ID 'identifier' idType=[EntityId|FQN] 'root' root=[Aggregate|FQN] (invariants=Invariants)? '{'
 		metaInfo=TypeMetaInfo
-		variables+=Variable*
+		attributes+=Attribute*
 		constructors+=Constructor*
 		methods+=Method*
 		events+=Event*
@@ -118,9 +118,9 @@ Entity:
 
 Aggregate:
 	doc=DOC?
-	'aggregate' name=ID 'identifier' idType=[AggregateId|FQN] '{'
+	'aggregate' name=ID 'identifier' idType=[AggregateId|FQN] (invariants=Invariants)? '{'
 		metaInfo=TypeMetaInfo
-		variables+=Variable*
+		attributes+=Attribute*
 		constructors+=Constructor*
 		methods+=Method*
 		events+=Event*
@@ -131,8 +131,8 @@ AbstractMethod:
 	
 Constructor:
 	doc=DOC? 
-	'constructor' name=ID ('constraints' constraintCalls+=ConstraintInstance (',' constraintCalls+=ConstraintInstance)*)? ('fires' firedEvents+=[Event|FQN] (',' firedEvents+=[Event|FQN])*)? '{'
-		variables+=Variable*
+	'constructor' name=ID (preconditions=Preconditions)? (businessRules=BusinessRules)? ('fires' firedEvents+=[Event|FQN] (',' firedEvents+=[Event|FQN])*)? '{'
+		parameters+=Parameter*
 		service=[Service|FQN]?
 		services+=Service*
 		events+=Event*
@@ -144,8 +144,8 @@ ReturnType:
 
 Method:
 	doc=DOC? 
-	'method' name=ID ('ref' refMethod=[Method|FQN])? ('constraints' constraintCalls+=ConstraintInstance (',' constraintCalls+=ConstraintInstance)*)? ('fires' firedEvents+=[Event|FQN] (',' firedEvents+=[Event|FQN])*)? '{'
-		variables+=Variable*
+	'method' name=ID ('ref' refMethod=[Method|FQN])? (preconditions=Preconditions)? (businessRules=BusinessRules)? ('fires' firedEvents+=[Event|FQN] (',' firedEvents+=[Event|FQN])*)? '{'
+		parameters+=Parameter*
 		service=[Service|FQN]?
 		returnType=ReturnType?
 		services+=Service*
@@ -161,12 +161,26 @@ TypeMetaInfo:
     	('examples' (examples+=Literal*))?;
 
 Variable:
+	Attribute | Parameter;
+	
+Attribute:
 	doc=DOC? 
 	(nullable='nullable')? 
 	type=[Type|FQN] (multiplicity='*')? name=ID (invariants=Invariants)? (overridden=OverriddenTypeMetaInfo)?;
 
+Parameter:
+	doc=DOC? 
+	(nullable='nullable')? 
+	type=[Type|FQN] (multiplicity='*')? name=ID (preconditions=Preconditions)? (businessRules=BusinessRules)? (overridden=OverriddenTypeMetaInfo)?;
+
 Invariants:
-	'invariants' instances+=ConstraintInstance (',' instances+=ConstraintInstance)*;
+	'invariants' constraintInstances+=ConstraintInstance (',' constraintInstances+=ConstraintInstance)*;
+
+Preconditions:
+	'preconditions' constraintInstances+=ConstraintInstance (',' constraintInstances+=ConstraintInstance)*;
+
+BusinessRules:
+	'business-rules' constraintInstances+=ConstraintInstance (',' constraintInstances+=ConstraintInstance)*;
 
 OverriddenTypeMetaInfo:
 	'{' metaInfo=TypeMetaInfo '}';

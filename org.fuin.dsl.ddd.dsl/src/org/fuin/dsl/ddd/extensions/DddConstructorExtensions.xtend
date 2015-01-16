@@ -6,7 +6,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constructor
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception
 
-import static extension org.fuin.dsl.ddd.extensions.DddCollectionExtensions.*
+import static extension org.fuin.dsl.ddd.extensions.DddBusinessRulesExtensions.*
 
 /**
  * Provides extension methods for Constructor.
@@ -15,7 +15,7 @@ class DddConstructorExtensions {
 
 	def static List<Exception> allExceptions(Constructor constructor) {
 		var List<Exception> list = new ArrayList<Exception>()
-		for (cc : constructor.constraintCalls.nullSafe) {
+		for (cc : constructor.businessRules.nullSafe) {
 			list.add(cc.constraint.exception)
 		}
 		return list
@@ -23,7 +23,7 @@ class DddConstructorExtensions {
 
 	def static List<Constraint> allConstraints(Constructor constructor) {
 		val List<Constraint> list = new ArrayList<Constraint>()
-		for (cc : constructor.constraintCalls.nullSafe) {
+		for (cc : constructor.businessRules.nullSafe) {
 			list.add(cc.constraint)
 		}
 		return list

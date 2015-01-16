@@ -12,7 +12,6 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Invariants;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.OverriddenTypeMetaInfo;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Type;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
@@ -29,7 +28,6 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.VariableImpl#getType <em>Type</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.VariableImpl#getMultiplicity <em>Multiplicity</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.VariableImpl#getName <em>Name</em>}</li>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.VariableImpl#getInvariants <em>Invariants</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.VariableImpl#getOverridden <em>Overridden</em>}</li>
  * </ul>
  * </p>
@@ -127,16 +125,6 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
    * @ordered
    */
   protected String name = NAME_EDEFAULT;
-
-  /**
-   * The cached value of the '{@link #getInvariants() <em>Invariants</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getInvariants()
-   * @generated
-   * @ordered
-   */
-  protected Invariants invariants;
 
   /**
    * The cached value of the '{@link #getOverridden() <em>Overridden</em>}' containment reference.
@@ -309,54 +297,6 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
    * <!-- end-user-doc -->
    * @generated
    */
-  public Invariants getInvariants()
-  {
-    return invariants;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public NotificationChain basicSetInvariants(Invariants newInvariants, NotificationChain msgs)
-  {
-    Invariants oldInvariants = invariants;
-    invariants = newInvariants;
-    if (eNotificationRequired())
-    {
-      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.VARIABLE__INVARIANTS, oldInvariants, newInvariants);
-      if (msgs == null) msgs = notification; else msgs.add(notification);
-    }
-    return msgs;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setInvariants(Invariants newInvariants)
-  {
-    if (newInvariants != invariants)
-    {
-      NotificationChain msgs = null;
-      if (invariants != null)
-        msgs = ((InternalEObject)invariants).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DomainDrivenDesignDslPackage.VARIABLE__INVARIANTS, null, msgs);
-      if (newInvariants != null)
-        msgs = ((InternalEObject)newInvariants).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DomainDrivenDesignDslPackage.VARIABLE__INVARIANTS, null, msgs);
-      msgs = basicSetInvariants(newInvariants, msgs);
-      if (msgs != null) msgs.dispatch();
-    }
-    else if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.VARIABLE__INVARIANTS, newInvariants, newInvariants));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public OverriddenTypeMetaInfo getOverridden()
   {
     return overridden;
@@ -410,8 +350,6 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.VARIABLE__INVARIANTS:
-        return basicSetInvariants(null, msgs);
       case DomainDrivenDesignDslPackage.VARIABLE__OVERRIDDEN:
         return basicSetOverridden(null, msgs);
     }
@@ -439,8 +377,6 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
         return getMultiplicity();
       case DomainDrivenDesignDslPackage.VARIABLE__NAME:
         return getName();
-      case DomainDrivenDesignDslPackage.VARIABLE__INVARIANTS:
-        return getInvariants();
       case DomainDrivenDesignDslPackage.VARIABLE__OVERRIDDEN:
         return getOverridden();
     }
@@ -471,9 +407,6 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
         return;
       case DomainDrivenDesignDslPackage.VARIABLE__NAME:
         setName((String)newValue);
-        return;
-      case DomainDrivenDesignDslPackage.VARIABLE__INVARIANTS:
-        setInvariants((Invariants)newValue);
         return;
       case DomainDrivenDesignDslPackage.VARIABLE__OVERRIDDEN:
         setOverridden((OverriddenTypeMetaInfo)newValue);
@@ -507,9 +440,6 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
       case DomainDrivenDesignDslPackage.VARIABLE__NAME:
         setName(NAME_EDEFAULT);
         return;
-      case DomainDrivenDesignDslPackage.VARIABLE__INVARIANTS:
-        setInvariants((Invariants)null);
-        return;
       case DomainDrivenDesignDslPackage.VARIABLE__OVERRIDDEN:
         setOverridden((OverriddenTypeMetaInfo)null);
         return;
@@ -537,8 +467,6 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
         return MULTIPLICITY_EDEFAULT == null ? multiplicity != null : !MULTIPLICITY_EDEFAULT.equals(multiplicity);
       case DomainDrivenDesignDslPackage.VARIABLE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
-      case DomainDrivenDesignDslPackage.VARIABLE__INVARIANTS:
-        return invariants != null;
       case DomainDrivenDesignDslPackage.VARIABLE__OVERRIDDEN:
         return overridden != null;
     }

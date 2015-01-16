@@ -4,18 +4,19 @@ import com.google.common.base.Objects;
 import java.util.ArrayList;
 import java.util.List;
 import org.eclipse.emf.common.util.EList;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.BusinessRules;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Method;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
-import org.fuin.dsl.ddd.extensions.DddCollectionExtensions;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Parameter;
+import org.fuin.dsl.ddd.extensions.DddBusinessRulesExtensions;
 
 /**
  * Provides extension methods for Method.
  */
 @SuppressWarnings("all")
 public class DddMethodExtensions {
-  public static List<Constraint> allConstraints(final Method method) {
+  public static List<Constraint> allBusinessRules(final Method method) {
     final List<Constraint> list = new ArrayList<Constraint>();
     boolean _and = false;
     Method _refMethod = method.getRefMethod();
@@ -29,11 +30,11 @@ public class DddMethodExtensions {
     }
     if (_and) {
       Method _refMethod_2 = method.getRefMethod();
-      List<Constraint> _allConstraints = DddMethodExtensions.allConstraints(_refMethod_2);
-      list.addAll(_allConstraints);
+      List<Constraint> _allBusinessRules = DddMethodExtensions.allBusinessRules(_refMethod_2);
+      list.addAll(_allBusinessRules);
     }
-    EList<ConstraintInstance> _constraintCalls = method.getConstraintCalls();
-    List<ConstraintInstance> _nullSafe = DddCollectionExtensions.<ConstraintInstance>nullSafe(_constraintCalls);
+    BusinessRules _businessRules = method.getBusinessRules();
+    List<ConstraintInstance> _nullSafe = DddBusinessRulesExtensions.nullSafe(_businessRules);
     for (final ConstraintInstance ci : _nullSafe) {
       Constraint _constraint = ci.getConstraint();
       list.add(_constraint);
@@ -58,8 +59,8 @@ public class DddMethodExtensions {
       List<org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception> _allExceptions = DddMethodExtensions.allExceptions(_refMethod_2);
       list.addAll(_allExceptions);
     }
-    EList<ConstraintInstance> _constraintCalls = method.getConstraintCalls();
-    List<ConstraintInstance> _nullSafe = DddCollectionExtensions.<ConstraintInstance>nullSafe(_constraintCalls);
+    BusinessRules _businessRules = method.getBusinessRules();
+    List<ConstraintInstance> _nullSafe = DddBusinessRulesExtensions.nullSafe(_businessRules);
     for (final ConstraintInstance ci : _nullSafe) {
       Constraint _constraint = ci.getConstraint();
       org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception _exception = _constraint.getException();
@@ -68,10 +69,10 @@ public class DddMethodExtensions {
     return list;
   }
   
-  public static List<Variable> allVariables(final Method method) {
-    List<Variable> list = new ArrayList<Variable>();
-    EList<Variable> _variables = method.getVariables();
-    list.addAll(_variables);
+  public static List<Parameter> allParameters(final Method method) {
+    List<Parameter> list = new ArrayList<Parameter>();
+    EList<Parameter> _parameters = method.getParameters();
+    list.addAll(_parameters);
     boolean _and = false;
     Method _refMethod = method.getRefMethod();
     boolean _notEquals = (!Objects.equal(_refMethod, null));
@@ -84,8 +85,8 @@ public class DddMethodExtensions {
     }
     if (_and) {
       Method _refMethod_2 = method.getRefMethod();
-      List<Variable> _allVariables = DddMethodExtensions.allVariables(_refMethod_2);
-      list.addAll(_allVariables);
+      List<Parameter> _allParameters = DddMethodExtensions.allParameters(_refMethod_2);
+      list.addAll(_allParameters);
     }
     return list;
   }
