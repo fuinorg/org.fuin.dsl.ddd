@@ -17,25 +17,24 @@ import org.eclipse.xtext.resource.IResourceDescription;
 import org.eclipse.xtext.resource.IResourceDescriptions;
 import org.eclipse.xtext.resource.impl.ResourceDescriptionsProvider;
 import org.eclipse.xtext.validation.Check;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractElement;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntity;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Context;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.EntityId;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.InternalType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Method;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Namespace;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ReturnType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Service;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Type;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
+import org.fuin.dsl.ddd.extensions.DddAbstractElementExtensions;
+import org.fuin.dsl.ddd.extensions.DddAttributeExtensions;
+import org.fuin.dsl.ddd.extensions.DddConstraintExtension;
+import org.fuin.dsl.ddd.extensions.DddEObjectExtensions;
 import org.fuin.dsl.ddd.validation.AbstractDomainDrivenDesignDslValidator;
 
 /**
@@ -91,9 +90,10 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
   
   @Check
   public void checkVariablesInConstraintMessage(final Constraint constraint) {
-    Set<String> _allAttributeNames = DomainDrivenDesignDslValidator.allAttributeNames(constraint);
+    List<Attribute> _allAllowedVariables = DddConstraintExtension.allAllowedVariables(constraint);
+    List<String> _asNames = DddAttributeExtensions.asNames(_allAllowedVariables);
     String _message = constraint.getMessage();
-    final String name = DomainDrivenDesignDslValidator.findUnknownVar(_allAttributeNames, _message);
+    final String name = DomainDrivenDesignDslValidator.findUnknownVar(_asNames, _message);
     boolean _notEquals = (!Objects.equal(name, null));
     if (_notEquals) {
       this.error(
@@ -105,9 +105,10 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
   
   @Check
   public void checkVariablesInExceptionMessage(final org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception ex) {
-    Set<String> _attributeNames = DomainDrivenDesignDslValidator.attributeNames(ex);
+    EList<Attribute> _attributes = ex.getAttributes();
+    List<String> _asNames = DddAttributeExtensions.asNames(_attributes);
     String _message = ex.getMessage();
-    final String name = DomainDrivenDesignDslValidator.findUnknownVar(_attributeNames, _message);
+    final String name = DomainDrivenDesignDslValidator.findUnknownVar(_asNames, _message);
     boolean _notEquals = (!Objects.equal(name, null));
     if (_notEquals) {
       this.error(
@@ -123,14 +124,14 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
     if ((_type instanceof Aggregate)) {
       Type _type_1 = variable.getType();
       final Aggregate aggregate = ((Aggregate) _type_1);
-      final Entity parentEntity = DomainDrivenDesignDslValidator.<Entity>getParent(Entity.class, variable);
+      final Entity parentEntity = DddEObjectExtensions.<Entity>getParent(Entity.class, variable);
       boolean _or = false;
       boolean _equals = Objects.equal(parentEntity, null);
       if (_equals) {
         _or = true;
       } else {
         Aggregate _root = parentEntity.getRoot();
-        boolean _same = DomainDrivenDesignDslValidator.same(aggregate, _root);
+        boolean _same = DddAbstractElementExtensions.same(aggregate, _root);
         boolean _not = (!_same);
         _or = _not;
       }
@@ -147,14 +148,14 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
     if ((_type_2 instanceof Entity)) {
       Type _type_3 = variable.getType();
       final Entity entity = ((Entity) _type_3);
-      final Aggregate aggregateOfVariable = DomainDrivenDesignDslValidator.getAggregate(variable);
+      final Aggregate aggregateOfVariable = DddEObjectExtensions.getAggregate(variable);
       boolean _or_1 = false;
       boolean _equals_1 = Objects.equal(aggregateOfVariable, null);
       if (_equals_1) {
         _or_1 = true;
       } else {
         Aggregate _root_1 = entity.getRoot();
-        boolean _same_1 = DomainDrivenDesignDslValidator.same(aggregateOfVariable, _root_1);
+        boolean _same_1 = DddAbstractElementExtensions.same(aggregateOfVariable, _root_1);
         boolean _not_1 = (!_same_1);
         _or_1 = _not_1;
       }
@@ -177,14 +178,14 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
       ReturnType _returnType_1 = method.getReturnType();
       Type _type_1 = _returnType_1.getType();
       final Aggregate aggregate = ((Aggregate) _type_1);
-      final Entity parentEntity = DomainDrivenDesignDslValidator.<Entity>getParent(Entity.class, method);
+      final Entity parentEntity = DddEObjectExtensions.<Entity>getParent(Entity.class, method);
       boolean _or = false;
       boolean _equals = Objects.equal(parentEntity, null);
       if (_equals) {
         _or = true;
       } else {
         Aggregate _root = parentEntity.getRoot();
-        boolean _same = DomainDrivenDesignDslValidator.same(aggregate, _root);
+        boolean _same = DddAbstractElementExtensions.same(aggregate, _root);
         boolean _not = (!_same);
         _or = _not;
       }
@@ -203,7 +204,7 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
         ReturnType _returnType_3 = method.getReturnType();
         Type _type_3 = _returnType_3.getType();
         final Entity entity = ((Entity) _type_3);
-        final Entity parentEntity_1 = DomainDrivenDesignDslValidator.<Entity>getParent(Entity.class, method);
+        final Entity parentEntity_1 = DddEObjectExtensions.<Entity>getParent(Entity.class, method);
         boolean _or_1 = false;
         boolean _equals_1 = Objects.equal(parentEntity_1, null);
         if (_equals_1) {
@@ -211,7 +212,7 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
         } else {
           Aggregate _root_1 = entity.getRoot();
           Aggregate _root_2 = parentEntity_1.getRoot();
-          boolean _same_1 = DomainDrivenDesignDslValidator.same(_root_1, _root_2);
+          boolean _same_1 = DddAbstractElementExtensions.same(_root_1, _root_2);
           boolean _not_1 = (!_same_1);
           _or_1 = _not_1;
         }
@@ -273,9 +274,10 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
     String _message = event.getMessage();
     boolean _notEquals = (!Objects.equal(_message, null));
     if (_notEquals) {
-      Set<String> _attributeNames = DomainDrivenDesignDslValidator.attributeNames(event);
+      EList<Attribute> _attributes = event.getAttributes();
+      List<String> _asNames = DddAttributeExtensions.asNames(_attributes);
       String _message_1 = event.getMessage();
-      final String name = DomainDrivenDesignDslValidator.findUnknownVar(_attributeNames, _message_1);
+      final String name = DomainDrivenDesignDslValidator.findUnknownVar(_asNames, _message_1);
       boolean _notEquals_1 = (!Objects.equal(name, null));
       if (_notEquals_1) {
         this.error(
@@ -302,9 +304,9 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
         if (!_greaterThan) {
           _and = false;
         } else {
-          Context _context = DomainDrivenDesignDslValidator.getContext(ex);
+          Context _context = DddEObjectExtensions.getContext(ex);
           String _name = _context.getName();
-          Context _context_1 = DomainDrivenDesignDslValidator.getContext(other);
+          Context _context_1 = DddEObjectExtensions.getContext(other);
           String _name_1 = _context_1.getName();
           boolean _equals = _name.equals(_name_1);
           _and = _equals;
@@ -342,9 +344,9 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
         if (!_and_2) {
           _and_1 = false;
         } else {
-          Context _context_2 = DomainDrivenDesignDslValidator.getContext(ex);
+          Context _context_2 = DddEObjectExtensions.getContext(ex);
           String _name_2 = _context_2.getName();
-          Context _context_3 = DomainDrivenDesignDslValidator.getContext(other);
+          Context _context_3 = DddEObjectExtensions.getContext(other);
           String _name_3 = _context_3.getName();
           boolean _equals_3 = _name_2.equals(_name_3);
           _and_1 = _equals_3;
@@ -388,17 +390,7 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
     return list;
   }
   
-  private static EObject getRoot(final EObject obj) {
-    EObject _eContainer = obj.eContainer();
-    boolean _equals = Objects.equal(_eContainer, null);
-    if (_equals) {
-      return obj;
-    }
-    EObject _eContainer_1 = obj.eContainer();
-    return DomainDrivenDesignDslValidator.getRoot(_eContainer_1);
-  }
-  
-  private static String findUnknownVar(final Set<String> vars, final String msg) {
+  private static String findUnknownVar(final List<String> vars, final String msg) {
     int end = (-1);
     int from = 0;
     int start = (-1);
@@ -429,230 +421,5 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
       }
     }
     return null;
-  }
-  
-  private static Set<String> attributeNames(final Event event) {
-    Set<String> vars = new HashSet<String>();
-    EList<Attribute> _attributes = event.getAttributes();
-    boolean _notEquals = (!Objects.equal(_attributes, null));
-    if (_notEquals) {
-      EList<Attribute> _attributes_1 = event.getAttributes();
-      for (final Attribute v : _attributes_1) {
-        String _name = v.getName();
-        vars.add(_name);
-      }
-    }
-    return vars;
-  }
-  
-  private static Set<String> attributeNames(final org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception ex) {
-    Set<String> vars = new HashSet<String>();
-    EList<Attribute> _attributes = ex.getAttributes();
-    boolean _notEquals = (!Objects.equal(_attributes, null));
-    if (_notEquals) {
-      EList<Attribute> _attributes_1 = ex.getAttributes();
-      for (final Attribute v : _attributes_1) {
-        String _name = v.getName();
-        vars.add(_name);
-      }
-    }
-    return vars;
-  }
-  
-  private static Set<String> allAttributeNames(final Constraint constraint) {
-    Set<String> vars = new HashSet<String>();
-    EList<Attribute> _attributes = constraint.getAttributes();
-    boolean _notEquals = (!Objects.equal(_attributes, null));
-    if (_notEquals) {
-      EList<Attribute> _attributes_1 = constraint.getAttributes();
-      for (final Attribute v : _attributes_1) {
-        String _name = v.getName();
-        vars.add(_name);
-      }
-    }
-    vars.add("vv");
-    ConstraintTarget target = constraint.getTarget();
-    if ((target instanceof InternalType)) {
-      EList<Attribute> _attributes_2 = ((InternalType)target).getAttributes();
-      boolean _notEquals_1 = (!Objects.equal(_attributes_2, null));
-      if (_notEquals_1) {
-        EList<Attribute> _attributes_3 = ((InternalType)target).getAttributes();
-        for (final Attribute v_1 : _attributes_3) {
-          String _name_1 = v_1.getName();
-          String _plus = ("vv_" + _name_1);
-          vars.add(_plus);
-        }
-      }
-    }
-    return vars;
-  }
-  
-  /**
-   * Returns the aggregate an object belongs to. All objects directly defined inside
-   * an aggregate will be found and also entities that belong to the aggregate.
-   * 
-   * @param obj Object to return the aggregate for.
-   * 
-   * @return Aggregate or null if the object does not belong to an aggregate.
-   */
-  private static Aggregate getAggregate(final EObject obj) {
-    final AbstractEntity ae = DomainDrivenDesignDslValidator.<AbstractEntity>getParent(AbstractEntity.class, obj);
-    if ((ae instanceof Aggregate)) {
-      return ((Aggregate) ae);
-    }
-    if ((ae instanceof Entity)) {
-      return ((Entity) ae).getRoot();
-    }
-    return null;
-  }
-  
-  /**
-   * Returns the first parent with a given type for an object.
-   * 
-   * @param obj Object to return the parent for.
-   * 
-   * @return Parent or null if the object is not inside the requested type.
-   */
-  private static <T extends Object> T getParent(final Class<T> clasz, final EObject obj) {
-    boolean _equals = Objects.equal(obj, null);
-    if (_equals) {
-      return null;
-    }
-    Class<? extends EObject> _class = obj.getClass();
-    boolean _isAssignableFrom = clasz.isAssignableFrom(_class);
-    if (_isAssignableFrom) {
-      return ((T) obj);
-    }
-    EObject _eContainer = obj.eContainer();
-    return DomainDrivenDesignDslValidator.<T>getParent(clasz, _eContainer);
-  }
-  
-  /**
-   * Returns the namespace for an object.
-   * 
-   * @param obj Object to return the namespace for.
-   * 
-   * @return Namespace or null if the object is not inside one.
-   */
-  private static Namespace getNamespace(final EObject obj) {
-    return DomainDrivenDesignDslValidator.<Namespace>getParent(Namespace.class, obj);
-  }
-  
-  /**
-   * Returns the context for an object.
-   * 
-   * @param obj Object to return the context for.
-   * 
-   * @return Context or null if the object is not inside one.
-   */
-  private static Context getContext(final EObject obj) {
-    return DomainDrivenDesignDslValidator.<Context>getParent(Context.class, obj);
-  }
-  
-  /**
-   * Compares two abstract elements by their unique name.
-   * 
-   * @param a1 Element 1.
-   * @param a2 Element 2.
-   * 
-   * @return TRUE if both elements have the same unique name (context/namespace/name).
-   */
-  private static boolean same(final AbstractElement a1, final AbstractElement a2) {
-    boolean _equals = Objects.equal(a1, null);
-    if (_equals) {
-      boolean _equals_1 = Objects.equal(a2, null);
-      if (_equals_1) {
-        return true;
-      }
-      return false;
-    } else {
-      boolean _equals_2 = Objects.equal(a2, null);
-      if (_equals_2) {
-        return false;
-      }
-      String _uniqueName = DomainDrivenDesignDslValidator.uniqueName(a1);
-      String _uniqueName_1 = DomainDrivenDesignDslValidator.uniqueName(a2);
-      return _uniqueName.equals(_uniqueName_1);
-    }
-  }
-  
-  /**
-   * Returns the unique name .
-   * 
-   * @param el Element to return a unique name for.
-   * 
-   * @return Unique name in the context/namespace.
-   */
-  private static String uniqueName(final AbstractElement el) {
-    boolean _equals = Objects.equal(el, null);
-    if (_equals) {
-      throw new IllegalArgumentException("argument \'el\' cannot be null");
-    }
-    Context _context = DomainDrivenDesignDslValidator.getContext(el);
-    boolean _equals_1 = Objects.equal(_context, null);
-    if (_equals_1) {
-      String _path = DomainDrivenDesignDslValidator.getPath(el);
-      String _plus = ("argument \'el.context\' cannot be null: " + _path);
-      throw new IllegalArgumentException(_plus);
-    }
-    Namespace _namespace = DomainDrivenDesignDslValidator.getNamespace(el);
-    boolean _equals_2 = Objects.equal(_namespace, null);
-    if (_equals_2) {
-      String _path_1 = DomainDrivenDesignDslValidator.getPath(el);
-      String _plus_1 = ("argument \'el.namespace\' cannot be null: " + _path_1);
-      throw new IllegalArgumentException(_plus_1);
-    }
-    Context _context_1 = DomainDrivenDesignDslValidator.getContext(el);
-    String _name = _context_1.getName();
-    Namespace _namespace_1 = DomainDrivenDesignDslValidator.getNamespace(el);
-    String _name_1 = _namespace_1.getName();
-    String _name_2 = el.getName();
-    return DomainDrivenDesignDslValidator.separated(".", _name, _name_1, _name_2);
-  }
-  
-  /**
-   * Returns a string containing all tokens separated by a separator string.
-   * 
-   * @param separator Separator to use.
-   * @param tokens Array of tokens, empty array or null.
-   * 
-   * @return Tokens in the same order as in the array separated by the given separator.
-   *         An empty array or null will return an empty string.
-   */
-  private static String separated(final String separator, final String... tokens) {
-    boolean _equals = Objects.equal(tokens, null);
-    if (_equals) {
-      return "";
-    }
-    final StringBuilder sb = new StringBuilder();
-    int count = 0;
-    for (final String token : tokens) {
-      {
-        if ((count > 0)) {
-          sb.append(separator);
-        }
-        sb.append(token);
-        count = (count + 1);
-      }
-    }
-    return sb.toString();
-  }
-  
-  /**
-   * Returns the path in the model to the object.
-   * 
-   * @param obj Object to return the path for.
-   * 
-   * @return Path or empty string if the object is not inside one.
-   */
-  private static String getPath(final EObject obj) {
-    boolean _equals = Objects.equal(obj, null);
-    if (_equals) {
-      return "";
-    }
-    EObject _eContainer = obj.eContainer();
-    String _path = DomainDrivenDesignDslValidator.getPath(_eContainer);
-    String _plus = (_path + "/");
-    return (_plus + obj);
   }
 }

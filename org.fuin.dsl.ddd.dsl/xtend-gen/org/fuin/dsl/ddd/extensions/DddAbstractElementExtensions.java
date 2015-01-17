@@ -91,4 +91,31 @@ public class DddAbstractElementExtensions {
     String _name = el.getName();
     return ("Abstract" + _name);
   }
+  
+  /**
+   * Compares two abstract elements by their unique name.
+   * 
+   * @param a1 Element 1.
+   * @param a2 Element 2.
+   * 
+   * @return TRUE if both elements have the same unique name (context/namespace/name).
+   */
+  public static boolean same(final AbstractElement a1, final AbstractElement a2) {
+    boolean _equals = Objects.equal(a1, null);
+    if (_equals) {
+      boolean _equals_1 = Objects.equal(a2, null);
+      if (_equals_1) {
+        return true;
+      }
+      return false;
+    } else {
+      boolean _equals_2 = Objects.equal(a2, null);
+      if (_equals_2) {
+        return false;
+      }
+      String _uniqueName = DddAbstractElementExtensions.uniqueName(a1);
+      String _uniqueName_1 = DddAbstractElementExtensions.uniqueName(a2);
+      return _uniqueName.equals(_uniqueName_1);
+    }
+  }
 }

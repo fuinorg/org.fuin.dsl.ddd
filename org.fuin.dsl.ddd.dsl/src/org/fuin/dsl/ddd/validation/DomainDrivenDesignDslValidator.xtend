@@ -3,6 +3,7 @@ package org.fuin.dsl.ddd.validation
 import com.google.inject.Inject
 import java.util.HashSet
 import java.util.Iterator
+import java.util.List
 import java.util.Set
 import org.eclipse.emf.ecore.EObject
 import org.eclipse.emf.ecore.util.EcoreUtil
@@ -10,21 +11,20 @@ import org.eclipse.xtext.resource.IContainer
 import org.eclipse.xtext.resource.IEObjectDescription
 import org.eclipse.xtext.resource.impl.ResourceDescriptionsProvider
 import org.eclipse.xtext.validation.Check
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractElement
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntity
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Context
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.InternalType
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Method
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Namespace
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Service
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable
+
+import static extension org.fuin.dsl.ddd.extensions.DddAbstractElementExtensions.*
+import static extension org.fuin.dsl.ddd.extensions.DddAttributeExtensions.*
+import static extension org.fuin.dsl.ddd.extensions.DddEObjectExtensions.*
+import static extension org.fuin.dsl.ddd.extensions.DddConstraintExtension.*
 
 /**
  * Custom validation rules. 
@@ -75,7 +75,7 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 
 	@Check
 	def checkVariablesInConstraintMessage(Constraint constraint) {
-		val name = findUnknownVar(constraint.allAttributeNames, constraint.message);
+		val name = findUnknownVar(constraint.allAllowedVariables.asNames, constraint.message);
 		if (name != null) {
 			error(
 				"A variable with the name '" + name + "' is unknown",
@@ -88,7 +88,7 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 
 	@Check
 	def checkVariablesInExceptionMessage(Exception ex) {
-		val name = findUnknownVar(ex.attributeNames, ex.message);
+		val name = findUnknownVar(ex.attributes.asNames, ex.message);
 		if (name != null) {
 			error(
 				"A variable '" + name + "' is not defined in the exception",
@@ -105,7 +105,7 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 		if (variable.type instanceof Aggregate) {
 			val Aggregate aggregate = (variable.type as Aggregate);
 			val Entity parentEntity = getParent(Entity, variable)
-			if ((parentEntity == null) || !same(aggregate, parentEntity.root)) {
+			if ((parentEntity == null) || !aggregate.same(parentEntity.root)) {
 				error(
 					MSG_DIRECT_REF_AGGREGATE,
 					variable,
@@ -119,7 +119,7 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 		if (variable.type instanceof Entity) {
 			val Entity entity = (variable.type as Entity);
 			val Aggregate aggregateOfVariable = getAggregate(variable)
-			if ((aggregateOfVariable == null) || !same(aggregateOfVariable, entity.root)) {
+			if ((aggregateOfVariable == null) || !aggregateOfVariable.same(entity.root)) {
 				error(
 					MSG_DIRECT_REF_ENTITY,
 					variable,
@@ -139,7 +139,7 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 
 			val Aggregate aggregate = (method.returnType.type as Aggregate);
 			val Entity parentEntity = getParent(Entity, method)
-			if ((parentEntity == null) || !same(aggregate, parentEntity.root)) {
+			if ((parentEntity == null) || !aggregate.same(parentEntity.root)) {
 				error(
 					MSG_DIRECT_REF_AGGREGATE,
 					method,
@@ -153,7 +153,7 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 
 			val Entity entity = (method.returnType.type as Entity);
 			val Entity parentEntity = getParent(Entity, method)
-			if ((parentEntity == null) || !same(entity.root, parentEntity.root)) {
+			if ((parentEntity == null) || !entity.root.same(parentEntity.root)) {
 				error(
 					MSG_DIRECT_REF_ENTITY,
 					method,
@@ -199,7 +199,7 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 	@Check
 	def checkVariablesInEventMessage(Event event) {
 		if (event.message != null) {
-			val name = findUnknownVar(event.attributeNames, event.message);
+			val name = findUnknownVar(event.attributes.asNames, event.message);
 			if (name != null) {
 				error(
 					"A variable with the name '" + name + "' is unknown",
@@ -262,21 +262,13 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 		return list
 	}
 
-	private static def EObject getRoot(EObject obj) {
-		if (obj.eContainer == null) {
-			return obj
-		}
-		return getRoot(obj.eContainer)
-	}
-
-	private static def String findUnknownVar(Set<String> vars, String msg) {
+	private static def String findUnknownVar(List<String> vars, String msg) {
 		var int end = -1;
 		var int from = 0;
 		var int start = -1;
 		while ((start = msg.indexOf("${", from)) > -1) {
 			end = msg.indexOf('}', start + 1);
 			if (end == -1) {
-
 				// No closing bracket found...
 				from = msg.length();
 			} else {
@@ -288,184 +280,6 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 			}
 		}
 		return null
-	}
-
-	private static def Set<String> attributeNames(Event event) {
-		var Set<String> vars = new HashSet<String>();
-		if (event.attributes != null) {
-			for (v : event.attributes) {
-				vars.add(v.name);
-			}
-		}
-		return vars;
-	}
-
-	private static def Set<String> attributeNames(Exception ex) {
-		var Set<String> vars = new HashSet<String>();
-		if (ex.attributes != null) {
-			for (v : ex.attributes) {
-				vars.add(v.name);
-			}
-		}
-		return vars;
-	}
-
-	private static def Set<String> allAttributeNames(Constraint constraint) {
-		var Set<String> vars = new HashSet<String>();
-		if (constraint.attributes != null) {
-			for (v : constraint.attributes) {
-				vars.add(v.name);
-			}
-		}
-		vars.add("vv");
-		var ConstraintTarget target = constraint.target;
-		if (target instanceof InternalType) {
-			if (target.attributes != null) {
-				for (v : target.attributes) {
-					vars.add("vv_" + v.name);
-				}
-			}
-		}
-		return vars;
-	}
-
-	/**
-	 * Returns the aggregate an object belongs to. All objects directly defined inside 
-	 * an aggregate will be found and also entities that belong to the aggregate.
-	 * 
-	 * @param obj Object to return the aggregate for.
-	 * 
-	 * @return Aggregate or null if the object does not belong to an aggregate.
-	 */
-	private def static Aggregate getAggregate(EObject obj) {
-		val AbstractEntity ae = getParent(AbstractEntity, obj)
-		if (ae instanceof Aggregate) {
-			return ae as Aggregate
-		}
-		if (ae instanceof Entity) {
-			return (ae as Entity).root
-		}
-		return null
-	}
-
-	/**
-	 * Returns the first parent with a given type for an object.
-	 * 
-	 * @param obj Object to return the parent for.
-	 * 
-	 * @return Parent or null if the object is not inside the requested type.
-	 */
-	private def static <T> T getParent(Class<T> clasz, EObject obj) {
-		if (obj == null) {
-			return null
-		}
-		if (clasz.isAssignableFrom(obj.class)) {
-			return (obj as T)
-		}
-		return getParent(clasz, obj.eContainer)
-	}
-
-	/**
-	 * Returns the namespace for an object.
-	 * 
-	 * @param obj Object to return the namespace for.
-	 * 
-	 * @return Namespace or null if the object is not inside one.
-	 */
-	private def static Namespace getNamespace(EObject obj) {
-		return getParent(Namespace, obj)
-	}
-
-	/**
-	 * Returns the context for an object.
-	 * 
-	 * @param obj Object to return the context for.
-	 * 
-	 * @return Context or null if the object is not inside one.
-	 */
-	private def static Context getContext(EObject obj) {
-		return getParent(Context, obj)
-	}
-
-	/**
-	 * Compares two abstract elements by their unique name.
-	 * 
-	 * @param a1 Element 1.
-	 * @param a2 Element 2.
-	 * 
-	 * @return TRUE if both elements have the same unique name (context/namespace/name).
-	 */
-	private def static boolean same(AbstractElement a1, AbstractElement a2) {
-		if (a1 == null) {
-			if (a2 == null) {
-				return true
-			}
-			return false
-		} else {
-			if (a2 == null) {
-				return false
-			}
-			return a1.uniqueName.equals(a2.uniqueName)
-		}
-	}
-
-	/**
-	 * Returns the unique name .
-	 * 
-	 * @param el Element to return a unique name for.
-	 * 
-	 * @return Unique name in the context/namespace.
-	 */
-	private def static String uniqueName(AbstractElement el) {
-		if (el == null) {
-			throw new IllegalArgumentException("argument 'el' cannot be null")
-		}
-		if (el.context == null) {
-			throw new IllegalArgumentException("argument 'el.context' cannot be null: " + el.path)
-		}
-		if (el.namespace == null) {
-			throw new IllegalArgumentException("argument 'el.namespace' cannot be null: " + el.path)
-		}
-		return separated(".", el.context.name, el.namespace.name, el.name)
-	}
-
-	/**
-	 * Returns a string containing all tokens separated by a separator string.
-	 * 
-	 * @param separator Separator to use.
-	 * @param tokens Array of tokens, empty array or null.
-	 * 
-	 * @return Tokens in the same order as in the array separated by the given separator. 
-	 *         An empty array or null will return an empty string. 
-	 */
-	private def static String separated(String separator, String... tokens) {
-		if (tokens == null) {
-			return ""
-		}
-		val StringBuilder sb = new StringBuilder()
-		var int count = 0
-		for (String token : tokens) {
-			if (count > 0) {
-				sb.append(separator)
-			}
-			sb.append(token)
-			count = count + 1
-		}
-		return sb.toString
-	}
-
-	/**
-	 * Returns the path in the model to the object.
-	 * 
-	 * @param obj Object to return the path for.
-	 * 
-	 * @return Path or empty string if the object is not inside one.
-	 */
-	private def static String getPath(EObject obj) {
-		if (obj == null) {
-			return ""
-		}
-		return getPath(obj.eContainer) + "/" + obj
 	}
 
 }

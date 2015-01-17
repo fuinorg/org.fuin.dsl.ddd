@@ -80,4 +80,37 @@ class DddEObjectExtensions {
 		return getAggregate(obj.eContainer)
 	}
 
+
+	/**
+	 * Returns the root container for a given object.
+	 * 
+	 * @param obj Object to return the top container for.
+	 * 
+	 * @return Root container.
+	 */
+	static def EObject getRoot(EObject obj) {
+		if (obj.eContainer == null) {
+			return obj
+		}
+		return getRoot(obj.eContainer)
+	}
+
+	/**
+	 * Returns the first parent with a given type for an object.
+	 * 
+	 * @param obj Object to return the parent for.
+	 * 
+	 * @return Parent or null if the object is not inside the requested type.
+	 */
+	def static <T> T getParent(Class<T> clasz, EObject obj) {
+		if (obj == null) {
+			return null
+		}
+		if (clasz.isAssignableFrom(obj.class)) {
+			return (obj as T)
+		}
+		return getParent(clasz, obj.eContainer)
+	}
+
+
 }

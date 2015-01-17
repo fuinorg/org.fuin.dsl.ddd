@@ -89,4 +89,42 @@ public class DddEObjectExtensions {
     EObject _eContainer = obj.eContainer();
     return DddEObjectExtensions.getAggregate(_eContainer);
   }
+  
+  /**
+   * Returns the root container for a given object.
+   * 
+   * @param obj Object to return the top container for.
+   * 
+   * @return Root container.
+   */
+  public static EObject getRoot(final EObject obj) {
+    EObject _eContainer = obj.eContainer();
+    boolean _equals = Objects.equal(_eContainer, null);
+    if (_equals) {
+      return obj;
+    }
+    EObject _eContainer_1 = obj.eContainer();
+    return DddEObjectExtensions.getRoot(_eContainer_1);
+  }
+  
+  /**
+   * Returns the first parent with a given type for an object.
+   * 
+   * @param obj Object to return the parent for.
+   * 
+   * @return Parent or null if the object is not inside the requested type.
+   */
+  public static <T extends Object> T getParent(final Class<T> clasz, final EObject obj) {
+    boolean _equals = Objects.equal(obj, null);
+    if (_equals) {
+      return null;
+    }
+    Class<? extends EObject> _class = obj.getClass();
+    boolean _isAssignableFrom = clasz.isAssignableFrom(_class);
+    if (_isAssignableFrom) {
+      return ((T) obj);
+    }
+    EObject _eContainer = obj.eContainer();
+    return DddEObjectExtensions.<T>getParent(clasz, _eContainer);
+  }
 }

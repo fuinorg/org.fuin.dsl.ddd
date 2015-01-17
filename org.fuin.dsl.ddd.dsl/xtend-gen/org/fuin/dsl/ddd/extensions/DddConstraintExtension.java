@@ -4,20 +4,20 @@ import com.google.common.base.Objects;
 import java.util.ArrayList;
 import java.util.List;
 import org.eclipse.emf.common.util.EList;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractVO;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslFactory;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Type;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.ValueObject;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
 import org.fuin.dsl.ddd.extensions.DddAttributeExtensions;
+import org.fuin.dsl.ddd.extensions.DddDslFactoryExtensions;
 
 @SuppressWarnings("all")
 public class DddConstraintExtension {
-  public static List<Variable> allVariables(final Constraint constr) {
-    List<Variable> list = new ArrayList<Variable>();
+  public static List<Attribute> allAllowedVariables(final Constraint constr) {
+    List<Attribute> list = new ArrayList<Attribute>();
     EList<Attribute> _attributes = constr.getAttributes();
     boolean _notEquals = (!Objects.equal(_attributes, null));
     if (_notEquals) {
@@ -26,27 +26,31 @@ public class DddConstraintExtension {
     }
     ConstraintTarget target = constr.getTarget();
     if ((target instanceof ExternalType)) {
-      Variable vv = DomainDrivenDesignDslFactory.eINSTANCE.createVariable();
-      vv.setName("vv");
-      vv.setDoc("/** The validated value. */");
-      vv.setType(((Type)target));
-      list.add(vv);
+      Attribute _createInputAttribute = DddConstraintExtension.createInputAttribute(((Type)target));
+      list.add(_createInputAttribute);
     } else {
-      ValueObject vo = ((ValueObject) target);
-      EList<Attribute> _attributes_2 = vo.getAttributes();
-      boolean _notEquals_1 = (!Objects.equal(_attributes_2, null));
-      if (_notEquals_1) {
-        EList<Attribute> _attributes_3 = vo.getAttributes();
-        for (final Attribute attr : _attributes_3) {
-          {
-            String _name = attr.getName();
-            String _plus = ("vv_" + _name);
-            Attribute newAttr = DddAttributeExtensions.copyWithNewName(attr, _plus);
-            list.add(newAttr);
+      if ((target instanceof AbstractVO)) {
+        Attribute _createInputAttribute_1 = DddConstraintExtension.createInputAttribute(((Type)target));
+        list.add(_createInputAttribute_1);
+        EList<Attribute> _attributes_2 = ((AbstractVO)target).getAttributes();
+        boolean _notEquals_1 = (!Objects.equal(_attributes_2, null));
+        if (_notEquals_1) {
+          EList<Attribute> _attributes_3 = ((AbstractVO)target).getAttributes();
+          for (final Attribute attr : _attributes_3) {
+            {
+              String _name = attr.getName();
+              String _plus = ("input." + _name);
+              Attribute newAttr = DddAttributeExtensions.copyWithNewName(attr, _plus);
+              list.add(newAttr);
+            }
           }
         }
       }
     }
     return list;
+  }
+  
+  public static Attribute createInputAttribute(final Type type) {
+    return DddDslFactoryExtensions.createAttribute(DomainDrivenDesignDslFactory.eINSTANCE, "/** The validated value. */", type, "input", true);
   }
 }

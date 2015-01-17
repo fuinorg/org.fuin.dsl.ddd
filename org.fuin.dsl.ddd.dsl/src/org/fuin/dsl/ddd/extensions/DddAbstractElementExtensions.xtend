@@ -66,4 +66,27 @@ class DddAbstractElementExtensions {
 		return "Abstract" + el.name
 	}
 
+	/**
+	 * Compares two abstract elements by their unique name.
+	 * 
+	 * @param a1 Element 1.
+	 * @param a2 Element 2.
+	 * 
+	 * @return TRUE if both elements have the same unique name (context/namespace/name).
+	 */
+	def static boolean same(AbstractElement a1, AbstractElement a2) {
+		if (a1 == null) {
+			if (a2 == null) {
+				return true
+			}
+			return false
+		} else {
+			if (a2 == null) {
+				return false
+			}
+			return a1.uniqueName.equals(a2.uniqueName)
+		}
+	}
+
+
 }
