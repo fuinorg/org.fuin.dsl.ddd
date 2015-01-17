@@ -1592,22 +1592,13 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int ABSTRACT_METHOD__EVENTS = 8;
 
   /**
-   * The feature id for the '<em><b>User Content</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int ABSTRACT_METHOD__USER_CONTENT = 9;
-
-  /**
    * The number of structural features of the '<em>Abstract Method</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ABSTRACT_METHOD_FEATURE_COUNT = 10;
+  int ABSTRACT_METHOD_FEATURE_COUNT = 9;
 
   /**
    * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConstructorImpl <em>Constructor</em>}' class.
@@ -1699,15 +1690,6 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @ordered
    */
   int CONSTRUCTOR__EVENTS = ABSTRACT_METHOD__EVENTS;
-
-  /**
-   * The feature id for the '<em><b>User Content</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int CONSTRUCTOR__USER_CONTENT = ABSTRACT_METHOD__USER_CONTENT;
 
   /**
    * The number of structural features of the '<em>Constructor</em>' class.
@@ -1845,15 +1827,6 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @ordered
    */
   int METHOD__EVENTS = ABSTRACT_METHOD__EVENTS;
-
-  /**
-   * The feature id for the '<em><b>User Content</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   * @ordered
-   */
-  int METHOD__USER_CONTENT = ABSTRACT_METHOD__USER_CONTENT;
 
   /**
    * The feature id for the '<em><b>Ref Method</b></em>' reference.
@@ -3287,17 +3260,6 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   EReference getAbstractMethod_Events();
 
   /**
-   * Returns the meta object for the attribute '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getUserContent <em>User Content</em>}'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>User Content</em>'.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getUserContent()
-   * @see #getAbstractMethod()
-   * @generated
-   */
-  EAttribute getAbstractMethod_UserContent();
-
-  /**
    * Returns the meta object for class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Constructor <em>Constructor</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4399,14 +4361,6 @@ public interface DomainDrivenDesignDslPackage extends EPackage
      * @generated
      */
     EReference ABSTRACT_METHOD__EVENTS = eINSTANCE.getAbstractMethod_Events();
-
-    /**
-     * The meta object literal for the '<em><b>User Content</b></em>' attribute feature.
-     * <!-- begin-user-doc -->
-     * <!-- end-user-doc -->
-     * @generated
-     */
-    EAttribute ABSTRACT_METHOD__USER_CONTENT = eINSTANCE.getAbstractMethod_UserContent();
 
     /**
      * The meta object literal for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConstructorImpl <em>Constructor</em>}' class.

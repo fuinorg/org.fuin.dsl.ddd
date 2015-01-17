@@ -20,13 +20,20 @@ import org.eclipse.xtext.validation.Check;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.BusinessRules;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Context;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.EntityId;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.InternalType;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Invariants;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Method;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Parameter;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Preconditions;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ReturnType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Service;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Type;
@@ -34,6 +41,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
 import org.fuin.dsl.ddd.extensions.DddAbstractElementExtensions;
 import org.fuin.dsl.ddd.extensions.DddAttributeExtensions;
 import org.fuin.dsl.ddd.extensions.DddConstraintExtension;
+import org.fuin.dsl.ddd.extensions.DddConstraintTargetExtensions;
 import org.fuin.dsl.ddd.extensions.DddEObjectExtensions;
 import org.fuin.dsl.ddd.validation.AbstractDomainDrivenDesignDslValidator;
 
@@ -69,6 +77,14 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
   public final static String SERVICE_METHOD_CANNOT_FIRE_EVENTS = "serviceMethodCannotFireEvents";
   
   public final static String SERVICE_METHOD_CANNOT_DECLARE_EVENTS = "serviceMethodCannotDeclareEvents";
+  
+  public final static String BUSINESS_RULE_REQUIRES_EXCEPTION = "businessRuleRequiresException";
+  
+  public final static String ATTRIBUTE_INVARIANT_WRONG_TARGET_TYPE = "attributeInvariantWrongTargetType";
+  
+  public final static String PARAMETER_CONSTRAINT_WRONG_TARGET_TYPE = "parameterConstraintWrongTargetType";
+  
+  public final static String INTERNAL_TYPE_INVARIANT_WRONG_TARGET_TYPE = "internalTypeInvariantWrongTargetType";
   
   @Inject
   private IContainer.Manager containerManager;
@@ -364,6 +380,181 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
         (("The CID is already used by exception \'" + name) + "\'"), ex, 
         DomainDrivenDesignDslPackage.Literals.EXCEPTION__CID, 
         DomainDrivenDesignDslValidator.EXCEPTION_DUPLICATE_CID, nextId);
+    }
+  }
+  
+  @Check
+  public void checkBusinessRulesHaveExceptions(final BusinessRules businessRules) {
+    EList<ConstraintInstance> _constraintInstances = businessRules.getConstraintInstances();
+    boolean _notEquals = (!Objects.equal(_constraintInstances, null));
+    if (_notEquals) {
+      EList<ConstraintInstance> _constraintInstances_1 = businessRules.getConstraintInstances();
+      for (final ConstraintInstance constraintInstance : _constraintInstances_1) {
+        Constraint _constraint = constraintInstance.getConstraint();
+        org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception _exception = _constraint.getException();
+        boolean _equals = Objects.equal(_exception, null);
+        if (_equals) {
+          this.error(
+            "A constraint used as a business rule must declare an exception", constraintInstance, 
+            DomainDrivenDesignDslPackage.Literals.CONSTRAINT_INSTANCE__CONSTRAINT, 
+            DomainDrivenDesignDslValidator.BUSINESS_RULE_REQUIRES_EXCEPTION);
+        }
+      }
+    }
+  }
+  
+  @Check
+  public void checkAttributeInvariantsTargetType(final Attribute attribute) {
+    boolean _and = false;
+    Invariants _invariants = attribute.getInvariants();
+    boolean _notEquals = (!Objects.equal(_invariants, null));
+    if (!_notEquals) {
+      _and = false;
+    } else {
+      Invariants _invariants_1 = attribute.getInvariants();
+      EList<ConstraintInstance> _constraintInstances = _invariants_1.getConstraintInstances();
+      boolean _notEquals_1 = (!Objects.equal(_constraintInstances, null));
+      _and = _notEquals_1;
+    }
+    if (_and) {
+      String _multiplicity = attribute.getMultiplicity();
+      boolean _equals = Objects.equal(_multiplicity, null);
+      if (_equals) {
+        Invariants _invariants_2 = attribute.getInvariants();
+        EList<ConstraintInstance> _constraintInstances_1 = _invariants_2.getConstraintInstances();
+        for (final ConstraintInstance constraintInstance : _constraintInstances_1) {
+          Type _type = attribute.getType();
+          Constraint _constraint = constraintInstance.getConstraint();
+          ConstraintTarget _target = _constraint.getTarget();
+          boolean _equals_1 = _type.equals(_target);
+          boolean _not = (!_equals_1);
+          if (_not) {
+            Constraint _constraint_1 = constraintInstance.getConstraint();
+            ConstraintTarget _target_1 = _constraint_1.getTarget();
+            String _name = DddConstraintTargetExtensions.getName(_target_1);
+            String _plus = ("The input type of the constraint (" + _name);
+            String _plus_1 = (_plus + 
+              ") does not match the attribute type");
+            this.error(_plus_1, constraintInstance, 
+              DomainDrivenDesignDslPackage.Literals.CONSTRAINT_INSTANCE__CONSTRAINT, 
+              DomainDrivenDesignDslValidator.ATTRIBUTE_INVARIANT_WRONG_TARGET_TYPE);
+          }
+        }
+      }
+    }
+  }
+  
+  @Check
+  public void checkParameterConstraintsTargetType(final Parameter parameter) {
+    boolean _and = false;
+    Preconditions _preconditions = parameter.getPreconditions();
+    boolean _notEquals = (!Objects.equal(_preconditions, null));
+    if (!_notEquals) {
+      _and = false;
+    } else {
+      Preconditions _preconditions_1 = parameter.getPreconditions();
+      EList<ConstraintInstance> _constraintInstances = _preconditions_1.getConstraintInstances();
+      boolean _notEquals_1 = (!Objects.equal(_constraintInstances, null));
+      _and = _notEquals_1;
+    }
+    if (_and) {
+      String _multiplicity = parameter.getMultiplicity();
+      boolean _equals = Objects.equal(_multiplicity, null);
+      if (_equals) {
+        Preconditions _preconditions_2 = parameter.getPreconditions();
+        EList<ConstraintInstance> _constraintInstances_1 = _preconditions_2.getConstraintInstances();
+        for (final ConstraintInstance constraintInstance : _constraintInstances_1) {
+          Type _type = parameter.getType();
+          Constraint _constraint = constraintInstance.getConstraint();
+          ConstraintTarget _target = _constraint.getTarget();
+          boolean _equals_1 = _type.equals(_target);
+          boolean _not = (!_equals_1);
+          if (_not) {
+            Constraint _constraint_1 = constraintInstance.getConstraint();
+            ConstraintTarget _target_1 = _constraint_1.getTarget();
+            String _name = DddConstraintTargetExtensions.getName(_target_1);
+            String _plus = ("The input type of the constraint (" + _name);
+            String _plus_1 = (_plus + 
+              ") does not match the parameter type");
+            this.error(_plus_1, constraintInstance, 
+              DomainDrivenDesignDslPackage.Literals.CONSTRAINT_INSTANCE__CONSTRAINT, 
+              DomainDrivenDesignDslValidator.PARAMETER_CONSTRAINT_WRONG_TARGET_TYPE);
+          }
+        }
+      }
+    }
+    boolean _and_1 = false;
+    BusinessRules _businessRules = parameter.getBusinessRules();
+    boolean _notEquals_2 = (!Objects.equal(_businessRules, null));
+    if (!_notEquals_2) {
+      _and_1 = false;
+    } else {
+      BusinessRules _businessRules_1 = parameter.getBusinessRules();
+      EList<ConstraintInstance> _constraintInstances_2 = _businessRules_1.getConstraintInstances();
+      boolean _notEquals_3 = (!Objects.equal(_constraintInstances_2, null));
+      _and_1 = _notEquals_3;
+    }
+    if (_and_1) {
+      String _multiplicity_1 = parameter.getMultiplicity();
+      boolean _equals_2 = Objects.equal(_multiplicity_1, null);
+      if (_equals_2) {
+        BusinessRules _businessRules_2 = parameter.getBusinessRules();
+        EList<ConstraintInstance> _constraintInstances_3 = _businessRules_2.getConstraintInstances();
+        for (final ConstraintInstance constraintInstance_1 : _constraintInstances_3) {
+          Type _type_1 = parameter.getType();
+          Constraint _constraint_2 = constraintInstance_1.getConstraint();
+          ConstraintTarget _target_2 = _constraint_2.getTarget();
+          boolean _equals_3 = _type_1.equals(_target_2);
+          boolean _not_1 = (!_equals_3);
+          if (_not_1) {
+            Constraint _constraint_3 = constraintInstance_1.getConstraint();
+            ConstraintTarget _target_3 = _constraint_3.getTarget();
+            String _name_1 = DddConstraintTargetExtensions.getName(_target_3);
+            String _plus_2 = ("The input type of the constraint (" + _name_1);
+            String _plus_3 = (_plus_2 + 
+              ") does not match the parameter type");
+            this.error(_plus_3, constraintInstance_1, 
+              DomainDrivenDesignDslPackage.Literals.CONSTRAINT_INSTANCE__CONSTRAINT, 
+              DomainDrivenDesignDslValidator.PARAMETER_CONSTRAINT_WRONG_TARGET_TYPE);
+          }
+        }
+      }
+    }
+  }
+  
+  @Check
+  public void checkInternalTypeInvariantsTargetType(final InternalType internalType) {
+    boolean _and = false;
+    Invariants _invariants = internalType.getInvariants();
+    boolean _notEquals = (!Objects.equal(_invariants, null));
+    if (!_notEquals) {
+      _and = false;
+    } else {
+      Invariants _invariants_1 = internalType.getInvariants();
+      EList<ConstraintInstance> _constraintInstances = _invariants_1.getConstraintInstances();
+      boolean _notEquals_1 = (!Objects.equal(_constraintInstances, null));
+      _and = _notEquals_1;
+    }
+    if (_and) {
+      Invariants _invariants_2 = internalType.getInvariants();
+      EList<ConstraintInstance> _constraintInstances_1 = _invariants_2.getConstraintInstances();
+      for (final ConstraintInstance constraintInstance : _constraintInstances_1) {
+        Constraint _constraint = constraintInstance.getConstraint();
+        ConstraintTarget _target = _constraint.getTarget();
+        boolean _equals = internalType.equals(_target);
+        boolean _not = (!_equals);
+        if (_not) {
+          Constraint _constraint_1 = constraintInstance.getConstraint();
+          ConstraintTarget _target_1 = _constraint_1.getTarget();
+          String _name = DddConstraintTargetExtensions.getName(_target_1);
+          String _plus = ("The input type of the constraint (" + _name);
+          String _plus_1 = (_plus + 
+            ") does not match this type");
+          this.error(_plus_1, constraintInstance, 
+            DomainDrivenDesignDslPackage.Literals.CONSTRAINT_INSTANCE__CONSTRAINT, 
+            DomainDrivenDesignDslValidator.INTERNAL_TYPE_INVARIANT_WRONG_TARGET_TYPE);
+        }
+      }
     }
   }
   

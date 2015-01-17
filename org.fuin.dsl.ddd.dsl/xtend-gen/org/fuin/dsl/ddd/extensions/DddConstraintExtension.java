@@ -4,12 +4,12 @@ import com.google.common.base.Objects;
 import java.util.ArrayList;
 import java.util.List;
 import org.eclipse.emf.common.util.EList;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractVO;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslFactory;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.InternalType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Type;
 import org.fuin.dsl.ddd.extensions.DddAttributeExtensions;
 import org.fuin.dsl.ddd.extensions.DddDslFactoryExtensions;
@@ -29,13 +29,13 @@ public class DddConstraintExtension {
       Attribute _createInputAttribute = DddConstraintExtension.createInputAttribute(((Type)target));
       list.add(_createInputAttribute);
     } else {
-      if ((target instanceof AbstractVO)) {
-        Attribute _createInputAttribute_1 = DddConstraintExtension.createInputAttribute(((Type)target));
+      if ((target instanceof InternalType)) {
+        Attribute _createInputAttribute_1 = DddConstraintExtension.createInputAttribute(((InternalType)target));
         list.add(_createInputAttribute_1);
-        EList<Attribute> _attributes_2 = ((AbstractVO)target).getAttributes();
+        EList<Attribute> _attributes_2 = ((InternalType)target).getAttributes();
         boolean _notEquals_1 = (!Objects.equal(_attributes_2, null));
         if (_notEquals_1) {
-          EList<Attribute> _attributes_3 = ((AbstractVO)target).getAttributes();
+          EList<Attribute> _attributes_3 = ((InternalType)target).getAttributes();
           for (final Attribute attr : _attributes_3) {
             {
               String _name = attr.getName();

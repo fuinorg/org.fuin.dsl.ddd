@@ -12,19 +12,24 @@ import org.eclipse.xtext.resource.IEObjectDescription
 import org.eclipse.xtext.resource.impl.ResourceDescriptionsProvider
 import org.eclipse.xtext.validation.Check
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.BusinessRules
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.InternalType
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Method
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Parameter
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Service
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable
 
 import static extension org.fuin.dsl.ddd.extensions.DddAbstractElementExtensions.*
 import static extension org.fuin.dsl.ddd.extensions.DddAttributeExtensions.*
-import static extension org.fuin.dsl.ddd.extensions.DddEObjectExtensions.*
 import static extension org.fuin.dsl.ddd.extensions.DddConstraintExtension.*
+import static extension org.fuin.dsl.ddd.extensions.DddConstraintTargetExtensions.*
+import static extension org.fuin.dsl.ddd.extensions.DddEObjectExtensions.*
 
 /**
  * Custom validation rules. 
@@ -58,6 +63,14 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 	public static val SERVICE_METHOD_CANNOT_FIRE_EVENTS = "serviceMethodCannotFireEvents"
 
 	public static val SERVICE_METHOD_CANNOT_DECLARE_EVENTS = "serviceMethodCannotDeclareEvents"
+
+	public static val BUSINESS_RULE_REQUIRES_EXCEPTION = "businessRuleRequiresException"
+
+	public static val ATTRIBUTE_INVARIANT_WRONG_TARGET_TYPE = "attributeInvariantWrongTargetType"
+
+	public static val PARAMETER_CONSTRAINT_WRONG_TARGET_TYPE = "parameterConstraintWrongTargetType"
+
+	public static val INTERNAL_TYPE_INVARIANT_WRONG_TARGET_TYPE = "internalTypeInvariantWrongTargetType"
 
 	@Inject
 	private IContainer.Manager containerManager
@@ -166,14 +179,14 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 		}
 
 	}
-	
+
 	@Check
 	def checkNoEventsInService(Method method) {
-		
+
 		if (method.eContainer instanceof Service) {
-			
+
 			// No fired events
-			if ((method.firedEvents != null) && (method.firedEvents.size() > 0)) {			
+			if ((method.firedEvents != null) && (method.firedEvents.size() > 0)) {
 				error(
 					"A service method cannot fire events",
 					method,
@@ -183,7 +196,7 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 			}
 
 			// No declared events
-			if ((method.events != null) && (method.events.size() > 0)) {			
+			if ((method.events != null) && (method.events.size() > 0)) {
 				error(
 					"A service method cannot declare events",
 					method,
@@ -191,10 +204,10 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 					SERVICE_METHOD_CANNOT_DECLARE_EVENTS
 				)
 			}
-			
+
 		}
-		
-	}	
+
+	}
 
 	@Check
 	def checkVariablesInEventMessage(Event event) {
@@ -244,6 +257,112 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 		}
 	}
 
+	@Check
+	def checkBusinessRulesHaveExceptions(BusinessRules businessRules) {
+
+		if (businessRules.constraintInstances != null) {
+			for (constraintInstance : businessRules.constraintInstances) {
+				if (constraintInstance.constraint.exception == null) {
+					error(
+						"A constraint used as a business rule must declare an exception",
+						constraintInstance,
+						DomainDrivenDesignDslPackage.Literals::CONSTRAINT_INSTANCE__CONSTRAINT,
+						BUSINESS_RULE_REQUIRES_EXCEPTION
+					)
+				}
+			}
+		}
+
+	}
+
+	@Check
+	def checkAttributeInvariantsTargetType(Attribute attribute) {
+
+		if ((attribute.invariants != null) && (attribute.invariants.constraintInstances != null)) {
+			if (attribute.multiplicity == null) {
+
+				// TODO Find a  way to handle collections
+				for (constraintInstance : attribute.invariants.constraintInstances) {
+					if (!attribute.type.equals(constraintInstance.constraint.target)) {
+						error(
+							"The input type of the constraint (" + constraintInstance.constraint.target.name +
+								") does not match the attribute type",
+							constraintInstance,
+							DomainDrivenDesignDslPackage.Literals::CONSTRAINT_INSTANCE__CONSTRAINT,
+							ATTRIBUTE_INVARIANT_WRONG_TARGET_TYPE
+						)
+					}
+				}
+
+			}
+		}
+
+	}
+
+	@Check
+	def checkParameterConstraintsTargetType(Parameter parameter) {
+
+		if ((parameter.preconditions != null) && (parameter.preconditions.constraintInstances != null)) {
+			if (parameter.multiplicity == null) {
+
+				// TODO Find a way to handle collections
+				for (constraintInstance : parameter.preconditions.constraintInstances) {
+					if (!parameter.type.equals(constraintInstance.constraint.target)) {
+						error(
+							"The input type of the constraint (" + constraintInstance.constraint.target.name +
+								") does not match the parameter type",
+							constraintInstance,
+							DomainDrivenDesignDslPackage.Literals::CONSTRAINT_INSTANCE__CONSTRAINT,
+							PARAMETER_CONSTRAINT_WRONG_TARGET_TYPE
+						)
+					}
+				}
+
+			}
+		}
+
+		if ((parameter.businessRules != null) && (parameter.businessRules.constraintInstances != null)) {
+			if (parameter.multiplicity == null) {
+
+				// TODO Find a way to handle collections
+				for (constraintInstance : parameter.businessRules.constraintInstances) {
+					if (!parameter.type.equals(constraintInstance.constraint.target)) {
+						error(
+							"The input type of the constraint (" + constraintInstance.constraint.target.name +
+								") does not match the parameter type",
+							constraintInstance,
+							DomainDrivenDesignDslPackage.Literals::CONSTRAINT_INSTANCE__CONSTRAINT,
+							PARAMETER_CONSTRAINT_WRONG_TARGET_TYPE
+						)
+					}
+				}
+
+			}
+		}
+
+	}
+
+	@Check
+	def checkInternalTypeInvariantsTargetType(InternalType internalType) {
+
+		if ((internalType.invariants != null) && (internalType.invariants.constraintInstances != null)) {
+
+			for (constraintInstance : internalType.invariants.constraintInstances) {
+				if (!internalType.equals(constraintInstance.constraint.target)) {
+					error(
+						"The input type of the constraint (" + constraintInstance.constraint.target.name +
+							") does not match this type",
+						constraintInstance,
+						DomainDrivenDesignDslPackage.Literals::CONSTRAINT_INSTANCE__CONSTRAINT,
+						INTERNAL_TYPE_INVARIANT_WRONG_TARGET_TYPE
+					)
+				}
+			}
+
+		}
+
+	}
+
 	private def getAllExceptions(EObject obj) {
 		val Set<Exception> list = new HashSet<Exception>()
 		val resource = obj.eResource
@@ -269,6 +388,7 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 		while ((start = msg.indexOf("${", from)) > -1) {
 			end = msg.indexOf('}', start + 1);
 			if (end == -1) {
+
 				// No closing bracket found...
 				from = msg.length();
 			} else {

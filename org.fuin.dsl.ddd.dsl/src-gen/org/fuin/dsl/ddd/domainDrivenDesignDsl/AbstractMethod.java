@@ -2,8 +2,6 @@
  */
 package org.fuin.dsl.ddd.domainDrivenDesignDsl;
 
-import java.util.Map;
-
 import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EObject;
@@ -25,7 +23,6 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getService <em>Service</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getServices <em>Services</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getEvents <em>Events</em>}</li>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getUserContent <em>User Content</em>}</li>
  * </ul>
  * </p>
  *
@@ -228,31 +225,5 @@ public interface AbstractMethod extends EObject
    * @generated
    */
   EList<Event> getEvents();
-
-  /**
-   * Returns the value of the '<em><b>User Content</b></em>' attribute.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>User Content</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>User Content</em>' attribute.
-   * @see #setUserContent(Map)
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getAbstractMethod_UserContent()
-   * @model transient="true"
-   * @generated
-   */
-  Map getUserContent();
-
-  /**
-   * Sets the value of the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod#getUserContent <em>User Content</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>User Content</em>' attribute.
-   * @see #getUserContent()
-   * @generated
-   */
-  void setUserContent(Map value);
 
 } // AbstractMethod

@@ -1125,16 +1125,6 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getAbstractMethod_UserContent()
-  {
-    return (EAttribute)abstractMethodEClass.getEStructuralFeatures().get(9);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getConstructor()
   {
     return constructorEClass;
@@ -1693,7 +1683,6 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     createEReference(abstractMethodEClass, ABSTRACT_METHOD__SERVICE);
     createEReference(abstractMethodEClass, ABSTRACT_METHOD__SERVICES);
     createEReference(abstractMethodEClass, ABSTRACT_METHOD__EVENTS);
-    createEAttribute(abstractMethodEClass, ABSTRACT_METHOD__USER_CONTENT);
 
     constructorEClass = createEClass(CONSTRUCTOR);
 
@@ -1910,7 +1899,6 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     initEReference(getAbstractMethod_Service(), this.getService(), null, "service", null, 0, 1, AbstractMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAbstractMethod_Services(), this.getService(), null, "services", null, 0, -1, AbstractMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAbstractMethod_Events(), this.getEvent(), null, "events", null, 0, -1, AbstractMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getAbstractMethod_UserContent(), ecorePackage.getEMap(), "userContent", null, 0, 1, AbstractMethod.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(constructorEClass, Constructor.class, "Constructor", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

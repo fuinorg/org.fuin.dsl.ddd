@@ -3,7 +3,6 @@
 package org.fuin.dsl.ddd.domainDrivenDesignDsl.impl;
 
 import java.util.Collection;
-import java.util.Map;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
@@ -44,7 +43,6 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Service;
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AbstractMethodImpl#getService <em>Service</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AbstractMethodImpl#getServices <em>Services</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AbstractMethodImpl#getEvents <em>Events</em>}</li>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AbstractMethodImpl#getUserContent <em>User Content</em>}</li>
  * </ul>
  * </p>
  *
@@ -161,16 +159,6 @@ public class AbstractMethodImpl extends MinimalEObjectImpl.Container implements 
    * @ordered
    */
   protected EList<Event> events;
-
-  /**
-   * The cached value of the '{@link #getUserContent() <em>User Content</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getUserContent()
-   * @generated
-   * @ordered
-   */
-  protected Map userContent;
 
   /**
    * <!-- begin-user-doc -->
@@ -439,29 +427,6 @@ public class AbstractMethodImpl extends MinimalEObjectImpl.Container implements 
    * <!-- end-user-doc -->
    * @generated
    */
-  public Map getUserContent()
-  {
-    return userContent;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setUserContent(Map newUserContent)
-  {
-    Map oldUserContent = userContent;
-    userContent = newUserContent;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.ABSTRACT_METHOD__USER_CONTENT, oldUserContent, userContent));
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -510,8 +475,6 @@ public class AbstractMethodImpl extends MinimalEObjectImpl.Container implements 
         return getServices();
       case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__EVENTS:
         return getEvents();
-      case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__USER_CONTENT:
-        return getUserContent();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -558,9 +521,6 @@ public class AbstractMethodImpl extends MinimalEObjectImpl.Container implements 
         getEvents().clear();
         getEvents().addAll((Collection<? extends Event>)newValue);
         return;
-      case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__USER_CONTENT:
-        setUserContent((Map)newValue);
-        return;
     }
     super.eSet(featureID, newValue);
   }
@@ -602,9 +562,6 @@ public class AbstractMethodImpl extends MinimalEObjectImpl.Container implements 
       case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__EVENTS:
         getEvents().clear();
         return;
-      case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__USER_CONTENT:
-        setUserContent((Map)null);
-        return;
     }
     super.eUnset(featureID);
   }
@@ -637,8 +594,6 @@ public class AbstractMethodImpl extends MinimalEObjectImpl.Container implements 
         return services != null && !services.isEmpty();
       case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__EVENTS:
         return events != null && !events.isEmpty();
-      case DomainDrivenDesignDslPackage.ABSTRACT_METHOD__USER_CONTENT:
-        return userContent != null;
     }
     return super.eIsSet(featureID);
   }
@@ -658,8 +613,6 @@ public class AbstractMethodImpl extends MinimalEObjectImpl.Container implements 
     result.append(doc);
     result.append(", name: ");
     result.append(name);
-    result.append(", userContent: ");
-    result.append(userContent);
     result.append(')');
     return result.toString();
   }

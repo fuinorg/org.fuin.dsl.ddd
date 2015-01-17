@@ -1,5 +1,6 @@
 package org.fuin.dsl.ddd.extensions;
 
+import com.google.common.base.Objects;
 import java.util.ArrayList;
 import java.util.List;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute;
@@ -20,6 +21,10 @@ public class DddConstraintTargetExtensions {
    * @return Name.
    */
   public static String getName(final ConstraintTarget target) {
+    boolean _equals = Objects.equal(target, null);
+    if (_equals) {
+      return null;
+    }
     if ((target instanceof InternalType)) {
       return ((InternalType)target).getName();
     } else {
@@ -45,6 +50,10 @@ public class DddConstraintTargetExtensions {
    * @return Attributes - Never null.
    */
   public static List<Attribute> getAttributes(final ConstraintTarget target) {
+    boolean _equals = Objects.equal(target, null);
+    if (_equals) {
+      return new ArrayList<Attribute>();
+    }
     if ((target instanceof InternalType)) {
       return ((InternalType)target).getAttributes();
     } else {

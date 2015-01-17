@@ -20,6 +20,9 @@ class DddConstraintTargetExtensions {
 	 * @return Name.
 	 */
 	def static String getName(ConstraintTarget target) {
+		if (target == null) {
+			return null
+		}
 		if (target instanceof InternalType) {
 			return target.name;
 		} else if (target instanceof ExternalType) {
@@ -36,6 +39,9 @@ class DddConstraintTargetExtensions {
 	 * @return Attributes - Never null.
 	 */
 	def static List<Attribute> getAttributes(ConstraintTarget target) {
+		if (target == null) {
+			return new ArrayList<Attribute>();
+		}
 		if (target instanceof InternalType) {
 			return target.attributes;
 		} else if (target instanceof ExternalType) {

@@ -2,17 +2,17 @@ package org.fuin.dsl.ddd.extensions
 
 import java.util.ArrayList
 import java.util.List
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractVO
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.InternalType
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Type
 
 import static org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslFactory.eINSTANCE
 
-import static extension org.fuin.dsl.ddd.extensions.DddAttributeExtensions.*
 import static extension org.fuin.dsl.ddd.extensions.DddDslFactoryExtensions.*
+import static extension org.fuin.dsl.ddd.extensions.DddAttributeExtensions.*
 
 class DddConstraintExtension {
 
@@ -24,7 +24,7 @@ class DddConstraintExtension {
 		var ConstraintTarget target = constr.target;
 		if (target instanceof ExternalType) {
 			list.add(createInputAttribute(target))
-		} else if (target instanceof AbstractVO) {
+		} else if (target instanceof InternalType) {
 			list.add(createInputAttribute(target))
 			if (target.attributes != null) {
 				for (attr : target.attributes) {
