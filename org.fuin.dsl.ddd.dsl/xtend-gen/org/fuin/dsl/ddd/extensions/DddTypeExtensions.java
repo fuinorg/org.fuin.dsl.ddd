@@ -1,9 +1,12 @@
 package org.fuin.dsl.ddd.extensions;
 
 import com.google.common.base.Objects;
+import java.util.ArrayList;
+import java.util.List;
 import org.eclipse.emf.common.util.EList;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntity;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractVO;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumObject;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.InternalType;
@@ -148,5 +151,24 @@ public class DddTypeExtensions {
       }
     }
     return name;
+  }
+  
+  /**
+   * Returns the attributes of a type.
+   * 
+   * @param type Type to return a list of attributes for.
+   * 
+   * @return Attributes - Never null.
+   */
+  public static List<Attribute> getAttributes(final Type type) {
+    boolean _equals = Objects.equal(type, null);
+    if (_equals) {
+      return new ArrayList<Attribute>();
+    }
+    if ((type instanceof InternalType)) {
+      return ((InternalType)type).getAttributes();
+    } else {
+      return new ArrayList<Attribute>();
+    }
   }
 }

@@ -19,8 +19,8 @@ import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Type;
 
 /**
  * <!-- begin-user-doc -->
@@ -48,7 +48,7 @@ public class ConstraintImpl extends AbstractElementImpl implements Constraint
    * @generated
    * @ordered
    */
-  protected ConstraintTarget target;
+  protected Type target;
 
   /**
    * The cached value of the '{@link #getException() <em>Exception</em>}' reference.
@@ -116,12 +116,12 @@ public class ConstraintImpl extends AbstractElementImpl implements Constraint
    * <!-- end-user-doc -->
    * @generated
    */
-  public ConstraintTarget getTarget()
+  public Type getTarget()
   {
     if (target != null && target.eIsProxy())
     {
       InternalEObject oldTarget = (InternalEObject)target;
-      target = (ConstraintTarget)eResolveProxy(oldTarget);
+      target = (Type)eResolveProxy(oldTarget);
       if (target != oldTarget)
       {
         if (eNotificationRequired())
@@ -136,7 +136,7 @@ public class ConstraintImpl extends AbstractElementImpl implements Constraint
    * <!-- end-user-doc -->
    * @generated
    */
-  public ConstraintTarget basicGetTarget()
+  public Type basicGetTarget()
   {
     return target;
   }
@@ -146,9 +146,9 @@ public class ConstraintImpl extends AbstractElementImpl implements Constraint
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setTarget(ConstraintTarget newTarget)
+  public void setTarget(Type newTarget)
   {
-    ConstraintTarget oldTarget = target;
+    Type oldTarget = target;
     target = newTarget;
     if (eNotificationRequired())
       eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.CONSTRAINT__TARGET, oldTarget, target));
@@ -286,7 +286,7 @@ public class ConstraintImpl extends AbstractElementImpl implements Constraint
     switch (featureID)
     {
       case DomainDrivenDesignDslPackage.CONSTRAINT__TARGET:
-        setTarget((ConstraintTarget)newValue);
+        setTarget((Type)newValue);
         return;
       case DomainDrivenDesignDslPackage.CONSTRAINT__EXCEPTION:
         setException((org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception)newValue);
@@ -313,7 +313,7 @@ public class ConstraintImpl extends AbstractElementImpl implements Constraint
     switch (featureID)
     {
       case DomainDrivenDesignDslPackage.CONSTRAINT__TARGET:
-        setTarget((ConstraintTarget)null);
+        setTarget((Type)null);
         return;
       case DomainDrivenDesignDslPackage.CONSTRAINT__EXCEPTION:
         setException((org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception)null);

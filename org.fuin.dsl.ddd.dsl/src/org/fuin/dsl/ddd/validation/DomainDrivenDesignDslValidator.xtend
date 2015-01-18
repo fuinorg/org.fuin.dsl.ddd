@@ -28,7 +28,6 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable
 import static extension org.fuin.dsl.ddd.extensions.DddAbstractElementExtensions.*
 import static extension org.fuin.dsl.ddd.extensions.DddAttributeExtensions.*
 import static extension org.fuin.dsl.ddd.extensions.DddConstraintExtension.*
-import static extension org.fuin.dsl.ddd.extensions.DddConstraintTargetExtensions.*
 import static extension org.fuin.dsl.ddd.extensions.DddEObjectExtensions.*
 
 /**
@@ -71,6 +70,8 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 	public static val PARAMETER_CONSTRAINT_WRONG_TARGET_TYPE = "parameterConstraintWrongTargetType"
 
 	public static val INTERNAL_TYPE_INVARIANT_WRONG_TARGET_TYPE = "internalTypeInvariantWrongTargetType"
+
+	public static val SERVICE_NOT_ALLOWED_AS_CONSTRAINT_INPUT = "serviceNotAllowedAsConstraintInput"
 
 	@Inject
 	private IContainer.Manager containerManager
@@ -359,6 +360,20 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 				}
 			}
 
+		}
+
+	}
+
+	@Check
+	def checkConstraintInputNotService(Constraint constraint) {
+
+		if (constraint.target instanceof Service) {
+			error(
+				"A service is not allowed as input for a constraint",
+				constraint.target,
+				DomainDrivenDesignDslPackage.Literals::CONSTRAINT__TARGET,
+				SERVICE_NOT_ALLOWED_AS_CONSTRAINT_INPUT
+			)
 		}
 
 	}

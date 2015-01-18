@@ -21,7 +21,6 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.BooleanLiteral;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.BusinessRules;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constructor;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Context;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslFactory;
@@ -129,13 +128,6 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * @generated
    */
   private EClass abstractEntityEClass = null;
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  private EClass constraintTargetEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -688,16 +680,6 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
   public EReference getAbstractEntity_Events()
   {
     return (EReference)abstractEntityEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EClass getConstraintTarget()
-  {
-    return constraintTargetEClass;
   }
 
   /**
@@ -1628,8 +1610,6 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     createEReference(abstractEntityEClass, ABSTRACT_ENTITY__METHODS);
     createEReference(abstractEntityEClass, ABSTRACT_ENTITY__EVENTS);
 
-    constraintTargetEClass = createEClass(CONSTRAINT_TARGET);
-
     externalTypeEClass = createEClass(EXTERNAL_TYPE);
     createEAttribute(externalTypeEClass, EXTERNAL_TYPE__ELEMENT);
 
@@ -1779,11 +1759,9 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     typeEClass.getESuperTypes().add(this.getAbstractElement());
     internalTypeEClass.getESuperTypes().add(this.getType());
     abstractVOEClass.getESuperTypes().add(this.getInternalType());
-    abstractVOEClass.getESuperTypes().add(this.getConstraintTarget());
     abstractEntityIdEClass.getESuperTypes().add(this.getAbstractVO());
     abstractEntityEClass.getESuperTypes().add(this.getInternalType());
     externalTypeEClass.getESuperTypes().add(this.getType());
-    externalTypeEClass.getESuperTypes().add(this.getConstraintTarget());
     constraintEClass.getESuperTypes().add(this.getAbstractElement());
     exceptionEClass.getESuperTypes().add(this.getAbstractElement());
     valueObjectEClass.getESuperTypes().add(this.getAbstractVO());
@@ -1844,13 +1822,11 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
 
     addEOperation(abstractEntityEClass, this.getAbstractEntityId(), "getIdType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-    initEClass(constraintTargetEClass, ConstraintTarget.class, "ConstraintTarget", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
     initEClass(externalTypeEClass, ExternalType.class, "ExternalType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getExternalType_Element(), ecorePackage.getEString(), "element", null, 0, 1, ExternalType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(constraintEClass, Constraint.class, "Constraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getConstraint_Target(), this.getConstraintTarget(), null, "target", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getConstraint_Target(), this.getType(), null, "target", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getConstraint_Exception(), this.getException(), null, "exception", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getConstraint_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getConstraint_Message(), ecorePackage.getEString(), "message", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

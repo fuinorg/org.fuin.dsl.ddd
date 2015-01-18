@@ -34,12 +34,12 @@ public interface Constraint extends AbstractElement
    * </p>
    * <!-- end-user-doc -->
    * @return the value of the '<em>Target</em>' reference.
-   * @see #setTarget(ConstraintTarget)
+   * @see #setTarget(Type)
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getConstraint_Target()
    * @model
    * @generated
    */
-  ConstraintTarget getTarget();
+  Type getTarget();
 
   /**
    * Sets the value of the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint#getTarget <em>Target</em>}' reference.
@@ -49,7 +49,7 @@ public interface Constraint extends AbstractElement
    * @see #getTarget()
    * @generated
    */
-  void setTarget(ConstraintTarget value);
+  void setTarget(Type value);
 
   /**
    * Returns the value of the '<em><b>Exception</b></em>' reference.

@@ -336,8 +336,6 @@ finally {
 
 
 
-
-
 // Entry rule entryRuleExternalType
 entryRuleExternalType 
 :
@@ -1396,7 +1394,6 @@ rule__AbstractEntity__Alternatives
 finally {
 	restoreStackSize(stackSize);
 }
-
 
 
 
@@ -10263,12 +10260,12 @@ rule__Constraint__TargetAssignment_3_1
     }
 :
 (
-{ before(grammarAccess.getConstraintAccess().getTargetConstraintTargetCrossReference_3_1_0()); }
+{ before(grammarAccess.getConstraintAccess().getTargetTypeCrossReference_3_1_0()); }
 (
-{ before(grammarAccess.getConstraintAccess().getTargetConstraintTargetFQNParserRuleCall_3_1_0_1()); }
-	ruleFQN{ after(grammarAccess.getConstraintAccess().getTargetConstraintTargetFQNParserRuleCall_3_1_0_1()); }
+{ before(grammarAccess.getConstraintAccess().getTargetTypeFQNParserRuleCall_3_1_0_1()); }
+	ruleFQN{ after(grammarAccess.getConstraintAccess().getTargetTypeFQNParserRuleCall_3_1_0_1()); }
 )
-{ after(grammarAccess.getConstraintAccess().getTargetConstraintTargetCrossReference_3_1_0()); }
+{ after(grammarAccess.getConstraintAccess().getTargetTypeCrossReference_3_1_0()); }
 )
 
 ;

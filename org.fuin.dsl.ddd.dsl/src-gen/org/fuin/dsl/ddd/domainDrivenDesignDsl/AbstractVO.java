@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.EList;
  * @model
  * @generated
  */
-public interface AbstractVO extends InternalType, ConstraintTarget
+public interface AbstractVO extends InternalType
 {
   /**
    * Returns the value of the '<em><b>Base</b></em>' reference.

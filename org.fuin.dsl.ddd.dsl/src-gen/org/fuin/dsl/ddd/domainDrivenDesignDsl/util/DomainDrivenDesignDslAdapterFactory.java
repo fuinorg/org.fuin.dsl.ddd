@@ -21,7 +21,6 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.BooleanLiteral;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.BusinessRules;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constructor;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Context;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
@@ -163,11 +162,6 @@ public class DomainDrivenDesignDslAdapterFactory extends AdapterFactoryImpl
       public Adapter caseAbstractEntity(AbstractEntity object)
       {
         return createAbstractEntityAdapter();
-      }
-      @Override
-      public Adapter caseConstraintTarget(ConstraintTarget object)
-      {
-        return createConstraintTargetAdapter();
       }
       @Override
       public Adapter caseExternalType(ExternalType object)
@@ -487,21 +481,6 @@ public class DomainDrivenDesignDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createAbstractEntityAdapter()
-  {
-    return null;
-  }
-
-  /**
-   * Creates a new adapter for an object of class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget <em>Constraint Target</em>}'.
-   * <!-- begin-user-doc -->
-   * This default implementation returns null so that we can easily ignore cases;
-   * it's useful to ignore a case when inheritance will catch all the cases anyway.
-   * <!-- end-user-doc -->
-   * @return the new adapter.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget
-   * @generated
-   */
-  public Adapter createConstraintTargetAdapter()
   {
     return null;
   }

@@ -6,7 +6,6 @@ import java.util.List;
 import org.eclipse.emf.common.util.EList;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslFactory;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.InternalType;
@@ -24,13 +23,13 @@ public class DddConstraintExtension {
       EList<Attribute> _attributes_1 = constr.getAttributes();
       list.addAll(_attributes_1);
     }
-    ConstraintTarget target = constr.getTarget();
+    Type target = constr.getTarget();
     if ((target instanceof ExternalType)) {
-      Attribute _createInputAttribute = DddConstraintExtension.createInputAttribute(((Type)target));
+      Attribute _createInputAttribute = DddConstraintExtension.createInputAttribute(target);
       list.add(_createInputAttribute);
     } else {
       if ((target instanceof InternalType)) {
-        Attribute _createInputAttribute_1 = DddConstraintExtension.createInputAttribute(((InternalType)target));
+        Attribute _createInputAttribute_1 = DddConstraintExtension.createInputAttribute(target);
         list.add(_createInputAttribute_1);
         EList<Attribute> _attributes_2 = ((InternalType)target).getAttributes();
         boolean _notEquals_1 = (!Objects.equal(_attributes_2, null));

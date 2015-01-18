@@ -4,15 +4,14 @@ import java.util.ArrayList
 import java.util.List
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.InternalType
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Type
 
 import static org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslFactory.eINSTANCE
 
-import static extension org.fuin.dsl.ddd.extensions.DddDslFactoryExtensions.*
 import static extension org.fuin.dsl.ddd.extensions.DddAttributeExtensions.*
+import static extension org.fuin.dsl.ddd.extensions.DddDslFactoryExtensions.*
 
 class DddConstraintExtension {
 
@@ -21,7 +20,7 @@ class DddConstraintExtension {
 		if (constr.attributes != null) {
 			list.addAll(constr.attributes);
 		}
-		var ConstraintTarget target = constr.target;
+		var Type target = constr.target;
 		if (target instanceof ExternalType) {
 			list.add(createInputAttribute(target))
 		} else if (target instanceof InternalType) {

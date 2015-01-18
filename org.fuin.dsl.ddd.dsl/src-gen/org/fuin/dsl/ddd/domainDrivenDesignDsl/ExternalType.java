@@ -19,7 +19,7 @@ package org.fuin.dsl.ddd.domainDrivenDesignDsl;
  * @model
  * @generated
  */
-public interface ExternalType extends Type, ConstraintTarget
+public interface ExternalType extends Type
 {
   /**
    * Returns the value of the '<em><b>Element</b></em>' attribute.

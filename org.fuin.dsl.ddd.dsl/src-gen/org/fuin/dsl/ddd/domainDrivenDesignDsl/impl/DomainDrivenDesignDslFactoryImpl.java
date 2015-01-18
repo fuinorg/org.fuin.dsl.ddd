@@ -22,7 +22,6 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.BooleanLiteral;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.BusinessRules;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constructor;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Context;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslFactory;
@@ -115,7 +114,6 @@ public class DomainDrivenDesignDslFactoryImpl extends EFactoryImpl implements Do
       case DomainDrivenDesignDslPackage.ABSTRACT_VO: return createAbstractVO();
       case DomainDrivenDesignDslPackage.ABSTRACT_ENTITY_ID: return createAbstractEntityId();
       case DomainDrivenDesignDslPackage.ABSTRACT_ENTITY: return createAbstractEntity();
-      case DomainDrivenDesignDslPackage.CONSTRAINT_TARGET: return createConstraintTarget();
       case DomainDrivenDesignDslPackage.EXTERNAL_TYPE: return createExternalType();
       case DomainDrivenDesignDslPackage.CONSTRAINT: return createConstraint();
       case DomainDrivenDesignDslPackage.EXCEPTION: return createException();
@@ -259,17 +257,6 @@ public class DomainDrivenDesignDslFactoryImpl extends EFactoryImpl implements Do
   {
     AbstractEntityImpl abstractEntity = new AbstractEntityImpl();
     return abstractEntity;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public ConstraintTarget createConstraintTarget()
-  {
-    ConstraintTargetImpl constraintTarget = new ConstraintTargetImpl();
-    return constraintTarget;
   }
 
   /**

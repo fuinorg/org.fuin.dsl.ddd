@@ -39,16 +39,13 @@ AbstractEntityId:
 AbstractEntity:
 	Entity | Aggregate;
 
-ConstraintTarget:
-	ExternalType | AbstractVO;
-
 ExternalType:
 	doc=DOC?	
 	'type' (element='element')? name=ID;
 
 Constraint:
 	doc=DOC? 
-	'constraint' name=ID ('input' target=[ConstraintTarget|FQN])? ('exception' exception=[Exception|FQN])? '{'
+	'constraint' name=ID ('input' target=[Type|FQN])? ('exception' exception=[Exception|FQN])? '{'
 		attributes+=Attribute* 
 		('message' message=STRING)?
 	'}';

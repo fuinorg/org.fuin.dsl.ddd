@@ -23,7 +23,6 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.BusinessRules;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintTarget;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Context;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity;
@@ -41,7 +40,6 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
 import org.fuin.dsl.ddd.extensions.DddAbstractElementExtensions;
 import org.fuin.dsl.ddd.extensions.DddAttributeExtensions;
 import org.fuin.dsl.ddd.extensions.DddConstraintExtension;
-import org.fuin.dsl.ddd.extensions.DddConstraintTargetExtensions;
 import org.fuin.dsl.ddd.extensions.DddEObjectExtensions;
 import org.fuin.dsl.ddd.validation.AbstractDomainDrivenDesignDslValidator;
 
@@ -85,6 +83,8 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
   public final static String PARAMETER_CONSTRAINT_WRONG_TARGET_TYPE = "parameterConstraintWrongTargetType";
   
   public final static String INTERNAL_TYPE_INVARIANT_WRONG_TARGET_TYPE = "internalTypeInvariantWrongTargetType";
+  
+  public final static String SERVICE_NOT_ALLOWED_AS_CONSTRAINT_INPUT = "serviceNotAllowedAsConstraintInput";
   
   @Inject
   private IContainer.Manager containerManager;
@@ -425,13 +425,13 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
         for (final ConstraintInstance constraintInstance : _constraintInstances_1) {
           Type _type = attribute.getType();
           Constraint _constraint = constraintInstance.getConstraint();
-          ConstraintTarget _target = _constraint.getTarget();
+          Type _target = _constraint.getTarget();
           boolean _equals_1 = _type.equals(_target);
           boolean _not = (!_equals_1);
           if (_not) {
             Constraint _constraint_1 = constraintInstance.getConstraint();
-            ConstraintTarget _target_1 = _constraint_1.getTarget();
-            String _name = DddConstraintTargetExtensions.getName(_target_1);
+            Type _target_1 = _constraint_1.getTarget();
+            String _name = _target_1.getName();
             String _plus = ("The input type of the constraint (" + _name);
             String _plus_1 = (_plus + 
               ") does not match the attribute type");
@@ -466,13 +466,13 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
         for (final ConstraintInstance constraintInstance : _constraintInstances_1) {
           Type _type = parameter.getType();
           Constraint _constraint = constraintInstance.getConstraint();
-          ConstraintTarget _target = _constraint.getTarget();
+          Type _target = _constraint.getTarget();
           boolean _equals_1 = _type.equals(_target);
           boolean _not = (!_equals_1);
           if (_not) {
             Constraint _constraint_1 = constraintInstance.getConstraint();
-            ConstraintTarget _target_1 = _constraint_1.getTarget();
-            String _name = DddConstraintTargetExtensions.getName(_target_1);
+            Type _target_1 = _constraint_1.getTarget();
+            String _name = _target_1.getName();
             String _plus = ("The input type of the constraint (" + _name);
             String _plus_1 = (_plus + 
               ") does not match the parameter type");
@@ -503,13 +503,13 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
         for (final ConstraintInstance constraintInstance_1 : _constraintInstances_3) {
           Type _type_1 = parameter.getType();
           Constraint _constraint_2 = constraintInstance_1.getConstraint();
-          ConstraintTarget _target_2 = _constraint_2.getTarget();
+          Type _target_2 = _constraint_2.getTarget();
           boolean _equals_3 = _type_1.equals(_target_2);
           boolean _not_1 = (!_equals_3);
           if (_not_1) {
             Constraint _constraint_3 = constraintInstance_1.getConstraint();
-            ConstraintTarget _target_3 = _constraint_3.getTarget();
-            String _name_1 = DddConstraintTargetExtensions.getName(_target_3);
+            Type _target_3 = _constraint_3.getTarget();
+            String _name_1 = _target_3.getName();
             String _plus_2 = ("The input type of the constraint (" + _name_1);
             String _plus_3 = (_plus_2 + 
               ") does not match the parameter type");
@@ -540,13 +540,13 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
       EList<ConstraintInstance> _constraintInstances_1 = _invariants_2.getConstraintInstances();
       for (final ConstraintInstance constraintInstance : _constraintInstances_1) {
         Constraint _constraint = constraintInstance.getConstraint();
-        ConstraintTarget _target = _constraint.getTarget();
+        Type _target = _constraint.getTarget();
         boolean _equals = internalType.equals(_target);
         boolean _not = (!_equals);
         if (_not) {
           Constraint _constraint_1 = constraintInstance.getConstraint();
-          ConstraintTarget _target_1 = _constraint_1.getTarget();
-          String _name = DddConstraintTargetExtensions.getName(_target_1);
+          Type _target_1 = _constraint_1.getTarget();
+          String _name = _target_1.getName();
           String _plus = ("The input type of the constraint (" + _name);
           String _plus_1 = (_plus + 
             ") does not match this type");
@@ -555,6 +555,18 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
             DomainDrivenDesignDslValidator.INTERNAL_TYPE_INVARIANT_WRONG_TARGET_TYPE);
         }
       }
+    }
+  }
+  
+  @Check
+  public void checkConstraintInputNotService(final Constraint constraint) {
+    Type _target = constraint.getTarget();
+    if ((_target instanceof Service)) {
+      Type _target_1 = constraint.getTarget();
+      this.error(
+        "A service is not allowed as input for a constraint", _target_1, 
+        DomainDrivenDesignDslPackage.Literals.CONSTRAINT__TARGET, 
+        DomainDrivenDesignDslValidator.SERVICE_NOT_ALLOWED_AS_CONSTRAINT_INPUT);
     }
   }
   

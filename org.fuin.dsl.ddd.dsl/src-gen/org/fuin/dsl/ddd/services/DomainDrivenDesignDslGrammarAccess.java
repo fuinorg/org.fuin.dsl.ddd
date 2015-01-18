@@ -289,26 +289,6 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		public RuleCall getAggregateParserRuleCall_1() { return cAggregateParserRuleCall_1; }
 	}
 
-	public class ConstraintTargetElements extends AbstractParserRuleElementFinder {
-		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ConstraintTarget");
-		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
-		private final RuleCall cExternalTypeParserRuleCall_0 = (RuleCall)cAlternatives.eContents().get(0);
-		private final RuleCall cAbstractVOParserRuleCall_1 = (RuleCall)cAlternatives.eContents().get(1);
-		
-		//ConstraintTarget:
-		//	ExternalType | AbstractVO;
-		public ParserRule getRule() { return rule; }
-
-		//ExternalType | AbstractVO
-		public Alternatives getAlternatives() { return cAlternatives; }
-
-		//ExternalType
-		public RuleCall getExternalTypeParserRuleCall_0() { return cExternalTypeParserRuleCall_0; }
-
-		//AbstractVO
-		public RuleCall getAbstractVOParserRuleCall_1() { return cAbstractVOParserRuleCall_1; }
-	}
-
 	public class ExternalTypeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "ExternalType");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -360,8 +340,8 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
 		private final Keyword cInputKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
 		private final Assignment cTargetAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
-		private final CrossReference cTargetConstraintTargetCrossReference_3_1_0 = (CrossReference)cTargetAssignment_3_1.eContents().get(0);
-		private final RuleCall cTargetConstraintTargetFQNParserRuleCall_3_1_0_1 = (RuleCall)cTargetConstraintTargetCrossReference_3_1_0.eContents().get(1);
+		private final CrossReference cTargetTypeCrossReference_3_1_0 = (CrossReference)cTargetAssignment_3_1.eContents().get(0);
+		private final RuleCall cTargetTypeFQNParserRuleCall_3_1_0_1 = (RuleCall)cTargetTypeCrossReference_3_1_0.eContents().get(1);
 		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
 		private final Keyword cExceptionKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
 		private final Assignment cExceptionAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
@@ -377,11 +357,11 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
 		
 		//Constraint:
-		//	doc=DOC? "constraint" name=ID ("input" target=[ConstraintTarget|FQN])? ("exception" exception=[Exception|FQN])? "{"
+		//	doc=DOC? "constraint" name=ID ("input" target=[Type|FQN])? ("exception" exception=[Exception|FQN])? "{"
 		//	attributes+=Attribute* ("message" message=STRING)? "}";
 		public ParserRule getRule() { return rule; }
 
-		//doc=DOC? "constraint" name=ID ("input" target=[ConstraintTarget|FQN])? ("exception" exception=[Exception|FQN])? "{"
+		//doc=DOC? "constraint" name=ID ("input" target=[Type|FQN])? ("exception" exception=[Exception|FQN])? "{"
 		//attributes+=Attribute* ("message" message=STRING)? "}"
 		public Group getGroup() { return cGroup; }
 
@@ -400,20 +380,20 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_2_0() { return cNameIDTerminalRuleCall_2_0; }
 
-		//("input" target=[ConstraintTarget|FQN])?
+		//("input" target=[Type|FQN])?
 		public Group getGroup_3() { return cGroup_3; }
 
 		//"input"
 		public Keyword getInputKeyword_3_0() { return cInputKeyword_3_0; }
 
-		//target=[ConstraintTarget|FQN]
+		//target=[Type|FQN]
 		public Assignment getTargetAssignment_3_1() { return cTargetAssignment_3_1; }
 
-		//[ConstraintTarget|FQN]
-		public CrossReference getTargetConstraintTargetCrossReference_3_1_0() { return cTargetConstraintTargetCrossReference_3_1_0; }
+		//[Type|FQN]
+		public CrossReference getTargetTypeCrossReference_3_1_0() { return cTargetTypeCrossReference_3_1_0; }
 
 		//FQN
-		public RuleCall getTargetConstraintTargetFQNParserRuleCall_3_1_0_1() { return cTargetConstraintTargetFQNParserRuleCall_3_1_0_1; }
+		public RuleCall getTargetTypeFQNParserRuleCall_3_1_0_1() { return cTargetTypeFQNParserRuleCall_3_1_0_1; }
 
 		//("exception" exception=[Exception|FQN])?
 		public Group getGroup_4() { return cGroup_4; }
@@ -2473,7 +2453,6 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	private final AbstractVOElements pAbstractVO;
 	private final AbstractEntityIdElements pAbstractEntityId;
 	private final AbstractEntityElements pAbstractEntity;
-	private final ConstraintTargetElements pConstraintTarget;
 	private final ExternalTypeElements pExternalType;
 	private final ConstraintElements pConstraint;
 	private final ExceptionElements pException;
@@ -2532,7 +2511,6 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		this.pAbstractVO = new AbstractVOElements();
 		this.pAbstractEntityId = new AbstractEntityIdElements();
 		this.pAbstractEntity = new AbstractEntityElements();
-		this.pConstraintTarget = new ConstraintTargetElements();
 		this.pExternalType = new ExternalTypeElements();
 		this.pConstraint = new ConstraintElements();
 		this.pException = new ExceptionElements();
@@ -2700,16 +2678,6 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		return getAbstractEntityAccess().getRule();
 	}
 
-	//ConstraintTarget:
-	//	ExternalType | AbstractVO;
-	public ConstraintTargetElements getConstraintTargetAccess() {
-		return pConstraintTarget;
-	}
-	
-	public ParserRule getConstraintTargetRule() {
-		return getConstraintTargetAccess().getRule();
-	}
-
 	//ExternalType:
 	//	doc=DOC? "type" element="element"? name=ID;
 	public ExternalTypeElements getExternalTypeAccess() {
@@ -2721,7 +2689,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//Constraint:
-	//	doc=DOC? "constraint" name=ID ("input" target=[ConstraintTarget|FQN])? ("exception" exception=[Exception|FQN])? "{"
+	//	doc=DOC? "constraint" name=ID ("input" target=[Type|FQN])? ("exception" exception=[Exception|FQN])? "{"
 	//	attributes+=Attribute* ("message" message=STRING)? "}";
 	public ConstraintElements getConstraintAccess() {
 		return pConstraint;

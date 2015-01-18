@@ -599,8 +599,6 @@ ruleAbstractEntity returns [EObject current=null]
 
 
 
-
-
 // Entry rule entryRuleExternalType
 entryRuleExternalType returns [EObject current=null] 
 	:
@@ -743,7 +741,7 @@ ruleConstraint returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getConstraintAccess().getTargetConstraintTargetCrossReference_3_1_0()); 
+	        newCompositeNode(grammarAccess.getConstraintAccess().getTargetTypeCrossReference_3_1_0()); 
 	    }
 		ruleFQN		{ 
 	        afterParserOrEnumRuleCall();

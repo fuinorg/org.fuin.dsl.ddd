@@ -113,15 +113,6 @@ public interface DomainDrivenDesignDslFactory extends EFactory
   AbstractEntity createAbstractEntity();
 
   /**
-   * Returns a new object of class '<em>Constraint Target</em>'.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @return a new object of class '<em>Constraint Target</em>'.
-   * @generated
-   */
-  ConstraintTarget createConstraintTarget();
-
-  /**
    * Returns a new object of class '<em>External Type</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

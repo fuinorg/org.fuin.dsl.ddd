@@ -1,7 +1,10 @@
 package org.fuin.dsl.ddd.extensions
 
+import java.util.ArrayList
+import java.util.List
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntity
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractVO
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumObject
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.InternalType
@@ -100,6 +103,25 @@ class DddTypeExtensions {
 			case 'Character': name = 'char'
 		}
 		return name;
+	}
+
+
+	/**
+	 * Returns the attributes of a type.
+	 * 
+	 * @param type Type to return a list of attributes for.
+	 * 
+	 * @return Attributes - Never null.
+	 */
+	def static List<Attribute> getAttributes(Type type) {
+		if (type == null) {
+			return new ArrayList<Attribute>();
+		}
+		if (type instanceof InternalType) {
+			return type.attributes;
+		} else {
+			return new ArrayList<Attribute>();
+		}
 	}
 
 }

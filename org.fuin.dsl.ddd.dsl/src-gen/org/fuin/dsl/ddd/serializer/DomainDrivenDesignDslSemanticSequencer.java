@@ -69,7 +69,6 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 				   context == grammarAccess.getAbstractEntityIdRule() ||
 				   context == grammarAccess.getAbstractVORule() ||
 				   context == grammarAccess.getAggregateIdRule() ||
-				   context == grammarAccess.getConstraintTargetRule() ||
 				   context == grammarAccess.getInternalTypeRule() ||
 				   context == grammarAccess.getTypeRule()) {
 					sequence_AggregateId(context, (AggregateId) semanticObject); 
@@ -142,7 +141,6 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 				if(context == grammarAccess.getAbstractElementRule() ||
 				   context == grammarAccess.getAbstractEntityIdRule() ||
 				   context == grammarAccess.getAbstractVORule() ||
-				   context == grammarAccess.getConstraintTargetRule() ||
 				   context == grammarAccess.getEntityIdRule() ||
 				   context == grammarAccess.getInternalTypeRule() ||
 				   context == grammarAccess.getTypeRule()) {
@@ -181,7 +179,6 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 				else break;
 			case DomainDrivenDesignDslPackage.EXTERNAL_TYPE:
 				if(context == grammarAccess.getAbstractElementRule() ||
-				   context == grammarAccess.getConstraintTargetRule() ||
 				   context == grammarAccess.getExternalTypeRule() ||
 				   context == grammarAccess.getTypeRule()) {
 					sequence_ExternalType(context, (ExternalType) semanticObject); 
@@ -276,7 +273,6 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 			case DomainDrivenDesignDslPackage.VALUE_OBJECT:
 				if(context == grammarAccess.getAbstractElementRule() ||
 				   context == grammarAccess.getAbstractVORule() ||
-				   context == grammarAccess.getConstraintTargetRule() ||
 				   context == grammarAccess.getInternalTypeRule() ||
 				   context == grammarAccess.getTypeRule() ||
 				   context == grammarAccess.getValueObjectRule()) {
@@ -375,7 +371,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *     (
 	 *         doc=DOC? 
 	 *         name=ID 
-	 *         target=[ConstraintTarget|FQN]? 
+	 *         target=[Type|FQN]? 
 	 *         exception=[Exception|FQN]? 
 	 *         attributes+=Attribute* 
 	 *         message=STRING?
