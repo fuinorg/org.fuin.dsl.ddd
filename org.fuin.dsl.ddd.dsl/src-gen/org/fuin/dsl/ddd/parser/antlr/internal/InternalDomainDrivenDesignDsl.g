@@ -741,7 +741,7 @@ ruleConstraint returns [EObject current=null]
 	        }
         }
 		{ 
-	        newCompositeNode(grammarAccess.getConstraintAccess().getTargetTypeCrossReference_3_1_0()); 
+	        newCompositeNode(grammarAccess.getConstraintAccess().getInputTypeCrossReference_3_1_0()); 
 	    }
 		ruleFQN		{ 
 	        afterParserOrEnumRuleCall();

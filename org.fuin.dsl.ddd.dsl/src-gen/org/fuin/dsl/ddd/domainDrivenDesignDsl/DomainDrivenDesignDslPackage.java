@@ -681,13 +681,13 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int CONSTRAINT__NAME = ABSTRACT_ELEMENT__NAME;
 
   /**
-   * The feature id for the '<em><b>Target</b></em>' reference.
+   * The feature id for the '<em><b>Input</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONSTRAINT__TARGET = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
+  int CONSTRAINT__INPUT = ABSTRACT_ELEMENT_FEATURE_COUNT + 0;
 
   /**
    * The feature id for the '<em><b>Exception</b></em>' reference.
@@ -2812,15 +2812,15 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   EClass getConstraint();
 
   /**
-   * Returns the meta object for the reference '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint#getTarget <em>Target</em>}'.
+   * Returns the meta object for the reference '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint#getInput <em>Input</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Target</em>'.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint#getTarget()
+   * @return the meta object for the reference '<em>Input</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint#getInput()
    * @see #getConstraint()
    * @generated
    */
-  EReference getConstraint_Target();
+  EReference getConstraint_Input();
 
   /**
    * Returns the meta object for the reference '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint#getException <em>Exception</em>}'.
@@ -3992,12 +3992,12 @@ public interface DomainDrivenDesignDslPackage extends EPackage
     EClass CONSTRAINT = eINSTANCE.getConstraint();
 
     /**
-     * The meta object literal for the '<em><b>Target</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Input</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference CONSTRAINT__TARGET = eINSTANCE.getConstraint_Target();
+    EReference CONSTRAINT__INPUT = eINSTANCE.getConstraint_Input();
 
     /**
      * The meta object literal for the '<em><b>Exception</b></em>' reference feature.

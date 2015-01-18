@@ -23,7 +23,7 @@ public class DddConstraintExtension {
       EList<Attribute> _attributes_1 = constr.getAttributes();
       list.addAll(_attributes_1);
     }
-    Type target = constr.getTarget();
+    Type target = constr.getInput();
     if ((target instanceof ExternalType)) {
       Attribute _createInputAttribute = DddConstraintExtension.createInputAttribute(target);
       list.add(_createInputAttribute);

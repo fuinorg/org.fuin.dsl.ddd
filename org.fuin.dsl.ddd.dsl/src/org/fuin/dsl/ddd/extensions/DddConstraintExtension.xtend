@@ -20,7 +20,7 @@ class DddConstraintExtension {
 		if (constr.attributes != null) {
 			list.addAll(constr.attributes);
 		}
-		var Type target = constr.target;
+		var Type target = constr.input;
 		if (target instanceof ExternalType) {
 			list.add(createInputAttribute(target))
 		} else if (target instanceof InternalType) {

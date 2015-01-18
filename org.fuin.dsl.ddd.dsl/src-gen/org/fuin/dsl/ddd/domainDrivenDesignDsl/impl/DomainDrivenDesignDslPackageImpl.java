@@ -717,7 +717,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getConstraint_Target()
+  public EReference getConstraint_Input()
   {
     return (EReference)constraintEClass.getEStructuralFeatures().get(0);
   }
@@ -1614,7 +1614,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     createEAttribute(externalTypeEClass, EXTERNAL_TYPE__ELEMENT);
 
     constraintEClass = createEClass(CONSTRAINT);
-    createEReference(constraintEClass, CONSTRAINT__TARGET);
+    createEReference(constraintEClass, CONSTRAINT__INPUT);
     createEReference(constraintEClass, CONSTRAINT__EXCEPTION);
     createEReference(constraintEClass, CONSTRAINT__ATTRIBUTES);
     createEAttribute(constraintEClass, CONSTRAINT__MESSAGE);
@@ -1826,7 +1826,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     initEAttribute(getExternalType_Element(), ecorePackage.getEString(), "element", null, 0, 1, ExternalType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(constraintEClass, Constraint.class, "Constraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-    initEReference(getConstraint_Target(), this.getType(), null, "target", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getConstraint_Input(), this.getType(), null, "input", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getConstraint_Exception(), this.getException(), null, "exception", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getConstraint_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getConstraint_Message(), ecorePackage.getEString(), "message", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

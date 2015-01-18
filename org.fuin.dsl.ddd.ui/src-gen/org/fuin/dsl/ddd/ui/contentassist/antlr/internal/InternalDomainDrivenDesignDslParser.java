@@ -6884,31 +6884,31 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
 
 
     // $ANTLR start "rule__Constraint__Group_3__1__Impl"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:2393:1: rule__Constraint__Group_3__1__Impl : ( ( rule__Constraint__TargetAssignment_3_1 ) ) ;
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:2393:1: rule__Constraint__Group_3__1__Impl : ( ( rule__Constraint__InputAssignment_3_1 ) ) ;
     public final void rule__Constraint__Group_3__1__Impl() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
         try {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:2397:1: ( ( ( rule__Constraint__TargetAssignment_3_1 ) ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:2398:1: ( ( rule__Constraint__TargetAssignment_3_1 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:2397:1: ( ( ( rule__Constraint__InputAssignment_3_1 ) ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:2398:1: ( ( rule__Constraint__InputAssignment_3_1 ) )
             {
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:2398:1: ( ( rule__Constraint__TargetAssignment_3_1 ) )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:2399:1: ( rule__Constraint__TargetAssignment_3_1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:2398:1: ( ( rule__Constraint__InputAssignment_3_1 ) )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:2399:1: ( rule__Constraint__InputAssignment_3_1 )
             {
-             before(grammarAccess.getConstraintAccess().getTargetAssignment_3_1()); 
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:2400:1: ( rule__Constraint__TargetAssignment_3_1 )
-            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:2400:2: rule__Constraint__TargetAssignment_3_1
+             before(grammarAccess.getConstraintAccess().getInputAssignment_3_1()); 
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:2400:1: ( rule__Constraint__InputAssignment_3_1 )
+            // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:2400:2: rule__Constraint__InputAssignment_3_1
             {
-            pushFollow(FOLLOW_rule__Constraint__TargetAssignment_3_1_in_rule__Constraint__Group_3__1__Impl4959);
-            rule__Constraint__TargetAssignment_3_1();
+            pushFollow(FOLLOW_rule__Constraint__InputAssignment_3_1_in_rule__Constraint__Group_3__1__Impl4959);
+            rule__Constraint__InputAssignment_3_1();
 
             state._fsp--;
 
 
             }
 
-             after(grammarAccess.getConstraintAccess().getTargetAssignment_3_1()); 
+             after(grammarAccess.getConstraintAccess().getInputAssignment_3_1()); 
 
             }
 
@@ -28349,9 +28349,9 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
     // $ANTLR end "rule__Constraint__NameAssignment_2"
 
 
-    // $ANTLR start "rule__Constraint__TargetAssignment_3_1"
-    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10257:1: rule__Constraint__TargetAssignment_3_1 : ( ( ruleFQN ) ) ;
-    public final void rule__Constraint__TargetAssignment_3_1() throws RecognitionException {
+    // $ANTLR start "rule__Constraint__InputAssignment_3_1"
+    // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10257:1: rule__Constraint__InputAssignment_3_1 : ( ( ruleFQN ) ) ;
+    public final void rule__Constraint__InputAssignment_3_1() throws RecognitionException {
 
         		int stackSize = keepStackSize();
             
@@ -28362,21 +28362,21 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
             // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10262:1: ( ( ruleFQN ) )
             // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10263:1: ( ruleFQN )
             {
-             before(grammarAccess.getConstraintAccess().getTargetTypeCrossReference_3_1_0()); 
+             before(grammarAccess.getConstraintAccess().getInputTypeCrossReference_3_1_0()); 
             // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10264:1: ( ruleFQN )
             // ../org.fuin.dsl.ddd.ui/src-gen/org/fuin/dsl/ddd/ui/contentassist/antlr/internal/InternalDomainDrivenDesignDsl.g:10265:1: ruleFQN
             {
-             before(grammarAccess.getConstraintAccess().getTargetTypeFQNParserRuleCall_3_1_0_1()); 
-            pushFollow(FOLLOW_ruleFQN_in_rule__Constraint__TargetAssignment_3_120558);
+             before(grammarAccess.getConstraintAccess().getInputTypeFQNParserRuleCall_3_1_0_1()); 
+            pushFollow(FOLLOW_ruleFQN_in_rule__Constraint__InputAssignment_3_120558);
             ruleFQN();
 
             state._fsp--;
 
-             after(grammarAccess.getConstraintAccess().getTargetTypeFQNParserRuleCall_3_1_0_1()); 
+             after(grammarAccess.getConstraintAccess().getInputTypeFQNParserRuleCall_3_1_0_1()); 
 
             }
 
-             after(grammarAccess.getConstraintAccess().getTargetTypeCrossReference_3_1_0()); 
+             after(grammarAccess.getConstraintAccess().getInputTypeCrossReference_3_1_0()); 
 
             }
 
@@ -28395,7 +28395,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
         }
         return ;
     }
-    // $ANTLR end "rule__Constraint__TargetAssignment_3_1"
+    // $ANTLR end "rule__Constraint__InputAssignment_3_1"
 
 
     // $ANTLR start "rule__Constraint__ExceptionAssignment_4_1"
@@ -34175,7 +34175,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
     public static final BitSet FOLLOW_rule__Constraint__Group_3__1_in_rule__Constraint__Group_3__04873 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_22_in_rule__Constraint__Group_3__0__Impl4901 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Constraint__Group_3__1__Impl_in_rule__Constraint__Group_3__14932 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_rule__Constraint__TargetAssignment_3_1_in_rule__Constraint__Group_3__1__Impl4959 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_rule__Constraint__InputAssignment_3_1_in_rule__Constraint__Group_3__1__Impl4959 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_rule__Constraint__Group_4__0__Impl_in_rule__Constraint__Group_4__04993 = new BitSet(new long[]{0x0000000000000080L});
     public static final BitSet FOLLOW_rule__Constraint__Group_4__1_in_rule__Constraint__Group_4__04996 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_23_in_rule__Constraint__Group_4__0__Impl5024 = new BitSet(new long[]{0x0000000000000002L});
@@ -34858,7 +34858,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalContent
     public static final BitSet FOLLOW_RULE_ID_in_rule__ExternalType__NameAssignment_320461 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_DOC_in_rule__Constraint__DocAssignment_020492 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_ID_in_rule__Constraint__NameAssignment_220523 = new BitSet(new long[]{0x0000000000000002L});
-    public static final BitSet FOLLOW_ruleFQN_in_rule__Constraint__TargetAssignment_3_120558 = new BitSet(new long[]{0x0000000000000002L});
+    public static final BitSet FOLLOW_ruleFQN_in_rule__Constraint__InputAssignment_3_120558 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleFQN_in_rule__Constraint__ExceptionAssignment_4_120597 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_ruleAttribute_in_rule__Constraint__AttributesAssignment_620632 = new BitSet(new long[]{0x0000000000000002L});
     public static final BitSet FOLLOW_RULE_STRING_in_rule__Constraint__MessageAssignment_7_120663 = new BitSet(new long[]{0x0000000000000002L});

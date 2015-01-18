@@ -284,9 +284,9 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 
 				// TODO Find a  way to handle collections
 				for (constraintInstance : attribute.invariants.constraintInstances) {
-					if (!attribute.type.equals(constraintInstance.constraint.target)) {
+					if (!attribute.type.equals(constraintInstance.constraint.input)) {
 						error(
-							"The input type of the constraint (" + constraintInstance.constraint.target.name +
+							"The input type of the constraint (" + constraintInstance.constraint.input.name +
 								") does not match the attribute type",
 							constraintInstance,
 							DomainDrivenDesignDslPackage.Literals::CONSTRAINT_INSTANCE__CONSTRAINT,
@@ -308,9 +308,9 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 
 				// TODO Find a way to handle collections
 				for (constraintInstance : parameter.preconditions.constraintInstances) {
-					if (!parameter.type.equals(constraintInstance.constraint.target)) {
+					if (!parameter.type.equals(constraintInstance.constraint.input)) {
 						error(
-							"The input type of the constraint (" + constraintInstance.constraint.target.name +
+							"The input type of the constraint (" + constraintInstance.constraint.input.name +
 								") does not match the parameter type",
 							constraintInstance,
 							DomainDrivenDesignDslPackage.Literals::CONSTRAINT_INSTANCE__CONSTRAINT,
@@ -327,9 +327,9 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 
 				// TODO Find a way to handle collections
 				for (constraintInstance : parameter.businessRules.constraintInstances) {
-					if (!parameter.type.equals(constraintInstance.constraint.target)) {
+					if (!parameter.type.equals(constraintInstance.constraint.input)) {
 						error(
-							"The input type of the constraint (" + constraintInstance.constraint.target.name +
+							"The input type of the constraint (" + constraintInstance.constraint.input.name +
 								") does not match the parameter type",
 							constraintInstance,
 							DomainDrivenDesignDslPackage.Literals::CONSTRAINT_INSTANCE__CONSTRAINT,
@@ -349,9 +349,9 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 		if ((internalType.invariants != null) && (internalType.invariants.constraintInstances != null)) {
 
 			for (constraintInstance : internalType.invariants.constraintInstances) {
-				if (!internalType.equals(constraintInstance.constraint.target)) {
+				if (!internalType.equals(constraintInstance.constraint.input)) {
 					error(
-						"The input type of the constraint (" + constraintInstance.constraint.target.name +
+						"The input type of the constraint (" + constraintInstance.constraint.input.name +
 							") does not match this type",
 						constraintInstance,
 						DomainDrivenDesignDslPackage.Literals::CONSTRAINT_INSTANCE__CONSTRAINT,
@@ -367,11 +367,11 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 	@Check
 	def checkConstraintInputNotService(Constraint constraint) {
 
-		if (constraint.target instanceof Service) {
+		if (constraint.input instanceof Service) {
 			error(
 				"A service is not allowed as input for a constraint",
-				constraint.target,
-				DomainDrivenDesignDslPackage.Literals::CONSTRAINT__TARGET,
+				constraint.input,
+				DomainDrivenDesignDslPackage.Literals::CONSTRAINT__INPUT,
 				SERVICE_NOT_ALLOWED_AS_CONSTRAINT_INPUT
 			)
 		}

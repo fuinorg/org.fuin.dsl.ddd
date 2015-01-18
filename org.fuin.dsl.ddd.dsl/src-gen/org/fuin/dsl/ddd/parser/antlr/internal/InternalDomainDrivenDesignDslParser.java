@@ -2146,7 +2146,7 @@ public class InternalDomainDrivenDesignDslParser extends AbstractInternalAntlrPa
                     	        }
                             
                      
-                    	        newCompositeNode(grammarAccess.getConstraintAccess().getTargetTypeCrossReference_3_1_0()); 
+                    	        newCompositeNode(grammarAccess.getConstraintAccess().getInputTypeCrossReference_3_1_0()); 
                     	    
                     pushFollow(FOLLOW_ruleFQN_in_ruleConstraint1727);
                     ruleFQN();

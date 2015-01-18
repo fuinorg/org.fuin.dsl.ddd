@@ -45,7 +45,7 @@ ExternalType:
 
 Constraint:
 	doc=DOC? 
-	'constraint' name=ID ('input' target=[Type|FQN])? ('exception' exception=[Exception|FQN])? '{'
+	'constraint' name=ID ('input' input=[Type|FQN])? ('exception' exception=[Exception|FQN])? '{'
 		attributes+=Attribute* 
 		('message' message=STRING)?
 	'}';

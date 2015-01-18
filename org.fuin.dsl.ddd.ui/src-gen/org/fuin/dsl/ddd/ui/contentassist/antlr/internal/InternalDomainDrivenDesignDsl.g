@@ -2396,9 +2396,9 @@ rule__Constraint__Group_3__1__Impl
     }
 :
 (
-{ before(grammarAccess.getConstraintAccess().getTargetAssignment_3_1()); }
-(rule__Constraint__TargetAssignment_3_1)
-{ after(grammarAccess.getConstraintAccess().getTargetAssignment_3_1()); }
+{ before(grammarAccess.getConstraintAccess().getInputAssignment_3_1()); }
+(rule__Constraint__InputAssignment_3_1)
+{ after(grammarAccess.getConstraintAccess().getInputAssignment_3_1()); }
 )
 
 ;
@@ -10254,18 +10254,18 @@ finally {
 	restoreStackSize(stackSize);
 }
 
-rule__Constraint__TargetAssignment_3_1
+rule__Constraint__InputAssignment_3_1
     @init {
 		int stackSize = keepStackSize();
     }
 :
 (
-{ before(grammarAccess.getConstraintAccess().getTargetTypeCrossReference_3_1_0()); }
+{ before(grammarAccess.getConstraintAccess().getInputTypeCrossReference_3_1_0()); }
 (
-{ before(grammarAccess.getConstraintAccess().getTargetTypeFQNParserRuleCall_3_1_0_1()); }
-	ruleFQN{ after(grammarAccess.getConstraintAccess().getTargetTypeFQNParserRuleCall_3_1_0_1()); }
+{ before(grammarAccess.getConstraintAccess().getInputTypeFQNParserRuleCall_3_1_0_1()); }
+	ruleFQN{ after(grammarAccess.getConstraintAccess().getInputTypeFQNParserRuleCall_3_1_0_1()); }
 )
-{ after(grammarAccess.getConstraintAccess().getTargetTypeCrossReference_3_1_0()); }
+{ after(grammarAccess.getConstraintAccess().getInputTypeCrossReference_3_1_0()); }
 )
 
 ;

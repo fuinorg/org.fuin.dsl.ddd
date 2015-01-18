@@ -425,13 +425,13 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
         for (final ConstraintInstance constraintInstance : _constraintInstances_1) {
           Type _type = attribute.getType();
           Constraint _constraint = constraintInstance.getConstraint();
-          Type _target = _constraint.getTarget();
-          boolean _equals_1 = _type.equals(_target);
+          Type _input = _constraint.getInput();
+          boolean _equals_1 = _type.equals(_input);
           boolean _not = (!_equals_1);
           if (_not) {
             Constraint _constraint_1 = constraintInstance.getConstraint();
-            Type _target_1 = _constraint_1.getTarget();
-            String _name = _target_1.getName();
+            Type _input_1 = _constraint_1.getInput();
+            String _name = _input_1.getName();
             String _plus = ("The input type of the constraint (" + _name);
             String _plus_1 = (_plus + 
               ") does not match the attribute type");
@@ -466,13 +466,13 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
         for (final ConstraintInstance constraintInstance : _constraintInstances_1) {
           Type _type = parameter.getType();
           Constraint _constraint = constraintInstance.getConstraint();
-          Type _target = _constraint.getTarget();
-          boolean _equals_1 = _type.equals(_target);
+          Type _input = _constraint.getInput();
+          boolean _equals_1 = _type.equals(_input);
           boolean _not = (!_equals_1);
           if (_not) {
             Constraint _constraint_1 = constraintInstance.getConstraint();
-            Type _target_1 = _constraint_1.getTarget();
-            String _name = _target_1.getName();
+            Type _input_1 = _constraint_1.getInput();
+            String _name = _input_1.getName();
             String _plus = ("The input type of the constraint (" + _name);
             String _plus_1 = (_plus + 
               ") does not match the parameter type");
@@ -503,13 +503,13 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
         for (final ConstraintInstance constraintInstance_1 : _constraintInstances_3) {
           Type _type_1 = parameter.getType();
           Constraint _constraint_2 = constraintInstance_1.getConstraint();
-          Type _target_2 = _constraint_2.getTarget();
-          boolean _equals_3 = _type_1.equals(_target_2);
+          Type _input_2 = _constraint_2.getInput();
+          boolean _equals_3 = _type_1.equals(_input_2);
           boolean _not_1 = (!_equals_3);
           if (_not_1) {
             Constraint _constraint_3 = constraintInstance_1.getConstraint();
-            Type _target_3 = _constraint_3.getTarget();
-            String _name_1 = _target_3.getName();
+            Type _input_3 = _constraint_3.getInput();
+            String _name_1 = _input_3.getName();
             String _plus_2 = ("The input type of the constraint (" + _name_1);
             String _plus_3 = (_plus_2 + 
               ") does not match the parameter type");
@@ -540,13 +540,13 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
       EList<ConstraintInstance> _constraintInstances_1 = _invariants_2.getConstraintInstances();
       for (final ConstraintInstance constraintInstance : _constraintInstances_1) {
         Constraint _constraint = constraintInstance.getConstraint();
-        Type _target = _constraint.getTarget();
-        boolean _equals = internalType.equals(_target);
+        Type _input = _constraint.getInput();
+        boolean _equals = internalType.equals(_input);
         boolean _not = (!_equals);
         if (_not) {
           Constraint _constraint_1 = constraintInstance.getConstraint();
-          Type _target_1 = _constraint_1.getTarget();
-          String _name = _target_1.getName();
+          Type _input_1 = _constraint_1.getInput();
+          String _name = _input_1.getName();
           String _plus = ("The input type of the constraint (" + _name);
           String _plus_1 = (_plus + 
             ") does not match this type");
@@ -560,12 +560,12 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
   
   @Check
   public void checkConstraintInputNotService(final Constraint constraint) {
-    Type _target = constraint.getTarget();
-    if ((_target instanceof Service)) {
-      Type _target_1 = constraint.getTarget();
+    Type _input = constraint.getInput();
+    if ((_input instanceof Service)) {
+      Type _input_1 = constraint.getInput();
       this.error(
-        "A service is not allowed as input for a constraint", _target_1, 
-        DomainDrivenDesignDslPackage.Literals.CONSTRAINT__TARGET, 
+        "A service is not allowed as input for a constraint", _input_1, 
+        DomainDrivenDesignDslPackage.Literals.CONSTRAINT__INPUT, 
         DomainDrivenDesignDslValidator.SERVICE_NOT_ALLOWED_AS_CONSTRAINT_INPUT);
     }
   }

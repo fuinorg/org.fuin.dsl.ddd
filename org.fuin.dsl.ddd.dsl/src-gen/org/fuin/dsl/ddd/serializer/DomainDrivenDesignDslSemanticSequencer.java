@@ -371,7 +371,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *     (
 	 *         doc=DOC? 
 	 *         name=ID 
-	 *         target=[Type|FQN]? 
+	 *         input=[Type|FQN]? 
 	 *         exception=[Exception|FQN]? 
 	 *         attributes+=Attribute* 
 	 *         message=STRING?

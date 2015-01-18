@@ -12,7 +12,7 @@ import org.eclipse.emf.common.util.EList;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint#getTarget <em>Target</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint#getInput <em>Input</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint#getException <em>Exception</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint#getAttributes <em>Attributes</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint#getMessage <em>Message</em>}</li>
@@ -26,30 +26,30 @@ import org.eclipse.emf.common.util.EList;
 public interface Constraint extends AbstractElement
 {
   /**
-   * Returns the value of the '<em><b>Target</b></em>' reference.
+   * Returns the value of the '<em><b>Input</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Target</em>' reference isn't clear,
+   * If the meaning of the '<em>Input</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Target</em>' reference.
-   * @see #setTarget(Type)
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getConstraint_Target()
+   * @return the value of the '<em>Input</em>' reference.
+   * @see #setInput(Type)
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getConstraint_Input()
    * @model
    * @generated
    */
-  Type getTarget();
+  Type getInput();
 
   /**
-   * Sets the value of the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint#getTarget <em>Target</em>}' reference.
+   * Sets the value of the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint#getInput <em>Input</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Target</em>' reference.
-   * @see #getTarget()
+   * @param value the new value of the '<em>Input</em>' reference.
+   * @see #getInput()
    * @generated
    */
-  void setTarget(Type value);
+  void setInput(Type value);
 
   /**
    * Returns the value of the '<em><b>Exception</b></em>' reference.
