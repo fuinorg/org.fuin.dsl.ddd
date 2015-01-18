@@ -370,7 +370,7 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 		if (constraint.input instanceof Service) {
 			error(
 				"A service is not allowed as input for a constraint",
-				constraint.input,
+				constraint,
 				DomainDrivenDesignDslPackage.Literals::CONSTRAINT__INPUT,
 				SERVICE_NOT_ALLOWED_AS_CONSTRAINT_INPUT
 			)

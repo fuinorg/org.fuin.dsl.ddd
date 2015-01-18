@@ -562,9 +562,8 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
   public void checkConstraintInputNotService(final Constraint constraint) {
     Type _input = constraint.getInput();
     if ((_input instanceof Service)) {
-      Type _input_1 = constraint.getInput();
       this.error(
-        "A service is not allowed as input for a constraint", _input_1, 
+        "A service is not allowed as input for a constraint", constraint, 
         DomainDrivenDesignDslPackage.Literals.CONSTRAINT__INPUT, 
         DomainDrivenDesignDslValidator.SERVICE_NOT_ALLOWED_AS_CONSTRAINT_INPUT);
     }
