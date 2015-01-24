@@ -43,10 +43,37 @@ ExternalType:
 	doc=DOC?	
 	'type' (element='element')? name=ID;
 
+enum TimeUnit:
+	millis | seconds | minutes | hours | days;
+
+enum ConsistencyLevel:
+	weak | strong;
+
+enum InconsistencyDetection:
+	never | manually | automatic;
+
+enum InconsistencyResolution:
+	never | manually | automatic | workflow;
+
+WeakConsistency:
+	acceptableDoc=DOC? 
+	'acceptable' acceptableTime=INT acceptableUnit=TimeUnit 
+	
+	detectionDoc=DOC? 
+	'detection' detection=InconsistencyDetection
+	
+	resolutionDoc=DOC? 
+	'resolution' resolution=InconsistencyResolution;
+	
+Consistency:
+	doc=DOC
+	'consistency' level=ConsistencyLevel ('{' weakConsistency=WeakConsistency '}')?;
+
 Constraint:
 	doc=DOC? 
 	'constraint' name=ID ('input' input=[Type|FQN])? ('exception' exception=[Exception|FQN])? '{'
 		attributes+=Attribute* 
+		consistency=Consistency? 
 		('message' message=STRING)?
 	'}';
 	

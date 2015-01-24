@@ -329,6 +329,140 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		public RuleCall getNameIDTerminalRuleCall_3_0() { return cNameIDTerminalRuleCall_3_0; }
 	}
 
+	public class WeakConsistencyElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "WeakConsistency");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cAcceptableDocAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cAcceptableDocDOCTerminalRuleCall_0_0 = (RuleCall)cAcceptableDocAssignment_0.eContents().get(0);
+		private final Keyword cAcceptableKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cAcceptableTimeAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cAcceptableTimeINTTerminalRuleCall_2_0 = (RuleCall)cAcceptableTimeAssignment_2.eContents().get(0);
+		private final Assignment cAcceptableUnitAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cAcceptableUnitTimeUnitEnumRuleCall_3_0 = (RuleCall)cAcceptableUnitAssignment_3.eContents().get(0);
+		private final Assignment cDetectionDocAssignment_4 = (Assignment)cGroup.eContents().get(4);
+		private final RuleCall cDetectionDocDOCTerminalRuleCall_4_0 = (RuleCall)cDetectionDocAssignment_4.eContents().get(0);
+		private final Keyword cDetectionKeyword_5 = (Keyword)cGroup.eContents().get(5);
+		private final Assignment cDetectionAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cDetectionInconsistencyDetectionEnumRuleCall_6_0 = (RuleCall)cDetectionAssignment_6.eContents().get(0);
+		private final Assignment cResolutionDocAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cResolutionDocDOCTerminalRuleCall_7_0 = (RuleCall)cResolutionDocAssignment_7.eContents().get(0);
+		private final Keyword cResolutionKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Assignment cResolutionAssignment_9 = (Assignment)cGroup.eContents().get(9);
+		private final RuleCall cResolutionInconsistencyResolutionEnumRuleCall_9_0 = (RuleCall)cResolutionAssignment_9.eContents().get(0);
+		
+		//WeakConsistency:
+		//	acceptableDoc=DOC? "acceptable" acceptableTime=INT acceptableUnit=TimeUnit detectionDoc=DOC? "detection"
+		//	detection=InconsistencyDetection resolutionDoc=DOC? "resolution" resolution=InconsistencyResolution;
+		public ParserRule getRule() { return rule; }
+
+		//acceptableDoc=DOC? "acceptable" acceptableTime=INT acceptableUnit=TimeUnit detectionDoc=DOC? "detection"
+		//detection=InconsistencyDetection resolutionDoc=DOC? "resolution" resolution=InconsistencyResolution
+		public Group getGroup() { return cGroup; }
+
+		//acceptableDoc=DOC?
+		public Assignment getAcceptableDocAssignment_0() { return cAcceptableDocAssignment_0; }
+
+		//DOC
+		public RuleCall getAcceptableDocDOCTerminalRuleCall_0_0() { return cAcceptableDocDOCTerminalRuleCall_0_0; }
+
+		//"acceptable"
+		public Keyword getAcceptableKeyword_1() { return cAcceptableKeyword_1; }
+
+		//acceptableTime=INT
+		public Assignment getAcceptableTimeAssignment_2() { return cAcceptableTimeAssignment_2; }
+
+		//INT
+		public RuleCall getAcceptableTimeINTTerminalRuleCall_2_0() { return cAcceptableTimeINTTerminalRuleCall_2_0; }
+
+		//acceptableUnit=TimeUnit
+		public Assignment getAcceptableUnitAssignment_3() { return cAcceptableUnitAssignment_3; }
+
+		//TimeUnit
+		public RuleCall getAcceptableUnitTimeUnitEnumRuleCall_3_0() { return cAcceptableUnitTimeUnitEnumRuleCall_3_0; }
+
+		//detectionDoc=DOC?
+		public Assignment getDetectionDocAssignment_4() { return cDetectionDocAssignment_4; }
+
+		//DOC
+		public RuleCall getDetectionDocDOCTerminalRuleCall_4_0() { return cDetectionDocDOCTerminalRuleCall_4_0; }
+
+		//"detection"
+		public Keyword getDetectionKeyword_5() { return cDetectionKeyword_5; }
+
+		//detection=InconsistencyDetection
+		public Assignment getDetectionAssignment_6() { return cDetectionAssignment_6; }
+
+		//InconsistencyDetection
+		public RuleCall getDetectionInconsistencyDetectionEnumRuleCall_6_0() { return cDetectionInconsistencyDetectionEnumRuleCall_6_0; }
+
+		//resolutionDoc=DOC?
+		public Assignment getResolutionDocAssignment_7() { return cResolutionDocAssignment_7; }
+
+		//DOC
+		public RuleCall getResolutionDocDOCTerminalRuleCall_7_0() { return cResolutionDocDOCTerminalRuleCall_7_0; }
+
+		//"resolution"
+		public Keyword getResolutionKeyword_8() { return cResolutionKeyword_8; }
+
+		//resolution=InconsistencyResolution
+		public Assignment getResolutionAssignment_9() { return cResolutionAssignment_9; }
+
+		//InconsistencyResolution
+		public RuleCall getResolutionInconsistencyResolutionEnumRuleCall_9_0() { return cResolutionInconsistencyResolutionEnumRuleCall_9_0; }
+	}
+
+	public class ConsistencyElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Consistency");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cDocAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cDocDOCTerminalRuleCall_0_0 = (RuleCall)cDocAssignment_0.eContents().get(0);
+		private final Keyword cConsistencyKeyword_1 = (Keyword)cGroup.eContents().get(1);
+		private final Assignment cLevelAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cLevelConsistencyLevelEnumRuleCall_2_0 = (RuleCall)cLevelAssignment_2.eContents().get(0);
+		private final Group cGroup_3 = (Group)cGroup.eContents().get(3);
+		private final Keyword cLeftCurlyBracketKeyword_3_0 = (Keyword)cGroup_3.eContents().get(0);
+		private final Assignment cWeakConsistencyAssignment_3_1 = (Assignment)cGroup_3.eContents().get(1);
+		private final RuleCall cWeakConsistencyWeakConsistencyParserRuleCall_3_1_0 = (RuleCall)cWeakConsistencyAssignment_3_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_3_2 = (Keyword)cGroup_3.eContents().get(2);
+		
+		//Consistency:
+		//	doc=DOC "consistency" level=ConsistencyLevel ("{" weakConsistency=WeakConsistency "}")?;
+		public ParserRule getRule() { return rule; }
+
+		//doc=DOC "consistency" level=ConsistencyLevel ("{" weakConsistency=WeakConsistency "}")?
+		public Group getGroup() { return cGroup; }
+
+		//doc=DOC
+		public Assignment getDocAssignment_0() { return cDocAssignment_0; }
+
+		//DOC
+		public RuleCall getDocDOCTerminalRuleCall_0_0() { return cDocDOCTerminalRuleCall_0_0; }
+
+		//"consistency"
+		public Keyword getConsistencyKeyword_1() { return cConsistencyKeyword_1; }
+
+		//level=ConsistencyLevel
+		public Assignment getLevelAssignment_2() { return cLevelAssignment_2; }
+
+		//ConsistencyLevel
+		public RuleCall getLevelConsistencyLevelEnumRuleCall_2_0() { return cLevelConsistencyLevelEnumRuleCall_2_0; }
+
+		//("{" weakConsistency=WeakConsistency "}")?
+		public Group getGroup_3() { return cGroup_3; }
+
+		//"{"
+		public Keyword getLeftCurlyBracketKeyword_3_0() { return cLeftCurlyBracketKeyword_3_0; }
+
+		//weakConsistency=WeakConsistency
+		public Assignment getWeakConsistencyAssignment_3_1() { return cWeakConsistencyAssignment_3_1; }
+
+		//WeakConsistency
+		public RuleCall getWeakConsistencyWeakConsistencyParserRuleCall_3_1_0() { return cWeakConsistencyWeakConsistencyParserRuleCall_3_1_0; }
+
+		//"}"
+		public Keyword getRightCurlyBracketKeyword_3_2() { return cRightCurlyBracketKeyword_3_2; }
+	}
+
 	public class ConstraintElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Constraint");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -350,19 +484,21 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final Keyword cLeftCurlyBracketKeyword_5 = (Keyword)cGroup.eContents().get(5);
 		private final Assignment cAttributesAssignment_6 = (Assignment)cGroup.eContents().get(6);
 		private final RuleCall cAttributesAttributeParserRuleCall_6_0 = (RuleCall)cAttributesAssignment_6.eContents().get(0);
-		private final Group cGroup_7 = (Group)cGroup.eContents().get(7);
-		private final Keyword cMessageKeyword_7_0 = (Keyword)cGroup_7.eContents().get(0);
-		private final Assignment cMessageAssignment_7_1 = (Assignment)cGroup_7.eContents().get(1);
-		private final RuleCall cMessageSTRINGTerminalRuleCall_7_1_0 = (RuleCall)cMessageAssignment_7_1.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_8 = (Keyword)cGroup.eContents().get(8);
+		private final Assignment cConsistencyAssignment_7 = (Assignment)cGroup.eContents().get(7);
+		private final RuleCall cConsistencyConsistencyParserRuleCall_7_0 = (RuleCall)cConsistencyAssignment_7.eContents().get(0);
+		private final Group cGroup_8 = (Group)cGroup.eContents().get(8);
+		private final Keyword cMessageKeyword_8_0 = (Keyword)cGroup_8.eContents().get(0);
+		private final Assignment cMessageAssignment_8_1 = (Assignment)cGroup_8.eContents().get(1);
+		private final RuleCall cMessageSTRINGTerminalRuleCall_8_1_0 = (RuleCall)cMessageAssignment_8_1.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_9 = (Keyword)cGroup.eContents().get(9);
 		
 		//Constraint:
 		//	doc=DOC? "constraint" name=ID ("input" input=[Type|FQN])? ("exception" exception=[Exception|FQN])? "{"
-		//	attributes+=Attribute* ("message" message=STRING)? "}";
+		//	attributes+=Attribute* consistency=Consistency? ("message" message=STRING)? "}";
 		public ParserRule getRule() { return rule; }
 
 		//doc=DOC? "constraint" name=ID ("input" input=[Type|FQN])? ("exception" exception=[Exception|FQN])? "{"
-		//attributes+=Attribute* ("message" message=STRING)? "}"
+		//attributes+=Attribute* consistency=Consistency? ("message" message=STRING)? "}"
 		public Group getGroup() { return cGroup; }
 
 		//doc=DOC?
@@ -419,20 +555,26 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		//Attribute
 		public RuleCall getAttributesAttributeParserRuleCall_6_0() { return cAttributesAttributeParserRuleCall_6_0; }
 
+		//consistency=Consistency?
+		public Assignment getConsistencyAssignment_7() { return cConsistencyAssignment_7; }
+
+		//Consistency
+		public RuleCall getConsistencyConsistencyParserRuleCall_7_0() { return cConsistencyConsistencyParserRuleCall_7_0; }
+
 		//("message" message=STRING)?
-		public Group getGroup_7() { return cGroup_7; }
+		public Group getGroup_8() { return cGroup_8; }
 
 		//"message"
-		public Keyword getMessageKeyword_7_0() { return cMessageKeyword_7_0; }
+		public Keyword getMessageKeyword_8_0() { return cMessageKeyword_8_0; }
 
 		//message=STRING
-		public Assignment getMessageAssignment_7_1() { return cMessageAssignment_7_1; }
+		public Assignment getMessageAssignment_8_1() { return cMessageAssignment_8_1; }
 
 		//STRING
-		public RuleCall getMessageSTRINGTerminalRuleCall_7_1_0() { return cMessageSTRINGTerminalRuleCall_7_1_0; }
+		public RuleCall getMessageSTRINGTerminalRuleCall_8_1_0() { return cMessageSTRINGTerminalRuleCall_8_1_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_8() { return cRightCurlyBracketKeyword_8; }
+		public Keyword getRightCurlyBracketKeyword_9() { return cRightCurlyBracketKeyword_9; }
 	}
 
 	public class ExceptionElements extends AbstractParserRuleElementFinder {
@@ -2443,6 +2585,166 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	}
 	
 	
+	public class TimeUnitElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "TimeUnit");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cMillisEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cMillisMillisKeyword_0_0 = (Keyword)cMillisEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cSecondsEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cSecondsSecondsKeyword_1_0 = (Keyword)cSecondsEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cMinutesEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cMinutesMinutesKeyword_2_0 = (Keyword)cMinutesEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cHoursEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cHoursHoursKeyword_3_0 = (Keyword)cHoursEnumLiteralDeclaration_3.eContents().get(0);
+		private final EnumLiteralDeclaration cDaysEnumLiteralDeclaration_4 = (EnumLiteralDeclaration)cAlternatives.eContents().get(4);
+		private final Keyword cDaysDaysKeyword_4_0 = (Keyword)cDaysEnumLiteralDeclaration_4.eContents().get(0);
+		
+		//enum TimeUnit:
+		//	millis | seconds | minutes | hours | days;
+		public EnumRule getRule() { return rule; }
+
+		//millis | seconds | minutes | hours | days
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//millis
+		public EnumLiteralDeclaration getMillisEnumLiteralDeclaration_0() { return cMillisEnumLiteralDeclaration_0; }
+
+		//"millis"
+		public Keyword getMillisMillisKeyword_0_0() { return cMillisMillisKeyword_0_0; }
+
+		//seconds
+		public EnumLiteralDeclaration getSecondsEnumLiteralDeclaration_1() { return cSecondsEnumLiteralDeclaration_1; }
+
+		//"seconds"
+		public Keyword getSecondsSecondsKeyword_1_0() { return cSecondsSecondsKeyword_1_0; }
+
+		//minutes
+		public EnumLiteralDeclaration getMinutesEnumLiteralDeclaration_2() { return cMinutesEnumLiteralDeclaration_2; }
+
+		//"minutes"
+		public Keyword getMinutesMinutesKeyword_2_0() { return cMinutesMinutesKeyword_2_0; }
+
+		//hours
+		public EnumLiteralDeclaration getHoursEnumLiteralDeclaration_3() { return cHoursEnumLiteralDeclaration_3; }
+
+		//"hours"
+		public Keyword getHoursHoursKeyword_3_0() { return cHoursHoursKeyword_3_0; }
+
+		//days
+		public EnumLiteralDeclaration getDaysEnumLiteralDeclaration_4() { return cDaysEnumLiteralDeclaration_4; }
+
+		//"days"
+		public Keyword getDaysDaysKeyword_4_0() { return cDaysDaysKeyword_4_0; }
+	}
+
+	public class ConsistencyLevelElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "ConsistencyLevel");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cWeakEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cWeakWeakKeyword_0_0 = (Keyword)cWeakEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cStrongEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cStrongStrongKeyword_1_0 = (Keyword)cStrongEnumLiteralDeclaration_1.eContents().get(0);
+		
+		//enum ConsistencyLevel:
+		//	weak | strong;
+		public EnumRule getRule() { return rule; }
+
+		//weak | strong
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//weak
+		public EnumLiteralDeclaration getWeakEnumLiteralDeclaration_0() { return cWeakEnumLiteralDeclaration_0; }
+
+		//"weak"
+		public Keyword getWeakWeakKeyword_0_0() { return cWeakWeakKeyword_0_0; }
+
+		//strong
+		public EnumLiteralDeclaration getStrongEnumLiteralDeclaration_1() { return cStrongEnumLiteralDeclaration_1; }
+
+		//"strong"
+		public Keyword getStrongStrongKeyword_1_0() { return cStrongStrongKeyword_1_0; }
+	}
+
+	public class InconsistencyDetectionElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "InconsistencyDetection");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cNeverEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cNeverNeverKeyword_0_0 = (Keyword)cNeverEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cManuallyEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cManuallyManuallyKeyword_1_0 = (Keyword)cManuallyEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cAutomaticEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cAutomaticAutomaticKeyword_2_0 = (Keyword)cAutomaticEnumLiteralDeclaration_2.eContents().get(0);
+		
+		//enum InconsistencyDetection:
+		//	never | manually | automatic;
+		public EnumRule getRule() { return rule; }
+
+		//never | manually | automatic
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//never
+		public EnumLiteralDeclaration getNeverEnumLiteralDeclaration_0() { return cNeverEnumLiteralDeclaration_0; }
+
+		//"never"
+		public Keyword getNeverNeverKeyword_0_0() { return cNeverNeverKeyword_0_0; }
+
+		//manually
+		public EnumLiteralDeclaration getManuallyEnumLiteralDeclaration_1() { return cManuallyEnumLiteralDeclaration_1; }
+
+		//"manually"
+		public Keyword getManuallyManuallyKeyword_1_0() { return cManuallyManuallyKeyword_1_0; }
+
+		//automatic
+		public EnumLiteralDeclaration getAutomaticEnumLiteralDeclaration_2() { return cAutomaticEnumLiteralDeclaration_2; }
+
+		//"automatic"
+		public Keyword getAutomaticAutomaticKeyword_2_0() { return cAutomaticAutomaticKeyword_2_0; }
+	}
+
+	public class InconsistencyResolutionElements extends AbstractEnumRuleElementFinder {
+		private final EnumRule rule = (EnumRule) GrammarUtil.findRuleForName(getGrammar(), "InconsistencyResolution");
+		private final Alternatives cAlternatives = (Alternatives)rule.eContents().get(1);
+		private final EnumLiteralDeclaration cNeverEnumLiteralDeclaration_0 = (EnumLiteralDeclaration)cAlternatives.eContents().get(0);
+		private final Keyword cNeverNeverKeyword_0_0 = (Keyword)cNeverEnumLiteralDeclaration_0.eContents().get(0);
+		private final EnumLiteralDeclaration cManuallyEnumLiteralDeclaration_1 = (EnumLiteralDeclaration)cAlternatives.eContents().get(1);
+		private final Keyword cManuallyManuallyKeyword_1_0 = (Keyword)cManuallyEnumLiteralDeclaration_1.eContents().get(0);
+		private final EnumLiteralDeclaration cAutomaticEnumLiteralDeclaration_2 = (EnumLiteralDeclaration)cAlternatives.eContents().get(2);
+		private final Keyword cAutomaticAutomaticKeyword_2_0 = (Keyword)cAutomaticEnumLiteralDeclaration_2.eContents().get(0);
+		private final EnumLiteralDeclaration cWorkflowEnumLiteralDeclaration_3 = (EnumLiteralDeclaration)cAlternatives.eContents().get(3);
+		private final Keyword cWorkflowWorkflowKeyword_3_0 = (Keyword)cWorkflowEnumLiteralDeclaration_3.eContents().get(0);
+		
+		//enum InconsistencyResolution:
+		//	never | manually | automatic | workflow;
+		public EnumRule getRule() { return rule; }
+
+		//never | manually | automatic | workflow
+		public Alternatives getAlternatives() { return cAlternatives; }
+
+		//never
+		public EnumLiteralDeclaration getNeverEnumLiteralDeclaration_0() { return cNeverEnumLiteralDeclaration_0; }
+
+		//"never"
+		public Keyword getNeverNeverKeyword_0_0() { return cNeverNeverKeyword_0_0; }
+
+		//manually
+		public EnumLiteralDeclaration getManuallyEnumLiteralDeclaration_1() { return cManuallyEnumLiteralDeclaration_1; }
+
+		//"manually"
+		public Keyword getManuallyManuallyKeyword_1_0() { return cManuallyManuallyKeyword_1_0; }
+
+		//automatic
+		public EnumLiteralDeclaration getAutomaticEnumLiteralDeclaration_2() { return cAutomaticEnumLiteralDeclaration_2; }
+
+		//"automatic"
+		public Keyword getAutomaticAutomaticKeyword_2_0() { return cAutomaticAutomaticKeyword_2_0; }
+
+		//workflow
+		public EnumLiteralDeclaration getWorkflowEnumLiteralDeclaration_3() { return cWorkflowEnumLiteralDeclaration_3; }
+
+		//"workflow"
+		public Keyword getWorkflowWorkflowKeyword_3_0() { return cWorkflowWorkflowKeyword_3_0; }
+	}
+	
 	private final DomainModelElements pDomainModel;
 	private final ContextElements pContext;
 	private final NamespaceElements pNamespace;
@@ -2454,6 +2756,12 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	private final AbstractEntityIdElements pAbstractEntityId;
 	private final AbstractEntityElements pAbstractEntity;
 	private final ExternalTypeElements pExternalType;
+	private final TimeUnitElements unknownRuleTimeUnit;
+	private final ConsistencyLevelElements unknownRuleConsistencyLevel;
+	private final InconsistencyDetectionElements unknownRuleInconsistencyDetection;
+	private final InconsistencyResolutionElements unknownRuleInconsistencyResolution;
+	private final WeakConsistencyElements pWeakConsistency;
+	private final ConsistencyElements pConsistency;
 	private final ConstraintElements pConstraint;
 	private final ExceptionElements pException;
 	private final ValueObjectElements pValueObject;
@@ -2512,6 +2820,12 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		this.pAbstractEntityId = new AbstractEntityIdElements();
 		this.pAbstractEntity = new AbstractEntityElements();
 		this.pExternalType = new ExternalTypeElements();
+		this.unknownRuleTimeUnit = new TimeUnitElements();
+		this.unknownRuleConsistencyLevel = new ConsistencyLevelElements();
+		this.unknownRuleInconsistencyDetection = new InconsistencyDetectionElements();
+		this.unknownRuleInconsistencyResolution = new InconsistencyResolutionElements();
+		this.pWeakConsistency = new WeakConsistencyElements();
+		this.pConsistency = new ConsistencyElements();
 		this.pConstraint = new ConstraintElements();
 		this.pException = new ExceptionElements();
 		this.pValueObject = new ValueObjectElements();
@@ -2688,9 +3002,70 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		return getExternalTypeAccess().getRule();
 	}
 
+	//enum TimeUnit:
+	//	millis | seconds | minutes | hours | days;
+	public TimeUnitElements getTimeUnitAccess() {
+		return unknownRuleTimeUnit;
+	}
+	
+	public EnumRule getTimeUnitRule() {
+		return getTimeUnitAccess().getRule();
+	}
+
+	//enum ConsistencyLevel:
+	//	weak | strong;
+	public ConsistencyLevelElements getConsistencyLevelAccess() {
+		return unknownRuleConsistencyLevel;
+	}
+	
+	public EnumRule getConsistencyLevelRule() {
+		return getConsistencyLevelAccess().getRule();
+	}
+
+	//enum InconsistencyDetection:
+	//	never | manually | automatic;
+	public InconsistencyDetectionElements getInconsistencyDetectionAccess() {
+		return unknownRuleInconsistencyDetection;
+	}
+	
+	public EnumRule getInconsistencyDetectionRule() {
+		return getInconsistencyDetectionAccess().getRule();
+	}
+
+	//enum InconsistencyResolution:
+	//	never | manually | automatic | workflow;
+	public InconsistencyResolutionElements getInconsistencyResolutionAccess() {
+		return unknownRuleInconsistencyResolution;
+	}
+	
+	public EnumRule getInconsistencyResolutionRule() {
+		return getInconsistencyResolutionAccess().getRule();
+	}
+
+	//WeakConsistency:
+	//	acceptableDoc=DOC? "acceptable" acceptableTime=INT acceptableUnit=TimeUnit detectionDoc=DOC? "detection"
+	//	detection=InconsistencyDetection resolutionDoc=DOC? "resolution" resolution=InconsistencyResolution;
+	public WeakConsistencyElements getWeakConsistencyAccess() {
+		return pWeakConsistency;
+	}
+	
+	public ParserRule getWeakConsistencyRule() {
+		return getWeakConsistencyAccess().getRule();
+	}
+
+	//Consistency:
+	//	doc=DOC "consistency" level=ConsistencyLevel ("{" weakConsistency=WeakConsistency "}")?;
+	public ConsistencyElements getConsistencyAccess() {
+		return pConsistency;
+	}
+	
+	public ParserRule getConsistencyRule() {
+		return getConsistencyAccess().getRule();
+	}
+
 	//Constraint:
 	//	doc=DOC? "constraint" name=ID ("input" input=[Type|FQN])? ("exception" exception=[Exception|FQN])? "{"
-	//	attributes+=Attribute* ("message" message=STRING)? "}";
+	//	attributes+=Attribute* consistency=Consistency? ("message" message=STRING)? "}";
 	public ConstraintElements getConstraintAccess() {
 		return pConstraint;
 	}

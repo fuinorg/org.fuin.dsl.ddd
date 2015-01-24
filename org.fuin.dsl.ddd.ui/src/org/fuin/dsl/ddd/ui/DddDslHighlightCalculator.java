@@ -15,11 +15,14 @@ import org.eclipse.xtext.ui.editor.syntaxcoloring.IHighlightedPositionAcceptor;
 import org.eclipse.xtext.ui.editor.syntaxcoloring.ISemanticHighlightingCalculator;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractElement;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Consistency;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumInstance;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ReturnType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Service;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.WeakConsistency;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.util.DomainDrivenDesignDslSwitch;
 
 public class DddDslHighlightCalculator implements
@@ -50,7 +53,7 @@ public class DddDslHighlightCalculator implements
         public HighlightingSwitch(IHighlightedPositionAcceptor acceptor) {
             this.acceptor = acceptor;
         }
-
+        
         @Override
         public Void caseAbstractElement(AbstractElement ae) {
             return highlightFirst(ae,
@@ -58,6 +61,54 @@ public class DddDslHighlightCalculator implements
                     DddDslHighlightConfig.COMMENT_ID);
         }
 
+        @Override
+        public Void caseConsistency(Consistency consistency) {
+            
+            highlightFirst(consistency,
+                    DomainDrivenDesignDslPackage.eINSTANCE.getConsistency_Doc(),
+                    DddDslHighlightConfig.COMMENT_ID);
+            highlightFirst(consistency,
+                    DomainDrivenDesignDslPackage.eINSTANCE.getConsistency_Level(),
+                    DddDslHighlightConfig.ENUM_INSTANCE_ID);
+            
+            return null;
+        }
+        
+
+        @Override
+        public Void caseWeakConsistency(WeakConsistency weakConsistency) {
+
+            highlightFirst(weakConsistency,
+                    DomainDrivenDesignDslPackage.eINSTANCE.getWeakConsistency_AcceptableDoc(),
+                    DddDslHighlightConfig.COMMENT_ID);
+            highlightFirst(weakConsistency,
+                    DomainDrivenDesignDslPackage.eINSTANCE.getWeakConsistency_AcceptableUnit(),
+                    DddDslHighlightConfig.ENUM_INSTANCE_ID);
+            
+            highlightFirst(weakConsistency,
+                    DomainDrivenDesignDslPackage.eINSTANCE.getWeakConsistency_DetectionDoc(),
+                    DddDslHighlightConfig.COMMENT_ID);
+            highlightFirst(weakConsistency,
+                    DomainDrivenDesignDslPackage.eINSTANCE.getWeakConsistency_Detection(),
+                    DddDslHighlightConfig.ENUM_INSTANCE_ID);
+            
+            highlightFirst(weakConsistency,
+                    DomainDrivenDesignDslPackage.eINSTANCE.getWeakConsistency_ResolutionDoc(),
+                    DddDslHighlightConfig.COMMENT_ID);
+            highlightFirst(weakConsistency,
+                    DomainDrivenDesignDslPackage.eINSTANCE.getWeakConsistency_Resolution(),
+                    DddDslHighlightConfig.ENUM_INSTANCE_ID);
+            
+            return null;
+        }
+        
+        @Override
+        public Void caseConstraint(Constraint constraint) {
+            return highlightFirst(constraint,
+                    DomainDrivenDesignDslPackage.eINSTANCE.getAbstractElement_Doc(),
+                    DddDslHighlightConfig.COMMENT_ID);
+        }
+        
         @Override
         public Void caseEnumInstance(EnumInstance enumInstance) {
             
@@ -99,7 +150,7 @@ public class DddDslHighlightCalculator implements
                     DomainDrivenDesignDslPackage.eINSTANCE.getReturnType_Doc(),
                     DddDslHighlightConfig.COMMENT_ID);
         }
-
+        
         private Void highlightFirst(EObject eObj, EAttribute eAttr, String id) {
             INode node = getFirstFeatureNode(eObj, eAttr);
             if (node != null) {

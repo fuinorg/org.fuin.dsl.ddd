@@ -24,6 +24,7 @@ import org.eclipse.xtext.parser.*;
 import org.eclipse.xtext.parser.impl.*;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.emf.common.util.Enumerator;
 import org.eclipse.xtext.parser.antlr.AbstractInternalAntlrParser;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream;
 import org.eclipse.xtext.parser.antlr.XtextTokenStream.HiddenTokens;
@@ -675,6 +676,252 @@ ruleExternalType returns [EObject current=null]
 
 
 
+// Entry rule entryRuleWeakConsistency
+entryRuleWeakConsistency returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getWeakConsistencyRule()); }
+	 iv_ruleWeakConsistency=ruleWeakConsistency 
+	 { $current=$iv_ruleWeakConsistency.current; } 
+	 EOF 
+;
+
+// Rule WeakConsistency
+ruleWeakConsistency returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+(
+		lv_acceptableDoc_0_0=RULE_DOC
+		{
+			newLeafNode(lv_acceptableDoc_0_0, grammarAccess.getWeakConsistencyAccess().getAcceptableDocDOCTerminalRuleCall_0_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getWeakConsistencyRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"acceptableDoc",
+        		lv_acceptableDoc_0_0, 
+        		"DOC");
+	    }
+
+)
+)?	otherlv_1='acceptable' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getWeakConsistencyAccess().getAcceptableKeyword_1());
+    }
+(
+(
+		lv_acceptableTime_2_0=RULE_INT
+		{
+			newLeafNode(lv_acceptableTime_2_0, grammarAccess.getWeakConsistencyAccess().getAcceptableTimeINTTerminalRuleCall_2_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getWeakConsistencyRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"acceptableTime",
+        		lv_acceptableTime_2_0, 
+        		"INT");
+	    }
+
+)
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getWeakConsistencyAccess().getAcceptableUnitTimeUnitEnumRuleCall_3_0()); 
+	    }
+		lv_acceptableUnit_3_0=ruleTimeUnit		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getWeakConsistencyRule());
+	        }
+       		set(
+       			$current, 
+       			"acceptableUnit",
+        		lv_acceptableUnit_3_0, 
+        		"TimeUnit");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(
+(
+		lv_detectionDoc_4_0=RULE_DOC
+		{
+			newLeafNode(lv_detectionDoc_4_0, grammarAccess.getWeakConsistencyAccess().getDetectionDocDOCTerminalRuleCall_4_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getWeakConsistencyRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"detectionDoc",
+        		lv_detectionDoc_4_0, 
+        		"DOC");
+	    }
+
+)
+)?	otherlv_5='detection' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getWeakConsistencyAccess().getDetectionKeyword_5());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getWeakConsistencyAccess().getDetectionInconsistencyDetectionEnumRuleCall_6_0()); 
+	    }
+		lv_detection_6_0=ruleInconsistencyDetection		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getWeakConsistencyRule());
+	        }
+       		set(
+       			$current, 
+       			"detection",
+        		lv_detection_6_0, 
+        		"InconsistencyDetection");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(
+(
+		lv_resolutionDoc_7_0=RULE_DOC
+		{
+			newLeafNode(lv_resolutionDoc_7_0, grammarAccess.getWeakConsistencyAccess().getResolutionDocDOCTerminalRuleCall_7_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getWeakConsistencyRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"resolutionDoc",
+        		lv_resolutionDoc_7_0, 
+        		"DOC");
+	    }
+
+)
+)?	otherlv_8='resolution' 
+    {
+    	newLeafNode(otherlv_8, grammarAccess.getWeakConsistencyAccess().getResolutionKeyword_8());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getWeakConsistencyAccess().getResolutionInconsistencyResolutionEnumRuleCall_9_0()); 
+	    }
+		lv_resolution_9_0=ruleInconsistencyResolution		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getWeakConsistencyRule());
+	        }
+       		set(
+       			$current, 
+       			"resolution",
+        		lv_resolution_9_0, 
+        		"InconsistencyResolution");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
+;
+
+
+
+
+
+// Entry rule entryRuleConsistency
+entryRuleConsistency returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getConsistencyRule()); }
+	 iv_ruleConsistency=ruleConsistency 
+	 { $current=$iv_ruleConsistency.current; } 
+	 EOF 
+;
+
+// Rule Consistency
+ruleConsistency returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+(
+		lv_doc_0_0=RULE_DOC
+		{
+			newLeafNode(lv_doc_0_0, grammarAccess.getConsistencyAccess().getDocDOCTerminalRuleCall_0_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getConsistencyRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"doc",
+        		lv_doc_0_0, 
+        		"DOC");
+	    }
+
+)
+)	otherlv_1='consistency' 
+    {
+    	newLeafNode(otherlv_1, grammarAccess.getConsistencyAccess().getConsistencyKeyword_1());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getConsistencyAccess().getLevelConsistencyLevelEnumRuleCall_2_0()); 
+	    }
+		lv_level_2_0=ruleConsistencyLevel		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getConsistencyRule());
+	        }
+       		set(
+       			$current, 
+       			"level",
+        		lv_level_2_0, 
+        		"ConsistencyLevel");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(	otherlv_3='{' 
+    {
+    	newLeafNode(otherlv_3, grammarAccess.getConsistencyAccess().getLeftCurlyBracketKeyword_3_0());
+    }
+(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getConsistencyAccess().getWeakConsistencyWeakConsistencyParserRuleCall_3_1_0()); 
+	    }
+		lv_weakConsistency_4_0=ruleWeakConsistency		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getConsistencyRule());
+	        }
+       		set(
+       			$current, 
+       			"weakConsistency",
+        		lv_weakConsistency_4_0, 
+        		"WeakConsistency");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)	otherlv_5='}' 
+    {
+    	newLeafNode(otherlv_5, grammarAccess.getConsistencyAccess().getRightCurlyBracketKeyword_3_2());
+    }
+)?)
+;
+
+
+
+
+
 // Entry rule entryRuleConstraint
 entryRuleConstraint returns [EObject current=null] 
 	:
@@ -789,15 +1036,33 @@ ruleConstraint returns [EObject current=null]
 	    }
 
 )
-)*(	otherlv_9='message' 
+)*(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getConstraintAccess().getConsistencyConsistencyParserRuleCall_7_0()); 
+	    }
+		lv_consistency_9_0=ruleConsistency		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getConstraintRule());
+	        }
+       		set(
+       			$current, 
+       			"consistency",
+        		lv_consistency_9_0, 
+        		"Consistency");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)?(	otherlv_10='message' 
     {
-    	newLeafNode(otherlv_9, grammarAccess.getConstraintAccess().getMessageKeyword_7_0());
+    	newLeafNode(otherlv_10, grammarAccess.getConstraintAccess().getMessageKeyword_8_0());
     }
 (
 (
-		lv_message_10_0=RULE_STRING
+		lv_message_11_0=RULE_STRING
 		{
-			newLeafNode(lv_message_10_0, grammarAccess.getConstraintAccess().getMessageSTRINGTerminalRuleCall_7_1_0()); 
+			newLeafNode(lv_message_11_0, grammarAccess.getConstraintAccess().getMessageSTRINGTerminalRuleCall_8_1_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -806,14 +1071,14 @@ ruleConstraint returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"message",
-        		lv_message_10_0, 
+        		lv_message_11_0, 
         		"STRING");
 	    }
 
 )
-))?	otherlv_11='}' 
+))?	otherlv_12='}' 
     {
-    	newLeafNode(otherlv_11, grammarAccess.getConstraintAccess().getRightCurlyBracketKeyword_8());
+    	newLeafNode(otherlv_12, grammarAccess.getConstraintAccess().getRightCurlyBracketKeyword_9());
     }
 )
 ;
@@ -4110,6 +4375,118 @@ finally {
 }
 
 
+
+
+
+// Rule TimeUnit
+ruleTimeUnit returns [Enumerator current=null] 
+    @init { enterRule(); }
+    @after { leaveRule(); }:
+((	enumLiteral_0='millis' 
+	{
+        $current = grammarAccess.getTimeUnitAccess().getMillisEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_0, grammarAccess.getTimeUnitAccess().getMillisEnumLiteralDeclaration_0()); 
+    }
+)
+    |(	enumLiteral_1='seconds' 
+	{
+        $current = grammarAccess.getTimeUnitAccess().getSecondsEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_1, grammarAccess.getTimeUnitAccess().getSecondsEnumLiteralDeclaration_1()); 
+    }
+)
+    |(	enumLiteral_2='minutes' 
+	{
+        $current = grammarAccess.getTimeUnitAccess().getMinutesEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_2, grammarAccess.getTimeUnitAccess().getMinutesEnumLiteralDeclaration_2()); 
+    }
+)
+    |(	enumLiteral_3='hours' 
+	{
+        $current = grammarAccess.getTimeUnitAccess().getHoursEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_3, grammarAccess.getTimeUnitAccess().getHoursEnumLiteralDeclaration_3()); 
+    }
+)
+    |(	enumLiteral_4='days' 
+	{
+        $current = grammarAccess.getTimeUnitAccess().getDaysEnumLiteralDeclaration_4().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_4, grammarAccess.getTimeUnitAccess().getDaysEnumLiteralDeclaration_4()); 
+    }
+));
+
+
+
+// Rule ConsistencyLevel
+ruleConsistencyLevel returns [Enumerator current=null] 
+    @init { enterRule(); }
+    @after { leaveRule(); }:
+((	enumLiteral_0='weak' 
+	{
+        $current = grammarAccess.getConsistencyLevelAccess().getWeakEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_0, grammarAccess.getConsistencyLevelAccess().getWeakEnumLiteralDeclaration_0()); 
+    }
+)
+    |(	enumLiteral_1='strong' 
+	{
+        $current = grammarAccess.getConsistencyLevelAccess().getStrongEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_1, grammarAccess.getConsistencyLevelAccess().getStrongEnumLiteralDeclaration_1()); 
+    }
+));
+
+
+
+// Rule InconsistencyDetection
+ruleInconsistencyDetection returns [Enumerator current=null] 
+    @init { enterRule(); }
+    @after { leaveRule(); }:
+((	enumLiteral_0='never' 
+	{
+        $current = grammarAccess.getInconsistencyDetectionAccess().getNeverEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_0, grammarAccess.getInconsistencyDetectionAccess().getNeverEnumLiteralDeclaration_0()); 
+    }
+)
+    |(	enumLiteral_1='manually' 
+	{
+        $current = grammarAccess.getInconsistencyDetectionAccess().getManuallyEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_1, grammarAccess.getInconsistencyDetectionAccess().getManuallyEnumLiteralDeclaration_1()); 
+    }
+)
+    |(	enumLiteral_2='automatic' 
+	{
+        $current = grammarAccess.getInconsistencyDetectionAccess().getAutomaticEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_2, grammarAccess.getInconsistencyDetectionAccess().getAutomaticEnumLiteralDeclaration_2()); 
+    }
+));
+
+
+
+// Rule InconsistencyResolution
+ruleInconsistencyResolution returns [Enumerator current=null] 
+    @init { enterRule(); }
+    @after { leaveRule(); }:
+((	enumLiteral_0='never' 
+	{
+        $current = grammarAccess.getInconsistencyResolutionAccess().getNeverEnumLiteralDeclaration_0().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_0, grammarAccess.getInconsistencyResolutionAccess().getNeverEnumLiteralDeclaration_0()); 
+    }
+)
+    |(	enumLiteral_1='manually' 
+	{
+        $current = grammarAccess.getInconsistencyResolutionAccess().getManuallyEnumLiteralDeclaration_1().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_1, grammarAccess.getInconsistencyResolutionAccess().getManuallyEnumLiteralDeclaration_1()); 
+    }
+)
+    |(	enumLiteral_2='automatic' 
+	{
+        $current = grammarAccess.getInconsistencyResolutionAccess().getAutomaticEnumLiteralDeclaration_2().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_2, grammarAccess.getInconsistencyResolutionAccess().getAutomaticEnumLiteralDeclaration_2()); 
+    }
+)
+    |(	enumLiteral_3='workflow' 
+	{
+        $current = grammarAccess.getInconsistencyResolutionAccess().getWorkflowEnumLiteralDeclaration_3().getEnumLiteral().getInstance();
+        newLeafNode(enumLiteral_3, grammarAccess.getInconsistencyResolutionAccess().getWorkflowEnumLiteralDeclaration_3()); 
+    }
+));
 
 
 

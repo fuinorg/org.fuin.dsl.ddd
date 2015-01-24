@@ -19,6 +19,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.BooleanLiteral;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.BusinessRules;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Consistency;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constructor;
@@ -49,6 +50,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Type;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.TypeMetaInfo;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ValueObject;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.WeakConsistency;
 
 /**
  * <!-- begin-user-doc -->
@@ -167,6 +169,16 @@ public class DomainDrivenDesignDslAdapterFactory extends AdapterFactoryImpl
       public Adapter caseExternalType(ExternalType object)
       {
         return createExternalTypeAdapter();
+      }
+      @Override
+      public Adapter caseWeakConsistency(WeakConsistency object)
+      {
+        return createWeakConsistencyAdapter();
+      }
+      @Override
+      public Adapter caseConsistency(Consistency object)
+      {
+        return createConsistencyAdapter();
       }
       @Override
       public Adapter caseConstraint(Constraint object)
@@ -496,6 +508,36 @@ public class DomainDrivenDesignDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createExternalTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.WeakConsistency <em>Weak Consistency</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.WeakConsistency
+   * @generated
+   */
+  public Adapter createWeakConsistencyAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Consistency <em>Consistency</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Consistency
+   * @generated
+   */
+  public Adapter createConsistencyAdapter()
   {
     return null;
   }

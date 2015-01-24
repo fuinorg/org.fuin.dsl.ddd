@@ -122,6 +122,24 @@ public interface DomainDrivenDesignDslFactory extends EFactory
   ExternalType createExternalType();
 
   /**
+   * Returns a new object of class '<em>Weak Consistency</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Weak Consistency</em>'.
+   * @generated
+   */
+  WeakConsistency createWeakConsistency();
+
+  /**
+   * Returns a new object of class '<em>Consistency</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Consistency</em>'.
+   * @generated
+   */
+  Consistency createConsistency();
+
+  /**
    * Returns a new object of class '<em>Constraint</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

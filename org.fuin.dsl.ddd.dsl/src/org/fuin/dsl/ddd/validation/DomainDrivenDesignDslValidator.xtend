@@ -14,6 +14,8 @@ import org.eclipse.xtext.validation.Check
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.BusinessRules
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Consistency
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConsistencyLevel
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity
@@ -65,6 +67,8 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 
 	public static val BUSINESS_RULE_REQUIRES_EXCEPTION = "businessRuleRequiresException"
 
+	public static val BUSINESS_RULE_REQUIRES_CONSISTENCY = "businessRuleRequiresConsistency"
+
 	public static val ATTRIBUTE_INVARIANT_WRONG_TARGET_TYPE = "attributeInvariantWrongTargetType"
 
 	public static val PARAMETER_CONSTRAINT_WRONG_TARGET_TYPE = "parameterConstraintWrongTargetType"
@@ -72,6 +76,10 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 	public static val INTERNAL_TYPE_INVARIANT_WRONG_TARGET_TYPE = "internalTypeInvariantWrongTargetType"
 
 	public static val SERVICE_NOT_ALLOWED_AS_CONSTRAINT_INPUT = "serviceNotAllowedAsConstraintInput"
+
+	public static val WEAK_CONSISTENCY_REQUIRES_DETAILS = "weakConsistencyRequiresDetails"
+
+	public static val STRONG_CONSISTENCY_DOES_NOT_ALLOW_DETAILS = "strongConsistencyDoesNotAllowDetails"
 
 	@Inject
 	private IContainer.Manager containerManager
@@ -259,7 +267,7 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 	}
 
 	@Check
-	def checkBusinessRulesHaveExceptions(BusinessRules businessRules) {
+	def checkBusinessRulesHaveConsistencyAndExceptions(BusinessRules businessRules) {
 
 		if (businessRules.constraintInstances != null) {
 			for (constraintInstance : businessRules.constraintInstances) {
@@ -269,6 +277,14 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 						constraintInstance,
 						DomainDrivenDesignDslPackage.Literals::CONSTRAINT_INSTANCE__CONSTRAINT,
 						BUSINESS_RULE_REQUIRES_EXCEPTION
+					)
+				}
+				if (constraintInstance.constraint.consistency == null) {
+					error(
+						"A constraint used as a business rule must specify the consistency",
+						constraintInstance,
+						DomainDrivenDesignDslPackage.Literals::CONSTRAINT_INSTANCE__CONSTRAINT,
+						BUSINESS_RULE_REQUIRES_CONSISTENCY
 					)
 				}
 			}
@@ -377,7 +393,30 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 		}
 
 	}
-
+	
+	@Check
+	def checkWeakConsistency(Consistency consistency) {
+		
+		if ((consistency.level == ConsistencyLevel.WEAK) && (consistency.weakConsistency == null)) {
+			error(
+				"You must define the details for weak consistency",
+				consistency,
+				DomainDrivenDesignDslPackage.Literals::CONSISTENCY__WEAK_CONSISTENCY,
+				WEAK_CONSISTENCY_REQUIRES_DETAILS
+			)
+		}
+		
+		if ((consistency.level == ConsistencyLevel.STRONG) && (consistency.weakConsistency != null)) {
+			error(
+				"No details required for strong consistency",
+				consistency,
+				DomainDrivenDesignDslPackage.Literals::CONSISTENCY__WEAK_CONSISTENCY,
+				STRONG_CONSISTENCY_DOES_NOT_ALLOW_DETAILS
+			)
+		}
+		
+	}
+	
 	private def getAllExceptions(EObject obj) {
 		val Set<Exception> list = new HashSet<Exception>()
 		val resource = obj.eResource

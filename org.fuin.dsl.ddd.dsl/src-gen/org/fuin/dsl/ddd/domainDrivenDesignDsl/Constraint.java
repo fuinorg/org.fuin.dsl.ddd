@@ -15,6 +15,7 @@ import org.eclipse.emf.common.util.EList;
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint#getInput <em>Input</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint#getException <em>Exception</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint#getAttributes <em>Attributes</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint#getConsistency <em>Consistency</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint#getMessage <em>Message</em>}</li>
  * </ul>
  * </p>
@@ -92,6 +93,32 @@ public interface Constraint extends AbstractElement
    * @generated
    */
   EList<Attribute> getAttributes();
+
+  /**
+   * Returns the value of the '<em><b>Consistency</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Consistency</em>' containment reference isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Consistency</em>' containment reference.
+   * @see #setConsistency(Consistency)
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getConstraint_Consistency()
+   * @model containment="true"
+   * @generated
+   */
+  Consistency getConsistency();
+
+  /**
+   * Sets the value of the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint#getConsistency <em>Consistency</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @param value the new value of the '<em>Consistency</em>' containment reference.
+   * @see #getConsistency()
+   * @generated
+   */
+  void setConsistency(Consistency value);
 
   /**
    * Returns the value of the '<em><b>Message</b></em>' attribute.

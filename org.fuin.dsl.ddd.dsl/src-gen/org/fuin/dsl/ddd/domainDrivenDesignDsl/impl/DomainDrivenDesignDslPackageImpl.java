@@ -4,6 +4,7 @@ package org.fuin.dsl.ddd.domainDrivenDesignDsl.impl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -19,6 +20,8 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.BooleanLiteral;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.BusinessRules;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Consistency;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConsistencyLevel;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constructor;
@@ -33,6 +36,8 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumObject;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Import;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.InconsistencyDetection;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.InconsistencyResolution;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.InternalType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Invariants;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Literal;
@@ -46,10 +51,12 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Preconditions;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ReturnType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Service;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.StringLiteral;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.TimeUnit;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Type;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.TypeMetaInfo;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ValueObject;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.WeakConsistency;
 
 /**
  * <!-- begin-user-doc -->
@@ -135,6 +142,20 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * @generated
    */
   private EClass externalTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass weakConsistencyEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass consistencyEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -338,6 +359,34 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * @generated
    */
   private EClass stringLiteralEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum timeUnitEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum consistencyLevelEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum inconsistencyDetectionEEnum = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EEnum inconsistencyResolutionEEnum = null;
 
   /**
    * Creates an instance of the model <b>Package</b>, registered with
@@ -707,6 +756,126 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getWeakConsistency()
+  {
+    return weakConsistencyEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getWeakConsistency_AcceptableDoc()
+  {
+    return (EAttribute)weakConsistencyEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getWeakConsistency_AcceptableTime()
+  {
+    return (EAttribute)weakConsistencyEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getWeakConsistency_AcceptableUnit()
+  {
+    return (EAttribute)weakConsistencyEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getWeakConsistency_DetectionDoc()
+  {
+    return (EAttribute)weakConsistencyEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getWeakConsistency_Detection()
+  {
+    return (EAttribute)weakConsistencyEClass.getEStructuralFeatures().get(4);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getWeakConsistency_ResolutionDoc()
+  {
+    return (EAttribute)weakConsistencyEClass.getEStructuralFeatures().get(5);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getWeakConsistency_Resolution()
+  {
+    return (EAttribute)weakConsistencyEClass.getEStructuralFeatures().get(6);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EClass getConsistency()
+  {
+    return consistencyEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getConsistency_Doc()
+  {
+    return (EAttribute)consistencyEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getConsistency_Level()
+  {
+    return (EAttribute)consistencyEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EReference getConsistency_WeakConsistency()
+  {
+    return (EReference)consistencyEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getConstraint()
   {
     return constraintEClass;
@@ -747,9 +916,19 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getConstraint_Consistency()
+  {
+    return (EReference)constraintEClass.getEStructuralFeatures().get(3);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EAttribute getConstraint_Message()
   {
-    return (EAttribute)constraintEClass.getEStructuralFeatures().get(3);
+    return (EAttribute)constraintEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -1547,6 +1726,46 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
+  public EEnum getTimeUnit()
+  {
+    return timeUnitEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getConsistencyLevel()
+  {
+    return consistencyLevelEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getInconsistencyDetection()
+  {
+    return inconsistencyDetectionEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EEnum getInconsistencyResolution()
+  {
+    return inconsistencyResolutionEEnum;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public DomainDrivenDesignDslFactory getDomainDrivenDesignDslFactory()
   {
     return (DomainDrivenDesignDslFactory)getEFactoryInstance();
@@ -1613,10 +1832,25 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     externalTypeEClass = createEClass(EXTERNAL_TYPE);
     createEAttribute(externalTypeEClass, EXTERNAL_TYPE__ELEMENT);
 
+    weakConsistencyEClass = createEClass(WEAK_CONSISTENCY);
+    createEAttribute(weakConsistencyEClass, WEAK_CONSISTENCY__ACCEPTABLE_DOC);
+    createEAttribute(weakConsistencyEClass, WEAK_CONSISTENCY__ACCEPTABLE_TIME);
+    createEAttribute(weakConsistencyEClass, WEAK_CONSISTENCY__ACCEPTABLE_UNIT);
+    createEAttribute(weakConsistencyEClass, WEAK_CONSISTENCY__DETECTION_DOC);
+    createEAttribute(weakConsistencyEClass, WEAK_CONSISTENCY__DETECTION);
+    createEAttribute(weakConsistencyEClass, WEAK_CONSISTENCY__RESOLUTION_DOC);
+    createEAttribute(weakConsistencyEClass, WEAK_CONSISTENCY__RESOLUTION);
+
+    consistencyEClass = createEClass(CONSISTENCY);
+    createEAttribute(consistencyEClass, CONSISTENCY__DOC);
+    createEAttribute(consistencyEClass, CONSISTENCY__LEVEL);
+    createEReference(consistencyEClass, CONSISTENCY__WEAK_CONSISTENCY);
+
     constraintEClass = createEClass(CONSTRAINT);
     createEReference(constraintEClass, CONSTRAINT__INPUT);
     createEReference(constraintEClass, CONSTRAINT__EXCEPTION);
     createEReference(constraintEClass, CONSTRAINT__ATTRIBUTES);
+    createEReference(constraintEClass, CONSTRAINT__CONSISTENCY);
     createEAttribute(constraintEClass, CONSTRAINT__MESSAGE);
 
     exceptionEClass = createEClass(EXCEPTION);
@@ -1725,6 +1959,12 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     numberLiteralEClass = createEClass(NUMBER_LITERAL);
 
     stringLiteralEClass = createEClass(STRING_LITERAL);
+
+    // Create enums
+    timeUnitEEnum = createEEnum(TIME_UNIT);
+    consistencyLevelEEnum = createEEnum(CONSISTENCY_LEVEL);
+    inconsistencyDetectionEEnum = createEEnum(INCONSISTENCY_DETECTION);
+    inconsistencyResolutionEEnum = createEEnum(INCONSISTENCY_RESOLUTION);
   }
 
   /**
@@ -1825,10 +2065,25 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     initEClass(externalTypeEClass, ExternalType.class, "ExternalType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getExternalType_Element(), ecorePackage.getEString(), "element", null, 0, 1, ExternalType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(weakConsistencyEClass, WeakConsistency.class, "WeakConsistency", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getWeakConsistency_AcceptableDoc(), ecorePackage.getEString(), "acceptableDoc", null, 0, 1, WeakConsistency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWeakConsistency_AcceptableTime(), ecorePackage.getEInt(), "acceptableTime", null, 0, 1, WeakConsistency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWeakConsistency_AcceptableUnit(), this.getTimeUnit(), "acceptableUnit", null, 0, 1, WeakConsistency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWeakConsistency_DetectionDoc(), ecorePackage.getEString(), "detectionDoc", null, 0, 1, WeakConsistency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWeakConsistency_Detection(), this.getInconsistencyDetection(), "detection", null, 0, 1, WeakConsistency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWeakConsistency_ResolutionDoc(), ecorePackage.getEString(), "resolutionDoc", null, 0, 1, WeakConsistency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getWeakConsistency_Resolution(), this.getInconsistencyResolution(), "resolution", null, 0, 1, WeakConsistency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+    initEClass(consistencyEClass, Consistency.class, "Consistency", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getConsistency_Doc(), ecorePackage.getEString(), "doc", null, 0, 1, Consistency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getConsistency_Level(), this.getConsistencyLevel(), "level", null, 0, 1, Consistency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getConsistency_WeakConsistency(), this.getWeakConsistency(), null, "weakConsistency", null, 0, 1, Consistency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(constraintEClass, Constraint.class, "Constraint", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getConstraint_Input(), this.getType(), null, "input", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getConstraint_Exception(), this.getException(), null, "exception", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getConstraint_Attributes(), this.getAttribute(), null, "attributes", null, 0, -1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getConstraint_Consistency(), this.getConsistency(), null, "consistency", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getConstraint_Message(), ecorePackage.getEString(), "message", null, 0, 1, Constraint.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(exceptionEClass, org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception.class, "Exception", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1937,6 +2192,29 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     initEClass(numberLiteralEClass, NumberLiteral.class, "NumberLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
     initEClass(stringLiteralEClass, StringLiteral.class, "StringLiteral", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+    // Initialize enums and add enum literals
+    initEEnum(timeUnitEEnum, TimeUnit.class, "TimeUnit");
+    addEEnumLiteral(timeUnitEEnum, TimeUnit.MILLIS);
+    addEEnumLiteral(timeUnitEEnum, TimeUnit.SECONDS);
+    addEEnumLiteral(timeUnitEEnum, TimeUnit.MINUTES);
+    addEEnumLiteral(timeUnitEEnum, TimeUnit.HOURS);
+    addEEnumLiteral(timeUnitEEnum, TimeUnit.DAYS);
+
+    initEEnum(consistencyLevelEEnum, ConsistencyLevel.class, "ConsistencyLevel");
+    addEEnumLiteral(consistencyLevelEEnum, ConsistencyLevel.WEAK);
+    addEEnumLiteral(consistencyLevelEEnum, ConsistencyLevel.STRONG);
+
+    initEEnum(inconsistencyDetectionEEnum, InconsistencyDetection.class, "InconsistencyDetection");
+    addEEnumLiteral(inconsistencyDetectionEEnum, InconsistencyDetection.NEVER);
+    addEEnumLiteral(inconsistencyDetectionEEnum, InconsistencyDetection.MANUALLY);
+    addEEnumLiteral(inconsistencyDetectionEEnum, InconsistencyDetection.AUTOMATIC);
+
+    initEEnum(inconsistencyResolutionEEnum, InconsistencyResolution.class, "InconsistencyResolution");
+    addEEnumLiteral(inconsistencyResolutionEEnum, InconsistencyResolution.NEVER);
+    addEEnumLiteral(inconsistencyResolutionEEnum, InconsistencyResolution.MANUALLY);
+    addEEnumLiteral(inconsistencyResolutionEEnum, InconsistencyResolution.AUTOMATIC);
+    addEEnumLiteral(inconsistencyResolutionEEnum, InconsistencyResolution.WORKFLOW);
 
     // Create resource
     createResource(eNS_URI);

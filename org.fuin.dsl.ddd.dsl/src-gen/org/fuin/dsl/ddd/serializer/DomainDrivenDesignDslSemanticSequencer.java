@@ -18,6 +18,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.BooleanLiteral;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.BusinessRules;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Consistency;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constructor;
@@ -44,6 +45,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Service;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.StringLiteral;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.TypeMetaInfo;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ValueObject;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.WeakConsistency;
 import org.fuin.dsl.ddd.services.DomainDrivenDesignDslGrammarAccess;
 
 @SuppressWarnings("all")
@@ -92,6 +94,12 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 			case DomainDrivenDesignDslPackage.BUSINESS_RULES:
 				if(context == grammarAccess.getBusinessRulesRule()) {
 					sequence_BusinessRules(context, (BusinessRules) semanticObject); 
+					return; 
+				}
+				else break;
+			case DomainDrivenDesignDslPackage.CONSISTENCY:
+				if(context == grammarAccess.getConsistencyRule()) {
+					sequence_Consistency(context, (Consistency) semanticObject); 
 					return; 
 				}
 				else break;
@@ -280,6 +288,12 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 					return; 
 				}
 				else break;
+			case DomainDrivenDesignDslPackage.WEAK_CONSISTENCY:
+				if(context == grammarAccess.getWeakConsistencyRule()) {
+					sequence_WeakConsistency(context, (WeakConsistency) semanticObject); 
+					return; 
+				}
+				else break;
 			}
 		if (errorAcceptor != null) errorAcceptor.accept(diagnosticProvider.createInvalidContextOrTypeDiagnostic(semanticObject, context));
 	}
@@ -359,6 +373,15 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	
 	/**
 	 * Constraint:
+	 *     (doc=DOC level=ConsistencyLevel weakConsistency=WeakConsistency?)
+	 */
+	protected void sequence_Consistency(EObject context, Consistency semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (constraint=[Constraint|FQN] (params+=Literal params+=Literal*)?)
 	 */
 	protected void sequence_ConstraintInstance(EObject context, ConstraintInstance semanticObject) {
@@ -374,6 +397,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *         input=[Type|FQN]? 
 	 *         exception=[Exception|FQN]? 
 	 *         attributes+=Attribute* 
+	 *         consistency=Consistency? 
 	 *         message=STRING?
 	 *     )
 	 */
@@ -691,6 +715,23 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *     )
 	 */
 	protected void sequence_ValueObject(EObject context, ValueObject semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (
+	 *         acceptableDoc=DOC? 
+	 *         acceptableTime=INT 
+	 *         acceptableUnit=TimeUnit 
+	 *         detectionDoc=DOC? 
+	 *         detection=InconsistencyDetection 
+	 *         resolutionDoc=DOC? 
+	 *         resolution=InconsistencyResolution
+	 *     )
+	 */
+	protected void sequence_WeakConsistency(EObject context, WeakConsistency semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 }

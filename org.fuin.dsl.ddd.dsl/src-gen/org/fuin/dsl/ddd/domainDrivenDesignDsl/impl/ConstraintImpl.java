@@ -18,6 +18,7 @@ import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Consistency;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Type;
@@ -32,6 +33,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Type;
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConstraintImpl#getInput <em>Input</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConstraintImpl#getException <em>Exception</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConstraintImpl#getAttributes <em>Attributes</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConstraintImpl#getConsistency <em>Consistency</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConstraintImpl#getMessage <em>Message</em>}</li>
  * </ul>
  * </p>
@@ -69,6 +71,16 @@ public class ConstraintImpl extends AbstractElementImpl implements Constraint
    * @ordered
    */
   protected EList<Attribute> attributes;
+
+  /**
+   * The cached value of the '{@link #getConsistency() <em>Consistency</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getConsistency()
+   * @generated
+   * @ordered
+   */
+  protected Consistency consistency;
 
   /**
    * The default value of the '{@link #getMessage() <em>Message</em>}' attribute.
@@ -216,6 +228,54 @@ public class ConstraintImpl extends AbstractElementImpl implements Constraint
    * <!-- end-user-doc -->
    * @generated
    */
+  public Consistency getConsistency()
+  {
+    return consistency;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetConsistency(Consistency newConsistency, NotificationChain msgs)
+  {
+    Consistency oldConsistency = consistency;
+    consistency = newConsistency;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.CONSTRAINT__CONSISTENCY, oldConsistency, newConsistency);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setConsistency(Consistency newConsistency)
+  {
+    if (newConsistency != consistency)
+    {
+      NotificationChain msgs = null;
+      if (consistency != null)
+        msgs = ((InternalEObject)consistency).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DomainDrivenDesignDslPackage.CONSTRAINT__CONSISTENCY, null, msgs);
+      if (newConsistency != null)
+        msgs = ((InternalEObject)newConsistency).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DomainDrivenDesignDslPackage.CONSTRAINT__CONSISTENCY, null, msgs);
+      msgs = basicSetConsistency(newConsistency, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.CONSTRAINT__CONSISTENCY, newConsistency, newConsistency));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public String getMessage()
   {
     return message;
@@ -246,6 +306,8 @@ public class ConstraintImpl extends AbstractElementImpl implements Constraint
     {
       case DomainDrivenDesignDslPackage.CONSTRAINT__ATTRIBUTES:
         return ((InternalEList<?>)getAttributes()).basicRemove(otherEnd, msgs);
+      case DomainDrivenDesignDslPackage.CONSTRAINT__CONSISTENCY:
+        return basicSetConsistency(null, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -268,6 +330,8 @@ public class ConstraintImpl extends AbstractElementImpl implements Constraint
         return basicGetException();
       case DomainDrivenDesignDslPackage.CONSTRAINT__ATTRIBUTES:
         return getAttributes();
+      case DomainDrivenDesignDslPackage.CONSTRAINT__CONSISTENCY:
+        return getConsistency();
       case DomainDrivenDesignDslPackage.CONSTRAINT__MESSAGE:
         return getMessage();
     }
@@ -295,6 +359,9 @@ public class ConstraintImpl extends AbstractElementImpl implements Constraint
         getAttributes().clear();
         getAttributes().addAll((Collection<? extends Attribute>)newValue);
         return;
+      case DomainDrivenDesignDslPackage.CONSTRAINT__CONSISTENCY:
+        setConsistency((Consistency)newValue);
+        return;
       case DomainDrivenDesignDslPackage.CONSTRAINT__MESSAGE:
         setMessage((String)newValue);
         return;
@@ -321,6 +388,9 @@ public class ConstraintImpl extends AbstractElementImpl implements Constraint
       case DomainDrivenDesignDslPackage.CONSTRAINT__ATTRIBUTES:
         getAttributes().clear();
         return;
+      case DomainDrivenDesignDslPackage.CONSTRAINT__CONSISTENCY:
+        setConsistency((Consistency)null);
+        return;
       case DomainDrivenDesignDslPackage.CONSTRAINT__MESSAGE:
         setMessage(MESSAGE_EDEFAULT);
         return;
@@ -344,6 +414,8 @@ public class ConstraintImpl extends AbstractElementImpl implements Constraint
         return exception != null;
       case DomainDrivenDesignDslPackage.CONSTRAINT__ATTRIBUTES:
         return attributes != null && !attributes.isEmpty();
+      case DomainDrivenDesignDslPackage.CONSTRAINT__CONSISTENCY:
+        return consistency != null;
       case DomainDrivenDesignDslPackage.CONSTRAINT__MESSAGE:
         return MESSAGE_EDEFAULT == null ? message != null : !MESSAGE_EDEFAULT.equals(message);
     }

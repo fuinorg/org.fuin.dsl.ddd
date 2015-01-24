@@ -3,6 +3,7 @@
 package org.fuin.dsl.ddd.domainDrivenDesignDsl.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EDataType;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 
@@ -20,6 +21,8 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.BooleanLiteral;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.BusinessRules;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Consistency;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConsistencyLevel;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constructor;
@@ -34,6 +37,8 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumObject;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Import;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.InconsistencyDetection;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.InconsistencyResolution;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.InternalType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Invariants;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Literal;
@@ -47,10 +52,12 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Preconditions;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ReturnType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Service;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.StringLiteral;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.TimeUnit;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Type;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.TypeMetaInfo;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ValueObject;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.WeakConsistency;
 
 /**
  * <!-- begin-user-doc -->
@@ -115,6 +122,8 @@ public class DomainDrivenDesignDslFactoryImpl extends EFactoryImpl implements Do
       case DomainDrivenDesignDslPackage.ABSTRACT_ENTITY_ID: return createAbstractEntityId();
       case DomainDrivenDesignDslPackage.ABSTRACT_ENTITY: return createAbstractEntity();
       case DomainDrivenDesignDslPackage.EXTERNAL_TYPE: return createExternalType();
+      case DomainDrivenDesignDslPackage.WEAK_CONSISTENCY: return createWeakConsistency();
+      case DomainDrivenDesignDslPackage.CONSISTENCY: return createConsistency();
       case DomainDrivenDesignDslPackage.CONSTRAINT: return createConstraint();
       case DomainDrivenDesignDslPackage.EXCEPTION: return createException();
       case DomainDrivenDesignDslPackage.VALUE_OBJECT: return createValueObject();
@@ -146,6 +155,52 @@ public class DomainDrivenDesignDslFactoryImpl extends EFactoryImpl implements Do
       case DomainDrivenDesignDslPackage.STRING_LITERAL: return createStringLiteral();
       default:
         throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public Object createFromString(EDataType eDataType, String initialValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case DomainDrivenDesignDslPackage.TIME_UNIT:
+        return createTimeUnitFromString(eDataType, initialValue);
+      case DomainDrivenDesignDslPackage.CONSISTENCY_LEVEL:
+        return createConsistencyLevelFromString(eDataType, initialValue);
+      case DomainDrivenDesignDslPackage.INCONSISTENCY_DETECTION:
+        return createInconsistencyDetectionFromString(eDataType, initialValue);
+      case DomainDrivenDesignDslPackage.INCONSISTENCY_RESOLUTION:
+        return createInconsistencyResolutionFromString(eDataType, initialValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
+    }
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public String convertToString(EDataType eDataType, Object instanceValue)
+  {
+    switch (eDataType.getClassifierID())
+    {
+      case DomainDrivenDesignDslPackage.TIME_UNIT:
+        return convertTimeUnitToString(eDataType, instanceValue);
+      case DomainDrivenDesignDslPackage.CONSISTENCY_LEVEL:
+        return convertConsistencyLevelToString(eDataType, instanceValue);
+      case DomainDrivenDesignDslPackage.INCONSISTENCY_DETECTION:
+        return convertInconsistencyDetectionToString(eDataType, instanceValue);
+      case DomainDrivenDesignDslPackage.INCONSISTENCY_RESOLUTION:
+        return convertInconsistencyResolutionToString(eDataType, instanceValue);
+      default:
+        throw new IllegalArgumentException("The datatype '" + eDataType.getName() + "' is not a valid classifier");
     }
   }
 
@@ -268,6 +323,28 @@ public class DomainDrivenDesignDslFactoryImpl extends EFactoryImpl implements Do
   {
     ExternalTypeImpl externalType = new ExternalTypeImpl();
     return externalType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public WeakConsistency createWeakConsistency()
+  {
+    WeakConsistencyImpl weakConsistency = new WeakConsistencyImpl();
+    return weakConsistency;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Consistency createConsistency()
+  {
+    ConsistencyImpl consistency = new ConsistencyImpl();
+    return consistency;
   }
 
   /**
@@ -587,6 +664,94 @@ public class DomainDrivenDesignDslFactoryImpl extends EFactoryImpl implements Do
   {
     StringLiteralImpl stringLiteral = new StringLiteralImpl();
     return stringLiteral;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public TimeUnit createTimeUnitFromString(EDataType eDataType, String initialValue)
+  {
+    TimeUnit result = TimeUnit.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertTimeUnitToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public ConsistencyLevel createConsistencyLevelFromString(EDataType eDataType, String initialValue)
+  {
+    ConsistencyLevel result = ConsistencyLevel.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertConsistencyLevelToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InconsistencyDetection createInconsistencyDetectionFromString(EDataType eDataType, String initialValue)
+  {
+    InconsistencyDetection result = InconsistencyDetection.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertInconsistencyDetectionToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public InconsistencyResolution createInconsistencyResolutionFromString(EDataType eDataType, String initialValue)
+  {
+    InconsistencyResolution result = InconsistencyResolution.get(initialValue);
+    if (result == null) throw new IllegalArgumentException("The value '" + initialValue + "' is not a valid enumerator of '" + eDataType.getName() + "'");
+    return result;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public String convertInconsistencyResolutionToString(EDataType eDataType, Object instanceValue)
+  {
+    return instanceValue == null ? null : instanceValue.toString();
   }
 
   /**

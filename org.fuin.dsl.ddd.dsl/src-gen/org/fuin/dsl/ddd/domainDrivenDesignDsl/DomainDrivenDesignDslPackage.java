@@ -4,6 +4,7 @@ package org.fuin.dsl.ddd.domainDrivenDesignDsl;
 
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -653,6 +654,134 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int EXTERNAL_TYPE_FEATURE_COUNT = TYPE_FEATURE_COUNT + 1;
 
   /**
+   * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.WeakConsistencyImpl <em>Weak Consistency</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.WeakConsistencyImpl
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getWeakConsistency()
+   * @generated
+   */
+  int WEAK_CONSISTENCY = 11;
+
+  /**
+   * The feature id for the '<em><b>Acceptable Doc</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WEAK_CONSISTENCY__ACCEPTABLE_DOC = 0;
+
+  /**
+   * The feature id for the '<em><b>Acceptable Time</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WEAK_CONSISTENCY__ACCEPTABLE_TIME = 1;
+
+  /**
+   * The feature id for the '<em><b>Acceptable Unit</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WEAK_CONSISTENCY__ACCEPTABLE_UNIT = 2;
+
+  /**
+   * The feature id for the '<em><b>Detection Doc</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WEAK_CONSISTENCY__DETECTION_DOC = 3;
+
+  /**
+   * The feature id for the '<em><b>Detection</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WEAK_CONSISTENCY__DETECTION = 4;
+
+  /**
+   * The feature id for the '<em><b>Resolution Doc</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WEAK_CONSISTENCY__RESOLUTION_DOC = 5;
+
+  /**
+   * The feature id for the '<em><b>Resolution</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WEAK_CONSISTENCY__RESOLUTION = 6;
+
+  /**
+   * The number of structural features of the '<em>Weak Consistency</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int WEAK_CONSISTENCY_FEATURE_COUNT = 7;
+
+  /**
+   * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConsistencyImpl <em>Consistency</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConsistencyImpl
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getConsistency()
+   * @generated
+   */
+  int CONSISTENCY = 12;
+
+  /**
+   * The feature id for the '<em><b>Doc</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSISTENCY__DOC = 0;
+
+  /**
+   * The feature id for the '<em><b>Level</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSISTENCY__LEVEL = 1;
+
+  /**
+   * The feature id for the '<em><b>Weak Consistency</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSISTENCY__WEAK_CONSISTENCY = 2;
+
+  /**
+   * The number of structural features of the '<em>Consistency</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSISTENCY_FEATURE_COUNT = 3;
+
+  /**
    * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConstraintImpl <em>Constraint</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -660,7 +789,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getConstraint()
    * @generated
    */
-  int CONSTRAINT = 11;
+  int CONSTRAINT = 13;
 
   /**
    * The feature id for the '<em><b>Doc</b></em>' attribute.
@@ -708,13 +837,22 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int CONSTRAINT__ATTRIBUTES = ABSTRACT_ELEMENT_FEATURE_COUNT + 2;
 
   /**
+   * The feature id for the '<em><b>Consistency</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int CONSTRAINT__CONSISTENCY = ABSTRACT_ELEMENT_FEATURE_COUNT + 3;
+
+  /**
    * The feature id for the '<em><b>Message</b></em>' attribute.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int CONSTRAINT__MESSAGE = ABSTRACT_ELEMENT_FEATURE_COUNT + 3;
+  int CONSTRAINT__MESSAGE = ABSTRACT_ELEMENT_FEATURE_COUNT + 4;
 
   /**
    * The number of structural features of the '<em>Constraint</em>' class.
@@ -723,7 +861,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @generated
    * @ordered
    */
-  int CONSTRAINT_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 4;
+  int CONSTRAINT_FEATURE_COUNT = ABSTRACT_ELEMENT_FEATURE_COUNT + 5;
 
   /**
    * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ExceptionImpl <em>Exception</em>}' class.
@@ -733,7 +871,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getException()
    * @generated
    */
-  int EXCEPTION = 12;
+  int EXCEPTION = 14;
 
   /**
    * The feature id for the '<em><b>Doc</b></em>' attribute.
@@ -797,7 +935,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getValueObject()
    * @generated
    */
-  int VALUE_OBJECT = 13;
+  int VALUE_OBJECT = 15;
 
   /**
    * The feature id for the '<em><b>Doc</b></em>' attribute.
@@ -888,7 +1026,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getEntityId()
    * @generated
    */
-  int ENTITY_ID = 14;
+  int ENTITY_ID = 16;
 
   /**
    * The feature id for the '<em><b>Doc</b></em>' attribute.
@@ -988,7 +1126,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getAggregateId()
    * @generated
    */
-  int AGGREGATE_ID = 15;
+  int AGGREGATE_ID = 17;
 
   /**
    * The feature id for the '<em><b>Doc</b></em>' attribute.
@@ -1088,7 +1226,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getEnumObject()
    * @generated
    */
-  int ENUM_OBJECT = 16;
+  int ENUM_OBJECT = 18;
 
   /**
    * The feature id for the '<em><b>Doc</b></em>' attribute.
@@ -1170,7 +1308,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getEnumInstance()
    * @generated
    */
-  int ENUM_INSTANCE = 17;
+  int ENUM_INSTANCE = 19;
 
   /**
    * The feature id for the '<em><b>Doc</b></em>' attribute.
@@ -1225,7 +1363,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getEvent()
    * @generated
    */
-  int EVENT = 18;
+  int EVENT = 20;
 
   /**
    * The feature id for the '<em><b>Doc</b></em>' attribute.
@@ -1280,7 +1418,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getEntity()
    * @generated
    */
-  int ENTITY = 19;
+  int ENTITY = 21;
 
   /**
    * The feature id for the '<em><b>Doc</b></em>' attribute.
@@ -1389,7 +1527,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getAggregate()
    * @generated
    */
-  int AGGREGATE = 20;
+  int AGGREGATE = 22;
 
   /**
    * The feature id for the '<em><b>Doc</b></em>' attribute.
@@ -1489,7 +1627,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getAbstractMethod()
    * @generated
    */
-  int ABSTRACT_METHOD = 21;
+  int ABSTRACT_METHOD = 23;
 
   /**
    * The feature id for the '<em><b>Doc</b></em>' attribute.
@@ -1589,7 +1727,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getConstructor()
    * @generated
    */
-  int CONSTRUCTOR = 22;
+  int CONSTRUCTOR = 24;
 
   /**
    * The feature id for the '<em><b>Doc</b></em>' attribute.
@@ -1689,7 +1827,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getReturnType()
    * @generated
    */
-  int RETURN_TYPE = 23;
+  int RETURN_TYPE = 25;
 
   /**
    * The feature id for the '<em><b>Doc</b></em>' attribute.
@@ -1726,7 +1864,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getMethod()
    * @generated
    */
-  int METHOD = 24;
+  int METHOD = 26;
 
   /**
    * The feature id for the '<em><b>Doc</b></em>' attribute.
@@ -1844,7 +1982,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getTypeMetaInfo()
    * @generated
    */
-  int TYPE_META_INFO = 25;
+  int TYPE_META_INFO = 27;
 
   /**
    * The feature id for the '<em><b>Slabel</b></em>' attribute.
@@ -1908,7 +2046,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getVariable()
    * @generated
    */
-  int VARIABLE = 26;
+  int VARIABLE = 28;
 
   /**
    * The feature id for the '<em><b>Doc</b></em>' attribute.
@@ -1981,7 +2119,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getAttribute()
    * @generated
    */
-  int ATTRIBUTE = 27;
+  int ATTRIBUTE = 29;
 
   /**
    * The feature id for the '<em><b>Doc</b></em>' attribute.
@@ -2063,7 +2201,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getParameter()
    * @generated
    */
-  int PARAMETER = 28;
+  int PARAMETER = 30;
 
   /**
    * The feature id for the '<em><b>Doc</b></em>' attribute.
@@ -2154,7 +2292,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getInvariants()
    * @generated
    */
-  int INVARIANTS = 29;
+  int INVARIANTS = 31;
 
   /**
    * The feature id for the '<em><b>Constraint Instances</b></em>' containment reference list.
@@ -2182,7 +2320,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getPreconditions()
    * @generated
    */
-  int PRECONDITIONS = 30;
+  int PRECONDITIONS = 32;
 
   /**
    * The feature id for the '<em><b>Constraint Instances</b></em>' containment reference list.
@@ -2210,7 +2348,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getBusinessRules()
    * @generated
    */
-  int BUSINESS_RULES = 31;
+  int BUSINESS_RULES = 33;
 
   /**
    * The feature id for the '<em><b>Constraint Instances</b></em>' containment reference list.
@@ -2238,7 +2376,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getOverriddenTypeMetaInfo()
    * @generated
    */
-  int OVERRIDDEN_TYPE_META_INFO = 32;
+  int OVERRIDDEN_TYPE_META_INFO = 34;
 
   /**
    * The feature id for the '<em><b>Meta Info</b></em>' containment reference.
@@ -2266,7 +2404,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getConstraintInstance()
    * @generated
    */
-  int CONSTRAINT_INSTANCE = 33;
+  int CONSTRAINT_INSTANCE = 35;
 
   /**
    * The feature id for the '<em><b>Constraint</b></em>' reference.
@@ -2303,7 +2441,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getService()
    * @generated
    */
-  int SERVICE = 34;
+  int SERVICE = 36;
 
   /**
    * The feature id for the '<em><b>Doc</b></em>' attribute.
@@ -2349,7 +2487,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getLiteral()
    * @generated
    */
-  int LITERAL = 35;
+  int LITERAL = 37;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2377,7 +2515,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getBooleanLiteral()
    * @generated
    */
-  int BOOLEAN_LITERAL = 36;
+  int BOOLEAN_LITERAL = 38;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2405,7 +2543,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getNullLiteral()
    * @generated
    */
-  int NULL_LITERAL = 37;
+  int NULL_LITERAL = 39;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2433,7 +2571,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getNumberLiteral()
    * @generated
    */
-  int NUMBER_LITERAL = 38;
+  int NUMBER_LITERAL = 40;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2461,7 +2599,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getStringLiteral()
    * @generated
    */
-  int STRING_LITERAL = 39;
+  int STRING_LITERAL = 41;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2480,6 +2618,46 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @ordered
    */
   int STRING_LITERAL_FEATURE_COUNT = LITERAL_FEATURE_COUNT + 0;
+
+  /**
+   * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.TimeUnit <em>Time Unit</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.TimeUnit
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getTimeUnit()
+   * @generated
+   */
+  int TIME_UNIT = 42;
+
+  /**
+   * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.ConsistencyLevel <em>Consistency Level</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.ConsistencyLevel
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getConsistencyLevel()
+   * @generated
+   */
+  int CONSISTENCY_LEVEL = 43;
+
+  /**
+   * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.InconsistencyDetection <em>Inconsistency Detection</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.InconsistencyDetection
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getInconsistencyDetection()
+   * @generated
+   */
+  int INCONSISTENCY_DETECTION = 44;
+
+  /**
+   * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.InconsistencyResolution <em>Inconsistency Resolution</em>}' enum.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.InconsistencyResolution
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getInconsistencyResolution()
+   * @generated
+   */
+  int INCONSISTENCY_RESOLUTION = 45;
 
 
   /**
@@ -2802,6 +2980,136 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   EAttribute getExternalType_Element();
 
   /**
+   * Returns the meta object for class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.WeakConsistency <em>Weak Consistency</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Weak Consistency</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.WeakConsistency
+   * @generated
+   */
+  EClass getWeakConsistency();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.WeakConsistency#getAcceptableDoc <em>Acceptable Doc</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Acceptable Doc</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.WeakConsistency#getAcceptableDoc()
+   * @see #getWeakConsistency()
+   * @generated
+   */
+  EAttribute getWeakConsistency_AcceptableDoc();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.WeakConsistency#getAcceptableTime <em>Acceptable Time</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Acceptable Time</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.WeakConsistency#getAcceptableTime()
+   * @see #getWeakConsistency()
+   * @generated
+   */
+  EAttribute getWeakConsistency_AcceptableTime();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.WeakConsistency#getAcceptableUnit <em>Acceptable Unit</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Acceptable Unit</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.WeakConsistency#getAcceptableUnit()
+   * @see #getWeakConsistency()
+   * @generated
+   */
+  EAttribute getWeakConsistency_AcceptableUnit();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.WeakConsistency#getDetectionDoc <em>Detection Doc</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Detection Doc</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.WeakConsistency#getDetectionDoc()
+   * @see #getWeakConsistency()
+   * @generated
+   */
+  EAttribute getWeakConsistency_DetectionDoc();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.WeakConsistency#getDetection <em>Detection</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Detection</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.WeakConsistency#getDetection()
+   * @see #getWeakConsistency()
+   * @generated
+   */
+  EAttribute getWeakConsistency_Detection();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.WeakConsistency#getResolutionDoc <em>Resolution Doc</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Resolution Doc</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.WeakConsistency#getResolutionDoc()
+   * @see #getWeakConsistency()
+   * @generated
+   */
+  EAttribute getWeakConsistency_ResolutionDoc();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.WeakConsistency#getResolution <em>Resolution</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Resolution</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.WeakConsistency#getResolution()
+   * @see #getWeakConsistency()
+   * @generated
+   */
+  EAttribute getWeakConsistency_Resolution();
+
+  /**
+   * Returns the meta object for class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Consistency <em>Consistency</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Consistency</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Consistency
+   * @generated
+   */
+  EClass getConsistency();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Consistency#getDoc <em>Doc</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Doc</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Consistency#getDoc()
+   * @see #getConsistency()
+   * @generated
+   */
+  EAttribute getConsistency_Doc();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Consistency#getLevel <em>Level</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Level</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Consistency#getLevel()
+   * @see #getConsistency()
+   * @generated
+   */
+  EAttribute getConsistency_Level();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Consistency#getWeakConsistency <em>Weak Consistency</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Weak Consistency</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Consistency#getWeakConsistency()
+   * @see #getConsistency()
+   * @generated
+   */
+  EReference getConsistency_WeakConsistency();
+
+  /**
    * Returns the meta object for class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint <em>Constraint</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2843,6 +3151,17 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @generated
    */
   EReference getConstraint_Attributes();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint#getConsistency <em>Consistency</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Consistency</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint#getConsistency()
+   * @see #getConstraint()
+   * @generated
+   */
+  EReference getConstraint_Consistency();
 
   /**
    * Returns the meta object for the attribute '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint#getMessage <em>Message</em>}'.
@@ -3697,6 +4016,46 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   EClass getStringLiteral();
 
   /**
+   * Returns the meta object for enum '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.TimeUnit <em>Time Unit</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Time Unit</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.TimeUnit
+   * @generated
+   */
+  EEnum getTimeUnit();
+
+  /**
+   * Returns the meta object for enum '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.ConsistencyLevel <em>Consistency Level</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Consistency Level</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.ConsistencyLevel
+   * @generated
+   */
+  EEnum getConsistencyLevel();
+
+  /**
+   * Returns the meta object for enum '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.InconsistencyDetection <em>Inconsistency Detection</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Inconsistency Detection</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.InconsistencyDetection
+   * @generated
+   */
+  EEnum getInconsistencyDetection();
+
+  /**
+   * Returns the meta object for enum '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.InconsistencyResolution <em>Inconsistency Resolution</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for enum '<em>Inconsistency Resolution</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.InconsistencyResolution
+   * @generated
+   */
+  EEnum getInconsistencyResolution();
+
+  /**
    * Returns the factory that creates the instances of the model.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3982,6 +4341,106 @@ public interface DomainDrivenDesignDslPackage extends EPackage
     EAttribute EXTERNAL_TYPE__ELEMENT = eINSTANCE.getExternalType_Element();
 
     /**
+     * The meta object literal for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.WeakConsistencyImpl <em>Weak Consistency</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.WeakConsistencyImpl
+     * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getWeakConsistency()
+     * @generated
+     */
+    EClass WEAK_CONSISTENCY = eINSTANCE.getWeakConsistency();
+
+    /**
+     * The meta object literal for the '<em><b>Acceptable Doc</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WEAK_CONSISTENCY__ACCEPTABLE_DOC = eINSTANCE.getWeakConsistency_AcceptableDoc();
+
+    /**
+     * The meta object literal for the '<em><b>Acceptable Time</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WEAK_CONSISTENCY__ACCEPTABLE_TIME = eINSTANCE.getWeakConsistency_AcceptableTime();
+
+    /**
+     * The meta object literal for the '<em><b>Acceptable Unit</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WEAK_CONSISTENCY__ACCEPTABLE_UNIT = eINSTANCE.getWeakConsistency_AcceptableUnit();
+
+    /**
+     * The meta object literal for the '<em><b>Detection Doc</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WEAK_CONSISTENCY__DETECTION_DOC = eINSTANCE.getWeakConsistency_DetectionDoc();
+
+    /**
+     * The meta object literal for the '<em><b>Detection</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WEAK_CONSISTENCY__DETECTION = eINSTANCE.getWeakConsistency_Detection();
+
+    /**
+     * The meta object literal for the '<em><b>Resolution Doc</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WEAK_CONSISTENCY__RESOLUTION_DOC = eINSTANCE.getWeakConsistency_ResolutionDoc();
+
+    /**
+     * The meta object literal for the '<em><b>Resolution</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute WEAK_CONSISTENCY__RESOLUTION = eINSTANCE.getWeakConsistency_Resolution();
+
+    /**
+     * The meta object literal for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConsistencyImpl <em>Consistency</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConsistencyImpl
+     * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getConsistency()
+     * @generated
+     */
+    EClass CONSISTENCY = eINSTANCE.getConsistency();
+
+    /**
+     * The meta object literal for the '<em><b>Doc</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONSISTENCY__DOC = eINSTANCE.getConsistency_Doc();
+
+    /**
+     * The meta object literal for the '<em><b>Level</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute CONSISTENCY__LEVEL = eINSTANCE.getConsistency_Level();
+
+    /**
+     * The meta object literal for the '<em><b>Weak Consistency</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONSISTENCY__WEAK_CONSISTENCY = eINSTANCE.getConsistency_WeakConsistency();
+
+    /**
      * The meta object literal for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.ConstraintImpl <em>Constraint</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4014,6 +4473,14 @@ public interface DomainDrivenDesignDslPackage extends EPackage
      * @generated
      */
     EReference CONSTRAINT__ATTRIBUTES = eINSTANCE.getConstraint_Attributes();
+
+    /**
+     * The meta object literal for the '<em><b>Consistency</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference CONSTRAINT__CONSISTENCY = eINSTANCE.getConstraint_Consistency();
 
     /**
      * The meta object literal for the '<em><b>Message</b></em>' attribute feature.
@@ -4710,6 +5177,46 @@ public interface DomainDrivenDesignDslPackage extends EPackage
      * @generated
      */
     EClass STRING_LITERAL = eINSTANCE.getStringLiteral();
+
+    /**
+     * The meta object literal for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.TimeUnit <em>Time Unit</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.TimeUnit
+     * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getTimeUnit()
+     * @generated
+     */
+    EEnum TIME_UNIT = eINSTANCE.getTimeUnit();
+
+    /**
+     * The meta object literal for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.ConsistencyLevel <em>Consistency Level</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.ConsistencyLevel
+     * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getConsistencyLevel()
+     * @generated
+     */
+    EEnum CONSISTENCY_LEVEL = eINSTANCE.getConsistencyLevel();
+
+    /**
+     * The meta object literal for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.InconsistencyDetection <em>Inconsistency Detection</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.InconsistencyDetection
+     * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getInconsistencyDetection()
+     * @generated
+     */
+    EEnum INCONSISTENCY_DETECTION = eINSTANCE.getInconsistencyDetection();
+
+    /**
+     * The meta object literal for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.InconsistencyResolution <em>Inconsistency Resolution</em>}' enum.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.InconsistencyResolution
+     * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getInconsistencyResolution()
+     * @generated
+     */
+    EEnum INCONSISTENCY_RESOLUTION = eINSTANCE.getInconsistencyResolution();
 
   }
 

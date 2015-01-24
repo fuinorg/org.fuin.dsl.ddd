@@ -21,6 +21,8 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.BusinessRules;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Consistency;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConsistencyLevel;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Context;
@@ -37,6 +39,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.ReturnType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Service;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Type;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.WeakConsistency;
 import org.fuin.dsl.ddd.extensions.DddAbstractElementExtensions;
 import org.fuin.dsl.ddd.extensions.DddAttributeExtensions;
 import org.fuin.dsl.ddd.extensions.DddConstraintExtension;
@@ -78,6 +81,8 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
   
   public final static String BUSINESS_RULE_REQUIRES_EXCEPTION = "businessRuleRequiresException";
   
+  public final static String BUSINESS_RULE_REQUIRES_CONSISTENCY = "businessRuleRequiresConsistency";
+  
   public final static String ATTRIBUTE_INVARIANT_WRONG_TARGET_TYPE = "attributeInvariantWrongTargetType";
   
   public final static String PARAMETER_CONSTRAINT_WRONG_TARGET_TYPE = "parameterConstraintWrongTargetType";
@@ -85,6 +90,10 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
   public final static String INTERNAL_TYPE_INVARIANT_WRONG_TARGET_TYPE = "internalTypeInvariantWrongTargetType";
   
   public final static String SERVICE_NOT_ALLOWED_AS_CONSTRAINT_INPUT = "serviceNotAllowedAsConstraintInput";
+  
+  public final static String WEAK_CONSISTENCY_REQUIRES_DETAILS = "weakConsistencyRequiresDetails";
+  
+  public final static String STRONG_CONSISTENCY_DOES_NOT_ALLOW_DETAILS = "strongConsistencyDoesNotAllowDetails";
   
   @Inject
   private IContainer.Manager containerManager;
@@ -384,20 +393,31 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
   }
   
   @Check
-  public void checkBusinessRulesHaveExceptions(final BusinessRules businessRules) {
+  public void checkBusinessRulesHaveConsistencyAndExceptions(final BusinessRules businessRules) {
     EList<ConstraintInstance> _constraintInstances = businessRules.getConstraintInstances();
     boolean _notEquals = (!Objects.equal(_constraintInstances, null));
     if (_notEquals) {
       EList<ConstraintInstance> _constraintInstances_1 = businessRules.getConstraintInstances();
       for (final ConstraintInstance constraintInstance : _constraintInstances_1) {
-        Constraint _constraint = constraintInstance.getConstraint();
-        org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception _exception = _constraint.getException();
-        boolean _equals = Objects.equal(_exception, null);
-        if (_equals) {
-          this.error(
-            "A constraint used as a business rule must declare an exception", constraintInstance, 
-            DomainDrivenDesignDslPackage.Literals.CONSTRAINT_INSTANCE__CONSTRAINT, 
-            DomainDrivenDesignDslValidator.BUSINESS_RULE_REQUIRES_EXCEPTION);
+        {
+          Constraint _constraint = constraintInstance.getConstraint();
+          org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception _exception = _constraint.getException();
+          boolean _equals = Objects.equal(_exception, null);
+          if (_equals) {
+            this.error(
+              "A constraint used as a business rule must declare an exception", constraintInstance, 
+              DomainDrivenDesignDslPackage.Literals.CONSTRAINT_INSTANCE__CONSTRAINT, 
+              DomainDrivenDesignDslValidator.BUSINESS_RULE_REQUIRES_EXCEPTION);
+          }
+          Constraint _constraint_1 = constraintInstance.getConstraint();
+          Consistency _consistency = _constraint_1.getConsistency();
+          boolean _equals_1 = Objects.equal(_consistency, null);
+          if (_equals_1) {
+            this.error(
+              "A constraint used as a business rule must specify the consistency", constraintInstance, 
+              DomainDrivenDesignDslPackage.Literals.CONSTRAINT_INSTANCE__CONSTRAINT, 
+              DomainDrivenDesignDslValidator.BUSINESS_RULE_REQUIRES_CONSISTENCY);
+          }
         }
       }
     }
@@ -566,6 +586,42 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
         "A service is not allowed as input for a constraint", constraint, 
         DomainDrivenDesignDslPackage.Literals.CONSTRAINT__INPUT, 
         DomainDrivenDesignDslValidator.SERVICE_NOT_ALLOWED_AS_CONSTRAINT_INPUT);
+    }
+  }
+  
+  @Check
+  public void checkWeakConsistency(final Consistency consistency) {
+    boolean _and = false;
+    ConsistencyLevel _level = consistency.getLevel();
+    boolean _equals = Objects.equal(_level, ConsistencyLevel.WEAK);
+    if (!_equals) {
+      _and = false;
+    } else {
+      WeakConsistency _weakConsistency = consistency.getWeakConsistency();
+      boolean _equals_1 = Objects.equal(_weakConsistency, null);
+      _and = _equals_1;
+    }
+    if (_and) {
+      this.error(
+        "You must define the details for weak consistency", consistency, 
+        DomainDrivenDesignDslPackage.Literals.CONSISTENCY__WEAK_CONSISTENCY, 
+        DomainDrivenDesignDslValidator.WEAK_CONSISTENCY_REQUIRES_DETAILS);
+    }
+    boolean _and_1 = false;
+    ConsistencyLevel _level_1 = consistency.getLevel();
+    boolean _equals_2 = Objects.equal(_level_1, ConsistencyLevel.STRONG);
+    if (!_equals_2) {
+      _and_1 = false;
+    } else {
+      WeakConsistency _weakConsistency_1 = consistency.getWeakConsistency();
+      boolean _notEquals = (!Objects.equal(_weakConsistency_1, null));
+      _and_1 = _notEquals;
+    }
+    if (_and_1) {
+      this.error(
+        "No details required for strong consistency", consistency, 
+        DomainDrivenDesignDslPackage.Literals.CONSISTENCY__WEAK_CONSISTENCY, 
+        DomainDrivenDesignDslValidator.STRONG_CONSISTENCY_DOES_NOT_ALLOW_DETAILS);
     }
   }
   

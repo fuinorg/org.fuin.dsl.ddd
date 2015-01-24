@@ -17,6 +17,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.BooleanLiteral;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.BusinessRules;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Consistency;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constructor;
@@ -47,6 +48,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Type;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.TypeMetaInfo;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ValueObject;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.WeakConsistency;
 
 /**
  * <!-- begin-user-doc -->
@@ -200,6 +202,20 @@ public class DomainDrivenDesignDslSwitch<T> extends Switch<T>
         T result = caseExternalType(externalType);
         if (result == null) result = caseType(externalType);
         if (result == null) result = caseAbstractElement(externalType);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DomainDrivenDesignDslPackage.WEAK_CONSISTENCY:
+      {
+        WeakConsistency weakConsistency = (WeakConsistency)theEObject;
+        T result = caseWeakConsistency(weakConsistency);
+        if (result == null) result = defaultCase(theEObject);
+        return result;
+      }
+      case DomainDrivenDesignDslPackage.CONSISTENCY:
+      {
+        Consistency consistency = (Consistency)theEObject;
+        T result = caseConsistency(consistency);
         if (result == null) result = defaultCase(theEObject);
         return result;
       }
@@ -620,6 +636,38 @@ public class DomainDrivenDesignDslSwitch<T> extends Switch<T>
    * @generated
    */
   public T caseExternalType(ExternalType object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Weak Consistency</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Weak Consistency</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseWeakConsistency(WeakConsistency object)
+  {
+    return null;
+  }
+
+  /**
+   * Returns the result of interpreting the object as an instance of '<em>Consistency</em>'.
+   * <!-- begin-user-doc -->
+   * This implementation returns null;
+   * returning a non-null result will terminate the switch.
+   * <!-- end-user-doc -->
+   * @param object the target of the switch.
+   * @return the result of interpreting the object as an instance of '<em>Consistency</em>'.
+   * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+   * @generated
+   */
+  public T caseConsistency(Consistency object)
   {
     return null;
   }
