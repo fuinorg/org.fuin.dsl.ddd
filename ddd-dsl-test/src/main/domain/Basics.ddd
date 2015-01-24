@@ -24,19 +24,19 @@ context axonsample {
 		/**
 		 * Makes sure a string has exactly a given size.
 	 	 */
-		constraint ExactLength on String {
+		constraint ExactLength input String {
 	
 			/** Expected length. */
 			Integer expected
 	        
-	        message "Expected an exact length of ${expected}, but value was: '${vv}'"
+	        message "Expected an exact length of ${expected}, but value was: '${input}'"
 	        
 		}
 		
 		/**
 		 * Makes sure a string has a defined length (min/max).
 		 */
-		constraint Length on String {
+		constraint Length input String {
 			
 			/** Expected minimum length (inclusive). */
 			Integer min
@@ -44,62 +44,62 @@ context axonsample {
 			/** Expected maximum length (inclusive). */
 			Integer max
 	
-	        message "Expected a length between ${min} and ${max} characters, but value was: '${vv}'"
+	        message "Expected a length between ${min} and ${max} characters, but value was: '${input}'"
 	
 		}
 	
 		/**
 		 * Makes sure a string has at a maximum length.
 	  	 */
-		constraint MaxLength on String {
+		constraint MaxLength input String {
 	
 			/** Expected maximum length (inclusive). */
 			Integer expected
 	
-			message "Expected a maximum length of ${expected} characters, but value was: '${vv}'"
+			message "Expected a maximum length of ${expected} characters, but value was: '${input}'"
 		
 		}
 		
 		/**
 		 * Makes sure a numeric is not greater than a given value.
 	 	 */
-		constraint MaxValue on Long {
+		constraint MaxValue input Long {
 	
 			/** Expected maximum value (inclusive). */
 			Long expected
 	
-			message "Expected a maximum value of ${expected}, but actual was: ${vv}"
+			message "Expected a maximum value of ${expected}, but actual was: ${input}"
 			
 		}
 		
 		/**
 		 * Makes sure a string has at least a given length.
 		 */
-		constraint MinLength on String {
+		constraint MinLength input String {
 		
 			/** Expected minimum length (inclusive). */
 			Integer expected
 			
-			message "Expected a minimum length of ${expected} characters, but value was: ${vv}"
+			message "Expected a minimum length of ${expected} characters, but value was: ${input}"
 			
 		}
 		
 		/**
 		 * Makes sure a numeric is not less than a given value.
 		 */
-		constraint MinValue on Long {
+		constraint MinValue input Long {
 	
 			/** Expected minimum value (inclusive). */
 			Long expected
 			
-			message "Expected a minimum value of ${expected}, but actual was: ${vv}"
+			message "Expected a minimum value of ${expected}, but actual was: ${input}"
 			
 		}
 
 		/**
 		 * Makes sure a numeric is not less than or greater than a given value.
 		 */
-		constraint ValueRange on Long {
+		constraint ValueRange input Long {
 			
 			/** Expected minimum value (inclusive). */
 			Long min
@@ -107,7 +107,7 @@ context axonsample {
 			/** Expected maximum value (inclusive). */
 			Long max
 			
-			message "Expected a value between ${min} and ${max}, but actual was: ${vv}"
+			message "Expected a value between ${min} and ${max}, but actual was: ${input}"
 			
 		}
 		
