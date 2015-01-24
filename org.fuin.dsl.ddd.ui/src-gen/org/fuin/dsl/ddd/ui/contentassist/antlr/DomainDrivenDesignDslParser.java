@@ -59,6 +59,7 @@ public class DomainDrivenDesignDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getNamespaceAccess().getGroup(), "rule__Namespace__Group__0");
 					put(grammarAccess.getImportAccess().getGroup(), "rule__Import__Group__0");
 					put(grammarAccess.getExternalTypeAccess().getGroup(), "rule__ExternalType__Group__0");
+					put(grammarAccess.getDurationAccess().getGroup(), "rule__Duration__Group__0");
 					put(grammarAccess.getWeakConsistencyAccess().getGroup(), "rule__WeakConsistency__Group__0");
 					put(grammarAccess.getConsistencyAccess().getGroup(), "rule__Consistency__Group__0");
 					put(grammarAccess.getConsistencyAccess().getGroup_3(), "rule__Consistency__Group_3__0");
@@ -129,13 +130,14 @@ public class DomainDrivenDesignDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getExternalTypeAccess().getDocAssignment_0(), "rule__ExternalType__DocAssignment_0");
 					put(grammarAccess.getExternalTypeAccess().getElementAssignment_2(), "rule__ExternalType__ElementAssignment_2");
 					put(grammarAccess.getExternalTypeAccess().getNameAssignment_3(), "rule__ExternalType__NameAssignment_3");
+					put(grammarAccess.getDurationAccess().getTimeAssignment_0(), "rule__Duration__TimeAssignment_0");
+					put(grammarAccess.getDurationAccess().getUnitAssignment_1(), "rule__Duration__UnitAssignment_1");
 					put(grammarAccess.getWeakConsistencyAccess().getAcceptableDocAssignment_0(), "rule__WeakConsistency__AcceptableDocAssignment_0");
-					put(grammarAccess.getWeakConsistencyAccess().getAcceptableTimeAssignment_2(), "rule__WeakConsistency__AcceptableTimeAssignment_2");
-					put(grammarAccess.getWeakConsistencyAccess().getAcceptableUnitAssignment_3(), "rule__WeakConsistency__AcceptableUnitAssignment_3");
-					put(grammarAccess.getWeakConsistencyAccess().getDetectionDocAssignment_4(), "rule__WeakConsistency__DetectionDocAssignment_4");
-					put(grammarAccess.getWeakConsistencyAccess().getDetectionAssignment_6(), "rule__WeakConsistency__DetectionAssignment_6");
-					put(grammarAccess.getWeakConsistencyAccess().getResolutionDocAssignment_7(), "rule__WeakConsistency__ResolutionDocAssignment_7");
-					put(grammarAccess.getWeakConsistencyAccess().getResolutionAssignment_9(), "rule__WeakConsistency__ResolutionAssignment_9");
+					put(grammarAccess.getWeakConsistencyAccess().getAcceptableAssignment_2(), "rule__WeakConsistency__AcceptableAssignment_2");
+					put(grammarAccess.getWeakConsistencyAccess().getDetectionDocAssignment_3(), "rule__WeakConsistency__DetectionDocAssignment_3");
+					put(grammarAccess.getWeakConsistencyAccess().getDetectionAssignment_5(), "rule__WeakConsistency__DetectionAssignment_5");
+					put(grammarAccess.getWeakConsistencyAccess().getResolutionDocAssignment_6(), "rule__WeakConsistency__ResolutionDocAssignment_6");
+					put(grammarAccess.getWeakConsistencyAccess().getResolutionAssignment_8(), "rule__WeakConsistency__ResolutionAssignment_8");
 					put(grammarAccess.getConsistencyAccess().getDocAssignment_0(), "rule__Consistency__DocAssignment_0");
 					put(grammarAccess.getConsistencyAccess().getLevelAssignment_2(), "rule__Consistency__LevelAssignment_2");
 					put(grammarAccess.getConsistencyAccess().getWeakConsistencyAssignment_3_1(), "rule__Consistency__WeakConsistencyAssignment_3_1");

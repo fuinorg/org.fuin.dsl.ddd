@@ -3,16 +3,18 @@
 package org.fuin.dsl.ddd.domainDrivenDesignDsl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Duration;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.InconsistencyDetection;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.InconsistencyResolution;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.TimeUnit;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.WeakConsistency;
 
 /**
@@ -23,8 +25,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.WeakConsistency;
  * The following features are implemented:
  * <ul>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.WeakConsistencyImpl#getAcceptableDoc <em>Acceptable Doc</em>}</li>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.WeakConsistencyImpl#getAcceptableTime <em>Acceptable Time</em>}</li>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.WeakConsistencyImpl#getAcceptableUnit <em>Acceptable Unit</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.WeakConsistencyImpl#getAcceptable <em>Acceptable</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.WeakConsistencyImpl#getDetectionDoc <em>Detection Doc</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.WeakConsistencyImpl#getDetection <em>Detection</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.WeakConsistencyImpl#getResolutionDoc <em>Resolution Doc</em>}</li>
@@ -57,44 +58,14 @@ public class WeakConsistencyImpl extends MinimalEObjectImpl.Container implements
   protected String acceptableDoc = ACCEPTABLE_DOC_EDEFAULT;
 
   /**
-   * The default value of the '{@link #getAcceptableTime() <em>Acceptable Time</em>}' attribute.
+   * The cached value of the '{@link #getAcceptable() <em>Acceptable</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getAcceptableTime()
+   * @see #getAcceptable()
    * @generated
    * @ordered
    */
-  protected static final int ACCEPTABLE_TIME_EDEFAULT = 0;
-
-  /**
-   * The cached value of the '{@link #getAcceptableTime() <em>Acceptable Time</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getAcceptableTime()
-   * @generated
-   * @ordered
-   */
-  protected int acceptableTime = ACCEPTABLE_TIME_EDEFAULT;
-
-  /**
-   * The default value of the '{@link #getAcceptableUnit() <em>Acceptable Unit</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getAcceptableUnit()
-   * @generated
-   * @ordered
-   */
-  protected static final TimeUnit ACCEPTABLE_UNIT_EDEFAULT = TimeUnit.MILLIS;
-
-  /**
-   * The cached value of the '{@link #getAcceptableUnit() <em>Acceptable Unit</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getAcceptableUnit()
-   * @generated
-   * @ordered
-   */
-  protected TimeUnit acceptableUnit = ACCEPTABLE_UNIT_EDEFAULT;
+  protected Duration acceptable;
 
   /**
    * The default value of the '{@link #getDetectionDoc() <em>Detection Doc</em>}' attribute.
@@ -225,9 +196,9 @@ public class WeakConsistencyImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public int getAcceptableTime()
+  public Duration getAcceptable()
   {
-    return acceptableTime;
+    return acceptable;
   }
 
   /**
@@ -235,12 +206,16 @@ public class WeakConsistencyImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setAcceptableTime(int newAcceptableTime)
+  public NotificationChain basicSetAcceptable(Duration newAcceptable, NotificationChain msgs)
   {
-    int oldAcceptableTime = acceptableTime;
-    acceptableTime = newAcceptableTime;
+    Duration oldAcceptable = acceptable;
+    acceptable = newAcceptable;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.WEAK_CONSISTENCY__ACCEPTABLE_TIME, oldAcceptableTime, acceptableTime));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.WEAK_CONSISTENCY__ACCEPTABLE, oldAcceptable, newAcceptable);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
   }
 
   /**
@@ -248,22 +223,20 @@ public class WeakConsistencyImpl extends MinimalEObjectImpl.Container implements
    * <!-- end-user-doc -->
    * @generated
    */
-  public TimeUnit getAcceptableUnit()
+  public void setAcceptable(Duration newAcceptable)
   {
-    return acceptableUnit;
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public void setAcceptableUnit(TimeUnit newAcceptableUnit)
-  {
-    TimeUnit oldAcceptableUnit = acceptableUnit;
-    acceptableUnit = newAcceptableUnit == null ? ACCEPTABLE_UNIT_EDEFAULT : newAcceptableUnit;
-    if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.WEAK_CONSISTENCY__ACCEPTABLE_UNIT, oldAcceptableUnit, acceptableUnit));
+    if (newAcceptable != acceptable)
+    {
+      NotificationChain msgs = null;
+      if (acceptable != null)
+        msgs = ((InternalEObject)acceptable).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DomainDrivenDesignDslPackage.WEAK_CONSISTENCY__ACCEPTABLE, null, msgs);
+      if (newAcceptable != null)
+        msgs = ((InternalEObject)newAcceptable).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DomainDrivenDesignDslPackage.WEAK_CONSISTENCY__ACCEPTABLE, null, msgs);
+      msgs = basicSetAcceptable(newAcceptable, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.WEAK_CONSISTENCY__ACCEPTABLE, newAcceptable, newAcceptable));
   }
 
   /**
@@ -364,16 +337,30 @@ public class WeakConsistencyImpl extends MinimalEObjectImpl.Container implements
    * @generated
    */
   @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case DomainDrivenDesignDslPackage.WEAK_CONSISTENCY__ACCEPTABLE:
+        return basicSetAcceptable(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
     switch (featureID)
     {
       case DomainDrivenDesignDslPackage.WEAK_CONSISTENCY__ACCEPTABLE_DOC:
         return getAcceptableDoc();
-      case DomainDrivenDesignDslPackage.WEAK_CONSISTENCY__ACCEPTABLE_TIME:
-        return getAcceptableTime();
-      case DomainDrivenDesignDslPackage.WEAK_CONSISTENCY__ACCEPTABLE_UNIT:
-        return getAcceptableUnit();
+      case DomainDrivenDesignDslPackage.WEAK_CONSISTENCY__ACCEPTABLE:
+        return getAcceptable();
       case DomainDrivenDesignDslPackage.WEAK_CONSISTENCY__DETECTION_DOC:
         return getDetectionDoc();
       case DomainDrivenDesignDslPackage.WEAK_CONSISTENCY__DETECTION:
@@ -399,11 +386,8 @@ public class WeakConsistencyImpl extends MinimalEObjectImpl.Container implements
       case DomainDrivenDesignDslPackage.WEAK_CONSISTENCY__ACCEPTABLE_DOC:
         setAcceptableDoc((String)newValue);
         return;
-      case DomainDrivenDesignDslPackage.WEAK_CONSISTENCY__ACCEPTABLE_TIME:
-        setAcceptableTime((Integer)newValue);
-        return;
-      case DomainDrivenDesignDslPackage.WEAK_CONSISTENCY__ACCEPTABLE_UNIT:
-        setAcceptableUnit((TimeUnit)newValue);
+      case DomainDrivenDesignDslPackage.WEAK_CONSISTENCY__ACCEPTABLE:
+        setAcceptable((Duration)newValue);
         return;
       case DomainDrivenDesignDslPackage.WEAK_CONSISTENCY__DETECTION_DOC:
         setDetectionDoc((String)newValue);
@@ -434,11 +418,8 @@ public class WeakConsistencyImpl extends MinimalEObjectImpl.Container implements
       case DomainDrivenDesignDslPackage.WEAK_CONSISTENCY__ACCEPTABLE_DOC:
         setAcceptableDoc(ACCEPTABLE_DOC_EDEFAULT);
         return;
-      case DomainDrivenDesignDslPackage.WEAK_CONSISTENCY__ACCEPTABLE_TIME:
-        setAcceptableTime(ACCEPTABLE_TIME_EDEFAULT);
-        return;
-      case DomainDrivenDesignDslPackage.WEAK_CONSISTENCY__ACCEPTABLE_UNIT:
-        setAcceptableUnit(ACCEPTABLE_UNIT_EDEFAULT);
+      case DomainDrivenDesignDslPackage.WEAK_CONSISTENCY__ACCEPTABLE:
+        setAcceptable((Duration)null);
         return;
       case DomainDrivenDesignDslPackage.WEAK_CONSISTENCY__DETECTION_DOC:
         setDetectionDoc(DETECTION_DOC_EDEFAULT);
@@ -468,10 +449,8 @@ public class WeakConsistencyImpl extends MinimalEObjectImpl.Container implements
     {
       case DomainDrivenDesignDslPackage.WEAK_CONSISTENCY__ACCEPTABLE_DOC:
         return ACCEPTABLE_DOC_EDEFAULT == null ? acceptableDoc != null : !ACCEPTABLE_DOC_EDEFAULT.equals(acceptableDoc);
-      case DomainDrivenDesignDslPackage.WEAK_CONSISTENCY__ACCEPTABLE_TIME:
-        return acceptableTime != ACCEPTABLE_TIME_EDEFAULT;
-      case DomainDrivenDesignDslPackage.WEAK_CONSISTENCY__ACCEPTABLE_UNIT:
-        return acceptableUnit != ACCEPTABLE_UNIT_EDEFAULT;
+      case DomainDrivenDesignDslPackage.WEAK_CONSISTENCY__ACCEPTABLE:
+        return acceptable != null;
       case DomainDrivenDesignDslPackage.WEAK_CONSISTENCY__DETECTION_DOC:
         return DETECTION_DOC_EDEFAULT == null ? detectionDoc != null : !DETECTION_DOC_EDEFAULT.equals(detectionDoc);
       case DomainDrivenDesignDslPackage.WEAK_CONSISTENCY__DETECTION:
@@ -497,10 +476,6 @@ public class WeakConsistencyImpl extends MinimalEObjectImpl.Container implements
     StringBuffer result = new StringBuffer(super.toString());
     result.append(" (acceptableDoc: ");
     result.append(acceptableDoc);
-    result.append(", acceptableTime: ");
-    result.append(acceptableTime);
-    result.append(", acceptableUnit: ");
-    result.append(acceptableUnit);
     result.append(", detectionDoc: ");
     result.append(detectionDoc);
     result.append(", detection: ");

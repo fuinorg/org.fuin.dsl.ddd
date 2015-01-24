@@ -18,6 +18,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Consistency;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Duration;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumInstance;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ReturnType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Service;
@@ -74,16 +75,19 @@ public class DddDslHighlightCalculator implements
             return null;
         }
         
-
+        @Override
+        public Void caseDuration(Duration duration) {
+            return highlightFirst(duration,
+                    DomainDrivenDesignDslPackage.eINSTANCE.getDuration_Unit(),
+                    DddDslHighlightConfig.ENUM_INSTANCE_ID);
+        }
+        
         @Override
         public Void caseWeakConsistency(WeakConsistency weakConsistency) {
 
             highlightFirst(weakConsistency,
                     DomainDrivenDesignDslPackage.eINSTANCE.getWeakConsistency_AcceptableDoc(),
                     DddDslHighlightConfig.COMMENT_ID);
-            highlightFirst(weakConsistency,
-                    DomainDrivenDesignDslPackage.eINSTANCE.getWeakConsistency_AcceptableUnit(),
-                    DddDslHighlightConfig.ENUM_INSTANCE_ID);
             
             highlightFirst(weakConsistency,
                     DomainDrivenDesignDslPackage.eINSTANCE.getWeakConsistency_DetectionDoc(),

@@ -26,6 +26,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constructor;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Context;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainModel;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Duration;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.EntityId;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumInstance;
@@ -169,6 +170,11 @@ public class DomainDrivenDesignDslAdapterFactory extends AdapterFactoryImpl
       public Adapter caseExternalType(ExternalType object)
       {
         return createExternalTypeAdapter();
+      }
+      @Override
+      public Adapter caseDuration(Duration object)
+      {
+        return createDurationAdapter();
       }
       @Override
       public Adapter caseWeakConsistency(WeakConsistency object)
@@ -508,6 +514,21 @@ public class DomainDrivenDesignDslAdapterFactory extends AdapterFactoryImpl
    * @generated
    */
   public Adapter createExternalTypeAdapter()
+  {
+    return null;
+  }
+
+  /**
+   * Creates a new adapter for an object of class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Duration <em>Duration</em>}'.
+   * <!-- begin-user-doc -->
+   * This default implementation returns null so that we can easily ignore cases;
+   * it's useful to ignore a case when inheritance will catch all the cases anyway.
+   * <!-- end-user-doc -->
+   * @return the new adapter.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Duration
+   * @generated
+   */
+  public Adapter createDurationAdapter()
   {
     return null;
   }

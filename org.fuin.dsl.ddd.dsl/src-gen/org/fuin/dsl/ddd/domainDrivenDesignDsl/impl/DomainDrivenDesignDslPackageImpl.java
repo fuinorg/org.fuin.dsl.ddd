@@ -29,6 +29,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Context;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslFactory;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainModel;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Duration;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.EntityId;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumInstance;
@@ -142,6 +143,13 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * @generated
    */
   private EClass externalTypeEClass = null;
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  private EClass durationEClass = null;
 
   /**
    * <!-- begin-user-doc -->
@@ -756,6 +764,36 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
+  public EClass getDuration()
+  {
+    return durationEClass;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDuration_Time()
+  {
+    return (EAttribute)durationEClass.getEStructuralFeatures().get(0);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public EAttribute getDuration_Unit()
+  {
+    return (EAttribute)durationEClass.getEStructuralFeatures().get(1);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getWeakConsistency()
   {
     return weakConsistencyEClass;
@@ -776,19 +814,9 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
-  public EAttribute getWeakConsistency_AcceptableTime()
+  public EReference getWeakConsistency_Acceptable()
   {
-    return (EAttribute)weakConsistencyEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EAttribute getWeakConsistency_AcceptableUnit()
-  {
-    return (EAttribute)weakConsistencyEClass.getEStructuralFeatures().get(2);
+    return (EReference)weakConsistencyEClass.getEStructuralFeatures().get(1);
   }
 
   /**
@@ -798,7 +826,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    */
   public EAttribute getWeakConsistency_DetectionDoc()
   {
-    return (EAttribute)weakConsistencyEClass.getEStructuralFeatures().get(3);
+    return (EAttribute)weakConsistencyEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -808,7 +836,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    */
   public EAttribute getWeakConsistency_Detection()
   {
-    return (EAttribute)weakConsistencyEClass.getEStructuralFeatures().get(4);
+    return (EAttribute)weakConsistencyEClass.getEStructuralFeatures().get(3);
   }
 
   /**
@@ -818,7 +846,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    */
   public EAttribute getWeakConsistency_ResolutionDoc()
   {
-    return (EAttribute)weakConsistencyEClass.getEStructuralFeatures().get(5);
+    return (EAttribute)weakConsistencyEClass.getEStructuralFeatures().get(4);
   }
 
   /**
@@ -828,7 +856,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    */
   public EAttribute getWeakConsistency_Resolution()
   {
-    return (EAttribute)weakConsistencyEClass.getEStructuralFeatures().get(6);
+    return (EAttribute)weakConsistencyEClass.getEStructuralFeatures().get(5);
   }
 
   /**
@@ -1832,10 +1860,13 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     externalTypeEClass = createEClass(EXTERNAL_TYPE);
     createEAttribute(externalTypeEClass, EXTERNAL_TYPE__ELEMENT);
 
+    durationEClass = createEClass(DURATION);
+    createEAttribute(durationEClass, DURATION__TIME);
+    createEAttribute(durationEClass, DURATION__UNIT);
+
     weakConsistencyEClass = createEClass(WEAK_CONSISTENCY);
     createEAttribute(weakConsistencyEClass, WEAK_CONSISTENCY__ACCEPTABLE_DOC);
-    createEAttribute(weakConsistencyEClass, WEAK_CONSISTENCY__ACCEPTABLE_TIME);
-    createEAttribute(weakConsistencyEClass, WEAK_CONSISTENCY__ACCEPTABLE_UNIT);
+    createEReference(weakConsistencyEClass, WEAK_CONSISTENCY__ACCEPTABLE);
     createEAttribute(weakConsistencyEClass, WEAK_CONSISTENCY__DETECTION_DOC);
     createEAttribute(weakConsistencyEClass, WEAK_CONSISTENCY__DETECTION);
     createEAttribute(weakConsistencyEClass, WEAK_CONSISTENCY__RESOLUTION_DOC);
@@ -2065,10 +2096,13 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     initEClass(externalTypeEClass, ExternalType.class, "ExternalType", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getExternalType_Element(), ecorePackage.getEString(), "element", null, 0, 1, ExternalType.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
+    initEClass(durationEClass, Duration.class, "Duration", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+    initEAttribute(getDuration_Time(), ecorePackage.getEInt(), "time", null, 0, 1, Duration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEAttribute(getDuration_Unit(), this.getTimeUnit(), "unit", null, 0, 1, Duration.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
     initEClass(weakConsistencyEClass, WeakConsistency.class, "WeakConsistency", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getWeakConsistency_AcceptableDoc(), ecorePackage.getEString(), "acceptableDoc", null, 0, 1, WeakConsistency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getWeakConsistency_AcceptableTime(), ecorePackage.getEInt(), "acceptableTime", null, 0, 1, WeakConsistency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEAttribute(getWeakConsistency_AcceptableUnit(), this.getTimeUnit(), "acceptableUnit", null, 0, 1, WeakConsistency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getWeakConsistency_Acceptable(), this.getDuration(), null, "acceptable", null, 0, 1, WeakConsistency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getWeakConsistency_DetectionDoc(), ecorePackage.getEString(), "detectionDoc", null, 0, 1, WeakConsistency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getWeakConsistency_Detection(), this.getInconsistencyDetection(), "detection", null, 0, 1, WeakConsistency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEAttribute(getWeakConsistency_ResolutionDoc(), ecorePackage.getEString(), "resolutionDoc", null, 0, 1, WeakConsistency.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

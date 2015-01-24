@@ -30,6 +30,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Context;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslFactory;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainModel;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Duration;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.EntityId;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumInstance;
@@ -122,6 +123,7 @@ public class DomainDrivenDesignDslFactoryImpl extends EFactoryImpl implements Do
       case DomainDrivenDesignDslPackage.ABSTRACT_ENTITY_ID: return createAbstractEntityId();
       case DomainDrivenDesignDslPackage.ABSTRACT_ENTITY: return createAbstractEntity();
       case DomainDrivenDesignDslPackage.EXTERNAL_TYPE: return createExternalType();
+      case DomainDrivenDesignDslPackage.DURATION: return createDuration();
       case DomainDrivenDesignDslPackage.WEAK_CONSISTENCY: return createWeakConsistency();
       case DomainDrivenDesignDslPackage.CONSISTENCY: return createConsistency();
       case DomainDrivenDesignDslPackage.CONSTRAINT: return createConstraint();
@@ -323,6 +325,17 @@ public class DomainDrivenDesignDslFactoryImpl extends EFactoryImpl implements Do
   {
     ExternalTypeImpl externalType = new ExternalTypeImpl();
     return externalType;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public Duration createDuration()
+  {
+    DurationImpl duration = new DurationImpl();
+    return duration;
   }
 
   /**

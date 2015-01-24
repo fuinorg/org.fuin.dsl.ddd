@@ -13,8 +13,7 @@ import org.eclipse.emf.ecore.EObject;
  * The following features are supported:
  * <ul>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.WeakConsistency#getAcceptableDoc <em>Acceptable Doc</em>}</li>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.WeakConsistency#getAcceptableTime <em>Acceptable Time</em>}</li>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.WeakConsistency#getAcceptableUnit <em>Acceptable Unit</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.WeakConsistency#getAcceptable <em>Acceptable</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.WeakConsistency#getDetectionDoc <em>Detection Doc</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.WeakConsistency#getDetection <em>Detection</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.WeakConsistency#getResolutionDoc <em>Resolution Doc</em>}</li>
@@ -55,59 +54,30 @@ public interface WeakConsistency extends EObject
   void setAcceptableDoc(String value);
 
   /**
-   * Returns the value of the '<em><b>Acceptable Time</b></em>' attribute.
+   * Returns the value of the '<em><b>Acceptable</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Acceptable Time</em>' attribute isn't clear,
+   * If the meaning of the '<em>Acceptable</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Acceptable Time</em>' attribute.
-   * @see #setAcceptableTime(int)
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getWeakConsistency_AcceptableTime()
-   * @model
+   * @return the value of the '<em>Acceptable</em>' containment reference.
+   * @see #setAcceptable(Duration)
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getWeakConsistency_Acceptable()
+   * @model containment="true"
    * @generated
    */
-  int getAcceptableTime();
+  Duration getAcceptable();
 
   /**
-   * Sets the value of the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.WeakConsistency#getAcceptableTime <em>Acceptable Time</em>}' attribute.
+   * Sets the value of the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.WeakConsistency#getAcceptable <em>Acceptable</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Acceptable Time</em>' attribute.
-   * @see #getAcceptableTime()
+   * @param value the new value of the '<em>Acceptable</em>' containment reference.
+   * @see #getAcceptable()
    * @generated
    */
-  void setAcceptableTime(int value);
-
-  /**
-   * Returns the value of the '<em><b>Acceptable Unit</b></em>' attribute.
-   * The literals are from the enumeration {@link org.fuin.dsl.ddd.domainDrivenDesignDsl.TimeUnit}.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Acceptable Unit</em>' attribute isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Acceptable Unit</em>' attribute.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.TimeUnit
-   * @see #setAcceptableUnit(TimeUnit)
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getWeakConsistency_AcceptableUnit()
-   * @model
-   * @generated
-   */
-  TimeUnit getAcceptableUnit();
-
-  /**
-   * Sets the value of the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.WeakConsistency#getAcceptableUnit <em>Acceptable Unit</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Acceptable Unit</em>' attribute.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.TimeUnit
-   * @see #getAcceptableUnit()
-   * @generated
-   */
-  void setAcceptableUnit(TimeUnit value);
+  void setAcceptable(Duration value);
 
   /**
    * Returns the value of the '<em><b>Detection Doc</b></em>' attribute.

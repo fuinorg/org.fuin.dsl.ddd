@@ -25,6 +25,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constructor;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Context;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainModel;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Duration;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.EntityId;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumInstance;
@@ -132,6 +133,12 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 			case DomainDrivenDesignDslPackage.DOMAIN_MODEL:
 				if(context == grammarAccess.getDomainModelRule()) {
 					sequence_DomainModel(context, (DomainModel) semanticObject); 
+					return; 
+				}
+				else break;
+			case DomainDrivenDesignDslPackage.DURATION:
+				if(context == grammarAccess.getDurationRule()) {
+					sequence_Duration(context, (Duration) semanticObject); 
 					return; 
 				}
 				else break;
@@ -445,6 +452,25 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	
 	/**
 	 * Constraint:
+	 *     (time=INT unit=TimeUnit)
+	 */
+	protected void sequence_Duration(EObject context, Duration semanticObject) {
+		if(errorAcceptor != null) {
+			if(transientValues.isValueTransient(semanticObject, DomainDrivenDesignDslPackage.Literals.DURATION__TIME) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DomainDrivenDesignDslPackage.Literals.DURATION__TIME));
+			if(transientValues.isValueTransient(semanticObject, DomainDrivenDesignDslPackage.Literals.DURATION__UNIT) == ValueTransient.YES)
+				errorAcceptor.accept(diagnosticProvider.createFeatureValueMissing(semanticObject, DomainDrivenDesignDslPackage.Literals.DURATION__UNIT));
+		}
+		INodesForEObjectProvider nodes = createNodeProvider(semanticObject);
+		SequenceFeeder feeder = createSequencerFeeder(semanticObject, nodes);
+		feeder.accept(grammarAccess.getDurationAccess().getTimeINTTerminalRuleCall_0_0(), semanticObject.getTime());
+		feeder.accept(grammarAccess.getDurationAccess().getUnitTimeUnitEnumRuleCall_1_0(), semanticObject.getUnit());
+		feeder.finish();
+	}
+	
+	
+	/**
+	 * Constraint:
 	 *     (
 	 *         doc=DOC? 
 	 *         name=ID 
@@ -723,8 +749,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 * Constraint:
 	 *     (
 	 *         acceptableDoc=DOC? 
-	 *         acceptableTime=INT 
-	 *         acceptableUnit=TimeUnit 
+	 *         acceptable=Duration 
 	 *         detectionDoc=DOC? 
 	 *         detection=InconsistencyDetection 
 	 *         resolutionDoc=DOC? 

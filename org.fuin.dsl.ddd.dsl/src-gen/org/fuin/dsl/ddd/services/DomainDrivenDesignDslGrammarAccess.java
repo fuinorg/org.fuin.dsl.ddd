@@ -329,34 +329,60 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		public RuleCall getNameIDTerminalRuleCall_3_0() { return cNameIDTerminalRuleCall_3_0; }
 	}
 
+	public class DurationElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Duration");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Assignment cTimeAssignment_0 = (Assignment)cGroup.eContents().get(0);
+		private final RuleCall cTimeINTTerminalRuleCall_0_0 = (RuleCall)cTimeAssignment_0.eContents().get(0);
+		private final Assignment cUnitAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final RuleCall cUnitTimeUnitEnumRuleCall_1_0 = (RuleCall)cUnitAssignment_1.eContents().get(0);
+		
+		//Duration:
+		//	time=INT unit=TimeUnit;
+		public ParserRule getRule() { return rule; }
+
+		//time=INT unit=TimeUnit
+		public Group getGroup() { return cGroup; }
+
+		//time=INT
+		public Assignment getTimeAssignment_0() { return cTimeAssignment_0; }
+
+		//INT
+		public RuleCall getTimeINTTerminalRuleCall_0_0() { return cTimeINTTerminalRuleCall_0_0; }
+
+		//unit=TimeUnit
+		public Assignment getUnitAssignment_1() { return cUnitAssignment_1; }
+
+		//TimeUnit
+		public RuleCall getUnitTimeUnitEnumRuleCall_1_0() { return cUnitTimeUnitEnumRuleCall_1_0; }
+	}
+
 	public class WeakConsistencyElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "WeakConsistency");
 		private final Group cGroup = (Group)rule.eContents().get(1);
 		private final Assignment cAcceptableDocAssignment_0 = (Assignment)cGroup.eContents().get(0);
 		private final RuleCall cAcceptableDocDOCTerminalRuleCall_0_0 = (RuleCall)cAcceptableDocAssignment_0.eContents().get(0);
 		private final Keyword cAcceptableKeyword_1 = (Keyword)cGroup.eContents().get(1);
-		private final Assignment cAcceptableTimeAssignment_2 = (Assignment)cGroup.eContents().get(2);
-		private final RuleCall cAcceptableTimeINTTerminalRuleCall_2_0 = (RuleCall)cAcceptableTimeAssignment_2.eContents().get(0);
-		private final Assignment cAcceptableUnitAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final RuleCall cAcceptableUnitTimeUnitEnumRuleCall_3_0 = (RuleCall)cAcceptableUnitAssignment_3.eContents().get(0);
-		private final Assignment cDetectionDocAssignment_4 = (Assignment)cGroup.eContents().get(4);
-		private final RuleCall cDetectionDocDOCTerminalRuleCall_4_0 = (RuleCall)cDetectionDocAssignment_4.eContents().get(0);
-		private final Keyword cDetectionKeyword_5 = (Keyword)cGroup.eContents().get(5);
-		private final Assignment cDetectionAssignment_6 = (Assignment)cGroup.eContents().get(6);
-		private final RuleCall cDetectionInconsistencyDetectionEnumRuleCall_6_0 = (RuleCall)cDetectionAssignment_6.eContents().get(0);
-		private final Assignment cResolutionDocAssignment_7 = (Assignment)cGroup.eContents().get(7);
-		private final RuleCall cResolutionDocDOCTerminalRuleCall_7_0 = (RuleCall)cResolutionDocAssignment_7.eContents().get(0);
-		private final Keyword cResolutionKeyword_8 = (Keyword)cGroup.eContents().get(8);
-		private final Assignment cResolutionAssignment_9 = (Assignment)cGroup.eContents().get(9);
-		private final RuleCall cResolutionInconsistencyResolutionEnumRuleCall_9_0 = (RuleCall)cResolutionAssignment_9.eContents().get(0);
+		private final Assignment cAcceptableAssignment_2 = (Assignment)cGroup.eContents().get(2);
+		private final RuleCall cAcceptableDurationParserRuleCall_2_0 = (RuleCall)cAcceptableAssignment_2.eContents().get(0);
+		private final Assignment cDetectionDocAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cDetectionDocDOCTerminalRuleCall_3_0 = (RuleCall)cDetectionDocAssignment_3.eContents().get(0);
+		private final Keyword cDetectionKeyword_4 = (Keyword)cGroup.eContents().get(4);
+		private final Assignment cDetectionAssignment_5 = (Assignment)cGroup.eContents().get(5);
+		private final RuleCall cDetectionInconsistencyDetectionEnumRuleCall_5_0 = (RuleCall)cDetectionAssignment_5.eContents().get(0);
+		private final Assignment cResolutionDocAssignment_6 = (Assignment)cGroup.eContents().get(6);
+		private final RuleCall cResolutionDocDOCTerminalRuleCall_6_0 = (RuleCall)cResolutionDocAssignment_6.eContents().get(0);
+		private final Keyword cResolutionKeyword_7 = (Keyword)cGroup.eContents().get(7);
+		private final Assignment cResolutionAssignment_8 = (Assignment)cGroup.eContents().get(8);
+		private final RuleCall cResolutionInconsistencyResolutionEnumRuleCall_8_0 = (RuleCall)cResolutionAssignment_8.eContents().get(0);
 		
 		//WeakConsistency:
-		//	acceptableDoc=DOC? "acceptable" acceptableTime=INT acceptableUnit=TimeUnit detectionDoc=DOC? "detection"
-		//	detection=InconsistencyDetection resolutionDoc=DOC? "resolution" resolution=InconsistencyResolution;
+		//	acceptableDoc=DOC? "acceptable" acceptable=Duration detectionDoc=DOC? "detection" detection=InconsistencyDetection
+		//	resolutionDoc=DOC? "resolution" resolution=InconsistencyResolution;
 		public ParserRule getRule() { return rule; }
 
-		//acceptableDoc=DOC? "acceptable" acceptableTime=INT acceptableUnit=TimeUnit detectionDoc=DOC? "detection"
-		//detection=InconsistencyDetection resolutionDoc=DOC? "resolution" resolution=InconsistencyResolution
+		//acceptableDoc=DOC? "acceptable" acceptable=Duration detectionDoc=DOC? "detection" detection=InconsistencyDetection
+		//resolutionDoc=DOC? "resolution" resolution=InconsistencyResolution
 		public Group getGroup() { return cGroup; }
 
 		//acceptableDoc=DOC?
@@ -368,47 +394,41 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		//"acceptable"
 		public Keyword getAcceptableKeyword_1() { return cAcceptableKeyword_1; }
 
-		//acceptableTime=INT
-		public Assignment getAcceptableTimeAssignment_2() { return cAcceptableTimeAssignment_2; }
+		//acceptable=Duration
+		public Assignment getAcceptableAssignment_2() { return cAcceptableAssignment_2; }
 
-		//INT
-		public RuleCall getAcceptableTimeINTTerminalRuleCall_2_0() { return cAcceptableTimeINTTerminalRuleCall_2_0; }
-
-		//acceptableUnit=TimeUnit
-		public Assignment getAcceptableUnitAssignment_3() { return cAcceptableUnitAssignment_3; }
-
-		//TimeUnit
-		public RuleCall getAcceptableUnitTimeUnitEnumRuleCall_3_0() { return cAcceptableUnitTimeUnitEnumRuleCall_3_0; }
+		//Duration
+		public RuleCall getAcceptableDurationParserRuleCall_2_0() { return cAcceptableDurationParserRuleCall_2_0; }
 
 		//detectionDoc=DOC?
-		public Assignment getDetectionDocAssignment_4() { return cDetectionDocAssignment_4; }
+		public Assignment getDetectionDocAssignment_3() { return cDetectionDocAssignment_3; }
 
 		//DOC
-		public RuleCall getDetectionDocDOCTerminalRuleCall_4_0() { return cDetectionDocDOCTerminalRuleCall_4_0; }
+		public RuleCall getDetectionDocDOCTerminalRuleCall_3_0() { return cDetectionDocDOCTerminalRuleCall_3_0; }
 
 		//"detection"
-		public Keyword getDetectionKeyword_5() { return cDetectionKeyword_5; }
+		public Keyword getDetectionKeyword_4() { return cDetectionKeyword_4; }
 
 		//detection=InconsistencyDetection
-		public Assignment getDetectionAssignment_6() { return cDetectionAssignment_6; }
+		public Assignment getDetectionAssignment_5() { return cDetectionAssignment_5; }
 
 		//InconsistencyDetection
-		public RuleCall getDetectionInconsistencyDetectionEnumRuleCall_6_0() { return cDetectionInconsistencyDetectionEnumRuleCall_6_0; }
+		public RuleCall getDetectionInconsistencyDetectionEnumRuleCall_5_0() { return cDetectionInconsistencyDetectionEnumRuleCall_5_0; }
 
 		//resolutionDoc=DOC?
-		public Assignment getResolutionDocAssignment_7() { return cResolutionDocAssignment_7; }
+		public Assignment getResolutionDocAssignment_6() { return cResolutionDocAssignment_6; }
 
 		//DOC
-		public RuleCall getResolutionDocDOCTerminalRuleCall_7_0() { return cResolutionDocDOCTerminalRuleCall_7_0; }
+		public RuleCall getResolutionDocDOCTerminalRuleCall_6_0() { return cResolutionDocDOCTerminalRuleCall_6_0; }
 
 		//"resolution"
-		public Keyword getResolutionKeyword_8() { return cResolutionKeyword_8; }
+		public Keyword getResolutionKeyword_7() { return cResolutionKeyword_7; }
 
 		//resolution=InconsistencyResolution
-		public Assignment getResolutionAssignment_9() { return cResolutionAssignment_9; }
+		public Assignment getResolutionAssignment_8() { return cResolutionAssignment_8; }
 
 		//InconsistencyResolution
-		public RuleCall getResolutionInconsistencyResolutionEnumRuleCall_9_0() { return cResolutionInconsistencyResolutionEnumRuleCall_9_0; }
+		public RuleCall getResolutionInconsistencyResolutionEnumRuleCall_8_0() { return cResolutionInconsistencyResolutionEnumRuleCall_8_0; }
 	}
 
 	public class ConsistencyElements extends AbstractParserRuleElementFinder {
@@ -2760,6 +2780,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	private final ConsistencyLevelElements unknownRuleConsistencyLevel;
 	private final InconsistencyDetectionElements unknownRuleInconsistencyDetection;
 	private final InconsistencyResolutionElements unknownRuleInconsistencyResolution;
+	private final DurationElements pDuration;
 	private final WeakConsistencyElements pWeakConsistency;
 	private final ConsistencyElements pConsistency;
 	private final ConstraintElements pConstraint;
@@ -2824,6 +2845,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		this.unknownRuleConsistencyLevel = new ConsistencyLevelElements();
 		this.unknownRuleInconsistencyDetection = new InconsistencyDetectionElements();
 		this.unknownRuleInconsistencyResolution = new InconsistencyResolutionElements();
+		this.pDuration = new DurationElements();
 		this.pWeakConsistency = new WeakConsistencyElements();
 		this.pConsistency = new ConsistencyElements();
 		this.pConstraint = new ConstraintElements();
@@ -3042,9 +3064,19 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		return getInconsistencyResolutionAccess().getRule();
 	}
 
+	//Duration:
+	//	time=INT unit=TimeUnit;
+	public DurationElements getDurationAccess() {
+		return pDuration;
+	}
+	
+	public ParserRule getDurationRule() {
+		return getDurationAccess().getRule();
+	}
+
 	//WeakConsistency:
-	//	acceptableDoc=DOC? "acceptable" acceptableTime=INT acceptableUnit=TimeUnit detectionDoc=DOC? "detection"
-	//	detection=InconsistencyDetection resolutionDoc=DOC? "resolution" resolution=InconsistencyResolution;
+	//	acceptableDoc=DOC? "acceptable" acceptable=Duration detectionDoc=DOC? "detection" detection=InconsistencyDetection
+	//	resolutionDoc=DOC? "resolution" resolution=InconsistencyResolution;
 	public WeakConsistencyElements getWeakConsistencyAccess() {
 		return pWeakConsistency;
 	}

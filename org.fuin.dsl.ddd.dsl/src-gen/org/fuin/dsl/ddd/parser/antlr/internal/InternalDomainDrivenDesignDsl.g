@@ -676,6 +676,63 @@ ruleExternalType returns [EObject current=null]
 
 
 
+// Entry rule entryRuleDuration
+entryRuleDuration returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getDurationRule()); }
+	 iv_ruleDuration=ruleDuration 
+	 { $current=$iv_ruleDuration.current; } 
+	 EOF 
+;
+
+// Rule Duration
+ruleDuration returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((
+(
+		lv_time_0_0=RULE_INT
+		{
+			newLeafNode(lv_time_0_0, grammarAccess.getDurationAccess().getTimeINTTerminalRuleCall_0_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getDurationRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"time",
+        		lv_time_0_0, 
+        		"INT");
+	    }
+
+)
+)(
+(
+		{ 
+	        newCompositeNode(grammarAccess.getDurationAccess().getUnitTimeUnitEnumRuleCall_1_0()); 
+	    }
+		lv_unit_1_0=ruleTimeUnit		{
+	        if ($current==null) {
+	            $current = createModelElementForParent(grammarAccess.getDurationRule());
+	        }
+       		set(
+       			$current, 
+       			"unit",
+        		lv_unit_1_0, 
+        		"TimeUnit");
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))
+;
+
+
+
+
+
 // Entry rule entryRuleWeakConsistency
 entryRuleWeakConsistency returns [EObject current=null] 
 	:
@@ -714,45 +771,27 @@ ruleWeakConsistency returns [EObject current=null]
     }
 (
 (
-		lv_acceptableTime_2_0=RULE_INT
-		{
-			newLeafNode(lv_acceptableTime_2_0, grammarAccess.getWeakConsistencyAccess().getAcceptableTimeINTTerminalRuleCall_2_0()); 
-		}
-		{
-	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getWeakConsistencyRule());
-	        }
-       		setWithLastConsumed(
-       			$current, 
-       			"acceptableTime",
-        		lv_acceptableTime_2_0, 
-        		"INT");
-	    }
-
-)
-)(
-(
 		{ 
-	        newCompositeNode(grammarAccess.getWeakConsistencyAccess().getAcceptableUnitTimeUnitEnumRuleCall_3_0()); 
+	        newCompositeNode(grammarAccess.getWeakConsistencyAccess().getAcceptableDurationParserRuleCall_2_0()); 
 	    }
-		lv_acceptableUnit_3_0=ruleTimeUnit		{
+		lv_acceptable_2_0=ruleDuration		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getWeakConsistencyRule());
 	        }
        		set(
        			$current, 
-       			"acceptableUnit",
-        		lv_acceptableUnit_3_0, 
-        		"TimeUnit");
+       			"acceptable",
+        		lv_acceptable_2_0, 
+        		"Duration");
 	        afterParserOrEnumRuleCall();
 	    }
 
 )
 )(
 (
-		lv_detectionDoc_4_0=RULE_DOC
+		lv_detectionDoc_3_0=RULE_DOC
 		{
-			newLeafNode(lv_detectionDoc_4_0, grammarAccess.getWeakConsistencyAccess().getDetectionDocDOCTerminalRuleCall_4_0()); 
+			newLeafNode(lv_detectionDoc_3_0, grammarAccess.getWeakConsistencyAccess().getDetectionDocDOCTerminalRuleCall_3_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -761,28 +800,28 @@ ruleWeakConsistency returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"detectionDoc",
-        		lv_detectionDoc_4_0, 
+        		lv_detectionDoc_3_0, 
         		"DOC");
 	    }
 
 )
-)?	otherlv_5='detection' 
+)?	otherlv_4='detection' 
     {
-    	newLeafNode(otherlv_5, grammarAccess.getWeakConsistencyAccess().getDetectionKeyword_5());
+    	newLeafNode(otherlv_4, grammarAccess.getWeakConsistencyAccess().getDetectionKeyword_4());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getWeakConsistencyAccess().getDetectionInconsistencyDetectionEnumRuleCall_6_0()); 
+	        newCompositeNode(grammarAccess.getWeakConsistencyAccess().getDetectionInconsistencyDetectionEnumRuleCall_5_0()); 
 	    }
-		lv_detection_6_0=ruleInconsistencyDetection		{
+		lv_detection_5_0=ruleInconsistencyDetection		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getWeakConsistencyRule());
 	        }
        		set(
        			$current, 
        			"detection",
-        		lv_detection_6_0, 
+        		lv_detection_5_0, 
         		"InconsistencyDetection");
 	        afterParserOrEnumRuleCall();
 	    }
@@ -790,9 +829,9 @@ ruleWeakConsistency returns [EObject current=null]
 )
 )(
 (
-		lv_resolutionDoc_7_0=RULE_DOC
+		lv_resolutionDoc_6_0=RULE_DOC
 		{
-			newLeafNode(lv_resolutionDoc_7_0, grammarAccess.getWeakConsistencyAccess().getResolutionDocDOCTerminalRuleCall_7_0()); 
+			newLeafNode(lv_resolutionDoc_6_0, grammarAccess.getWeakConsistencyAccess().getResolutionDocDOCTerminalRuleCall_6_0()); 
 		}
 		{
 	        if ($current==null) {
@@ -801,28 +840,28 @@ ruleWeakConsistency returns [EObject current=null]
        		setWithLastConsumed(
        			$current, 
        			"resolutionDoc",
-        		lv_resolutionDoc_7_0, 
+        		lv_resolutionDoc_6_0, 
         		"DOC");
 	    }
 
 )
-)?	otherlv_8='resolution' 
+)?	otherlv_7='resolution' 
     {
-    	newLeafNode(otherlv_8, grammarAccess.getWeakConsistencyAccess().getResolutionKeyword_8());
+    	newLeafNode(otherlv_7, grammarAccess.getWeakConsistencyAccess().getResolutionKeyword_7());
     }
 (
 (
 		{ 
-	        newCompositeNode(grammarAccess.getWeakConsistencyAccess().getResolutionInconsistencyResolutionEnumRuleCall_9_0()); 
+	        newCompositeNode(grammarAccess.getWeakConsistencyAccess().getResolutionInconsistencyResolutionEnumRuleCall_8_0()); 
 	    }
-		lv_resolution_9_0=ruleInconsistencyResolution		{
+		lv_resolution_8_0=ruleInconsistencyResolution		{
 	        if ($current==null) {
 	            $current = createModelElementForParent(grammarAccess.getWeakConsistencyRule());
 	        }
        		set(
        			$current, 
        			"resolution",
-        		lv_resolution_9_0, 
+        		lv_resolution_8_0, 
         		"InconsistencyResolution");
 	        afterParserOrEnumRuleCall();
 	    }

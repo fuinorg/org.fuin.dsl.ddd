@@ -122,6 +122,15 @@ public interface DomainDrivenDesignDslFactory extends EFactory
   ExternalType createExternalType();
 
   /**
+   * Returns a new object of class '<em>Duration</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Duration</em>'.
+   * @generated
+   */
+  Duration createDuration();
+
+  /**
    * Returns a new object of class '<em>Weak Consistency</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

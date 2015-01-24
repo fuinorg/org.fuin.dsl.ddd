@@ -55,9 +55,12 @@ enum InconsistencyDetection:
 enum InconsistencyResolution:
 	never | manually | automatic | workflow;
 
+Duration:
+	time=INT unit=TimeUnit;
+
 WeakConsistency:
 	acceptableDoc=DOC? 
-	'acceptable' acceptableTime=INT acceptableUnit=TimeUnit 
+	'acceptable' acceptable=Duration 
 	
 	detectionDoc=DOC? 
 	'detection' detection=InconsistencyDetection
