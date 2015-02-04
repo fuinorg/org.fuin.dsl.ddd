@@ -1,12 +1,15 @@
 package org.fuin.dsl.ddd.extensions;
 
+import com.google.common.base.Objects;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import org.eclipse.emf.common.util.EList;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntity;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntityId;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constructor;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity;
@@ -96,5 +99,28 @@ public class DddAbstractEntityExtensions {
       events.add(v);
     }
     return events;
+  }
+  
+  /**
+   * Returns the entity identifier type regardless if it's
+   * defined inside the aggregate or somewhere outside.
+   * 
+   * @param entity Entity to return the identifier type for.
+   * 
+   * @return Entity identifier type.
+   */
+  public static AbstractEntityId getIdTypeNullsafe(final AbstractEntity entity) {
+    AbstractEntityId _idType = entity.getIdType();
+    boolean _equals = Objects.equal(_idType, null);
+    if (_equals) {
+      if ((entity instanceof Aggregate)) {
+        return ((Aggregate)entity).getAggregateId();
+      }
+      if ((entity instanceof Entity)) {
+        return ((Entity)entity).getEntityId();
+      }
+      throw new IllegalArgumentException(("Unknown entity type: " + entity));
+    }
+    return entity.getIdType();
   }
 }

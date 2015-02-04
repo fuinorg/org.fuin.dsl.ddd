@@ -98,7 +98,7 @@ ValueObject:
 
 EntityId:
 	doc=DOC?
-	'entity-id' name=ID 'identifies' entity=[Entity|FQN] ('base' base=[ExternalType|FQN])? (invariants=Invariants)? '{'
+	'entity-id' name=ID ('identifies' entity=[Entity|FQN])? ('base' base=[ExternalType|FQN])? (invariants=Invariants)? '{'
 		metaInfo=TypeMetaInfo
 		attributes+=Attribute*
 		constructors+=Constructor*
@@ -107,7 +107,7 @@ EntityId:
 
 AggregateId:
 	doc=DOC?
-	'aggregate-id' name=ID 'identifies' entity=[Aggregate|FQN] ('base' base=[ExternalType|FQN])? (invariants=Invariants)? '{'
+	'aggregate-id' name=ID ('identifies' aggregate=[Aggregate|FQN])? ('base' base=[ExternalType|FQN])? (invariants=Invariants)? '{'
 		metaInfo=TypeMetaInfo
 		attributes+=Attribute*
 		constructors+=Constructor*
@@ -135,22 +135,24 @@ Event:
 
 Entity:
 	doc=DOC?
-	'entity' name=ID 'identifier' idType=[EntityId|FQN] 'root' root=[Aggregate|FQN] (invariants=Invariants)? '{'
+	'entity' name=ID ('identifier' idType=[EntityId|FQN])? 'root' root=[Aggregate|FQN] (invariants=Invariants)? '{'
 		metaInfo=TypeMetaInfo
 		attributes+=Attribute*
 		constructors+=Constructor*
 		methods+=Method*
 		events+=Event*
+		entityId=EntityId?
 	'}';
 
 Aggregate:
 	doc=DOC?
-	'aggregate' name=ID 'identifier' idType=[AggregateId|FQN] (invariants=Invariants)? '{'
+	'aggregate' name=ID ('identifier' idType=[AggregateId|FQN])? (invariants=Invariants)? '{'
 		metaInfo=TypeMetaInfo
 		attributes+=Attribute*
 		constructors+=Constructor*
 		methods+=Method*
 		events+=Event*
+		aggregateId=AggregateId?
 	'}';
 	
 AbstractMethod:

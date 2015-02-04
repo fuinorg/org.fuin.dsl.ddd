@@ -11,6 +11,8 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Service
 
 import static extension org.fuin.dsl.ddd.extensions.DddCollectionExtensions.*
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntityId
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate
 
 /**
  * Provides extension methods for AbstractEntity.
@@ -81,6 +83,29 @@ class DddAbstractEntityExtensions {
 			events.add(v);
 		}
 		return events;
+	}
+
+	/**
+	 * Returns the entity identifier type regardless if it's 
+	 * defined inside the aggregate or somewhere outside.
+	 * 
+	 * @param entity Entity to return the identifier type for.
+	 * 
+	 * @return Entity identifier type.
+	 */
+	def static AbstractEntityId getIdTypeNullsafe(AbstractEntity entity) {
+		if (entity.idType == null) {
+			// TODO Find better way...
+			if (entity instanceof Aggregate) {
+				return entity.aggregateId
+			}
+			if (entity instanceof Entity) {
+				return entity.entityId
+				
+			}
+			throw new IllegalArgumentException("Unknown entity type: " + entity)
+		}
+		return entity.idType
 	}
 
 }

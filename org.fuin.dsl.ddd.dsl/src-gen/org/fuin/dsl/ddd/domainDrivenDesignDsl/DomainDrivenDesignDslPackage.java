@@ -1229,13 +1229,13 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int AGGREGATE_ID__METHODS = ABSTRACT_ENTITY_ID__METHODS;
 
   /**
-   * The feature id for the '<em><b>Entity</b></em>' reference.
+   * The feature id for the '<em><b>Aggregate</b></em>' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int AGGREGATE_ID__ENTITY = ABSTRACT_ENTITY_ID_FEATURE_COUNT + 0;
+  int AGGREGATE_ID__AGGREGATE = ABSTRACT_ENTITY_ID_FEATURE_COUNT + 0;
 
   /**
    * The number of structural features of the '<em>Aggregate Id</em>' class.
@@ -1539,13 +1539,22 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int ENTITY__ROOT = ABSTRACT_ENTITY_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Entity Id</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int ENTITY__ENTITY_ID = ABSTRACT_ENTITY_FEATURE_COUNT + 2;
+
+  /**
    * The number of structural features of the '<em>Entity</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ENTITY_FEATURE_COUNT = ABSTRACT_ENTITY_FEATURE_COUNT + 2;
+  int ENTITY_FEATURE_COUNT = ABSTRACT_ENTITY_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AggregateImpl <em>Aggregate</em>}' class.
@@ -1639,13 +1648,22 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int AGGREGATE__ID_TYPE = ABSTRACT_ENTITY_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Aggregate Id</b></em>' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AGGREGATE__AGGREGATE_ID = ABSTRACT_ENTITY_FEATURE_COUNT + 1;
+
+  /**
    * The number of structural features of the '<em>Aggregate</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int AGGREGATE_FEATURE_COUNT = ABSTRACT_ENTITY_FEATURE_COUNT + 1;
+  int AGGREGATE_FEATURE_COUNT = ABSTRACT_ENTITY_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AbstractMethodImpl <em>Abstract Method</em>}' class.
@@ -3308,15 +3326,15 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   EClass getAggregateId();
 
   /**
-   * Returns the meta object for the reference '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId#getEntity <em>Entity</em>}'.
+   * Returns the meta object for the reference '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId#getAggregate <em>Aggregate</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the reference '<em>Entity</em>'.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId#getEntity()
+   * @return the meta object for the reference '<em>Aggregate</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId#getAggregate()
    * @see #getAggregateId()
    * @generated
    */
-  EReference getAggregateId_Entity();
+  EReference getAggregateId_Aggregate();
 
   /**
    * Returns the meta object for class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumObject <em>Enum Object</em>}'.
@@ -3469,6 +3487,17 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   EReference getEntity_Root();
 
   /**
+   * Returns the meta object for the containment reference '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity#getEntityId <em>Entity Id</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Entity Id</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity#getEntityId()
+   * @see #getEntity()
+   * @generated
+   */
+  EReference getEntity_EntityId();
+
+  /**
    * Returns the meta object for class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate <em>Aggregate</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -3488,6 +3517,17 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @generated
    */
   EReference getAggregate_IdType();
+
+  /**
+   * Returns the meta object for the containment reference '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate#getAggregateId <em>Aggregate Id</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference '<em>Aggregate Id</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate#getAggregateId()
+   * @see #getAggregate()
+   * @generated
+   */
+  EReference getAggregate_AggregateId();
 
   /**
    * Returns the meta object for class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod <em>Abstract Method</em>}'.
@@ -4630,12 +4670,12 @@ public interface DomainDrivenDesignDslPackage extends EPackage
     EClass AGGREGATE_ID = eINSTANCE.getAggregateId();
 
     /**
-     * The meta object literal for the '<em><b>Entity</b></em>' reference feature.
+     * The meta object literal for the '<em><b>Aggregate</b></em>' reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EReference AGGREGATE_ID__ENTITY = eINSTANCE.getAggregateId_Entity();
+    EReference AGGREGATE_ID__AGGREGATE = eINSTANCE.getAggregateId_Aggregate();
 
     /**
      * The meta object literal for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.EnumObjectImpl <em>Enum Object</em>}' class.
@@ -4758,6 +4798,14 @@ public interface DomainDrivenDesignDslPackage extends EPackage
     EReference ENTITY__ROOT = eINSTANCE.getEntity_Root();
 
     /**
+     * The meta object literal for the '<em><b>Entity Id</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference ENTITY__ENTITY_ID = eINSTANCE.getEntity_EntityId();
+
+    /**
      * The meta object literal for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AggregateImpl <em>Aggregate</em>}' class.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
@@ -4774,6 +4822,14 @@ public interface DomainDrivenDesignDslPackage extends EPackage
      * @generated
      */
     EReference AGGREGATE__ID_TYPE = eINSTANCE.getAggregate_IdType();
+
+    /**
+     * The meta object literal for the '<em><b>Aggregate Id</b></em>' containment reference feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference AGGREGATE__AGGREGATE_ID = eINSTANCE.getAggregate_AggregateId();
 
     /**
      * The meta object literal for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AbstractMethodImpl <em>Abstract Method</em>}' class.

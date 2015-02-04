@@ -11,7 +11,7 @@ package org.fuin.dsl.ddd.domainDrivenDesignDsl;
  * <p>
  * The following features are supported:
  * <ul>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId#getEntity <em>Entity</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId#getAggregate <em>Aggregate</em>}</li>
  * </ul>
  * </p>
  *
@@ -22,29 +22,29 @@ package org.fuin.dsl.ddd.domainDrivenDesignDsl;
 public interface AggregateId extends AbstractEntityId
 {
   /**
-   * Returns the value of the '<em><b>Entity</b></em>' reference.
+   * Returns the value of the '<em><b>Aggregate</b></em>' reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Entity</em>' reference isn't clear,
+   * If the meaning of the '<em>Aggregate</em>' reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Entity</em>' reference.
-   * @see #setEntity(Aggregate)
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getAggregateId_Entity()
+   * @return the value of the '<em>Aggregate</em>' reference.
+   * @see #setAggregate(Aggregate)
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getAggregateId_Aggregate()
    * @model
    * @generated
    */
-  Aggregate getEntity();
+  Aggregate getAggregate();
 
   /**
-   * Sets the value of the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId#getEntity <em>Entity</em>}' reference.
+   * Sets the value of the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId#getAggregate <em>Aggregate</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Entity</em>' reference.
-   * @see #getEntity()
+   * @param value the new value of the '<em>Aggregate</em>' reference.
+   * @see #getAggregate()
    * @generated
    */
-  void setEntity(Aggregate value);
+  void setAggregate(Aggregate value);
 
 } // AggregateId

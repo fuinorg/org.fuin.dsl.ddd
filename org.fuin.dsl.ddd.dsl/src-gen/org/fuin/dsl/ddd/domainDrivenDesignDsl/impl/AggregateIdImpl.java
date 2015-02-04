@@ -20,7 +20,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
  * <p>
  * The following features are implemented:
  * <ul>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AggregateIdImpl#getEntity <em>Entity</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AggregateIdImpl#getAggregate <em>Aggregate</em>}</li>
  * </ul>
  * </p>
  *
@@ -29,14 +29,14 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
 public class AggregateIdImpl extends AbstractEntityIdImpl implements AggregateId
 {
   /**
-   * The cached value of the '{@link #getEntity() <em>Entity</em>}' reference.
+   * The cached value of the '{@link #getAggregate() <em>Aggregate</em>}' reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getEntity()
+   * @see #getAggregate()
    * @generated
    * @ordered
    */
-  protected Aggregate entity;
+  protected Aggregate aggregate;
 
   /**
    * <!-- begin-user-doc -->
@@ -64,19 +64,19 @@ public class AggregateIdImpl extends AbstractEntityIdImpl implements AggregateId
    * <!-- end-user-doc -->
    * @generated
    */
-  public Aggregate getEntity()
+  public Aggregate getAggregate()
   {
-    if (entity != null && entity.eIsProxy())
+    if (aggregate != null && aggregate.eIsProxy())
     {
-      InternalEObject oldEntity = (InternalEObject)entity;
-      entity = (Aggregate)eResolveProxy(oldEntity);
-      if (entity != oldEntity)
+      InternalEObject oldAggregate = (InternalEObject)aggregate;
+      aggregate = (Aggregate)eResolveProxy(oldAggregate);
+      if (aggregate != oldAggregate)
       {
         if (eNotificationRequired())
-          eNotify(new ENotificationImpl(this, Notification.RESOLVE, DomainDrivenDesignDslPackage.AGGREGATE_ID__ENTITY, oldEntity, entity));
+          eNotify(new ENotificationImpl(this, Notification.RESOLVE, DomainDrivenDesignDslPackage.AGGREGATE_ID__AGGREGATE, oldAggregate, aggregate));
       }
     }
-    return entity;
+    return aggregate;
   }
 
   /**
@@ -84,9 +84,9 @@ public class AggregateIdImpl extends AbstractEntityIdImpl implements AggregateId
    * <!-- end-user-doc -->
    * @generated
    */
-  public Aggregate basicGetEntity()
+  public Aggregate basicGetAggregate()
   {
-    return entity;
+    return aggregate;
   }
 
   /**
@@ -94,12 +94,12 @@ public class AggregateIdImpl extends AbstractEntityIdImpl implements AggregateId
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setEntity(Aggregate newEntity)
+  public void setAggregate(Aggregate newAggregate)
   {
-    Aggregate oldEntity = entity;
-    entity = newEntity;
+    Aggregate oldAggregate = aggregate;
+    aggregate = newAggregate;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.AGGREGATE_ID__ENTITY, oldEntity, entity));
+      eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.AGGREGATE_ID__AGGREGATE, oldAggregate, aggregate));
   }
 
   /**
@@ -112,9 +112,9 @@ public class AggregateIdImpl extends AbstractEntityIdImpl implements AggregateId
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.AGGREGATE_ID__ENTITY:
-        if (resolve) return getEntity();
-        return basicGetEntity();
+      case DomainDrivenDesignDslPackage.AGGREGATE_ID__AGGREGATE:
+        if (resolve) return getAggregate();
+        return basicGetAggregate();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -129,8 +129,8 @@ public class AggregateIdImpl extends AbstractEntityIdImpl implements AggregateId
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.AGGREGATE_ID__ENTITY:
-        setEntity((Aggregate)newValue);
+      case DomainDrivenDesignDslPackage.AGGREGATE_ID__AGGREGATE:
+        setAggregate((Aggregate)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -146,8 +146,8 @@ public class AggregateIdImpl extends AbstractEntityIdImpl implements AggregateId
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.AGGREGATE_ID__ENTITY:
-        setEntity((Aggregate)null);
+      case DomainDrivenDesignDslPackage.AGGREGATE_ID__AGGREGATE:
+        setAggregate((Aggregate)null);
         return;
     }
     super.eUnset(featureID);
@@ -163,8 +163,8 @@ public class AggregateIdImpl extends AbstractEntityIdImpl implements AggregateId
   {
     switch (featureID)
     {
-      case DomainDrivenDesignDslPackage.AGGREGATE_ID__ENTITY:
-        return entity != null;
+      case DomainDrivenDesignDslPackage.AGGREGATE_ID__AGGREGATE:
+        return aggregate != null;
     }
     return super.eIsSet(featureID);
   }

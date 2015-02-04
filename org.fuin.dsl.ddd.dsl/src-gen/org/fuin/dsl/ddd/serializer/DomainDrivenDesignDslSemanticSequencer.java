@@ -310,7 +310,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *     (
 	 *         doc=DOC? 
 	 *         name=ID 
-	 *         entity=[Aggregate|FQN] 
+	 *         aggregate=[Aggregate|FQN]? 
 	 *         base=[ExternalType|FQN]? 
 	 *         invariants=Invariants? 
 	 *         metaInfo=TypeMetaInfo 
@@ -329,13 +329,14 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *     (
 	 *         doc=DOC? 
 	 *         name=ID 
-	 *         idType=[AggregateId|FQN] 
+	 *         idType=[AggregateId|FQN]? 
 	 *         invariants=Invariants? 
 	 *         metaInfo=TypeMetaInfo 
 	 *         attributes+=Attribute* 
 	 *         constructors+=Constructor* 
 	 *         methods+=Method* 
-	 *         events+=Event*
+	 *         events+=Event* 
+	 *         aggregateId=AggregateId?
 	 *     )
 	 */
 	protected void sequence_Aggregate(EObject context, Aggregate semanticObject) {
@@ -474,7 +475,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *     (
 	 *         doc=DOC? 
 	 *         name=ID 
-	 *         entity=[Entity|FQN] 
+	 *         entity=[Entity|FQN]? 
 	 *         base=[ExternalType|FQN]? 
 	 *         invariants=Invariants? 
 	 *         metaInfo=TypeMetaInfo 
@@ -493,14 +494,15 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *     (
 	 *         doc=DOC? 
 	 *         name=ID 
-	 *         idType=[EntityId|FQN] 
+	 *         idType=[EntityId|FQN]? 
 	 *         root=[Aggregate|FQN] 
 	 *         invariants=Invariants? 
 	 *         metaInfo=TypeMetaInfo 
 	 *         attributes+=Attribute* 
 	 *         constructors+=Constructor* 
 	 *         methods+=Method* 
-	 *         events+=Event*
+	 *         events+=Event* 
+	 *         entityId=EntityId?
 	 *     )
 	 */
 	protected void sequence_Entity(EObject context, Entity semanticObject) {

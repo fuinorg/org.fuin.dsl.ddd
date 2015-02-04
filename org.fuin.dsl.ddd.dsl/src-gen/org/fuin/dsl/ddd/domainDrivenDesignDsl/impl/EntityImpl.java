@@ -3,6 +3,7 @@
 package org.fuin.dsl.ddd.domainDrivenDesignDsl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
@@ -23,6 +24,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.EntityId;
  * <ul>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.EntityImpl#getIdType <em>Id Type</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.EntityImpl#getRoot <em>Root</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.EntityImpl#getEntityId <em>Entity Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,6 +51,16 @@ public class EntityImpl extends AbstractEntityImpl implements Entity
    * @ordered
    */
   protected Aggregate root;
+
+  /**
+   * The cached value of the '{@link #getEntityId() <em>Entity Id</em>}' containment reference.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getEntityId()
+   * @generated
+   * @ordered
+   */
+  protected EntityId entityId;
 
   /**
    * <!-- begin-user-doc -->
@@ -162,6 +174,70 @@ public class EntityImpl extends AbstractEntityImpl implements Entity
    * <!-- end-user-doc -->
    * @generated
    */
+  public EntityId getEntityId()
+  {
+    return entityId;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public NotificationChain basicSetEntityId(EntityId newEntityId, NotificationChain msgs)
+  {
+    EntityId oldEntityId = entityId;
+    entityId = newEntityId;
+    if (eNotificationRequired())
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.ENTITY__ENTITY_ID, oldEntityId, newEntityId);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setEntityId(EntityId newEntityId)
+  {
+    if (newEntityId != entityId)
+    {
+      NotificationChain msgs = null;
+      if (entityId != null)
+        msgs = ((InternalEObject)entityId).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DomainDrivenDesignDslPackage.ENTITY__ENTITY_ID, null, msgs);
+      if (newEntityId != null)
+        msgs = ((InternalEObject)newEntityId).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DomainDrivenDesignDslPackage.ENTITY__ENTITY_ID, null, msgs);
+      msgs = basicSetEntityId(newEntityId, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.ENTITY__ENTITY_ID, newEntityId, newEntityId));
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  @Override
+  public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
+  {
+    switch (featureID)
+    {
+      case DomainDrivenDesignDslPackage.ENTITY__ENTITY_ID:
+        return basicSetEntityId(null, msgs);
+    }
+    return super.eInverseRemove(otherEnd, featureID, msgs);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public Object eGet(int featureID, boolean resolve, boolean coreType)
   {
@@ -173,6 +249,8 @@ public class EntityImpl extends AbstractEntityImpl implements Entity
       case DomainDrivenDesignDslPackage.ENTITY__ROOT:
         if (resolve) return getRoot();
         return basicGetRoot();
+      case DomainDrivenDesignDslPackage.ENTITY__ENTITY_ID:
+        return getEntityId();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -192,6 +270,9 @@ public class EntityImpl extends AbstractEntityImpl implements Entity
         return;
       case DomainDrivenDesignDslPackage.ENTITY__ROOT:
         setRoot((Aggregate)newValue);
+        return;
+      case DomainDrivenDesignDslPackage.ENTITY__ENTITY_ID:
+        setEntityId((EntityId)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -213,6 +294,9 @@ public class EntityImpl extends AbstractEntityImpl implements Entity
       case DomainDrivenDesignDslPackage.ENTITY__ROOT:
         setRoot((Aggregate)null);
         return;
+      case DomainDrivenDesignDslPackage.ENTITY__ENTITY_ID:
+        setEntityId((EntityId)null);
+        return;
     }
     super.eUnset(featureID);
   }
@@ -231,6 +315,8 @@ public class EntityImpl extends AbstractEntityImpl implements Entity
         return idType != null;
       case DomainDrivenDesignDslPackage.ENTITY__ROOT:
         return root != null;
+      case DomainDrivenDesignDslPackage.ENTITY__ENTITY_ID:
+        return entityId != null;
     }
     return super.eIsSet(featureID);
   }

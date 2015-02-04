@@ -28,9 +28,11 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Service
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable
 
 import static extension org.fuin.dsl.ddd.extensions.DddAbstractElementExtensions.*
+import static extension org.fuin.dsl.ddd.extensions.DddAggregateExtensions.*
 import static extension org.fuin.dsl.ddd.extensions.DddAttributeExtensions.*
 import static extension org.fuin.dsl.ddd.extensions.DddConstraintExtension.*
 import static extension org.fuin.dsl.ddd.extensions.DddEObjectExtensions.*
+import static extension org.fuin.dsl.ddd.extensions.DddEntityExtensions.*
 
 /**
  * Custom validation rules. 
@@ -133,7 +135,7 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 					variable,
 					DomainDrivenDesignDslPackage.Literals::VARIABLE__TYPE,
 					REF_TO_AGGREGATE_NOT_ALLOWED,
-					aggregate.idType.name
+					aggregate.idTypeNullsafe.name
 				)
 			}
 		}
@@ -147,7 +149,7 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 					variable,
 					DomainDrivenDesignDslPackage.Literals::VARIABLE__TYPE,
 					REF_TO_ENTITY_NOT_ALLOWED,
-					entity.idType.name
+					entity.idTypeNullsafe.name
 				)
 			}
 		}
@@ -167,7 +169,7 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 					method,
 					DomainDrivenDesignDslPackage.Literals::METHOD__RETURN_TYPE,
 					REF_TO_AGGREGATE_NOT_ALLOWED,
-					aggregate.idType.name
+					aggregate.idTypeNullsafe.name
 				)
 			}
 
@@ -181,7 +183,7 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 					method,
 					DomainDrivenDesignDslPackage.Literals::METHOD__RETURN_TYPE,
 					REF_TO_ENTITY_NOT_ALLOWED,
-					entity.idType.name
+					entity.idTypeNullsafe.name
 				)
 			}
 

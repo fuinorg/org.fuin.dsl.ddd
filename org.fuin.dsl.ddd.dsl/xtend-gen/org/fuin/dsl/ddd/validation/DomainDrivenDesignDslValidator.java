@@ -41,9 +41,11 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Type;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.WeakConsistency;
 import org.fuin.dsl.ddd.extensions.DddAbstractElementExtensions;
+import org.fuin.dsl.ddd.extensions.DddAggregateExtensions;
 import org.fuin.dsl.ddd.extensions.DddAttributeExtensions;
 import org.fuin.dsl.ddd.extensions.DddConstraintExtension;
 import org.fuin.dsl.ddd.extensions.DddEObjectExtensions;
+import org.fuin.dsl.ddd.extensions.DddEntityExtensions;
 import org.fuin.dsl.ddd.validation.AbstractDomainDrivenDesignDslValidator;
 
 /**
@@ -161,8 +163,8 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
         _or = _not;
       }
       if (_or) {
-        AggregateId _idType = aggregate.getIdType();
-        String _name = _idType.getName();
+        AggregateId _idTypeNullsafe = DddAggregateExtensions.getIdTypeNullsafe(aggregate);
+        String _name = _idTypeNullsafe.getName();
         this.error(
           DomainDrivenDesignDslValidator.MSG_DIRECT_REF_AGGREGATE, variable, 
           DomainDrivenDesignDslPackage.Literals.VARIABLE__TYPE, 
@@ -185,8 +187,8 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
         _or_1 = _not_1;
       }
       if (_or_1) {
-        EntityId _idType_1 = entity.getIdType();
-        String _name_1 = _idType_1.getName();
+        EntityId _idTypeNullsafe_1 = DddEntityExtensions.getIdTypeNullsafe(entity);
+        String _name_1 = _idTypeNullsafe_1.getName();
         this.error(
           DomainDrivenDesignDslValidator.MSG_DIRECT_REF_ENTITY, variable, 
           DomainDrivenDesignDslPackage.Literals.VARIABLE__TYPE, 
@@ -215,8 +217,8 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
         _or = _not;
       }
       if (_or) {
-        AggregateId _idType = aggregate.getIdType();
-        String _name = _idType.getName();
+        AggregateId _idTypeNullsafe = DddAggregateExtensions.getIdTypeNullsafe(aggregate);
+        String _name = _idTypeNullsafe.getName();
         this.error(
           DomainDrivenDesignDslValidator.MSG_DIRECT_REF_AGGREGATE, method, 
           DomainDrivenDesignDslPackage.Literals.METHOD__RETURN_TYPE, 
@@ -242,8 +244,8 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
           _or_1 = _not_1;
         }
         if (_or_1) {
-          EntityId _idType_1 = entity.getIdType();
-          String _name_1 = _idType_1.getName();
+          EntityId _idTypeNullsafe_1 = DddEntityExtensions.getIdTypeNullsafe(entity);
+          String _name_1 = _idTypeNullsafe_1.getName();
           this.error(
             DomainDrivenDesignDslValidator.MSG_DIRECT_REF_ENTITY, method, 
             DomainDrivenDesignDslPackage.Literals.METHOD__RETURN_TYPE, 
