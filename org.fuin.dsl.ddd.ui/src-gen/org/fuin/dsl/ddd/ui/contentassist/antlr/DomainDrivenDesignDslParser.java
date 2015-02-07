@@ -86,6 +86,7 @@ public class DomainDrivenDesignDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEventAccess().getGroup_5(), "rule__Event__Group_5__0");
 					put(grammarAccess.getEntityAccess().getGroup(), "rule__Entity__Group__0");
 					put(grammarAccess.getEntityAccess().getGroup_3(), "rule__Entity__Group_3__0");
+					put(grammarAccess.getEntityAccess().getGroup_4(), "rule__Entity__Group_4__0");
 					put(grammarAccess.getAggregateAccess().getGroup(), "rule__Aggregate__Group__0");
 					put(grammarAccess.getAggregateAccess().getGroup_3(), "rule__Aggregate__Group_3__0");
 					put(grammarAccess.getConstructorAccess().getGroup(), "rule__Constructor__Group__0");
@@ -202,14 +203,14 @@ public class DomainDrivenDesignDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEntityAccess().getDocAssignment_0(), "rule__Entity__DocAssignment_0");
 					put(grammarAccess.getEntityAccess().getNameAssignment_2(), "rule__Entity__NameAssignment_2");
 					put(grammarAccess.getEntityAccess().getIdTypeAssignment_3_1(), "rule__Entity__IdTypeAssignment_3_1");
-					put(grammarAccess.getEntityAccess().getRootAssignment_5(), "rule__Entity__RootAssignment_5");
-					put(grammarAccess.getEntityAccess().getInvariantsAssignment_6(), "rule__Entity__InvariantsAssignment_6");
-					put(grammarAccess.getEntityAccess().getMetaInfoAssignment_8(), "rule__Entity__MetaInfoAssignment_8");
-					put(grammarAccess.getEntityAccess().getAttributesAssignment_9(), "rule__Entity__AttributesAssignment_9");
-					put(grammarAccess.getEntityAccess().getConstructorsAssignment_10(), "rule__Entity__ConstructorsAssignment_10");
-					put(grammarAccess.getEntityAccess().getMethodsAssignment_11(), "rule__Entity__MethodsAssignment_11");
-					put(grammarAccess.getEntityAccess().getEventsAssignment_12(), "rule__Entity__EventsAssignment_12");
-					put(grammarAccess.getEntityAccess().getEntityIdAssignment_13(), "rule__Entity__EntityIdAssignment_13");
+					put(grammarAccess.getEntityAccess().getRootAssignment_4_1(), "rule__Entity__RootAssignment_4_1");
+					put(grammarAccess.getEntityAccess().getInvariantsAssignment_5(), "rule__Entity__InvariantsAssignment_5");
+					put(grammarAccess.getEntityAccess().getMetaInfoAssignment_7(), "rule__Entity__MetaInfoAssignment_7");
+					put(grammarAccess.getEntityAccess().getAttributesAssignment_8(), "rule__Entity__AttributesAssignment_8");
+					put(grammarAccess.getEntityAccess().getConstructorsAssignment_9(), "rule__Entity__ConstructorsAssignment_9");
+					put(grammarAccess.getEntityAccess().getMethodsAssignment_10(), "rule__Entity__MethodsAssignment_10");
+					put(grammarAccess.getEntityAccess().getEventsAssignment_11(), "rule__Entity__EventsAssignment_11");
+					put(grammarAccess.getEntityAccess().getEntityIdAssignment_12(), "rule__Entity__EntityIdAssignment_12");
 					put(grammarAccess.getAggregateAccess().getDocAssignment_0(), "rule__Aggregate__DocAssignment_0");
 					put(grammarAccess.getAggregateAccess().getNameAssignment_2(), "rule__Aggregate__NameAssignment_2");
 					put(grammarAccess.getAggregateAccess().getIdTypeAssignment_3_1(), "rule__Aggregate__IdTypeAssignment_3_1");
@@ -220,6 +221,7 @@ public class DomainDrivenDesignDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAggregateAccess().getMethodsAssignment_9(), "rule__Aggregate__MethodsAssignment_9");
 					put(grammarAccess.getAggregateAccess().getEventsAssignment_10(), "rule__Aggregate__EventsAssignment_10");
 					put(grammarAccess.getAggregateAccess().getAggregateIdAssignment_11(), "rule__Aggregate__AggregateIdAssignment_11");
+					put(grammarAccess.getAggregateAccess().getEntitiesAssignment_12(), "rule__Aggregate__EntitiesAssignment_12");
 					put(grammarAccess.getConstructorAccess().getDocAssignment_0(), "rule__Constructor__DocAssignment_0");
 					put(grammarAccess.getConstructorAccess().getNameAssignment_2(), "rule__Constructor__NameAssignment_2");
 					put(grammarAccess.getConstructorAccess().getPreconditionsAssignment_3(), "rule__Constructor__PreconditionsAssignment_3");

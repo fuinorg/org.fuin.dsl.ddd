@@ -2,6 +2,7 @@
  */
 package org.fuin.dsl.ddd.domainDrivenDesignDsl;
 
+import org.eclipse.emf.common.util.EList;
 
 /**
  * <!-- begin-user-doc -->
@@ -13,6 +14,7 @@ package org.fuin.dsl.ddd.domainDrivenDesignDsl;
  * <ul>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate#getIdType <em>Id Type</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate#getAggregateId <em>Aggregate Id</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate#getEntities <em>Entities</em>}</li>
  * </ul>
  * </p>
  *
@@ -73,5 +75,21 @@ public interface Aggregate extends AbstractEntity
    * @generated
    */
   void setAggregateId(AggregateId value);
+
+  /**
+   * Returns the value of the '<em><b>Entities</b></em>' containment reference list.
+   * The list contents are of type {@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity}.
+   * <!-- begin-user-doc -->
+   * <p>
+   * If the meaning of the '<em>Entities</em>' containment reference list isn't clear,
+   * there really should be more of a description here...
+   * </p>
+   * <!-- end-user-doc -->
+   * @return the value of the '<em>Entities</em>' containment reference list.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getAggregate_Entities()
+   * @model containment="true"
+   * @generated
+   */
+  EList<Entity> getEntities();
 
 } // Aggregate

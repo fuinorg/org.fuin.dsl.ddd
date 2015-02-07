@@ -12,6 +12,7 @@ import org.eclipse.xtext.resource.IEObjectDescription
 import org.eclipse.xtext.resource.impl.ResourceDescriptionsProvider
 import org.eclipse.xtext.validation.Check
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.BusinessRules
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Consistency
@@ -33,6 +34,7 @@ import static extension org.fuin.dsl.ddd.extensions.DddAttributeExtensions.*
 import static extension org.fuin.dsl.ddd.extensions.DddConstraintExtension.*
 import static extension org.fuin.dsl.ddd.extensions.DddEObjectExtensions.*
 import static extension org.fuin.dsl.ddd.extensions.DddEntityExtensions.*
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.EntityId
 
 /**
  * Custom validation rules. 
@@ -82,6 +84,26 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 	public static val WEAK_CONSISTENCY_REQUIRES_DETAILS = "weakConsistencyRequiresDetails"
 
 	public static val STRONG_CONSISTENCY_DOES_NOT_ALLOW_DETAILS = "strongConsistencyDoesNotAllowDetails"
+
+	public static val WRONG_IDENTIFIES_AGGREGATE = "wrongIdentifiesAggregate"
+
+	public static val IDENTIFIES_AGGREGATE_NULL = "identifiesAggregateNull"
+
+	public static val WRONG_IDENTIFIES_ENTITY = "wrongIdentifiesEntity"
+
+	public static val IDENTIFIES_ENTITY_NULL = "identifiesEntityNull"
+
+	public static val WRONG_ROOT_AGGREGATE = "wrongRootAggregate"
+
+	public static val ROOT_NULL = "rootNull"
+	
+	public static val AGGREGATE_WITHOUT_ID = "aggregateWithoutId"
+
+	public static val AGGREGATE_WITH_DUPLICATE_ID = "aggregateWithDuplicateId"
+
+	public static val ENTITY_WITHOUT_ID = "entityWithoutId"
+
+	public static val ENTITY_WITH_DUPLICATE_ID = "entityWithDuplicateId"
 
 	@Inject
 	private IContainer.Manager containerManager
@@ -418,6 +440,132 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 		}
 		
 	}
+	
+	@Check
+	def checkAggregateIdIdentifies(AggregateId aggregateId) {
+		
+		if (aggregateId.eContainer instanceof Aggregate) {
+			if ((aggregateId.aggregate != null) && (aggregateId.aggregate != aggregateId.eContainer)) {
+				error(
+					"An ID defined in an aggregate can only identify the parent aggregate",
+					aggregateId,
+					DomainDrivenDesignDslPackage.Literals::AGGREGATE_ID__AGGREGATE,
+					WRONG_IDENTIFIES_AGGREGATE
+				)
+			}
+		} else {
+			if (aggregateId.aggregate == null) {
+				error(
+					"An ID defined outside an aggregate must use the 'identifies' expression",
+					aggregateId,
+					DomainDrivenDesignDslPackage.Literals::AGGREGATE_ID__AGGREGATE,
+					IDENTIFIES_AGGREGATE_NULL
+				)
+			}
+		}
+		
+	}
+	
+	@Check
+	def checkEntityIdIdentifies(EntityId entityId) {
+		
+		if (entityId.eContainer instanceof Entity) {
+			if ((entityId.entity != null) && (entityId.entity != entityId.eContainer)) {
+				error(
+					"An ID defined in an entity can only identify the parent entity",
+					entityId,
+					DomainDrivenDesignDslPackage.Literals::ENTITY_ID__ENTITY,
+					WRONG_IDENTIFIES_ENTITY
+				)
+			}
+		} else {
+			if (entityId.entity == null) {
+				error(
+					"An ID defined outside an entity must use the 'identifies' expression",
+					entityId,
+					DomainDrivenDesignDslPackage.Literals::ENTITY_ID__ENTITY,
+					IDENTIFIES_ENTITY_NULL
+				)
+			}
+		}
+		
+	}
+
+	@Check
+	def checkEntityRoot(Entity entity) {
+		
+		if (entity.eContainer instanceof Aggregate) {
+			if ((entity.root != null) && (entity.root != entity.eContainer)) {
+				error(
+					"An entity defined in an aggregate can only reference the parent aggregate",
+					entity,
+					DomainDrivenDesignDslPackage.Literals::ENTITY__ROOT,
+					WRONG_ROOT_AGGREGATE
+				)
+			}
+		} else {
+			if (entity.root == null) {
+				error(
+					"An entity defined outside an aggregate must use the 'root' expression",
+					entity,
+					DomainDrivenDesignDslPackage.Literals::ENTITY__ROOT,
+					ROOT_NULL
+				)
+			}			
+		}	
+		
+	}
+	
+	@Check
+	def checkEntityHasId(Entity entity) {
+		
+		if (entity.idType == null) {
+			if (entity.entityId == null) {
+				error(
+					"Entity does not define an ID",
+					entity,
+					DomainDrivenDesignDslPackage.Literals::ENTITY__ID_TYPE,
+					ENTITY_WITHOUT_ID
+				)
+			}
+		} else {
+			if (entity.entityId != null) {
+				error(
+					"Entity cannot not reference an ID using 'identifier' and define another inside the aggregate",
+					entity,
+					DomainDrivenDesignDslPackage.Literals::ENTITY__ENTITY_ID,
+					ENTITY_WITH_DUPLICATE_ID
+				)
+			}
+		}
+		
+	}	
+	
+	@Check
+	def checkAggregateHasId(Aggregate aggregate) {
+		
+		if (aggregate.idType == null) {
+			if (aggregate.aggregateId == null) {
+				error(
+					"Aggregate does not define an ID",
+					aggregate,
+					DomainDrivenDesignDslPackage.Literals::AGGREGATE__ID_TYPE,
+					AGGREGATE_WITHOUT_ID
+				)
+			}
+		} else {
+			if (aggregate.aggregateId != null) {
+				error(
+					"Aggregate cannot not reference an ID using 'identifier' and define another inside the aggregate",
+					aggregate,
+					DomainDrivenDesignDslPackage.Literals::AGGREGATE__AGGREGATE_ID,
+					AGGREGATE_WITH_DUPLICATE_ID
+				)
+			}
+		}
+		
+	}	
+	
 	
 	private def getAllExceptions(EObject obj) {
 		val Set<Exception> list = new HashSet<Exception>()

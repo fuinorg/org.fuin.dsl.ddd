@@ -1657,13 +1657,22 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int AGGREGATE__AGGREGATE_ID = ABSTRACT_ENTITY_FEATURE_COUNT + 1;
 
   /**
+   * The feature id for the '<em><b>Entities</b></em>' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int AGGREGATE__ENTITIES = ABSTRACT_ENTITY_FEATURE_COUNT + 2;
+
+  /**
    * The number of structural features of the '<em>Aggregate</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int AGGREGATE_FEATURE_COUNT = ABSTRACT_ENTITY_FEATURE_COUNT + 2;
+  int AGGREGATE_FEATURE_COUNT = ABSTRACT_ENTITY_FEATURE_COUNT + 3;
 
   /**
    * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AbstractMethodImpl <em>Abstract Method</em>}' class.
@@ -3530,6 +3539,17 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   EReference getAggregate_AggregateId();
 
   /**
+   * Returns the meta object for the containment reference list '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate#getEntities <em>Entities</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the containment reference list '<em>Entities</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate#getEntities()
+   * @see #getAggregate()
+   * @generated
+   */
+  EReference getAggregate_Entities();
+
+  /**
    * Returns the meta object for class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod <em>Abstract Method</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -4830,6 +4850,14 @@ public interface DomainDrivenDesignDslPackage extends EPackage
      * @generated
      */
     EReference AGGREGATE__AGGREGATE_ID = eINSTANCE.getAggregate_AggregateId();
+
+    /**
+     * The meta object literal for the '<em><b>Entities</b></em>' containment reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference AGGREGATE__ENTITIES = eINSTANCE.getAggregate_Entities();
 
     /**
      * The meta object literal for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AbstractMethodImpl <em>Abstract Method</em>}' class.

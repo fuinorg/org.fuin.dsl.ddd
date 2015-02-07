@@ -97,6 +97,26 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
   
   public final static String STRONG_CONSISTENCY_DOES_NOT_ALLOW_DETAILS = "strongConsistencyDoesNotAllowDetails";
   
+  public final static String WRONG_IDENTIFIES_AGGREGATE = "wrongIdentifiesAggregate";
+  
+  public final static String IDENTIFIES_AGGREGATE_NULL = "identifiesAggregateNull";
+  
+  public final static String WRONG_IDENTIFIES_ENTITY = "wrongIdentifiesEntity";
+  
+  public final static String IDENTIFIES_ENTITY_NULL = "identifiesEntityNull";
+  
+  public final static String WRONG_ROOT_AGGREGATE = "wrongRootAggregate";
+  
+  public final static String ROOT_NULL = "rootNull";
+  
+  public final static String AGGREGATE_WITHOUT_ID = "aggregateWithoutId";
+  
+  public final static String AGGREGATE_WITH_DUPLICATE_ID = "aggregateWithDuplicateId";
+  
+  public final static String ENTITY_WITHOUT_ID = "entityWithoutId";
+  
+  public final static String ENTITY_WITH_DUPLICATE_ID = "entityWithDuplicateId";
+  
   @Inject
   private IContainer.Manager containerManager;
   
@@ -624,6 +644,155 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
         "No details required for strong consistency", consistency, 
         DomainDrivenDesignDslPackage.Literals.CONSISTENCY__WEAK_CONSISTENCY, 
         DomainDrivenDesignDslValidator.STRONG_CONSISTENCY_DOES_NOT_ALLOW_DETAILS);
+    }
+  }
+  
+  @Check
+  public void checkAggregateIdIdentifies(final AggregateId aggregateId) {
+    EObject _eContainer = aggregateId.eContainer();
+    if ((_eContainer instanceof Aggregate)) {
+      boolean _and = false;
+      Aggregate _aggregate = aggregateId.getAggregate();
+      boolean _notEquals = (!Objects.equal(_aggregate, null));
+      if (!_notEquals) {
+        _and = false;
+      } else {
+        Aggregate _aggregate_1 = aggregateId.getAggregate();
+        EObject _eContainer_1 = aggregateId.eContainer();
+        boolean _notEquals_1 = (!Objects.equal(_aggregate_1, _eContainer_1));
+        _and = _notEquals_1;
+      }
+      if (_and) {
+        this.error(
+          "An ID defined in an aggregate can only identify the parent aggregate", aggregateId, 
+          DomainDrivenDesignDslPackage.Literals.AGGREGATE_ID__AGGREGATE, 
+          DomainDrivenDesignDslValidator.WRONG_IDENTIFIES_AGGREGATE);
+      }
+    } else {
+      Aggregate _aggregate_2 = aggregateId.getAggregate();
+      boolean _equals = Objects.equal(_aggregate_2, null);
+      if (_equals) {
+        this.error(
+          "An ID defined outside an aggregate must use the \'identifies\' expression", aggregateId, 
+          DomainDrivenDesignDslPackage.Literals.AGGREGATE_ID__AGGREGATE, 
+          DomainDrivenDesignDslValidator.IDENTIFIES_AGGREGATE_NULL);
+      }
+    }
+  }
+  
+  @Check
+  public void checkEntityIdIdentifies(final EntityId entityId) {
+    EObject _eContainer = entityId.eContainer();
+    if ((_eContainer instanceof Entity)) {
+      boolean _and = false;
+      Entity _entity = entityId.getEntity();
+      boolean _notEquals = (!Objects.equal(_entity, null));
+      if (!_notEquals) {
+        _and = false;
+      } else {
+        Entity _entity_1 = entityId.getEntity();
+        EObject _eContainer_1 = entityId.eContainer();
+        boolean _notEquals_1 = (!Objects.equal(_entity_1, _eContainer_1));
+        _and = _notEquals_1;
+      }
+      if (_and) {
+        this.error(
+          "An ID defined in an entity can only identify the parent entity", entityId, 
+          DomainDrivenDesignDslPackage.Literals.ENTITY_ID__ENTITY, 
+          DomainDrivenDesignDslValidator.WRONG_IDENTIFIES_ENTITY);
+      }
+    } else {
+      Entity _entity_2 = entityId.getEntity();
+      boolean _equals = Objects.equal(_entity_2, null);
+      if (_equals) {
+        this.error(
+          "An ID defined outside an entity must use the \'identifies\' expression", entityId, 
+          DomainDrivenDesignDslPackage.Literals.ENTITY_ID__ENTITY, 
+          DomainDrivenDesignDslValidator.IDENTIFIES_ENTITY_NULL);
+      }
+    }
+  }
+  
+  @Check
+  public void checkEntityRoot(final Entity entity) {
+    EObject _eContainer = entity.eContainer();
+    if ((_eContainer instanceof Aggregate)) {
+      boolean _and = false;
+      Aggregate _root = entity.getRoot();
+      boolean _notEquals = (!Objects.equal(_root, null));
+      if (!_notEquals) {
+        _and = false;
+      } else {
+        Aggregate _root_1 = entity.getRoot();
+        EObject _eContainer_1 = entity.eContainer();
+        boolean _notEquals_1 = (!Objects.equal(_root_1, _eContainer_1));
+        _and = _notEquals_1;
+      }
+      if (_and) {
+        this.error(
+          "An entity defined in an aggregate can only reference the parent aggregate", entity, 
+          DomainDrivenDesignDslPackage.Literals.ENTITY__ROOT, 
+          DomainDrivenDesignDslValidator.WRONG_ROOT_AGGREGATE);
+      }
+    } else {
+      Aggregate _root_2 = entity.getRoot();
+      boolean _equals = Objects.equal(_root_2, null);
+      if (_equals) {
+        this.error(
+          "An entity defined outside an aggregate must use the \'root\' expression", entity, 
+          DomainDrivenDesignDslPackage.Literals.ENTITY__ROOT, 
+          DomainDrivenDesignDslValidator.ROOT_NULL);
+      }
+    }
+  }
+  
+  @Check
+  public void checkEntityHasId(final Entity entity) {
+    EntityId _idType = entity.getIdType();
+    boolean _equals = Objects.equal(_idType, null);
+    if (_equals) {
+      EntityId _entityId = entity.getEntityId();
+      boolean _equals_1 = Objects.equal(_entityId, null);
+      if (_equals_1) {
+        this.error(
+          "Entity does not define an ID", entity, 
+          DomainDrivenDesignDslPackage.Literals.ENTITY__ID_TYPE, 
+          DomainDrivenDesignDslValidator.ENTITY_WITHOUT_ID);
+      }
+    } else {
+      EntityId _entityId_1 = entity.getEntityId();
+      boolean _notEquals = (!Objects.equal(_entityId_1, null));
+      if (_notEquals) {
+        this.error(
+          "Entity cannot not reference an ID using \'identifier\' and define another inside the aggregate", entity, 
+          DomainDrivenDesignDslPackage.Literals.ENTITY__ENTITY_ID, 
+          DomainDrivenDesignDslValidator.ENTITY_WITH_DUPLICATE_ID);
+      }
+    }
+  }
+  
+  @Check
+  public void checkAggregateHasId(final Aggregate aggregate) {
+    AggregateId _idType = aggregate.getIdType();
+    boolean _equals = Objects.equal(_idType, null);
+    if (_equals) {
+      AggregateId _aggregateId = aggregate.getAggregateId();
+      boolean _equals_1 = Objects.equal(_aggregateId, null);
+      if (_equals_1) {
+        this.error(
+          "Aggregate does not define an ID", aggregate, 
+          DomainDrivenDesignDslPackage.Literals.AGGREGATE__ID_TYPE, 
+          DomainDrivenDesignDslValidator.AGGREGATE_WITHOUT_ID);
+      }
+    } else {
+      AggregateId _aggregateId_1 = aggregate.getAggregateId();
+      boolean _notEquals = (!Objects.equal(_aggregateId_1, null));
+      if (_notEquals) {
+        this.error(
+          "Aggregate cannot not reference an ID using \'identifier\' and define another inside the aggregate", aggregate, 
+          DomainDrivenDesignDslPackage.Literals.AGGREGATE__AGGREGATE_ID, 
+          DomainDrivenDesignDslValidator.AGGREGATE_WITH_DUPLICATE_ID);
+      }
     }
   }
   

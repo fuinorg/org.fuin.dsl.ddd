@@ -5,6 +5,8 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Context
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Namespace
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractElement
+import java.lang.reflect.Method
 
 /**
  * Provides extension methods for EObject.
@@ -56,8 +58,25 @@ class DddEObjectExtensions {
 	def static String getPath(EObject obj) {
 		if (obj == null) {
 			return ""
+		}		
+		return getPath(obj.eContainer) + "/" + obj.name
+	}
+
+	/**
+	 * Returns the name of an object if it has one.
+	 * 
+	 * @param obj Object to return the name for.
+	 * 
+	 * @return Name or text returned by the object's toString() method.
+	 */
+	def static String getName(EObject obj) {
+		if (obj == null) {
+			return null
+		}		
+		if (obj instanceof AbstractElement) {
+			return obj.name
 		}
-		return getPath(obj.eContainer) + "/" + obj
+		return obj.reflectName
 	}
 
 	/**
@@ -112,5 +131,18 @@ class DddEObjectExtensions {
 		return getParent(clasz, obj.eContainer)
 	}
 
+
+	def static String reflectName(Object obj) {
+		if (obj == null) {
+			return null
+		}
+		try {
+			val Method method = obj.class.getMethod("getName", null)
+			return method.invoke(obj) as String
+		} catch (NoSuchMethodException ex) {
+			// Fallback
+			return obj.toString
+		}
+	}
 
 }

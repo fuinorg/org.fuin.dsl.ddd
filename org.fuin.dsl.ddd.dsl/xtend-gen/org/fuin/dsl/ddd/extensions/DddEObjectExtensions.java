@@ -1,7 +1,10 @@
 package org.fuin.dsl.ddd.extensions;
 
 import com.google.common.base.Objects;
+import java.lang.reflect.Method;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.xtext.xbase.lib.Exceptions;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractElement;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Context;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity;
@@ -65,7 +68,26 @@ public class DddEObjectExtensions {
     EObject _eContainer = obj.eContainer();
     String _path = DddEObjectExtensions.getPath(_eContainer);
     String _plus = (_path + "/");
-    return (_plus + obj);
+    String _name = DddEObjectExtensions.getName(obj);
+    return (_plus + _name);
+  }
+  
+  /**
+   * Returns the name of an object if it has one.
+   * 
+   * @param obj Object to return the name for.
+   * 
+   * @return Name or text returned by the object's toString() method.
+   */
+  public static String getName(final EObject obj) {
+    boolean _equals = Objects.equal(obj, null);
+    if (_equals) {
+      return null;
+    }
+    if ((obj instanceof AbstractElement)) {
+      return ((AbstractElement)obj).getName();
+    }
+    return DddEObjectExtensions.reflectName(obj);
   }
   
   /**
@@ -126,5 +148,29 @@ public class DddEObjectExtensions {
     }
     EObject _eContainer = obj.eContainer();
     return DddEObjectExtensions.<T>getParent(clasz, _eContainer);
+  }
+  
+  public static String reflectName(final Object obj) {
+    try {
+      boolean _equals = Objects.equal(obj, null);
+      if (_equals) {
+        return null;
+      }
+      try {
+        Class<?> _class = obj.getClass();
+        final Method method = _class.getMethod("getName", null);
+        Object _invoke = method.invoke(obj);
+        return ((String) _invoke);
+      } catch (final Throwable _t) {
+        if (_t instanceof NoSuchMethodException) {
+          final NoSuchMethodException ex = (NoSuchMethodException)_t;
+          return obj.toString();
+        } else {
+          throw Exceptions.sneakyThrow(_t);
+        }
+      }
+    } catch (Throwable _e) {
+      throw Exceptions.sneakyThrow(_e);
+    }
   }
 }

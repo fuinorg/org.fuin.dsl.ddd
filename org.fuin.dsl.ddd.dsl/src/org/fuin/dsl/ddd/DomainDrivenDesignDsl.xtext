@@ -135,7 +135,7 @@ Event:
 
 Entity:
 	doc=DOC?
-	'entity' name=ID ('identifier' idType=[EntityId|FQN])? 'root' root=[Aggregate|FQN] (invariants=Invariants)? '{'
+	'entity' name=ID ('identifier' idType=[EntityId|FQN])? ('root' root=[Aggregate|FQN])? (invariants=Invariants)? '{'
 		metaInfo=TypeMetaInfo
 		attributes+=Attribute*
 		constructors+=Constructor*
@@ -153,6 +153,7 @@ Aggregate:
 		methods+=Method*
 		events+=Event*
 		aggregateId=AggregateId?
+		entities+=Entity*
 	'}';
 	
 AbstractMethod:

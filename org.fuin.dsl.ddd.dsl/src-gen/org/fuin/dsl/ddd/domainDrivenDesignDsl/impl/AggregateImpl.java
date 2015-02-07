@@ -2,17 +2,25 @@
  */
 package org.fuin.dsl.ddd.domainDrivenDesignDsl.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+
+import org.eclipse.emf.common.util.EList;
 
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import org.eclipse.emf.ecore.util.EObjectContainmentEList;
+import org.eclipse.emf.ecore.util.InternalEList;
+
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity;
 
 /**
  * <!-- begin-user-doc -->
@@ -23,6 +31,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
  * <ul>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AggregateImpl#getIdType <em>Id Type</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AggregateImpl#getAggregateId <em>Aggregate Id</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AggregateImpl#getEntities <em>Entities</em>}</li>
  * </ul>
  * </p>
  *
@@ -49,6 +58,16 @@ public class AggregateImpl extends AbstractEntityImpl implements Aggregate
    * @ordered
    */
   protected AggregateId aggregateId;
+
+  /**
+   * The cached value of the '{@link #getEntities() <em>Entities</em>}' containment reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see #getEntities()
+   * @generated
+   * @ordered
+   */
+  protected EList<Entity> entities;
 
   /**
    * <!-- begin-user-doc -->
@@ -167,6 +186,20 @@ public class AggregateImpl extends AbstractEntityImpl implements Aggregate
    * <!-- end-user-doc -->
    * @generated
    */
+  public EList<Entity> getEntities()
+  {
+    if (entities == null)
+    {
+      entities = new EObjectContainmentEList<Entity>(Entity.class, this, DomainDrivenDesignDslPackage.AGGREGATE__ENTITIES);
+    }
+    return entities;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   @Override
   public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs)
   {
@@ -174,6 +207,8 @@ public class AggregateImpl extends AbstractEntityImpl implements Aggregate
     {
       case DomainDrivenDesignDslPackage.AGGREGATE__AGGREGATE_ID:
         return basicSetAggregateId(null, msgs);
+      case DomainDrivenDesignDslPackage.AGGREGATE__ENTITIES:
+        return ((InternalEList<?>)getEntities()).basicRemove(otherEnd, msgs);
     }
     return super.eInverseRemove(otherEnd, featureID, msgs);
   }
@@ -193,6 +228,8 @@ public class AggregateImpl extends AbstractEntityImpl implements Aggregate
         return basicGetIdType();
       case DomainDrivenDesignDslPackage.AGGREGATE__AGGREGATE_ID:
         return getAggregateId();
+      case DomainDrivenDesignDslPackage.AGGREGATE__ENTITIES:
+        return getEntities();
     }
     return super.eGet(featureID, resolve, coreType);
   }
@@ -202,6 +239,7 @@ public class AggregateImpl extends AbstractEntityImpl implements Aggregate
    * <!-- end-user-doc -->
    * @generated
    */
+  @SuppressWarnings("unchecked")
   @Override
   public void eSet(int featureID, Object newValue)
   {
@@ -212,6 +250,10 @@ public class AggregateImpl extends AbstractEntityImpl implements Aggregate
         return;
       case DomainDrivenDesignDslPackage.AGGREGATE__AGGREGATE_ID:
         setAggregateId((AggregateId)newValue);
+        return;
+      case DomainDrivenDesignDslPackage.AGGREGATE__ENTITIES:
+        getEntities().clear();
+        getEntities().addAll((Collection<? extends Entity>)newValue);
         return;
     }
     super.eSet(featureID, newValue);
@@ -233,6 +275,9 @@ public class AggregateImpl extends AbstractEntityImpl implements Aggregate
       case DomainDrivenDesignDslPackage.AGGREGATE__AGGREGATE_ID:
         setAggregateId((AggregateId)null);
         return;
+      case DomainDrivenDesignDslPackage.AGGREGATE__ENTITIES:
+        getEntities().clear();
+        return;
     }
     super.eUnset(featureID);
   }
@@ -251,6 +296,8 @@ public class AggregateImpl extends AbstractEntityImpl implements Aggregate
         return idType != null;
       case DomainDrivenDesignDslPackage.AGGREGATE__AGGREGATE_ID:
         return aggregateId != null;
+      case DomainDrivenDesignDslPackage.AGGREGATE__ENTITIES:
+        return entities != null && !entities.isEmpty();
     }
     return super.eIsSet(featureID);
   }

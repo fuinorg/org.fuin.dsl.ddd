@@ -1234,6 +1234,16 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
+  public EReference getAggregate_Entities()
+  {
+    return (EReference)aggregateEClass.getEStructuralFeatures().get(2);
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
   public EClass getAbstractMethod()
   {
     return abstractMethodEClass;
@@ -1939,6 +1949,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     aggregateEClass = createEClass(AGGREGATE);
     createEReference(aggregateEClass, AGGREGATE__ID_TYPE);
     createEReference(aggregateEClass, AGGREGATE__AGGREGATE_ID);
+    createEReference(aggregateEClass, AGGREGATE__ENTITIES);
 
     abstractMethodEClass = createEClass(ABSTRACT_METHOD);
     createEAttribute(abstractMethodEClass, ABSTRACT_METHOD__DOC);
@@ -2177,6 +2188,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     initEClass(aggregateEClass, Aggregate.class, "Aggregate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAggregate_IdType(), this.getAggregateId(), null, "idType", null, 0, 1, Aggregate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAggregate_AggregateId(), this.getAggregateId(), null, "aggregateId", null, 0, 1, Aggregate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAggregate_Entities(), this.getEntity(), null, "entities", null, 0, -1, Aggregate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(abstractMethodEClass, AbstractMethod.class, "AbstractMethod", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAbstractMethod_Doc(), ecorePackage.getEString(), "doc", null, 0, 1, AbstractMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
