@@ -72,6 +72,24 @@ class DomainDrivenDesignDslValidatorTest {
 			"Aggregate does not define an ID")
 		assertIssue(model, issues, Severity.ERROR, "AggregateF",
 			"Aggregate cannot not reference an ID using 'identifier' and define another inside the aggregate")
+			
+		// checkOnlyOneAggregateId
+		assertIssue(model, issues, Severity.ERROR, "AggregateG",
+			"Only one 'aggregate-id' can be defined inside an aggregate")
+			
+		// checkAllowedAggregateElements
+		assertIssue(model, issues, Severity.ERROR, "EntityIdG3",
+			"Allowed elements in an aggregate are: 'aggregate-id', 'entity', 'event' and 'value-object'")
+			
+		// checkOnlyOneEntityId
+		assertIssue(model, issues, Severity.ERROR, "EntityG",
+			"Only one 'entity-id' can be defined inside an entity")
+			
+		// checkAllowedEntityElements
+		assertIssue(model, issues, Severity.ERROR, "AggregateIdG3",
+			"Allowed elements in an entity are: 'entity-id', 'event' and 'value-object'")
+		
+		
 
 	}
 

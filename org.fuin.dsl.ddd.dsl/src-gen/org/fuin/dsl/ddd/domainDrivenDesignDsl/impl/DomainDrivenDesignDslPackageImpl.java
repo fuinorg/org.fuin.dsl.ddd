@@ -734,7 +734,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getAbstractEntity_Events()
+  public EReference getAbstractEntity_Elements()
   {
     return (EReference)abstractEntityEClass.getEStructuralFeatures().get(2);
   }
@@ -1194,16 +1194,6 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
    * <!-- end-user-doc -->
    * @generated
    */
-  public EReference getEntity_EntityId()
-  {
-    return (EReference)entityEClass.getEStructuralFeatures().get(2);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
   public EClass getAggregate()
   {
     return aggregateEClass;
@@ -1217,26 +1207,6 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
   public EReference getAggregate_IdType()
   {
     return (EReference)aggregateEClass.getEStructuralFeatures().get(0);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getAggregate_AggregateId()
-  {
-    return (EReference)aggregateEClass.getEStructuralFeatures().get(1);
-  }
-
-  /**
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @generated
-   */
-  public EReference getAggregate_Entities()
-  {
-    return (EReference)aggregateEClass.getEStructuralFeatures().get(2);
   }
 
   /**
@@ -1885,7 +1855,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     abstractEntityEClass = createEClass(ABSTRACT_ENTITY);
     createEReference(abstractEntityEClass, ABSTRACT_ENTITY__CONSTRUCTORS);
     createEReference(abstractEntityEClass, ABSTRACT_ENTITY__METHODS);
-    createEReference(abstractEntityEClass, ABSTRACT_ENTITY__EVENTS);
+    createEReference(abstractEntityEClass, ABSTRACT_ENTITY__ELEMENTS);
 
     externalTypeEClass = createEClass(EXTERNAL_TYPE);
     createEAttribute(externalTypeEClass, EXTERNAL_TYPE__ELEMENT);
@@ -1944,12 +1914,9 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     entityEClass = createEClass(ENTITY);
     createEReference(entityEClass, ENTITY__ID_TYPE);
     createEReference(entityEClass, ENTITY__ROOT);
-    createEReference(entityEClass, ENTITY__ENTITY_ID);
 
     aggregateEClass = createEClass(AGGREGATE);
     createEReference(aggregateEClass, AGGREGATE__ID_TYPE);
-    createEReference(aggregateEClass, AGGREGATE__AGGREGATE_ID);
-    createEReference(aggregateEClass, AGGREGATE__ENTITIES);
 
     abstractMethodEClass = createEClass(ABSTRACT_METHOD);
     createEAttribute(abstractMethodEClass, ABSTRACT_METHOD__DOC);
@@ -2122,7 +2089,7 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     initEClass(abstractEntityEClass, AbstractEntity.class, "AbstractEntity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAbstractEntity_Constructors(), this.getConstructor(), null, "constructors", null, 0, -1, AbstractEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getAbstractEntity_Methods(), this.getMethod(), null, "methods", null, 0, -1, AbstractEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAbstractEntity_Events(), this.getEvent(), null, "events", null, 0, -1, AbstractEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+    initEReference(getAbstractEntity_Elements(), this.getAbstractElement(), null, "elements", null, 0, -1, AbstractEntity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     addEOperation(abstractEntityEClass, this.getAbstractEntityId(), "getIdType", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -2183,12 +2150,9 @@ public class DomainDrivenDesignDslPackageImpl extends EPackageImpl implements Do
     initEClass(entityEClass, Entity.class, "Entity", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getEntity_IdType(), this.getEntityId(), null, "idType", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
     initEReference(getEntity_Root(), this.getAggregate(), null, "root", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getEntity_EntityId(), this.getEntityId(), null, "entityId", null, 0, 1, Entity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(aggregateEClass, Aggregate.class, "Aggregate", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEReference(getAggregate_IdType(), this.getAggregateId(), null, "idType", null, 0, 1, Aggregate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAggregate_AggregateId(), this.getAggregateId(), null, "aggregateId", null, 0, 1, Aggregate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-    initEReference(getAggregate_Entities(), this.getEntity(), null, "entities", null, 0, -1, Aggregate.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
     initEClass(abstractMethodEClass, AbstractMethod.class, "AbstractMethod", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
     initEAttribute(getAbstractMethod_Doc(), ecorePackage.getEString(), "doc", null, 0, 1, AbstractMethod.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);

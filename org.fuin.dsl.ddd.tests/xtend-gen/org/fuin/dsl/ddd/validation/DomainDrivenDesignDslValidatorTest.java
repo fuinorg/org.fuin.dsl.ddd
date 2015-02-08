@@ -72,6 +72,18 @@ public class DomainDrivenDesignDslValidatorTest {
     DomainModel _model_13 = this.model();
     this.assertIssue(_model_13, issues, Severity.ERROR, "AggregateF", 
       "Aggregate cannot not reference an ID using \'identifier\' and define another inside the aggregate");
+    DomainModel _model_14 = this.model();
+    this.assertIssue(_model_14, issues, Severity.ERROR, "AggregateG", 
+      "Only one \'aggregate-id\' can be defined inside an aggregate");
+    DomainModel _model_15 = this.model();
+    this.assertIssue(_model_15, issues, Severity.ERROR, "EntityIdG3", 
+      "Allowed elements in an aggregate are: \'aggregate-id\', \'entity\', \'event\' and \'value-object\'");
+    DomainModel _model_16 = this.model();
+    this.assertIssue(_model_16, issues, Severity.ERROR, "EntityG", 
+      "Only one \'entity-id\' can be defined inside an entity");
+    DomainModel _model_17 = this.model();
+    this.assertIssue(_model_17, issues, Severity.ERROR, "AggregateIdG3", 
+      "Allowed elements in an entity are: \'entity-id\', \'event\' and \'value-object\'");
   }
   
   private DomainModel model() {

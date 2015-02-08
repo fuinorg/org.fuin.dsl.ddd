@@ -5,14 +5,13 @@ import java.util.HashSet
 import java.util.List
 import java.util.Set
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntity
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntityId
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Service
 
 import static extension org.fuin.dsl.ddd.extensions.DddCollectionExtensions.*
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntityId
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate
 
 /**
  * Provides extension methods for AbstractEntity.
@@ -48,7 +47,7 @@ class DddAbstractEntityExtensions {
 		}
 		return services
 	}
-	
+
 	/**
 	 * Returns a list of all direct child entities for an entity.
 	 * 
@@ -66,7 +65,6 @@ class DddAbstractEntityExtensions {
 		return childs;
 	}
 
-
 	/**
 	 * Returns a list of all events for an entity.
 	 * 
@@ -79,33 +77,27 @@ class DddAbstractEntityExtensions {
 		for (m : entity.constructorsAndMethods) {
 			events.addAll(m.events.nullSafe);
 		}
-		for (v : entity.events.nullSafe) {
-			events.add(v);
+		for (element : entity.elements.nullSafe) {
+			if (element instanceof Event) {
+				events.add(element);
+			}
 		}
 		return events;
 	}
 
 	/**
-	 * Returns the entity identifier type regardless if it's 
-	 * defined inside the aggregate or somewhere outside.
+	 * Returns the abstract entity identifier that may be defined inside the abstractEntity.
 	 * 
-	 * @param entity Entity to return the identifier type for.
+	 * @param abstractEntity Abstract entity to return the identifier for.
 	 * 
-	 * @return Entity identifier type.
+	 * @return Identifier or NULL if no such type is defined inside the abstract entity.
 	 */
-	def static AbstractEntityId getIdTypeNullsafe(AbstractEntity entity) {
-		if (entity.idType == null) {
-			// TODO Find better way...
-			if (entity instanceof Aggregate) {
-				return entity.aggregateId
-			}
-			if (entity instanceof Entity) {
-				return entity.entityId
-				
-			}
-			throw new IllegalArgumentException("Unknown entity type: " + entity)
+	def static AbstractEntityId getAbstractEntityId(AbstractEntity abstractEntity) {
+		val types = abstractEntity.elements.nullSafe.filter(typeof(AbstractEntityId))
+		if (types.length == 0) {
+			return null
 		}
-		return entity.idType
+		return types.get(0)
 	}
 
 }

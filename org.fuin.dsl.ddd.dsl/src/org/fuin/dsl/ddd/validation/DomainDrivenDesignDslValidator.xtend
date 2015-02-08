@@ -11,6 +11,7 @@ import org.eclipse.xtext.resource.IContainer
 import org.eclipse.xtext.resource.IEObjectDescription
 import org.eclipse.xtext.resource.impl.ResourceDescriptionsProvider
 import org.eclipse.xtext.validation.Check
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractElement
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute
@@ -20,21 +21,23 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConsistencyLevel
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constraint
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.EntityId
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.InternalType
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Method
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Parameter
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Service
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ValueObject
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable
 
 import static extension org.fuin.dsl.ddd.extensions.DddAbstractElementExtensions.*
 import static extension org.fuin.dsl.ddd.extensions.DddAggregateExtensions.*
 import static extension org.fuin.dsl.ddd.extensions.DddAttributeExtensions.*
+import static extension org.fuin.dsl.ddd.extensions.DddCollectionExtensions.*
 import static extension org.fuin.dsl.ddd.extensions.DddConstraintExtension.*
 import static extension org.fuin.dsl.ddd.extensions.DddEObjectExtensions.*
 import static extension org.fuin.dsl.ddd.extensions.DddEntityExtensions.*
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.EntityId
 
 /**
  * Custom validation rules. 
@@ -96,7 +99,7 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 	public static val WRONG_ROOT_AGGREGATE = "wrongRootAggregate"
 
 	public static val ROOT_NULL = "rootNull"
-	
+
 	public static val AGGREGATE_WITHOUT_ID = "aggregateWithoutId"
 
 	public static val AGGREGATE_WITH_DUPLICATE_ID = "aggregateWithDuplicateId"
@@ -104,6 +107,14 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 	public static val ENTITY_WITHOUT_ID = "entityWithoutId"
 
 	public static val ENTITY_WITH_DUPLICATE_ID = "entityWithDuplicateId"
+
+	public static val ILLEGAL_AGGREGATE_ELEMENT = "illegalAggregateElement"
+
+	public static val ILLEGAL_ENTITY_ELEMENT = "illegalEntityElement"
+
+	public static val MULTIPLE_AGGREGATE_ID_ELEMENTS = "multipleAggregateIdElements"
+
+	public static val MULTIPLE_ENTITY_ID_ELEMENTS = "multipleEntityIdElements"
 
 	@Inject
 	private IContainer.Manager containerManager
@@ -417,10 +428,10 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 		}
 
 	}
-	
+
 	@Check
 	def checkWeakConsistency(Consistency consistency) {
-		
+
 		if ((consistency.level == ConsistencyLevel.WEAK) && (consistency.weakConsistency == null)) {
 			error(
 				"You must define the details for weak consistency",
@@ -429,7 +440,7 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 				WEAK_CONSISTENCY_REQUIRES_DETAILS
 			)
 		}
-		
+
 		if ((consistency.level == ConsistencyLevel.STRONG) && (consistency.weakConsistency != null)) {
 			error(
 				"No details required for strong consistency",
@@ -438,12 +449,12 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 				STRONG_CONSISTENCY_DOES_NOT_ALLOW_DETAILS
 			)
 		}
-		
+
 	}
-	
+
 	@Check
 	def checkAggregateIdIdentifies(AggregateId aggregateId) {
-		
+
 		if (aggregateId.eContainer instanceof Aggregate) {
 			if ((aggregateId.aggregate != null) && (aggregateId.aggregate != aggregateId.eContainer)) {
 				error(
@@ -463,12 +474,12 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 				)
 			}
 		}
-		
+
 	}
-	
+
 	@Check
 	def checkEntityIdIdentifies(EntityId entityId) {
-		
+
 		if (entityId.eContainer instanceof Entity) {
 			if ((entityId.entity != null) && (entityId.entity != entityId.eContainer)) {
 				error(
@@ -488,12 +499,12 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 				)
 			}
 		}
-		
+
 	}
 
 	@Check
 	def checkEntityRoot(Entity entity) {
-		
+
 		if (entity.eContainer instanceof Aggregate) {
 			if ((entity.root != null) && (entity.root != entity.eContainer)) {
 				error(
@@ -511,14 +522,14 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 					DomainDrivenDesignDslPackage.Literals::ENTITY__ROOT,
 					ROOT_NULL
 				)
-			}			
-		}	
-		
+			}
+		}
+
 	}
-	
+
 	@Check
 	def checkEntityHasId(Entity entity) {
-		
+
 		if (entity.idType == null) {
 			if (entity.entityId == null) {
 				error(
@@ -533,17 +544,17 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 				error(
 					"Entity cannot not reference an ID using 'identifier' and define another inside the aggregate",
 					entity,
-					DomainDrivenDesignDslPackage.Literals::ENTITY__ENTITY_ID,
+					DomainDrivenDesignDslPackage.Literals::ENTITY__ID_TYPE,
 					ENTITY_WITH_DUPLICATE_ID
 				)
 			}
 		}
-		
-	}	
-	
+
+	}
+
 	@Check
 	def checkAggregateHasId(Aggregate aggregate) {
-		
+
 		if (aggregate.idType == null) {
 			if (aggregate.aggregateId == null) {
 				error(
@@ -558,15 +569,72 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 				error(
 					"Aggregate cannot not reference an ID using 'identifier' and define another inside the aggregate",
 					aggregate,
-					DomainDrivenDesignDslPackage.Literals::AGGREGATE__AGGREGATE_ID,
+					DomainDrivenDesignDslPackage.Literals::AGGREGATE__ID_TYPE,
 					AGGREGATE_WITH_DUPLICATE_ID
 				)
 			}
 		}
-		
-	}	
-	
-	
+
+	}
+
+	@Check
+	def checkOnlyOneAggregateId(Aggregate aggregate) {
+
+		if (aggregate.elements.nullSafe.filter(typeof(AggregateId)).size > 1) {
+			error(
+				"Only one 'aggregate-id' can be defined inside an aggregate",
+				aggregate,
+				DomainDrivenDesignDslPackage.Literals::ABSTRACT_ENTITY__ELEMENTS,
+				MULTIPLE_AGGREGATE_ID_ELEMENTS
+			)
+		}
+
+	}
+
+	@Check
+	def checkAllowedAggregateElements(AbstractElement el) {
+
+		if ((el.eContainer instanceof Aggregate) &&
+			!(el instanceof AggregateId || el instanceof Entity || el instanceof Event || el instanceof ValueObject )) {
+			error(
+				"Allowed elements in an aggregate are: 'aggregate-id', 'entity', 'event' and 'value-object'",
+				el,
+				DomainDrivenDesignDslPackage.Literals::ABSTRACT_ELEMENT__NAME,
+				ILLEGAL_AGGREGATE_ELEMENT
+			)
+		}
+
+	}
+
+	@Check
+	def checkOnlyOneEntityId(Entity entity) {
+
+		if (entity.elements.nullSafe.filter(typeof(EntityId)).size > 1) {
+			error(
+				"Only one 'entity-id' can be defined inside an entity",
+				entity,
+				DomainDrivenDesignDslPackage.Literals::ABSTRACT_ENTITY__ELEMENTS,
+				MULTIPLE_ENTITY_ID_ELEMENTS
+			)
+		}
+
+	}
+
+	@Check
+	def checkAllowedEntityElements(AbstractElement el) {
+
+		if ((el.eContainer instanceof Entity) &&
+			!(el instanceof EntityId || el instanceof Event || el instanceof ValueObject )) {
+			error(
+				"Allowed elements in an entity are: 'entity-id', 'event' and 'value-object'",
+				el,
+				DomainDrivenDesignDslPackage.Literals::ABSTRACT_ELEMENT__NAME,
+				ILLEGAL_ENTITY_ELEMENT
+			)
+		}
+
+	}
+
 	private def getAllExceptions(EObject obj) {
 		val Set<Exception> list = new HashSet<Exception>()
 		val resource = obj.eResource

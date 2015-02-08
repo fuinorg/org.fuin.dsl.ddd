@@ -1292,21 +1292,19 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final RuleCall cConstructorsConstructorParserRuleCall_9_0 = (RuleCall)cConstructorsAssignment_9.eContents().get(0);
 		private final Assignment cMethodsAssignment_10 = (Assignment)cGroup.eContents().get(10);
 		private final RuleCall cMethodsMethodParserRuleCall_10_0 = (RuleCall)cMethodsAssignment_10.eContents().get(0);
-		private final Assignment cEventsAssignment_11 = (Assignment)cGroup.eContents().get(11);
-		private final RuleCall cEventsEventParserRuleCall_11_0 = (RuleCall)cEventsAssignment_11.eContents().get(0);
-		private final Assignment cEntityIdAssignment_12 = (Assignment)cGroup.eContents().get(12);
-		private final RuleCall cEntityIdEntityIdParserRuleCall_12_0 = (RuleCall)cEntityIdAssignment_12.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_13 = (Keyword)cGroup.eContents().get(13);
+		private final Assignment cElementsAssignment_11 = (Assignment)cGroup.eContents().get(11);
+		private final RuleCall cElementsAbstractElementParserRuleCall_11_0 = (RuleCall)cElementsAssignment_11.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_12 = (Keyword)cGroup.eContents().get(12);
 		
 		//Entity:
 		//	doc=DOC? "entity" name=ID ("identifier" idType=[EntityId|FQN])? ("root" root=[Aggregate|FQN])? invariants=Invariants?
-		//	"{" metaInfo=TypeMetaInfo attributes+=Attribute* constructors+=Constructor* methods+=Method* events+=Event*
-		//	entityId=EntityId? "}";
+		//	"{" metaInfo=TypeMetaInfo attributes+=Attribute* constructors+=Constructor* methods+=Method*
+		//	elements+=AbstractElement* "}";
 		public ParserRule getRule() { return rule; }
 
 		//doc=DOC? "entity" name=ID ("identifier" idType=[EntityId|FQN])? ("root" root=[Aggregate|FQN])? invariants=Invariants?
-		//"{" metaInfo=TypeMetaInfo attributes+=Attribute* constructors+=Constructor* methods+=Method* events+=Event*
-		//entityId=EntityId? "}"
+		//"{" metaInfo=TypeMetaInfo attributes+=Attribute* constructors+=Constructor* methods+=Method* elements+=AbstractElement*
+		//"}"
 		public Group getGroup() { return cGroup; }
 
 		//doc=DOC?
@@ -1387,20 +1385,14 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		//Method
 		public RuleCall getMethodsMethodParserRuleCall_10_0() { return cMethodsMethodParserRuleCall_10_0; }
 
-		//events+=Event*
-		public Assignment getEventsAssignment_11() { return cEventsAssignment_11; }
+		//elements+=AbstractElement*
+		public Assignment getElementsAssignment_11() { return cElementsAssignment_11; }
 
-		//Event
-		public RuleCall getEventsEventParserRuleCall_11_0() { return cEventsEventParserRuleCall_11_0; }
-
-		//entityId=EntityId?
-		public Assignment getEntityIdAssignment_12() { return cEntityIdAssignment_12; }
-
-		//EntityId
-		public RuleCall getEntityIdEntityIdParserRuleCall_12_0() { return cEntityIdEntityIdParserRuleCall_12_0; }
+		//AbstractElement
+		public RuleCall getElementsAbstractElementParserRuleCall_11_0() { return cElementsAbstractElementParserRuleCall_11_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_13() { return cRightCurlyBracketKeyword_13; }
+		public Keyword getRightCurlyBracketKeyword_12() { return cRightCurlyBracketKeyword_12; }
 	}
 
 	public class AggregateElements extends AbstractParserRuleElementFinder {
@@ -1427,23 +1419,17 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final RuleCall cConstructorsConstructorParserRuleCall_8_0 = (RuleCall)cConstructorsAssignment_8.eContents().get(0);
 		private final Assignment cMethodsAssignment_9 = (Assignment)cGroup.eContents().get(9);
 		private final RuleCall cMethodsMethodParserRuleCall_9_0 = (RuleCall)cMethodsAssignment_9.eContents().get(0);
-		private final Assignment cEventsAssignment_10 = (Assignment)cGroup.eContents().get(10);
-		private final RuleCall cEventsEventParserRuleCall_10_0 = (RuleCall)cEventsAssignment_10.eContents().get(0);
-		private final Assignment cAggregateIdAssignment_11 = (Assignment)cGroup.eContents().get(11);
-		private final RuleCall cAggregateIdAggregateIdParserRuleCall_11_0 = (RuleCall)cAggregateIdAssignment_11.eContents().get(0);
-		private final Assignment cEntitiesAssignment_12 = (Assignment)cGroup.eContents().get(12);
-		private final RuleCall cEntitiesEntityParserRuleCall_12_0 = (RuleCall)cEntitiesAssignment_12.eContents().get(0);
-		private final Keyword cRightCurlyBracketKeyword_13 = (Keyword)cGroup.eContents().get(13);
+		private final Assignment cElementsAssignment_10 = (Assignment)cGroup.eContents().get(10);
+		private final RuleCall cElementsAbstractElementParserRuleCall_10_0 = (RuleCall)cElementsAssignment_10.eContents().get(0);
+		private final Keyword cRightCurlyBracketKeyword_11 = (Keyword)cGroup.eContents().get(11);
 		
 		//Aggregate:
 		//	doc=DOC? "aggregate" name=ID ("identifier" idType=[AggregateId|FQN])? invariants=Invariants? "{" metaInfo=TypeMetaInfo
-		//	attributes+=Attribute* constructors+=Constructor* methods+=Method* events+=Event* aggregateId=AggregateId?
-		//	entities+=Entity* "}";
+		//	attributes+=Attribute* constructors+=Constructor* methods+=Method* elements+=AbstractElement* "}";
 		public ParserRule getRule() { return rule; }
 
 		//doc=DOC? "aggregate" name=ID ("identifier" idType=[AggregateId|FQN])? invariants=Invariants? "{" metaInfo=TypeMetaInfo
-		//attributes+=Attribute* constructors+=Constructor* methods+=Method* events+=Event* aggregateId=AggregateId?
-		//entities+=Entity* "}"
+		//attributes+=Attribute* constructors+=Constructor* methods+=Method* elements+=AbstractElement* "}"
 		public Group getGroup() { return cGroup; }
 
 		//doc=DOC?
@@ -1509,26 +1495,14 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		//Method
 		public RuleCall getMethodsMethodParserRuleCall_9_0() { return cMethodsMethodParserRuleCall_9_0; }
 
-		//events+=Event*
-		public Assignment getEventsAssignment_10() { return cEventsAssignment_10; }
+		//elements+=AbstractElement*
+		public Assignment getElementsAssignment_10() { return cElementsAssignment_10; }
 
-		//Event
-		public RuleCall getEventsEventParserRuleCall_10_0() { return cEventsEventParserRuleCall_10_0; }
-
-		//aggregateId=AggregateId?
-		public Assignment getAggregateIdAssignment_11() { return cAggregateIdAssignment_11; }
-
-		//AggregateId
-		public RuleCall getAggregateIdAggregateIdParserRuleCall_11_0() { return cAggregateIdAggregateIdParserRuleCall_11_0; }
-
-		//entities+=Entity*
-		public Assignment getEntitiesAssignment_12() { return cEntitiesAssignment_12; }
-
-		//Entity
-		public RuleCall getEntitiesEntityParserRuleCall_12_0() { return cEntitiesEntityParserRuleCall_12_0; }
+		//AbstractElement
+		public RuleCall getElementsAbstractElementParserRuleCall_10_0() { return cElementsAbstractElementParserRuleCall_10_0; }
 
 		//"}"
-		public Keyword getRightCurlyBracketKeyword_13() { return cRightCurlyBracketKeyword_13; }
+		public Keyword getRightCurlyBracketKeyword_11() { return cRightCurlyBracketKeyword_11; }
 	}
 
 	public class AbstractMethodElements extends AbstractParserRuleElementFinder {
@@ -3233,8 +3207,8 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 
 	//Entity:
 	//	doc=DOC? "entity" name=ID ("identifier" idType=[EntityId|FQN])? ("root" root=[Aggregate|FQN])? invariants=Invariants?
-	//	"{" metaInfo=TypeMetaInfo attributes+=Attribute* constructors+=Constructor* methods+=Method* events+=Event*
-	//	entityId=EntityId? "}";
+	//	"{" metaInfo=TypeMetaInfo attributes+=Attribute* constructors+=Constructor* methods+=Method*
+	//	elements+=AbstractElement* "}";
 	public EntityElements getEntityAccess() {
 		return pEntity;
 	}
@@ -3245,8 +3219,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 
 	//Aggregate:
 	//	doc=DOC? "aggregate" name=ID ("identifier" idType=[AggregateId|FQN])? invariants=Invariants? "{" metaInfo=TypeMetaInfo
-	//	attributes+=Attribute* constructors+=Constructor* methods+=Method* events+=Event* aggregateId=AggregateId?
-	//	entities+=Entity* "}";
+	//	attributes+=Attribute* constructors+=Constructor* methods+=Method* elements+=AbstractElement* "}";
 	public AggregateElements getAggregateAccess() {
 		return pAggregate;
 	}

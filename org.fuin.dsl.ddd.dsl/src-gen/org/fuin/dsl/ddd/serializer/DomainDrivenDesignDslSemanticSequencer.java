@@ -335,9 +335,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *         attributes+=Attribute* 
 	 *         constructors+=Constructor* 
 	 *         methods+=Method* 
-	 *         events+=Event* 
-	 *         aggregateId=AggregateId? 
-	 *         entities+=Entity*
+	 *         elements+=AbstractElement*
 	 *     )
 	 */
 	protected void sequence_Aggregate(EObject context, Aggregate semanticObject) {
@@ -502,8 +500,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *         attributes+=Attribute* 
 	 *         constructors+=Constructor* 
 	 *         methods+=Method* 
-	 *         events+=Event* 
-	 *         entityId=EntityId?
+	 *         elements+=AbstractElement*
 	 *     )
 	 */
 	protected void sequence_Entity(EObject context, Entity semanticObject) {

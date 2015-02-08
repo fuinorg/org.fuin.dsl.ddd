@@ -102,6 +102,26 @@ context myctx {
 			// ERROR: Aggregate cannot not reference an ID using 'identifier' and define another inside the aggregate
 			aggregate-id AggregateFId2 {}
 		}
+	
+	
+		aggregate AggregateG {
+			// ERROR: Only one 'aggregate-id' can be defined inside an aggregate			
+			aggregate-id AggregateGId1 {}
+			aggregate-id AggregateGId2 {}
+			
+			// ERROR: Allowed elements in an aggregate are: 'aggregate-id', 'entity', 'event' and 'value-object'
+			entity-id EntityIdG3 identifies EntityG {}
+			
+			entity EntityG {
+				// ERROR: Only one 'entity-id' can be defined inside an entity
+				entity-id EntityGId1 {}
+				entity-id EntityGId2 {}
+				// ERROR: Allowed elements in an entity are: 'entity-id', 'event' and 'value-object'
+				aggregate-id AggregateIdG3 identifies AggregateF {}
+				
+			}
+			
+		}
 		
 	}
 	 

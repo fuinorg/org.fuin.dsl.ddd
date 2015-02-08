@@ -1,15 +1,16 @@
 package org.fuin.dsl.ddd.extensions;
 
-import com.google.common.base.Objects;
+import com.google.common.collect.Iterables;
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 import org.eclipse.emf.common.util.EList;
+import org.eclipse.xtext.xbase.lib.Conversions;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractElement;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntity;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntityId;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractMethod;
-import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Constructor;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity;
@@ -93,34 +94,32 @@ public class DddAbstractEntityExtensions {
       List<Event> _nullSafe = DddCollectionExtensions.<Event>nullSafe(_events);
       events.addAll(_nullSafe);
     }
-    EList<Event> _events_1 = entity.getEvents();
-    List<Event> _nullSafe_1 = DddCollectionExtensions.<Event>nullSafe(_events_1);
-    for (final Event v : _nullSafe_1) {
-      events.add(v);
+    EList<AbstractElement> _elements = entity.getElements();
+    List<AbstractElement> _nullSafe_1 = DddCollectionExtensions.<AbstractElement>nullSafe(_elements);
+    for (final AbstractElement element : _nullSafe_1) {
+      if ((element instanceof Event)) {
+        events.add(((Event)element));
+      }
     }
     return events;
   }
   
   /**
-   * Returns the entity identifier type regardless if it's
-   * defined inside the aggregate or somewhere outside.
+   * Returns the abstract entity identifier that may be defined inside the abstractEntity.
    * 
-   * @param entity Entity to return the identifier type for.
+   * @param abstractEntity Abstract entity to return the identifier for.
    * 
-   * @return Entity identifier type.
+   * @return Identifier or NULL if no such type is defined inside the abstract entity.
    */
-  public static AbstractEntityId getIdTypeNullsafe(final AbstractEntity entity) {
-    AbstractEntityId _idType = entity.getIdType();
-    boolean _equals = Objects.equal(_idType, null);
+  public static AbstractEntityId getAbstractEntityId(final AbstractEntity abstractEntity) {
+    EList<AbstractElement> _elements = abstractEntity.getElements();
+    List<AbstractElement> _nullSafe = DddCollectionExtensions.<AbstractElement>nullSafe(_elements);
+    final Iterable<AbstractEntityId> types = Iterables.<AbstractEntityId>filter(_nullSafe, AbstractEntityId.class);
+    int _length = ((Object[])Conversions.unwrapArray(types, Object.class)).length;
+    boolean _equals = (_length == 0);
     if (_equals) {
-      if ((entity instanceof Aggregate)) {
-        return ((Aggregate)entity).getAggregateId();
-      }
-      if ((entity instanceof Entity)) {
-        return ((Entity)entity).getEntityId();
-      }
-      throw new IllegalArgumentException(("Unknown entity type: " + entity));
+      return null;
     }
-    return entity.getIdType();
+    return ((AbstractEntityId[])Conversions.unwrapArray(types, AbstractEntityId.class))[0];
   }
 }

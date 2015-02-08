@@ -13,7 +13,6 @@ package org.fuin.dsl.ddd.domainDrivenDesignDsl;
  * <ul>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity#getIdType <em>Id Type</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity#getRoot <em>Root</em>}</li>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity#getEntityId <em>Entity Id</em>}</li>
  * </ul>
  * </p>
  *
@@ -74,31 +73,5 @@ public interface Entity extends AbstractEntity
    * @generated
    */
   void setRoot(Aggregate value);
-
-  /**
-   * Returns the value of the '<em><b>Entity Id</b></em>' containment reference.
-   * <!-- begin-user-doc -->
-   * <p>
-   * If the meaning of the '<em>Entity Id</em>' containment reference isn't clear,
-   * there really should be more of a description here...
-   * </p>
-   * <!-- end-user-doc -->
-   * @return the value of the '<em>Entity Id</em>' containment reference.
-   * @see #setEntityId(EntityId)
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getEntity_EntityId()
-   * @model containment="true"
-   * @generated
-   */
-  EntityId getEntityId();
-
-  /**
-   * Sets the value of the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity#getEntityId <em>Entity Id</em>}' containment reference.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Entity Id</em>' containment reference.
-   * @see #getEntityId()
-   * @generated
-   */
-  void setEntityId(EntityId value);
 
 } // Entity

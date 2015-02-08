@@ -140,8 +140,7 @@ Entity:
 		attributes+=Attribute*
 		constructors+=Constructor*
 		methods+=Method*
-		events+=Event*
-		entityId=EntityId?
+		elements+=AbstractElement*
 	'}';
 
 Aggregate:
@@ -151,9 +150,7 @@ Aggregate:
 		attributes+=Attribute*
 		constructors+=Constructor*
 		methods+=Method*
-		events+=Event*
-		aggregateId=AggregateId?
-		entities+=Entity*
+		elements+=AbstractElement*
 	'}';
 	
 AbstractMethod:

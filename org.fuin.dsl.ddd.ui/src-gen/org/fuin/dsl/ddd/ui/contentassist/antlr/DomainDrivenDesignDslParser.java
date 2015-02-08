@@ -209,8 +209,7 @@ public class DomainDrivenDesignDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getEntityAccess().getAttributesAssignment_8(), "rule__Entity__AttributesAssignment_8");
 					put(grammarAccess.getEntityAccess().getConstructorsAssignment_9(), "rule__Entity__ConstructorsAssignment_9");
 					put(grammarAccess.getEntityAccess().getMethodsAssignment_10(), "rule__Entity__MethodsAssignment_10");
-					put(grammarAccess.getEntityAccess().getEventsAssignment_11(), "rule__Entity__EventsAssignment_11");
-					put(grammarAccess.getEntityAccess().getEntityIdAssignment_12(), "rule__Entity__EntityIdAssignment_12");
+					put(grammarAccess.getEntityAccess().getElementsAssignment_11(), "rule__Entity__ElementsAssignment_11");
 					put(grammarAccess.getAggregateAccess().getDocAssignment_0(), "rule__Aggregate__DocAssignment_0");
 					put(grammarAccess.getAggregateAccess().getNameAssignment_2(), "rule__Aggregate__NameAssignment_2");
 					put(grammarAccess.getAggregateAccess().getIdTypeAssignment_3_1(), "rule__Aggregate__IdTypeAssignment_3_1");
@@ -219,9 +218,7 @@ public class DomainDrivenDesignDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getAggregateAccess().getAttributesAssignment_7(), "rule__Aggregate__AttributesAssignment_7");
 					put(grammarAccess.getAggregateAccess().getConstructorsAssignment_8(), "rule__Aggregate__ConstructorsAssignment_8");
 					put(grammarAccess.getAggregateAccess().getMethodsAssignment_9(), "rule__Aggregate__MethodsAssignment_9");
-					put(grammarAccess.getAggregateAccess().getEventsAssignment_10(), "rule__Aggregate__EventsAssignment_10");
-					put(grammarAccess.getAggregateAccess().getAggregateIdAssignment_11(), "rule__Aggregate__AggregateIdAssignment_11");
-					put(grammarAccess.getAggregateAccess().getEntitiesAssignment_12(), "rule__Aggregate__EntitiesAssignment_12");
+					put(grammarAccess.getAggregateAccess().getElementsAssignment_10(), "rule__Aggregate__ElementsAssignment_10");
 					put(grammarAccess.getConstructorAccess().getDocAssignment_0(), "rule__Constructor__DocAssignment_0");
 					put(grammarAccess.getConstructorAccess().getNameAssignment_2(), "rule__Constructor__NameAssignment_2");
 					put(grammarAccess.getConstructorAccess().getPreconditionsAssignment_3(), "rule__Constructor__PreconditionsAssignment_3");

@@ -14,7 +14,7 @@ import org.eclipse.emf.common.util.EList;
  * <ul>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntity#getConstructors <em>Constructors</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntity#getMethods <em>Methods</em>}</li>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntity#getEvents <em>Events</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractEntity#getElements <em>Elements</em>}</li>
  * </ul>
  * </p>
  *
@@ -57,20 +57,20 @@ public interface AbstractEntity extends InternalType
   EList<Method> getMethods();
 
   /**
-   * Returns the value of the '<em><b>Events</b></em>' containment reference list.
-   * The list contents are of type {@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Event}.
+   * Returns the value of the '<em><b>Elements</b></em>' containment reference list.
+   * The list contents are of type {@link org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractElement}.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Events</em>' containment reference list isn't clear,
+   * If the meaning of the '<em>Elements</em>' containment reference list isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Events</em>' containment reference list.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getAbstractEntity_Events()
+   * @return the value of the '<em>Elements</em>' containment reference list.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getAbstractEntity_Elements()
    * @model containment="true"
    * @generated
    */
-  EList<Event> getEvents();
+  EList<AbstractElement> getElements();
 
   /**
    * <!-- begin-user-doc -->

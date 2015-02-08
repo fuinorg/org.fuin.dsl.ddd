@@ -1,6 +1,7 @@
 package org.fuin.dsl.ddd.validation;
 
 import com.google.common.base.Objects;
+import com.google.common.collect.Iterables;
 import com.google.inject.Inject;
 import java.util.HashSet;
 import java.util.Iterator;
@@ -17,6 +18,8 @@ import org.eclipse.xtext.resource.IResourceDescription;
 import org.eclipse.xtext.resource.IResourceDescriptions;
 import org.eclipse.xtext.resource.impl.ResourceDescriptionsProvider;
 import org.eclipse.xtext.validation.Check;
+import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.AbstractElement;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.AggregateId;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute;
@@ -38,11 +41,13 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Preconditions;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ReturnType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Service;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Type;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ValueObject;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.WeakConsistency;
 import org.fuin.dsl.ddd.extensions.DddAbstractElementExtensions;
 import org.fuin.dsl.ddd.extensions.DddAggregateExtensions;
 import org.fuin.dsl.ddd.extensions.DddAttributeExtensions;
+import org.fuin.dsl.ddd.extensions.DddCollectionExtensions;
 import org.fuin.dsl.ddd.extensions.DddConstraintExtension;
 import org.fuin.dsl.ddd.extensions.DddEObjectExtensions;
 import org.fuin.dsl.ddd.extensions.DddEntityExtensions;
@@ -116,6 +121,14 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
   public final static String ENTITY_WITHOUT_ID = "entityWithoutId";
   
   public final static String ENTITY_WITH_DUPLICATE_ID = "entityWithDuplicateId";
+  
+  public final static String ILLEGAL_AGGREGATE_ELEMENT = "illegalAggregateElement";
+  
+  public final static String ILLEGAL_ENTITY_ELEMENT = "illegalEntityElement";
+  
+  public final static String MULTIPLE_AGGREGATE_ID_ELEMENTS = "multipleAggregateIdElements";
+  
+  public final static String MULTIPLE_ENTITY_ID_ELEMENTS = "multipleEntityIdElements";
   
   @Inject
   private IContainer.Manager containerManager;
@@ -751,7 +764,7 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
     EntityId _idType = entity.getIdType();
     boolean _equals = Objects.equal(_idType, null);
     if (_equals) {
-      EntityId _entityId = entity.getEntityId();
+      EntityId _entityId = DddEntityExtensions.getEntityId(entity);
       boolean _equals_1 = Objects.equal(_entityId, null);
       if (_equals_1) {
         this.error(
@@ -760,12 +773,12 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
           DomainDrivenDesignDslValidator.ENTITY_WITHOUT_ID);
       }
     } else {
-      EntityId _entityId_1 = entity.getEntityId();
+      EntityId _entityId_1 = DddEntityExtensions.getEntityId(entity);
       boolean _notEquals = (!Objects.equal(_entityId_1, null));
       if (_notEquals) {
         this.error(
           "Entity cannot not reference an ID using \'identifier\' and define another inside the aggregate", entity, 
-          DomainDrivenDesignDslPackage.Literals.ENTITY__ENTITY_ID, 
+          DomainDrivenDesignDslPackage.Literals.ENTITY__ID_TYPE, 
           DomainDrivenDesignDslValidator.ENTITY_WITH_DUPLICATE_ID);
       }
     }
@@ -776,7 +789,7 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
     AggregateId _idType = aggregate.getIdType();
     boolean _equals = Objects.equal(_idType, null);
     if (_equals) {
-      AggregateId _aggregateId = aggregate.getAggregateId();
+      AggregateId _aggregateId = DddAggregateExtensions.getAggregateId(aggregate);
       boolean _equals_1 = Objects.equal(_aggregateId, null);
       if (_equals_1) {
         this.error(
@@ -785,14 +798,78 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
           DomainDrivenDesignDslValidator.AGGREGATE_WITHOUT_ID);
       }
     } else {
-      AggregateId _aggregateId_1 = aggregate.getAggregateId();
+      AggregateId _aggregateId_1 = DddAggregateExtensions.getAggregateId(aggregate);
       boolean _notEquals = (!Objects.equal(_aggregateId_1, null));
       if (_notEquals) {
         this.error(
           "Aggregate cannot not reference an ID using \'identifier\' and define another inside the aggregate", aggregate, 
-          DomainDrivenDesignDslPackage.Literals.AGGREGATE__AGGREGATE_ID, 
+          DomainDrivenDesignDslPackage.Literals.AGGREGATE__ID_TYPE, 
           DomainDrivenDesignDslValidator.AGGREGATE_WITH_DUPLICATE_ID);
       }
+    }
+  }
+  
+  @Check
+  public void checkOnlyOneAggregateId(final Aggregate aggregate) {
+    EList<AbstractElement> _elements = aggregate.getElements();
+    List<AbstractElement> _nullSafe = DddCollectionExtensions.<AbstractElement>nullSafe(_elements);
+    Iterable<AggregateId> _filter = Iterables.<AggregateId>filter(_nullSafe, AggregateId.class);
+    int _size = IterableExtensions.size(_filter);
+    boolean _greaterThan = (_size > 1);
+    if (_greaterThan) {
+      this.error(
+        "Only one \'aggregate-id\' can be defined inside an aggregate", aggregate, 
+        DomainDrivenDesignDslPackage.Literals.ABSTRACT_ENTITY__ELEMENTS, 
+        DomainDrivenDesignDslValidator.MULTIPLE_AGGREGATE_ID_ELEMENTS);
+    }
+  }
+  
+  @Check
+  public void checkAllowedAggregateElements(final AbstractElement el) {
+    boolean _and = false;
+    EObject _eContainer = el.eContainer();
+    if (!(_eContainer instanceof Aggregate)) {
+      _and = false;
+    } else {
+      _and = (!((((el instanceof AggregateId) || (el instanceof Entity)) || (el instanceof Event)) || (el instanceof ValueObject)));
+    }
+    if (_and) {
+      this.error(
+        "Allowed elements in an aggregate are: \'aggregate-id\', \'entity\', \'event\' and \'value-object\'", el, 
+        DomainDrivenDesignDslPackage.Literals.ABSTRACT_ELEMENT__NAME, 
+        DomainDrivenDesignDslValidator.ILLEGAL_AGGREGATE_ELEMENT);
+    }
+  }
+  
+  @Check
+  public void checkOnlyOneEntityId(final Entity entity) {
+    EList<AbstractElement> _elements = entity.getElements();
+    List<AbstractElement> _nullSafe = DddCollectionExtensions.<AbstractElement>nullSafe(_elements);
+    Iterable<EntityId> _filter = Iterables.<EntityId>filter(_nullSafe, EntityId.class);
+    int _size = IterableExtensions.size(_filter);
+    boolean _greaterThan = (_size > 1);
+    if (_greaterThan) {
+      this.error(
+        "Only one \'entity-id\' can be defined inside an entity", entity, 
+        DomainDrivenDesignDslPackage.Literals.ABSTRACT_ENTITY__ELEMENTS, 
+        DomainDrivenDesignDslValidator.MULTIPLE_ENTITY_ID_ELEMENTS);
+    }
+  }
+  
+  @Check
+  public void checkAllowedEntityElements(final AbstractElement el) {
+    boolean _and = false;
+    EObject _eContainer = el.eContainer();
+    if (!(_eContainer instanceof Entity)) {
+      _and = false;
+    } else {
+      _and = (!(((el instanceof EntityId) || (el instanceof Event)) || (el instanceof ValueObject)));
+    }
+    if (_and) {
+      this.error(
+        "Allowed elements in an entity are: \'entity-id\', \'event\' and \'value-object\'", el, 
+        DomainDrivenDesignDslPackage.Literals.ABSTRACT_ELEMENT__NAME, 
+        DomainDrivenDesignDslValidator.ILLEGAL_ENTITY_ELEMENT);
     }
   }
   
