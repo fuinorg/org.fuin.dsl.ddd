@@ -24,6 +24,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.EntityId
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Exception
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.InternalType
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Method
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Parameter
@@ -115,6 +116,8 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 	public static val MULTIPLE_AGGREGATE_ID_ELEMENTS = "multipleAggregateIdElements"
 
 	public static val MULTIPLE_ENTITY_ID_ELEMENTS = "multipleEntityIdElements"
+
+	public static val VAR_GENERICS_COUNT_MISMATCH = "varGenericsCountMismatch"
 
 	@Inject
 	private IContainer.Manager containerManager
@@ -331,21 +334,16 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 	def checkAttributeInvariantsTargetType(Attribute attribute) {
 
 		if ((attribute.invariants != null) && (attribute.invariants.constraintInstances != null)) {
-			if (attribute.multiplicity == null) {
-
-				// TODO Find a  way to handle collections
-				for (constraintInstance : attribute.invariants.constraintInstances) {
-					if (!attribute.type.equals(constraintInstance.constraint.input)) {
-						error(
-							"The input type of the constraint (" + constraintInstance.constraint.input.name +
-								") does not match the attribute type",
-							constraintInstance,
-							DomainDrivenDesignDslPackage.Literals::CONSTRAINT_INSTANCE__CONSTRAINT,
-							ATTRIBUTE_INVARIANT_WRONG_TARGET_TYPE
-						)
-					}
+			for (constraintInstance : attribute.invariants.constraintInstances) {
+				if (!attribute.type.equals(constraintInstance.constraint.input)) {
+					error(
+						"The input type of the constraint (" + constraintInstance.constraint.input.name +
+							") does not match the attribute type",
+						constraintInstance,
+						DomainDrivenDesignDslPackage.Literals::CONSTRAINT_INSTANCE__CONSTRAINT,
+						ATTRIBUTE_INVARIANT_WRONG_TARGET_TYPE
+					)
 				}
-
 			}
 		}
 
@@ -355,40 +353,30 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 	def checkParameterConstraintsTargetType(Parameter parameter) {
 
 		if ((parameter.preconditions != null) && (parameter.preconditions.constraintInstances != null)) {
-			if (parameter.multiplicity == null) {
-
-				// TODO Find a way to handle collections
-				for (constraintInstance : parameter.preconditions.constraintInstances) {
-					if (!parameter.type.equals(constraintInstance.constraint.input)) {
-						error(
-							"The input type of the constraint (" + constraintInstance.constraint.input.name +
-								") does not match the parameter type",
-							constraintInstance,
-							DomainDrivenDesignDslPackage.Literals::CONSTRAINT_INSTANCE__CONSTRAINT,
-							PARAMETER_CONSTRAINT_WRONG_TARGET_TYPE
-						)
-					}
+			for (constraintInstance : parameter.preconditions.constraintInstances) {
+				if (!parameter.type.equals(constraintInstance.constraint.input)) {
+					error(
+						"The input type of the constraint (" + constraintInstance.constraint.input.name +
+							") does not match the parameter type",
+						constraintInstance,
+						DomainDrivenDesignDslPackage.Literals::CONSTRAINT_INSTANCE__CONSTRAINT,
+						PARAMETER_CONSTRAINT_WRONG_TARGET_TYPE
+					)
 				}
-
 			}
 		}
 
 		if ((parameter.businessRules != null) && (parameter.businessRules.constraintInstances != null)) {
-			if (parameter.multiplicity == null) {
-
-				// TODO Find a way to handle collections
-				for (constraintInstance : parameter.businessRules.constraintInstances) {
-					if (!parameter.type.equals(constraintInstance.constraint.input)) {
-						error(
-							"The input type of the constraint (" + constraintInstance.constraint.input.name +
-								") does not match the parameter type",
-							constraintInstance,
-							DomainDrivenDesignDslPackage.Literals::CONSTRAINT_INSTANCE__CONSTRAINT,
-							PARAMETER_CONSTRAINT_WRONG_TARGET_TYPE
-						)
-					}
+			for (constraintInstance : parameter.businessRules.constraintInstances) {
+				if (!parameter.type.equals(constraintInstance.constraint.input)) {
+					error(
+						"The input type of the constraint (" + constraintInstance.constraint.input.name +
+							") does not match the parameter type",
+						constraintInstance,
+						DomainDrivenDesignDslPackage.Literals::CONSTRAINT_INSTANCE__CONSTRAINT,
+						PARAMETER_CONSTRAINT_WRONG_TARGET_TYPE
+					)
 				}
-
 			}
 		}
 
@@ -635,6 +623,34 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 
 	}
 
+	@Check
+	def checkGenericArgs(Variable v) {
+		
+		if (v.type instanceof ExternalType) {
+			val type = v.type as ExternalType
+			if (v.generics == null) {
+				if (type.generics > 0) {
+					error(
+						"The number of arguments does not match the number required by the type: " + type.generics,
+						v,
+						DomainDrivenDesignDslPackage.Literals::VARIABLE__GENERICS,
+						VAR_GENERICS_COUNT_MISMATCH
+					)
+				}
+			} else {
+				if (v.generics.args.nullSafe.size != type.generics) {
+					error(
+						"The number of arguments does not match the number required by the type: " + type.generics,
+						v,
+						DomainDrivenDesignDslPackage.Literals::VARIABLE__GENERICS,
+						VAR_GENERICS_COUNT_MISMATCH
+					)
+				}				
+			} 		
+		}
+		
+	}
+	
 	private def getAllExceptions(EObject obj) {
 		val Set<Exception> list = new HashSet<Exception>()
 		val resource = obj.eResource

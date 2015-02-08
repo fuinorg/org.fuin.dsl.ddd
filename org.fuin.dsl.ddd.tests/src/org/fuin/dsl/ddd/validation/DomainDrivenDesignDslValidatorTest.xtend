@@ -89,6 +89,11 @@ class DomainDrivenDesignDslValidatorTest {
 		assertIssue(model, issues, Severity.ERROR, "AggregateIdG3",
 			"Allowed elements in an entity are: 'entity-id', 'event' and 'value-object'")
 		
+		// checkGenericArgs		
+		assertIssue(model, issues, Severity.ERROR, "testValueObjectAList1",
+			"The number of arguments does not match the number required by the type: 1")
+		assertIssue(model, issues, Severity.ERROR, "testValueObjectAList2",
+			"The number of arguments does not match the number required by the type: 1")
 		
 
 	}

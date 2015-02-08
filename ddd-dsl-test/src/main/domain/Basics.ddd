@@ -15,6 +15,7 @@ context axonsample {
 		type Timestamp
 		type UUID
 		type BigDecimal
+		type List generics 1
 	}
 	
 	namespace constr {

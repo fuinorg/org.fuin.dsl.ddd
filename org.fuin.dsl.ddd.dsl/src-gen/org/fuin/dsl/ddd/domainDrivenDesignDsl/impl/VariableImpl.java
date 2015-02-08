@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.GenericArgs;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.OverriddenTypeMetaInfo;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Type;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
@@ -26,7 +27,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable;
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.VariableImpl#getDoc <em>Doc</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.VariableImpl#getNullable <em>Nullable</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.VariableImpl#getType <em>Type</em>}</li>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.VariableImpl#getMultiplicity <em>Multiplicity</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.VariableImpl#getGenerics <em>Generics</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.VariableImpl#getName <em>Name</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.VariableImpl#getOverridden <em>Overridden</em>}</li>
  * </ul>
@@ -87,24 +88,14 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
   protected Type type;
 
   /**
-   * The default value of the '{@link #getMultiplicity() <em>Multiplicity</em>}' attribute.
+   * The cached value of the '{@link #getGenerics() <em>Generics</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @see #getMultiplicity()
+   * @see #getGenerics()
    * @generated
    * @ordered
    */
-  protected static final String MULTIPLICITY_EDEFAULT = null;
-
-  /**
-   * The cached value of the '{@link #getMultiplicity() <em>Multiplicity</em>}' attribute.
-   * <!-- begin-user-doc -->
-   * <!-- end-user-doc -->
-   * @see #getMultiplicity()
-   * @generated
-   * @ordered
-   */
-  protected String multiplicity = MULTIPLICITY_EDEFAULT;
+  protected GenericArgs generics;
 
   /**
    * The default value of the '{@link #getName() <em>Name</em>}' attribute.
@@ -251,9 +242,9 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
    * <!-- end-user-doc -->
    * @generated
    */
-  public String getMultiplicity()
+  public GenericArgs getGenerics()
   {
-    return multiplicity;
+    return generics;
   }
 
   /**
@@ -261,12 +252,37 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
    * <!-- end-user-doc -->
    * @generated
    */
-  public void setMultiplicity(String newMultiplicity)
+  public NotificationChain basicSetGenerics(GenericArgs newGenerics, NotificationChain msgs)
   {
-    String oldMultiplicity = multiplicity;
-    multiplicity = newMultiplicity;
+    GenericArgs oldGenerics = generics;
+    generics = newGenerics;
     if (eNotificationRequired())
-      eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.VARIABLE__MULTIPLICITY, oldMultiplicity, multiplicity));
+    {
+      ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.VARIABLE__GENERICS, oldGenerics, newGenerics);
+      if (msgs == null) msgs = notification; else msgs.add(notification);
+    }
+    return msgs;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public void setGenerics(GenericArgs newGenerics)
+  {
+    if (newGenerics != generics)
+    {
+      NotificationChain msgs = null;
+      if (generics != null)
+        msgs = ((InternalEObject)generics).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - DomainDrivenDesignDslPackage.VARIABLE__GENERICS, null, msgs);
+      if (newGenerics != null)
+        msgs = ((InternalEObject)newGenerics).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - DomainDrivenDesignDslPackage.VARIABLE__GENERICS, null, msgs);
+      msgs = basicSetGenerics(newGenerics, msgs);
+      if (msgs != null) msgs.dispatch();
+    }
+    else if (eNotificationRequired())
+      eNotify(new ENotificationImpl(this, Notification.SET, DomainDrivenDesignDslPackage.VARIABLE__GENERICS, newGenerics, newGenerics));
   }
 
   /**
@@ -350,6 +366,8 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
   {
     switch (featureID)
     {
+      case DomainDrivenDesignDslPackage.VARIABLE__GENERICS:
+        return basicSetGenerics(null, msgs);
       case DomainDrivenDesignDslPackage.VARIABLE__OVERRIDDEN:
         return basicSetOverridden(null, msgs);
     }
@@ -373,8 +391,8 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
       case DomainDrivenDesignDslPackage.VARIABLE__TYPE:
         if (resolve) return getType();
         return basicGetType();
-      case DomainDrivenDesignDslPackage.VARIABLE__MULTIPLICITY:
-        return getMultiplicity();
+      case DomainDrivenDesignDslPackage.VARIABLE__GENERICS:
+        return getGenerics();
       case DomainDrivenDesignDslPackage.VARIABLE__NAME:
         return getName();
       case DomainDrivenDesignDslPackage.VARIABLE__OVERRIDDEN:
@@ -402,8 +420,8 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
       case DomainDrivenDesignDslPackage.VARIABLE__TYPE:
         setType((Type)newValue);
         return;
-      case DomainDrivenDesignDslPackage.VARIABLE__MULTIPLICITY:
-        setMultiplicity((String)newValue);
+      case DomainDrivenDesignDslPackage.VARIABLE__GENERICS:
+        setGenerics((GenericArgs)newValue);
         return;
       case DomainDrivenDesignDslPackage.VARIABLE__NAME:
         setName((String)newValue);
@@ -434,8 +452,8 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
       case DomainDrivenDesignDslPackage.VARIABLE__TYPE:
         setType((Type)null);
         return;
-      case DomainDrivenDesignDslPackage.VARIABLE__MULTIPLICITY:
-        setMultiplicity(MULTIPLICITY_EDEFAULT);
+      case DomainDrivenDesignDslPackage.VARIABLE__GENERICS:
+        setGenerics((GenericArgs)null);
         return;
       case DomainDrivenDesignDslPackage.VARIABLE__NAME:
         setName(NAME_EDEFAULT);
@@ -463,8 +481,8 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
         return NULLABLE_EDEFAULT == null ? nullable != null : !NULLABLE_EDEFAULT.equals(nullable);
       case DomainDrivenDesignDslPackage.VARIABLE__TYPE:
         return type != null;
-      case DomainDrivenDesignDslPackage.VARIABLE__MULTIPLICITY:
-        return MULTIPLICITY_EDEFAULT == null ? multiplicity != null : !MULTIPLICITY_EDEFAULT.equals(multiplicity);
+      case DomainDrivenDesignDslPackage.VARIABLE__GENERICS:
+        return generics != null;
       case DomainDrivenDesignDslPackage.VARIABLE__NAME:
         return NAME_EDEFAULT == null ? name != null : !NAME_EDEFAULT.equals(name);
       case DomainDrivenDesignDslPackage.VARIABLE__OVERRIDDEN:
@@ -488,8 +506,6 @@ public class VariableImpl extends MinimalEObjectImpl.Container implements Variab
     result.append(doc);
     result.append(", nullable: ");
     result.append(nullable);
-    result.append(", multiplicity: ");
-    result.append(multiplicity);
     result.append(", name: ");
     result.append(name);
     result.append(')');

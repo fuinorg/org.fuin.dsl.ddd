@@ -15,7 +15,7 @@ import org.eclipse.emf.ecore.EObject;
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable#getDoc <em>Doc</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable#getNullable <em>Nullable</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable#getType <em>Type</em>}</li>
- *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable#getMultiplicity <em>Multiplicity</em>}</li>
+ *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable#getGenerics <em>Generics</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable#getName <em>Name</em>}</li>
  *   <li>{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable#getOverridden <em>Overridden</em>}</li>
  * </ul>
@@ -106,30 +106,30 @@ public interface Variable extends EObject
   void setType(Type value);
 
   /**
-   * Returns the value of the '<em><b>Multiplicity</b></em>' attribute.
+   * Returns the value of the '<em><b>Generics</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <p>
-   * If the meaning of the '<em>Multiplicity</em>' attribute isn't clear,
+   * If the meaning of the '<em>Generics</em>' containment reference isn't clear,
    * there really should be more of a description here...
    * </p>
    * <!-- end-user-doc -->
-   * @return the value of the '<em>Multiplicity</em>' attribute.
-   * @see #setMultiplicity(String)
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getVariable_Multiplicity()
-   * @model
+   * @return the value of the '<em>Generics</em>' containment reference.
+   * @see #setGenerics(GenericArgs)
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage#getVariable_Generics()
+   * @model containment="true"
    * @generated
    */
-  String getMultiplicity();
+  GenericArgs getGenerics();
 
   /**
-   * Sets the value of the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable#getMultiplicity <em>Multiplicity</em>}' attribute.
+   * Sets the value of the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable#getGenerics <em>Generics</em>}' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @param value the new value of the '<em>Multiplicity</em>' attribute.
-   * @see #getMultiplicity()
+   * @param value the new value of the '<em>Generics</em>' containment reference.
+   * @see #getGenerics()
    * @generated
    */
-  void setMultiplicity(String value);
+  void setGenerics(GenericArgs value);
 
   /**
    * Returns the value of the '<em><b>Name</b></em>' attribute.

@@ -33,6 +33,8 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslPackage;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Entity;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.EntityId;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.GenericArgs;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.InternalType;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Invariants;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Method;
@@ -129,6 +131,8 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
   public final static String MULTIPLE_AGGREGATE_ID_ELEMENTS = "multipleAggregateIdElements";
   
   public final static String MULTIPLE_ENTITY_ID_ELEMENTS = "multipleEntityIdElements";
+  
+  public final static String VAR_GENERICS_COUNT_MISMATCH = "varGenericsCountMismatch";
   
   @Inject
   private IContainer.Manager containerManager;
@@ -472,28 +476,24 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
       _and = _notEquals_1;
     }
     if (_and) {
-      String _multiplicity = attribute.getMultiplicity();
-      boolean _equals = Objects.equal(_multiplicity, null);
-      if (_equals) {
-        Invariants _invariants_2 = attribute.getInvariants();
-        EList<ConstraintInstance> _constraintInstances_1 = _invariants_2.getConstraintInstances();
-        for (final ConstraintInstance constraintInstance : _constraintInstances_1) {
-          Type _type = attribute.getType();
-          Constraint _constraint = constraintInstance.getConstraint();
-          Type _input = _constraint.getInput();
-          boolean _equals_1 = _type.equals(_input);
-          boolean _not = (!_equals_1);
-          if (_not) {
-            Constraint _constraint_1 = constraintInstance.getConstraint();
-            Type _input_1 = _constraint_1.getInput();
-            String _name = _input_1.getName();
-            String _plus = ("The input type of the constraint (" + _name);
-            String _plus_1 = (_plus + 
-              ") does not match the attribute type");
-            this.error(_plus_1, constraintInstance, 
-              DomainDrivenDesignDslPackage.Literals.CONSTRAINT_INSTANCE__CONSTRAINT, 
-              DomainDrivenDesignDslValidator.ATTRIBUTE_INVARIANT_WRONG_TARGET_TYPE);
-          }
+      Invariants _invariants_2 = attribute.getInvariants();
+      EList<ConstraintInstance> _constraintInstances_1 = _invariants_2.getConstraintInstances();
+      for (final ConstraintInstance constraintInstance : _constraintInstances_1) {
+        Type _type = attribute.getType();
+        Constraint _constraint = constraintInstance.getConstraint();
+        Type _input = _constraint.getInput();
+        boolean _equals = _type.equals(_input);
+        boolean _not = (!_equals);
+        if (_not) {
+          Constraint _constraint_1 = constraintInstance.getConstraint();
+          Type _input_1 = _constraint_1.getInput();
+          String _name = _input_1.getName();
+          String _plus = ("The input type of the constraint (" + _name);
+          String _plus_1 = (_plus + 
+            ") does not match the attribute type");
+          this.error(_plus_1, constraintInstance, 
+            DomainDrivenDesignDslPackage.Literals.CONSTRAINT_INSTANCE__CONSTRAINT, 
+            DomainDrivenDesignDslValidator.ATTRIBUTE_INVARIANT_WRONG_TARGET_TYPE);
         }
       }
     }
@@ -513,28 +513,24 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
       _and = _notEquals_1;
     }
     if (_and) {
-      String _multiplicity = parameter.getMultiplicity();
-      boolean _equals = Objects.equal(_multiplicity, null);
-      if (_equals) {
-        Preconditions _preconditions_2 = parameter.getPreconditions();
-        EList<ConstraintInstance> _constraintInstances_1 = _preconditions_2.getConstraintInstances();
-        for (final ConstraintInstance constraintInstance : _constraintInstances_1) {
-          Type _type = parameter.getType();
-          Constraint _constraint = constraintInstance.getConstraint();
-          Type _input = _constraint.getInput();
-          boolean _equals_1 = _type.equals(_input);
-          boolean _not = (!_equals_1);
-          if (_not) {
-            Constraint _constraint_1 = constraintInstance.getConstraint();
-            Type _input_1 = _constraint_1.getInput();
-            String _name = _input_1.getName();
-            String _plus = ("The input type of the constraint (" + _name);
-            String _plus_1 = (_plus + 
-              ") does not match the parameter type");
-            this.error(_plus_1, constraintInstance, 
-              DomainDrivenDesignDslPackage.Literals.CONSTRAINT_INSTANCE__CONSTRAINT, 
-              DomainDrivenDesignDslValidator.PARAMETER_CONSTRAINT_WRONG_TARGET_TYPE);
-          }
+      Preconditions _preconditions_2 = parameter.getPreconditions();
+      EList<ConstraintInstance> _constraintInstances_1 = _preconditions_2.getConstraintInstances();
+      for (final ConstraintInstance constraintInstance : _constraintInstances_1) {
+        Type _type = parameter.getType();
+        Constraint _constraint = constraintInstance.getConstraint();
+        Type _input = _constraint.getInput();
+        boolean _equals = _type.equals(_input);
+        boolean _not = (!_equals);
+        if (_not) {
+          Constraint _constraint_1 = constraintInstance.getConstraint();
+          Type _input_1 = _constraint_1.getInput();
+          String _name = _input_1.getName();
+          String _plus = ("The input type of the constraint (" + _name);
+          String _plus_1 = (_plus + 
+            ") does not match the parameter type");
+          this.error(_plus_1, constraintInstance, 
+            DomainDrivenDesignDslPackage.Literals.CONSTRAINT_INSTANCE__CONSTRAINT, 
+            DomainDrivenDesignDslValidator.PARAMETER_CONSTRAINT_WRONG_TARGET_TYPE);
         }
       }
     }
@@ -550,28 +546,24 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
       _and_1 = _notEquals_3;
     }
     if (_and_1) {
-      String _multiplicity_1 = parameter.getMultiplicity();
-      boolean _equals_2 = Objects.equal(_multiplicity_1, null);
-      if (_equals_2) {
-        BusinessRules _businessRules_2 = parameter.getBusinessRules();
-        EList<ConstraintInstance> _constraintInstances_3 = _businessRules_2.getConstraintInstances();
-        for (final ConstraintInstance constraintInstance_1 : _constraintInstances_3) {
-          Type _type_1 = parameter.getType();
-          Constraint _constraint_2 = constraintInstance_1.getConstraint();
-          Type _input_2 = _constraint_2.getInput();
-          boolean _equals_3 = _type_1.equals(_input_2);
-          boolean _not_1 = (!_equals_3);
-          if (_not_1) {
-            Constraint _constraint_3 = constraintInstance_1.getConstraint();
-            Type _input_3 = _constraint_3.getInput();
-            String _name_1 = _input_3.getName();
-            String _plus_2 = ("The input type of the constraint (" + _name_1);
-            String _plus_3 = (_plus_2 + 
-              ") does not match the parameter type");
-            this.error(_plus_3, constraintInstance_1, 
-              DomainDrivenDesignDslPackage.Literals.CONSTRAINT_INSTANCE__CONSTRAINT, 
-              DomainDrivenDesignDslValidator.PARAMETER_CONSTRAINT_WRONG_TARGET_TYPE);
-          }
+      BusinessRules _businessRules_2 = parameter.getBusinessRules();
+      EList<ConstraintInstance> _constraintInstances_3 = _businessRules_2.getConstraintInstances();
+      for (final ConstraintInstance constraintInstance_1 : _constraintInstances_3) {
+        Type _type_1 = parameter.getType();
+        Constraint _constraint_2 = constraintInstance_1.getConstraint();
+        Type _input_2 = _constraint_2.getInput();
+        boolean _equals_1 = _type_1.equals(_input_2);
+        boolean _not_1 = (!_equals_1);
+        if (_not_1) {
+          Constraint _constraint_3 = constraintInstance_1.getConstraint();
+          Type _input_3 = _constraint_3.getInput();
+          String _name_1 = _input_3.getName();
+          String _plus_2 = ("The input type of the constraint (" + _name_1);
+          String _plus_3 = (_plus_2 + 
+            ") does not match the parameter type");
+          this.error(_plus_3, constraintInstance_1, 
+            DomainDrivenDesignDslPackage.Literals.CONSTRAINT_INSTANCE__CONSTRAINT, 
+            DomainDrivenDesignDslValidator.PARAMETER_CONSTRAINT_WRONG_TARGET_TYPE);
         }
       }
     }
@@ -870,6 +862,42 @@ public class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDs
         "Allowed elements in an entity are: \'entity-id\', \'event\' and \'value-object\'", el, 
         DomainDrivenDesignDslPackage.Literals.ABSTRACT_ELEMENT__NAME, 
         DomainDrivenDesignDslValidator.ILLEGAL_ENTITY_ELEMENT);
+    }
+  }
+  
+  @Check
+  public void checkGenericArgs(final Variable v) {
+    Type _type = v.getType();
+    if ((_type instanceof ExternalType)) {
+      Type _type_1 = v.getType();
+      final ExternalType type = ((ExternalType) _type_1);
+      GenericArgs _generics = v.getGenerics();
+      boolean _equals = Objects.equal(_generics, null);
+      if (_equals) {
+        int _generics_1 = type.getGenerics();
+        boolean _greaterThan = (_generics_1 > 0);
+        if (_greaterThan) {
+          int _generics_2 = type.getGenerics();
+          String _plus = ("The number of arguments does not match the number required by the type: " + Integer.valueOf(_generics_2));
+          this.error(_plus, v, 
+            DomainDrivenDesignDslPackage.Literals.VARIABLE__GENERICS, 
+            DomainDrivenDesignDslValidator.VAR_GENERICS_COUNT_MISMATCH);
+        }
+      } else {
+        GenericArgs _generics_3 = v.getGenerics();
+        EList<Type> _args = _generics_3.getArgs();
+        List<Type> _nullSafe = DddCollectionExtensions.<Type>nullSafe(_args);
+        int _size = _nullSafe.size();
+        int _generics_4 = type.getGenerics();
+        boolean _notEquals = (_size != _generics_4);
+        if (_notEquals) {
+          int _generics_5 = type.getGenerics();
+          String _plus_1 = ("The number of arguments does not match the number required by the type: " + Integer.valueOf(_generics_5));
+          this.error(_plus_1, v, 
+            DomainDrivenDesignDslPackage.Literals.VARIABLE__GENERICS, 
+            DomainDrivenDesignDslValidator.VAR_GENERICS_COUNT_MISMATCH);
+        }
+      }
     }
   }
   

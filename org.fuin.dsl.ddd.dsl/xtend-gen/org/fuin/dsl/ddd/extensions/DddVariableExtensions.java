@@ -47,15 +47,8 @@ public class DddVariableExtensions {
    * @return Primitive type or original type name.
    */
   public static String asJavaPrimitive(final Variable variable) {
-    String _multiplicity = variable.getMultiplicity();
-    boolean _equals = Objects.equal(_multiplicity, null);
-    if (_equals) {
-      Type _type = variable.getType();
-      return DddTypeExtensions.asJavaPrimitive(_type);
-    }
-    Type _type_1 = variable.getType();
-    String _asJavaPrimitive = DddTypeExtensions.asJavaPrimitive(_type_1);
-    return (_asJavaPrimitive + "[]");
+    Type _type = variable.getType();
+    return DddTypeExtensions.asJavaPrimitive(_type);
   }
   
   /**

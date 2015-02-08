@@ -84,6 +84,12 @@ public class DomainDrivenDesignDslValidatorTest {
     DomainModel _model_17 = this.model();
     this.assertIssue(_model_17, issues, Severity.ERROR, "AggregateIdG3", 
       "Allowed elements in an entity are: \'entity-id\', \'event\' and \'value-object\'");
+    DomainModel _model_18 = this.model();
+    this.assertIssue(_model_18, issues, Severity.ERROR, "testValueObjectAList1", 
+      "The number of arguments does not match the number required by the type: 1");
+    DomainModel _model_19 = this.model();
+    this.assertIssue(_model_19, issues, Severity.ERROR, "testValueObjectAList2", 
+      "The number of arguments does not match the number required by the type: 1");
   }
   
   private DomainModel model() {

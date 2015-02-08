@@ -12,7 +12,7 @@ context axonsample {
 		aggregate Contact identifier ContactId {
 			
 			/** List of addresses. */
-			Address* addresses
+			List<Address> addresses
 			
 			/** Creates a new classification tree. */
 			constructor create {

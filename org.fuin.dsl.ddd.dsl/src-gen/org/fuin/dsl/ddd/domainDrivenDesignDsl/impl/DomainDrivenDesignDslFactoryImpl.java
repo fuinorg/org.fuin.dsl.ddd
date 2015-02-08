@@ -37,6 +37,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumInstance;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumObject;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.GenericArgs;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Import;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.InconsistencyDetection;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.InconsistencyResolution;
@@ -142,6 +143,7 @@ public class DomainDrivenDesignDslFactoryImpl extends EFactoryImpl implements Do
       case DomainDrivenDesignDslPackage.METHOD: return createMethod();
       case DomainDrivenDesignDslPackage.TYPE_META_INFO: return createTypeMetaInfo();
       case DomainDrivenDesignDslPackage.VARIABLE: return createVariable();
+      case DomainDrivenDesignDslPackage.GENERIC_ARGS: return createGenericArgs();
       case DomainDrivenDesignDslPackage.ATTRIBUTE: return createAttribute();
       case DomainDrivenDesignDslPackage.PARAMETER: return createParameter();
       case DomainDrivenDesignDslPackage.INVARIANTS: return createInvariants();
@@ -534,6 +536,17 @@ public class DomainDrivenDesignDslFactoryImpl extends EFactoryImpl implements Do
   {
     VariableImpl variable = new VariableImpl();
     return variable;
+  }
+
+  /**
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   */
+  public GenericArgs createGenericArgs()
+  {
+    GenericArgsImpl genericArgs = new GenericArgsImpl();
+    return genericArgs;
   }
 
   /**

@@ -15,6 +15,7 @@ class DddAttributeExtensions {
 
 	/**
 	 * Copies the attribute and assigns a new name to the copy.
+	 * CAUTION: This is a shallow copy (no deep copy).
 	 * 
 	 * @param attr Attribute to copy
 	 * @param name New name.
@@ -27,7 +28,7 @@ class DddAttributeExtensions {
 		newAttr.doc = attr.doc;
 		newAttr.nullable = attr.nullable;
 		newAttr.type = attr.type;
-		newAttr.multiplicity = attr.multiplicity;
+		newAttr.generics = attr.generics;
 		newAttr.invariants = attr.invariants;
 		newAttr.overridden = attr.overridden;
 		return newAttr;
@@ -35,7 +36,8 @@ class DddAttributeExtensions {
 	
 	/**
 	 * Converts the attribute into a parameter.
-	 * 
+	 * CAUTION: This is a shallow copy (no deep copy).
+	 *
 	 * @param attribute Attribute to convert.
 	 * 
 	 * @return Parameter.
@@ -50,7 +52,7 @@ class DddAttributeExtensions {
 		param.doc = attr.doc
 		param.nullable = attr.nullable
 		param.type = attr.type
-		param.multiplicity = attr.multiplicity
+		param.generics = attr.generics
 		param.name = attr.name
 		param.overridden = attr.overridden
 		return param

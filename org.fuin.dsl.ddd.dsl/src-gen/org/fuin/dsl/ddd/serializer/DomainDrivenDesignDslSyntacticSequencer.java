@@ -17,11 +17,13 @@ import org.fuin.dsl.ddd.services.DomainDrivenDesignDslGrammarAccess;
 public class DomainDrivenDesignDslSyntacticSequencer extends AbstractSyntacticSequencer {
 
 	protected DomainDrivenDesignDslGrammarAccess grammarAccess;
+	protected AbstractElementAlias match_GenericArgs_LessThanSignKeyword_0_p;
 	protected AbstractElementAlias match_TypeMetaInfo_ExamplesKeyword_5_0_q;
 	
 	@Inject
 	protected void init(IGrammarAccess access) {
 		grammarAccess = (DomainDrivenDesignDslGrammarAccess) access;
+		match_GenericArgs_LessThanSignKeyword_0_p = new TokenAlias(true, false, grammarAccess.getGenericArgsAccess().getLessThanSignKeyword_0());
 		match_TypeMetaInfo_ExamplesKeyword_5_0_q = new TokenAlias(false, true, grammarAccess.getTypeMetaInfoAccess().getExamplesKeyword_5_0());
 	}
 	
@@ -37,12 +39,22 @@ public class DomainDrivenDesignDslSyntacticSequencer extends AbstractSyntacticSe
 		List<INode> transitionNodes = collectNodes(fromNode, toNode);
 		for (AbstractElementAlias syntax : transition.getAmbiguousSyntaxes()) {
 			List<INode> syntaxNodes = getNodesFor(transitionNodes, syntax);
-			if(match_TypeMetaInfo_ExamplesKeyword_5_0_q.equals(syntax))
+			if(match_GenericArgs_LessThanSignKeyword_0_p.equals(syntax))
+				emit_GenericArgs_LessThanSignKeyword_0_p(semanticObject, getLastNavigableState(), syntaxNodes);
+			else if(match_TypeMetaInfo_ExamplesKeyword_5_0_q.equals(syntax))
 				emit_TypeMetaInfo_ExamplesKeyword_5_0_q(semanticObject, getLastNavigableState(), syntaxNodes);
 			else acceptNodes(getLastNavigableState(), syntaxNodes);
 		}
 	}
 
+	/**
+	 * Syntax:
+	 *     '<'+
+	 */
+	protected void emit_GenericArgs_LessThanSignKeyword_0_p(EObject semanticObject, ISynNavigable transition, List<INode> nodes) {
+		acceptNodes(transition, nodes);
+	}
+	
 	/**
 	 * Syntax:
 	 *     'examples'?

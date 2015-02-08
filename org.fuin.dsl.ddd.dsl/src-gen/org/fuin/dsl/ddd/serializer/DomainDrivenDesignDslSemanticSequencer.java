@@ -32,6 +32,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumInstance;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.EnumObject;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.GenericArgs;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Import;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Invariants;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Method;
@@ -200,6 +201,12 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 					return; 
 				}
 				else break;
+			case DomainDrivenDesignDslPackage.GENERIC_ARGS:
+				if(context == grammarAccess.getGenericArgsRule()) {
+					sequence_GenericArgs(context, (GenericArgs) semanticObject); 
+					return; 
+				}
+				else break;
 			case DomainDrivenDesignDslPackage.IMPORT:
 				if(context == grammarAccess.getImportRule()) {
 					sequence_Import(context, (Import) semanticObject); 
@@ -349,7 +356,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *         doc=DOC? 
 	 *         nullable='nullable'? 
 	 *         type=[Type|FQN] 
-	 *         multiplicity='*'? 
+	 *         generics=GenericArgs? 
 	 *         name=ID 
 	 *         invariants=Invariants? 
 	 *         overridden=OverriddenTypeMetaInfo?
@@ -554,9 +561,18 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	
 	/**
 	 * Constraint:
-	 *     (doc=DOC? element='element'? name=ID)
+	 *     (doc=DOC? element='element'? name=ID generics=INT?)
 	 */
 	protected void sequence_ExternalType(EObject context, ExternalType semanticObject) {
+		genericSequencer.createSequence(context, semanticObject);
+	}
+	
+	
+	/**
+	 * Constraint:
+	 *     (args+=[Type|FQN] args+=[Type|FQN]*)
+	 */
+	protected void sequence_GenericArgs(EObject context, GenericArgs semanticObject) {
 		genericSequencer.createSequence(context, semanticObject);
 	}
 	
@@ -663,7 +679,7 @@ public class DomainDrivenDesignDslSemanticSequencer extends AbstractDelegatingSe
 	 *         doc=DOC? 
 	 *         nullable='nullable'? 
 	 *         type=[Type|FQN] 
-	 *         multiplicity='*'? 
+	 *         generics=GenericArgs? 
 	 *         name=ID 
 	 *         preconditions=Preconditions? 
 	 *         businessRules=BusinessRules? 

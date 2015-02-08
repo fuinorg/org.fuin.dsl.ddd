@@ -293,6 +293,15 @@ public interface DomainDrivenDesignDslFactory extends EFactory
   Variable createVariable();
 
   /**
+   * Returns a new object of class '<em>Generic Args</em>'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return a new object of class '<em>Generic Args</em>'.
+   * @generated
+   */
+  GenericArgs createGenericArgs();
+
+  /**
    * Returns a new object of class '<em>Attribute</em>'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->

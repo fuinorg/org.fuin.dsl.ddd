@@ -41,7 +41,7 @@ AbstractEntity:
 
 ExternalType:
 	doc=DOC?	
-	'type' (element='element')? name=ID;
+	'type' (element='element')? name=ID ('generics' generics=INT)?;
 
 enum TimeUnit:
 	millis | seconds | minutes | hours | days;
@@ -190,15 +190,18 @@ TypeMetaInfo:
 Variable:
 	Attribute | Parameter;
 	
+GenericArgs:
+	'<' + args+=[Type|FQN] (',' args+=[Type|FQN])* '>';	
+	
 Attribute:
 	doc=DOC? 
-	(nullable='nullable')? 
-	type=[Type|FQN] (multiplicity='*')? name=ID (invariants=Invariants)? (overridden=OverriddenTypeMetaInfo)?;
+	(nullable='nullable')? 	
+	type=[Type|FQN] generics=GenericArgs? name=ID (invariants=Invariants)? (overridden=OverriddenTypeMetaInfo)?;
 
 Parameter:
 	doc=DOC? 
 	(nullable='nullable')? 
-	type=[Type|FQN] (multiplicity='*')? name=ID (preconditions=Preconditions)? (businessRules=BusinessRules)? (overridden=OverriddenTypeMetaInfo)?;
+	type=[Type|FQN] generics=GenericArgs? name=ID (preconditions=Preconditions)? (businessRules=BusinessRules)? (overridden=OverriddenTypeMetaInfo)?;
 
 Invariants:
 	'invariants' constraintInstances+=ConstraintInstance (',' constraintInstances+=ConstraintInstance)*;

@@ -299,12 +299,16 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final Keyword cElementElementKeyword_2_0 = (Keyword)cElementAssignment_2.eContents().get(0);
 		private final Assignment cNameAssignment_3 = (Assignment)cGroup.eContents().get(3);
 		private final RuleCall cNameIDTerminalRuleCall_3_0 = (RuleCall)cNameAssignment_3.eContents().get(0);
+		private final Group cGroup_4 = (Group)cGroup.eContents().get(4);
+		private final Keyword cGenericsKeyword_4_0 = (Keyword)cGroup_4.eContents().get(0);
+		private final Assignment cGenericsAssignment_4_1 = (Assignment)cGroup_4.eContents().get(1);
+		private final RuleCall cGenericsINTTerminalRuleCall_4_1_0 = (RuleCall)cGenericsAssignment_4_1.eContents().get(0);
 		
 		//ExternalType:
-		//	doc=DOC? "type" element="element"? name=ID;
+		//	doc=DOC? "type" element="element"? name=ID ("generics" generics=INT)?;
 		public ParserRule getRule() { return rule; }
 
-		//doc=DOC? "type" element="element"? name=ID
+		//doc=DOC? "type" element="element"? name=ID ("generics" generics=INT)?
 		public Group getGroup() { return cGroup; }
 
 		//doc=DOC?
@@ -327,6 +331,18 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 
 		//ID
 		public RuleCall getNameIDTerminalRuleCall_3_0() { return cNameIDTerminalRuleCall_3_0; }
+
+		//("generics" generics=INT)?
+		public Group getGroup_4() { return cGroup_4; }
+
+		//"generics"
+		public Keyword getGenericsKeyword_4_0() { return cGenericsKeyword_4_0; }
+
+		//generics=INT
+		public Assignment getGenericsAssignment_4_1() { return cGenericsAssignment_4_1; }
+
+		//INT
+		public RuleCall getGenericsINTTerminalRuleCall_4_1_0() { return cGenericsINTTerminalRuleCall_4_1_0; }
 	}
 
 	public class DurationElements extends AbstractParserRuleElementFinder {
@@ -1979,6 +1995,58 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		public RuleCall getParameterParserRuleCall_1() { return cParameterParserRuleCall_1; }
 	}
 
+	public class GenericArgsElements extends AbstractParserRuleElementFinder {
+		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "GenericArgs");
+		private final Group cGroup = (Group)rule.eContents().get(1);
+		private final Keyword cLessThanSignKeyword_0 = (Keyword)cGroup.eContents().get(0);
+		private final Assignment cArgsAssignment_1 = (Assignment)cGroup.eContents().get(1);
+		private final CrossReference cArgsTypeCrossReference_1_0 = (CrossReference)cArgsAssignment_1.eContents().get(0);
+		private final RuleCall cArgsTypeFQNParserRuleCall_1_0_1 = (RuleCall)cArgsTypeCrossReference_1_0.eContents().get(1);
+		private final Group cGroup_2 = (Group)cGroup.eContents().get(2);
+		private final Keyword cCommaKeyword_2_0 = (Keyword)cGroup_2.eContents().get(0);
+		private final Assignment cArgsAssignment_2_1 = (Assignment)cGroup_2.eContents().get(1);
+		private final CrossReference cArgsTypeCrossReference_2_1_0 = (CrossReference)cArgsAssignment_2_1.eContents().get(0);
+		private final RuleCall cArgsTypeFQNParserRuleCall_2_1_0_1 = (RuleCall)cArgsTypeCrossReference_2_1_0.eContents().get(1);
+		private final Keyword cGreaterThanSignKeyword_3 = (Keyword)cGroup.eContents().get(3);
+		
+		//GenericArgs:
+		//	"<"+ args+=[Type|FQN] ("," args+=[Type|FQN])* ">";
+		public ParserRule getRule() { return rule; }
+
+		//"<"+ args+=[Type|FQN] ("," args+=[Type|FQN])* ">"
+		public Group getGroup() { return cGroup; }
+
+		//"<"+
+		public Keyword getLessThanSignKeyword_0() { return cLessThanSignKeyword_0; }
+
+		//args+=[Type|FQN]
+		public Assignment getArgsAssignment_1() { return cArgsAssignment_1; }
+
+		//[Type|FQN]
+		public CrossReference getArgsTypeCrossReference_1_0() { return cArgsTypeCrossReference_1_0; }
+
+		//FQN
+		public RuleCall getArgsTypeFQNParserRuleCall_1_0_1() { return cArgsTypeFQNParserRuleCall_1_0_1; }
+
+		//("," args+=[Type|FQN])*
+		public Group getGroup_2() { return cGroup_2; }
+
+		//","
+		public Keyword getCommaKeyword_2_0() { return cCommaKeyword_2_0; }
+
+		//args+=[Type|FQN]
+		public Assignment getArgsAssignment_2_1() { return cArgsAssignment_2_1; }
+
+		//[Type|FQN]
+		public CrossReference getArgsTypeCrossReference_2_1_0() { return cArgsTypeCrossReference_2_1_0; }
+
+		//FQN
+		public RuleCall getArgsTypeFQNParserRuleCall_2_1_0_1() { return cArgsTypeFQNParserRuleCall_2_1_0_1; }
+
+		//">"
+		public Keyword getGreaterThanSignKeyword_3() { return cGreaterThanSignKeyword_3; }
+	}
+
 	public class AttributeElements extends AbstractParserRuleElementFinder {
 		private final ParserRule rule = (ParserRule) GrammarUtil.findRuleForName(getGrammar(), "Attribute");
 		private final Group cGroup = (Group)rule.eContents().get(1);
@@ -1989,8 +2057,8 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final CrossReference cTypeTypeCrossReference_2_0 = (CrossReference)cTypeAssignment_2.eContents().get(0);
 		private final RuleCall cTypeTypeFQNParserRuleCall_2_0_1 = (RuleCall)cTypeTypeCrossReference_2_0.eContents().get(1);
-		private final Assignment cMultiplicityAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final Keyword cMultiplicityAsteriskKeyword_3_0 = (Keyword)cMultiplicityAssignment_3.eContents().get(0);
+		private final Assignment cGenericsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cGenericsGenericArgsParserRuleCall_3_0 = (RuleCall)cGenericsAssignment_3.eContents().get(0);
 		private final Assignment cNameAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cNameIDTerminalRuleCall_4_0 = (RuleCall)cNameAssignment_4.eContents().get(0);
 		private final Assignment cInvariantsAssignment_5 = (Assignment)cGroup.eContents().get(5);
@@ -1999,11 +2067,11 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final RuleCall cOverriddenOverriddenTypeMetaInfoParserRuleCall_6_0 = (RuleCall)cOverriddenAssignment_6.eContents().get(0);
 		
 		//Attribute:
-		//	doc=DOC? nullable="nullable"? type=[Type|FQN] multiplicity="*"? name=ID invariants=Invariants?
+		//	doc=DOC? nullable="nullable"? type=[Type|FQN] generics=GenericArgs? name=ID invariants=Invariants?
 		//	overridden=OverriddenTypeMetaInfo?;
 		public ParserRule getRule() { return rule; }
 
-		//doc=DOC? nullable="nullable"? type=[Type|FQN] multiplicity="*"? name=ID invariants=Invariants?
+		//doc=DOC? nullable="nullable"? type=[Type|FQN] generics=GenericArgs? name=ID invariants=Invariants?
 		//overridden=OverriddenTypeMetaInfo?
 		public Group getGroup() { return cGroup; }
 
@@ -2028,11 +2096,11 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		//FQN
 		public RuleCall getTypeTypeFQNParserRuleCall_2_0_1() { return cTypeTypeFQNParserRuleCall_2_0_1; }
 
-		//multiplicity="*"?
-		public Assignment getMultiplicityAssignment_3() { return cMultiplicityAssignment_3; }
+		//generics=GenericArgs?
+		public Assignment getGenericsAssignment_3() { return cGenericsAssignment_3; }
 
-		//"*"
-		public Keyword getMultiplicityAsteriskKeyword_3_0() { return cMultiplicityAsteriskKeyword_3_0; }
+		//GenericArgs
+		public RuleCall getGenericsGenericArgsParserRuleCall_3_0() { return cGenericsGenericArgsParserRuleCall_3_0; }
 
 		//name=ID
 		public Assignment getNameAssignment_4() { return cNameAssignment_4; }
@@ -2063,8 +2131,8 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final Assignment cTypeAssignment_2 = (Assignment)cGroup.eContents().get(2);
 		private final CrossReference cTypeTypeCrossReference_2_0 = (CrossReference)cTypeAssignment_2.eContents().get(0);
 		private final RuleCall cTypeTypeFQNParserRuleCall_2_0_1 = (RuleCall)cTypeTypeCrossReference_2_0.eContents().get(1);
-		private final Assignment cMultiplicityAssignment_3 = (Assignment)cGroup.eContents().get(3);
-		private final Keyword cMultiplicityAsteriskKeyword_3_0 = (Keyword)cMultiplicityAssignment_3.eContents().get(0);
+		private final Assignment cGenericsAssignment_3 = (Assignment)cGroup.eContents().get(3);
+		private final RuleCall cGenericsGenericArgsParserRuleCall_3_0 = (RuleCall)cGenericsAssignment_3.eContents().get(0);
 		private final Assignment cNameAssignment_4 = (Assignment)cGroup.eContents().get(4);
 		private final RuleCall cNameIDTerminalRuleCall_4_0 = (RuleCall)cNameAssignment_4.eContents().get(0);
 		private final Assignment cPreconditionsAssignment_5 = (Assignment)cGroup.eContents().get(5);
@@ -2075,11 +2143,11 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		private final RuleCall cOverriddenOverriddenTypeMetaInfoParserRuleCall_7_0 = (RuleCall)cOverriddenAssignment_7.eContents().get(0);
 		
 		//Parameter:
-		//	doc=DOC? nullable="nullable"? type=[Type|FQN] multiplicity="*"? name=ID preconditions=Preconditions?
+		//	doc=DOC? nullable="nullable"? type=[Type|FQN] generics=GenericArgs? name=ID preconditions=Preconditions?
 		//	businessRules=BusinessRules? overridden=OverriddenTypeMetaInfo?;
 		public ParserRule getRule() { return rule; }
 
-		//doc=DOC? nullable="nullable"? type=[Type|FQN] multiplicity="*"? name=ID preconditions=Preconditions?
+		//doc=DOC? nullable="nullable"? type=[Type|FQN] generics=GenericArgs? name=ID preconditions=Preconditions?
 		//businessRules=BusinessRules? overridden=OverriddenTypeMetaInfo?
 		public Group getGroup() { return cGroup; }
 
@@ -2104,11 +2172,11 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		//FQN
 		public RuleCall getTypeTypeFQNParserRuleCall_2_0_1() { return cTypeTypeFQNParserRuleCall_2_0_1; }
 
-		//multiplicity="*"?
-		public Assignment getMultiplicityAssignment_3() { return cMultiplicityAssignment_3; }
+		//generics=GenericArgs?
+		public Assignment getGenericsAssignment_3() { return cGenericsAssignment_3; }
 
-		//"*"
-		public Keyword getMultiplicityAsteriskKeyword_3_0() { return cMultiplicityAsteriskKeyword_3_0; }
+		//GenericArgs
+		public RuleCall getGenericsGenericArgsParserRuleCall_3_0() { return cGenericsGenericArgsParserRuleCall_3_0; }
 
 		//name=ID
 		public Assignment getNameAssignment_4() { return cNameAssignment_4; }
@@ -2822,6 +2890,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	private final MethodElements pMethod;
 	private final TypeMetaInfoElements pTypeMetaInfo;
 	private final VariableElements pVariable;
+	private final GenericArgsElements pGenericArgs;
 	private final AttributeElements pAttribute;
 	private final ParameterElements pParameter;
 	private final InvariantsElements pInvariants;
@@ -2887,6 +2956,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		this.pMethod = new MethodElements();
 		this.pTypeMetaInfo = new TypeMetaInfoElements();
 		this.pVariable = new VariableElements();
+		this.pGenericArgs = new GenericArgsElements();
 		this.pAttribute = new AttributeElements();
 		this.pParameter = new ParameterElements();
 		this.pInvariants = new InvariantsElements();
@@ -3038,7 +3108,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//ExternalType:
-	//	doc=DOC? "type" element="element"? name=ID;
+	//	doc=DOC? "type" element="element"? name=ID ("generics" generics=INT)?;
 	public ExternalTypeElements getExternalTypeAccess() {
 		return pExternalType;
 	}
@@ -3293,8 +3363,18 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 		return getVariableAccess().getRule();
 	}
 
+	//GenericArgs:
+	//	"<"+ args+=[Type|FQN] ("," args+=[Type|FQN])* ">";
+	public GenericArgsElements getGenericArgsAccess() {
+		return pGenericArgs;
+	}
+	
+	public ParserRule getGenericArgsRule() {
+		return getGenericArgsAccess().getRule();
+	}
+
 	//Attribute:
-	//	doc=DOC? nullable="nullable"? type=[Type|FQN] multiplicity="*"? name=ID invariants=Invariants?
+	//	doc=DOC? nullable="nullable"? type=[Type|FQN] generics=GenericArgs? name=ID invariants=Invariants?
 	//	overridden=OverriddenTypeMetaInfo?;
 	public AttributeElements getAttributeAccess() {
 		return pAttribute;
@@ -3305,7 +3385,7 @@ public class DomainDrivenDesignDslGrammarAccess extends AbstractGrammarElementFi
 	}
 
 	//Parameter:
-	//	doc=DOC? nullable="nullable"? type=[Type|FQN] multiplicity="*"? name=ID preconditions=Preconditions?
+	//	doc=DOC? nullable="nullable"? type=[Type|FQN] generics=GenericArgs? name=ID preconditions=Preconditions?
 	//	businessRules=BusinessRules? overridden=OverriddenTypeMetaInfo?;
 	public ParameterElements getParameterAccess() {
 		return pParameter;

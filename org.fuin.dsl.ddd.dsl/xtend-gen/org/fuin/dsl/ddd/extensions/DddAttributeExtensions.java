@@ -7,6 +7,7 @@ import org.eclipse.emf.common.util.EList;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.ConstraintInstance;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.DomainDrivenDesignDslFactory;
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.GenericArgs;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Invariants;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.OverriddenTypeMetaInfo;
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Parameter;
@@ -21,6 +22,7 @@ import org.fuin.dsl.ddd.extensions.DddInvariantsExtensions;
 public class DddAttributeExtensions {
   /**
    * Copies the attribute and assigns a new name to the copy.
+   * CAUTION: This is a shallow copy (no deep copy).
    * 
    * @param attr Attribute to copy
    * @param name New name.
@@ -36,8 +38,8 @@ public class DddAttributeExtensions {
     newAttr.setNullable(_nullable);
     Type _type = attr.getType();
     newAttr.setType(_type);
-    String _multiplicity = attr.getMultiplicity();
-    newAttr.setMultiplicity(_multiplicity);
+    GenericArgs _generics = attr.getGenerics();
+    newAttr.setGenerics(_generics);
     Invariants _invariants = attr.getInvariants();
     newAttr.setInvariants(_invariants);
     OverriddenTypeMetaInfo _overridden = attr.getOverridden();
@@ -47,6 +49,7 @@ public class DddAttributeExtensions {
   
   /**
    * Converts the attribute into a parameter.
+   * CAUTION: This is a shallow copy (no deep copy).
    * 
    * @param attribute Attribute to convert.
    * 
@@ -71,8 +74,8 @@ public class DddAttributeExtensions {
     param.setNullable(_nullable);
     Type _type = attr.getType();
     param.setType(_type);
-    String _multiplicity = attr.getMultiplicity();
-    param.setMultiplicity(_multiplicity);
+    GenericArgs _generics = attr.getGenerics();
+    param.setGenerics(_generics);
     String _name = attr.getName();
     param.setName(_name);
     OverriddenTypeMetaInfo _overridden = attr.getOverridden();

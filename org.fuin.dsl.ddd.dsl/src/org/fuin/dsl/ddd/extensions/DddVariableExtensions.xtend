@@ -37,10 +37,7 @@ class DddVariableExtensions {
 	 * @return Primitive type or original type name. 
 	 */
 	def static String asJavaPrimitive(Variable variable) {
-		if (variable.multiplicity == null) {
-			return variable.type.asJavaPrimitive;
-		}
-		return (variable.type.asJavaPrimitive + "[]");
+		return variable.type.asJavaPrimitive;
 	}
 
 	/**

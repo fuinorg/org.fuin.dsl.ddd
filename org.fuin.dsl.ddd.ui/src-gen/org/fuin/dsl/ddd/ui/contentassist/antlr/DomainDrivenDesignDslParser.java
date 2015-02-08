@@ -59,6 +59,7 @@ public class DomainDrivenDesignDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getNamespaceAccess().getGroup(), "rule__Namespace__Group__0");
 					put(grammarAccess.getImportAccess().getGroup(), "rule__Import__Group__0");
 					put(grammarAccess.getExternalTypeAccess().getGroup(), "rule__ExternalType__Group__0");
+					put(grammarAccess.getExternalTypeAccess().getGroup_4(), "rule__ExternalType__Group_4__0");
 					put(grammarAccess.getDurationAccess().getGroup(), "rule__Duration__Group__0");
 					put(grammarAccess.getWeakConsistencyAccess().getGroup(), "rule__WeakConsistency__Group__0");
 					put(grammarAccess.getConsistencyAccess().getGroup(), "rule__Consistency__Group__0");
@@ -103,6 +104,8 @@ public class DomainDrivenDesignDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTypeMetaInfoAccess().getGroup_3(), "rule__TypeMetaInfo__Group_3__0");
 					put(grammarAccess.getTypeMetaInfoAccess().getGroup_4(), "rule__TypeMetaInfo__Group_4__0");
 					put(grammarAccess.getTypeMetaInfoAccess().getGroup_5(), "rule__TypeMetaInfo__Group_5__0");
+					put(grammarAccess.getGenericArgsAccess().getGroup(), "rule__GenericArgs__Group__0");
+					put(grammarAccess.getGenericArgsAccess().getGroup_2(), "rule__GenericArgs__Group_2__0");
 					put(grammarAccess.getAttributeAccess().getGroup(), "rule__Attribute__Group__0");
 					put(grammarAccess.getParameterAccess().getGroup(), "rule__Parameter__Group__0");
 					put(grammarAccess.getInvariantsAccess().getGroup(), "rule__Invariants__Group__0");
@@ -135,6 +138,7 @@ public class DomainDrivenDesignDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getExternalTypeAccess().getDocAssignment_0(), "rule__ExternalType__DocAssignment_0");
 					put(grammarAccess.getExternalTypeAccess().getElementAssignment_2(), "rule__ExternalType__ElementAssignment_2");
 					put(grammarAccess.getExternalTypeAccess().getNameAssignment_3(), "rule__ExternalType__NameAssignment_3");
+					put(grammarAccess.getExternalTypeAccess().getGenericsAssignment_4_1(), "rule__ExternalType__GenericsAssignment_4_1");
 					put(grammarAccess.getDurationAccess().getTimeAssignment_0(), "rule__Duration__TimeAssignment_0");
 					put(grammarAccess.getDurationAccess().getUnitAssignment_1(), "rule__Duration__UnitAssignment_1");
 					put(grammarAccess.getWeakConsistencyAccess().getAcceptableDocAssignment_0(), "rule__WeakConsistency__AcceptableDocAssignment_0");
@@ -248,17 +252,19 @@ public class DomainDrivenDesignDslParser extends AbstractContentAssistParser {
 					put(grammarAccess.getTypeMetaInfoAccess().getTooltipAssignment_3_1(), "rule__TypeMetaInfo__TooltipAssignment_3_1");
 					put(grammarAccess.getTypeMetaInfoAccess().getPromptAssignment_4_1(), "rule__TypeMetaInfo__PromptAssignment_4_1");
 					put(grammarAccess.getTypeMetaInfoAccess().getExamplesAssignment_5_1(), "rule__TypeMetaInfo__ExamplesAssignment_5_1");
+					put(grammarAccess.getGenericArgsAccess().getArgsAssignment_1(), "rule__GenericArgs__ArgsAssignment_1");
+					put(grammarAccess.getGenericArgsAccess().getArgsAssignment_2_1(), "rule__GenericArgs__ArgsAssignment_2_1");
 					put(grammarAccess.getAttributeAccess().getDocAssignment_0(), "rule__Attribute__DocAssignment_0");
 					put(grammarAccess.getAttributeAccess().getNullableAssignment_1(), "rule__Attribute__NullableAssignment_1");
 					put(grammarAccess.getAttributeAccess().getTypeAssignment_2(), "rule__Attribute__TypeAssignment_2");
-					put(grammarAccess.getAttributeAccess().getMultiplicityAssignment_3(), "rule__Attribute__MultiplicityAssignment_3");
+					put(grammarAccess.getAttributeAccess().getGenericsAssignment_3(), "rule__Attribute__GenericsAssignment_3");
 					put(grammarAccess.getAttributeAccess().getNameAssignment_4(), "rule__Attribute__NameAssignment_4");
 					put(grammarAccess.getAttributeAccess().getInvariantsAssignment_5(), "rule__Attribute__InvariantsAssignment_5");
 					put(grammarAccess.getAttributeAccess().getOverriddenAssignment_6(), "rule__Attribute__OverriddenAssignment_6");
 					put(grammarAccess.getParameterAccess().getDocAssignment_0(), "rule__Parameter__DocAssignment_0");
 					put(grammarAccess.getParameterAccess().getNullableAssignment_1(), "rule__Parameter__NullableAssignment_1");
 					put(grammarAccess.getParameterAccess().getTypeAssignment_2(), "rule__Parameter__TypeAssignment_2");
-					put(grammarAccess.getParameterAccess().getMultiplicityAssignment_3(), "rule__Parameter__MultiplicityAssignment_3");
+					put(grammarAccess.getParameterAccess().getGenericsAssignment_3(), "rule__Parameter__GenericsAssignment_3");
 					put(grammarAccess.getParameterAccess().getNameAssignment_4(), "rule__Parameter__NameAssignment_4");
 					put(grammarAccess.getParameterAccess().getPreconditionsAssignment_5(), "rule__Parameter__PreconditionsAssignment_5");
 					put(grammarAccess.getParameterAccess().getBusinessRulesAssignment_6(), "rule__Parameter__BusinessRulesAssignment_6");

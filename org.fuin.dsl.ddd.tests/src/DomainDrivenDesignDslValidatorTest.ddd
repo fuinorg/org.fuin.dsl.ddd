@@ -3,6 +3,7 @@ context myctx {
 	namespace mytypes {
 		type String
 		type Integer
+		type List generics 1
     }
 
 	namespace a {
@@ -12,6 +13,10 @@ context myctx {
 		value-object TestValueObjectA {
 			// WARNING: Variable names should start with a lower case
 			String VariableA
+			// ERROR: The number of arguments does not match the number required by the type: 1
+			List<String,String> testValueObjectAList1
+			// ERROR: The number of arguments does not match the number required by the type: 1
+			List testValueObjectAList2
 		}
 		
 		constraint ConstraintA {

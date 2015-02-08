@@ -669,7 +669,29 @@ ruleExternalType returns [EObject current=null]
 	    }
 
 )
-))
+)(	otherlv_4='generics' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getExternalTypeAccess().getGenericsKeyword_4_0());
+    }
+(
+(
+		lv_generics_5_0=RULE_INT
+		{
+			newLeafNode(lv_generics_5_0, grammarAccess.getExternalTypeAccess().getGenericsINTTerminalRuleCall_4_1_0()); 
+		}
+		{
+	        if ($current==null) {
+	            $current = createModelElement(grammarAccess.getExternalTypeRule());
+	        }
+       		setWithLastConsumed(
+       			$current, 
+       			"generics",
+        		lv_generics_5_0, 
+        		"INT");
+	    }
+
+)
+))?)
 ;
 
 
@@ -3301,6 +3323,69 @@ ruleTypeMetaInfo returns [EObject current=null]
 
 
 
+// Entry rule entryRuleGenericArgs
+entryRuleGenericArgs returns [EObject current=null] 
+	:
+	{ newCompositeNode(grammarAccess.getGenericArgsRule()); }
+	 iv_ruleGenericArgs=ruleGenericArgs 
+	 { $current=$iv_ruleGenericArgs.current; } 
+	 EOF 
+;
+
+// Rule GenericArgs
+ruleGenericArgs returns [EObject current=null] 
+    @init { enterRule(); 
+    }
+    @after { leaveRule(); }:
+((	otherlv_0='<' 
+    {
+    	newLeafNode(otherlv_0, grammarAccess.getGenericArgsAccess().getLessThanSignKeyword_0());
+    }
+)+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getGenericArgsRule());
+	        }
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getGenericArgsAccess().getArgsTypeCrossReference_1_0()); 
+	    }
+		ruleFQN		{ 
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+)(	otherlv_2=',' 
+    {
+    	newLeafNode(otherlv_2, grammarAccess.getGenericArgsAccess().getCommaKeyword_2_0());
+    }
+(
+(
+		{
+			if ($current==null) {
+	            $current = createModelElement(grammarAccess.getGenericArgsRule());
+	        }
+        }
+		{ 
+	        newCompositeNode(grammarAccess.getGenericArgsAccess().getArgsTypeCrossReference_2_1_0()); 
+	    }
+		ruleFQN		{ 
+	        afterParserOrEnumRuleCall();
+	    }
+
+)
+))*	otherlv_4='>' 
+    {
+    	newLeafNode(otherlv_4, grammarAccess.getGenericArgsAccess().getGreaterThanSignKeyword_3());
+    }
+)
+;
+
+
+
+
+
 // Entry rule entryRuleAttribute
 entryRuleAttribute returns [EObject current=null] 
 	:
@@ -3365,16 +3450,19 @@ ruleAttribute returns [EObject current=null]
 )
 )(
 (
-		lv_multiplicity_3_0=	'*' 
-    {
-        newLeafNode(lv_multiplicity_3_0, grammarAccess.getAttributeAccess().getMultiplicityAsteriskKeyword_3_0());
-    }
- 
-	    {
+		{ 
+	        newCompositeNode(grammarAccess.getAttributeAccess().getGenericsGenericArgsParserRuleCall_3_0()); 
+	    }
+		lv_generics_3_0=ruleGenericArgs		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getAttributeRule());
+	            $current = createModelElementForParent(grammarAccess.getAttributeRule());
 	        }
-       		setWithLastConsumed($current, "multiplicity", lv_multiplicity_3_0, "*");
+       		set(
+       			$current, 
+       			"generics",
+        		lv_generics_3_0, 
+        		"GenericArgs");
+	        afterParserOrEnumRuleCall();
 	    }
 
 )
@@ -3503,16 +3591,19 @@ ruleParameter returns [EObject current=null]
 )
 )(
 (
-		lv_multiplicity_3_0=	'*' 
-    {
-        newLeafNode(lv_multiplicity_3_0, grammarAccess.getParameterAccess().getMultiplicityAsteriskKeyword_3_0());
-    }
- 
-	    {
+		{ 
+	        newCompositeNode(grammarAccess.getParameterAccess().getGenericsGenericArgsParserRuleCall_3_0()); 
+	    }
+		lv_generics_3_0=ruleGenericArgs		{
 	        if ($current==null) {
-	            $current = createModelElement(grammarAccess.getParameterRule());
+	            $current = createModelElementForParent(grammarAccess.getParameterRule());
 	        }
-       		setWithLastConsumed($current, "multiplicity", lv_multiplicity_3_0, "*");
+       		set(
+       			$current, 
+       			"generics",
+        		lv_generics_3_0, 
+        		"GenericArgs");
+	        afterParserOrEnumRuleCall();
 	    }
 
 )

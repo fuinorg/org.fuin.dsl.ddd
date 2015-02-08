@@ -645,13 +645,22 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int EXTERNAL_TYPE__ELEMENT = TYPE_FEATURE_COUNT + 0;
 
   /**
+   * The feature id for the '<em><b>Generics</b></em>' attribute.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int EXTERNAL_TYPE__GENERICS = TYPE_FEATURE_COUNT + 1;
+
+  /**
    * The number of structural features of the '<em>External Type</em>' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int EXTERNAL_TYPE_FEATURE_COUNT = TYPE_FEATURE_COUNT + 1;
+  int EXTERNAL_TYPE_FEATURE_COUNT = TYPE_FEATURE_COUNT + 2;
 
   /**
    * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DurationImpl <em>Duration</em>}' class.
@@ -2104,13 +2113,13 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int VARIABLE__TYPE = 2;
 
   /**
-   * The feature id for the '<em><b>Multiplicity</b></em>' attribute.
+   * The feature id for the '<em><b>Generics</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int VARIABLE__MULTIPLICITY = 3;
+  int VARIABLE__GENERICS = 3;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2140,6 +2149,34 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int VARIABLE_FEATURE_COUNT = 6;
 
   /**
+   * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.GenericArgsImpl <em>Generic Args</em>}' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.GenericArgsImpl
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getGenericArgs()
+   * @generated
+   */
+  int GENERIC_ARGS = 30;
+
+  /**
+   * The feature id for the '<em><b>Args</b></em>' reference list.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERIC_ARGS__ARGS = 0;
+
+  /**
+   * The number of structural features of the '<em>Generic Args</em>' class.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @generated
+   * @ordered
+   */
+  int GENERIC_ARGS_FEATURE_COUNT = 1;
+
+  /**
    * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AttributeImpl <em>Attribute</em>}' class.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
@@ -2147,7 +2184,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getAttribute()
    * @generated
    */
-  int ATTRIBUTE = 30;
+  int ATTRIBUTE = 31;
 
   /**
    * The feature id for the '<em><b>Doc</b></em>' attribute.
@@ -2177,13 +2214,13 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int ATTRIBUTE__TYPE = VARIABLE__TYPE;
 
   /**
-   * The feature id for the '<em><b>Multiplicity</b></em>' attribute.
+   * The feature id for the '<em><b>Generics</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int ATTRIBUTE__MULTIPLICITY = VARIABLE__MULTIPLICITY;
+  int ATTRIBUTE__GENERICS = VARIABLE__GENERICS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2229,7 +2266,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getParameter()
    * @generated
    */
-  int PARAMETER = 31;
+  int PARAMETER = 32;
 
   /**
    * The feature id for the '<em><b>Doc</b></em>' attribute.
@@ -2259,13 +2296,13 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   int PARAMETER__TYPE = VARIABLE__TYPE;
 
   /**
-   * The feature id for the '<em><b>Multiplicity</b></em>' attribute.
+   * The feature id for the '<em><b>Generics</b></em>' containment reference.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
    * @generated
    * @ordered
    */
-  int PARAMETER__MULTIPLICITY = VARIABLE__MULTIPLICITY;
+  int PARAMETER__GENERICS = VARIABLE__GENERICS;
 
   /**
    * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -2320,7 +2357,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getInvariants()
    * @generated
    */
-  int INVARIANTS = 32;
+  int INVARIANTS = 33;
 
   /**
    * The feature id for the '<em><b>Constraint Instances</b></em>' containment reference list.
@@ -2348,7 +2385,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getPreconditions()
    * @generated
    */
-  int PRECONDITIONS = 33;
+  int PRECONDITIONS = 34;
 
   /**
    * The feature id for the '<em><b>Constraint Instances</b></em>' containment reference list.
@@ -2376,7 +2413,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getBusinessRules()
    * @generated
    */
-  int BUSINESS_RULES = 34;
+  int BUSINESS_RULES = 35;
 
   /**
    * The feature id for the '<em><b>Constraint Instances</b></em>' containment reference list.
@@ -2404,7 +2441,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getOverriddenTypeMetaInfo()
    * @generated
    */
-  int OVERRIDDEN_TYPE_META_INFO = 35;
+  int OVERRIDDEN_TYPE_META_INFO = 36;
 
   /**
    * The feature id for the '<em><b>Meta Info</b></em>' containment reference.
@@ -2432,7 +2469,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getConstraintInstance()
    * @generated
    */
-  int CONSTRAINT_INSTANCE = 36;
+  int CONSTRAINT_INSTANCE = 37;
 
   /**
    * The feature id for the '<em><b>Constraint</b></em>' reference.
@@ -2469,7 +2506,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getService()
    * @generated
    */
-  int SERVICE = 37;
+  int SERVICE = 38;
 
   /**
    * The feature id for the '<em><b>Doc</b></em>' attribute.
@@ -2515,7 +2552,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getLiteral()
    * @generated
    */
-  int LITERAL = 38;
+  int LITERAL = 39;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2543,7 +2580,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getBooleanLiteral()
    * @generated
    */
-  int BOOLEAN_LITERAL = 39;
+  int BOOLEAN_LITERAL = 40;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2571,7 +2608,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getNullLiteral()
    * @generated
    */
-  int NULL_LITERAL = 40;
+  int NULL_LITERAL = 41;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2599,7 +2636,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getNumberLiteral()
    * @generated
    */
-  int NUMBER_LITERAL = 41;
+  int NUMBER_LITERAL = 42;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2627,7 +2664,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getStringLiteral()
    * @generated
    */
-  int STRING_LITERAL = 42;
+  int STRING_LITERAL = 43;
 
   /**
    * The feature id for the '<em><b>Value</b></em>' attribute.
@@ -2655,7 +2692,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getTimeUnit()
    * @generated
    */
-  int TIME_UNIT = 43;
+  int TIME_UNIT = 44;
 
   /**
    * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.ConsistencyLevel <em>Consistency Level</em>}' enum.
@@ -2665,7 +2702,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getConsistencyLevel()
    * @generated
    */
-  int CONSISTENCY_LEVEL = 44;
+  int CONSISTENCY_LEVEL = 45;
 
   /**
    * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.InconsistencyDetection <em>Inconsistency Detection</em>}' enum.
@@ -2675,7 +2712,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getInconsistencyDetection()
    * @generated
    */
-  int INCONSISTENCY_DETECTION = 45;
+  int INCONSISTENCY_DETECTION = 46;
 
   /**
    * The meta object id for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.InconsistencyResolution <em>Inconsistency Resolution</em>}' enum.
@@ -2685,7 +2722,7 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getInconsistencyResolution()
    * @generated
    */
-  int INCONSISTENCY_RESOLUTION = 46;
+  int INCONSISTENCY_RESOLUTION = 47;
 
 
   /**
@@ -3006,6 +3043,17 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @generated
    */
   EAttribute getExternalType_Element();
+
+  /**
+   * Returns the meta object for the attribute '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType#getGenerics <em>Generics</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the attribute '<em>Generics</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.ExternalType#getGenerics()
+   * @see #getExternalType()
+   * @generated
+   */
+  EAttribute getExternalType_Generics();
 
   /**
    * Returns the meta object for class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Duration <em>Duration</em>}'.
@@ -3781,15 +3829,15 @@ public interface DomainDrivenDesignDslPackage extends EPackage
   EReference getVariable_Type();
 
   /**
-   * Returns the meta object for the attribute '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable#getMultiplicity <em>Multiplicity</em>}'.
+   * Returns the meta object for the containment reference '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable#getGenerics <em>Generics</em>}'.
    * <!-- begin-user-doc -->
    * <!-- end-user-doc -->
-   * @return the meta object for the attribute '<em>Multiplicity</em>'.
-   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable#getMultiplicity()
+   * @return the meta object for the containment reference '<em>Generics</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable#getGenerics()
    * @see #getVariable()
    * @generated
    */
-  EAttribute getVariable_Multiplicity();
+  EReference getVariable_Generics();
 
   /**
    * Returns the meta object for the attribute '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Variable#getName <em>Name</em>}'.
@@ -3812,6 +3860,27 @@ public interface DomainDrivenDesignDslPackage extends EPackage
    * @generated
    */
   EReference getVariable_Overridden();
+
+  /**
+   * Returns the meta object for class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.GenericArgs <em>Generic Args</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for class '<em>Generic Args</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.GenericArgs
+   * @generated
+   */
+  EClass getGenericArgs();
+
+  /**
+   * Returns the meta object for the reference list '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.GenericArgs#getArgs <em>Args</em>}'.
+   * <!-- begin-user-doc -->
+   * <!-- end-user-doc -->
+   * @return the meta object for the reference list '<em>Args</em>'.
+   * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.GenericArgs#getArgs()
+   * @see #getGenericArgs()
+   * @generated
+   */
+  EReference getGenericArgs_Args();
 
   /**
    * Returns the meta object for class '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.Attribute <em>Attribute</em>}'.
@@ -4388,6 +4457,14 @@ public interface DomainDrivenDesignDslPackage extends EPackage
      * @generated
      */
     EAttribute EXTERNAL_TYPE__ELEMENT = eINSTANCE.getExternalType_Element();
+
+    /**
+     * The meta object literal for the '<em><b>Generics</b></em>' attribute feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EAttribute EXTERNAL_TYPE__GENERICS = eINSTANCE.getExternalType_Generics();
 
     /**
      * The meta object literal for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DurationImpl <em>Duration</em>}' class.
@@ -5004,12 +5081,12 @@ public interface DomainDrivenDesignDslPackage extends EPackage
     EReference VARIABLE__TYPE = eINSTANCE.getVariable_Type();
 
     /**
-     * The meta object literal for the '<em><b>Multiplicity</b></em>' attribute feature.
+     * The meta object literal for the '<em><b>Generics</b></em>' containment reference feature.
      * <!-- begin-user-doc -->
      * <!-- end-user-doc -->
      * @generated
      */
-    EAttribute VARIABLE__MULTIPLICITY = eINSTANCE.getVariable_Multiplicity();
+    EReference VARIABLE__GENERICS = eINSTANCE.getVariable_Generics();
 
     /**
      * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -5026,6 +5103,24 @@ public interface DomainDrivenDesignDslPackage extends EPackage
      * @generated
      */
     EReference VARIABLE__OVERRIDDEN = eINSTANCE.getVariable_Overridden();
+
+    /**
+     * The meta object literal for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.GenericArgsImpl <em>Generic Args</em>}' class.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.GenericArgsImpl
+     * @see org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.DomainDrivenDesignDslPackageImpl#getGenericArgs()
+     * @generated
+     */
+    EClass GENERIC_ARGS = eINSTANCE.getGenericArgs();
+
+    /**
+     * The meta object literal for the '<em><b>Args</b></em>' reference list feature.
+     * <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     * @generated
+     */
+    EReference GENERIC_ARGS__ARGS = eINSTANCE.getGenericArgs_Args();
 
     /**
      * The meta object literal for the '{@link org.fuin.dsl.ddd.domainDrivenDesignDsl.impl.AttributeImpl <em>Attribute</em>}' class.
