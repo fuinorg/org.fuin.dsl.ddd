@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<parent>
@@ -44,13 +44,13 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 			<url>https://fuinorg.jfrog.io/fuinorg/eclipse-p2/download.eclipse.org/modeling/tmf/xtext/updates/releases/${xtext.version}/</url>
 		</repository>
 	</repositories>
-	
+
 	<build>
-		
+
 		<pluginManagement>
-			
+
 			<plugins>
-				
+
 				<!-- xtend-maven-plugin is in pluginManagement instead of in plugins 
 					so that it doesn't run before the exec-maven-plugin's *.mwe2 gen; this way 
 					we can list it after. -->
@@ -72,7 +72,7 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 						<outputDirectory>xtend-gen</outputDirectory>
 					</configuration>
 				</plugin>
-			
+
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-clean-plugin</artifactId>
@@ -93,22 +93,31 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 						</execution>
 					</executions>
 				</plugin>
-				
+
 			</plugins>
-			
+
 		</pluginManagement>
 
 		<plugins>
-			
+
 			<plugin>
 				<groupId>org.eclipse.tycho</groupId>
 				<artifactId>tycho-maven-plugin</artifactId>
 				<version>${tycho-version}</version>
 				<extensions>true</extensions>
 			</plugin>
-			
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-javadoc-plugin</artifactId>
+				<version>2.10.4</version>
+				<configuration>
+					<additionalparam>-Xdoclint:none</additionalparam>
+				</configuration>
+			</plugin>
+
 		</plugins>
-	
+
 	</build>
 
 	<modules>
@@ -119,5 +128,5 @@ xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xs
 		<module>org.fuin.dsl.ddd.sdk</module>
 		<module>org.fuin.dsl.ddd.repository</module>
 	</modules>
-	
+
 </project>
