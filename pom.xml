@@ -3,10 +3,28 @@
 xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
+	<parent>
+		<groupId>org.fuin</groupId>
+		<artifactId>pom</artifactId>
+		<version>1.4.0</version>
+	</parent>
+
 	<groupId>org.fuin.dsl.ddd</groupId>
 	<artifactId>ddd-dsl</artifactId>
 	<version>0.2.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
+	<description>Xtext based DSL supporting Domain-driven design (DDD)</description>
+
+	<scm>
+		<url>https://github.com/fuinorg/org.fuin.dsl.ddd/</url>
+		<connection>scm:git:git://github.com/fuinorg/org.fuin.dsl.ddd.git</connection>
+		<developerConnection>scm:git:git@github.com:fuinorg/org.fuin.dsl.ddd.git</developerConnection>
+	</scm>
+
+	<issueManagement>
+		<system>GitHub Issues</system>
+		<url>https://github.com/fuinorg/org.fuin.dsl.ddd/issues</url>
+	</issueManagement>
 
 	<properties>
 		<tycho-version>1.0.0</tycho-version>
