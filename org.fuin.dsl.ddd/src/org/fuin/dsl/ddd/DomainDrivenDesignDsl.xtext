@@ -1,0 +1,281 @@
+grammar org.fuin.dsl.ddd.DomainDrivenDesignDsl hidden(WS, ML_COMMENT, SL_COMMENT)
+
+import "http://www.eclipse.org/emf/2002/Ecore" as ecore
+
+generate domainDrivenDesignDsl "http://www.fuin.org/dsl/ddd/DomainDrivenDesignDsl"
+
+DomainModel:
+	contexts+=Context*;
+
+Context:
+	'context' name=ID '{'
+		namespaces+=Namespace*
+	'}';
+	
+Namespace:
+	'namespace' name=FQN '{'
+		imports+=Import*
+		elements+=AbstractElement*
+	'}';
+
+Import:
+	'import' importedNamespace=(FQN | FQNWithWildcard);
+
+AbstractElement:
+	Constraint | Type | Exception | Event;
+
+Type:
+	ExternalType | InternalType | Service;
+
+InternalType:
+	AbstractVO | AbstractEntity | EnumObject;
+
+AbstractVO:
+	ValueObject | AbstractEntityId;
+
+AbstractEntityId:
+	EntityId | AggregateId;
+
+AbstractEntity:
+	Entity | Aggregate;
+
+ExternalType:
+	doc=DOC?	
+	'type' (element='element')? name=ID ('generics' generics=INT)?;
+
+enum TimeUnit:
+	millis | seconds | minutes | hours | days;
+
+enum ConsistencyLevel:
+	weak | strong;
+
+enum InconsistencyDetection:
+	never | manually | automatic;
+
+enum InconsistencyResolution:
+	never | manually | automatic | workflow;
+
+Duration:
+	time=INT unit=TimeUnit;
+
+WeakConsistency:
+	acceptableDoc=DOC? 
+	'acceptable' acceptable=Duration 
+	
+	detectionDoc=DOC? 
+	'detection' detection=InconsistencyDetection
+	
+	resolutionDoc=DOC? 
+	'resolution' resolution=InconsistencyResolution;
+	
+Consistency:
+	doc=DOC
+	'consistency' level=ConsistencyLevel ('{' weakConsistency=WeakConsistency '}')?;
+
+Constraint:
+	doc=DOC? 
+	'constraint' name=ID ('input' input=[Type|FQN])? ('exception' exception=[Exception|FQN])? '{'
+		attributes+=Attribute* 
+		consistency=Consistency? 
+		('message' message=STRING)?
+	'}';
+	
+Exception:
+	doc=DOC?
+	'exception' name=ID ('cid' cid=INT)? '{'
+		attributes+=Attribute* 
+		'message' message=STRING
+	'}';
+
+ValueObject:
+	doc=DOC? 
+	'value-object' name=ID ('base' base=[ExternalType|FQN])? (invariants=Invariants)? '{'
+		metaInfo=TypeMetaInfo
+		attributes+=Attribute*
+		constructors+=Constructor*
+		methods+=Method*
+	'}';
+
+EntityId:
+	doc=DOC?
+	'entity-id' name=ID ('identifies' entity=[Entity|FQN])? ('base' base=[ExternalType|FQN])? (invariants=Invariants)? '{'
+		metaInfo=TypeMetaInfo
+		attributes+=Attribute*
+		constructors+=Constructor*
+		methods+=Method*
+	'}';
+
+AggregateId:
+	doc=DOC?
+	'aggregate-id' name=ID ('identifies' aggregate=[Aggregate|FQN])? ('base' base=[ExternalType|FQN])? (invariants=Invariants)? '{'
+		metaInfo=TypeMetaInfo
+		attributes+=Attribute*
+		constructors+=Constructor*
+		methods+=Method*
+	'}';
+
+EnumObject:
+	doc=DOC?
+	'enum' name=ID ('base' base=[ExternalType|FQN])? (invariants=Invariants)? '{'
+		metaInfo=TypeMetaInfo
+		attributes+=Attribute*
+		'instances' '{' instances+=EnumInstance+ '}'
+	'}';
+	
+EnumInstance:
+	doc=DOC?
+	(deprecated='deprecated')? name=ID ('(' params+=Literal (',' params+=Literal)* ')')?;	
+	
+Event:
+	doc=DOC? 
+	'event' name=ID '{'
+		attributes+=Attribute*
+		('message' message=STRING)?
+	'}';
+
+Entity:
+	doc=DOC?
+	'entity' name=ID ('identifier' idType=[EntityId|FQN])? ('root' root=[Aggregate|FQN])? (invariants=Invariants)? '{'
+		metaInfo=TypeMetaInfo
+		attributes+=Attribute*
+		constructors+=Constructor*
+		methods+=Method*
+		elements+=AbstractElement*
+	'}';
+
+Aggregate:
+	doc=DOC?
+	'aggregate' name=ID ('identifier' idType=[AggregateId|FQN])? (invariants=Invariants)? '{'
+		metaInfo=TypeMetaInfo
+		attributes+=Attribute*
+		constructors+=Constructor*
+		methods+=Method*
+		elements+=AbstractElement*
+	'}';
+	
+AbstractMethod:
+	Constructor | Method;
+	
+Constructor:
+	doc=DOC? 
+	'constructor' name=ID (preconditions=Preconditions)? (businessRules=BusinessRules)? ('fires' firedEvents+=[Event|FQN] (',' firedEvents+=[Event|FQN])*)? '{'
+		parameters+=Parameter*
+		service=[Service|FQN]?
+		services+=Service*
+		events+=Event*
+	'}';
+
+ReturnType:
+	doc=DOC? 
+	'returns' type=[Type|FQN];
+
+Method:
+	doc=DOC? 
+	'method' name=ID ('ref' refMethod=[Method|FQN])? (preconditions=Preconditions)? (businessRules=BusinessRules)? ('fires' firedEvents+=[Event|FQN] (',' firedEvents+=[Event|FQN])*)? '{'
+		parameters+=Parameter*
+		service=[Service|FQN]?
+		returnType=ReturnType?
+		services+=Service*
+		events+=Event*
+	'}';
+
+TypeMetaInfo:
+	{TypeMetaInfo}
+    	('slabel' (slabel=STRING))?
+    	('label' (label=STRING))?
+    	('tooltip' (tooltip=STRING))?
+    	('prompt' (prompt=STRING))?
+    	('examples' (examples+=Literal*))?;
+
+Variable:
+	Attribute | Parameter;
+	
+GenericArgs:
+	'<' + args+=[Type|FQN] (',' args+=[Type|FQN])* '>';	
+	
+Attribute:
+	doc=DOC? 
+	(nullable='nullable')? 	
+	type=[Type|FQN] generics=GenericArgs? name=ID (invariants=Invariants)? (overridden=OverriddenTypeMetaInfo)?;
+
+Parameter:
+	doc=DOC? 
+	(nullable='nullable')? 
+	type=[Type|FQN] generics=GenericArgs? name=ID (preconditions=Preconditions)? (businessRules=BusinessRules)? (overridden=OverriddenTypeMetaInfo)?;
+
+Invariants:
+	'invariants' constraintInstances+=ConstraintInstance (',' constraintInstances+=ConstraintInstance)*;
+
+Preconditions:
+	'preconditions' constraintInstances+=ConstraintInstance (',' constraintInstances+=ConstraintInstance)*;
+
+BusinessRules:
+	'business-rules' constraintInstances+=ConstraintInstance (',' constraintInstances+=ConstraintInstance)*;
+
+OverriddenTypeMetaInfo:
+	'{' metaInfo=TypeMetaInfo '}';
+
+ConstraintInstance:
+	constraint=[Constraint|FQN] ('(' params+=Literal (',' params+=Literal)* ')')?;
+
+Service:
+	doc=DOC? 
+	'service' name=ID '{'
+		methods+=Method*
+	'}';
+
+Literal:
+	NullLiteral | BooleanLiteral | NumberLiteral | StringLiteral;
+
+FQN:
+  ID ('.' ID)*;
+
+FQNWithWildcard :
+	FQN  '.' '*';
+
+BooleanLiteral:
+	{BooleanLiteral} value=('false' | 'true');
+
+NullLiteral:
+	{NullLiteral} value='null';
+
+NumberLiteral:
+	{NumberLiteral} value=Number;
+
+StringLiteral:
+	{StringLiteral} value=STRING;
+
+terminal ID:
+	('A'..'Z'|'a'..'z') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
+	
+terminal STRING: 
+			'"' ( '\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|'"') )* '"' |
+			"'" ( '\\' ('b'|'t'|'n'|'f'|'r'|'u'|'"'|"'"|'\\') | !('\\'|"'") )* "'";
+
+Number hidden():
+	HEX | (INT | DECIMAL) ('.' (INT | DECIMAL))?;
+
+terminal HEX:
+	('0x'|'0X') ('0'..'9'|'a'..'f'|'A'..'F'|'_')+ 
+	('#' (('b'|'B')('i'|'I') | ('l'|'L')))?;
+	
+terminal INT returns ecore::EInt:
+	'0'..'9' ('0'..'9'|'_')*; 
+
+terminal DECIMAL:
+	INT 
+	(('e'|'E') ('+'|'-')? INT)? 
+	(('b'|'B')('i'|'I'|'d'|'D') | ('l'|'L'|'d'|'D'|'f'|'F'))?;
+
+// Documentation
+terminal DOC: '/**' -> '*/';
+
+// Multi line comment		 
+terminal ML_COMMENT: '/*' (!'*') -> '*/' ;
+
+// Single line comment
+terminal SL_COMMENT: '//' !('\n'|'\r')* ('\r'? '\n')?;
+
+// Whitespace - Anything that is ignored.
+terminal WS: (' '|'\t'|'\r'|'\n')+;
+

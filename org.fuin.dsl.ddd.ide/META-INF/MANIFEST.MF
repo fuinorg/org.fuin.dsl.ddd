@@ -1,0 +1,16 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: org.fuin.dsl.ddd.ide
+Bundle-SymbolicName: org.fuin.dsl.ddd.ide;singleton:=true
+Bundle-Version: 0.2.0.qualifier
+Bundle-RequiredExecutionEnvironment: JavaSE-1.8
+Bundle-ActivationPolicy: lazy
+Export-Package: org.fuin.dsl.ddd.ide, 
+ org.fuin.dsl.ddd.ide.contentassist.antlr,
+ org.fuin.dsl.ddd.ide.contentassist.antlr.internal
+Require-Bundle: org.antlr.runtime,
+ org.eclipse.xtext.xbase.lib,
+ org.fuin.dsl.ddd,
+ org.eclipse.xtext.ide,
+ org.eclipse.xtext.xbase.ide
+

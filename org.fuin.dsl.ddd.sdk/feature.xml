@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.fuin.dsl.ddd.sdk"
+      label="DDD DSL Feature "
+      version="0.2.0.qualifier"
+      provider-name="fuin.org">
+
+   <description>
+      DDD DSL
+   </description>
+
+   <copyright url="http://www.fuin.org">
+      Copyright (C) 2017 Michael Schnell. All rights reserved.
+   </copyright>
+
+   <requires>
+      <import feature="org.eclipse.xtext.runtime" version="2.8.0" match="greaterOrEqual"/>
+   </requires>
+
+   <plugin
+         id="org.fuin.dsl.ddd"
+         download-size="0"
+         install-size="0"
+         version="0.2.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="org.fuin.dsl.ddd.ide"
+         download-size="0"
+         install-size="0"
+         version="0.2.0.qualifier"
+         unpack="false"/>
+
+   <plugin
+         id="org.fuin.dsl.ddd.ui"
+         download-size="0"
+         install-size="0"
+         version="0.2.0.qualifier"
+         unpack="false"/>
+
+</feature>

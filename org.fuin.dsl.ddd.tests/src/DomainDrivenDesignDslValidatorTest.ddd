@@ -1,0 +1,133 @@
+context myctx {
+
+	namespace mytypes {
+		type String
+		type Integer
+		type List generics 1
+    }
+
+	namespace a {
+		
+		import myctx.mytypes.*
+		
+		value-object TestValueObjectA {
+			// WARNING: Variable names should start with a lower case
+			String VariableA
+			// ERROR: The number of arguments does not match the number required by the type: 1
+			List<String,String> testValueObjectAList1
+			// ERROR: The number of arguments does not match the number required by the type: 1
+			List testValueObjectAList2
+		}
+		
+		constraint ConstraintA {
+			// ERROR: A variable with the name 'a' is unknown
+			message "A is not allowed: ${a}"
+		}
+		
+		exception ExceptionA {
+			// ERROR: A variable 'exa' is not defined in the exception
+			message "Exception ${exa}"
+		}
+
+		// VALID
+		aggregate AggregateA1 {
+			aggregate-id AggregateA1Id {}
+		}
+		aggregate AggregateA2 {
+			aggregate-id AggregateA2Id identifies AggregateA2 {}
+		}
+		
+		// ERROR: An ID defined outside an aggregate must use the 'identifies' expression
+		aggregate-id AggregateXId {			
+		}
+		
+		aggregate AggregateB {
+			// ERROR: An ID defined in an aggregate can only identify the parent aggregate
+			aggregate-id AggregateBId identifies AggregateC {}
+		}
+
+		// VALID
+		aggregate AggregateA {
+			aggregate-id AggregateAId { }
+			entity EntityY {
+				entity-id EntityYId { }
+			}
+			entity EntityZ root AggregateA {
+				entity-id EntityZId { }
+			}
+		}
+		entity EntityA1 root AggregateA {
+			entity-id EntityA1Id {}
+		}
+		entity EntityA2 root AggregateA {
+			entity-id EntityA2Id identifies EntityA2 {}
+		}
+		
+		// ERROR: An ID defined outside an entity must use the 'identifies' expression
+		entity-id EntityXId {			
+		}
+		
+		entity EntityB root AggregateA {
+			// ERROR: An ID defined in an entity can only identify the parent entity
+			entity-id EntityBId identifies EntityC {}
+		}
+
+		// ERROR: Entity does not define an ID
+		entity EntityC root AggregateA {
+		}
+
+		// ERROR: An entity defined outside an aggregate must use the 'root' expression
+		entity EntityD {
+			entity-id EntityDId {}
+		}
+
+		entity-id EntityEId1 identifies EntityE {}
+		entity EntityE identifier EntityEId1 root AggregateA {
+			// ERROR: Entity cannot not reference an ID using 'identifier' and define another inside the aggregate
+			entity-id EntityEId2 {}
+		}
+
+		aggregate AggregateD {
+			
+			aggregate-id AggregateDId {}
+			
+			// ERROR: An entity defined in an aggregate can only reference the parent aggregate
+			entity EntityE root AggregateC {
+				entity-id EntityEId {}
+			}
+					
+		}
+		
+		// ERROR: Aggregate does not define an ID
+		aggregate AggregateE {
+		}
+
+		aggregate-id AggregateFId1 identifies AggregateF {}
+		aggregate AggregateF identifier AggregateFId1 {
+			// ERROR: Aggregate cannot not reference an ID using 'identifier' and define another inside the aggregate
+			aggregate-id AggregateFId2 {}
+		}
+	
+	
+		aggregate AggregateG {
+			// ERROR: Only one 'aggregate-id' can be defined inside an aggregate			
+			aggregate-id AggregateGId1 {}
+			aggregate-id AggregateGId2 {}
+			
+			// ERROR: Allowed elements in an aggregate are: 'aggregate-id', 'entity', 'event' and 'value-object'
+			entity-id EntityIdG3 identifies EntityG {}
+			
+			entity EntityG {
+				// ERROR: Only one 'entity-id' can be defined inside an entity
+				entity-id EntityGId1 {}
+				entity-id EntityGId2 {}
+				// ERROR: Allowed elements in an entity are: 'entity-id', 'event' and 'value-object'
+				aggregate-id AggregateIdG3 identifies AggregateF {}
+				
+			}
+			
+		}
+		
+	}
+	 
+}
