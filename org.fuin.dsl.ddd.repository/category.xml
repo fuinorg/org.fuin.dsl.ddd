@@ -3,9 +3,9 @@
    <feature url="features/org.fuin.dsl.ddd.sdk_0.2.0.qualifier.jar" id="org.fuin.dsl.ddd.sdk" version="0.2.0.qualifier">
       <category name="org.fuin.dsl.ddd"/>
    </feature>
-   <category-def name="org.fuin.dsl.ddd" label="DDD DSL">
+   <category-def name="org.fuin.dsl.ddd" label="fuin.org DDD DSL">
       <description>
-         DDD DSL
+         Xtext based DSL supporting Domain-driven design (DDD)
       </description>
    </category-def>
 </site>
