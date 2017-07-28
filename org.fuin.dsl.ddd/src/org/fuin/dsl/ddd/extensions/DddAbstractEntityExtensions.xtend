@@ -12,6 +12,7 @@ import org.fuin.dsl.ddd.domainDrivenDesignDsl.Event
 import org.fuin.dsl.ddd.domainDrivenDesignDsl.Service
 
 import static extension org.fuin.dsl.ddd.extensions.DddCollectionExtensions.*
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Aggregate
 
 /**
  * Provides extension methods for AbstractEntity.
@@ -99,5 +100,25 @@ class DddAbstractEntityExtensions {
 		}
 		return types.get(0)
 	}
+
+
+	/**
+	 * Returns the type of the identifier for the abstract entity.
+	 * 
+	 * @param abstractEntity Abstract entity to return the identifier type for.
+	 * 
+	 * @return Identifier or NULL if no such type is defined inside the abstract entity.
+	 */
+	def static AbstractEntityId getIdType(AbstractEntity abstractEntity) {
+		// TODO This should actually be in the generated model
+		if (abstractEntity instanceof Aggregate) {
+			return abstractEntity.idType
+		}
+		if (abstractEntity instanceof Entity) {
+			return abstractEntity.idType
+		}
+		throw new IllegalStateException("Expected 'Aggregate' or 'Entity', but was: " + abstractEntity.class)
+	}
+
 
 }
