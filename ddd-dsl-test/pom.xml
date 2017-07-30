@@ -1,0 +1,186 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+
+	<modelVersion>4.0.0</modelVersion>
+
+	<parent>
+		<groupId>org.fuin</groupId>
+		<artifactId>pom</artifactId>
+		<version>1.4.0</version>
+	</parent>
+
+	<groupId>org.fuin.ddd</groupId>
+	<artifactId>ddd-dsl-test</artifactId>
+	<packaging>jar</packaging>
+	<version>0.3.1-SNAPSHOT</version>
+	<name>TestModel</name>
+
+	<properties>
+		<xtext.version>2.12.0</xtext.version>
+		<ddd-dsl.version>0.3.0</ddd-dsl.version>
+	</properties>
+
+	<dependencies>
+
+		<!-- Compile -->
+
+		<dependency>
+			<groupId>joda-time</groupId>
+			<artifactId>joda-time</artifactId>
+			<version>2.3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>javax.validation</groupId>
+			<artifactId>validation-api</artifactId>
+			<version>1.1.0.Final</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.fuin</groupId>
+			<artifactId>objects4j</artifactId>
+			<version>0.6.3</version>
+		</dependency>
+
+		<dependency>
+			<groupId>org.fuin</groupId>
+			<artifactId>ddd-4-java</artifactId>
+			<version>0.1.0</version>
+		</dependency>
+
+		<!-- Test -->
+
+	</dependencies>
+
+	<build>
+
+		<plugins>
+
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-deploy-plugin</artifactId>
+				<version>2.7</version>
+				<configuration>
+					<skip>true</skip>
+				</configuration>
+			</plugin>
+
+			<plugin>
+				<groupId>org.codehaus.mojo</groupId>
+				<artifactId>build-helper-maven-plugin</artifactId>
+				<version>1.8</version>
+				<executions>
+					<execution>
+						<id>add-source</id>
+						<phase>generate-sources</phase>
+						<goals>
+							<goal>add-source</goal>
+						</goals>
+						<configuration>
+							<sources>
+								<source>${basedir}/src-gen/main/java</source>
+								<source>${basedir}/src-gen/main/resources</source>
+							</sources>
+						</configuration>
+					</execution>
+				</executions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.fuin.srcgen4j</groupId>
+				<artifactId>srcgen4j-maven-plugin</artifactId>
+				<version>0.4.0</version>
+				<configuration>
+					<jaxbClassesToBeBound>
+						<param>org.fuin.srcgen4j.core.xtext.XtextParserConfig</param>
+						<param>org.fuin.srcgen4j.core.emf.EMFGeneratorConfig</param>
+					</jaxbClassesToBeBound>
+				</configuration>
+				<executions>
+					<execution>
+						<id>srcgen4j</id>
+						<phase>process-sources</phase>
+						<goals>
+							<goal>process-template</goal>
+						</goals>
+					</execution>
+				</executions>
+				<dependencies>
+					<!-- Xtext DSL + Templates -->				
+					<dependency>
+						<!-- Version > 0.6.3 requires new srcgen4j version -->
+						<groupId>org.fuin</groupId>
+						<artifactId>objects4j</artifactId>
+						<version>0.6.3</version>						
+					</dependency>
+					<dependency>
+						<groupId>org.fuin.dsl.ddd</groupId>
+						<artifactId>org.fuin.dsl.ddd</artifactId>
+						<version>0.3.0</version>
+					</dependency>
+					<dependency>
+						<groupId>org.fuin.dsl.ddd</groupId>
+						<artifactId>ddd-templates</artifactId>
+						<version>0.1.0</version>
+					</dependency>
+					<!-- EMF Ecore -->
+					<dependency>
+						<groupId>org.eclipse.emf</groupId>
+						<artifactId>org.eclipse.emf.ecore</artifactId>
+						<version>2.11.2</version>
+					</dependency>
+					<dependency>
+						<groupId>org.eclipse.emf</groupId>
+						<artifactId>org.eclipse.emf.ecore.change</artifactId>
+						<version>2.11.0</version>
+					</dependency>
+					<!-- XTEXT -->
+					<dependency>
+						<groupId>org.eclipse.xtend</groupId>
+						<artifactId>org.eclipse.xtend.lib</artifactId>
+						<version>${xtext.version}</version>
+					</dependency>
+					<!-- XTEND -->
+					<dependency>
+						<groupId>org.eclipse.xtend</groupId>
+						<artifactId>org.eclipse.xtend.core</artifactId>
+						<version>${xtext.version}</version>
+					</dependency>
+				</dependencies>
+			</plugin>
+
+		</plugins>
+
+		<pluginManagement>
+			<plugins>
+				<!--This plugin's configuration is used to store Eclipse m2e settings 
+					only. It has no influence on the Maven build itself. -->
+				<plugin>
+					<groupId>org.eclipse.m2e</groupId>
+					<artifactId>lifecycle-mapping</artifactId>
+					<version>1.0.0</version>
+					<configuration>
+						<lifecycleMappingMetadata>
+							<pluginExecutions>
+								<pluginExecution>
+									<pluginExecutionFilter>
+										<groupId>org.fuin.srcgen4j</groupId>
+										<artifactId>srcgen4j-maven-plugin</artifactId>
+										<versionRange>[0,)</versionRange>
+										<goals>
+											<goal>process-template</goal>
+										</goals>
+									</pluginExecutionFilter>
+									<action>
+										<ignore />
+									</action>
+								</pluginExecution>
+							</pluginExecutions>
+						</lifecycleMappingMetadata>
+					</configuration>
+				</plugin>
+			</plugins>
+		</pluginManagement>
+	</build>
+
+</project>

@@ -1,0 +1,21 @@
+context axonsample {
+
+	namespace api {
+		
+		import axonsample.types.*
+		import axonsample.constr.*
+		
+		/**
+		 * Name of a contact.
+		 */
+		value-object ContactName base String {
+			
+			/** Internal value. */
+			String value invariants Length(1, 100)
+			
+		}
+		
+		
+	}
+
+}

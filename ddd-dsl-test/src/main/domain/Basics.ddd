@@ -1,0 +1,117 @@
+context axonsample {
+
+	namespace types {
+		type Byte
+		type Short
+		type Integer
+		type Long
+		type Float
+		type Double
+		type Boolean
+		type Character
+		type String
+		type Date
+		type Time
+		type Timestamp
+		type UUID
+		type BigDecimal
+		type List generics 1
+	}
+	
+	namespace constr {
+		
+		import axonsample.types.*
+		
+		/**
+		 * Makes sure a string has exactly a given size.
+	 	 */
+		constraint ExactLength input String {
+	
+			/** Expected length. */
+			Integer expected
+	        
+	        message "Expected an exact length of ${expected}, but value was: '${input}'"
+	        
+		}
+		
+		/**
+		 * Makes sure a string has a defined length (min/max).
+		 */
+		constraint Length input String {
+			
+			/** Expected minimum length (inclusive). */
+			Integer min
+	
+			/** Expected maximum length (inclusive). */
+			Integer max
+	
+	        message "Expected a length between ${min} and ${max} characters, but value was: '${input}'"
+	
+		}
+	
+		/**
+		 * Makes sure a string has at a maximum length.
+	  	 */
+		constraint MaxLength input String {
+	
+			/** Expected maximum length (inclusive). */
+			Integer expected
+	
+			message "Expected a maximum length of ${expected} characters, but value was: '${input}'"
+		
+		}
+		
+		/**
+		 * Makes sure a numeric is not greater than a given value.
+	 	 */
+		constraint MaxValue input Long {
+	
+			/** Expected maximum value (inclusive). */
+			Long expected
+	
+			message "Expected a maximum value of ${expected}, but actual was: ${input}"
+			
+		}
+		
+		/**
+		 * Makes sure a string has at least a given length.
+		 */
+		constraint MinLength input String {
+		
+			/** Expected minimum length (inclusive). */
+			Integer expected
+			
+			message "Expected a minimum length of ${expected} characters, but value was: ${input}"
+			
+		}
+		
+		/**
+		 * Makes sure a numeric is not less than a given value.
+		 */
+		constraint MinValue input Long {
+	
+			/** Expected minimum value (inclusive). */
+			Long expected
+			
+			message "Expected a minimum value of ${expected}, but actual was: ${input}"
+			
+		}
+
+		/**
+		 * Makes sure a numeric is not less than or greater than a given value.
+		 */
+		constraint ValueRange input Long {
+			
+			/** Expected minimum value (inclusive). */
+			Long min
+			
+			/** Expected maximum value (inclusive). */
+			Long max
+			
+			message "Expected a value between ${min} and ${max}, but actual was: ${input}"
+			
+		}
+		
+	}
+
+}

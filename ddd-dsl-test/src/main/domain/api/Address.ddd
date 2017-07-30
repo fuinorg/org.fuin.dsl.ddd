@@ -1,0 +1,25 @@
+context axonsample {
+
+	namespace api {
+		
+		import axonsample.types.*
+		import axonsample.api.*
+		import axonsample.constr.*
+		
+		/**
+		 * Value object representing an address..
+		 */
+		value-object Address {
+			
+		    StreetAndNumber streetAndNumber
+		    
+		    ZipCode zipCode
+		    
+		    City city
+			
+		}
+		
+		
+	}
+	
+}
