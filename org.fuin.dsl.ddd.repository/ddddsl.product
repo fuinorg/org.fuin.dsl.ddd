@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <?pde version="3.5"?>
 
-<product name="DDD DSL" uid="org.fuin.dsl.ddd.product.uid" id="org.fuin.dsl.ddd.product" application="org.fuin.dsl.ddd.application" version="0.3.0" useFeatures="true" includeLaunchers="false">
+<product name="DDD DSL" uid="org.fuin.dsl.ddd.product.uid" id="org.fuin.dsl.ddd.product" application="org.fuin.dsl.ddd.application" version="0.3.1.qualifier" useFeatures="true" includeLaunchers="false">
 
    <configIni use="default">
    </configIni>
@@ -195,7 +195,7 @@ Library.
    </plugins>
 
    <features>
-      <feature id="org.fuin.dsl.ddd.sdk" version="0.3.0"/>
+      <feature id="org.fuin.dsl.ddd.sdk" version="0.3.1.qualifier"/>
    </features>
 
 
