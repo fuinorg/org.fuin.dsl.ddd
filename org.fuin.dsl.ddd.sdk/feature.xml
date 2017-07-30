@@ -2,7 +2,7 @@
 <feature
       id="org.fuin.dsl.ddd.sdk"
       label="DDD DSL Feature "
-      version="0.2.0.qualifier"
+      version="0.3.0"
       provider-name="fuin.org">
 
    <description>
@@ -21,21 +21,21 @@
          id="org.fuin.dsl.ddd"
          download-size="0"
          install-size="0"
-         version="0.2.0.qualifier"
+         version="0.3.0"
          unpack="false"/>
 
    <plugin
          id="org.fuin.dsl.ddd.ide"
          download-size="0"
          install-size="0"
-         version="0.2.0.qualifier"
+         version="0.3.0"
          unpack="false"/>
 
    <plugin
          id="org.fuin.dsl.ddd.ui"
          download-size="0"
          install-size="0"
-         version="0.2.0.qualifier"
+         version="0.3.0"
          unpack="false"/>
 
 </feature>
