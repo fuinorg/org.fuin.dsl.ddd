@@ -26,10 +26,14 @@
     <generators>
         <generator name="dddGenerator" class="org.fuin.srcgen4j.core.emf.EMFGenerator" parser="dddParser" project="current">
             <config>
-                <emf:emf-generator-config>
-                    <!-- Java -->                    
+                <emf:emf-generator-config>                   
+                    <!-- Java -->
+                    <emf:artifact-factory artifact="ExternalTypes" class="org.fuin.dsl.ddd.gen.resourceset.CtxExternalTypes" />           
                     <emf:artifact-factory artifact="AbstractAggregate" class="org.fuin.dsl.ddd.gen.aggregate.AbstractAggregateArtifactFactory" />
                     <emf:artifact-factory artifact="Aggregate" class="org.fuin.dsl.ddd.gen.aggregate.FinalAggregateArtifactFactory" />
+                    <emf:artifact-factory artifact="AbstractAggregateId" class="org.fuin.dsl.ddd.gen.aggregateid.AbstractAggregateIdArtifactFactory" />
+                    <emf:artifact-factory artifact="AggregateId" class="org.fuin.dsl.ddd.gen.aggregateid.FinalAggregateIdArtifactFactory" />
+                    <emf:artifact-factory artifact="AggregateIdConverter" class="org.fuin.dsl.ddd.gen.aggregateid.AggregateIdConverterArtifactFactory" />                                       
                     <emf:artifact-factory artifact="Exception" class="org.fuin.dsl.ddd.gen.except.ExceptionArtifactFactory" />
                     <emf:artifact-factory artifact="ValidatorAnnotation" class="org.fuin.dsl.ddd.gen.constraint.ValidatorAnnotationArtifactFactory" />
                     <emf:artifact-factory artifact="Validator" class="org.fuin.dsl.ddd.gen.constraint.ValidatorArtifactFactory" />
@@ -45,6 +49,9 @@
             </config>
             <artifact name="AbstractAggregate" folder="genMainJava" />
             <artifact name="Aggregate" folder="mainJava" />
+            <artifact name="AbstractAggregateId" folder="genMainJava" />
+            <artifact name="AggregateId" folder="mainJava" />
+            <artifact name="AggregateIdConverter" folder="mainJava" />
             <artifact name="Exception" folder="mainJava" />
             <artifact name="ValidatorAnnotation" folder="mainJava" />
             <artifact name="Validator" folder="mainJava" />

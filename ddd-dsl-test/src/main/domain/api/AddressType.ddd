@@ -11,7 +11,7 @@ context axonsample {
 		enum AddressType {
 			
 			/** Persistent representation of the value object. */
-			Long val invariants ValueRange(1, 100)
+			Integer val invariants ValueRange(1, 100)
 	
 			/** Human readable description. */
 			String display invariants Length(1, 20)

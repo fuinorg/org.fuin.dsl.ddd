@@ -1,6 +1,6 @@
 .*
-!/.gitignore
-!/.gitkeep
+!**/.gitignore
+!**/.gitkeep
 bin/
 target/
 build/

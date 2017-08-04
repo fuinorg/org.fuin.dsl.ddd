@@ -1,0 +1,5 @@
+.*
+!**/.gitignore
+!**/.gitkeep
+target/
+src-gen/

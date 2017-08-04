@@ -9,7 +9,7 @@ context axonsample {
 		/**
 		 * Identifies a contact uniquely in the whole context.
 		 */
-		aggregate-id ContactId identifies Contact base String {
+		aggregate-id ContactId identifies Contact base UUID {
 			
 			/** Persistent value. */
 			UUID val

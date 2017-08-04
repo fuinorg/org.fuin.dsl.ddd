@@ -39,13 +39,21 @@
 		<dependency>
 			<groupId>org.fuin</groupId>
 			<artifactId>objects4j</artifactId>
-			<version>0.6.3</version>
+			<version>0.6.4</version>
 		</dependency>
 
 		<dependency>
 			<groupId>org.fuin</groupId>
 			<artifactId>ddd-4-java</artifactId>
 			<version>0.1.0</version>
+		</dependency>
+
+		<dependency>
+			<!-- Artifact for Java Persistence API 2.1.0 is not available separately... 
+				We don't want to include the whole JEE stuff (javax:javaee-api:7.0) here. -->
+			<groupId>org.hibernate.javax.persistence</groupId>
+			<artifactId>hibernate-jpa-2.1-api</artifactId>
+			<version>1.0.0.Final</version>
 		</dependency>
 
 		<!-- Test -->
@@ -89,7 +97,7 @@
 			<plugin>
 				<groupId>org.fuin.srcgen4j</groupId>
 				<artifactId>srcgen4j-maven-plugin</artifactId>
-				<version>0.4.0</version>
+				<version>0.4.1-SNAPSHOT</version>
 				<configuration>
 					<jaxbClassesToBeBound>
 						<param>org.fuin.srcgen4j.core.xtext.XtextParserConfig</param>
@@ -108,12 +116,6 @@
 				<dependencies>
 					<!-- Xtext DSL + Templates -->				
 					<dependency>
-						<!-- Version > 0.6.3 requires new srcgen4j version -->
-						<groupId>org.fuin</groupId>
-						<artifactId>objects4j</artifactId>
-						<version>0.6.3</version>						
-					</dependency>
-					<dependency>
 						<groupId>org.fuin.dsl.ddd</groupId>
 						<artifactId>org.fuin.dsl.ddd</artifactId>
 						<version>0.3.0</version>
@@ -121,7 +123,7 @@
 					<dependency>
 						<groupId>org.fuin.dsl.ddd</groupId>
 						<artifactId>ddd-templates</artifactId>
-						<version>0.1.0</version>
+						<version>0.1.1-SNAPSHOT</version>
 					</dependency>
 					<!-- EMF Ecore -->
 					<dependency>
