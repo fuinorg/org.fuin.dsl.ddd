@@ -11,7 +11,7 @@ context axonsample {
 		enum AddressType {
 			
 			/** Persistent representation of the value object. */
-			Integer val invariants ValueRange(1, 100)
+			Long val invariants ValueRange(1, 100)
 	
 			/** Human readable description. */
 			String display invariants Length(1, 20)
@@ -19,13 +19,13 @@ context axonsample {
 			instances {
 				
 				/** Office. */
-				WORK(1, "Office")
+				WORK(1L, "Office")
 				
 				/** Private. */
-		    	PRIVATE(2, "Private")
+		    	PRIVATE(2L, "Private")
 		    	
 				/** Vacation. */
-		    	VACATION(3, "Vacation")
+		    	VACATION(3L, "Vacation")
 				
 			}
 			
