@@ -12,7 +12,7 @@ Xtext based DSL supporting Domain-driven design (DDD)
 
 Generating code?
 ----------------
-See ___[Big Picture](https://github.com/fuinorg/org.fuin.dsl.ddd/blob/master/doc/README.md)___
+See ___[Big Picture](https://github.com/fuinorg/org.fuin.dsl.ddd/blob/master/doc)___
 
 Examples
 --------
