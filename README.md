@@ -3,6 +3,17 @@ DDD DSL
 
 Xtext based DSL supporting Domain-driven design (DDD)
 
+[![Build Status](https://fuin-org.ci.cloudbees.com/job/org.fuin.dsl.ddd/badge/icon)](https://fuin-org.ci.cloudbees.com/job/org.fuin.dsl.ddd/)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.fuin.dsl.ddd/org.fuin.dsl.ddd/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.fuin.dsl.ddd/org.fuin.dsl.ddd/)
+[![LGPLv3 License](http://img.shields.io/badge/license-LGPLv3-blue.svg)](https://www.gnu.org/licenses/lgpl.html)
+[![Java Development Kit 1.8](https://img.shields.io/badge/JDK-1.8-green.svg)](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
+
+<a href="https://fuin-org.ci.cloudbees.com/job/org.fuin.dsl.ddd"><img src="http://www.fuin.org/images/Button-Built-on-CB-1.png" width="213" height="72" border="0" alt="Built on CloudBees"/></a>
+
+Generating code?
+----------------
+See ___[Big Picture](https://github.com/fuinorg/org.fuin.dsl.ddd/blob/master/doc/README.md)___
+
 Examples
 --------
 Context, Namespace, External Types<br/>
@@ -27,16 +38,10 @@ Installation
 4. Install "DDD DSL"<br/>  
 ![ScreenShot](https://raw.github.com/fuinorg/org.fuin.dsl.ddd/master/doc/install-eclipse.jpg)
 
-
-Build
------
-
-[![Build Status](https://fuin-org.ci.cloudbees.com/job/org.fuin.dsl.ddd/badge/icon)](https://fuin-org.ci.cloudbees.com/job/org.fuin.dsl.ddd/)
-
-<a href="https://fuin-org.ci.cloudbees.com/job/org.fuin.dsl.ddd"><img src="http://www.fuin.org/images/Button-Built-on-CB-1.png" width="213" height="72" border="0" alt="Built on CloudBees"/></a>
+-----------------------------------------------------
 
 Snapshots
----------
+=========
 
 Snapshots can be found on the [OSS Sonatype Snapshots Repository](http://oss.sonatype.org/content/repositories/snapshots/org/fuin "Snapshot Repository"). 
 
