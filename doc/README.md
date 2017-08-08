@@ -17,5 +17,5 @@ There are several "fuin.org" side projects that will help you with this task:
 * [ddd-4-java](https://github.com/fuinorg/ddd-4-java) - Base classes for Domain Driven Design (DDD) with Java
 * [cqrs-4-java](https://github.com/fuinorg/cqrs-4-java) - Base classes for Command Query Responsibility Segregation (CQRS) with Java
 
-
+An example can be found here: [ddd-dsl-test](https://github.com/fuinorg/org.fuin.dsl.ddd/tree/master/ddd-dsl-test)
 
