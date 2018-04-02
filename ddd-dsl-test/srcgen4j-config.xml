@@ -1,12 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<srcgen4j-config xmlns="http://www.fuin.org/srcgen4j/commons"
+<srcgen4j-config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+                 xmlns="http://www.fuin.org/srcgen4j/commons"
+                 xmlns:cfg="http://www.fuin.org/xmlcfg4j"
                  xmlns:xtext="http://www.fuin.org/srcgen4j/core/xtext"
                  xmlns:emf="http://www.fuin.org/srcgen4j/core/emf">
     
-	<variables>
-		<variable name="basepkg" value="org.fuin" />
-		<variable name="copyrightHeader" value="/**\n * Copyright (C) 2015 Michael Schnell. All rights\n * reserved. &lt;http://www.fuin.org/&gt;\n *\n * This library is free software; you can redistribute it and/or modify it under\n * the terms of the GNU Lesser General Public License as published by the Free\n * Software Foundation; either version 3 of the License, or (at your option) any\n * later version.\n *\n * This library is distributed in the hope that it will be useful, but WITHOUT\n * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS\n * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more\n * details.\n *\n * You should have received a copy of the GNU Lesser General Public License\n * along with this library. If not, see &lt;http://www.gnu.org/licenses/&gt;.\n */\n" />
-	</variables>
+	<cfg:variables>
+		<cfg:variable name="basepkg" value="org.fuin" />
+		<cfg:variable name="copyrightHeader" value="/**\n * Copyright (C) 2015 Michael Schnell. All rights\n * reserved. &lt;http://www.fuin.org/&gt;\n *\n * This library is free software; you can redistribute it and/or modify it under\n * the terms of the GNU Lesser General Public License as published by the Free\n * Software Foundation; either version 3 of the License, or (at your option) any\n * later version.\n *\n * This library is distributed in the hope that it will be useful, but WITHOUT\n * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS\n * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more\n * details.\n *\n * You should have received a copy of the GNU Lesser General Public License\n * along with this library. If not, see &lt;http://www.gnu.org/licenses/&gt;.\n */\n" />
+	</cfg:variables>
 	
     <projects>
         <project name="current" path="." maven="true">
