@@ -32,11 +32,14 @@ http://de.slideshare.net/michael-schnell/ddd-dsl/
 Installation
 ------------
 
-1. Make sure you have Xtext installed in Eclipse Neon or later (Example: [Eclipse IDE for Java and DSL Developers](https://www.eclipse.org/downloads/packages/eclipse-ide-java-and-dsl-developers/neon3 "Eclipse IDE for Java and DSL Developers") )
-2. Inside Eclipse click menu "Help / Install New Software..."
-3. Press "Add" button to add the repository: https://fuinorg.jfrog.io/fuinorg/eclipse-p2
-4. Install "DDD DSL"<br/>  
-![ScreenShot](https://raw.github.com/fuinorg/org.fuin.dsl.ddd/master/doc/install-eclipse.jpg)
+1. Install the Eclipse Oxygen IDE with Xtext
+   * Download the [Eclipse IDE for Java and DSL Developers](https://www.eclipse.org/downloads/packages/eclipse-ide-java-and-dsl-developers/oxygen3a)
+   * **-or-** Install the [Xtext Complete SDK](http://download.eclipse.org/modeling/tmf/xtext/updates/composite/releases/) into your existing Eclipse Oxygen IDE 
+2. Install the DDD DSL plugin
+   * Press "Add" button to add the repository: https://fuinorg.jfrog.io/fuinorg/eclipse-p2
+3. Install "DDD DSL"<br/>  
+   ![ScreenShot](https://raw.github.com/fuinorg/org.fuin.dsl.ddd/master/doc/install-eclipse.jpg)
+4. Continue with "ddd-dsl-test" [README.md](ddd-dsl-test/README.md)
 
 -----------------------------------------------------
 

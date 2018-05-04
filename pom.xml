@@ -6,7 +6,7 @@
 	<parent>
 		<groupId>org.fuin</groupId>
 		<artifactId>pom</artifactId>
-		<version>1.4.0</version>
+		<version>1.5.0</version>
 	</parent>
 
 	<groupId>org.fuin.dsl.ddd</groupId>
@@ -27,7 +27,7 @@
 	</issueManagement>
 
 	<properties>
-		<tycho-version>1.0.0</tycho-version>
+		<tycho-version>1.1.0</tycho-version>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<xtext.version>2.12.0</xtext.version>
 	</properties>
@@ -36,7 +36,7 @@
 		<repository>
 			<id>eclipse</id>
 			<layout>p2</layout>
-			<url>https://fuinorg.jfrog.io/fuinorg/eclipse-p2/download.eclipse.org/releases/neon/201612211000/</url>
+			<url>https://fuinorg.jfrog.io/fuinorg/eclipse-p2/releases/oxygen/</url>
 		</repository>
 		<repository>
 			<id>Xtext Update Site</id>
@@ -76,7 +76,7 @@
 				<plugin>
 					<groupId>org.apache.maven.plugins</groupId>
 					<artifactId>maven-clean-plugin</artifactId>
-					<version>2.5</version>
+					<version>3.1.0</version>
 					<executions>
 						<execution>
 							<id>gen-clean</id>
@@ -110,7 +110,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-javadoc-plugin</artifactId>
-				<version>2.10.4</version>
+				<version>3.0.0</version>
 				<configuration>
 					<additionalparam>-Xdoclint:none</additionalparam>
 				</configuration>
