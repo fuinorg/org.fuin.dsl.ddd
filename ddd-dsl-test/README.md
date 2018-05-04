@@ -8,7 +8,8 @@ How to use the DDD DSL inside Eclipse and generate some code with Maven.
 
 1. Import the project "ddd-dsl-test" using the "Existing Maven Projects" Option
 2. Make sure that Xtext is activated for the project
-   * Right click on the project and select "Configure / Convert to Xtext project" (If you only see "Unconfigure Xtext", this means Xtext is already active)
+   * Right click on the project and select "Configure / Convert to Xtext project"
+   * If you only see "Unconfigure Xtext", this means Xtext is already active (Nothing to do)
 3. Open some of the "*.ddd" files in "/ddd-dsl-test/src/main/domain"
 4. Right click on the project and select "Run as / Maven install"
    * Java code will be generated
@@ -27,16 +28,16 @@ As a workaround you can easily fix this by yourself:
 
 **ContactId**
 Add the following method:
-'''java
+```java
 @Override
 public String asString() {
     return getVal().toString();
 }
-'''
+```
 
 **ContactIdConverter**
 Remove the "@ApplicationScoped" annotation and change the following two methods:
-'''java
+```java
 @Override
 public final boolean isValid(final UUID value) {
 	return true;
@@ -46,8 +47,4 @@ public final boolean isValid(final UUID value) {
 public final ContactId toVO(final UUID value) {
 	return new ContactId(value);
 }
-'''
-
-
-
-
+```
