@@ -8,6 +8,9 @@
 	<cfg:variables>
 		<cfg:variable name="basepkg" value="org.fuin" />
 		<cfg:variable name="copyrightHeader" value="/**\n * Copyright (C) 2015 Michael Schnell. All rights\n * reserved. &lt;http://www.fuin.org/&gt;\n *\n * This library is free software; you can redistribute it and/or modify it under\n * the terms of the GNU Lesser General Public License as published by the Free\n * Software Foundation; either version 3 of the License, or (at your option) any\n * later version.\n *\n * This library is distributed in the hope that it will be useful, but WITHOUT\n * ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS\n * FOR A PARTICULAR PURPOSE. See the GNU Lesser General Public License for more\n * details.\n *\n * You should have received a copy of the GNU Lesser General Public License\n * along with this library. If not, see &lt;http://www.gnu.org/licenses/&gt;.\n */\n" />
+		<cfg:variable name="jaxb" value="true" />
+		<cfg:variable name="jpa" value="false" />
+		<cfg:variable name="jsonb" value="false" />
 	</cfg:variables>
 	
     <projects>
@@ -33,9 +36,7 @@
                     <emf:artifact-factory artifact="ExternalTypes" class="org.fuin.dsl.ddd.gen.resourceset.CtxExternalTypes" />           
                     <emf:artifact-factory artifact="AbstractAggregate" class="org.fuin.dsl.ddd.gen.aggregate.AbstractAggregateArtifactFactory" />
                     <emf:artifact-factory artifact="Aggregate" class="org.fuin.dsl.ddd.gen.aggregate.FinalAggregateArtifactFactory" />
-                    <emf:artifact-factory artifact="AbstractAggregateId" class="org.fuin.dsl.ddd.gen.aggregateid.AbstractAggregateIdArtifactFactory" />
-                    <emf:artifact-factory artifact="AggregateId" class="org.fuin.dsl.ddd.gen.aggregateid.FinalAggregateIdArtifactFactory" />
-                    <emf:artifact-factory artifact="AggregateIdConverter" class="org.fuin.dsl.ddd.gen.aggregateid.AggregateIdConverterArtifactFactory" />                                       
+                    <emf:artifact-factory artifact="SimpleAggregateId" class="org.fuin.dsl.ddd.gen.aggregateid.SimpleAggregateIdArtifactFactory" />
                     <emf:artifact-factory artifact="Exception" class="org.fuin.dsl.ddd.gen.except.ExceptionArtifactFactory" />
                     <emf:artifact-factory artifact="ValidatorAnnotation" class="org.fuin.dsl.ddd.gen.constraint.ValidatorAnnotationArtifactFactory" />
                     <emf:artifact-factory artifact="Validator" class="org.fuin.dsl.ddd.gen.constraint.ValidatorArtifactFactory" />
@@ -51,9 +52,7 @@
             </config>
             <artifact name="AbstractAggregate" folder="genMainJava" />
             <artifact name="Aggregate" folder="mainJava" />
-            <artifact name="AbstractAggregateId" folder="genMainJava" />
-            <artifact name="AggregateId" folder="mainJava" />
-            <artifact name="AggregateIdConverter" folder="mainJava" />
+            <artifact name="SimpleAggregateId" folder="mainJava" />
             <artifact name="Exception" folder="mainJava" />
             <artifact name="ValidatorAnnotation" folder="mainJava" />
             <artifact name="Validator" folder="mainJava" />
