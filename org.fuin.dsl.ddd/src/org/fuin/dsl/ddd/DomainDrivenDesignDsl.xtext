@@ -74,12 +74,12 @@ Consistency:
 
 Constraint:
 	doc=DOC? 
-	'constraint' name=ID ('input' input=[Type|FQN])? ('exception' exception=[Exception|FQN])? '{'
+	'constraint' name=ID ('input' input+=[Type|FQN] ('|' input+=[Type|FQN])*)? ('exception' exception=[Exception|FQN])? '{'
 		attributes+=Attribute* 
 		consistency=Consistency? 
 		('message' message=STRING)?
 	'}';
-	
+
 Exception:
 	doc=DOC?
 	'exception' name=ID ('cid' cid=INT)? '{'

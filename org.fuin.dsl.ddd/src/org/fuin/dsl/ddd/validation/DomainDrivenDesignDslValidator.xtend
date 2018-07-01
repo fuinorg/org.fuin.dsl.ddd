@@ -39,6 +39,8 @@ import static extension org.fuin.dsl.ddd.extensions.DddCollectionExtensions.*
 import static extension org.fuin.dsl.ddd.extensions.DddConstraintExtension.*
 import static extension org.fuin.dsl.ddd.extensions.DddEObjectExtensions.*
 import static extension org.fuin.dsl.ddd.extensions.DddEntityExtensions.*
+import org.eclipse.emf.common.util.EList
+import org.fuin.dsl.ddd.domainDrivenDesignDsl.Type
 
 /**
  * Custom validation rules. 
@@ -335,10 +337,10 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 
 		if ((attribute.invariants !== null) && (attribute.invariants.constraintInstances !== null)) {
 			for (constraintInstance : attribute.invariants.constraintInstances) {
-				if (!attribute.type.equals(constraintInstance.constraint.input)) {
+				if (!constraintInstance.constraint.input.contains(attribute.type)) {
 					error(
-						"The input type of the constraint (" + constraintInstance.constraint.input.name +
-							") does not match the attribute type",
+						"The allowed input types of the constraint (" + constraintInstance.constraint.input.typeNames +
+							") do not match the attribute type",
 						constraintInstance,
 						DomainDrivenDesignDslPackage.Literals::CONSTRAINT_INSTANCE__CONSTRAINT,
 						ATTRIBUTE_INVARIANT_WRONG_TARGET_TYPE
@@ -354,9 +356,9 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 
 		if ((parameter.preconditions !== null) && (parameter.preconditions.constraintInstances !== null)) {
 			for (constraintInstance : parameter.preconditions.constraintInstances) {
-				if (!parameter.type.equals(constraintInstance.constraint.input)) {
+				if (!constraintInstance.constraint.input.contains(parameter.type)) {
 					error(
-						"The input type of the constraint (" + constraintInstance.constraint.input.name +
+						"The input type of the constraint (" + constraintInstance.constraint.input.typeNames +
 							") does not match the parameter type",
 						constraintInstance,
 						DomainDrivenDesignDslPackage.Literals::CONSTRAINT_INSTANCE__CONSTRAINT,
@@ -368,9 +370,9 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 
 		if ((parameter.businessRules !== null) && (parameter.businessRules.constraintInstances !== null)) {
 			for (constraintInstance : parameter.businessRules.constraintInstances) {
-				if (!parameter.type.equals(constraintInstance.constraint.input)) {
+				if (!constraintInstance.constraint.input.contains(parameter.type)) {
 					error(
-						"The input type of the constraint (" + constraintInstance.constraint.input.name +
+						"The input type of the constraint (" + constraintInstance.constraint.input.typeNames +
 							") does not match the parameter type",
 						constraintInstance,
 						DomainDrivenDesignDslPackage.Literals::CONSTRAINT_INSTANCE__CONSTRAINT,
@@ -388,9 +390,9 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 		if ((internalType.invariants !== null) && (internalType.invariants.constraintInstances !== null)) {
 
 			for (constraintInstance : internalType.invariants.constraintInstances) {
-				if (!internalType.equals(constraintInstance.constraint.input)) {
+				if (!constraintInstance.constraint.input.contains(internalType)) {
 					error(
-						"The input type of the constraint (" + constraintInstance.constraint.input.name +
+						"The input type of the constraint (" + constraintInstance.constraint.input.typeNames +
 							") does not match this type",
 						constraintInstance,
 						DomainDrivenDesignDslPackage.Literals::CONSTRAINT_INSTANCE__CONSTRAINT,
@@ -689,5 +691,19 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 		}
 		return null
 	}
+
+    private static def String typeNames(EList<Type> types) {
+    	if (types === null) {
+    		return ""
+    	}
+    	val StringBuilder sb = new StringBuilder();
+    	for (type : types) {
+    		if (sb.length > 0) {
+    			sb.append(", ")
+    		}
+    		sb.append(type.name)
+    	}
+    	return sb.toString()
+    }
 
 }
