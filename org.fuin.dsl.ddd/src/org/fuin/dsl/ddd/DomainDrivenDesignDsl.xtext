@@ -8,7 +8,7 @@ DomainModel:
 	contexts+=Context*;
 
 Context:
-	'context' name=ID '{'
+	'context' name=FQN '{'
 		namespaces+=Namespace*
 	'}';
 	
