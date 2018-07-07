@@ -259,15 +259,35 @@ Parameter:
 	(nullable='nullable')? 
 	type=[Type|FQN] generics=GenericArgs? name=ID (preconditions=Preconditions)? (businessRules=BusinessRules)? (overridden=OverriddenTypeMetaInfo)?;
 
-/** List of invariants. */
+/** 
+ * List of invariants.
+ * 
+ * An invariant is a rule that should never be violated during program execution.
+ * If it's violated, this means there is an error in the code and exception may be thrown.
+ * It's a kind of unexpected error that is normally signaled with a status code or an unchecked exception.
+ * The module's provider is responsible for keeping this kind of rule.  
+ */
 Invariants:
 	'invariants' constraintInstances+=ConstraintInstance (',' constraintInstances+=ConstraintInstance)*;
 
-/** List of preconditions. */
+/** 
+ * List of preconditions.
+ * 
+ * A precondition is a rule that must be followed before calling a method.
+ * If it's violated, this means there is an error in the caller's code and exception may be thrown.
+ * It's a kind of unexpected error that is normally signaled with a status code or an unchecked exception.
+ * The module's user is responsible for keeping this kind of rule.  
+ */
 Preconditions:
 	'preconditions' constraintInstances+=ConstraintInstance (',' constraintInstances+=ConstraintInstance)*;
 
-/** List of business rules. */
+/** 
+ * List of business rules.
+ * 
+ * A business rule is a condition that is required to successfully execute a method. It cannot be verified by the caller of the method. 
+ * This means it's not an error in the code but still something that has to be handled before the method can be successfully executed.
+ * It's a kind of error/warning that is normally signaled with a status code or a checked exception.
+ */
 BusinessRules:
 	'business-rules' constraintInstances+=ConstraintInstance (',' constraintInstances+=ConstraintInstance)*;
 
