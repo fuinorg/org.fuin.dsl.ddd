@@ -4,61 +4,93 @@ import "http://www.eclipse.org/emf/2002/Ecore" as ecore
 
 generate domainDrivenDesignDsl "http://www.fuin.org/dsl/ddd/DomainDrivenDesignDsl"
 
+/** A system of abstractions that describes the selected aspects of the domain. */
 DomainModel:
 	contexts+=Context*;
 
+/** The setting in which a word or statement appears that determines its meaning. */
 Context:
 	'context' name=FQN '{'
 		namespaces+=Namespace*
 	'}';
-	
+
+/** Structured hierarchy that allows reuse of names in different sub contexts. */
 Namespace:
 	'namespace' name=FQN '{'
 		imports+=Import*
 		elements+=AbstractElement*
 	'}';
 
+/** Allows using objects from other namespaces. */
 Import:
 	'import' importedNamespace=(FQN | FQNWithWildcard);
 
+/** Common properties of domain model elements. */
 AbstractElement:
 	Constraint | Type | Exception | Event;
 
+/** Common properties of all types. */
 Type:
 	ExternalType | InternalType | Service;
 
+/** Common properties of types that are part of the domain model. */
 InternalType:
 	AbstractVO | AbstractEntity | EnumObject;
 
+/** Common properties of value objects. */
 AbstractVO:
 	ValueObject | AbstractEntityId;
 
+/** Common properties of entity or aggregate identifiers. */
 AbstractEntityId:
 	EntityId | AggregateId;
 
+/** Common properties of entities and aggregates. */
 AbstractEntity:
 	Entity | Aggregate;
 
+/** Types that are defined somewhere outside of the domain model. */
 ExternalType:
 	doc=DOC?	
 	'type' (element='element')? name=ID ('generics' generics=INT)?;
 
+/** Standard way of expressing duration. */
 enum TimeUnit:
 	millis | seconds | minutes | hours | days;
 
+/** Determines whether inconsistencies are acceptable or not.  */
 enum ConsistencyLevel:
-	weak | strong;
+	/** Inconsistencies are allowed for some time. */
+	weak |	
+	/** Inconsistencies are never allowed. */ 
+	strong;
 
+/** Determines how inconsistencies are detected. */
 enum InconsistencyDetection:
-	never | manually | automatic;
+	/** No special handling required (They are simply accepted). */
+	never | 
+	/** Someone should verify the data from time to time in a manual process. */
+	manually |
+	/** Some automated process is necessary to verify the constraints. */ 
+	automatic;
 
+/** Determines how an inconsistency will be resolved. */
 enum InconsistencyResolution:
-	never | manually | automatic | workflow;
+	/** There will be no action taken (inconsistency stays is is). */
+	never | 
+	/** Someone should manually fix the data. */
+	manually |
+	/** Some automated process is necessary that cleans up the data. */ 
+	automatic | 
+	/** Some workflow should be started to clean the data. */
+	workflow;
 
+/** Amount of time. */
 Duration:
 	time=INT unit=TimeUnit;
 
-WeakConsistency:
+/** Inconsistencies are allowed for some time. */
+WeakConsistency:	
 	acceptableDoc=DOC? 
 	'acceptable' acceptable=Duration 
 	
@@ -67,11 +99,13 @@ WeakConsistency:
 	
 	resolutionDoc=DOC? 
 	'resolution' resolution=InconsistencyResolution;
-	
+
+/** Defines a level of consistency. In case of a weak consistency some additional properties are defined. */
 Consistency:
 	doc=DOC
 	'consistency' level=ConsistencyLevel ('{' weakConsistency=WeakConsistency '}')?;
 
+/** Defines a condition that must be satisfied. */
 Constraint:
 	doc=DOC? 
 	'constraint' name=ID ('input' input+=[Type|FQN] ('|' input+=[Type|FQN])*)? ('exception' exception=[Exception|FQN])? '{'
@@ -80,6 +114,7 @@ Constraint:
 		('message' message=STRING)?
 	'}';
 
+/** Describes an error condition. */
 Exception:
 	doc=DOC?
 	'exception' name=ID ('cid' cid=INT)? '{'
@@ -87,6 +122,7 @@ Exception:
 		'message' message=STRING
 	'}';
 
+/** An object that describes some characteristic or attribute but carries no concept of identity. */
 ValueObject:
 	doc=DOC? 
 	'value-object' name=ID ('base' base=[ExternalType|FQN])? (invariants=Invariants)? '{'
@@ -96,6 +132,7 @@ ValueObject:
 		methods+=Method*
 	'}';
 
+/** Uniquely identifies an entity. */
 EntityId:
 	doc=DOC?
 	'entity-id' name=ID ('identifies' entity=[Entity|FQN])? ('base' base=[ExternalType|FQN])? (invariants=Invariants)? '{'
@@ -105,6 +142,7 @@ EntityId:
 		methods+=Method*
 	'}';
 
+/** Uniquely identifies an aggregate. */
 AggregateId:
 	doc=DOC?
 	'aggregate-id' name=ID ('identifies' aggregate=[Aggregate|FQN])? ('base' base=[ExternalType|FQN])? (invariants=Invariants)? '{'
@@ -114,6 +152,7 @@ AggregateId:
 		methods+=Method*
 	'}';
 
+/** A type with a limited set of named values. */
 EnumObject:
 	doc=DOC?
 	'enum' name=ID ('base' base=[ExternalType|FQN])? (invariants=Invariants)? '{'
@@ -121,11 +160,13 @@ EnumObject:
 		attributes+=Attribute*
 		'instances' '{' instances+=EnumInstance+ '}'
 	'}';
-	
+
+/** Named value of an enumeration. */
 EnumInstance:
 	doc=DOC?
 	(deprecated='deprecated')? name=ID ('(' params+=Literal (',' params+=Literal)* ')')?;	
-	
+
+/** A domain event describes something that happened in the past and that domain experts care about. */
 Event:
 	doc=DOC? 
 	'event' name=ID '{'
@@ -133,6 +174,7 @@ Event:
 		('message' message=STRING)?
 	'}';
 
+/* An object fundamentally defined not by its attributes, but by a thread of continuity and identity. */
 Entity:
 	doc=DOC?
 	'entity' name=ID ('identifier' idType=[EntityId|FQN])? ('root' root=[Aggregate|FQN])? (invariants=Invariants)? '{'
@@ -143,6 +185,11 @@ Entity:
 		elements+=AbstractElement*
 	'}';
 
+/** 
+ * A cluster of associated objects that are treated as a unit for the purpose of data changes. 
+ * External references are restricted to one member of the Aggregate, designated as the root. 
+ * A set of consistency rules applies within the Aggregate's boundaries.
+ */
 Aggregate:
 	doc=DOC?
 	'aggregate' name=ID ('identifier' idType=[AggregateId|FQN])? (invariants=Invariants)? '{'
@@ -152,10 +199,12 @@ Aggregate:
 		methods+=Method*
 		elements+=AbstractElement*
 	'}';
-	
+
+/** Common properties of methods. */
 AbstractMethod:
 	Constructor | Method;
-	
+
+/** Special type of method used to create an object. */
 Constructor:
 	doc=DOC? 
 	'constructor' name=ID (preconditions=Preconditions)? (businessRules=BusinessRules)? ('fires' firedEvents+=[Event|FQN] (',' firedEvents+=[Event|FQN])*)? '{'
@@ -165,10 +214,12 @@ Constructor:
 		events+=Event*
 	'}';
 
+/** Type returned by a method (not a constructor). */
 ReturnType:
 	doc=DOC? 
 	'returns' type=[Type|FQN];
 
+/** Defines a function of an object. */
 Method:
 	doc=DOC? 
 	'method' name=ID ('ref' refMethod=[Method|FQN])? (preconditions=Preconditions)? (businessRules=BusinessRules)? ('fires' firedEvents+=[Event|FQN] (',' firedEvents+=[Event|FQN])*)? '{'
@@ -179,6 +230,7 @@ Method:
 		events+=Event*
 	'}';
 
+/** Properties of an object that are meant to be used in a user interface. */
 TypeMetaInfo:
 	{TypeMetaInfo}
     	('slabel' (slabel=STRING))?
@@ -187,61 +239,78 @@ TypeMetaInfo:
     	('prompt' (prompt=STRING))?
     	('examples' (examples+=Literal*))?;
 
+/** Common properties of attributes and parameters. */
 Variable:
 	Attribute | Parameter;
-	
+
+/** Allows typing another type. */
 GenericArgs:
 	'<' + args+=[Type|FQN] (',' args+=[Type|FQN])* '>';	
-	
+
+/** Property of an object. */
 Attribute:
 	doc=DOC? 
 	(nullable='nullable')? 	
 	type=[Type|FQN] generics=GenericArgs? name=ID (invariants=Invariants)? (overridden=OverriddenTypeMetaInfo)?;
 
+/** Property/Argument of a method. */
 Parameter:
 	doc=DOC? 
 	(nullable='nullable')? 
 	type=[Type|FQN] generics=GenericArgs? name=ID (preconditions=Preconditions)? (businessRules=BusinessRules)? (overridden=OverriddenTypeMetaInfo)?;
 
+/** List of invariants. */
 Invariants:
 	'invariants' constraintInstances+=ConstraintInstance (',' constraintInstances+=ConstraintInstance)*;
 
+/** List of preconditions. */
 Preconditions:
 	'preconditions' constraintInstances+=ConstraintInstance (',' constraintInstances+=ConstraintInstance)*;
 
+/** List of business rules. */
 BusinessRules:
 	'business-rules' constraintInstances+=ConstraintInstance (',' constraintInstances+=ConstraintInstance)*;
 
+/** A meta information that is overridden for a sub type. */
 OverriddenTypeMetaInfo:
 	'{' metaInfo=TypeMetaInfo '}';
 
+/** Concrete usage of a constraint. */
 ConstraintInstance:
 	constraint=[Constraint|FQN] ('(' params+=Literal (',' params+=Literal)* ')')?;
 
+/** Collection of methods with a unique name. */
 Service:
 	doc=DOC? 
 	'service' name=ID '{'
 		methods+=Method*
 	'}';
 
+/** A notation for representing a fixed value in source code. */
 Literal:
 	NullLiteral | BooleanLiteral | NumberLiteral | StringLiteral;
 
+/** Unambiguous name that specifies an object. */
 FQN:
   ID ('.' ID)*;
 
+/** Unambiguous name that specifies a group of object. */
 FQNWithWildcard :
 	FQN  '.' '*';
 
+/** Value that can only be true or false. */
 BooleanLiteral:
 	{BooleanLiteral} value=('false' | 'true');
 
+/** Undefined value. */
 NullLiteral:
 	{NullLiteral} value='null';
 
+/** Numeric value. */
 NumberLiteral:
 	{NumberLiteral} value=Number;
 
+/** Textual value. */
 StringLiteral:
 	{StringLiteral} value=STRING;
 
