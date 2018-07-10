@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+<title>Alpha3CountryCode-lf.ddd</title>
+<desc>Converted from Alpha3CountryCode-lf.ddd to Alpha3CountryCode-lf.ddd.svg</desc>
+<style>
+<![CDATA[
+text { font-size: 11pt; font-family: monospace }
+.string { fill: rgb(42, 0, 255) }
+.ml-comment { fill: rgb(63, 127, 95) }
+.sl-comment { fill: rgb(63, 127, 95) }
+.keyword { fill: rgb(127, 0, 85); font-weight: bold }
+.number { fill: rgb(125, 125, 125) }
+]]>
+</style>
+<text xml:space="preserve">
+<tspan dy="1.2em" x="10"> </tspan><tspan class="ml-comment">/**</tspan>
+<tspan dy="1.2em" x="10"> </tspan><tspan class="ml-comment"> * ISO <tspan class="number">3166</tspan>-<tspan class="number">1</tspan> alpha-<tspan class="number">3</tspan> three-letter country code defined in ISO <tspan class="number">3166</tspan>-<tspan class="number">1</tspan>.</tspan>
+<tspan dy="1.2em" x="10"> </tspan><tspan class="ml-comment"> */</tspan>
+<tspan dy="1.2em" x="10"> </tspan><tspan class="keyword">value-object</tspan> Alpha3CountryCode <tspan class="keyword">base</tspan> String {
+<tspan dy="1.2em" x="10"> </tspan>    
+<tspan dy="1.2em" x="10"> </tspan>    <tspan class="keyword">label</tspan> <tspan class="string">"Alpha-<tspan class="number">3</tspan> country code"</tspan> <tspan class="sl-comment">// Used in UI</tspan>
+<tspan dy="1.2em" x="10"> </tspan><tspan class="sl-comment"></tspan>    
+<tspan dy="1.2em" x="10"> </tspan>    <tspan class="ml-comment">/** Internal value. */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>    String value <tspan class="keyword">invariants</tspan> Length(<tspan class="number">3</tspan>, <tspan class="number">3</tspan>)
+<tspan dy="1.2em" x="10"> </tspan>    
+<tspan dy="1.2em" x="10"> </tspan>}
+<tspan dy="1.2em" x="10"> </tspan>
+</text>
+</svg>
