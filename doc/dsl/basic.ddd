@@ -1,0 +1,10 @@
+context org.fuin.sales {
+
+    namespace b.c.d {
+
+        type String
+        type Integer
+
+    }
+
+}

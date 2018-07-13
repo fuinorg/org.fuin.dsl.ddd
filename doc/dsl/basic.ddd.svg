@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+<title>basic.ddd</title>
+<desc>Converted from basic.ddd to basic.ddd.svg</desc>
+<style>
+<![CDATA[
+text { font-size: 11pt; font-family: monospace }
+.string { fill: rgb(42, 0, 255) }
+.ml-comment { fill: rgb(63, 127, 95) }
+.sl-comment { fill: rgb(63, 127, 95) }
+.number { fill: rgb(125, 125, 125) }
+.keyword { fill: rgb(127, 0, 85); font-weight: bold }
+]]>
+</style>
+<text xml:space="preserve">
+<tspan dy="1.2em" x="10"> </tspan><tspan class="keyword">context</tspan> org.fuin.sales {
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>    <tspan class="keyword">namespace</tspan> b.c.d {
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">type</tspan> String
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">type</tspan> Integer
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>    }
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>}
+<tspan dy="1.2em" x="10"> </tspan>
+</text>
+</svg>
