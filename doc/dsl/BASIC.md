@@ -20,3 +20,4 @@ Such a file can contain multiple contexts and the file's name is completely inde
 Types defined in another context or namespace must be imported to use them.
 
 <table><tr><td><img src="https://cdn.rawgit.com/fuinorg/org.fuin.dsl.ddd/master/doc/dsl/import.ddd.svg"></td></tr></table>
+

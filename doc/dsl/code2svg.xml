@@ -2,7 +2,7 @@
 <code2svg file-extension=".ddd">
 	<reg-expr-element name="string" css="fill: rgb(42, 0, 255)" pattern="&quot;.*?&quot;" />
 	<reg-expr-element name="ml-comment" css="fill: rgb(63, 127, 95)" pattern="/\*(.|[\r\n])*?\*/" />
-	<reg-expr-element name="sl-comment" css="fill: rgb(63, 127, 95)" pattern="//.*[\r\n]" />
+	<reg-expr-element name="sl-comment" css="fill: rgb(63, 127, 95)" pattern="(?m)//.*$" />
 	<reg-expr-element name="number" css="fill: rgb(125, 125, 125)" pattern="(\b([\d]+(\.[\d]+)?|0x[a-f0-9]+)\b)(?=([^&quot;\\]*(\\.|&quot;([^&quot;\\]*\\.)*[^&quot;\\]*&quot;))*[^&quot;]*$)" />
 	<reg-expr-element name="keyword" css="fill: rgb(127, 0, 85); font-weight: bold">
 		<keyword>acceptable</keyword>
