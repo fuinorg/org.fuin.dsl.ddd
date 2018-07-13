@@ -2,7 +2,7 @@
 
 <table><tr><td><img src="https://cdn.rawgit.com/fuinorg/org.fuin.dsl.ddd/master/doc/dsl/basic.ddd.svg" width="880" height="200"></td></tr></table>
 
-* File
+* File (Like example [basic.ddd](basic.ddd)
   * Extension: *.ddd
   * Can contain multiple contexts
   * Filename is completely independent from content

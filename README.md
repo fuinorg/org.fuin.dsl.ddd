@@ -12,22 +12,15 @@ Xtext based DSL supporting Domain-driven design (DDD)
 
 Generating code?
 ----------------
-See ___[Big Picture](https://github.com/fuinorg/org.fuin.dsl.ddd/blob/master/doc)___
+See ___[The Big Picture](https://github.com/fuinorg/org.fuin.dsl.ddd/blob/master/doc/big-picture)___
 
-Examples
---------
-Context, Namespace, External Types<br/>
-![Context, Namespace, External Types](https://raw.github.com/fuinorg/org.fuin.dsl.ddd/master/doc/context-namespace-example.jpg)
-
-Value Object<br/>
-![Value Object](https://raw.github.com/fuinorg/org.fuin.dsl.ddd/master/doc/value-object-example.jpg)
-
-Aggregate<br/>
-![Aggregate](https://raw.github.com/fuinorg/org.fuin.dsl.ddd/master/doc/aggregate-example.jpg)
+DSL Documentation
+-----------------
+See ___[DSL Overview](https://github.com/fuinorg/org.fuin.dsl.ddd/blob/master/doc/dsl)___
 
 Presentation
 ------------
-http://de.slideshare.net/michael-schnell/ddd-dsl/
+http://de.slideshare.net/michael-schnell/ddd-dsl/ (Outdated from 2014)
 
 Installation
 ------------
