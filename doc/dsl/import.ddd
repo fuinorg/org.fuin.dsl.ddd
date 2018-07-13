@@ -1,0 +1,54 @@
+context org.fuin.controlling {
+
+	namespace a.b.c {
+		
+		// Defined external types
+		type Whatever
+		type Unknown
+		
+	}
+	
+	
+}
+
+context org.fuin.sales {
+
+	namespace a.b.c {
+		
+		// Defined an external type
+		type Bla
+		
+	}
+
+    namespace x {
+    	
+    	// Imported single type from the other namespace
+    	import a.b.c.Bla
+
+    	// Imported single types other context/namespace
+    	import org.fuin.controlling.a.b.c.Whatever
+    	
+		value-object Abc {
+			// Use the types imported
+			Bla a
+			Whatever b
+			// Fully qualified type usage
+			org.fuin.controlling.a.b.c.Unknown c
+		}
+		
+    }
+
+    namespace y {
+    	
+    	// Imported all types from the other context/namespace
+    	import org.fuin.controlling.a.b.c.*
+    	
+		value-object Abc {
+			// Used the imported type here
+			Whatever a
+			Unknown b
+		}
+		
+    }
+
+}
