@@ -1,4 +1,4 @@
 DSL Overview
 ============
 
-* [Basic Concepts](dsl/BASIC.md)
+* [Basic Concepts](BASIC.md)
