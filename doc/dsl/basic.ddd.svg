@@ -5,7 +5,7 @@
 <desc>Converted from basic.ddd to basic.ddd.svg</desc>
 <style>
 <![CDATA[
-text { font-size: 11pt; font-family: monospace }
+text { font-size: 12pt; font-family: monospace }
 .string { fill: rgb(42, 0, 255) }
 .ml-comment { fill: rgb(63, 127, 95) }
 .sl-comment { fill: rgb(63, 127, 95) }

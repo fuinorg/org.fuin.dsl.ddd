@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<code2svg file-extension=".ddd">
+<code2svg file-extension=".ddd" text-css="font-size: 12pt; font-family: monospace">
 	<reg-expr-element name="string" css="fill: rgb(42, 0, 255)" pattern="&quot;.*?&quot;" />
 	<reg-expr-element name="ml-comment" css="fill: rgb(63, 127, 95)" pattern="/\*(.|[\r\n])*?\*/" />
 	<reg-expr-element name="sl-comment" css="fill: rgb(63, 127, 95)" pattern="(?m)//.*$" />
