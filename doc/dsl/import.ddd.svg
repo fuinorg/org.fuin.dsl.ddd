@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" xmlns="http://www.w3.org/2000/svg" width="800" height="1000">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
 <title>import.ddd</title>
 <desc>Converted from import.ddd to import.ddd.svg</desc>
 <style>
@@ -14,53 +14,40 @@ text { font-size: 11pt; font-family: monospace }
 ]]>
 </style>
 <text xml:space="preserve">
+<tspan dy="1.2em" x="10"> </tspan>//@code2svg:{<tspan class="string">"width"</tspan>:800, <tspan class="string">"height"</tspan>: <tspan class="number">1000</tspan>}
 <tspan dy="1.2em" x="10"> </tspan><tspan class="keyword">context</tspan> org.fuin.controlling {
 <tspan dy="1.2em" x="10"> </tspan>
 <tspan dy="1.2em" x="10"> </tspan>    <tspan class="keyword">namespace</tspan> a.b.c {
-<tspan dy="1.2em" x="10"> </tspan>        
-<tspan dy="1.2em" x="10"> </tspan>        <tspan class="sl-comment">// Defined external types</tspan>
 <tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">type</tspan> Whatever
 <tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">type</tspan> Unknown
-<tspan dy="1.2em" x="10"> </tspan>        
 <tspan dy="1.2em" x="10"> </tspan>    }
-<tspan dy="1.2em" x="10"> </tspan>    
 <tspan dy="1.2em" x="10"> </tspan>    
 <tspan dy="1.2em" x="10"> </tspan>}
 <tspan dy="1.2em" x="10"> </tspan>
 <tspan dy="1.2em" x="10"> </tspan><tspan class="keyword">context</tspan> org.fuin.sales {
 <tspan dy="1.2em" x="10"> </tspan>
 <tspan dy="1.2em" x="10"> </tspan>    <tspan class="keyword">namespace</tspan> a.b.c {
-<tspan dy="1.2em" x="10"> </tspan>        
-<tspan dy="1.2em" x="10"> </tspan>        <tspan class="sl-comment">// Defined an external type</tspan>
 <tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">type</tspan> Bla
-<tspan dy="1.2em" x="10"> </tspan>        
 <tspan dy="1.2em" x="10"> </tspan>    }
 <tspan dy="1.2em" x="10"> </tspan>
 <tspan dy="1.2em" x="10"> </tspan>    <tspan class="keyword">namespace</tspan> x {
 <tspan dy="1.2em" x="10"> </tspan>        
-<tspan dy="1.2em" x="10"> </tspan>        <tspan class="sl-comment">// Imported single type from the other namespace</tspan>
-<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">import</tspan> a.b.c.Bla
-<tspan dy="1.2em" x="10"> </tspan>
-<tspan dy="1.2em" x="10"> </tspan>        <tspan class="sl-comment">// Imported single types other context/namespace</tspan>
-<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">import</tspan> org.fuin.controlling.a.b.c.Whatever
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">import</tspan> a.b.c.Bla &#x2776;
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">import</tspan> org.fuin.controlling.a.b.c.Whatever &#x2777;
 <tspan dy="1.2em" x="10"> </tspan>        
 <tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">value-object</tspan> Abc {
-<tspan dy="1.2em" x="10"> </tspan>            <tspan class="sl-comment">// Use the types imported</tspan>
 <tspan dy="1.2em" x="10"> </tspan>            Bla a
 <tspan dy="1.2em" x="10"> </tspan>            Whatever b
-<tspan dy="1.2em" x="10"> </tspan>            <tspan class="sl-comment">// Fully qualified type usage</tspan>
-<tspan dy="1.2em" x="10"> </tspan>            org.fuin.controlling.a.b.c.Unknown c
+<tspan dy="1.2em" x="10"> </tspan>            org.fuin.controlling.a.b.c.Unknown c &#x2778;
 <tspan dy="1.2em" x="10"> </tspan>        }
 <tspan dy="1.2em" x="10"> </tspan>        
 <tspan dy="1.2em" x="10"> </tspan>    }
 <tspan dy="1.2em" x="10"> </tspan>
 <tspan dy="1.2em" x="10"> </tspan>    <tspan class="keyword">namespace</tspan> y {
 <tspan dy="1.2em" x="10"> </tspan>        
-<tspan dy="1.2em" x="10"> </tspan>        <tspan class="sl-comment">// Imported all types from the other context/namespace</tspan>
-<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">import</tspan> org.fuin.controlling.a.b.c.*
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">import</tspan> org.fuin.controlling.a.b.c.* &#x2779;
 <tspan dy="1.2em" x="10"> </tspan>        
 <tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">value-object</tspan> Abc {
-<tspan dy="1.2em" x="10"> </tspan>            <tspan class="sl-comment">// Used the imported type here</tspan>
 <tspan dy="1.2em" x="10"> </tspan>            Whatever a
 <tspan dy="1.2em" x="10"> </tspan>            Unknown b
 <tspan dy="1.2em" x="10"> </tspan>        }

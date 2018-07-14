@@ -14,12 +14,12 @@ text { font-size: 11pt; font-family: monospace }
 ]]>
 </style>
 <text xml:space="preserve">
-<tspan dy="1.2em" x="10"> </tspan><tspan class="keyword">context</tspan> org.fuin.sales {
+<tspan dy="1.2em" x="10"> </tspan><tspan class="keyword">context</tspan> org.fuin.sales &#x2776; {
 <tspan dy="1.2em" x="10"> </tspan>
-<tspan dy="1.2em" x="10"> </tspan>    <tspan class="keyword">namespace</tspan> b.c.d {
+<tspan dy="1.2em" x="10"> </tspan>    <tspan class="keyword">namespace</tspan> b.c.d &#x2777; {
 <tspan dy="1.2em" x="10"> </tspan>
-<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">type</tspan> String
-<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">type</tspan> Integer
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">type</tspan> String &#x2778;
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">type</tspan> Integer &#x2778;
 <tspan dy="1.2em" x="10"> </tspan>
 <tspan dy="1.2em" x="10"> </tspan>    }
 <tspan dy="1.2em" x="10"> </tspan>
