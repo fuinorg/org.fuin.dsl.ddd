@@ -1,4 +1,4 @@
-//@code2svg:{"width":800, "height": 1000}
+@code2svg:{"width":800, "height": 800}
 context org.fuin.controlling {
 
 	namespace a.b.c {

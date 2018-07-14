@@ -1,3 +1,4 @@
+@code2svg:{"width":800, "height": 200}
 context org.fuin.sales &#x2776; {
 
     namespace b.c.d &#x2777; {
