@@ -1,4 +1,9 @@
 # Basic Concepts
+This page explains the basic concepts of the DDD DSL language.
+
+* [Context / Namespace / Type](#context--namespace--type)
+* [Imports](#imports)
+
 
 ## Context / Namespace / Type
 The DDD DSL is defined in files with the extension ".ddd" (Example [basic.ddd](basic.ddd)).
