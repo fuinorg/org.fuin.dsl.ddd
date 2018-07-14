@@ -334,9 +334,6 @@ NumberLiteral:
 StringLiteral:
 	{StringLiteral} value=STRING;
 
-terminal CDATA: 
-	'<![CDATA[' -> ']]>';
-
 terminal ID:
 	('A'..'Z'|'a'..'z') ('a'..'z'|'A'..'Z'|'_'|'0'..'9')*;
 	
