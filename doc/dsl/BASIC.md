@@ -4,20 +4,25 @@
 The DDD DSL is defined in files with the extension ".ddd" (Example [basic.ddd](basic.ddd)).
 Such a file can contain multiple contexts and the file's name is completely independent from content.
 
-<table><tr><td><img src="https://cdn.rawgit.com/fuinorg/org.fuin.dsl.ddd/158e0a9c0ff82732fb5dc2738b0da8e89b3138d6/doc/dsl/basic.ddd.svg" width="880" height="200"></td></tr></table>
+<table><tr><td><img src="https://cdn.rawgit.com/fuinorg/org.fuin.dsl.ddd/c0966448cda29874c7dc5ef4af766e0e4b4463fc/doc/dsl/basic.ddd.svg" width="880" height="200"></td></tr></table>
 
-* **Context**
+* &#x2776; **context**
   * DDD Term = Bounded Context
-* **Namespace**
+  * Names may be separated by a dot
+* &#x2777; **namespace**
   * DDD Term = Module
   * Also known as „Package“
-  * Names separated by a dot
-* **Type**
+  * Names may be separated by a dot
+* &#x2778; **type**
   * External Type
-  * Defined outside the DSL
+  * Defined somewhere outside of the DSL
 
 ## Imports
 Types defined in another context or namespace must be imported to use them.
 
-<table><tr><td><img src="https://cdn.rawgit.com/fuinorg/org.fuin.dsl.ddd/ea946ad5698517356a479a64cb66398ae01be95e/doc/dsl/import.ddd.svg"></td></tr></table>
+<table><tr><td><img src="https://cdn.rawgit.com/fuinorg/org.fuin.dsl.ddd/c0966448cda29874c7dc5ef4af766e0e4b4463fc/doc/dsl/import.ddd.svg"></td></tr></table>
 
+* &#x2776; Importing a single type from the same context, just using the namespace
+* &#x2777; Importing a single type from another context, using the context and namespace
+* &#x2778; Using a fully qualified type from another context without listing it in an import statement
+* &#x2779; Importing all types from a namespace using the asterisk (*) wildcard character.

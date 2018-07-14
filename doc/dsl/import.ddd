@@ -1,50 +1,37 @@
+//@code2svg:{"width":800, "height": 1000}
 context org.fuin.controlling {
 
 	namespace a.b.c {
-		
-		// Defined external types
 		type Whatever
 		type Unknown
-		
 	}
-	
 	
 }
 
 context org.fuin.sales {
 
 	namespace a.b.c {
-		
-		// Defined an external type
 		type Bla
-		
 	}
 
     namespace x {
     	
-    	// Imported single type from the other namespace
-    	import a.b.c.Bla
-
-    	// Imported single types other context/namespace
-    	import org.fuin.controlling.a.b.c.Whatever
+    	import a.b.c.Bla &#x2776;
+    	import org.fuin.controlling.a.b.c.Whatever &#x2777;
     	
 		value-object Abc {
-			// Use the types imported
 			Bla a
 			Whatever b
-			// Fully qualified type usage
-			org.fuin.controlling.a.b.c.Unknown c
+			org.fuin.controlling.a.b.c.Unknown c &#x2778;
 		}
 		
     }
 
     namespace y {
     	
-    	// Imported all types from the other context/namespace
-    	import org.fuin.controlling.a.b.c.*
+    	import org.fuin.controlling.a.b.c.* &#x2779;
     	
 		value-object Abc {
-			// Used the imported type here
 			Whatever a
 			Unknown b
 		}

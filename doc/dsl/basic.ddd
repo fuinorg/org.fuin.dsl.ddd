@@ -1,9 +1,9 @@
-context org.fuin.sales {
+context org.fuin.sales &#x2776; {
 
-    namespace b.c.d {
+    namespace b.c.d &#x2777; {
 
-        type String
-        type Integer
+        type String &#x2778;
+        type Integer &#x2778;
 
     }
 
