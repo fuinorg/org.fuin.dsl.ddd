@@ -53,3 +53,8 @@ Business Rules are like pre-conditions but the caller is not able to verify them
 * In languages like Java violations are modeled as checked exceptions other languages use dedicated return/status codes  
 * An example is an "email must be unique" constraint. A caller should check for uniqueness before calling the method, but it's nevertheless possible that another user has just entered the same email between caller's verification and verification inside the method. 
 
+
+<table><tr><td><img src="https://cdn.rawgit.com/fuinorg/org.fuin.dsl.ddd/0dc2316/doc/dsl/constraints-business-rules.ddd.svg"></td></tr></table>
+
+* Can be defined on method level &#x2776;
+
