@@ -14,7 +14,7 @@ DSL Documentation
 -----------------
 See ___[DSL Overview](https://github.com/fuinorg/org.fuin.dsl.ddd/blob/master/doc/dsl)___
 
-There is also an old presentation from 2014 that is most likely a bit outdated: 
+There is also an old presentation from 2014 (outdated): 
 http://de.slideshare.net/michael-schnell/ddd-dsl/
 
 
