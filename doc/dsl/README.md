@@ -1,4 +1,5 @@
 DSL Overview
 ============
 
-* [Basic Concepts](BASIC.md)
+* [Context / Namespace / Type](basics.md)
+* [Imports](imports.md)
