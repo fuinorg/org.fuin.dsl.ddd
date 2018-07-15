@@ -63,7 +63,7 @@ A constraint that is used as a business rule must
 * define an exception for cases where the constraint is violated &#x2776;
 * provide a consistency definition  &#x2777;
 
-The consistency is either **strong** or **weak** &#x2777;: 'Strong' means it should never be violated. 'Weak' means that inconsistencies are allowed for some time. In this case some more information must be provided in the definition.
+The consistency is either **strong** or **weak** &#x2778;: 'Strong' means it should never be violated. 'Weak' means that inconsistencies are allowed for some time. In this case some more information must be provided in the definition.
 * **acceptable** Defines how long the inconsistency is acceptable from a business point of view &#x2779;
   * X **millis** or **seconds** or **minutes** or **hours** or **days**
 * **detection** Determines how inconsistencies are detected &#x277A;
