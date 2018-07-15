@@ -38,7 +38,7 @@ The DDD DSL supports currently the following types of constraints:
 ## Invariants
 Invariants may be defined for all variables.
 
-<table><tr><td><img src="https://cdn.rawgit.com/fuinorg/org.fuin.dsl.ddd/°°x2778°°/doc/dsl/constraints-invariants.ddd.svg"></td></tr></table>
+<table><tr><td><img src="https://cdn.rawgit.com/fuinorg/org.fuin.dsl.ddd/1772046/doc/dsl/constraints-invariants.ddd.svg"></td></tr></table>
 
 * Variables are by default never null except there is a **nullable** identifier &#x2776;
 * An invariant can be defined that restricts values that are allowed for the variable &#x2777;
