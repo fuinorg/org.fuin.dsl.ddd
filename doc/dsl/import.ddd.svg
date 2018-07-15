@@ -6,9 +6,9 @@
 <style>
 <![CDATA[
 text { font-size: 12pt; font-family: monospace }
-.string { fill: rgb(42, 0, 255) }
 .ml-comment { fill: rgb(63, 127, 95) }
 .sl-comment { fill: rgb(63, 127, 95) }
+.string { fill: rgb(42, 0, 255) }
 .number { fill: rgb(125, 125, 125) }
 .keyword { fill: rgb(127, 0, 85); font-weight: bold }
 ]]>

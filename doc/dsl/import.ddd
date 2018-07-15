@@ -16,20 +16,20 @@ context org.fuin.sales {
 
     namespace x {
     	
-    	import a.b.c.Bla &#x2776;
-    	import org.fuin.controlling.a.b.c.Whatever &#x2777;
+    	import a.b.c.Bla °°x2776°°
+    	import org.fuin.controlling.a.b.c.Whatever °°x2777°°
     	
 		value-object Abc {
 			Bla a
 			Whatever b
-			org.fuin.controlling.a.b.c.Unknown c &#x2778;
+			org.fuin.controlling.a.b.c.Unknown c °°x2778°°
 		}
 		
     }
 
     namespace y {
     	
-    	import org.fuin.controlling.a.b.c.* &#x2779;
+    	import org.fuin.controlling.a.b.c.* °°x2779°°
     	
 		value-object Abc {
 			Whatever a

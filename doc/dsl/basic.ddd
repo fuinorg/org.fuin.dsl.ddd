@@ -1,10 +1,10 @@
 @code2svg:{"width":800, "height": 200}
-context org.fuin.sales &#x2776; {
+context org.fuin.sales °°x2776°° {
 
-    namespace b.c.d &#x2777; {
+    namespace b.c.d °°x2777°° {
 
-        type String &#x2778;
-        type Integer &#x2778;
+        type String °°x2778°°
+        type Integer °°x2778°°
 
     }
 

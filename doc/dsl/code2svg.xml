@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <code2svg file-extension=".ddd" text-css="font-size: 12pt; font-family: monospace">
-	<reg-expr-element name="string" css="fill: rgb(42, 0, 255)" pattern="&quot;.*?&quot;" />
-	<reg-expr-element name="ml-comment" css="fill: rgb(63, 127, 95)" pattern="/\*(.|[\r\n])*?\*/" />
-	<reg-expr-element name="sl-comment" css="fill: rgb(63, 127, 95)" pattern="(?m)//.*$" />
-	<reg-expr-element name="number" css="fill: rgb(125, 125, 125)" pattern="(\b([\d]+(\.[\d]+)?|0x[a-f0-9]+)\b)(?=([^&quot;\\]*(\\.|&quot;([^&quot;\\]*\\.)*[^&quot;\\]*&quot;))*[^&quot;]*$)" />
-	<reg-expr-element name="keyword" css="fill: rgb(127, 0, 85); font-weight: bold">
+	<ml-comment-element name="ml-comment" css="fill: rgb(63, 127, 95)" />
+	<sl-comment-element name="sl-comment" css="fill: rgb(63, 127, 95)" />
+	<string-element name="string" css="fill: rgb(42, 0, 255)" />
+	<number-element name="number" css="fill: rgb(125, 125, 125)" />
+	<keyword-element name="keyword" css="fill: rgb(127, 0, 85); font-weight: bold">
 		<keyword>acceptable</keyword>
 		<keyword>aggregate</keyword>
 		<keyword>aggregate-id</keyword>
@@ -61,5 +61,5 @@
 		<keyword>value-object</keyword>
 		<keyword>weak</keyword>
 		<keyword>workflow</keyword>
-	</reg-expr-element>
+	</keyword-element>
 </code2svg>
