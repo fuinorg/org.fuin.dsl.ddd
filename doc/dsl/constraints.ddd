@@ -1,0 +1,54 @@
+@code2svg:{"width":900, "height": 1100}
+context org.fuin.example {
+
+    namespace b.c.d {
+
+        type UUID
+        type String
+        
+        exception DuplicateUsernameException cid 1001 {
+        	String username
+        	message "A user with the name ${username} already exists"
+        }
+        
+        constraint NotNull input String {}
+        constraint MinLength input String {}
+        constraint MaxLength input String {}
+        constraint AorBNotNull {}
+        
+        constraint UniqueUsername exception DuplicateUsernameException {
+
+        	String username
+        	
+        	/** 
+        	 * A system administrator will get notified and solve the problem by assigning a
+        	 * new name directly in the database and the informs the affected user via email.
+        	 */
+        	consistency weak {
+        		acceptable 60 minutes // Task needs to be finished after 60 minutes
+        		detection automatic // Script will run every 5 minutes and creates a new workflow
+        		resolution workflow // Admin gets a task assigned
+        	}
+			
+        }
+        
+        aggregate-id AccountId identifies Account base UUID {}
+
+		aggregate Account identifier AccountId {
+			
+			method doSomething preconditions AorBNotNull {
+				nullable String a
+				nullable String b
+			}
+			
+			method changeUsername business-rules UniqueUsername {
+				
+				String newUsername preconditions NotNull, MinLength(3), MaxLength(20)
+				
+			}
+			
+		}
+
+    }
+
+}

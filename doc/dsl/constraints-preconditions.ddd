@@ -1,0 +1,13 @@
+@code2svg:{"width":800, "height": 300}
+method doSomething preconditions AorBNotNull °°x2776°° {
+	
+	nullable String a °°x2777°°
+	nullable String b °°x2777°°
+	
+}
+
+method changeUsername {
+	
+	String newUsername preconditions °°x2778°° NotNull, MinLength(3), MaxLength(20)
+	
+}

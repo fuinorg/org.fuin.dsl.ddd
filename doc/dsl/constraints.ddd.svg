@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" width="900" height="1100" xmlns="http://www.w3.org/2000/svg">
+<title>constraints.ddd</title>
+<desc>Converted from constraints.ddd to constraints.ddd.svg</desc>
+<style>
+<![CDATA[
+text { font-size: 12pt; font-family: monospace }
+.ml-comment { fill: rgb(63, 127, 95) }
+.sl-comment { fill: rgb(63, 127, 95) }
+.string { fill: rgb(42, 0, 255) }
+.number { fill: rgb(125, 125, 125) }
+.keyword { fill: rgb(127, 0, 85); font-weight: bold }
+]]>
+</style>
+<text xml:space="preserve">
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan><tspan class="keyword">context</tspan> org.fuin.example {
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>    <tspan class="keyword">namespace</tspan> b.c.d {
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">type</tspan> UUID
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">type</tspan> String
+<tspan dy="1.2em" x="10"> </tspan>        
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">exception</tspan> DuplicateUsernameException <tspan class="keyword">cid</tspan> <tspan class="number">1001</tspan> {
+<tspan dy="1.2em" x="10"> </tspan>            String username
+<tspan dy="1.2em" x="10"> </tspan>            <tspan class="keyword">message</tspan> <tspan class="string">&quot;A user with the name ${username} already exists&quot;</tspan>
+<tspan dy="1.2em" x="10"> </tspan>        }
+<tspan dy="1.2em" x="10"> </tspan>        
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">constraint</tspan> NotNull <tspan class="keyword">input</tspan> String {}
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">constraint</tspan> MinLength <tspan class="keyword">input</tspan> String {}
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">constraint</tspan> MaxLength <tspan class="keyword">input</tspan> String {}
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">constraint</tspan> AorBNotNull {}
+<tspan dy="1.2em" x="10"> </tspan>        
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">constraint</tspan> UniqueUsername <tspan class="keyword">exception</tspan> DuplicateUsernameException {
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>            String username
+<tspan dy="1.2em" x="10"> </tspan>            
+<tspan dy="1.2em" x="10"> </tspan>            <tspan class="ml-comment">/** </tspan>
+<tspan dy="1.2em" x="10"> </tspan><tspan class="ml-comment">             * A system administrator will get notified and solve the problem by assigning a</tspan>
+<tspan dy="1.2em" x="10"> </tspan><tspan class="ml-comment">             * new name directly in the database and the informs the affected user via email.</tspan>
+<tspan dy="1.2em" x="10"> </tspan><tspan class="ml-comment">             */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>            <tspan class="keyword">consistency</tspan> <tspan class="keyword">weak</tspan> {
+<tspan dy="1.2em" x="10"> </tspan>                <tspan class="keyword">acceptable</tspan> <tspan class="number">60</tspan> minutes <tspan class="sl-comment">// Task needs to be finished after 60 minutes</tspan>
+<tspan dy="1.2em" x="10"> </tspan>                <tspan class="keyword">detection</tspan> <tspan class="keyword">automatic</tspan> <tspan class="sl-comment">// Script will run every 5 minutes and creates a new workflow</tspan>
+<tspan dy="1.2em" x="10"> </tspan>                <tspan class="keyword">resolution</tspan> <tspan class="keyword">workflow</tspan> <tspan class="sl-comment">// Admin gets a task assigned</tspan>
+<tspan dy="1.2em" x="10"> </tspan>            }
+<tspan dy="1.2em" x="10"> </tspan>            
+<tspan dy="1.2em" x="10"> </tspan>        }
+<tspan dy="1.2em" x="10"> </tspan>        
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">aggregate</tspan>-id AccountId <tspan class="keyword">identifies</tspan> Account <tspan class="keyword">base</tspan> UUID {}
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">aggregate</tspan> Account <tspan class="keyword">identifier</tspan> AccountId {
+<tspan dy="1.2em" x="10"> </tspan>            
+<tspan dy="1.2em" x="10"> </tspan>            <tspan class="keyword">method</tspan> doSomething <tspan class="keyword">preconditions</tspan> AorBNotNull {
+<tspan dy="1.2em" x="10"> </tspan>                <tspan class="keyword">nullable</tspan> String a
+<tspan dy="1.2em" x="10"> </tspan>                <tspan class="keyword">nullable</tspan> String b
+<tspan dy="1.2em" x="10"> </tspan>            }
+<tspan dy="1.2em" x="10"> </tspan>            
+<tspan dy="1.2em" x="10"> </tspan>            <tspan class="keyword">method</tspan> changeUsername <tspan class="keyword">business-rules</tspan> UniqueUsername {
+<tspan dy="1.2em" x="10"> </tspan>                
+<tspan dy="1.2em" x="10"> </tspan>                String newUsername <tspan class="keyword">preconditions</tspan> NotNull, MinLength(<tspan class="number">3</tspan>), MaxLength(<tspan class="number">20</tspan>)
+<tspan dy="1.2em" x="10"> </tspan>                
+<tspan dy="1.2em" x="10"> </tspan>            }
+<tspan dy="1.2em" x="10"> </tspan>            
+<tspan dy="1.2em" x="10"> </tspan>        }
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>    }
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>}
+<tspan dy="1.2em" x="10"> </tspan>
+</text>
+</svg>
