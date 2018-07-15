@@ -53,8 +53,25 @@ Business Rules are like pre-conditions but the caller is not able to verify them
 * In languages like Java violations are modeled as checked exceptions other languages use dedicated return/status codes  
 * An example is an "email must be unique" constraint. A caller should check for uniqueness before calling the method, but it's nevertheless possible that another user has just entered the same email between caller's verification and verification inside the method. 
 
-
 <table><tr><td><img src="https://cdn.rawgit.com/fuinorg/org.fuin.dsl.ddd/0dc2316/doc/dsl/constraints-business-rules.ddd.svg"></td></tr></table>
 
 * Can be defined on method level &#x2776;
 
+<table><tr><td><img src="https://cdn.rawgit.com/fuinorg/org.fuin.dsl.ddd/1c50323/doc/dsl/constraints-business-rule.ddd.svg"></td></tr></table>
+
+A constraint that is used as a business rule must 
+* define an exception for cases where the constraint is violated &#x2776;
+* provide a consistency definition  &#x2777;
+
+The consistency is either **strong** or **weak** &#x2777;: 'Strong' means it should never be violated. 'Weak' means that inconsistencies are allowed for some time. In this case some more information must be provided in the definition.
+* **acceptable** Defines how long the inconsistency is acceptable from a business point of view &#x2779;
+  * X **millis** or **seconds** or **minutes** or **hours** or **days**
+* **detection** Determines how inconsistencies are detected &#x277A;
+  * **never** No special handling required (They are simply accepted). 
+  * **manually** Someone should verify the data from time to time in a manual process.
+  * **automatic** Some automated process is necessary to verify the constraints.
+* **resolution** Determines how an inconsistency will be resolved &#x277B;
+  * **never** There will be no action taken (inconsistency stays is is). 
+  * **manually** Someone should manually fix the data.
+  * **automatic** Some automated process is necessary that cleans up the data. 
+  * **workflow** Some workflow should be started to clean the data.
