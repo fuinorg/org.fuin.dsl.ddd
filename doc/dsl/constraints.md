@@ -40,7 +40,7 @@ Pre-conditions requires that the caller of a method complies with this rule.
 * Can be defined on method level to allow constraints using multiple parameters &#x2776;
   * Both parameters are nullable &#x2777;
   * But at least one of it must be non-null &#x2776;
-* Can be defined on parameter level °°x2778°° 
+* Can be defined on parameter level &#xx2778; 
 
 ## Post-conditions
 Post-conditions are currently not supported.
