@@ -57,7 +57,7 @@ Business Rules are like pre-conditions but the caller is not able to verify them
 
 * Can be defined on method level &#x2776;
 
-<table><tr><td><img src="https://cdn.rawgit.com/fuinorg/org.fuin.dsl.ddd/1c50323/doc/dsl/constraints-business-rule.ddd.svg"></td></tr></table>
+<table><tr><td><img src="https://cdn.rawgit.com/fuinorg/org.fuin.dsl.ddd/ecfe5ab/doc/dsl/constraints-business-rule.ddd.svg"></td></tr></table>
 
 A constraint that is used as a business rule must 
 * define an exception for cases where the constraint is violated &#x2776;
