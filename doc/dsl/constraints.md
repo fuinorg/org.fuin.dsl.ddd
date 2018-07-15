@@ -1,29 +1,6 @@
 # Constraints
 Constraints define conditions that must be satisfied.
 
-## Types
-
-The DDD DSL supports currently the following types of constraints:
-* **Invariants** must be kept during the life of the entity given an invariant condition.
-  * Can be defined for objects (not methods)
-  * The provider of the entity is responsible that the invariant is always true
-  * It's considered a programming error if they are not kept
-  * In languages like Java violations are modeled as runtime exceptions
-* **Pre-conditions** requires that the caller of a method complies with this rule. 
-  * The caller is responsible to verify the condition is met before calling the method
-  * Can be defined for methods (not objects)
-  * It's considered a programming error if they are not kept  
-  * In languages like Java violations are modeled as runtime exceptions
-  * An example is a "not null" constraint. A value passed to a method should never be null (not set). This is easy to verify before calling the method and the value does not change between testing for null and calling the method.
-* **Business Rules** are like pre-conditions but the caller is not able to verify them
-  * Can be defined for methods (not objects)
-  * Are more business related conditions than technical ones
-  * Define if breaking the constraint is at all acceptable, how this will be detected and how violations are resolved.
-  * In languages like Java violations are modeled as checked exceptions other languages use dedicated return/status codes  
-  * An example is an "email must be unique" constraint. A caller should check for uniqueness before calling the method, but it's nevertheless possible that another user has just entered the same email between caller's verification and verification inside the method.
-
-(Post-conditions are currently not supported)
-
 ## Basics
 
 <table><tr><td><img src="https://cdn.rawgit.com/fuinorg/org.fuin.dsl.ddd/67ec011/doc/dsl/constraints-simple.ddd.svg"></td></tr></table>
@@ -36,7 +13,12 @@ The DDD DSL supports currently the following types of constraints:
 * The validated value itself is a predefined variable („input“) that can also be used for the message &#x277B;
 
 ## Invariants
-Invariants may be defined for all variables.
+Invariants must be kept during the life of the entity given an invariant condition.
+
+* Can be defined for objects (not methods)
+* The provider of the entity is responsible that the invariant is always true
+* It's considered a programming error if they are not kept
+* In languages like Java violations are modeled as runtime exceptions
 
 <table><tr><td><img src="https://cdn.rawgit.com/fuinorg/org.fuin.dsl.ddd/1772046/doc/dsl/constraints-invariants.ddd.svg"></td></tr></table>
 
@@ -44,9 +26,30 @@ Invariants may be defined for all variables.
 * An invariant can be defined that restricts values that are allowed for the variable &#x2777;
 * There can be one or more constraints separated by a comma. All variables required by the constraint must be provided as parameters &#x2778;
 
-
 ## Pre-conditions
-TBD
+Pre-conditions requires that the caller of a method complies with this rule. 
+
+* The caller is responsible to verify the condition is met before calling the method
+* Can be defined for methods (not objects)
+* It's considered a programming error if they are not kept  
+* In languages like Java violations are modeled as runtime exceptions
+* An example is a "not null" constraint. A value passed to a method should never be null (not set). This is easy to verify before calling the method and the value does not change between testing for null and calling the method.  
+
+<table><tr><td><img src="https://cdn.rawgit.com/fuinorg/org.fuin.dsl.ddd/607f5f6/doc/dsl/constraints-preconditions.ddd.svg"></td></tr></table>
+
+* Can be defined on method level to allow constraints using multiple parameters &#x2776;
+  * Both parameters are nullable &#x2777;
+  * But at least one of it must be non-null &#x2776;
+* Can be defined on parameter level °°x2778°° 
+
+## Post-conditions
+Post-conditions are currently not supported.
 
 ## Business Rules
-TBD
+Business Rules are like pre-conditions but the caller is not able to verify them
+* Can be defined for methods (not objects)
+* Are more business related conditions than technical ones
+* Define if breaking the constraint is at all acceptable, how this will be detected and how violations are resolved.
+* In languages like Java violations are modeled as checked exceptions other languages use dedicated return/status codes  
+* An example is an "email must be unique" constraint. A caller should check for uniqueness before calling the method, but it's nevertheless possible that another user has just entered the same email between caller's verification and verification inside the method. 
+
