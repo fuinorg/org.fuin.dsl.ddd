@@ -1,0 +1,6 @@
+@code2svg:{"width":800, "height": 150}
+method changeUsername business-rules °°x2776°° UniqueUsername {
+	
+	String newUsername preconditions NotNull, MinLength(3), MaxLength(20)
+	
+}

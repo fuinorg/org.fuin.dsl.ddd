@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" width="800" height="150" xmlns="http://www.w3.org/2000/svg">
+<title>constraints-business-rules.ddd</title>
+<desc>Converted from constraints-business-rules.ddd to constraints-business-rules.ddd.svg</desc>
+<style>
+<![CDATA[
+text { font-size: 12pt; font-family: monospace }
+.ml-comment { fill: rgb(63, 127, 95) }
+.sl-comment { fill: rgb(63, 127, 95) }
+.string { fill: rgb(42, 0, 255) }
+.number { fill: rgb(125, 125, 125) }
+.keyword { fill: rgb(127, 0, 85); font-weight: bold }
+]]>
+</style>
+<text xml:space="preserve">
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan><tspan class="keyword">method</tspan> changeUsername <tspan class="keyword">business-rules</tspan> &#x2776; UniqueUsername {
+<tspan dy="1.2em" x="10"> </tspan>    
+<tspan dy="1.2em" x="10"> </tspan>    String newUsername <tspan class="keyword">preconditions</tspan> NotNull, MinLength(<tspan class="number">3</tspan>), MaxLength(<tspan class="number">20</tspan>)
+<tspan dy="1.2em" x="10"> </tspan>    
+<tspan dy="1.2em" x="10"> </tspan>}
+<tspan dy="1.2em" x="10"> </tspan>
+</text>
+</svg>
