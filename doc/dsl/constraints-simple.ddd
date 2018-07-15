@@ -1,0 +1,11 @@
+/** 
+ * Makes sure a string has exactly a given size.
+ */
+constraint ExactLength °°x2776°° input °°x2777°° String {
+
+    /** Expected length. */
+    Integer expected °°x2778°°
+
+  message °°x2779°° "Expected an exact length of ${expected} °°x277A°° , but value was: '${input}' °°x277B°° "
+
+}
