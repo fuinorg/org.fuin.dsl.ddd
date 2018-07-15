@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" xmlns="http://www.w3.org/2000/svg">
+<title>constraints-simple.ddd</title>
+<desc>Converted from constraints-simple.ddd to constraints-simple.ddd.svg</desc>
+<style>
+<![CDATA[
+text { font-size: 12pt; font-family: monospace }
+.ml-comment { fill: rgb(63, 127, 95) }
+.sl-comment { fill: rgb(63, 127, 95) }
+.string { fill: rgb(42, 0, 255) }
+.number { fill: rgb(125, 125, 125) }
+.keyword { fill: rgb(127, 0, 85); font-weight: bold }
+]]>
+</style>
+<text xml:space="preserve">
+<tspan dy="1.2em" x="10"> </tspan><tspan class="ml-comment">/** </tspan>
+<tspan dy="1.2em" x="10"> </tspan><tspan class="ml-comment"> * Makes sure a string has exactly a given size.</tspan>
+<tspan dy="1.2em" x="10"> </tspan><tspan class="ml-comment"> */</tspan>
+<tspan dy="1.2em" x="10"> </tspan><tspan class="keyword">constraint</tspan> ExactLength &#x2776; <tspan class="keyword">input</tspan> &#x2777; String {
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>    <tspan class="ml-comment">/** Expected length. */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>    Integer expected &#x2778;
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>  <tspan class="keyword">message</tspan> &#x2779; <tspan class="string">&quot;Expected an exact length of ${expected} &#x277A; , but value was: &apos;${input}&apos; &#x277B; &quot;</tspan>
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>}
+<tspan dy="1.2em" x="10"> </tspan>
+</text>
+</svg>
