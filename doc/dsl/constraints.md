@@ -31,7 +31,7 @@ The DDD DSL supports currently the following types of constraints:
 * Has a name that is unique in the namespace &#x2776;
 * May be related to one or more type it restricts („input“) – Internal or external type &#x2777;
 * Has zero or more variables used to customize the condition &#x2778;
-* Defines an error message &#x2779;
+* Can define an error message &#x2779;
 * All variables from the constraint can be used as a variable '${var_name}' in the message &#x277A;  
 * The validated value itself is a predefined variable („input“) that can also be used for the message &#x277B;
 
