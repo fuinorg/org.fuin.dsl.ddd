@@ -24,9 +24,9 @@ The DDD DSL supports currently the following types of constraints:
 
 <table><tr><td><img src="https://cdn.rawgit.com/fuinorg/org.fuin.dsl.ddd/67ec011/doc/dsl/constraints-simple.ddd.svg"></td></tr></table>
 
-* &#x2776; Has a name that is unique in the namespace
-* &#x2777; May be related to one or more type it restricts („input“) – Internal or external type
-* &#x2778; Has zero or more variables used to customize the condition
-* &#x2779; Defines an error message
-* &#x277A; All variables from the constraint can be used as a variable '${var_name}' in the message  
-* &#x277B; The validated value itself is a predefined variable („input“) that can also be used for the message
+* Has a name that is unique in the namespace &#x2776;
+* May be related to one or more type it restricts („input“) – Internal or external type &#x2777;
+* Has zero or more variables used to customize the condition &#x2778;
+* Defines an error message &#x2779;
+* All variables from the constraint can be used as a variable '${var_name}' in the message &#x277A;  
+* The validated value itself is a predefined variable („input“) that can also be used for the message &#x277B;
