@@ -9,7 +9,7 @@ This page explains the basic concepts of the DDD DSL language.
 The DDD DSL is defined in files with the extension ".ddd" (Example [basic.ddd](basic.ddd)).
 Such a file can contain multiple contexts and the file's name is completely independent from content.
 
-<table><tr><td><img src="https://cdn.rawgit.com/fuinorg/org.fuin.dsl.ddd/ef226b29788a8a88228d25a7fd433912295fe1e8/doc/dsl/basic.ddd.svg"></td></tr></table>
+<table><tr><td><img src="https://cdn.rawgit.com/fuinorg/org.fuin.dsl.ddd/8642a1478454d26c95b9b2b242accbd1b59ede05/doc/dsl/basic.ddd.svg"></td></tr></table>
 
 &#x2776; **context**
 * DDD Term = Bounded Context
@@ -27,7 +27,7 @@ Such a file can contain multiple contexts and the file's name is completely inde
 ## Imports
 Types defined in another context or namespace must be imported to use them.
 
-<table><tr><td><img src="https://cdn.rawgit.com/fuinorg/org.fuin.dsl.ddd/ef226b29788a8a88228d25a7fd433912295fe1e8/doc/dsl/import.ddd.svg"></td></tr></table>
+<table><tr><td><img src="https://cdn.rawgit.com/fuinorg/org.fuin.dsl.ddd/8642a1478454d26c95b9b2b242accbd1b59ede05/doc/dsl/import.ddd.svg"></td></tr></table>
 
 &#x2776; Importing a single type from the same context, just using the namespace
 
