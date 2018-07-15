@@ -4,15 +4,13 @@ Such a file can contain multiple contexts and the file's name is completely inde
 
 <table><tr><td><img src="https://cdn.rawgit.com/fuinorg/org.fuin.dsl.ddd/8642a1478454d26c95b9b2b242accbd1b59ede05/doc/dsl/basic.ddd.svg"></td></tr></table>
 
-&#x2776; **context**
-* DDD Term = Bounded Context
-* Names may be separated by a dot
-
-&#x2777; **namespace**
-* DDD Term = Module
-* Also known as „Package“
-* Names may be separated by a dot
-
-&#x2778; **type**
-* External Type
-* Defined somewhere outside of the DSL
+* **context** &#x2776;
+  * DDD Term = Bounded Context
+  * Names may be separated by a dot
+* **namespace** &#x2777;
+  * DDD Term = Module
+  * Also known as „Package“
+  * Names may be separated by a dot
+* **type** &#x2778;
+  * External Type
+  * Defined somewhere outside of the DSL
