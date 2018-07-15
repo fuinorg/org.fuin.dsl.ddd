@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" width="700" height="150" xmlns="http://www.w3.org/2000/svg">
+<title>constraints-invariants.ddd</title>
+<desc>Converted from constraints-invariants.ddd to constraints-invariants.ddd.svg</desc>
+<style>
+<![CDATA[
+text { font-size: 12pt; font-family: monospace }
+.ml-comment { fill: rgb(63, 127, 95) }
+.sl-comment { fill: rgb(63, 127, 95) }
+.string { fill: rgb(42, 0, 255) }
+.number { fill: rgb(125, 125, 125) }
+.keyword { fill: rgb(127, 0, 85); font-weight: bold }
+]]>
+</style>
+<text xml:space="preserve">
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan><tspan class="keyword">value-object</tspan> MyVO {
+<tspan dy="1.2em" x="10"> </tspan>    
+<tspan dy="1.2em" x="10"> </tspan>    <tspan class="keyword">nullable</tspan> &#x2776; String code <tspan class="keyword">invariants</tspan> &#x2777; MinLength(<tspan class="number">5</tspan>), MaxLength(<tspan class="number">10</tspan>) &#x2778;
+<tspan dy="1.2em" x="10"> </tspan>    
+<tspan dy="1.2em" x="10"> </tspan>}
+<tspan dy="1.2em" x="10"> </tspan>
+</text>
+</svg>

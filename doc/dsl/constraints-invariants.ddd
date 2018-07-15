@@ -1,0 +1,6 @@
+@code2svg:{"width":700, "height": 150}
+value-object MyVO {
+	
+	nullable °°x2776°° String code invariants °°x2777°° MinLength(5), MaxLength(10) °°x2778°°
+	
+}
