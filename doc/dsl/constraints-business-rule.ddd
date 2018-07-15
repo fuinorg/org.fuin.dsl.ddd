@@ -1,0 +1,21 @@
+@code2svg:{"width":800, "height": 450}
+constraint UniqueUsername exception DuplicateUsernameException °°x2776°° {
+
+	/** 
+	 * A system administrator will get notified and solve the problem by assigning a
+	 * new name directly in the database and the informs the affected user via email.
+	 */
+	consistency °°x2777°° weak °°x2778°° {
+		
+		// Task needs to be finished after 60 minutes
+		acceptable 60 minutes °°x2779°° 
+		
+		// Script will run every 5 minutes and creates a new workflow
+		detection automatic °°x277A°° 
+		
+		// Admin gets a task assigned
+		resolution workflow °°x277B°° 
+		
+	}
+	
+}

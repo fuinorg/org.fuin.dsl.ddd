@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" width="800" height="500" xmlns="http://www.w3.org/2000/svg">
+<title>constraints-business-rule.ddd</title>
+<desc>Converted from constraints-business-rule.ddd to constraints-business-rule.ddd.svg</desc>
+<style>
+<![CDATA[
+text { font-size: 12pt; font-family: monospace }
+.ml-comment { fill: rgb(63, 127, 95) }
+.sl-comment { fill: rgb(63, 127, 95) }
+.string { fill: rgb(42, 0, 255) }
+.number { fill: rgb(125, 125, 125) }
+.keyword { fill: rgb(127, 0, 85); font-weight: bold }
+]]>
+</style>
+<text xml:space="preserve">
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan><tspan class="keyword">constraint</tspan> UniqueUsername <tspan class="keyword">exception</tspan> DuplicateUsernameException &#x2776; {
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>    <tspan class="ml-comment">/** </tspan>
+<tspan dy="1.2em" x="10"> </tspan><tspan class="ml-comment">     * A system administrator will get notified and solve the problem by assigning a</tspan>
+<tspan dy="1.2em" x="10"> </tspan><tspan class="ml-comment">     * new name directly in the database and the informs the affected user via email.</tspan>
+<tspan dy="1.2em" x="10"> </tspan><tspan class="ml-comment">     */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>    <tspan class="keyword">consistency</tspan> &#x2777; <tspan class="keyword">weak</tspan> &#x2778; {
+<tspan dy="1.2em" x="10"> </tspan>        
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="sl-comment">// Task needs to be finished after 60 minutes</tspan>
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">acceptable</tspan> <tspan class="number">60</tspan> <tspan class="keyword">minutes</tspan> &#x2779; 
+<tspan dy="1.2em" x="10"> </tspan>        
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="sl-comment">// Script will run every 5 minutes and creates a new workflow</tspan>
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">detection</tspan> <tspan class="keyword">automatic</tspan> &#x277A; 
+<tspan dy="1.2em" x="10"> </tspan>        
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="sl-comment">// Admin gets a task assigned</tspan>
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">resolution</tspan> <tspan class="keyword">workflow</tspan> &#x277B; 
+<tspan dy="1.2em" x="10"> </tspan>        
+<tspan dy="1.2em" x="10"> </tspan>    }
+<tspan dy="1.2em" x="10"> </tspan>    
+<tspan dy="1.2em" x="10"> </tspan>}
+<tspan dy="1.2em" x="10"> </tspan>
+</text>
+</svg>

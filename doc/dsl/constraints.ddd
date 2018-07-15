@@ -18,8 +18,6 @@ context org.fuin.example {
         
         constraint UniqueUsername exception DuplicateUsernameException {
 
-        	String username
-        	
         	/** 
         	 * A system administrator will get notified and solve the problem by assigning a
         	 * new name directly in the database and the informs the affected user via email.

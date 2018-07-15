@@ -34,8 +34,6 @@ text { font-size: 12pt; font-family: monospace }
 <tspan dy="1.2em" x="10"> </tspan>        
 <tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">constraint</tspan> UniqueUsername <tspan class="keyword">exception</tspan> DuplicateUsernameException {
 <tspan dy="1.2em" x="10"> </tspan>
-<tspan dy="1.2em" x="10"> </tspan>            String username
-<tspan dy="1.2em" x="10"> </tspan>            
 <tspan dy="1.2em" x="10"> </tspan>            <tspan class="ml-comment">/** </tspan>
 <tspan dy="1.2em" x="10"> </tspan><tspan class="ml-comment">             * A system administrator will get notified and solve the problem by assigning a</tspan>
 <tspan dy="1.2em" x="10"> </tspan><tspan class="ml-comment">             * new name directly in the database and the informs the affected user via email.</tspan>
