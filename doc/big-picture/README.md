@@ -5,7 +5,7 @@ A DSL alone is not very useful itself. You will need some kind of generator to c
 
 There are several "fuin.org" side projects that will help you with this task:
 
-[<img src="ddd-dsl-big-pcture.png" width="896" height="504">](https://github.com/fuinorg/org.fuin.dsl.ddd/raw/master/doc/ddd-dsl-big-pcture.png)
+[<img src="ddd-dsl-big-pcture.png" width="896" height="504">](https://github.com/fuinorg/org.fuin.dsl.ddd/raw/master/doc/big-picture/ddd-dsl-big-pcture.png)
 
 * [DDD DSL](https://github.com/fuinorg/org.fuin.dsl.ddd/) - Xtext based DSL supporting Domain-driven design (DDD)
 * [CQRS DSL](https://github.com/fuinorg/org.fuin.dsl.cqrs/) - Xtext based DSL supporting Command Query Responsibility Segregation (CQRS) // ___OUTDATED___
