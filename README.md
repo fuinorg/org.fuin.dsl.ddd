@@ -12,7 +12,7 @@ Xtext based DSL supporting Domain-driven design (DDD)
 
 DSL Example
 -----------
-[<img src="doc/dsl/example.png" width="800" height="447">](https://cdn.rawgit.com/fuinorg/org.fuin.dsl.ddd/ff50a04/doc/dsl/example.ddd.svg)
+<table><tr>[<img src="doc/dsl/example.png" width="800" height="447">](https://cdn.rawgit.com/fuinorg/org.fuin.dsl.ddd/ff50a04/doc/dsl/example.ddd.svg)</td></tr></table>
 
 DSL Documentation
 -----------------
