@@ -1,6 +1,6 @@
 DSL Overview
 ============
 
-* [Context / Namespace / Type](basics.md)
-* [Imports](imports.md)
-* [Constraints](constraints.md)
+* [Context / Namespace / Type](basics)
+* [Imports](imports)
+* [Constraints](constraints)
