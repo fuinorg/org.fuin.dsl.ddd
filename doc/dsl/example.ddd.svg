@@ -1,0 +1,304 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" width="1500" height="5500" xmlns="http://www.w3.org/2000/svg">
+<title>example.ddd</title>
+<desc>Converted from example.ddd to example.ddd.svg</desc>
+<style>
+<![CDATA[
+text { font-size: 12pt; font-family: monospace }
+.ml-comment { fill: rgb(63, 127, 95) }
+.sl-comment { fill: rgb(63, 127, 95) }
+.string { fill: rgb(42, 0, 255) }
+.number { fill: rgb(125, 125, 125) }
+.keyword { fill: rgb(127, 0, 85); font-weight: bold }
+]]>
+</style>
+<text xml:space="preserve">
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan><tspan class="keyword">context</tspan> com.thefakecompany.sales {
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>    <tspan class="sl-comment">// Defines external types</tspan>
+<tspan dy="1.2em" x="10"> </tspan>    <tspan class="keyword">namespace</tspan> types {
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">type</tspan> String
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">type</tspan> Integer
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">type</tspan> UUID
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">type</tspan> Boolean
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">type</tspan> List <tspan class="keyword">generics</tspan> <tspan class="number">1</tspan>
+<tspan dy="1.2em" x="10"> </tspan>    }
+<tspan dy="1.2em" x="10"> </tspan>    
+<tspan dy="1.2em" x="10"> </tspan>    <tspan class="sl-comment">// Defines general constraints</tspan>
+<tspan dy="1.2em" x="10"> </tspan>    <tspan class="keyword">namespace</tspan> constraints {
+<tspan dy="1.2em" x="10"> </tspan>        
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">import</tspan> types.*
+<tspan dy="1.2em" x="10"> </tspan>        
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="ml-comment">/**</tspan>
+<tspan dy="1.2em" x="10"> </tspan><tspan class="ml-comment">         * Ensures that the element is not null (is set).</tspan>
+<tspan dy="1.2em" x="10"> </tspan><tspan class="ml-comment">         */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">constraint</tspan> NotNull {
+<tspan dy="1.2em" x="10"> </tspan>            
+<tspan dy="1.2em" x="10"> </tspan>            <tspan class="keyword">message</tspan> <tspan class="string">&quot;The value must not be null&quot;</tspan>
+<tspan dy="1.2em" x="10"> </tspan>            
+<tspan dy="1.2em" x="10"> </tspan>        }
+<tspan dy="1.2em" x="10"> </tspan>                
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="ml-comment">/**</tspan>
+<tspan dy="1.2em" x="10"> </tspan><tspan class="ml-comment">         * Makes sure a string has a defined length (min/max).</tspan>
+<tspan dy="1.2em" x="10"> </tspan><tspan class="ml-comment">         */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">constraint</tspan> Length <tspan class="keyword">input</tspan> String {
+<tspan dy="1.2em" x="10"> </tspan>            
+<tspan dy="1.2em" x="10"> </tspan>            <tspan class="ml-comment">/** Expected minimum length (inclusive). */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>            Integer min
+<tspan dy="1.2em" x="10"> </tspan>    
+<tspan dy="1.2em" x="10"> </tspan>            <tspan class="ml-comment">/** Expected maximum length (inclusive). */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>            Integer max
+<tspan dy="1.2em" x="10"> </tspan>    
+<tspan dy="1.2em" x="10"> </tspan>            <tspan class="keyword">message</tspan> <tspan class="string">&quot;Expected a length between ${min} and ${max} characters, but value was: &apos;${input}&apos;&quot;</tspan>
+<tspan dy="1.2em" x="10"> </tspan>    
+<tspan dy="1.2em" x="10"> </tspan>        }
+<tspan dy="1.2em" x="10"> </tspan>            
+<tspan dy="1.2em" x="10"> </tspan>    }
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>    <tspan class="sl-comment">// Defines business objects    </tspan>
+<tspan dy="1.2em" x="10"> </tspan>    <tspan class="keyword">namespace</tspan> a.b.c {
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="sl-comment">// Import types from other namespaces for usage        </tspan>
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">import</tspan> types.*
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">import</tspan> constraints.*
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="ml-comment">/** A customer name. */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">value-object</tspan> CustomerName <tspan class="keyword">base</tspan> String {
+<tspan dy="1.2em" x="10"> </tspan>            String value <tspan class="keyword">invariants</tspan> NotNull, Length(<tspan class="number">1</tspan>, <tspan class="number">200</tspan>)            
+<tspan dy="1.2em" x="10"> </tspan>        }
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="ml-comment">/** A duplicate customer name was detected. */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">exception</tspan> DuplicateCustomerNameException <tspan class="keyword">cid</tspan> <tspan class="number">1001</tspan> {
+<tspan dy="1.2em" x="10"> </tspan>            
+<tspan dy="1.2em" x="10"> </tspan>            <tspan class="ml-comment">/** Name that caused the error. */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>            CustomerName name
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>            <tspan class="keyword">message</tspan> <tspan class="string">&quot;A customer with that name already exists: &apos;${name}&apos;&quot;</tspan>
+<tspan dy="1.2em" x="10"> </tspan>            
+<tspan dy="1.2em" x="10"> </tspan>        }
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="ml-comment">/** A contact with the given ID was not found. */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">exception</tspan> ContactNotFoundException <tspan class="keyword">cid</tspan> <tspan class="number">1002</tspan> {
+<tspan dy="1.2em" x="10"> </tspan>            
+<tspan dy="1.2em" x="10"> </tspan>            <tspan class="ml-comment">/** Customer that caused the error. */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>            CustomerId customerId
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>            <tspan class="ml-comment">/** Contact that caused the error. */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>            ContactId contactId
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>            <tspan class="keyword">message</tspan> <tspan class="string">&quot;A contact with ID ${contactId} does not exist for customer ${customerId}&quot;</tspan>
+<tspan dy="1.2em" x="10"> </tspan>            
+<tspan dy="1.2em" x="10"> </tspan>        }
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="ml-comment">/** Ensures that a customer name is unique. */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">constraint</tspan> UniqueCustomerNameConstraint <tspan class="keyword">exception</tspan> DuplicateCustomerNameException {
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>            <tspan class="ml-comment">/** A duplicate customer name is allowed for some time. */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>            <tspan class="keyword">consistency</tspan> <tspan class="keyword">weak</tspan> {
+<tspan dy="1.2em" x="10"> </tspan>                
+<tspan dy="1.2em" x="10"> </tspan>                <tspan class="sl-comment">// Task needs to be finished after 60 minutes</tspan>
+<tspan dy="1.2em" x="10"> </tspan>                <tspan class="keyword">acceptable</tspan> <tspan class="number">60</tspan> <tspan class="keyword">minutes</tspan> 
+<tspan dy="1.2em" x="10"> </tspan>                
+<tspan dy="1.2em" x="10"> </tspan>                <tspan class="sl-comment">// Script will run every 5 minutes and creates a new workflow</tspan>
+<tspan dy="1.2em" x="10"> </tspan>                <tspan class="keyword">detection</tspan> <tspan class="keyword">automatic</tspan> 
+<tspan dy="1.2em" x="10"> </tspan>                
+<tspan dy="1.2em" x="10"> </tspan>                <tspan class="sl-comment">// Admin gets a task assigned</tspan>
+<tspan dy="1.2em" x="10"> </tspan>                <tspan class="keyword">resolution</tspan> <tspan class="keyword">workflow</tspan>
+<tspan dy="1.2em" x="10"> </tspan>                 
+<tspan dy="1.2em" x="10"> </tspan>            }
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>        }
+<tspan dy="1.2em" x="10"> </tspan>        
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="ml-comment">/** Ensures that the contact exists within the customer. */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">constraint</tspan> ContactExistsConstraint <tspan class="keyword">exception</tspan> ContactNotFoundException {
+<tspan dy="1.2em" x="10"> </tspan>            
+<tspan dy="1.2em" x="10"> </tspan>            <tspan class="ml-comment">/** The contact must always exist as it&apos;s an entity within the aggregate. */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>            <tspan class="keyword">consistency</tspan> <tspan class="keyword">strong</tspan>
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>        }
+<tspan dy="1.2em" x="10"> </tspan>        
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="ml-comment">/** Unique aggregate identifier. */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">aggregate</tspan>-id CustomerId <tspan class="keyword">identifies</tspan> Customer <tspan class="keyword">base</tspan> UUID {
+<tspan dy="1.2em" x="10"> </tspan>            
+<tspan dy="1.2em" x="10"> </tspan>            UUID value <tspan class="keyword">invariants</tspan> NotNull
+<tspan dy="1.2em" x="10"> </tspan>            
+<tspan dy="1.2em" x="10"> </tspan>        }
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="ml-comment">/** Example aggregate. */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">aggregate</tspan> Customer <tspan class="keyword">identifier</tspan> CustomerId {
+<tspan dy="1.2em" x="10"> </tspan>            
+<tspan dy="1.2em" x="10"> </tspan>            CustomerId id
+<tspan dy="1.2em" x="10"> </tspan>            
+<tspan dy="1.2em" x="10"> </tspan>            CustomerName name
+<tspan dy="1.2em" x="10"> </tspan>            
+<tspan dy="1.2em" x="10"> </tspan>            <tspan class="ml-comment">/** List of contacts. */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>            <tspan class="keyword">nullable</tspan> List&lt;Contact&gt; contacts
+<tspan dy="1.2em" x="10"> </tspan>            
+<tspan dy="1.2em" x="10"> </tspan>            <tspan class="ml-comment">/** Renames the customer. */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>            <tspan class="keyword">method</tspan> rename <tspan class="keyword">business-rules</tspan> UniqueCustomerNameConstraint <tspan class="keyword">fires</tspan> CustomerNameChangedEvent {
+<tspan dy="1.2em" x="10"> </tspan>                
+<tspan dy="1.2em" x="10"> </tspan>                <tspan class="ml-comment">/** ID of the customer that changed */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>                CustomerId id
+<tspan dy="1.2em" x="10"> </tspan>                
+<tspan dy="1.2em" x="10"> </tspan>                <tspan class="ml-comment">/** Current name. */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>                CustomerName old
+<tspan dy="1.2em" x="10"> </tspan>                
+<tspan dy="1.2em" x="10"> </tspan>                <tspan class="ml-comment">/** New name. */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>                CustomerName new
+<tspan dy="1.2em" x="10"> </tspan>                
+<tspan dy="1.2em" x="10"> </tspan>                RenameService renameService
+<tspan dy="1.2em" x="10"> </tspan>                
+<tspan dy="1.2em" x="10"> </tspan>                <tspan class="ml-comment">/** Service only used for the method. */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>                <tspan class="keyword">service</tspan> RenameService {
+<tspan dy="1.2em" x="10"> </tspan>                    
+<tspan dy="1.2em" x="10"> </tspan>                    <tspan class="ml-comment">/** Verifies if another customer aggregate with the same name already exists. */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>                    <tspan class="keyword">method</tspan> exists {
+<tspan dy="1.2em" x="10"> </tspan>                        
+<tspan dy="1.2em" x="10"> </tspan>                        <tspan class="ml-comment">/** ID of this aggregate to exclude. */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>                        CustomerId unequalToId
+<tspan dy="1.2em" x="10"> </tspan>                
+<tspan dy="1.2em" x="10"> </tspan>                        <tspan class="ml-comment">/** Name to test for. */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>                        CustomerName name
+<tspan dy="1.2em" x="10"> </tspan>                        
+<tspan dy="1.2em" x="10"> </tspan>                        <tspan class="ml-comment">/** True if another customer with the same name was found. */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>                        <tspan class="keyword">returns</tspan> Boolean
+<tspan dy="1.2em" x="10"> </tspan>                        
+<tspan dy="1.2em" x="10"> </tspan>                    }
+<tspan dy="1.2em" x="10"> </tspan>                    
+<tspan dy="1.2em" x="10"> </tspan>                }
+<tspan dy="1.2em" x="10"> </tspan>                
+<tspan dy="1.2em" x="10"> </tspan>                <tspan class="ml-comment">/** The name of a customer was changed. */</tspan>   
+<tspan dy="1.2em" x="10"> </tspan>                <tspan class="keyword">event</tspan> CustomerNameChangedEvent {
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>                    <tspan class="ml-comment">/** ID of the customer that changed */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>                    CustomerId id
+<tspan dy="1.2em" x="10"> </tspan>                    
+<tspan dy="1.2em" x="10"> </tspan>                    <tspan class="ml-comment">/** Current name. */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>                    CustomerName old
+<tspan dy="1.2em" x="10"> </tspan>                    
+<tspan dy="1.2em" x="10"> </tspan>                    <tspan class="ml-comment">/** New name. */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>                    CustomerName new
+<tspan dy="1.2em" x="10"> </tspan>                    
+<tspan dy="1.2em" x="10"> </tspan>                    <tspan class="keyword">message</tspan> <tspan class="string">&quot;Name was changed from ${old} to ${new} for customer ${id}&quot;</tspan>
+<tspan dy="1.2em" x="10"> </tspan>                    
+<tspan dy="1.2em" x="10"> </tspan>                }
+<tspan dy="1.2em" x="10"> </tspan>                
+<tspan dy="1.2em" x="10"> </tspan>            }
+<tspan dy="1.2em" x="10"> </tspan>            
+<tspan dy="1.2em" x="10"> </tspan>            <tspan class="ml-comment">/** Adds a new contact. */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>            <tspan class="keyword">method</tspan> addContact <tspan class="keyword">fires</tspan> ContactAddedEvent {
+<tspan dy="1.2em" x="10"> </tspan>                
+<tspan dy="1.2em" x="10"> </tspan>                <tspan class="ml-comment">/** Contact to add. */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>                Contact contact
+<tspan dy="1.2em" x="10"> </tspan>                
+<tspan dy="1.2em" x="10"> </tspan>                <tspan class="ml-comment">/** Returns a new contact number. */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>                <tspan class="keyword">returns</tspan> ContactId
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>                <tspan class="ml-comment">/** A new contact was added to the customer. */</tspan>                
+<tspan dy="1.2em" x="10"> </tspan>                <tspan class="keyword">event</tspan> ContactAddedEvent {
+<tspan dy="1.2em" x="10"> </tspan>                    CustomerId customerId
+<tspan dy="1.2em" x="10"> </tspan>                    CustomerName customerName
+<tspan dy="1.2em" x="10"> </tspan>                    ContactId contactId
+<tspan dy="1.2em" x="10"> </tspan>                    ContactName contactName
+<tspan dy="1.2em" x="10"> </tspan>                    <tspan class="keyword">message</tspan> <tspan class="string">&quot;Added contact &apos;${contactName}&apos; as #${contactId} to customer &apos;${customerName}&apos; (${customerId})&quot;</tspan>
+<tspan dy="1.2em" x="10"> </tspan>                }
+<tspan dy="1.2em" x="10"> </tspan>                
+<tspan dy="1.2em" x="10"> </tspan>            }
+<tspan dy="1.2em" x="10"> </tspan>            
+<tspan dy="1.2em" x="10"> </tspan>            <tspan class="ml-comment">/**</tspan>
+<tspan dy="1.2em" x="10"> </tspan><tspan class="ml-comment">             * Renames the contact with the given ID.</tspan>
+<tspan dy="1.2em" x="10"> </tspan><tspan class="ml-comment">             */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>            <tspan class="keyword">method</tspan> renameContact <tspan class="keyword">ref</tspan> rename <tspan class="keyword">business-rules</tspan> ContactExistsConstraint {
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>                <tspan class="ml-comment">/** ID of contact to remove. */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>                ContactId contactId
+<tspan dy="1.2em" x="10"> </tspan>                
+<tspan dy="1.2em" x="10"> </tspan>                <tspan class="sl-comment">// All other attributes from method &quot;Contact.rename&quot; are automatically</tspan>
+<tspan dy="1.2em" x="10"> </tspan>                <tspan class="sl-comment">// included because of the method reference above.</tspan>
+<tspan dy="1.2em" x="10"> </tspan>                
+<tspan dy="1.2em" x="10"> </tspan>            }
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>            <tspan class="ml-comment">/** Removes a contact. */</tspan>            
+<tspan dy="1.2em" x="10"> </tspan>            <tspan class="keyword">method</tspan> removeContact <tspan class="keyword">business-rules</tspan> ContactExistsConstraint <tspan class="keyword">fires</tspan> ContactRemovedEvent {
+<tspan dy="1.2em" x="10"> </tspan>                
+<tspan dy="1.2em" x="10"> </tspan>                <tspan class="ml-comment">/** ID of contact to remove. */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>                ContactId contactId
+<tspan dy="1.2em" x="10"> </tspan>                
+<tspan dy="1.2em" x="10"> </tspan>                <tspan class="ml-comment">/** A contact was removed from the customer. */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>                <tspan class="keyword">event</tspan> ContactRemovedEvent {
+<tspan dy="1.2em" x="10"> </tspan>                    CustomerId customerId
+<tspan dy="1.2em" x="10"> </tspan>                    CustomerName customerName
+<tspan dy="1.2em" x="10"> </tspan>                    ContactId contactId
+<tspan dy="1.2em" x="10"> </tspan>                    ContactName contactName
+<tspan dy="1.2em" x="10"> </tspan>                    <tspan class="keyword">message</tspan> <tspan class="string">&quot;Removed contact &apos;${contactName}&apos; (#${contactId}) from customer &apos;${customerName}&apos; (${customerId})&quot;</tspan>
+<tspan dy="1.2em" x="10"> </tspan>                }
+<tspan dy="1.2em" x="10"> </tspan>                
+<tspan dy="1.2em" x="10"> </tspan>            }
+<tspan dy="1.2em" x="10"> </tspan>            
+<tspan dy="1.2em" x="10"> </tspan>        }
+<tspan dy="1.2em" x="10"> </tspan>        
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="ml-comment">/** A contact name. */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">value-object</tspan> ContactName <tspan class="keyword">base</tspan> String {
+<tspan dy="1.2em" x="10"> </tspan>            String value <tspan class="keyword">invariants</tspan> NotNull, Length(<tspan class="number">1</tspan>, <tspan class="number">100</tspan>)            
+<tspan dy="1.2em" x="10"> </tspan>        }
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="ml-comment">/** </tspan>
+<tspan dy="1.2em" x="10"> </tspan><tspan class="ml-comment">         * Unique contact entity identifier. The ID is only valid inside the customer aggregate.</tspan>
+<tspan dy="1.2em" x="10"> </tspan><tspan class="ml-comment">         * This means, only the combination of customerID and ContactId is unique for the context.</tspan>
+<tspan dy="1.2em" x="10"> </tspan><tspan class="ml-comment">         */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">entity</tspan>-id ContactId <tspan class="keyword">identifies</tspan> Contact <tspan class="keyword">base</tspan> Integer {
+<tspan dy="1.2em" x="10"> </tspan>            Integer value <tspan class="keyword">invariants</tspan> NotNull
+<tspan dy="1.2em" x="10"> </tspan>        }
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="ml-comment">/** Contact entity that belongs to the customer aggregate. */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">entity</tspan> Contact <tspan class="keyword">identifier</tspan> ContactId <tspan class="keyword">root</tspan> Customer {
+<tspan dy="1.2em" x="10"> </tspan>            
+<tspan dy="1.2em" x="10"> </tspan>            ContactId id <tspan class="keyword">invariants</tspan> NotNull
+<tspan dy="1.2em" x="10"> </tspan>            
+<tspan dy="1.2em" x="10"> </tspan>            ContactName name <tspan class="keyword">invariants</tspan> NotNull
+<tspan dy="1.2em" x="10"> </tspan>            
+<tspan dy="1.2em" x="10"> </tspan>            <tspan class="ml-comment">/** Creates the entity. */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>            <tspan class="keyword">constructor</tspan> create {
+<tspan dy="1.2em" x="10"> </tspan>                ContactId id
+<tspan dy="1.2em" x="10"> </tspan>                ContactName name
+<tspan dy="1.2em" x="10"> </tspan>            }
+<tspan dy="1.2em" x="10"> </tspan>            
+<tspan dy="1.2em" x="10"> </tspan>            <tspan class="ml-comment">/** Renames the contact. */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>            <tspan class="keyword">method</tspan> rename <tspan class="keyword">fires</tspan> CustomerContactNameChangedEvent {
+<tspan dy="1.2em" x="10"> </tspan>                
+<tspan dy="1.2em" x="10"> </tspan>                ContactName newName
+<tspan dy="1.2em" x="10"> </tspan>                
+<tspan dy="1.2em" x="10"> </tspan>                <tspan class="ml-comment">/** The name of a customer contact has changed. */</tspan>   
+<tspan dy="1.2em" x="10"> </tspan>                <tspan class="keyword">event</tspan> CustomerContactNameChangedEvent {
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>                    <tspan class="ml-comment">/** ID of the customer that changed */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>                    CustomerId customerId
+<tspan dy="1.2em" x="10"> </tspan>                    
+<tspan dy="1.2em" x="10"> </tspan>                    <tspan class="ml-comment">/** Name of the customer that changed */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>                    CustomerName customerName
+<tspan dy="1.2em" x="10"> </tspan>                    
+<tspan dy="1.2em" x="10"> </tspan>                    <tspan class="ml-comment">/** ID of the contact that changed */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>                    ContactId contactId
+<tspan dy="1.2em" x="10"> </tspan>                    
+<tspan dy="1.2em" x="10"> </tspan>                    <tspan class="ml-comment">/** Current name. */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>                    ContactName oldName
+<tspan dy="1.2em" x="10"> </tspan>                    
+<tspan dy="1.2em" x="10"> </tspan>                    <tspan class="ml-comment">/** New name. */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>                    ContactName newName
+<tspan dy="1.2em" x="10"> </tspan>                    
+<tspan dy="1.2em" x="10"> </tspan>                    <tspan class="keyword">message</tspan> <tspan class="string">&quot;Contact name was changed from &apos;${oldName}&apos; to &apos;${newName}&apos; (${contactId}) for customer &apos;${customerName}&apos; (${customerId})&quot;</tspan>
+<tspan dy="1.2em" x="10"> </tspan>                    
+<tspan dy="1.2em" x="10"> </tspan>                }
+<tspan dy="1.2em" x="10"> </tspan>                
+<tspan dy="1.2em" x="10"> </tspan>            }
+<tspan dy="1.2em" x="10"> </tspan>            
+<tspan dy="1.2em" x="10"> </tspan>        }
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>    }
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>}
+<tspan dy="1.2em" x="10"> </tspan>
+</text>
+</svg>

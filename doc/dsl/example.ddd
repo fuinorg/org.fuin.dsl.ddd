@@ -1,0 +1,285 @@
+@code2svg:{"width":1500, "height": 5500}
+context com.thefakecompany.sales {
+
+	// Defines external types
+	namespace types {
+		type String
+		type Integer
+		type UUID
+		type Boolean
+		type List generics 1
+	}
+	
+	// Defines general constraints
+	namespace constraints {
+		
+		import types.*
+		
+		/**
+		 * Ensures that the element is not null (is set).
+		 */
+		constraint NotNull {
+			
+			message "The value must not be null"
+			
+		}
+				
+		/**
+		 * Makes sure a string has a defined length (min/max).
+		 */
+		constraint Length input String {
+			
+			/** Expected minimum length (inclusive). */
+			Integer min
+	
+			/** Expected maximum length (inclusive). */
+			Integer max
+	
+	        message "Expected a length between ${min} and ${max} characters, but value was: '${input}'"
+	
+		}
+			
+	}
+
+	// Defines business objects	
+	namespace a.b.c {
+
+		// Import types from other namespaces for usage		
+		import types.*
+		import constraints.*
+
+		/** A customer name. */
+		value-object CustomerName base String {
+			String value invariants NotNull, Length(1, 200)			
+		}
+
+		/** A duplicate customer name was detected. */
+		exception DuplicateCustomerNameException cid 1001 {
+			
+			/** Name that caused the error. */
+			CustomerName name
+
+			message "A customer with that name already exists: '${name}'"
+			
+		}
+
+		/** A contact with the given ID was not found. */
+		exception ContactNotFoundException cid 1002 {
+			
+			/** Customer that caused the error. */
+			CustomerId customerId
+
+			/** Contact that caused the error. */
+			ContactId contactId
+
+			message "A contact with ID ${contactId} does not exist for customer ${customerId}"
+			
+		}
+
+		/** Ensures that a customer name is unique. */
+		constraint UniqueCustomerNameConstraint exception DuplicateCustomerNameException {
+
+			/** A duplicate customer name is allowed for some time. */
+			consistency weak {
+				
+				// Task needs to be finished after 60 minutes
+				acceptable 60 minutes 
+				
+				// Script will run every 5 minutes and creates a new workflow
+				detection automatic 
+				
+				// Admin gets a task assigned
+				resolution workflow
+				 
+			}
+
+		}
+		
+		/** Ensures that the contact exists within the customer. */
+		constraint ContactExistsConstraint exception ContactNotFoundException {
+			
+			/** The contact must always exist as it's an entity within the aggregate. */
+			consistency strong
+
+		}
+		
+		/** Unique aggregate identifier. */
+		aggregate-id CustomerId identifies Customer base UUID {
+			
+			UUID value invariants NotNull
+			
+		}
+
+		/** Example aggregate. */
+		aggregate Customer identifier CustomerId {
+			
+			CustomerId id
+			
+			CustomerName name
+			
+			/** List of contacts. */
+			nullable List<Contact> contacts
+			
+			/** Renames the customer. */
+			method rename business-rules UniqueCustomerNameConstraint fires CustomerNameChangedEvent {
+				
+				/** ID of the customer that changed */
+				CustomerId id
+				
+				/** Current name. */
+				CustomerName old
+				
+				/** New name. */
+				CustomerName new
+				
+				RenameService renameService
+				
+				/** Service only used for the method. */
+				service RenameService {
+					
+					/** Verifies if another customer aggregate with the same name already exists. */
+					method exists {
+						
+						/** ID of this aggregate to exclude. */
+						CustomerId unequalToId
+				
+						/** Name to test for. */
+						CustomerName name
+						
+						/** True if another customer with the same name was found. */
+						returns Boolean
+						
+					}
+					
+				}
+				
+				/** The name of a customer was changed. */   
+				event CustomerNameChangedEvent {
+
+					/** ID of the customer that changed */
+					CustomerId id
+					
+					/** Current name. */
+					CustomerName old
+					
+					/** New name. */
+					CustomerName new
+					
+					message "Name was changed from ${old} to ${new} for customer ${id}"
+					
+				}
+				
+			}
+			
+			/** Adds a new contact. */
+			method addContact fires ContactAddedEvent {
+				
+				/** Contact to add. */
+				Contact contact
+				
+				/** Returns a new contact number. */
+				returns ContactId
+
+				/** A new contact was added to the customer. */				
+				event ContactAddedEvent {
+					CustomerId customerId
+					CustomerName customerName
+					ContactId contactId
+					ContactName contactName
+					message "Added contact '${contactName}' as #${contactId} to customer '${customerName}' (${customerId})"
+				}
+				
+			}
+			
+			/**
+			 * Renames the contact with the given ID.
+			 */
+			method renameContact ref rename business-rules ContactExistsConstraint {
+
+				/** ID of contact to remove. */
+				ContactId contactId
+				
+				// All other attributes from method "Contact.rename" are automatically
+				// included because of the method reference above.
+				
+			}
+
+			/** Removes a contact. */			
+			method removeContact business-rules ContactExistsConstraint fires ContactRemovedEvent {
+				
+				/** ID of contact to remove. */
+				ContactId contactId
+				
+				/** A contact was removed from the customer. */
+				event ContactRemovedEvent {
+					CustomerId customerId
+					CustomerName customerName
+					ContactId contactId
+					ContactName contactName
+					message "Removed contact '${contactName}' (#${contactId}) from customer '${customerName}' (${customerId})"
+				}
+				
+			}
+			
+		}
+		
+		/** A contact name. */
+		value-object ContactName base String {
+			String value invariants NotNull, Length(1, 100)			
+		}
+
+		/** 
+		 * Unique contact entity identifier. The ID is only valid inside the customer aggregate.
+		 * This means, only the combination of customerID and ContactId is unique for the context.
+		 */
+		entity-id ContactId identifies Contact base Integer {
+			Integer value invariants NotNull
+		}
+
+		/** Contact entity that belongs to the customer aggregate. */
+		entity Contact identifier ContactId root Customer {
+			
+			ContactId id invariants NotNull
+			
+			ContactName name invariants NotNull
+			
+			/** Creates the entity. */
+			constructor create {
+				ContactId id
+				ContactName name
+			}
+			
+			/** Renames the contact. */
+			method rename fires CustomerContactNameChangedEvent {
+				
+				ContactName newName
+				
+				/** The name of a customer contact has changed. */   
+				event CustomerContactNameChangedEvent {
+
+					/** ID of the customer that changed */
+					CustomerId customerId
+					
+					/** Name of the customer that changed */
+					CustomerName customerName
+					
+					/** ID of the contact that changed */
+					ContactId contactId
+					
+					/** Current name. */
+					ContactName oldName
+					
+					/** New name. */
+					ContactName newName
+					
+					message "Contact name was changed from '${oldName}' to '${newName}' (${contactId}) for customer '${customerName}' (${customerId})"
+					
+				}
+				
+			}
+			
+		}
+
+	}
+
+}
