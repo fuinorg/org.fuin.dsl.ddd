@@ -3,7 +3,7 @@ Constraints define conditions that must be satisfied.
 
 ## Basics
 
-<table><tr><td><img src="https://cdn.rawgit.com/fuinorg/org.fuin.dsl.ddd/67ec011/doc/dsl/constraints/constraints-simple.ddd.svg"></td></tr></table>
+<table><tr><td><img src="https://cdn.rawgit.com/fuinorg/org.fuin.dsl.ddd/978692c/doc/dsl/constraints/constraints-simple.ddd.svg"></td></tr></table>
 
 * Has a name that is unique in the namespace &#x2776;
 * May be related to one or more type it restricts („input“) – Internal or external type &#x2777;
@@ -20,7 +20,7 @@ Invariants must be kept during the life of the entity given an invariant conditi
 * It's considered a programming error if they are not kept
 * In languages like Java violations are modeled as runtime exceptions
 
-<table><tr><td><img src="https://cdn.rawgit.com/fuinorg/org.fuin.dsl.ddd/1772046/doc/dsl/constraints/constraints-invariants.ddd.svg"></td></tr></table>
+<table><tr><td><img src="https://cdn.rawgit.com/fuinorg/org.fuin.dsl.ddd/978692c/doc/dsl/constraints/constraints-invariants.ddd.svg"></td></tr></table>
 
 * Variables are by default never null except there is a **nullable** identifier &#x2776;
 * An invariant can be defined that restricts values that are allowed for the variable &#x2777;
@@ -35,7 +35,7 @@ Pre-conditions requires that the caller of a method complies with this rule.
 * In languages like Java violations are modeled as runtime exceptions
 * An example is a "not null" constraint. A value passed to a method should never be null (not set). This is easy to verify before calling the method and the value does not change between testing for null and calling the method.  
 
-<table><tr><td><img src="https://cdn.rawgit.com/fuinorg/org.fuin.dsl.ddd/607f5f6/doc/dsl/constraints/constraints-preconditions.ddd.svg"></td></tr></table>
+<table><tr><td><img src="https://cdn.rawgit.com/fuinorg/org.fuin.dsl.ddd/978692c/doc/dsl/constraints/constraints-preconditions.ddd.svg"></td></tr></table>
 
 * Can be defined on method level to allow constraints using multiple parameters &#x2776;
   * Both parameters are nullable &#x2777;
@@ -53,14 +53,14 @@ Business Rules are like pre-conditions but the caller is not able to verify them
 * In languages like Java violations are modeled as checked exceptions other languages use dedicated return/status codes  
 * An example is an "email must be unique" constraint. A caller should check for uniqueness before calling the method, but it's nevertheless possible that another user has just entered the same email between caller's verification and verification inside the method. 
 
-<table><tr><td><img src="https://cdn.rawgit.com/fuinorg/org.fuin.dsl.ddd/0dc2316/doc/dsl/constraints/constraints-business-rules.ddd.svg"></td></tr></table>
+<table><tr><td><img src="https://cdn.rawgit.com/fuinorg/org.fuin.dsl.ddd/978692c/doc/dsl/constraints/constraints-business-rules.ddd.svg"></td></tr></table>
 
 * Can be defined on method level &#x2776;
 
 ### Constraint used as business rule 
 A constraint that is used as a business rule must obey some more rules.
 
-<table><tr><td><img src="https://cdn.rawgit.com/fuinorg/org.fuin.dsl.ddd/ecfe5ab/doc/dsl/constraints/constraints-business-rule.ddd.svg"></td></tr></table>
+<table><tr><td><img src="https://cdn.rawgit.com/fuinorg/org.fuin.dsl.ddd/978692c/doc/dsl/constraints/constraints-business-rule.ddd.svg"></td></tr></table>
  
 * Define an exception for cases where the constraint is violated &#x2776;
 * Provide a consistency definition  &#x2777;

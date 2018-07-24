@@ -1,7 +1,7 @@
 # Imports
 Types defined in another context or namespace must be imported to use them.
 
-<table><tr><td><img src="https://cdn.rawgit.com/fuinorg/org.fuin.dsl.ddd/8642a1478454d26c95b9b2b242accbd1b59ede05/doc/dsl/imports/import.ddd.svg"></td></tr></table>
+<table><tr><td><img src="https://cdn.rawgit.com/fuinorg/org.fuin.dsl.ddd/978692c/doc/dsl/imports/import.ddd.svg"></td></tr></table>
 
 * Importing a single type from the same context, just using the namespace &#x2776;
 * Importing a single type from another context, using the context and namespace &#x2777;
