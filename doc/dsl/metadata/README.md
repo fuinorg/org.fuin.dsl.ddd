@@ -2,6 +2,7 @@
 Descriptive metadata that describes a variable for purposes like displaying it to the user.
 
 ## Defining metadata
+Metadata can be defined for variables or types.
 
 <table><tr><td><img src="https://cdn.rawgit.com/fuinorg/org.fuin.dsl.ddd/d8c8aa3/doc/dsl/metadata/variable.ddd.svg"></td></tr></table>
 
