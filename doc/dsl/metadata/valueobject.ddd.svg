@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
-<svg version="1.1" width="800" height="750" xmlns="http://www.w3.org/2000/svg">
+<svg version="1.1" width="800" height="300" xmlns="http://www.w3.org/2000/svg">
 <title>valueobject.ddd</title>
 <desc>Converted from valueobject.ddd to valueobject.ddd.svg</desc>
 <style>
@@ -28,28 +28,6 @@ text { font-size: 12pt; font-family: monospace }
 <tspan dy="1.2em" x="10"> </tspan>    
 <tspan dy="1.2em" x="10"> </tspan>    String value
 <tspan dy="1.2em" x="10"> </tspan>                
-<tspan dy="1.2em" x="10"> </tspan>}
-<tspan dy="1.2em" x="10"> </tspan>
-<tspan dy="1.2em" x="10"> </tspan><tspan class="ml-comment">/**</tspan>
-<tspan dy="1.2em" x="10"> </tspan><tspan class="ml-comment"> * Data change.</tspan>
-<tspan dy="1.2em" x="10"> </tspan><tspan class="ml-comment"> */</tspan>
-<tspan dy="1.2em" x="10"> </tspan><tspan class="keyword">event</tspan> DataChangedEvent {
-<tspan dy="1.2em" x="10"> </tspan>    
-<tspan dy="1.2em" x="10"> </tspan>    <tspan class="ml-comment">/** Old value. */</tspan>
-<tspan dy="1.2em" x="10"> </tspan>    String oldValue
-<tspan dy="1.2em" x="10"> </tspan>    
-<tspan dy="1.2em" x="10"> </tspan>    <tspan class="ml-comment">/** new value. */</tspan>
-<tspan dy="1.2em" x="10"> </tspan>    String newValue
-<tspan dy="1.2em" x="10"> </tspan>    
-<tspan dy="1.2em" x="10"> </tspan>    <tspan class="ml-comment">/** User that changed the data. &#x2778; */</tspan>
-<tspan dy="1.2em" x="10"> </tspan>    Username changedBy &#x2779; {
-<tspan dy="1.2em" x="10"> </tspan>
-<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">slabel</tspan> <tspan class="string">&quot;Changed&quot;</tspan>
-<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">label</tspan> <tspan class="string">&quot;Changed by&quot;</tspan>
-<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">tooltip</tspan> <tspan class="string">&quot;Name of the user that changed the record&quot;</tspan>
-<tspan dy="1.2em" x="10"> </tspan>
-<tspan dy="1.2em" x="10"> </tspan>    }
-<tspan dy="1.2em" x="10"> </tspan>    
 <tspan dy="1.2em" x="10"> </tspan>}
 <tspan dy="1.2em" x="10"> </tspan>
 </text>

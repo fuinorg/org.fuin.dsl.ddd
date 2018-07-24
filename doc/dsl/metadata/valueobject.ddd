@@ -1,4 +1,4 @@
-@code2svg:{"width":800, "height": 750}
+@code2svg:{"width":800, "height": 300}
 /**
  * Unique short name of the user. °°x2776°°
  */
@@ -12,26 +12,4 @@ value-object Username °°x2777°° {
 	
 	String value
 				
-}
-
-/**
- * Data change.
- */
-event DataChangedEvent {
-	
-	/** Old value. */
-	String oldValue
-	
-	/** new value. */
-	String newValue
-	
-	/** User that changed the data. °°x2778°° */
-	Username changedBy °°x2779°° {
-
-		slabel "Changed"
-		label "Changed by"
-		tooltip "Name of the user that changed the record"
-
-	}
-	
 }
