@@ -1,0 +1,10 @@
+@code2svg:{"width":800, "height": 200}
+String createdBy {
+
+	slabel "Created" °°x2776°°
+	label "Created by user" °°x2777°°
+	tooltip "Name of the user that created the record" °°x2778°°
+	prompt "<enter>" °°x2779°°
+	examples "p.parker" "mj.watson" "h.osborn" °°x277A°°
+
+}

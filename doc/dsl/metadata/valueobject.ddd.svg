@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" width="800" height="750" xmlns="http://www.w3.org/2000/svg">
+<title>valueobject.ddd</title>
+<desc>Converted from valueobject.ddd to valueobject.ddd.svg</desc>
+<style>
+<![CDATA[
+text { font-size: 12pt; font-family: monospace }
+.ml-comment { fill: rgb(63, 127, 95) }
+.sl-comment { fill: rgb(63, 127, 95) }
+.string { fill: rgb(42, 0, 255) }
+.number { fill: rgb(125, 125, 125) }
+.keyword { fill: rgb(127, 0, 85); font-weight: bold }
+]]>
+</style>
+<text xml:space="preserve">
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan><tspan class="ml-comment">/**</tspan>
+<tspan dy="1.2em" x="10"> </tspan><tspan class="ml-comment"> * Unique short name of the user. &#x2776;</tspan>
+<tspan dy="1.2em" x="10"> </tspan><tspan class="ml-comment"> */</tspan>
+<tspan dy="1.2em" x="10"> </tspan><tspan class="keyword">value-object</tspan> Username &#x2777; {
+<tspan dy="1.2em" x="10"> </tspan>    
+<tspan dy="1.2em" x="10"> </tspan>    <tspan class="keyword">slabel</tspan> <tspan class="string">&quot;user&quot;</tspan>
+<tspan dy="1.2em" x="10"> </tspan>    <tspan class="keyword">label</tspan> <tspan class="string">&quot;User name&quot;</tspan>
+<tspan dy="1.2em" x="10"> </tspan>    <tspan class="keyword">tooltip</tspan> <tspan class="string">&quot;Unique short name of the user&quot;</tspan>
+<tspan dy="1.2em" x="10"> </tspan>    <tspan class="keyword">prompt</tspan> <tspan class="string">&quot;&lt;enter&gt;&quot;</tspan>
+<tspan dy="1.2em" x="10"> </tspan>    <tspan class="keyword">examples</tspan> <tspan class="string">&quot;p.parker&quot;</tspan> <tspan class="string">&quot;mj.watson&quot;</tspan> <tspan class="string">&quot;h.osborn&quot;</tspan>
+<tspan dy="1.2em" x="10"> </tspan>    
+<tspan dy="1.2em" x="10"> </tspan>    String value
+<tspan dy="1.2em" x="10"> </tspan>                
+<tspan dy="1.2em" x="10"> </tspan>}
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan><tspan class="ml-comment">/**</tspan>
+<tspan dy="1.2em" x="10"> </tspan><tspan class="ml-comment"> * Data change.</tspan>
+<tspan dy="1.2em" x="10"> </tspan><tspan class="ml-comment"> */</tspan>
+<tspan dy="1.2em" x="10"> </tspan><tspan class="keyword">event</tspan> DataChangedEvent {
+<tspan dy="1.2em" x="10"> </tspan>    
+<tspan dy="1.2em" x="10"> </tspan>    <tspan class="ml-comment">/** Old value. */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>    String oldValue
+<tspan dy="1.2em" x="10"> </tspan>    
+<tspan dy="1.2em" x="10"> </tspan>    <tspan class="ml-comment">/** new value. */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>    String newValue
+<tspan dy="1.2em" x="10"> </tspan>    
+<tspan dy="1.2em" x="10"> </tspan>    <tspan class="ml-comment">/** User that changed the data. &#x2778; */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>    Username changedBy &#x2779; {
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">slabel</tspan> <tspan class="string">&quot;Changed&quot;</tspan>
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">label</tspan> <tspan class="string">&quot;Changed by&quot;</tspan>
+<tspan dy="1.2em" x="10"> </tspan>        <tspan class="keyword">tooltip</tspan> <tspan class="string">&quot;Name of the user that changed the record&quot;</tspan>
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>    }
+<tspan dy="1.2em" x="10"> </tspan>    
+<tspan dy="1.2em" x="10"> </tspan>}
+<tspan dy="1.2em" x="10"> </tspan>
+</text>
+</svg>
