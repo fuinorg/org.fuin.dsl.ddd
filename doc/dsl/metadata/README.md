@@ -2,9 +2,9 @@
 Descriptive metadata that describes a variable for purposes like displaying it to the user.
 
 ## Defining metadata
-Metadata can be defined for variables &#x277B; or types &#x277C;.
+Metadata can be defined for variables or types.
 
-### Variable that has metadata &#x277B;
+### Variable that has metadata
 
 <table><tr><td><img src="https://cdn.rawgit.com/fuinorg/org.fuin.dsl.ddd/d8c8aa3/doc/dsl/metadata/variable.ddd.svg"></td></tr></table>
 
@@ -25,7 +25,7 @@ Metadata can be defined for variables &#x277B; or types &#x277C;.
 ## Overwriting metadata
 Variables inherit the metadata from their type by default. They can be overwritten at the place where type type is used.
 
-### Type that has metadata &#x277C;
+### Type that has metadata
 The following value object defines some metadata.
 
 <table><tr><td><img src="https://cdn.rawgit.com/fuinorg/org.fuin.dsl.ddd/d8c8aa3/doc/dsl/metadata/valueobject.ddd.svg"></td></tr></table>
