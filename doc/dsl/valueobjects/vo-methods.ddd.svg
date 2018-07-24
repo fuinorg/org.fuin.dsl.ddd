@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" width="800" height="350" xmlns="http://www.w3.org/2000/svg">
+<title>vo-methods.ddd</title>
+<desc>Converted from vo-methods.ddd to vo-methods.ddd.svg</desc>
+<style>
+<![CDATA[
+text { font-size: 12pt; font-family: monospace }
+.ml-comment { fill: rgb(63, 127, 95) }
+.sl-comment { fill: rgb(63, 127, 95) }
+.string { fill: rgb(42, 0, 255) }
+.number { fill: rgb(125, 125, 125) }
+.keyword { fill: rgb(127, 0, 85); font-weight: bold }
+]]>
+</style>
+<text xml:space="preserve">
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan><tspan class="keyword">value-object</tspan> UserName <tspan class="keyword">base</tspan> String {
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>    String value
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>    <tspan class="keyword">constructor</tspan> create &#x2776; {
+<tspan dy="1.2em" x="10"> </tspan>        String p1 <tspan class="sl-comment">// Parameter 1</tspan>
+<tspan dy="1.2em" x="10"> </tspan>    }
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>    <tspan class="keyword">method</tspan> doSomething &#x2777; {
+<tspan dy="1.2em" x="10"> </tspan>        String p1 <tspan class="sl-comment">// Parameter 1</tspan>
+<tspan dy="1.2em" x="10"> </tspan>        String p2 <tspan class="sl-comment">// Parameter 2</tspan>
+<tspan dy="1.2em" x="10"> </tspan>    }        
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>}
+<tspan dy="1.2em" x="10"> </tspan>
+</text>
+</svg>

@@ -1,0 +1,15 @@
+@code2svg:{"width":800, "height": 350}
+value-object UserName base String {
+
+	String value
+
+	constructor create °°x2776°° {
+		String p1 // Parameter 1
+	}
+
+	method doSomething °°x2777°° {
+		String p1 // Parameter 1
+		String p2 // Parameter 2
+	}		
+
+}

@@ -1,0 +1,15 @@
+@code2svg:{"width":800, "height": 350}
+/** Lanugage specific name. */ °°x2776°°
+value-object ContentName °°x2777°° base String °°x2778°° {
+
+    slabel "CN" °°x2779°°
+    label "Content name" °°x2779°°
+    tooltip "Unique name of the content" °°x2779°°
+
+    /** Human readable name. */
+    String name invariants Length(1, 50) °°x277A°°
+
+    /** Language the name is in. */
+    Locale locale °°x277A°°
+
+}

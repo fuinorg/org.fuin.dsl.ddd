@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg version="1.1" width="800" height="350" xmlns="http://www.w3.org/2000/svg">
+<title>vo-simple.ddd</title>
+<desc>Converted from vo-simple.ddd to vo-simple.ddd.svg</desc>
+<style>
+<![CDATA[
+text { font-size: 12pt; font-family: monospace }
+.ml-comment { fill: rgb(63, 127, 95) }
+.sl-comment { fill: rgb(63, 127, 95) }
+.string { fill: rgb(42, 0, 255) }
+.number { fill: rgb(125, 125, 125) }
+.keyword { fill: rgb(127, 0, 85); font-weight: bold }
+]]>
+</style>
+<text xml:space="preserve">
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan><tspan class="ml-comment">/** Lanugage specific name. */</tspan> &#x2776;
+<tspan dy="1.2em" x="10"> </tspan><tspan class="keyword">value-object</tspan> ContentName &#x2777; <tspan class="keyword">base</tspan> String &#x2778; {
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>    <tspan class="keyword">slabel</tspan> <tspan class="string">&quot;CN&quot;</tspan> &#x2779;
+<tspan dy="1.2em" x="10"> </tspan>    <tspan class="keyword">label</tspan> <tspan class="string">&quot;Content name&quot;</tspan> &#x2779;
+<tspan dy="1.2em" x="10"> </tspan>    <tspan class="keyword">tooltip</tspan> <tspan class="string">&quot;Unique name of the content&quot;</tspan> &#x2779;
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>    <tspan class="ml-comment">/** Human readable name. */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>    String name <tspan class="keyword">invariants</tspan> Length(<tspan class="number">1</tspan>, <tspan class="number">50</tspan>) &#x277A;
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>    <tspan class="ml-comment">/** Language the name is in. */</tspan>
+<tspan dy="1.2em" x="10"> </tspan>    Locale locale &#x277A;
+<tspan dy="1.2em" x="10"> </tspan>
+<tspan dy="1.2em" x="10"> </tspan>}
+<tspan dy="1.2em" x="10"> </tspan>
+</text>
+</svg>
