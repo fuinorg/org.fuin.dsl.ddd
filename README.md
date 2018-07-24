@@ -10,13 +10,13 @@ Xtext based DSL supporting Domain-driven design (DDD)
 
 <a href="https://fuin-org.ci.cloudbees.com/job/org.fuin.dsl.ddd"><img src="http://www.fuin.org/images/Button-Built-on-CB-1.png" width="213" height="72" border="0" alt="Built on CloudBees"/></a>
 
+DSL Example
+-----------
+[<img src="dsl/example.png" width="970" height="542">](https://cdn.rawgit.com/fuinorg/org.fuin.dsl.ddd/ff50a04/doc/dsl/example.ddd.svg)
+
 DSL Documentation
 -----------------
-See ___[DSL Overview](https://github.com/fuinorg/org.fuin.dsl.ddd/blob/master/doc/dsl)___
-
-There is also an old presentation from 2014 (outdated): 
-http://de.slideshare.net/michael-schnell/ddd-dsl/
-
+Full documentation of the DSL can be found here: ___[DSL Overview](https://github.com/fuinorg/org.fuin.dsl.ddd/blob/master/doc/dsl)___
 
 Generating code?
 ----------------
