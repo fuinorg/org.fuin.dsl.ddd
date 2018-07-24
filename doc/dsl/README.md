@@ -5,3 +5,4 @@ DSL Overview
 * [Imports](imports)
 * [Constraints](constraints)
 * [Metadata](metadata)
+* [Value Objects](valueobjects)
