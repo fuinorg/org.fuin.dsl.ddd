@@ -337,7 +337,9 @@ class DomainDrivenDesignDslValidator extends AbstractDomainDrivenDesignDslValida
 
 		if ((attribute.invariants !== null) && (attribute.invariants.constraintInstances !== null)) {
 			for (constraintInstance : attribute.invariants.constraintInstances) {
-				if (!constraintInstance.constraint.input.contains(attribute.type)) {
+				if (constraintInstance.constraint.input !== null && constraintInstance.constraint.input.length() > 0 
+					&& !constraintInstance.constraint.input.contains(attribute.type)
+				) {
 					error(
 						"The allowed input types of the constraint (" + constraintInstance.constraint.input.typeNames +
 							") do not match the attribute type",
