@@ -3,12 +3,10 @@ DDD DSL
 
 Xtext based DSL supporting Domain-driven design (DDD)
 
-[![Build Status](https://fuin-org.ci.cloudbees.com/job/org.fuin.dsl.ddd/badge/icon)](https://fuin-org.ci.cloudbees.com/job/org.fuin.dsl.ddd/)
+[![Build Status](https://jenkins.fuin.org/job/org.fuin.dsl.ddd/badge/icon)](https://jenkins.fuin.org/job/org.fuin.dsl.ddd/)
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/org.fuin.dsl.ddd/org.fuin.dsl.ddd/badge.svg)](https://maven-badges.herokuapp.com/maven-central/org.fuin.dsl.ddd/org.fuin.dsl.ddd/)
 [![LGPLv3 License](http://img.shields.io/badge/license-LGPLv3-blue.svg)](https://www.gnu.org/licenses/lgpl.html)
 [![Java Development Kit 1.8](https://img.shields.io/badge/JDK-1.8-green.svg)](http://www.oracle.com/technetwork/java/javase/downloads/jdk8-downloads-2133151.html)
-
-<a href="https://fuin-org.ci.cloudbees.com/job/org.fuin.dsl.ddd"><img src="http://www.fuin.org/images/Button-Built-on-CB-1.png" width="213" height="72" border="0" alt="Built on CloudBees"/></a>
 
 DSL Example
 -----------
